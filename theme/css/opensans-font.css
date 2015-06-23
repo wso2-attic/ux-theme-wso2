@@ -10,7 +10,6 @@
     font-weight: normal;
     font-weight: 400;
     font-style: normal;
-
 }
 
 /* Italic */
@@ -24,7 +23,6 @@
     font-weight: normal;
     font-weight: 400;
     font-style: italic;
-
 }
 
 /* Light */
@@ -37,7 +35,6 @@
          url('../fonts/OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
     font-weight: 200;
     font-style: normal;
-
 }
 
 /* Light Italic */
@@ -50,7 +47,6 @@
          url('../fonts/OpenSans-LightItalic-webfont.svg#OpenSansLightItalic') format('svg');
     font-weight: 200;
     font-style: italic;
-
 }
 
 /* Semibold */
@@ -63,7 +59,6 @@
          url('../fonts/OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
     font-weight: 500;
     font-style: normal;
-
 }
 
 /* Semibold Italic */
@@ -76,7 +71,6 @@
          url('../fonts/OpenSans-SemiboldItalic-webfont.svg#OpenSansSemiboldItalic') format('svg');
     font-weight: 500;
     font-style: italic;
-
 }
 
 /* Bold */
@@ -90,7 +84,6 @@
     font-weight: bold;
     font-weight: 700;
     font-style: normal;
-
 }
 
 /* Bold Italic */
@@ -104,7 +97,6 @@
     font-weight: bold;
     font-weight: 700;
     font-style: italic;
-
 }
 
 /* Extra Bold */
@@ -117,7 +109,6 @@
          url('../fonts/OpenSans-ExtraBold-webfont.svg#OpenSansExtrabold') format('svg');
     font-weight: 900;
     font-style: normal;
-
 }
 
 /* Extra Bold Italic */

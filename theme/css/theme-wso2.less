@@ -4,7 +4,9 @@
 @import "fontwso2-extend.css";
 
 @base-font: 'Open Sans', Arial, Helvetica, sans-serif;
-@radius: 0;
+
+@border-radius: 0;
+@box-shadow: none;
 
 @color1: #222;
 @color2: #fff;
@@ -37,8 +39,9 @@ body > .container, body > .container-fluid {
     padding: 30px;
 }
 
-a, a:hover, a:focus {
+a, a:hover, a:focus, a:active {
     text-decoration: none;
+    color: inherit;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -82,7 +85,7 @@ header .brand h1 em {
 }
 
 header .dropdown-menu {
-    border-radius: 0;
+    border-radius: @border-radius;
     padding: 10px;
 }
 
@@ -106,7 +109,7 @@ header .dropdown .icon {
 .navbar {
     background: @color3;
     border: none;
-    border-radius: 0;
+    border-radius: @border-radius;
     margin-bottom: 0;
 }
 
@@ -119,10 +122,16 @@ header .dropdown .icon {
     font-size: 18px;
     background: @color4;
     color: @color2;
+    
+    &:hover, &:focus, &:active {
+        color: @color2;
+        background: darken(@color4, 10%);
+    }
 }
 
 .navbar-toggle {
-    border-radius: @radius;
+    border-radius: @border-radius;
+    border: none;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -141,13 +150,15 @@ header .dropdown .icon {
     background: #383838;
 }
 
-.navbar>.container .navbar-brand .sub, .navbar>.container-fluid .navbar-brand .sub {
-    color: #909090;
+.navbar>.container .navbar-brand a, .navbar>.container-fluid .navbar-brand a {
+    color: @color2;
     font-size: 13px;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-    border-color: @color3;
+    border-top: none;
+    -webkit-box-shadow: @box-shadow;
+    box-shadow: @box-shadow;
 }
 
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
@@ -157,6 +168,11 @@ header .dropdown .icon {
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     background: @navbar-color1;
     color: @color2;
+}
+
+.breadcrumb {
+    border-radius: @border-radius;
+    margin: 0;
 }
 
 .body-wrapper a:hover {
@@ -200,16 +216,3 @@ footer a, footer a:hover {
 .lead {
     margin-bottom: 0;
 }
-
-/*@base: #000;
-
-.box-shadow(@style, @c) when (iscolor(@c)) {
-  -webkit-box-shadow: @style @c;
-  box-shadow:         @style @c;
-}
-.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
-  .box-shadow(@style, rgba(0, 0, 0, @alpha));
-}
-.box {
-  background: @base;
-}*/
