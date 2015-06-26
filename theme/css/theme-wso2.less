@@ -13,12 +13,28 @@
 @color3: #2c313b;
 @color4: #F47415;
 
+@popover-background-color: @color1;
+@popover-tiles-background-color: #444;
+@popover-tiles-hover-background-color: #555;
+@popover-tiles-color: @color2;
+
 @navbar-height: 50px;
 @navbar-padding: 0 15px;
 @navbar-color1: #4D5461;
 
 @footer-height: 40px;
 @footer-color: #cbcbcb;
+
+.clearfix() {
+    &:after {
+        content: " ";
+        display: block;
+        font-size: 0;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
 
 html {
     position: relative;
@@ -42,6 +58,7 @@ body > .container, body > .container-fluid {
 a, a:hover, a:focus, a:active {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -165,7 +182,7 @@ header .dropdown .icon {
     color: @color2;
 }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
     background: @navbar-color1;
     color: @color2;
 }
@@ -216,3 +233,83 @@ footer a, footer a:hover {
 .lead {
     margin-bottom: 0;
 }
+
+.popover {
+    border-radius: @border-radius;
+    box-shadow: @box-shadow;
+    background: @popover-background-color;
+    max-width: 384px;
+    .clearfix;
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: @popover-background-color;
+}
+
+.popover.bottom.right > .arrow {
+    top: 0;
+    left: 25px;
+    border-right-color: transparent;
+}
+
+.popover.bottom.right > .arrow:after {
+    border-right-color: transparent;
+    border-left-width: 10px;
+}
+
+.popover.bottom {
+    top: 100%;
+}
+
+.popover-content {
+    padding: 4px;
+}
+
+.popover ul.tiles {
+    .clearfix;
+}
+
+.popover ul.tiles, .popover ul.tiles > li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.popover ul.tiles > li {
+    display: inline-block;
+    float: left;
+}
+
+.popover ul.tiles li a {
+    display: block;
+    margin: 4px;
+    padding: 5px;
+    list-style: none;
+    width: 85px;
+    height: 85px;
+    text-align: center;
+    vertical-align: text-bottom;
+    color: @popover-tiles-color;
+    text-decoration: none;
+    background: @popover-tiles-background-color;
+}
+
+.popover ul.tiles > li a:hover {
+    background: @popover-tiles-hover-background-color;
+}
+
+.popover ul.tiles li a .icon {
+    display: block;
+    font-size: 35px;
+    margin: 3px 0 7px;
+    height: 35px;
+}
+
+.popover ul.tiles li a .name {
+    display: block;
+    line-height: 14px;
+    font-size: 12px;
+    height: 28px;
+    overflow: hidden;
+}
+

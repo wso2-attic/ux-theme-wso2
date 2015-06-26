@@ -61,11 +61,42 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-tiles-toggle" href="#">
+          <a class="navbar-tiles-toggle" href="javascript:void(0)" data-click-event="popover">
             <span class="fw-stack-md">
                 <i class="fw fw-tiles fw-stack-1x"></i>
             </span>
-          </a> 
+          </a>
+          <div class="popover bottom right fade">
+                <div class="arrow left"></div>
+                <div class="popover-content">
+                    <ul class="tiles">
+                        <li>
+                            <a href="#">
+                                <i class="icon fw fw-api"></i>
+                                <span class="name">API</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon fw fw-wsdl"></i>
+                                <span class="name">WSDL</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon fw fw-soap"></i>
+                                <span class="name">SOAP Service</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon fw fw-rest-service"></i>
+                                <span class="name">REST Service</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+          </div>
           <ol class="breadcrumb navbar-brand">
              <li class="icons"><a href="#home"><i class="fw fw-left-arrow"></i></a></li>
              <li><a href="#">Library</a></li>
@@ -121,6 +152,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/popover.js"></script>
       
     <script type="text/javascript">
         $(document).ready(function(){
