@@ -23,7 +23,11 @@
 @navbar-color1: #4D5461;
 
 @footer-height: 40px;
+@footer-background: @color1;
 @footer-color: #cbcbcb;
+
+@inverse-layout-background: @color3;
+@inverse-layout-color: @color2;
 
 .clearfix() {
     &:after {
@@ -51,8 +55,14 @@ body {
     font-weight: 100;
 }
 
-body > .container, body > .container-fluid {
+body > .container,
+body > .container-fluid {
     padding: 30px;
+}
+
+body.inverse, body.inverse footer {
+    background: @inverse-layout-background;
+    color: @inverse-layout-color;
 }
 
 a, a:hover, a:focus, a:active {
@@ -70,12 +80,15 @@ a, a:hover, a:focus, a:active {
     margin-left: 0;
 }
 
-.row.no-gutter [class*='col-']:not(:first-child), .row.no-gutter [class*='col-']:not(:last-child) {
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
     padding-right:0;
     padding-left:0;
 }
 
-.container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+.container-fluid > .navbar-header,
+.container > .navbar-collapse,
+.container > .navbar-header {
     margin-left: 0;
 }
 
@@ -99,6 +112,10 @@ header .brand h1 em {
     padding: 3px 0 0 0;
     font-style: normal;
     text-transform: uppercase;
+}
+
+header .brand img.logo {
+    height: 24px;
 }
 
 header .dropdown-menu {
@@ -158,7 +175,8 @@ header .dropdown .icon {
     line-height: @navbar-height;
 }
 
-.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+.navbar > .container .navbar-brand,
+.navbar > .container-fluid .navbar-brand {
     color: @color2;
     margin-left: 0;
     padding: 0 15px;
@@ -167,7 +185,8 @@ header .dropdown .icon {
     background: #383838;
 }
 
-.navbar>.container .navbar-brand a, .navbar>.container-fluid .navbar-brand a {
+.navbar > .container .navbar-brand a,
+.navbar > .container-fluid .navbar-brand a {
     color: @color2;
     font-size: 13px;
 }
@@ -178,11 +197,14 @@ header .dropdown .icon {
     box-shadow: @box-shadow;
 }
 
-.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
     color: @color2;
 }
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
     background: @navbar-color1;
     color: @color2;
 }
@@ -203,15 +225,17 @@ footer {
     min-height: @footer-height;
     overflow: hidden;
     color: @footer-color;
-    background: @color1;
+    background: @footer-background;
 }
 
-footer > .container, footer > .container-fluid {
+footer > .container,
+footer > .container-fluid {
     padding-right: 15px;
     padding-left: 15px;
 }
 
-footer > .container p, footer > .container-fluid p {
+footer > .container p,
+footer > .container-fluid p {
     line-height: @footer-height;
     margin-bottom: 0;
 }
@@ -292,10 +316,10 @@ footer a, footer a:hover {
     color: @popover-tiles-color;
     text-decoration: none;
     background: @popover-tiles-background-color;
-}
-
-.popover ul.tiles > li a:hover {
-    background: @popover-tiles-hover-background-color;
+    
+    &:hover {
+        background: @popover-tiles-hover-background-color;
+    }
 }
 
 .popover ul.tiles li a .icon {
@@ -312,4 +336,3 @@ footer a, footer a:hover {
     height: 28px;
     overflow: hidden;
 }
-
