@@ -170,16 +170,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/popover.js"></script>
+    <script src="js/theme-wso2.js"></script>
       
     <script type="text/javascript">
+        
         $(document).ready(function(){
             $(".navbar").affix({
                 offset: { 
-                    top: 50
+                    top: $('.navbar').offset().top,
+                    bottom: function (){
+                      return (this.bottom = $('.footer').outerHeight(true))
+                    }
                 }
             });
+            //$('html').loading('show');
+            //$('[data-click-event=popover]').popover_extended();
         });
+        
     </script>
       
   </body>
