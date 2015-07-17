@@ -173,18 +173,22 @@
     <script src="js/theme-wso2.js"></script>
       
     <script type="text/javascript">
-        
-        $(document).ready(function(){
-            $(".navbar").affix({
-                offset: { 
-                    top: $('.navbar').offset().top,
+
+        $(function(){
+
+            var nav = $('.navbar');
+            nav.affix({
+                offset: {
+                    top: nav.offset().top,
                     bottom: function (){
-                      return (this.bottom = $('.footer').outerHeight(true))
+                        return (this.bottom = $('.footer').outerHeight(true))
                     }
                 }
             });
+
             //$('html').loading('show');
-            //$('[data-click-event=popover]').popover_extended();
+            $('[data-click-event=popover]').popover_extended();
+
         });
         
     </script>

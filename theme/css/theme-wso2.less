@@ -3,19 +3,18 @@
 @import "fontwso2.css";
 @import "fontwso2-extend.css";
 
-@font: 'Open Sans', Arial, Helvetica, sans-serif;
-@border-radius: 0;
-@box-shadow: none;
+/* ========================================================================
+ * default values
+ * ======================================================================== */
+
+@font-default: 'Open Sans', Arial, Helvetica, sans-serif;
+@border-radius-default: 0;
+@box-shadow-defualt: none;
 
 @color1: #222;
 @color2: #fff;
 @color3: #2c313b;
 @color4: #F47415;
-
-@popover-background-color: @color1;
-@popover-tiles-background-color: #444;
-@popover-tiles-hover-background-color: #555;
-@popover-tiles-color: @color2;
 
 @navbar-height: 50px;
 @navbar-padding: 0 15px;
@@ -28,6 +27,19 @@
 @inverse-layout-background: @color3;
 @inverse-layout-color: @color2;
 
+@loading-background-color: @color1;
+@loading-background-opacity: 0.9;
+@loading-color: @color2;
+
+@popover-background-color: @color1;
+@popover-tiles-background-color: #444;
+@popover-tiles-hover-background-color: #555;
+@popover-tiles-color: @color2;
+
+/* ========================================================================
+ * common methods
+ * ======================================================================== */
+
 .clearfix() {
     &:after {
         content: " ";
@@ -38,6 +50,47 @@
         visibility: hidden;
     }
 }
+
+.border-radius(@val: @border-radius-default) {
+    -webkit-border-radius: @val;
+    -moz-border-radius: @val;
+    border-radius: @val;
+}
+
+.box-shadow(@val: @box-shadow-default) {
+    -webkit-box-shadow: @val;
+	-moz-box-shadow: @val;
+	box-shadow: @val;
+}
+
+.transform(@val) {
+    -webkit-transform: @val;
+    -moz-transform: @val;
+    -ms-transform: @val;
+    -o-transform: @val;
+    transform: @val;
+}
+
+.transition(@val) {
+	-webkit-transition: @val;
+	-moz-transition: @val;
+	-o-transition: @val;
+	-ms-transition: @val;
+	transition: @val;
+}
+
+.gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+	background-color: @start;
+	background-image: -webkit-linear-gradient(@origin, @start, @stop);
+	background-image: -moz-linear-gradient(@origin, @start, @stop);
+	background-image: -o-linear-gradient(@origin, @start, @stop);
+	background-image: -ms-linear-gradient(@origin, @start, @stop);
+	background-image: linear-gradient(@origin, @start, @stop);
+}
+
+/* ========================================================================
+ * document styles
+ * ======================================================================== */
 
 html {
     position: relative;
@@ -50,7 +103,7 @@ html {
 body {
     color: @color1;
     margin-bottom: @footer-height;
-    font-family: @font;
+    font-family: @font-default;
     font-weight: 100;
 }
 
@@ -85,12 +138,6 @@ a, a:hover, a:focus, a:active {
     padding-left:0;
 }
 
-.container-fluid > .navbar-header,
-.container > .navbar-collapse,
-.container > .navbar-header {
-    margin-left: 0;
-}
-
 /* ========================================================================
  * header styles
  * ======================================================================== */
@@ -122,8 +169,8 @@ header .brand img.logo {
 }
 
 header .dropdown-menu {
-    border-radius: @border-radius;
     padding: 10px;
+    .border-radius;
 }
 
 header .dropdown {
@@ -150,8 +197,30 @@ header .dropdown .icon {
 .navbar {
     background: @color3;
     border: none;
-    border-radius: @border-radius;
     margin-bottom: 0;
+    .border-radius;
+}
+
+.navbar .container-fluid {
+    padding: 0;
+}
+
+.navbar .container-fluid > .navbar-collapse,
+.navbar .container-fluid > .navbar-header,
+.navbar .container > .navbar-collapse,
+.navbar .container > .navbar-header {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-nav {
+    margin: 7.5px 0;
+}
+
+@media (min-width: 768px){
+    .navbar-nav {
+        margin: 0 0;
+    }
 }
 
 .navbar-tiles-toggle {
@@ -159,7 +228,6 @@ header .dropdown .icon {
     height: @navbar-height;
     padding: 0 15px;
     line-height: @navbar-height;
-    margin-left: -15px;
     font-size: 18px;
     background: @color4;
     color: @color2;
@@ -171,8 +239,8 @@ header .dropdown .icon {
 }
 
 .navbar-toggle {
-    border-radius: @border-radius;
     border: none;
+    .border-radius;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -200,25 +268,25 @@ header .dropdown .icon {
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     border-top: none;
-    -webkit-box-shadow: @box-shadow;
-    box-shadow: @box-shadow;
+    .box-shadow;
 }
 
-.navbar-default .navbar-nav > li > a:focus,
-.navbar-default .navbar-nav > li > a:hover {
-    color: @color2;
+.navbar-default .navbar-nav > li > a {
+    &:hover, &:focus, &:active {
+        color: @color2;
+    }
 }
 
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:focus,
-.navbar-default .navbar-nav > .active > a:hover {
-    background: @navbar-color1;
-    color: @color2;
+.navbar-default .navbar-nav > .active > a {
+    &, &:hover, &:focus, &:active {
+        background: @navbar-color1;
+        color: @color2;
+    }
 }
 
 .breadcrumb {
-    border-radius: @border-radius;
     margin: 0;
+    .border-radius;
 }
 
 /* ========================================================================
@@ -282,10 +350,10 @@ footer a, footer a:hover {
  * ======================================================================== */
 
 .popover {
-    border-radius: @border-radius;
-    box-shadow: @box-shadow;
     background: @popover-background-color;
     max-width: 384px;
+    .border-radius;
+    .box-shadow;
     .clearfix;
 }
 
@@ -369,9 +437,9 @@ footer a, footer a:hover {
 }
 
 .loading .loading-bg {
-    background: #000;
+    background: @loading-background-color;
     position: absolute;
-    opacity: 0.9;
+    opacity: @loading-background-opacity;
     height: 100%;
     width: 100%;
     z-index: 10000000;
@@ -384,7 +452,7 @@ footer a, footer a:hover {
     left: 50%;
     width: 50px;
     height: 75px;
-    -webkit-transform: translate(-50%, -50%);
+    .transform(translate(-50%, -50%));
 }
 
 .loading .loading-animation .logo {
@@ -394,7 +462,7 @@ footer a, footer a:hover {
 .loading .loading-animation .logo .pulse-line,
 .loading .loading-animation .logo .circle {
     fill: none;
-    stroke: #fff;
+    stroke: @loading-color;
 }
 
 .loading .loading-animation .logo .circle {
@@ -430,7 +498,7 @@ footer a, footer a:hover {
 }
 
 .loading .loading-animation .logo .signal {
-    border: 5px solid #fff;
+    border: 5px solid @loading-color;
     border-radius: 50px;
     height: 50px;
     width: 50px;
@@ -439,12 +507,7 @@ footer a, footer a:hover {
     top: 0;
     animation: pulsate 4s ease-out infinite;
     animation-delay: 1.5s;
-
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    .transform(translate(-50%, -50%));
 }
 
 @keyframes pulsate {
@@ -462,7 +525,7 @@ footer a, footer a:hover {
 }
 
 .loading .loading-animation p {
-    color: #fff;
+    color: @loading-color;
     text-align: center;
     font-size: 11px;
     margin-top: 4px;
