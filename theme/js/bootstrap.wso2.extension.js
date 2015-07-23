@@ -16,23 +16,57 @@
  * under the License.
  */
 
+/* check if jquery is loaded */
+if (typeof(jQuery) === 'undefined') {
+    throw 'jQuery is required.';
+}
+
 (function($) {
+
+    /* ========================================================================
+     * import required files function
+     * ======================================================================== */
+    $.required = function(file, filetype){
+        var markup = 'undefined';
+
+        if (filetype == 'js'){ //if filename is a external JavaScript file
+            markup = document.createElement('script');
+            markup.setAttribute("type","text/javascript");
+            markup.setAttribute("src", file);
+        }
+        else if (filetype == 'css'){ //if filename is an external CSS file
+            markup = document.createElement('link');
+            markup.setAttribute("rel", "stylesheet");
+            markup.setAttribute("type", "text/css");
+            markup.setAttribute("href", file);
+        }
+
+        if (typeof markup != 'undefined'){
+            if (filetype == 'js') {
+                $('html script[src*="theme-wso2.js"]').before(markup);
+            }
+            else if (filetype == 'css'){
+                $('head link[href*="main.less"]').before(markup);
+            }
+        }
+    };
 
 
     /* ========================================================================
      * add browser meta data to html tag
      * ======================================================================== */
-    $('html')
-        .attr('data-useragent',  navigator.userAgent)
-        .attr('data-platform', navigator.platform)
-        .addClass(((!!('ontouchstart' in window) || !!('onmsgesturechange' in window))?' touch':''));
+     $.browser_meta = function(){
+         $('html')
+             .attr('data-useragent', navigator.userAgent)
+             .attr('data-platform', navigator.platform)
+             .addClass(((!!('ontouchstart' in window) || !!('onmsgesturechange' in window)) ? ' touch' : ''));
+     };
     
 
     /* ========================================================================
      * loading function
      * ======================================================================== */
     $.fn.loading = function(action) {
-
         var html = '<div class="loading-animation"> \
                         <div class="logo"> \
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" \
@@ -55,7 +89,6 @@
                 $('.loading-animation, .loading-bg', this).remove();
             }
         });
-
     };
 
 
@@ -63,9 +96,7 @@
      * extended popover function
      * ======================================================================== */
     $.fn.popover_extended = function(){
-
         var elem = $(this);
-
         return $(elem).each(function(){
 
             /**
@@ -86,7 +117,56 @@
             });
 
         });
+    };
 
+
+    /* ========================================================================
+     * input file browse function
+     * ======================================================================== */
+    $.file_input = function(){
+        var elem = '.file-upload-control';
+        return $(elem).each(function(){
+
+            /**
+             * input value change function
+             */
+            $(elem+' :file').change(function(){
+                var input = $(this),
+                    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [numFiles, label]);
+            });
+
+            /**
+             * button click function
+             */
+            $(elem+' .browse').click(function(){
+                $(this).parents('.input-group').find(':file').click();
+            });
+
+            /**
+             * file select function
+             */
+            $(elem+' :file').on('fileselect', function(event, numFiles, label) {
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+                if(input.length) {
+                    input.val(log);
+                } else {
+                    if(log){
+                        alert(log);
+                    }
+                }
+            });
+
+        });
     };
 
 }(jQuery));
+
+$(document).ready(function(){
+    //$.browser_meta();
+    $.file_input();
+    $('[data-click-event=popover]').popover_extended();
+});

@@ -1,7 +1,6 @@
 @import "bootstrap.min.css";
 @import "opensans-font.css";
 @import "fontwso2.css";
-@import "fontwso2-extend.css";
 
 /* ========================================================================
  * default values
@@ -9,7 +8,7 @@
 
 @font-default: 'Open Sans', Arial, Helvetica, sans-serif;
 @border-radius-default: 0;
-@box-shadow-defualt: none;
+@box-shadow-default: none;
 
 @color1: #222;
 @color2: #fff;
@@ -35,6 +34,13 @@
 @popover-tiles-background-color: #444;
 @popover-tiles-hover-background-color: #555;
 @popover-tiles-color: @color2;
+
+@button-primary-background-color: @color3;
+@button-primary-color: @color2;
+@button-border: @button-primary-background-color;
+@button-primary-hover-background-color: lighten(@button-primary-background-color, 10%);
+
+@form-control-max-width: 750px;
 
 /* ========================================================================
  * common methods
@@ -79,7 +85,7 @@
 	transition: @val;
 }
 
-.gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+.gradient (@origin: top, @start: #fff, @stop: #e4e4e4) {
 	background-color: @start;
 	background-image: -webkit-linear-gradient(@origin, @start, @stop);
 	background-image: -moz-linear-gradient(@origin, @start, @stop);
@@ -109,7 +115,14 @@ body {
 
 body > .container,
 body > .container-fluid {
-    padding: 3%;
+    padding: 40px 20px 60px;
+}
+
+@media (min-width: 992px){
+    body > .container,
+    body > .container-fluid {
+      padding: 4%;
+    }
 }
 
 body.inverse, body.inverse footer {
@@ -136,6 +149,21 @@ a, a:hover, a:focus, a:active {
 .row.no-gutter [class*='col-']:not(:last-child) {
     padding-right:0;
     padding-left:0;
+}
+
+br.spacer {
+    display: block;
+    line-height: 30px;
+}
+
+span.res-text-hide {
+    display: none;
+}
+
+@media (min-width: 600px){
+    span.res-text-hide {
+        display: inline-block;
+    }
 }
 
 /* ========================================================================
@@ -168,9 +196,14 @@ header .brand img.logo {
     height: 24px;
 }
 
+header .brand a {
+    min-height: 24px;
+}
+
 header .dropdown-menu {
     padding: 10px;
     .border-radius;
+    .box-shadow;
 }
 
 header .dropdown {
@@ -182,6 +215,34 @@ header .dropdown {
 
 header .dropdown .icon {
     margin-left: 2px;
+}
+
+header .dropdown-menu .dropdown-header {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .pull-left.brand {
+        float: none !important;
+        text-align: center;
+    }
+
+    header .brand img.logo {
+        margin-top: 15px;
+    }
+
+    header .brand h1 {
+        display: block;
+        line-height: 0.6;
+    }
+
+    header .dropdown-menu {
+        text-align: center;
+    }
+
+    header .dropdown-menu .dropdown-header {
+        display: block;
+    }
 }
 
 /* ========================================================================
@@ -284,6 +345,11 @@ header .dropdown .icon {
     }
 }
 
+.navbar .dropdown-menu {
+    .border-radius;
+    .box-shadow;
+}
+
 .breadcrumb {
     margin: 0;
     .border-radius;
@@ -321,8 +387,10 @@ footer .icon {
     color: @footer-color;
 }
 
-footer a, footer a:hover {
-    color: @footer-color;
+footer a {
+    &, &:hover {
+        color: @footer-color;
+    }
 }
 
 /* ========================================================================
@@ -346,7 +414,7 @@ footer a, footer a:hover {
 }
 
 /* ========================================================================
- * popover styles
+ * popover extended styles
  * ======================================================================== */
 
 .popover {
@@ -432,10 +500,6 @@ footer a, footer a:hover {
  * loading styles
  * ======================================================================== */
 
-.loading {
-    position: relative;
-}
-
 .loading .loading-bg {
     background: @loading-background-color;
     position: absolute;
@@ -479,21 +543,21 @@ footer a, footer a:hover {
 
 @keyframes dash {
     0% {
-      opacity: 0.9;
+        opacity: 0.9;
     }
     10% {
-      stroke-dashoffset: 200;
-      opacity: 0.9;
+        stroke-dashoffset: 200;
+        opacity: 0.9;
     }
     70% {
-      stroke-dashoffset: 500;
-      opacity: 0.9;
+        stroke-dashoffset: 500;
+        opacity: 0.9;
     }
     80% {
-      opacity: 0;
+        opacity: 0;
     }
     100% {
-      opacity: 0;
+        opacity: 0;
     }
 }
 
@@ -503,7 +567,7 @@ footer a, footer a:hover {
     height: 50px;
     width: 50px;
     opacity: 0;
-    position:absolute;
+    position: absolute;
     top: 0;
     animation: pulsate 4s ease-out infinite;
     animation-delay: 1.5s;
@@ -512,15 +576,15 @@ footer a, footer a:hover {
 
 @keyframes pulsate {
     0%, 30%  {
-      transform: scale(0.9);
-      opacity: 0;
+        opacity: 0;
+        .transform(scale(0.9));
     }
     40% {
-      opacity: 1;
+        opacity: 1;
     }
     60% {
-      transform: scale(1.2);
-      opacity: 0;
+        opacity: 0;
+        .transform(scale(1.2));
     }
 }
 
@@ -529,4 +593,171 @@ footer a, footer a:hover {
     text-align: center;
     font-size: 11px;
     margin-top: 4px;
+}
+
+/* ========================================================================
+ * form styles
+ * ======================================================================== */
+
+.control-label {
+    font-weight: 400;
+}
+
+.input-group-btn .control-label {
+    font-size: 14px;
+    padding-top: 0;
+    margin: 0 5px;
+}
+
+.form-control, .btn {
+    .border-radius;
+    .box-shadow;
+}
+
+a.btn, .btn {
+    &, &:hover, &:focus {
+        text-decoration: none;
+    }
+}
+
+.form-control {
+    width: 100%;
+
+    &-xs {
+        min-width: calc(@form-control-max-width/12);
+    }
+    &-sm {
+        min-width: calc(@form-control-max-width/9);
+    }
+    &-md {
+        min-width: calc(@form-control-max-width/6);
+    }
+    &-lg {
+        min-width: calc(@form-control-max-width/2);
+    }
+}
+
+input[type=number].form-control {
+    padding: 0 0 0 12px;
+}
+
+.form-control, .input-wrap {
+    max-width: @form-control-max-width;
+}
+
+.form-control:focus {
+    .box-shadow
+}
+
+.input-wrap .btn-input-right .btn {
+    position: absolute;
+    right: 1px;
+    top: -10px;
+    border: none;
+    z-index: 10;
+}
+
+.input-wrap .input-group-btn.btn-input-right {
+    width: 0;
+    display: inline-block;
+}
+
+.input-group-addon {
+    .border-radius;
+}
+
+.file-upload-control input[type=file] {
+    display: none;
+}
+
+.file-upload-control input[readonly] {
+    background-color: white !important;
+    cursor: text !important;
+}
+
+.btn-primary {
+    color: @button-primary-color;
+    background-color: @button-primary-background-color;
+    border-color: @button-border;
+
+    &:hover {
+        background-color: @button-primary-hover-background-color;
+    }
+}
+
+@media (max-width: 600px){
+    .input-group.res-wrap {
+        &, & .form-control, & .control-label, & .input-group-btn  {
+            min-width: 100%;
+            display: block;
+            float: none;
+        }
+    }
+
+    .input-group.res-wrap .control-label {
+        line-height: 34px;
+        margin: 5px 0 0 0;
+    }
+}
+
+/* ========================================================================
+ * form styles
+ * ======================================================================== */
+
+.table thead th {
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.table .form-control {
+    min-width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+    .table-responsive table,
+    .table-responsive thead,
+    .table-responsive tbody,
+    .table-responsive th,
+    .table-responsive td,
+    .table-responsive tr {
+        display: block;
+    }
+
+    .table-responsive thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .table-responsive tr {
+        border: 1px solid #ccc;
+    }
+
+    .table-responsive.table-striped {
+        border: none;
+    }
+
+    .table-responsive tbody > tr > td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align:left;
+    }
+
+    .table-responsive tr > td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align:left;
+        font-weight: bold;
+    }
+
+    .table-responsive tbody > tr > td:before {
+        content: attr(data-title);
+    }
 }
