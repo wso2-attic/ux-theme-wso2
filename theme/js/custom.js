@@ -30,7 +30,7 @@ $(function(){
     });
 
     /* show/hide pre-loader animation */
-    //$('html').loading('show');
+    //$('.body-wrapper').loading('show');
 
     /* data-table styling */
     $('.data-table').DataTable({

@@ -1,24 +1,52 @@
-<!DOCTYPE html>
+<!--
+~   Copyright (c) WSO2 Inc. (http://wso2.com) All Rights Reserved.
+~
+~   Licensed under the Apache License, Version 2.0 (the "License");
+~   you may not use this file except in compliance with the License.
+~   You may obtain a copy of the License at
+~
+~        http://www.apache.org/licenses/LICENSE-2.0
+~
+~   Unless required by applicable law or agreed to in writing, software
+~   distributed under the License is distributed on an "AS IS" BASIS,
+~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~   See the License for the specific language governing permissions and
+~   limitations under the License.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+      
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>WSO2 Bootstrap Extension Theme</title>
+    <title>WSO2 Bootstrap Extension</title>
 
-    <link rel="shortcut icon" href="imgs/favicon.png" />
+    <link rel="shortcut icon" href="images/favicon.png" />
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap CSS -->
+    <link href="libs/bootstrap_3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- Font Awesome -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- DataTable CSS -->
+    <link href="libs/data-tables_1.10.7/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="libs/data-tables_1.10.7/css/dataTables.responsive.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Font Awesome CSS -->
+    <link href="libs/font-awesome_4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Font WSO2 CSS -->
+    <link href="libs/font-wso2_1.1/css/font-wso2.css" rel="stylesheet" type="text/css" />
 
+    <!-- Theme WSO2 LESS -->
+    <link href="libs/theme-wso2_1.0/less/theme-wso2.less" rel="stylesheet/less" type="text/css" />
+    
     <!-- Custom CSS/LESS -->
-    <link href="css/custom.less" rel="stylesheet/less" type="text/css" />
+    <link href="less/theme-wso2-config.less" rel="stylesheet/less" type="text/css" />
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+
+    <!-- LESS CSS Compiler -->
     <!-- less.js Debug Script -->
     <script>
         less = {
@@ -31,21 +59,21 @@
             dumpLineNumbers: "comments",
             relativeUrls: false,
             globalVars: {
-                var1: '"string value"',
-                var2: 'regular value'
+              var1: '"string value"',
+              var2: 'regular value'
             },
             rootpath: ""
         };
     </script>
-    <script src="js/less.min.js"></script>
+    <script src="libs/less_2.5.1/js/less.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
+      <script src="libs/html5shiv_3.7.2/js/html5shiv.min.js"></script>
+      <script src="libs/respond_1.4.2/js/respond.min.js"></script>
     <![endif]-->
-
+      
 </head>
 <body class="inverse">
     
@@ -54,7 +82,7 @@
         <div class="container-fluid">
            <div class="pull-left brand">
               <a href="index.html">
-                 <img src="imgs/logo-inverse.svg" alt="wso2" title="wso2" class="logo">
+                 <img src="images/logo-inverse.svg" alt="wso2" title="wso2" class="logo">
                  <h1><em>Extension for twitter bootstrap</em></h1>
               </a>
            </div>
@@ -71,7 +99,7 @@
         <div class="row">
             <div class="col-xs-6 col-md-2">
                 <a href="layout.html" class="thumbnail">
-                    <img src="imgs/screenshots/layout.png">
+                    <img src="images/screenshots/layout.png">
                 </a>
                 Inner Page Wrapper
             </div>
@@ -108,15 +136,22 @@
       </div>
     </footer>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.min.js"></script>
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- jQuery JS -->
+    <script src="libs/jquery_1.11.0/js/jquery.min.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="libs/bootstrap_3.3.5/js/bootstrap.min.js"></script>
+    
+    <!-- Data Tables JS -->
+    <script src="libs/data-tables_1.10.7/js/jquery.dataTables.min.js"></script>
+    <script src="libs/data-tables_1.10.7/js/dataTables.bootstrap.js"></script>
+    <script src="libs/data-tables_1.10.7/js/dataTables.responsive.js"></script>
+    
+    <!-- Theme WSO2 JS -->
+    <script src="libs/theme-wso2_1.0/js/theme-wso2.js"></script>
+    
+    <!-- Custom JS -->
     <script src="js/handlebars-v3.0.3.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Theme Dependent Scripts -->
-    <script src="js/theme-wso2.js"></script>
     <script src="js/custom.js"></script>
 
 </body>
