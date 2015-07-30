@@ -18,6 +18,9 @@
 
 $(function(){
 
+    /***********************************************************
+     *  nav affix config
+     ***********************************************************/
     /* on scroll navbar fixed top function */
     var nav = $('.navbar');
     nav.affix({
@@ -29,14 +32,62 @@ $(function(){
         }
     });
 
-    /* show/hide pre-loader animation */
+
+    /***********************************************************
+     *  loading
+     ***********************************************************/
     //$('.body-wrapper').loading('show');
 
-    /* data-table styling */
-    $('.data-table').DataTable({
+
+    /***********************************************************
+     *  data-tables config
+     ***********************************************************/
+    // Setup - add a text input to each footer cell
+    $('.data-table tfoot th').each( function () {
+        var title = $('.data-table thead th').eq($(this).index()).text();
+        $(this).html( '<input type="text" class="form-control" placeholder="Search '+title+'" />' );
+    } );
+
+    // DataTable
+    var table = $('.data-table').DataTable({
         responsive: true
     });
 
+    // Apply the search
+    table.columns().every( function () {
+        var that = this;
+
+        $('input', this.footer()).on('keyup change', function() {
+            that
+                .search(this.value)
+                .draw();
+        });
+    });
+
+
+    /***********************************************************
+     *  noty config
+     ***********************************************************/
+    noty({
+        layout: 'topRight',
+        text: 'Hey! This is just a notification... ',
+        template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+        type: 'information',
+        theme: 'relax',
+        animation: {
+            open: 'animated fadeInDown',
+            close: 'animated fadeOutUp',
+            easing: 'swing',
+            speed: 500
+        },
+        //timeout: 5000,
+        closeWith: ['button']
+    });
+
+
+    /***********************************************************
+     *  handlebars
+     ***********************************************************/
     /* table data appending function */
     var dataObj =
     { members: [

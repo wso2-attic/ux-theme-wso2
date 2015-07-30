@@ -26,22 +26,31 @@
 
     <link rel="shortcut icon" href="images/favicon.png" />
 
+    <!-- Jquery CSS -->
+    <link href="libs/jquery-ui_1.11.4/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+
     <!-- Bootstrap CSS -->
     <link href="libs/bootstrap_3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
     <!-- DataTable CSS -->
-    <link href="libs/data-tables_1.10.7/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="libs/data-tables_1.10.7/css/dataTables.responsive.css" rel="stylesheet" type="text/css" />
-    
+    <link href="libs/data-tables_1.10.7/extensions/Bootstrap/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="libs/data-tables_1.10.7/extensions/Responsive/css/dataTables.responsive.css" rel="stylesheet" type="text/css" />
+
+    <!-- Select2 CSS -->
+    <link href="libs/select2_4.0.0/css/select2.min.css" rel="stylesheet" type="text/css" />
+
     <!-- Font Awesome CSS -->
     <link href="libs/font-awesome_4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    
+
     <!-- Font WSO2 CSS -->
     <link href="libs/font-wso2_1.1/css/font-wso2.css" rel="stylesheet" type="text/css" />
 
+    <!-- Animate CSS -->
+    <link href="libs/animate/animate.css" rel="stylesheet" type="text/css" />
+
     <!-- Theme WSO2 LESS -->
     <link href="libs/theme-wso2_1.0/less/theme-wso2.less" rel="stylesheet/less" type="text/css" />
-    
+
     <!-- Custom CSS/LESS -->
     <link href="less/theme-wso2-config.less" rel="stylesheet/less" type="text/css" />
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
@@ -59,19 +68,19 @@
             dumpLineNumbers: "comments",
             relativeUrls: false,
             globalVars: {
-              var1: '"string value"',
-              var2: 'regular value'
+                var1: '"string value"',
+                var2: 'regular value'
             },
             rootpath: ""
         };
     </script>
-    <script src="libs/less_2.5.1/js/less.min.js"></script>
+    <script src="libs/less_2.5.1/less.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="libs/html5shiv_3.7.2/js/html5shiv.min.js"></script>
-      <script src="libs/respond_1.4.2/js/respond.min.js"></script>
+    <script src="libs/html5shiv_3.7.2/html5shiv.min.js"></script>
+    <script src="libs/respond_1.4.2/respond.min.js"></script>
     <![endif]-->
       
 </head>
@@ -210,13 +219,21 @@
 
         <div class="well remove-padding">
             <div class="row no-gutter">
-                <div class="col-fixed-left col-fixed-md">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-1">
                     <div class="thumbnail icon"><img src="images/thumb.png" class="square-element" /></div>
                 </div>
-                <div class="col-fixed-fill add-padding">
-                    <h1 class="remove-margin">John Doe</h1>
-                    <h3><i class="fw fw-android"></i> Android</h3>
-                    <div class="well-description">Thu, 07 May 2015 12:07:19 GMT</div>
+                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-11 add-padding">
+                    <div class="asset-desc">
+                        <div class="short-name">John's Android Phone</div>
+                        <div class="long-name">
+                            <span class="icon fw-stack">
+                                <i class="fw fw-android fw-stack-2x"></i>
+                            </span>
+                            Android
+                        </div>
+                        <div class="author">by John Doe</div>
+                        <div class="time">Thu, 07 May 2015 | 12:07:19 GMT</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -230,20 +247,27 @@
       </div>
     </footer>
 
-    <!-- jQuery JS -->
-    <script src="libs/jquery_1.11.0/js/jquery.min.js"></script>
-    
+    <!-- Jquery/Jquery UI JS -->
+    <script src="libs/jquery_1.11.0/jquery-1.11.3.min.js"></script>
+    <script src="libs/jquery-ui_1.11.4/jquery-ui.min.js"></script>
+
     <!-- Bootstrap JS -->
     <script src="libs/bootstrap_3.3.5/js/bootstrap.min.js"></script>
-    
+
     <!-- Data Tables JS -->
-    <script src="libs/data-tables_1.10.7/js/jquery.dataTables.min.js"></script>
-    <script src="libs/data-tables_1.10.7/js/dataTables.bootstrap.js"></script>
-    <script src="libs/data-tables_1.10.7/js/dataTables.responsive.js"></script>
-    
+    <script src="libs/data-tables_1.10.7/media/js/jquery.dataTables.min.js"></script>
+    <script src="libs/data-tables_1.10.7/extensions/Bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src="libs/data-tables_1.10.7/extensions/Responsive/js/dataTables.responsive.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="libs/select2_4.0.0/js/select2.full.min.js"></script>
+
+    <!-- Noty JS -->
+    <script src="libs/noty_2.3.5/packaged/jquery.noty.packaged.min.js"></script>
+
     <!-- Theme WSO2 JS -->
     <script src="libs/theme-wso2_1.0/js/theme-wso2.js"></script>
-    
+
     <!-- Custom JS -->
     <script src="js/handlebars-v3.0.3.js"></script>
     <script src="js/custom.js"></script>

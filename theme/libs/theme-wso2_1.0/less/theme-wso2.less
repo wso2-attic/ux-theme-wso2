@@ -28,11 +28,13 @@
 @base-dark-color: #222;
 @base-light-color: #fff;
 @primary-color: #2c313b;
-@optional-color: #F47415;
+@optional-color: #007D85;
 
 @navbar-height: 50px;
 @navbar-padding: 0 15px;
 @navbar-color1: #4D5461;
+
+@navbrand-background-color: darken(@optional-color, 15%);
 
 @footer-height: 40px;
 @footer-background: @base-dark-color;
@@ -217,14 +219,14 @@ br.spacer {
  * ======================================================================== */
 
 .row.no-gutter {
-  margin-right: 0;
-  margin-left: 0;
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .row.no-gutter [class*='col-']:not(:first-child),
 .row.no-gutter [class*='col-']:not(:last-child) {
-  padding-right:0;
-  padding-left:0;
+    padding-right:0;
+    padding-left:0;
 }
 
 .col-fixed-fill {
@@ -481,7 +483,7 @@ header .dropdown-menu .dropdown-header {
     padding: 0 15px;
     line-height: @navbar-height;
     text-transform: uppercase;
-    background: #383838;
+    background: @navbrand-background-color;
 }
 
 .navbar > .container .navbar-brand a,
@@ -1011,6 +1013,13 @@ input[type=number].form-control {
     border-color: @primary-color;
 }
 
+/* ========================================================================
+ * noty styles
+ * ======================================================================== */
+
+#noty_topRight_layout_container {
+    margin-top: 100px !important;
+}
 
 /* ========================================================================
  * custom styles

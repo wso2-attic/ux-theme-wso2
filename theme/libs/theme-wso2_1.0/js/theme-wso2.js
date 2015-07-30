@@ -212,4 +212,5 @@ $(document).ready(function(){
         e.stopPropagation();
     });
     $(".icon .text").res_text(0.2);
+    $('.select2').select2();
 });
