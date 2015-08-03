@@ -70,43 +70,17 @@ $(function(){
      ***********************************************************/
     noty({
         layout: 'topRight',
-        text: 'Hey! This is just a notification... ',
+        text: 'Hey! This is just a "noty" notification... ',
         template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
         type: 'information',
-        theme: 'relax',
+        theme: 'wso2',
         animation: {
             open: 'animated fadeInDown',
             close: 'animated fadeOutUp',
             easing: 'swing',
             speed: 500
-        },
-        //timeout: 5000,
-        closeWith: ['button']
-    });
-
-
-    /***********************************************************
-     *  handlebars
-     ***********************************************************/
-    /* table data appending function */
-    var dataObj =
-    { members: [
-        {
-            member: { first:"Jerad", last:"Rutnam"},
-            company: "WSO2",
-            designation: "Software Engineer"
-        },
-        {
-            member: { first:"David", last:"Brooke"},
-            company: "Google"
         }
-    ]};
-
-    Handlebars.registerHelper('fullName', function(member){
-        return member.first + ' ' + member.last;
+        //timeout: 8000
     });
-
-    var template = Handlebars.compile($('#template').html());
-    $('#members').append(template(dataObj));
 
 });
