@@ -21,6 +21,8 @@ if (typeof(jQuery) === 'undefined') {
     throw 'jQuery is required.';
 }
 
+var resTextRatio = 0.2;
+
 (function($) {
 
     /* ========================================================================
@@ -184,7 +186,7 @@ if (typeof(jQuery) === 'undefined') {
             /**
              * resizer() resizes items based on the object width divided by the compressor * 10
              */
-            var resizer = function () {
+            var resizer = function() {
                 $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
             };
 
@@ -202,6 +204,80 @@ if (typeof(jQuery) === 'undefined') {
 
     };
 
+    /* ========================================================================
+     * datatables_extended function
+     * ======================================================================== */
+    $.fn.datatables_extended = function(settings){
+
+        var elem = $(this);
+
+        $(elem).DataTable(
+            $.extend({},{
+                bSortCellsTop: true,
+                responsive: true,
+                initComplete: function() {
+                    this.api().columns().every(function () {
+
+                        var column = this;
+                        var filterColumn = $('.filter-row th', elem);
+
+                        if (filterColumn.eq(column.index()).hasClass('select-filter')) {
+                            var select = $('<select class="form-control"><option value="">All</option></select>')
+                                .appendTo(filterColumn.eq(column.index()).empty())
+                                .on('change', function () {
+                                    var val = $.fn.dataTable.util.escapeRegex(
+                                        $(this).val()
+                                    );
+
+                                    column
+                                        .search(val ? '^' + val + '$' : '', true, false)
+                                        .draw();
+                                });
+
+                            $(column).each(function () {
+                                if ($(column.nodes()).attr('data-search')) {
+                                    var titles = [];
+                                    column.nodes().unique().sort().each(function (d, j) {
+                                        var title = $(d).attr('data-display');
+                                        if ($.inArray(title, titles) < 0) {
+                                            titles.push(title);
+                                            if (title !== undefined) {
+                                                select.append('<option value="' + title + '">' + title + '</option>')
+                                            }
+                                        }
+                                    });
+                                }
+                                else {
+                                    column.data().unique().sort().each(function (d, j) {
+                                        select.append('<option value="' + d + '">' + d + '</option>')
+                                    });
+                                }
+                            });
+                        }
+                        else if (filterColumn.eq(column.index()).hasClass('text-filter')) {
+
+                            var title = filterColumn.eq(column.index()).attr('data-for');
+                            $(filterColumn.eq(column.index()).empty()).html('<input type="text" class="form-control" placeholder="Search for ' + title + '" />');
+
+                            filterColumn.eq(column.index()).find('input').on('keyup change', function () {
+                                column
+                                    .search($(this).val())
+                                    .draw();
+                            });
+                        }
+
+                    });
+                    $(".icon .text").res_text(resTextRatio);
+                }
+            },settings)
+        );
+
+        $('[data-click-event=toggle-list-view]').click(function(){
+            $('#device-grid').toggleClass('grid-view');
+        });
+    };
+
+
 }(jQuery));
 
 $(document).ready(function(){
@@ -211,6 +287,22 @@ $(document).ready(function(){
     $('.dropdown-menu input').click(function(e){
         e.stopPropagation();
     });
-    $(".icon .text").res_text(0.2);
+    $(".icon .text").res_text(resTextRatio);
     $('.select2').select2();
+
 });
+
+$(window).scroll(function(){
+    $(".icon .text").res_text(resTextRatio);
+});
+
+$(document).bind('click', function() {
+    $(".icon .text").res_text(resTextRatio);
+});
+
+
+
+
+
+
+

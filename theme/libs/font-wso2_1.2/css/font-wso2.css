@@ -210,7 +210,18 @@
 /* ========================================================================
  * font icons
  * ======================================================================== */
-
+.fw-mouse-pointer:before {
+	content: "\e6b1";
+}
+.fw-pointer:before {
+	content: "\e6b2";
+}
+.fw-hand:before {
+	content: "\e6b3";
+}
+.fw-question-mark:before {
+	content: "\e6b4";
+}
 .fw-airplay:before {
 	content: "\e600";
 }
@@ -298,9 +309,6 @@
 .fw-enterprise-wipe:before {
 	content: "\e62f";
 }
-.fw-enterprise-app:before {
-	content: "\e62e";
-}
 .fw-cloud:before {
 	content: "\e61e";
 }
@@ -324,6 +332,9 @@
 }
 .fw-view:before {
 	content: "\e691";
+}
+.fw-focus:before {
+	content: "\e6b5";
 }
 .fw-delete:before {
 	content: "\e624";
@@ -367,14 +378,35 @@
 .fw-file-browse:before {
 	content: "\e633";
 }
+.fw-grouping:before {
+	content: "\e6af";
+}
+.fw-folder:before {
+	content: "\e6b6";
+}
 .fw-filter:before {
 	content: "\e634";
+}
+.fw-sort:before {
+	content: "\e673";
+}
+.fw-sort-up:before {
+	content: "\e64b";
+}
+.fw-sort-down:before {
+	content: "\e663";
+}
+.fw-faq:before {
+	content: "\e6b7";
 }
 .fw-message:before {
 	content: "\e635";
 }
 .fw-forum:before {
 	content: "\e636";
+}
+.fw-chat:before {
+	content: "\e6b8";
 }
 .fw-mail:before {
 	content: "\e64f";
@@ -406,9 +438,6 @@
 .fw-list-sort:before {
 	content: "\e64d";
 }
-.fw-sort:before {
-	content: "\e673";
-}
 .fw-lock:before {
 	content: "\e64e";
 }
@@ -421,6 +450,9 @@
 .fw-mobile:before {
 	content: "\e652";
 }
+.fw-ringing:before {
+	content: "\e694";
+}
 .fw-computer:before {
 	content: "\e653";
 }
@@ -429,6 +461,9 @@
 }
 .fw-mute:before {
 	content: "\e655";
+}
+.fw-unmute:before {
+	content: "\e6ae";
 }
 .fw-ok:before {
 	content: "\e657";
@@ -451,14 +486,14 @@
 .fw-pie-chart:before {
 	content: "\e65a";
 }
+.fw-bar-chart:before {
+	content: "\e6b0";
+}
 .fw-publish:before {
 	content: "\e65c";
 }
 .fw-resource:before {
 	content: "\e660";
-}
-.fw-ring-message:before {
-	content: "\e663";
 }
 .fw-rules:before {
 	content: "\e664";
@@ -484,11 +519,26 @@
 .fw-database:before {
 	content: "\e623";
 }
+.fw-hardware:before {
+	content: "\e6a9";
+}
+.fw-signal:before {
+	content: "\e6b9";
+}
+.fw-raspberry:before {
+	content: "\e6aa";
+}
+.fw-arduino:before {
+	content: "\e6ab";
+}
 .fw-share:before {
 	content: "\e670";
 }
 .fw-star:before {
 	content: "\e674";
+}
+.fw-coins:before {
+	content: "\e6ba";
 }
 .fw-statistics:before {
 	content: "\e675";
@@ -498,6 +548,12 @@
 }
 .fw-subscribe:before {
 	content: "\e677";
+}
+.fw-fan:before {
+	content: "\e6bb";
+}
+.fw-light:before {
+	content: "\e6bc";
 }
 .fw-subscribed-calendar:before {
 	content: "\e678";
@@ -562,17 +618,14 @@
 .fw-right-arrow:before {
 	content: "\e68b";
 }
-.fw-uri:before {
-	content: "\e68d";
-}
 .fw-endpoint:before {
 	content: "\e62d";
 }
+.fw-uri:before {
+	content: "\e68d";
+}
 .fw-broken-link:before {
 	content: "\e610";
-}
-.fw-link:before {
-	content: "\e64b";
 }
 .fw-user:before {
 	content: "\e68f";
@@ -598,20 +651,29 @@
 .fw-schema:before {
 	content: "\e667";
 }
+.fw-organization:before {
+	content: "\e6ac";
+}
+.fw-public:before {
+	content: "\e6ad";
+}
 .fw-bpel:before {
 	content: "\e60e";
 }
 .fw-application:before {
 	content: "\e608";
 }
-.fw-web-app:before {
-	content: "\e696";
+.fw-applications:before {
+	content: "\e609";
 }
 .fw-public-app:before {
 	content: "\e65b";
 }
-.fw-applications:before {
-	content: "\e609";
+.fw-enterprise-app:before {
+	content: "\e62e";
+}
+.fw-web-app:before {
+	content: "\e696";
 }
 .fw-globe:before {
 	content: "\e697";
@@ -715,3 +777,4 @@
 .fw-wso2:before {
 	content: "\e6a8";
 }
+

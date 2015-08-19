@@ -166,13 +166,13 @@ body {
 
 body > .container,
 body > .container-fluid {
-    padding: 40px 20px 60px;
+    padding: 20px 20px 60px;
 }
 
 @media only screen and (min-width: 768px) {
     body > .container,
     body > .container-fluid {
-        margin: 4%;
+        margin: 3% 4% 4%;
         padding: 0;
     }
 }
@@ -324,16 +324,9 @@ header .brand a {
     min-height: 24px;
 }
 
-header .dropdown-menu {
-    padding: 10px;
-    background: #777;
-    color: #fff;
-    .border-radius;
-    .box-shadow;
-}
-
 header .dropdown-menu .dropdown-header {
     color: #fff;
+    display: none;
 }
 
 header .dropdown {
@@ -343,10 +336,20 @@ header .dropdown {
     text-transform: capitalize;
 }
 
-header .dropdown-menu:after {
+header .pull-right.auth .dropdown-menu {
+  padding: 10px;
+  background: #777;
+  color: #fff;
+  right: 5px;
+  .border-radius;
+  .box-shadow;
+}
+
+header .pull-right.auth .dropdown-menu:after {
     position: absolute;
     top: -6px;
-    left: 10px;
+    left: auto;
+    right: 12px;
     display: inline-block;
     border-right: 6px solid transparent;
     border-bottom: 6px solid #777;
@@ -354,21 +357,9 @@ header .dropdown-menu:after {
     content: '';
 }
 
-header .pull-right.auth .dropdown-menu:after {
-    left: auto;
-    right: 10px;
-}
-
-header .pull-right.auth .dropdown-menu {
-    right: 5px;
-}
-
-header .dropdown .icon {
+header .pull-right.auth .dropdown .icon {
     margin-left: 2px;
-}
-
-header .dropdown-menu .dropdown-header {
-    display: none;
+    width: 1em;
 }
 
 @media only screen and (max-width: 768px) {
@@ -437,6 +428,10 @@ header .dropdown-menu .dropdown-header {
 .navbar .container > .navbar-header {
     padding: 0;
     margin: 0;
+
+    & .icon {
+        margin-bottom: 4px;
+    }
 }
 
 .navbar-nav {
@@ -452,7 +447,7 @@ header .dropdown-menu .dropdown-header {
 .navbar-tiles-toggle {
     float: left;
     height: @navbar-height;
-    padding: 0 15px;
+    padding: 0 8px;
     line-height: @navbar-height;
     font-size: 18px;
     background: @optional-color;
@@ -530,7 +525,7 @@ header .dropdown-menu .dropdown-header {
 }
 
 .breadcrumb > li > a > .icon {
-    padding-bottom: 5px;
+    padding-bottom: 3px;
 }
 
 /* ========================================================================
@@ -597,7 +592,7 @@ footer a {
 
 .popover {
     background: @popover-background-color;
-    max-width: 384px;
+    max-width: 385px;
     .border-radius;
     .box-shadow;
     .clearfix;
@@ -781,6 +776,11 @@ footer a {
     margin-top: 4px;
 }
 
+/* ui fixes */
+#dp_swf_engine {
+    display: none;
+}
+
 /* ========================================================================
  * form styles
  * ======================================================================== */
@@ -801,17 +801,34 @@ footer a {
 }
 
 a.btn, .btn {
-    &, &:hover, &:focus {
-        text-decoration: none;
-    }
-}
+    text-decoration: none;
 
-a.btn, .btn {
     & .icon-caret {
         padding: 0 0 0 8px;
         margin-left: 5px;
         border-left: 1px solid #e4e4e4;
     }
+    &.active, &:active {
+        .box-shadow;
+    }
+    &:hover, &:focus {
+        text-decoration: none;
+        background: #eee;
+    }
+}
+
+.btn-primary {
+    color: @button-primary-color;
+    background-color: @button-primary-background-color;
+    border-color: @button-border;
+
+    &:hover {
+        background-color: @button-primary-hover-background-color;
+    }
+}
+
+.remove-icon-ring-on-hover:hover .fw-ring {
+    display: none;
 }
 
 .form-control {
@@ -867,16 +884,6 @@ input[type=number].form-control {
 .file-upload-control input[readonly] {
     background-color: white !important;
     cursor: text !important;
-}
-
-.btn-primary {
-    color: @button-primary-color;
-    background-color: @button-primary-background-color;
-    border-color: @button-border;
-
-    &:hover {
-        background-color: @button-primary-hover-background-color;
-    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -971,6 +978,192 @@ input[type=number].form-control {
     }
 }
 
+
+/* ========================================================================
+ * list table styles
+ * ======================================================================== */
+
+.table.list-table {
+    width: 100%;
+}
+
+.table.list-table {
+    & > tbody > tr > td,
+    & > tbody > tr > th,
+    & > tfoot > tr > td,
+    & > tfoot > tr > th,
+    & > thead > tr > td,
+    & > thead > tr > th {
+        border: none;
+        padding: 8px;
+        vertical-align: middle;
+        overflow: hidden;
+    }
+}
+
+.table.list-table tr {
+    border-bottom: 5px solid transparent;
+}
+
+.table.list-table > tbody > tr:nth-of-type(odd),
+.table.list-table > tbody > tr:nth-of-type(even) {
+    background-color: transparent;
+}
+
+table.list-table > tbody > tr.child ul {
+    text-align: left;
+    display: block;
+}
+
+.table.list-table:not(.grid-view) .content-fill {
+    width: 1%;
+}
+
+.table.list-table:not(.grid-view) {
+    & > tbody > tr > td,
+    & > tbody > tr > th,{
+        background: #f1f1f1;
+    }
+}
+
+.table.list-table:not(.grid-view) .thumbnail {
+    max-width: 60px;
+    min-width: 60px;
+}
+
+.table.list-table.grid-view > thead > tr {
+    width: auto;
+}
+
+.table.list-table.grid-view {
+    & > tbody > tr > td,
+    & > tbody > tr > th,
+    & > tfoot > tr > td,
+    & > tfoot > tr > th {
+        display: block;
+        white-space: nowrap;
+    }
+    & > thead > tr > td,
+    & > thead > tr > th {
+        display: inline-block;
+    }
+    & > thead > tr > td:not(:empty):before,
+    & > thead > tr > th:not(:empty):before {
+        content: attr(data-for);
+    }
+    & > thead > tr > td.sorting,
+    & > thead > tr > th.sorting {
+        display: none;
+    }
+}
+
+.table.list-table.grid-view tr {
+    display: inline-block;
+    padding: 8px;
+    margin: 5px;
+    width: 9.42%;
+}
+
+.table.list-table.grid-view .filter-row {
+    background: #e4e4e4;
+}
+
+.table.list-table.grid-view .sort-row {
+    display: none;
+}
+
+.table.list-table.grid-view tr td {
+    padding: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .table.list-table.grid-view {
+        & > thead > tr,
+        & > thead > tr > td,
+        & > thead > tr > th {
+            display: block;
+        }
+    }
+}
+
+/* ========================================================================
+ * data table styles
+ * ======================================================================== */
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after {
+    font-family: 'font-wso2';
+}
+
+table.dataTable thead .sorting:after {
+    content: "\e673";
+}
+
+table.dataTable thead .sorting_asc:after {
+    content: "\e64b";
+}
+
+table.dataTable thead .sorting_desc:after {
+    content: "\e663";
+}
+
+table.dataTable thead .sorting {
+    padding-right: 30px !important;
+}
+
+table.dataTable thead .no-sort:after {
+    display: none!important;
+}
+
+table.dataTable thead .no-sort {
+    pointer-events: none!important;
+    cursor: default!important;
+}
+
+table.dataTable tr.filter-row td,
+table.dataTable tr.filter-row th {
+    padding: 0 8px 10px;
+}
+
+div.dataTables_wrapper > div.row > div,
+div.dataTables_length,
+div.dataTables_info {
+    text-align: left;
+}
+
+div.dataTables_filter,
+div.dataTables_paginate {
+    text-align: right;
+}
+
+.table.dataTable tbody tr.active td,
+.table.dataTable tbody tr.active th,
+.table.dataTable tbody tr.active:hover td,
+.table.dataTable tbody tr.active:hover th {
+    background-color: @primary-color !important;
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr {
+    & > td:first-child:before,
+    & > th:first-child:before {
+        top: 50%;
+        left: 10px;
+        margin-top: -8px;
+    }
+    & > td:first-child:first-child,
+    & > th:first-child:first-child {
+        padding-left: 40px !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+      div.dataTables_filter,
+      div.dataTables_paginate {
+          text-align: left;
+      }
+}
+
 /* ========================================================================
  * thumbnail styles
  * ======================================================================== */
@@ -1003,19 +1196,56 @@ input[type=number].form-control {
  * pagination styles
  * ======================================================================== */
 
-.pagination > .active > a,
-.pagination > .active > a:focus,
-.pagination > .active > a:hover,
-.pagination > .active > span,
-.pagination > .active > span:focus,
-.pagination > .active > span:hover {
-    background: @primary-color;
-    border-color: @primary-color;
+.pagination > li {
+    & > a,
+    & > a:focus,
+    & > a:hover,
+    & > span,
+    & > span:hover{
+        text-decoration: none;
+        color: @primary-color;
+    }
+}
+
+.pagination > li{
+    &:first-child > a,
+    &:first-child > span,
+    &:last-child > a,
+    &:last-child > span {
+        .border-radius;
+    }
+}
+
+.pagination > .active {
+    & > a,
+    & > a:focus,
+    & > a:hover,
+    & > span,
+    & > span:focus,
+    & > span:hover {
+        background: @primary-color;
+        border-color: @primary-color;
+    }
+}
+
+.pagination > .disabled {
+    & > a,
+    & > a:focus,
+    & > a:hover,
+    & > span,
+    & > span:focus,
+    & > span:hover {
+        /*opacity: 0.2;*/display: none;
+    }
 }
 
 /* ========================================================================
  * noty styles
  * ======================================================================== */
+
+#noty_topRight_layout_container {
+    position: absolute !important;
+}
 
 #noty_topRight_layout_container, #noty_topLeft_layout_container {
     margin-top: 100px !important;
@@ -1027,7 +1257,7 @@ input[type=number].form-control {
     padding: 10px 20px;
 }
 
-.noty_container_type {   
+.noty_container_type {
     &_notification {
         background-color: @base-dark-color;
         color: @base-light-color;
@@ -1050,9 +1280,11 @@ input[type=number].form-control {
     }
 }
 
-@media only screen and (max-width: 480px) {
-    #noty_topRight_layout_container, #noty_topLeft_layout_container, .noty_bar {
+@media only screen and (max-width: 768px) {
+    #noty_topRight_layout_container, .noty_container_type_information, #noty_topLeft_layout_container, .noty_bar {
         width: 100% !important;
+        left: 0;
+        right: 0;
     }
 }
 

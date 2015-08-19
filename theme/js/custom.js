@@ -42,28 +42,21 @@ $(function(){
     /***********************************************************
      *  data-tables config
      ***********************************************************/
-    // Setup - add a text input to each footer cell
-    $('.data-table tfoot th').each( function () {
-        var title = $('.data-table thead th').eq($(this).index()).text();
-        $(this).html( '<input type="text" class="form-control" placeholder="Search '+title+'" />' );
-    } );
-
-    // DataTable
-    var table = $('.data-table').DataTable({
-        responsive: true
+    $('#ajax-table').datatables_extended({
+        "ajax": "data/table.json",
+        "columns": [
+            { "data": "ID" },
+            { "data": "Device_Type" },
+            { "data": "OS" },
+            { "data": "Name" },
+            { "data": "Email" },
+            { "data": "Position" },
+            { "data": "Office" },
+            { "data": "Age" },
+            { "data": "Start_date" },
+            { "data": "Salary" }
+        ]
     });
-
-    // Apply the search
-    table.columns().every( function () {
-        var that = this;
-
-        $('input', this.footer()).on('keyup change', function() {
-            that
-                .search(this.value)
-                .draw();
-        });
-    });
-
 
     /***********************************************************
      *  noty config
@@ -74,13 +67,13 @@ $(function(){
         template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
         type: 'information',
         theme: 'wso2',
+        //timeout: 8000,
         animation: {
             open: 'animated fadeInDown',
             close: 'animated fadeOutUp',
             easing: 'swing',
             speed: 500
         }
-        //timeout: 8000
     });
 
 });
