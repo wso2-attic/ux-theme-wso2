@@ -1,9 +1,11 @@
 @echo off
 title Deploy theme files to gh-pages brunch
 
-echo "theme" folder contains will deploy to gh-pages brunch
+echo.
 echo =========================================================
+echo "theme" folder contains will deploy to gh-pages brunch
 echo please commit all the changes before continue
+echo =========================================================
 echo.
 
 SET /P ANSWER=Do you want to continue (Y/N)? 
