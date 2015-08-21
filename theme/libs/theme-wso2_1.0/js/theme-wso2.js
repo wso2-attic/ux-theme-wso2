@@ -93,38 +93,13 @@ var resTextRatio = 0.2;
         });
     };
 
-
-    /* ========================================================================
-     * extended popover function
-     * ======================================================================== */
-    $.fn.popover_extended = function(){
-        var elem = $(this);
-
-        /**
-         * button click function
-         */
-        $(elem).click(function(e){
-            e.preventDefault();
-            $(elem).not(this).next('.popover').removeClass('in').hide();
-            $(this).next('.popover').toggle().toggleClass('in');
-        });
-
-        /**
-         * Bind popover hide function to the document.
-         */
-        $(document).bind('click', function(e) {
-            if(($(e.target).closest(elem).length !== 1) && ($(e.target).closest('.popover').length === 0)){
-                $(elem).next('.popover').removeClass('in').hide();
-            }
-        });
-    };
-
-
     /* ========================================================================
      * input file browse function
      * ======================================================================== */
     $.file_input = function(){
         var elem = '.file-upload-control';
+
+
         return $(elem).each(function(){
 
             /**
@@ -214,13 +189,29 @@ var resTextRatio = 0.2;
         $(elem).DataTable(
             $.extend({},{
                 bSortCellsTop: true,
-                responsive: true,
+                responsive: false,
+                autoWidth: false,
+                dom:'<"dataTablesTop well"' +
+                        'f' +
+                        '<"dataTables_toolbar">' +
+                    '>' +
+                    'rt' +
+                    '<"dataTablesBottom"' +
+                        'lip' +
+                    '>',
+                language: {
+                    searchPlaceholder: 'Filter by ...',
+                    search: ''
+                },
                 initComplete: function() {
-                    this.api().columns().every(function () {
+                    this.api().columns().every(function() {
 
                         var column = this;
                         var filterColumn = $('.filter-row th', elem);
 
+                        /**
+                         *  Create & add select/text filters to each column
+                         */
                         if (filterColumn.eq(column.index()).hasClass('select-filter')) {
                             var select = $('<select class="form-control"><option value="">All</option></select>')
                                 .appendTo(filterColumn.eq(column.index()).empty())
@@ -255,7 +246,6 @@ var resTextRatio = 0.2;
                             });
                         }
                         else if (filterColumn.eq(column.index()).hasClass('text-filter')) {
-
                             var title = filterColumn.eq(column.index()).attr('data-for');
                             $(filterColumn.eq(column.index()).empty()).html('<input type="text" class="form-control" placeholder="Search for ' + title + '" />');
 
@@ -267,14 +257,82 @@ var resTextRatio = 0.2;
                         }
 
                     });
+
+                    /**
+                     *  fix: icon text resize function call
+                     */
                     $(".icon .text").res_text(resTextRatio);
+
+                    /**
+                     *  search input default styles override
+                     */
+                    var search_input = $(this).closest('.dataTables_wrapper').find('div[id$=_filter] input');
+                    search_input.before('<i class="fw fw-search search-icon"></i>').removeClass('input-sm');
+
+                    /**
+                     *  create sorting dropdown menu for list table advance operations
+                     */
+                    var dropdownmenu = $('<ul class="dropdown-menu arrow arrow-top-right dark sort-list"></ul>');
+                    $('.sort-row th', elem).each(function(){
+                        if(!$(this).hasClass('no-sort')){
+                            dropdownmenu.append('<li><a href="#' + $(this).html() + '" data-column="' + $(this).index() + '">' + $(this).html() + '</a></li>');
+                        }
+                    });
+
+                    /**
+                     *  sorting dropdown menu select function
+                     */
+                    $('.dataTables_wrapper .sort-list li a').click(function() {
+                        $(this).closest('li').siblings('li').find('a').removeClass('sorting_asc').removeClass('sorting_desc');
+
+                        var table = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
+
+                        if (!($(this).hasClass('sorting_asc')) && !($(this).hasClass('sorting_desc'))) {
+                            $(this).addClass('sorting_asc');
+                            table.fnSort( [ [$(this).attr('data-column'),'asc'] ] );
+                        }
+                        else if($(this).hasClass('sorting_asc')) {
+                            $(this).switchClass('sorting_asc', 'sorting_desc');
+                            table.fnSort( [ [$(this).attr('data-column'),'desc'] ] );
+                        }
+                        else if($(this).hasClass('sorting_desc')) {
+                            $(this).switchClass('sorting_desc', 'sorting_asc');
+                            table.fnSort( [ [$(this).attr('data-column'),'asc'] ] );
+                        }
+                    });
+
+                    /**
+                     *  append advance operations to list table toolbar
+                     */
+                    $('.dataTable.list-table').closest('.dataTables_wrapper').find('.dataTablesTop .dataTables_toolbar').html('' +
+                        '<ul class="nav nav-pills navbar-right remove-margin" role="tablist">' +
+                        '<li><button data-click-event="toggle-list-view" data-view="grid" class="btn btn-default"><i class="fw fw-grid"></i></button></li>' +
+                        '<li><button data-click-event="toggle-list-view" data-view="list" class="btn btn-default"><i class="fw fw-list"></i></button></li>' +
+                        '<li><button class="btn btn-default" data-toggle="dropdown"><i class="fw fw-list-sort"></i></button>'+dropdownmenu[0].outerHTML+'</li>' +
+                        '</ul>'
+                    );
+
+                    /**
+                     *  list table list/grid view toggle function
+                     */
+
+                    var toggleButton = $('[data-click-event=toggle-list-view]');
+                    toggleButton.click(function(){
+                        if($(this).attr('data-view') == 'grid') {
+                            $(this).closest('.dataTables_wrapper').find('.dataTable').addClass('grid-view');
+                            $(this).siblings(toggleButton).removeClass('active');
+                            $(this).addClass('active');
+                        }
+                        else {
+                            $(this).closest('.dataTables_wrapper').find('.dataTable').removeClass('grid-view');
+                            $(this).siblings(toggleButton).removeClass('active');
+                            $(this).addClass('active');
+                        }
+                    });
                 }
             },settings)
         );
 
-        $('[data-click-event=toggle-list-view]').click(function(){
-            $('#device-grid').toggleClass('grid-view');
-        });
     };
 
 
@@ -283,7 +341,6 @@ var resTextRatio = 0.2;
 $(document).ready(function(){
     //$.browser_meta();
     $.file_input();
-    $('[data-click-event=popover]').popover_extended();
     $('.dropdown-menu input').click(function(e){
         e.stopPropagation();
     });
