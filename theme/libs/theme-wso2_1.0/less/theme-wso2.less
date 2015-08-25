@@ -21,6 +21,7 @@
 @font-face {.font( 'Roboto'; 300; 'normal'; 'Roboto Light'; 'Roboto-Light-webfont' )}
 
 @font-default: 'Roboto Light', Arial, Helvetica, sans-serif;
+@font-icons: 'font-wso2';
 @font-default-weight: 300;
 @border-radius-default: 0;
 @box-shadow-default: none;
@@ -33,8 +34,8 @@
 @navbar-height: 50px;
 @navbar-padding: 0 15px;
 @navbar-color1: #4D5461;
-
-@navbrand-background-color: darken(@optional-color, 15%);
+@navbar-background-color: @primary-color;
+@navbrand-background-color: darken(@navbar-background-color, 5%);
 
 @footer-height: 40px;
 @footer-background: @base-dark-color;
@@ -43,9 +44,11 @@
 @inverse-layout-background: @primary-color;
 @inverse-layout-color: @base-light-color;
 
-@loading-background-color: @base-dark-color;
 @loading-background-opacity: 0.9;
+@loading-background-color: @base-dark-color;
 @loading-color: @base-light-color;
+@loading-inverse-background-color: @base-light-color;
+@loading-inverse-color: @base-dark-color;
 
 @dropdown-menu-dark-background-color: @base-dark-color;
 @dropdown-menu-dark-color: @base-light-color;
@@ -146,6 +149,53 @@
     }
 }
 
+.fade-color(@color: #ffffff) {
+    &:after {
+        content: "";
+        background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, fade(@color, 0%)), color-stop(100%, fade(@color, 100%)));
+        background-image: -webkit-linear-gradient(left, fade(@color, 0%), fade(@color, 100%));
+        background: linear-gradient(to right, fade(@color, 0%), fade(@color, 100%));
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='#00@color', EndColorStr='@color');
+        bottom: 0;
+        max-height: 100%;
+        position: absolute;
+        right: 0;
+        height: 10000px;
+        width: 60px;
+    }
+}
+
+/* ========================================================================
+ * toggle icons
+ * ======================================================================== */
+
+[aria-expanded='true'] > .icon.toggle-icon.fw-stack {
+    & > .fw-up:before {
+        content: '\e685';
+    }
+    & > .fw-down:before {
+        content: '\e684';
+    }
+    & > .fw-left:before {
+        content: '\e687';
+    }
+    & > .fw-right:before {
+        content: '\e686';
+    }
+    & > .fw-up-arrow:before {
+        content: '\e689';
+    }
+    & > .fw-down-arrow:before {
+        content: '\e688';
+    }
+    & > .fw-left-arrow:before {
+        content: '\e68b';
+    }
+    & > .fw-right-arrow:before {
+        content: '\e68a';
+    }
+}
+
 /* ========================================================================
  * document styles
  * ======================================================================== */
@@ -208,6 +258,18 @@ br.spacer {
     padding: 4px 7px;
 }
 
+.no-wrap {
+    white-space: nowrap;
+}
+
+.fade-edge {
+    .fade-color;
+}
+
+body.inverse .fade-edge {
+    .fade-color(@inverse-layout-background);
+}
+
 .visible-block {
     display: block !important;
 }
@@ -252,10 +314,52 @@ br.spacer {
 
 .remove-padding {
     padding: 0 !important;
+
+    &-top {
+        padding-top: 0 !important;
+    }
+    &-bottom {
+        padding-bottom: 0 !important;
+    }
+    &-left {
+        padding-left: 0 !important;
+    }
+    &-right {
+        padding-right: 0 !important;
+    }
+    &-top-bottom {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    &-left-right {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 }
 
 .remove-margin {
     margin: 0 !important;
+
+    &-top {
+        margin-top: 0 !important;
+    }
+    &-bottom {
+        margin-bottom: 0 !important;
+    }
+    &-left {
+        margin-left: 0 !important;
+    }
+    &-right {
+        margin-right: 0 !important;
+    }
+    &-top-bottom {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    &-left-right {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
 }
 
 @media (max-width:767px){
@@ -474,7 +578,7 @@ header .pull-right.auth .dropdown .icon {
 }
 
 .navbar {
-    background: @primary-color;
+    background: @navbar-background-color;
     border: none;
     margin-bottom: 0;
     .border-radius;
@@ -514,10 +618,13 @@ header .pull-right.auth .dropdown .icon {
     font-size: 18px;
     background: @optional-color;
     color: @base-light-color;
-    
+
     &:hover, &:focus, &:active {
         color: @base-light-color;
         background: darken(@optional-color, 10%);
+    }
+    &[aria-expanded=true] {
+        background: darken(@optional-color, 8%);
     }
 }
 
@@ -565,6 +672,51 @@ header .pull-right.auth .dropdown .icon {
         background: @navbar-color1;
         color: @base-light-color;
     }
+}
+
+.navbar-collapse.dropdown {
+    background: @dropdown-menu-dark-background-color;
+    margin-right: -10px;
+    margin-left: -10px;
+    padding-bottom: 0;
+    display: none !important;
+    overflow: hidden !important;
+}
+
+.navbar-collapse.dropdown.collapsing {
+    display: block !important;
+}
+
+.navbar-collapse.dropdown.in {
+    display: block !important;
+    overflow: visible !important;
+}
+
+.navbar-collapse.tiles ul.nav li {
+    display: inline-block;
+    text-align: center;
+    margin: 10px 5px;
+}
+
+.navbar-collapse.tiles ul.nav li a {
+    text-decoration: none;
+    width: 120px;
+    height: 120px;
+    padding: 15px;
+    background: @dropdown-menu-dark-tiles-background-color;
+    display: block;
+    overflow: hidden;
+    line-height: 1.4em;
+}
+
+.navbar-collapse.tiles ul.nav li a:hover {
+    background: @dropdown-menu-dark-tiles-hover-background-color;
+}
+
+.navbar-collapse.tiles ul.nav li a i {
+    font-size: 46px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 /* ========================================================================
@@ -713,7 +865,7 @@ footer a {
     color: @dropdown-menu-dark-tiles-color;
     text-decoration: none;
     background: @dropdown-menu-dark-tiles-background-color;
-    
+
     &:hover {
         background: @dropdown-menu-dark-tiles-hover-background-color;
     }
@@ -742,7 +894,7 @@ footer a {
     position: relative;
 }
 
-.loading .loading-bg {
+.loading[data-loading-style=overlay] .loading-bg {
     background: @loading-background-color;
     position: absolute;
     opacity: @loading-background-opacity;
@@ -751,24 +903,44 @@ footer a {
     z-index: 10000000;
 }
 
+.loading[data-loading-style=icon-only] .loading-bg {
+    display: none;
+}
+
+.loading[data-loading-inverse=true] .loading-bg {
+    background: @loading-inverse-background-color;
+}
+
 .loading .loading-animation {
     position: absolute;
     z-index: 10000001;
     top: 50%;
     left: 50%;
-    width: 50px;
+    width: 100px;
     height: 75px;
+    text-align: center;
     .transform(translate(-50%, -50%));
+}
+
+.loading .loading-animation .logo:before {
+    //content: url("../images/loading.svg");
 }
 
 .loading .loading-animation .logo {
     position: relative;
+    width: 50px;
+    margin: 0 auto;
 }
 
 .loading .loading-animation .logo .pulse-line,
 .loading .loading-animation .logo .circle {
     fill: none;
     stroke: @loading-color;
+}
+
+.loading[data-loading-inverse=true] .loading-animation .logo .pulse-line,
+.loading[data-loading-inverse=true] .loading-animation .logo .circle {
+    stroke: @loading-inverse-color;
 }
 
 .loading .loading-animation .logo .circle {
@@ -835,6 +1007,11 @@ footer a {
     text-align: center;
     font-size: 11px;
     margin-top: 4px;
+    text-transform: uppercase;
+}
+
+.loading[data-loading-inverse=true] .loading-animation p {
+    color: @loading-inverse-color;
 }
 
 /* ui fixes */
@@ -1059,6 +1236,10 @@ input[type=number].form-control {
         padding: 8px;
         vertical-align: middle;
         overflow: hidden;
+        position: relative;
+    }
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        margin: 0;
     }
 }
 
@@ -1066,14 +1247,67 @@ input[type=number].form-control {
     border-bottom: 5px solid transparent;
 }
 
+.table.list-table > thead > tr.sort-row {
+    display: none;
+}
+
 .table.list-table > tbody > tr:nth-of-type(odd),
 .table.list-table > tbody > tr:nth-of-type(even) {
     background-color: transparent;
 }
 
-table.list-table > tbody > tr.child ul {
+.table.list-table > tbody > tr.child ul {
     text-align: left;
     display: block;
+}
+
+.table.table-hover > tbody > tr:hover td {
+    background: #e4e4e4 !important;
+
+    &.fade-edge {
+        .fade-color(#e4e4e4);
+    }
+}
+
+.table.table-selectable > tbody > tr:hover {
+    cursor: pointer;
+}
+
+.table.table-selectable > tbody > tr:hover td:first-child:before,
+.table.table-selectable > tbody > tr[data-state=selected] td:first-child:before {
+    position: absolute;
+    display: block;
+    content: "";
+    background-color: transparent;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    height: .65rem;
+    width: 1.3rem;
+    z-index: 102;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    right: 0.3rem;
+    top: 0.3rem;
+}
+
+.table.table-selectable.grid-view > tbody > tr[data-state=selected] td:first-child {
+    border: 5px solid #007d85;
+}
+
+.table.table-selectable:not(.grid-view) > tbody > tr[data-state=selected] td {
+    background: #e4e4e4 !important;
+}
+
+.table.table-selectable > tbody > tr:hover td:first-child:after,
+.table.table-selectable > tbody > tr[data-state=selected] td:first-child:after {
+    position: absolute;
+    display: block;
+    border-top: 32px solid #007d85;
+    border-left: 32px solid transparent;
+    right: 0;
+    content: "";
+    top: 0;
+    z-index: 101;
 }
 
 .table.list-table:not(.grid-view) .content-fill {
@@ -1083,7 +1317,11 @@ table.list-table > tbody > tr.child ul {
 .table.list-table:not(.grid-view) {
     & > tbody > tr > td,
     & > tbody > tr > th,{
-        background: #f1f1f1;
+        background: #f5f5f5;
+
+        &.fade-edge:after {
+            display: none;
+        }
     }
 }
 
@@ -1104,6 +1342,13 @@ table.list-table > tbody > tr.child ul {
     & > tfoot > tr > th {
         display: block;
         white-space: nowrap;
+        padding: 10px 0;
+    }
+    & > tbody > tr > td[data-grid-label]:before,
+    & > tbody > tr > th[data-grid-label]:before {
+        content: attr(data-grid-label)+':';
+        font-weight: 600;
+        margin-right: 8px;
     }
     & > thead > tr > td,
     & > thead > tr > th {
@@ -1113,8 +1358,20 @@ table.list-table > tbody > tr.child ul {
     & > thead > tr > th:not(:empty):before {
         content: attr(data-for);
     }
-    & > thead > tr.sort-row {
+    .hidden-on-grid-view {
         display: none;
+    }
+    .padding-reduce-on-grid-view {
+        padding: 2px;
+    }
+    .text-left-on-grid-view {
+        text-align: left;
+    }
+    .text-right-on-grid-view {
+        text-align: right;
+    }
+    .text-center-on-grid-view {
+        text-align: center;
     }
 }
 
@@ -1150,9 +1407,6 @@ table.list-table > tbody > tr.child ul {
         & > thead > tr > th {
             display: block;
         }
-    }
-    .table.list-table.grid-view tr {
-
     }
 }
 @media (min-width:320px) and (max-width:479px){
@@ -1191,7 +1445,7 @@ table.dataTable thead .sorting_desc:after,
 .dataTables_wrapper ul.sort-list li a:before,
 .dataTables_wrapper ul.sort-list li a.sorting_asc:before,
 .dataTables_wrapper ul.sort-list li a.sorting_desc:before {
-    font-family: 'font-wso2';
+    font-family: @font-icons;
 }
 
 .dataTables_wrapper ul.sort-list li a:before,
@@ -1314,7 +1568,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
 .thumbnail.icon {
     border: none;
     margin: 0;
-    background: #777;
+    background: @primary-color;
     color: #fff;
     text-align: center;
     .square-ratio(1,1);
@@ -1425,6 +1679,45 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
         left: 0;
         right: 0;
     }
+}
+
+/* ========================================================================
+ * tiles styles
+ * ======================================================================== */
+
+ul.tiles {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.tiles li.square {
+    width: 120px;
+    .square-ratio(1,1);
+}
+
+ul.tiles li a {
+    text-decoration: none;
+    padding: 15px;
+    background: #444444;
+    color: @base-light-color;
+    display: block;
+    overflow: hidden;
+    line-height: 1.4em;
+    white-space: normal;
+}
+
+//.thumbnail.icon .square-element:before {
+//  position: absolute;
+//  top: 50%;
+//  left: 50%;
+//  .transform(translate(-50%, -50%));
+//}
+
+ul.tiles .icon {
+    font-size: 25px;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 /* ========================================================================

@@ -19,32 +19,11 @@
 $(function(){
 
     /***********************************************************
-     *  nav affix config
-     ***********************************************************/
-    /* on scroll navbar fixed top function */
-    var nav = $('.navbar');
-    nav.affix({
-        offset: {
-            top: nav.offset().top,
-            bottom: function (){
-                return (this.bottom = $('.footer').outerHeight(true))
-            }
-        }
-    });
-
-
-    /***********************************************************
-     *  loading
-     ***********************************************************/
-    //$('.body-wrapper').loading('show');
-
-
-    /***********************************************************
      *  data-tables config
      ***********************************************************/
     $('#ajax-table').datatables_extended({
-        "ajax": "data/table.json",
-        "columns": [
+        ajax: "data/table.json",
+        columns: [
             { "data": "ID" },
             { "data": "Device_Type" },
             { "data": "OS" },
@@ -55,25 +34,26 @@ $(function(){
             { "data": "Age" },
             { "data": "Start_date" },
             { "data": "Salary" }
-        ]
+        ],
+        responsive: true
     });
 
     /***********************************************************
      *  noty config
      ***********************************************************/
-    noty({
-        layout: 'topRight',
-        text: 'Hey! This is just a "noty" notification... ',
-        template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
-        type: 'information',
-        theme: 'wso2',
-        //timeout: 8000,
-        animation: {
-            open: 'animated fadeInDown',
-            close: 'animated fadeOutUp',
-            easing: 'swing',
-            speed: 500
-        }
-    });
+    //noty({
+    //    layout: 'topRight',
+    //    text: 'Hey! This is just a "noty" notification... ',
+    //    template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+    //    type: 'information',
+    //    theme: 'wso2',
+    //    //timeout: 8000,
+    //    animation: {
+    //        open: 'animated fadeInDown',
+    //        close: 'animated fadeOutUp',
+    //        easing: 'swing',
+    //        speed: 500
+    //    }
+    //});
 
 });
