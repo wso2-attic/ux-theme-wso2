@@ -55,6 +55,20 @@ var resTextRatio = 0.2;
 
 
     /* ========================================================================
+     * attribute toggle function
+     * ======================================================================== */
+    $.fn.toggleAttr = function(attr, attr1, attr2) {
+        return this.each(function() {
+            var self = $(this);
+            if (self.attr(attr) == attr1)
+                self.attr(attr, attr2);
+            else
+                self.attr(attr, attr1);
+        });
+    };
+
+
+    /* ========================================================================
      * add browser meta data to html tag
      * ======================================================================== */
      $.browser_meta = function(){
@@ -97,6 +111,7 @@ var resTextRatio = 0.2;
         });
         
     };
+
 
     /* ========================================================================
      * input file browse function
@@ -142,10 +157,11 @@ var resTextRatio = 0.2;
         });
     };
 
+
     /* ========================================================================
      * responsive text function
      * ======================================================================== */
-    $.fn.res_text = function(compress, options){
+    $.fn.responsive_text = function(compress, options){
 
         // Setup options
         var compressor = compress || 1,
@@ -182,6 +198,7 @@ var resTextRatio = 0.2;
 
     };
 
+
     /* ========================================================================
      * datatables_extended function
      * ======================================================================== */
@@ -194,7 +211,7 @@ var resTextRatio = 0.2;
                 bSortCellsTop: true,
                 responsive: false,
                 autoWidth: false,
-                dom:'<"dataTablesTop well"' +
+                dom:'<"dataTablesTop"' +
                         'f' +
                         '<"dataTables_toolbar">' +
                     '>' +
@@ -206,8 +223,9 @@ var resTextRatio = 0.2;
                     searchPlaceholder: 'Filter by ...',
                     search: ''
                 },
-                initComplete: function() {
-                    this.api().columns().every(function() {
+                initComplete: function(){
+
+                    this.api().columns().every(function(){
 
                         var column = this;
                         var filterColumn = $('.filter-row th', elem);
@@ -264,7 +282,7 @@ var resTextRatio = 0.2;
                     /**
                      *  fix: icon text resize function call
                      */
-                    $(".icon .text").res_text(resTextRatio);
+                    $(".icon .text").responsive_text(resTextRatio);
 
                     /**
                      *  search input default styles override
@@ -275,7 +293,7 @@ var resTextRatio = 0.2;
                     /**
                      *  create sorting dropdown menu for list table advance operations
                      */
-                    var dropdownmenu = $('<ul class="dropdown-menu arrow arrow-top-right dark sort-list"></ul>');
+                    var dropdownmenu = $('<ul class="dropdown-menu arrow arrow-top-right dark sort-list add-margin-top-2x"><li class="dropdown-header">Sort by</li></ul>');
                     $('.sort-row th', elem).each(function(){
                         if(!$(this).hasClass('no-sort')){
                             dropdownmenu.append('<li><a href="#' + $(this).html() + '" data-column="' + $(this).index() + '">' + $(this).html() + '</a></li>');
@@ -287,9 +305,10 @@ var resTextRatio = 0.2;
                      */
                     $('.dataTable.list-table').closest('.dataTables_wrapper').find('.dataTablesTop .dataTables_toolbar').html('' +
                         '<ul class="nav nav-pills navbar-right remove-margin" role="tablist">' +
-                        '<li><button data-click-event="toggle-list-view" data-view="grid" class="btn btn-default"><i class="fw fw-grid"></i></button></li>' +
-                        '<li><button data-click-event="toggle-list-view" data-view="list" class="btn btn-default"><i class="fw fw-list"></i></button></li>' +
-                        '<li><button class="btn btn-default" data-toggle="dropdown"><i class="fw fw-list-sort"></i></button>'+dropdownmenu[0].outerHTML+'</li>' +
+                            '<li><button data-click-event="toggle-selected" class="btn btn-default btn-primary">Select All</li>' +
+                            '<li><button data-click-event="toggle-list-view" data-view="grid" class="btn btn-default"><i class="fw fw-grid"></i></button></li>' +
+                            '<li><button data-click-event="toggle-list-view" data-view="list" class="btn btn-default"><i class="fw fw-list"></i></button></li>' +
+                            '<li><button class="btn btn-default" data-toggle="dropdown"><i class="fw fw-sort"></i></button>'+dropdownmenu[0].outerHTML+'</li>' +
                         '</ul>'
                     );
 
@@ -299,37 +318,75 @@ var resTextRatio = 0.2;
                     $('.dataTables_wrapper .sort-list li a').click(function() {
                         $(this).closest('li').siblings('li').find('a').removeClass('sorting_asc').removeClass('sorting_desc');
 
-                        var table = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
+                        var thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
 
                         if (!($(this).hasClass('sorting_asc')) && !($(this).hasClass('sorting_desc'))) {
                             $(this).addClass('sorting_asc');
-                            table.fnSort( [ [$(this).attr('data-column'),'asc'] ] );
+                            thisTable.fnSort( [ [$(this).attr('data-column'),'asc'] ] );
                         }
                         else if($(this).hasClass('sorting_asc')) {
                             $(this).switchClass('sorting_asc', 'sorting_desc');
-                            table.fnSort( [ [$(this).attr('data-column'),'desc'] ] );
+                            thisTable.fnSort( [ [$(this).attr('data-column'),'desc'] ] );
                         }
                         else if($(this).hasClass('sorting_desc')) {
                             $(this).switchClass('sorting_desc', 'sorting_asc');
-                            table.fnSort( [ [$(this).attr('data-column'),'asc'] ] );
+                            thisTable.fnSort( [ [$(this).attr('data-column'),'asc'] ] );
                         }
+                    });
+
+                    var rowSelectedClass = 'DTTT_selected selected';
+
+                    /**
+                     *  select/deselect all rows function
+                     */
+                    $('.dataTables_wrapper [data-click-event=toggle-selected]').click(function() {
+                        var button = this,
+                            thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
+
+                        if($(button).html() == 'Select All') {
+                            thisTable.api().rows().every(function () {
+                                $(this.node()).addClass(rowSelectedClass);
+                                $(button).html('Deselect All');
+                            });
+                        }
+                        else if($(button).html() == 'Deselect All') {
+                            thisTable.api().rows().every(function () {
+                                $(this.node()).removeClass(rowSelectedClass);
+                                $(button).html('Select All');
+                            });
+                        }
+                    });
+
+                    /**
+                     *  on row click select/deselect row function
+                     */
+                    $('body').on('click', '[data-type=selectable]', function(){
+                        var rowSelectedClass = 'DTTT_selected selected';
+                        $(this).toggleClass(rowSelectedClass);
+                        var button = this,
+                            thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
+
+                        thisTable.api().rows().every(function () {
+                            if(!$(this.node()).hasClass(rowSelectedClass)){
+                                $(button).closest('.dataTables_wrapper').find('[data-click-event=toggle-selected]').html('Select All');
+                            }
+                        });
                     });
 
                     /**
                      *  list table list/grid view toggle function
                      */
-
                     var toggleButton = $('[data-click-event=toggle-list-view]');
                     toggleButton.click(function(){
                         if($(this).attr('data-view') == 'grid') {
                             $(this).closest('.dataTables_wrapper').find('.dataTable').addClass('grid-view');
-                            $(this).siblings(toggleButton).removeClass('active');
-                            $(this).addClass('active');
+                            //$(this).closest('li').hide();
+                            //$(this).closest('li').siblings().show();
                         }
                         else {
                             $(this).closest('.dataTables_wrapper').find('.dataTable').removeClass('grid-view');
-                            $(this).siblings(toggleButton).removeClass('active');
-                            $(this).addClass('active');
+                            //$(this).closest('li').hide();
+                            //$(this).closest('li').siblings().show();
                         }
                     });
                 }
@@ -338,18 +395,14 @@ var resTextRatio = 0.2;
 
     };
 
+
     /* ========================================================================
-     * attribute toggle function
+     * tree-view function
      * ======================================================================== */
-    $.fn.toggleAttr = function(attr, attr1, attr2) {
-        return this.each(function() {
-            var self = $(this);
-            if (self.attr(attr) == attr1)
-                self.attr(attr, attr2);
-            else
-                self.attr(attr, attr1);
-        });
+    $.fn.tree_view = function() {
+
     };
+
 
 }(jQuery));
 
@@ -359,17 +412,17 @@ $(document).ready(function(){
     $('.dropdown-menu input').click(function(e){
         e.stopPropagation();
     });
-    $(".icon .text").res_text(resTextRatio);
+    $(".icon .text").responsive_text(resTextRatio);
     $('.select2').select2();
 
 });
 
 $(window).scroll(function(){
-    $(".icon .text").res_text(resTextRatio);
+    $(".icon .text").responsive_text(resTextRatio);
 });
 
 $(document).bind('click', function() {
-    $(".icon .text").res_text(resTextRatio);
+    $(".icon .text").responsive_text(resTextRatio);
 });
 
 $(function(){
@@ -384,11 +437,10 @@ $(function(){
      ***********************************************************/
     $('[data-state="loading"]').loading('show');
 
-    /***********************************************************
-     *  add selelcted class on click
-     ***********************************************************/
-    $('body').on('click', '[data-type=selectable]', function(){
-        $(this).toggleAttr('data-state', 'selected', '');
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $(".page-content-wrapper").toggleClass("toggled");
+        $(".sidebar-wrapper").toggleClass("toggled");
     });
 
 });
