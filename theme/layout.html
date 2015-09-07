@@ -147,7 +147,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-tiles-toggle" data-toggle="dropdown" href="#menu-toggle" id="menu-toggle">
+                    <a class="navbar-tiles-toggle" data-toggle="dropdown" href="#menu-toggle" id="sidebar-toggle">
                         <span class="icon fw-stack">
                             <i class="fw fw-menu fw-stack-1x"></i>
                         </span>
@@ -569,6 +569,57 @@
             <br class="spacer">
 
             <!-- ******************************************************************
+            Tree-view Template
+            ******************************************************************* -->
+
+            <div class="page-header" id="tree-view">
+                <h1>Tree View</h1>
+            </div>
+
+            <div class="well">
+                <ul id="tree1" class="tree-view tree-view-lines">
+                    <li aria-expanded="true"><a href="#">TECH</a>
+                        <ul>
+                            <li>Company Maintenance</li>
+                            <li>Employees
+                                <ul>
+                                    <li>Reports
+                                        <ul>
+                                            <li>Report1</li>
+                                            <li>Report2</li>
+                                            <li>Report3</li>
+                                        </ul>
+                                    </li>
+                                    <li>Employee Maint.</li>
+                                </ul>
+                            </li>
+                            <li>Human Resources</li>
+                        </ul>
+                    </li>
+                    <li>XRP
+                        <ul>
+                            <li>Company Maintenance</li>
+                            <li>Employees
+                                <ul>
+                                    <li>Reports
+                                        <ul>
+                                            <li>Report1</li>
+                                            <li>Report2</li>
+                                            <li>Report3</li>
+                                        </ul>
+                                    </li>
+                                    <li>Employee Maint.</li>
+                                </ul>
+                            </li>
+                            <li>Human Resources</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <br class="spacer">
+
+            <!-- ******************************************************************
             Table Template
             ******************************************************************* -->
             <div class="page-header" id="table">
@@ -723,6 +774,17 @@
                     </tr>
                     <tr class="bulk-action-row">
                         <th colspan="8">
+                            <div class="message message-info">
+                                <h4><i class="icon fw fw-info"></i>Minor Information Message</h4>
+                                <p>Alerts don't have default classes, only base and modifier classes. A default gray alert
+                                    doesn't make too much sense, so you're required to specify a type via contextual class.
+                                    Choose from success, info, warning, or danger.</p>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr class="bulk-action-row">
+                        <th colspan="8">
+
                             <ul class="tiles">
                                 <li class="square">
                                     <a href="#" data-click-event="remove-form" class="btn square-element" data-toggle="modal" data-target="#modalDemo">
