@@ -55,10 +55,12 @@ var responsiveTextRatio = 0.2,
         }
     };
 
-
-    /* ========================================================================
-     * attribute toggle function
-     * ======================================================================== */
+    /**
+     * @description Attribute toggle function
+     * @param  {String} attr    Attribute Name
+     * @param  {String} val     Value to be matched
+     * @param  {String} val2    Value to be replaced with
+     */
     $.fn.toggleAttr = function(attr, val, val2) {
         return this.each(function() {
             var self = $(this);
@@ -80,10 +82,10 @@ var responsiveTextRatio = 0.2,
              .addClass(((!!('ontouchstart' in window) || !!('onmsgesturechange' in window)) ? ' touch' : ''));
      };
     
-
-    /* ========================================================================
-     * loading function
-     * ======================================================================== */
+    /**
+     * @description Data Loader function
+     * @param  {String}     Action of the loader
+     */
     $.fn.loading = function(action) {
 
         return $(this).each(function(){
@@ -126,7 +128,7 @@ var responsiveTextRatio = 0.2,
             /**
              * input value change function
              */
-            $(elem+' :file').change(function(){
+            $(elem + ' :file').change(function(){
                 var input = $(this),
                     numFiles = input.get(0).files ? input.get(0).files.length : 1,
                     label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
@@ -136,14 +138,14 @@ var responsiveTextRatio = 0.2,
             /**
              * button click function
              */
-            $(elem+' .browse').click(function(){
+            $(elem + ' .browse').click(function(){
                 $(this).parents('.input-group').find(':file').click();
             });
 
             /**
              * file select function
              */
-            $(elem+' :file').on('fileselect', function(event, numFiles, label) {
+            $(elem + ' :file').on('fileselect', function(event, numFiles, label) {
                 var input = $(this).parents('.input-group').find(':text'),
                     log = numFiles > 1 ? numFiles + ' files selected' : label;
 
@@ -160,9 +162,11 @@ var responsiveTextRatio = 0.2,
     };
 
 
-    /* ========================================================================
-     * responsive text function
-     * ======================================================================== */
+    /**
+     * @param  {[type]}
+     * @param  {[type]}
+     * @return {[type]}
+     */
     $.fn.responsive_text = function(compress, options){
 
         // Setup options
@@ -225,6 +229,8 @@ var responsiveTextRatio = 0.2,
                     search: ''
                 },
                 initComplete: function(){
+
+                    var ROW_SELECTED_CLASS = 'DTTT_selected selected';
 
                     this.api().columns().every(function(){
 
@@ -330,7 +336,6 @@ var responsiveTextRatio = 0.2,
                         }
                     });
 
-                    var rowSelectedClass = 'DTTT_selected selected';
 
                     /**
                      *  select/deselect all rows function
@@ -341,13 +346,13 @@ var responsiveTextRatio = 0.2,
 
                         if($(button).html() == 'Select All') {
                             thisTable.api().rows().every(function () {
-                                $(this.node()).addClass(rowSelectedClass);
+                                $(this.node()).addClass(ROW_SELECTED_CLASS);
                                 $(button).html('Deselect All');
                             });
                         }
                         else if($(button).html() == 'Deselect All') {
                             thisTable.api().rows().every(function () {
-                                $(this.node()).removeClass(rowSelectedClass);
+                                $(this.node()).removeClass(ROW_SELECTED_CLASS);
                                 $(button).html('Select All');
                             });
                         }
@@ -357,13 +362,12 @@ var responsiveTextRatio = 0.2,
                      *  on row click select/deselect row function
                      */
                     $('body').on('click', '[data-type=selectable]', function(){
-                        var rowSelectedClass = 'DTTT_selected selected';
-                        $(this).toggleClass(rowSelectedClass);
+                        $(this).toggleClass(ROW_SELECTED_CLASS);
                         var button = this,
                             thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
 
                         thisTable.api().rows().every(function () {
-                            if(!$(this.node()).hasClass(rowSelectedClass)){
+                            if(!$(this.node()).hasClass(ROW_SELECTED_CLASS)){
                                 $(button).closest('.dataTables_wrapper').find('[data-click-event=toggle-selected]').html('Select All');
                             }
                         });
