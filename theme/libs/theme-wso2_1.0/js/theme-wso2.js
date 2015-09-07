@@ -21,9 +21,11 @@ if (typeof(jQuery) === 'undefined') {
     throw 'jQuery is required.';
 }
 
-var resTextRatio = 0.2;
+var responsiveTextRatio = 0.2,
+    responsiveTextSleector = ".icon .text";
 
 (function($){
+
 
     /* ========================================================================
      * import required files function
@@ -57,13 +59,13 @@ var resTextRatio = 0.2;
     /* ========================================================================
      * attribute toggle function
      * ======================================================================== */
-    $.fn.toggleAttr = function(attr, attr1, attr2) {
+    $.fn.toggleAttr = function(attr, val, val2) {
         return this.each(function() {
             var self = $(this);
-            if (self.attr(attr) == attr1)
-                self.attr(attr, attr2);
+            if (self.attr(attr) == val)
+                self.attr(attr, val2);
             else
-                self.attr(attr, attr1);
+                self.attr(attr, val);
         });
     };
 
@@ -198,7 +200,6 @@ var resTextRatio = 0.2;
 
     };
 
-
     /* ========================================================================
      * datatables_extended function
      * ======================================================================== */
@@ -278,11 +279,6 @@ var resTextRatio = 0.2;
                         }
 
                     });
-
-                    /**
-                     *  fix: icon text resize function call
-                     */
-                    $(".icon .text").responsive_text(resTextRatio);
 
                     /**
                      *  search input default styles override
@@ -399,7 +395,40 @@ var resTextRatio = 0.2;
     /* ========================================================================
      * tree-view function
      * ======================================================================== */
-    $.fn.tree_view = function() {
+    $.fn.tree_view = function(o){
+
+        var tree = $(this);
+        tree.find('li').has("ul").each(function () {
+            var branch = $(this); //li with children ul
+            branch.prepend('<i class="icon"></i>');
+            branch.addClass('branch');
+            branch.on('click', function (e) {
+                if (this == e.target) {
+                    var icon = $(this).children('i:first');
+                    icon.closest('li').toggleAttr('aria-expanded', 'true', 'false');
+                }
+            });
+        });
+
+        tree.find('.branch .icon').each(function(){
+            $(this).on('click', function () {
+                $(this).closest('li').click();
+            });
+        });
+
+        tree.find('.branch > a').each(function () {
+            $(this).on('click', function (e) {
+                $(this).closest('li').click();
+                e.preventDefault();
+            });
+        });
+
+        tree.find('.branch > button').each(function () {
+            $(this).on('click', function (e) {
+                $(this).closest('li').click();
+                e.preventDefault();
+            });
+        });
 
     };
 
@@ -407,25 +436,36 @@ var resTextRatio = 0.2;
 }(jQuery));
 
 $(document).ready(function(){
-    //$.browser_meta();
+    $('.tree-view').tree_view();
     $.file_input();
     $('.dropdown-menu input').click(function(e){
         e.stopPropagation();
     });
-    $(".icon .text").responsive_text(resTextRatio);
+    $(responsiveTextSleector).responsive_text(responsiveTextRatio);
     $('.select2').select2();
-
 });
 
 $(window).scroll(function(){
-    $(".icon .text").responsive_text(resTextRatio);
+    $(responsiveTextSleector).responsive_text(responsiveTextRatio);
 });
 
 $(document).bind('click', function() {
-    $(".icon .text").responsive_text(resTextRatio);
+    $(responsiveTextSleector).responsive_text(responsiveTextRatio);
 });
 
 $(function(){
+
+    /***********************************************************
+     *  if body element change call responsive text function
+     ***********************************************************/
+    var target = document.querySelector('body');
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            $(responsiveTextSleector).responsive_text(responsiveTextRatio);
+        });
+    });
+    var config = { attributes: true, childList: true, characterData: true };
+    observer.observe(target, config);
 
     /***********************************************************
      *  enabling custom tooltips/titles
@@ -437,6 +477,9 @@ $(function(){
      ***********************************************************/
     $('[data-state="loading"]').loading('show');
 
+    /***********************************************************
+     *  sidebar toggle function
+     ***********************************************************/
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $(".page-content-wrapper").toggleClass("toggled");
@@ -444,7 +487,6 @@ $(function(){
     });
 
 });
-
 
 
 
