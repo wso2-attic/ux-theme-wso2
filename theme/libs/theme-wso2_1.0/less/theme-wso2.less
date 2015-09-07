@@ -950,10 +950,39 @@ footer a {
 .alert {
     .border-radius;
     border: none;
+    position: relative;
+    padding: 15px 50px 15px 15px;
 }
 .alert .icon {
     padding-bottom: 3px;
     margin-right: 6px;
+}
+
+
+.alert {
+    & .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 50px;
+        line-height: 1;
+        padding: 0 10px;
+        font-size: 16px;
+        background: #444;
+        color: #fff;
+    }
+    &.alert-success .close {
+        background: #3c763d;
+    }
+    &.alert-info .close {
+        background: #31708f;
+    }
+    &.alert-warning .close {
+        background: #8a6d3b;
+    }
+    &.alert-danger .close {
+        background: #a94442;
+    }
 }
 
 /* ========================================================================
