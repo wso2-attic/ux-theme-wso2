@@ -213,7 +213,7 @@ var responsiveTextRatio = 0.2,
 
         $(elem).DataTable(
             $.extend({},{
-                bSortCellsTop: true,
+                bSortCellsTop: false,
                 responsive: false,
                 autoWidth: false,
                 dom:'<"dataTablesTop"' +
@@ -484,10 +484,23 @@ $(function(){
     /***********************************************************
      *  sidebar toggle function
      ***********************************************************/
-    $("#menu-toggle").click(function(e) {
+    $('[data-toggle=sidebar]').click(function(e) {
         e.preventDefault();
-        $(".page-content-wrapper").toggleClass("toggled");
-        $(".sidebar-wrapper").toggleClass("toggled");
+
+        var container = $(this).attr('data-container'),
+            target = $(this).attr('data-target');
+
+        $(this).toggleAttr('aria-expanded', 'true', 'false');
+
+        if ($(this).attr('data-container-push') == 'true') {
+            $(container)
+                .toggleClass("toggled")
+                .attr('data-side', $(this).attr('data-side'));
+        }
+
+        $(target)
+            .toggleClass("toggled")
+            .attr('data-side', $(this).attr('data-side'));
     });
 
 });

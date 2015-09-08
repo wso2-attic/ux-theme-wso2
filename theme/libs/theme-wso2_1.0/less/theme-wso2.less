@@ -18,7 +18,9 @@
  * default values
  * ======================================================================== */
 
-@font-face {.font( 'Roboto'; 300; 'normal'; 'Roboto Light'; 'Roboto-Light-webfont' )}
+@font-face {
+    .font( 'Roboto'; 300; 'normal'; 'Roboto Light'; 'Roboto-Light-webfont' )
+}
 
 @font-default: 'Roboto Light', Arial, Helvetica, sans-serif;
 @font-icons: 'font-wso2';
@@ -107,8 +109,8 @@
 .transition(@val) {
 	-webkit-transition: @val;
 	-moz-transition: @val;
+    -ms-transition: @val;
 	-o-transition: @val;
-	-ms-transition: @val;
 	transition: @val;
 }
 
@@ -194,30 +196,31 @@
  * toggle icons
  * ======================================================================== */
 
-[aria-expanded='true'] > .icon.toggle-icon.fw-stack {
-    & > .fw-up:before {
-        content: '\e685';
-    }
-    & > .fw-down:before {
+[aria-expanded='true'] > .icon.fw-stack > .toggle-icon,
+[aria-expanded='true'] > .icon.toggle-icon {
+    &-up:before {
         content: '\e684';
     }
-    & > .fw-left:before {
-        content: '\e687';
+    &-down:before {
+        content: '\e685';
     }
-    & > .fw-right:before {
+    &-left:before {
         content: '\e686';
     }
-    & > .fw-up-arrow:before {
-        content: '\e689';
+    &-right:before {
+        content: '\e687';
     }
-    & > .fw-down-arrow:before {
+    &-up-arrow:before {
         content: '\e688';
     }
-    & > .fw-left-arrow:before {
-        content: '\e68b';
+    &-down-arrow:before {
+        content: '\e689';
     }
-    & > .fw-right-arrow:before {
+    &-left-arrow:before {
         content: '\e68a';
+    }
+    &-right-arrow:before {
+        content: '\e68b';
     }
 }
 
@@ -262,7 +265,7 @@ body > .page-content-wrapper > .container-fluid {
     }
 }
 
-body.inverse, body.inverse footer {
+body.inverse {
     background: @inverse-layout-background;
     color: @inverse-layout-color;
 }
@@ -562,6 +565,9 @@ header .brand img.logo {
 header .brand a {
     min-height: 24px;
 }
+header .auth {
+    margin: 0 -15px;
+}
 
 header .dropdown {
     display: inline-block;
@@ -569,9 +575,8 @@ header .dropdown {
     padding: 6px 0;
 }
 
-header .pull-right.auth .dropdown .icon {
-    margin-left: 2px;
-    width: 1em;
+header .dropdown[aria-expanded=true], header .dropdown:hover {
+    background: darken(@base-dark-color, 25%);
 }
 
 @media only screen and (max-width: 768px) {
@@ -632,7 +637,7 @@ header .pull-right.auth .dropdown .icon {
     }
 }
 
-.navbar-tiles-toggle {
+.navbar-menu-toggle {
     float: left;
     height: @navbar-height;
     padding: 0 8px;
@@ -745,52 +750,58 @@ header .pull-right.auth .dropdown .icon {
  * sidebar styles
  * ======================================================================== */
 
-
-//#wrapper {
-//    padding-left: 0;
-//    .transition(all 0.5s ease);
-//}
-//
-//#wrapper.toggled {
-//    padding-left: 250px;
-//}
-//
-
-
-//
-//#page-content-wrapper {
-//    position: absolute;
-//}
-//
-//#wrapper.toggled #page-content-wrapper {
-//    position: absolute;
-//    margin-right: -250px;
-//}
-
 .page-content-wrapper {
     .transition(all 0.5s ease);
 }
-.page-content-wrapper.toggled {
-    margin-left: 250px;
 
+.page-content-wrapper.toggled {
+    margin-left: 350px;
+}
+
+.page-content-wrapper[data-side=right].toggled {
+    margin-left: 350px;
 }
 
 /* Sidebar Styles */
-
 .sidebar-wrapper {
     z-index: 1000;
     position: fixed;
-    left: 250px;
-    width: 0;
+    left: -350px;
+    width: 350px;
     height: 100%;
-    margin-left: -250px;
     overflow-y: auto;
     background: @base-dark-color;
+    color: @base-light-color;
     .transition(all 0.5s ease);
 }
 
+.sidebar-wrapper[data-side=right] {
+    left: auto;
+    right: -350px;
+}
+
 .sidebar-wrapper.toggled {
-    width: 250px;
+    left: 0;
+    right: auto;
+}
+
+.sidebar-wrapper[data-side=right].toggled {
+    left: auto;
+    right: 0;
+}
+
+ul.sidebar-messages {
+    .reset-default;
+    padding: 10px;
+}
+
+ul.sidebar-messages > li {
+    margin: 15px 0;
+}
+
+.sidebar-messages .message {
+    background: none;
+    padding: 5px 10px;
 }
 
 .sidebar-nav {
@@ -1015,10 +1026,16 @@ footer a {
 }
 
 .message {
-    &-danger {
-        border-left-color: #ce4844;
+    &-success {
+        border-left-color: #3c763d;
         & h4 {
-            color: #ce4844;
+            color: #3c763d;
+        }
+    }
+    &-info {
+        border-left-color: #1b809e;
+        & h4 {
+            color: #1b809e;
         }
     }
     &-warning {
@@ -1027,10 +1044,10 @@ footer a {
             color: #aa6708;
         }
     }
-    &-info {
-        border-left-color: #1b809e;
+    &-danger {
+        border-left-color: #ce4844;
         & h4 {
-            color: #1b809e;
+            color: #ce4844;
         }
     }
 }
@@ -1123,6 +1140,48 @@ footer a {
     font-size: 12px;
     height: 28px;
     overflow: hidden;
+}
+
+.dropdown-submenu {
+    position:relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top:0;
+    left:100%;
+    margin-top:-6px;
+    margin-left:-1px;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+    display:block;
+}
+
+.dropdown-submenu > a:after {
+    display:block;
+    content:" ";
+    float:right;
+    width:0;
+    height:0;
+    border-color:transparent;
+    border-style:solid;
+    border-width:5px 0 5px 5px;
+    border-left-color:#cccccc;
+    margin-top:5px;
+    margin-right:-10px;
+}
+
+.dropdown-submenu:hover > a:after {
+    border-left-color:#ffffff;
+}
+
+.dropdown-submenu.pull-left {
+    float:none;
+}
+
+.dropdown-submenu.pull-left > .dropdown-menu {
+    left:-100%;
+    margin-left:10px;
 }
 
 /* ========================================================================
@@ -1869,6 +1928,13 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
  * ======================================================================== */
 
 .pagination > li {
+    &:first-child > a,
+    &:first-child > span,
+    &:last-child > a,
+    &:last-child > span {
+        .border-radius;
+    }
+
     & > a,
     & > a:focus,
     & > a:hover,
@@ -1876,15 +1942,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
     & > span:hover{
         text-decoration: none;
         color: @primary-color;
-    }
-}
-
-.pagination > li{
-    &:first-child > a,
-    &:first-child > span,
-    &:last-child > a,
-    &:last-child > span {
-        .border-radius;
     }
 }
 
@@ -1965,9 +2022,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
  * ======================================================================== */
 
 ul.tiles {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    .reset-default;
 }
 
 ul.tiles li {
@@ -2043,7 +2098,9 @@ a.list-group-item:hover {
 }
 
 .list-group-item.active {
-    &, &:focus, &:hover {
+    &,
+    &:focus,
+    &:hover {
         background: @primary-color;
         border-color: @primary-color;
     }
@@ -2059,12 +2116,8 @@ a.list-group-item:hover {
 }
 
 .tree-view ul {
-    margin-left: 1em;
+    margin-left: 0.7em;
     position: relative;
-}
-
-.tree-view ul ul {
-    margin-left: 1.5em;
 }
 
 .tree-view ul li {
@@ -2077,7 +2130,7 @@ a.list-group-item:hover {
 
 .tree-view li {
     margin: 0;
-    padding: 0 1em;
+    padding: 0 2em;
     line-height: 2em;
     position: relative;
 }
@@ -2086,25 +2139,32 @@ a.list-group-item:hover {
     cursor: pointer;
 }
 
-.tree-view .icon {
-    margin-right: 10px;
+.tree-view li {
+    & > .icon {
+        font-family: @font-icons;
+        font-style: normal;
+        background: @primary-color;
+        color: @base-light-color;
+        height: 20px;
+        width: 20px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 10px;
+        display: inline-block;
+        margin-right: 10px;
+    }
+    & > .icon:before {
+        content: "\e687";
+    }
+    &[aria-expanded=true] > .icon:before {
+        content: "\e685";
+    }
 }
 
-.tree-view li .icon {
-    font-family: @font-icons;
-    font-style: normal;
-}
-
-.tree-view li .icon:before {
-    content: "\e687";
-}
-.tree-view li[aria-expanded=true] > .icon:before {
-    content: "\e685";
-}
-
-.tree-view li a,
-.tree-view li a:hover {
-    text-decoration: none;
+.tree-view li a {
+    &, &:hover {
+        text-decoration: none;
+    }
 }
 
 .tree-view li button {
@@ -2132,7 +2192,7 @@ a.list-group-item:hover {
     & li:before {
         content: "";
         display: block;
-        width: 10px;
+        width: 20px;
         height: 0;
         border-top: 1px solid;
         margin-top: -1px;
