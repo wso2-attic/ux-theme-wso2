@@ -213,7 +213,7 @@ var responsiveTextRatio = 0.2,
 
         $(elem).DataTable(
             $.extend({},{
-                bSortCellsTop: false,
+                bSortCellsTop: true,
                 responsive: false,
                 autoWidth: false,
                 dom:'<"dataTablesTop"' +
@@ -230,7 +230,7 @@ var responsiveTextRatio = 0.2,
                 },
                 initComplete: function(){
 
-                    var ROW_SELECTED_CLASS = 'DTTT_selected selected';
+                    var ROW_SELECTED_CLASS = 'DTTT_selected';
 
                     this.api().columns().every(function(){
 
@@ -389,6 +389,14 @@ var responsiveTextRatio = 0.2,
                             //$(this).closest('li').siblings().show();
                         }
                     });
+
+                    /**
+                     *  delete selected rows
+                     */
+                    $('[data-click-event=delete-selected-rows]').click(function(){
+                        var thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
+                        thisTable.api().rows('.'+ROW_SELECTED_CLASS).remove().draw(false);
+                    });
                 }
             },settings)
         );
@@ -491,10 +499,17 @@ $(function(){
             target = $(this).attr('data-target');
 
         $(this).toggleAttr('aria-expanded', 'true', 'false');
+        $(this).closest('li').toggleClass("active");
 
-        if ($(this).attr('data-container-push') == 'true') {
+        if($(this).attr('data-container-push')) {
             $(container)
-                .toggleClass("toggled")
+                .toggleAttr('data-container-push', 'true', 'false')
+                .attr('data-side', $(this).attr('data-side'));
+        }
+
+        else if($(this).attr('data-container-divide')) {
+            $(container)
+                .toggleAttr('data-container-divide', 'true', 'false')
                 .attr('data-side', $(this).attr('data-side'));
         }
 
@@ -504,7 +519,6 @@ $(function(){
     });
 
 });
-
 
 
 

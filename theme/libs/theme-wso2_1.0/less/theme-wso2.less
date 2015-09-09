@@ -36,6 +36,11 @@
 
 @base-dark-color: #222;
 @base-light-color: #ffffff;
+@base-success-color: #5cb85c;
+@base-info-color:    #5bc0de;
+@base-warning-color: #f0ad4e;
+@base-danger-color:  #d9534f;
+
 @primary-color: #2c313b;
 @optional-color: #007D85;
 
@@ -193,8 +198,13 @@
 }
 
 /* ========================================================================
- * toggle icons
+ * icon styles
  * ======================================================================== */
+
+.icon-success { color: @base-success-color }
+.icon-info { color: @base-info-color }
+.icon-warning { color: @base-warning-color }
+.icon-danger { color: @base-danger-color }
 
 [aria-expanded='true'] > .icon.fw-stack > .toggle-icon,
 [aria-expanded='true'] > .icon.toggle-icon {
@@ -288,6 +298,7 @@ br.spacer {
 .well {
     .border-radius;
     .box-shadow;
+    border: none;
 }
 
 .badge {
@@ -542,29 +553,28 @@ header {
     position: relative;
 }
 
-header .brand h1 {
-    margin: 0 0 0 5px;
-    display: inline-block;
-    line-height: 1;
+header .brand {
+    padding: 10px 0;
+
+    & img.logo {
+        height: 24px;
+    }
+    & a {
+        min-height: 24px;
+    }
+    & h1 {
+        display: inline-block;
+        line-height: 1;
+        font-weight: 500;
+        font-size: 17px;
+        margin: 0 0 0 5px;
+        color: @base-light-color;
+        padding: 6px 0 0 0;
+        font-style: normal;
+        text-transform: uppercase;
+    }
 }
 
-header .brand h1 em {
-    font-weight: 500;
-    font-size: 17px;
-    margin: 0;
-    color: @base-light-color;
-    padding: 3px 0 0 0;
-    font-style: normal;
-    text-transform: uppercase;
-}
-
-header .brand img.logo {
-    height: 24px;
-}
-
-header .brand a {
-    min-height: 24px;
-}
 header .auth {
     margin: 0 -15px;
 }
@@ -750,19 +760,37 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
  * sidebar styles
  * ======================================================================== */
 
-.page-content-wrapper {
+.page-content-wrapper, .page-content-wrapper[data-container-behaviour=static] {
     .transition(all 0.5s ease);
+    position: relative;
+    left: 0;
+    margin-left: 0;
 }
 
-.page-content-wrapper.toggled {
+.page-content-wrapper[data-container-push=true] {
+    left: 350px;
+}
+
+.page-content-wrapper[data-side=right][data-container-push=true] {
+    left: auto;
+    right: 350px;
+}
+
+.page-content-wrapper[data-container-divide=true][data-container-push=true] {
     margin-left: 350px;
 }
 
-.page-content-wrapper[data-side=right].toggled {
-    margin-left: 350px;
+.page-content-wrapper[data-side=right][data-container-divide=true] {
+    margin-left: auto;
+    margin-right: 350px;
 }
 
-/* Sidebar Styles */
+//.page-content-wrapper[data-container-push=true][data-container-divide=true],
+//.page-content-wrapper[data-side=right][data-container-push=true][data-container-divide=true] {
+//    left: auto;
+//    right: auto;
+//}
+
 .sidebar-wrapper {
     z-index: 1000;
     position: fixed;
@@ -969,7 +997,6 @@ footer a {
     margin-right: 6px;
 }
 
-
 .alert {
     & .close {
         position: absolute;
@@ -982,17 +1009,33 @@ footer a {
         background: #444;
         color: #fff;
     }
-    &.alert-success .close {
-        background: #3c763d;
+    &.alert-success {
+        color: @base-light-color;
+        background: @base-success-color;
+        & .close {
+          background: darken(@base-success-color, 50%);
+        }
     }
-    &.alert-info .close {
-        background: #31708f;
+    &.alert-info {
+        color: @base-light-color;
+        background: @base-info-color;
+        & .close {
+            background: darken(@base-info-color, 50%);
+        }
     }
-    &.alert-warning .close {
-        background: #8a6d3b;
+    &.alert-warning {
+        color: @base-light-color;
+        background: @base-warning-color;
+        & .close {
+            background: darken(@base-warning-color, 50%);
+        }
     }
-    &.alert-danger .close {
-        background: #a94442;
+    &.alert-danger {
+        color: @base-light-color;
+        background: @base-danger-color;
+        & .close {
+            background: darken(@base-danger-color, 50%);
+        }
     }
 }
 
@@ -1027,27 +1070,27 @@ footer a {
 
 .message {
     &-success {
-        border-left-color: #3c763d;
+        border-left-color: @base-success-color;
         & h4 {
-            color: #3c763d;
+            color: @base-success-color;
         }
     }
     &-info {
-        border-left-color: #1b809e;
+        border-left-color: @base-info-color;
         & h4 {
-            color: #1b809e;
+            color: @base-info-color;
         }
     }
     &-warning {
-        border-left-color: #aa6708;
+        border-left-color: @base-warning-color;
         & h4 {
-            color: #aa6708;
+            color: @base-warning-color;
         }
     }
     &-danger {
-        border-left-color: #ce4844;
+        border-left-color: @base-danger-color;
         & h4 {
-            color: #ce4844;
+            color: @base-danger-color;
         }
     }
 }
@@ -1668,6 +1711,9 @@ input[type=number].form-control {
         font-weight: 600;
         margin-right: 8px;
     }
+    & > tbody > tr.header-row {
+        display: none;
+    }
     & > thead > tr > td,
     & > thead > tr > th {
         display: inline-block;
@@ -1967,6 +2013,31 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
         display: none;
     }
 }
+
+/* ========================================================================
+ * panel styles
+ * ======================================================================== */
+
+.panel-group .panel, .panel-heading, .panel-footer, .panel-body {
+    .border-radius;
+    padding: 0;
+}
+
+.panel {
+    .box-shadow;
+    border: none;
+}
+
+.panel-default > .panel-heading {
+    background: transparent;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 1px solid #e4e4e4;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
 
 /* ========================================================================
  * noty styles

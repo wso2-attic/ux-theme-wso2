@@ -92,7 +92,7 @@
            <div class="pull-left brand float-remove-xs text-center-xs">
               <a href="#">
                  <img src="libs/theme-wso2_1.0/images/logo-inverse.svg" alt="wso2" title="wso2" class="logo">
-                 <h1><em>UI Component Library</em></h1>
+                 <h1>UI Component Library</h1>
               </a>
            </div>
            <div class="pull-right auth float-remove-xs text-center-xs">
@@ -210,7 +210,7 @@
                         </a>
                     </li>
                     <li class="visible-inline-block">
-                        <a href="#">
+                        <a data-toggle="sidebar" data-target="#right-sidebar2"  data-side="right" data-container=".page-content-wrapper" data-container-divide="true" aria-controls="right-sidebar2" aria-expanded="false">
                             <span class="icon fw-stack">
                                 <i class="fw fw-settings fw-stack-1x"></i>
                                 <i class="fw fw-ring fw-stack-2x"></i>
@@ -273,6 +273,12 @@
         </ul>
     </div>
     <!-- /.right-sidebar -->
+
+    <!-- .right-sidebar2 -->
+    <div class="sidebar-wrapper" id="right-sidebar2" data-side="right">
+        Some Configurations
+    </div>
+    <!-- /.right-sidebar2 -->
 
     <!-- #page-content-wrapper -->
     <div class="page-content-wrapper">
@@ -790,6 +796,16 @@
             </script>
             <table class="table table-striped table-hover list-table display responsive nowrap data-table table-selectable" id="users">
                 <thead class="block">
+                    <tr class="sort-row">
+                        <th class="content-fill no-sort"></th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                        <th class="no-sort"></th>
+                    </tr>
                     <tr class="filter-row">
                         <th data-for="Type"></th>
                         <th data-for="Name" class="text-filter"></th>
@@ -815,7 +831,7 @@
 
                             <ul class="tiles">
                                 <li class="square">
-                                    <a href="#" data-click-event="remove-form" class="btn square-element" data-toggle="modal" data-target="#modalDemo">
+                                    <a class="btn square-element" data-click-event="delete-selected-rows">
                                         <span class="icon fw-stack">
                                             <i class="fw fw-ring fw-stack-2x"></i>
                                             <i class="fw fw-delete fw-stack-1x"></i>
@@ -824,7 +840,7 @@
                                     </a>
                                 </li>
                                 <li class="square">
-                                    <a href="#" data-click-event="remove-form" class="btn square-element" data-toggle="modal" data-target="#modalDemo">
+                                    <a class="btn square-element" data-toggle="modal" data-target="#modalDemo">
                                         <span class="icon fw-stack">
                                             <i class="fw fw-ring fw-stack-2x"></i>
                                             <i class="fw fw-edit fw-stack-1x"></i>
@@ -840,7 +856,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="myModalLabel">Delete Selected</h4>
+                                            <h4 class="modal-title" id="myModalLabel">Edit Selected</h4>
                                         </div>
                                         <div class="modal-body">
                                             You about perform a bulk operation, please confirm to proceed.
@@ -855,6 +871,16 @@
 
                         </th>
                     </tr>
+                </thead>
+                <tbody>
+                    <!-- Handlebars Template Appends Here -->
+                </tbody>
+            </table>
+
+            <br class="spacer">
+
+            <table class="table table-striped list-table display responsive nowrap data-table grid-view" id="device-grid">
+                <thead>
                     <tr class="sort-row">
                         <th class="content-fill no-sort"></th>
                         <th>Name</th>
@@ -865,34 +891,16 @@
                         <th>Salary</th>
                         <th class="no-sort"></th>
                     </tr>
-                </thead>
-                <tbody><!-- Handlebars Template Appends Here --></tbody>
-            </table>
-
-            <br class="spacer">
-
-            <table class="table table-striped list-table display responsive nowrap data-table grid-view" id="device-grid">
-                <thead>
-                <tr class="sort-row">
-                    <th class="no-sort"></th>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
-                    <th class="no-sort"></th>
-                </tr>
-                <tr class="filter-row">
-                    <th data-for="Type"></th>
-                    <th data-for="Name" class="text-filter"></th>
-                    <th data-for="Position" class="select-filter"></th>
-                    <th data-for="Office" class="select-filter"></th>
-                    <th data-for="Age" class="select-filter"></th>
-                    <th data-for="Start Date" class="select-filter"></th>
-                    <th data-for="Salary" class="select-filter"></th>
-                    <th></th>
-                </tr>
+                    <tr class="filter-row">
+                        <th data-for="Type"></th>
+                        <th data-for="Name" class="text-filter"></th>
+                        <th data-for="Position" class="select-filter"></th>
+                        <th data-for="Office" class="select-filter"></th>
+                        <th data-for="Age" class="select-filter"></th>
+                        <th data-for="Start Date" class="select-filter"></th>
+                        <th data-for="Salary" class="select-filter"></th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody><!-- Handlebars Template Appends Here --></tbody>
             </table>
