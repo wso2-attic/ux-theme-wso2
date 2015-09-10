@@ -37,11 +37,12 @@
 @base-dark-color: #222;
 @base-light-color: #ffffff;
 @base-success-color: #5cb85c;
-@base-info-color:    #5bc0de;
+@base-info-color: #009DA7;
 @base-warning-color: #f0ad4e;
-@base-danger-color:  #d9534f;
+@base-danger-color: #d9534f;
 
 @primary-color: #2c313b;
+@secondary-color: #e4e4e4;
 @optional-color: #007D85;
 
 @navbar-height: 50px;
@@ -760,6 +761,8 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
  * sidebar styles
  * ======================================================================== */
 
+@default-sidebar-width: 350px;
+
 .page-content-wrapper, .page-content-wrapper[data-container-behaviour=static] {
     .transition(all 0.5s ease);
     position: relative;
@@ -768,34 +771,28 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
 }
 
 .page-content-wrapper[data-container-push=true] {
-    left: 350px;
+    left: @default-sidebar-width;
 }
 
-.page-content-wrapper[data-side=right][data-container-push=true] {
+.page-content-wrapper[data-push-side=right][data-container-push=true] {
     left: auto;
-    right: 350px;
+    right: @default-sidebar-width;
 }
 
-.page-content-wrapper[data-container-divide=true][data-container-push=true] {
-    margin-left: 350px;
+.page-content-wrapper[data-container-divide=true] {
+    margin-left: @default-sidebar-width;
 }
 
-.page-content-wrapper[data-side=right][data-container-divide=true] {
+.page-content-wrapper[data-divide-side=right][data-container-divide=true] {
     margin-left: auto;
-    margin-right: 350px;
+    margin-right: @default-sidebar-width;
 }
-
-//.page-content-wrapper[data-container-push=true][data-container-divide=true],
-//.page-content-wrapper[data-side=right][data-container-push=true][data-container-divide=true] {
-//    left: auto;
-//    right: auto;
-//}
 
 .sidebar-wrapper {
     z-index: 1000;
     position: fixed;
-    left: -350px;
-    width: 350px;
+    left: -@default-sidebar-width;
+    width: @default-sidebar-width;
     height: 100%;
     overflow-y: auto;
     background: @base-dark-color;
@@ -805,7 +802,7 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
 
 .sidebar-wrapper[data-side=right] {
     left: auto;
-    right: -350px;
+    right: -@default-sidebar-width;
 }
 
 .sidebar-wrapper.toggled {
@@ -835,7 +832,7 @@ ul.sidebar-messages > li {
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: @default-sidebar-width;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -854,7 +851,7 @@ ul.sidebar-messages > li {
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: @base-light-color;
     background: rgba(255,255,255,0.2);
 }
 
@@ -874,7 +871,7 @@ ul.sidebar-messages > li {
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
+    color: @base-light-color;
     background: none;
 }
 
@@ -888,7 +885,7 @@ ul.sidebar-messages > li {
     }
 
     #sidebar-wrapper {
-        width: 250px;
+        width: @default-sidebar-width;
     }
 
     #wrapper.toggled #sidebar-wrapper {
@@ -1968,6 +1965,20 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
 .thumbnail.icon img {
     width: 100%;
 }
+
+/* ========================================================================
+ * thumbnail list styles
+ * ======================================================================== */
+
+.thumbnail-list {
+    .reset-default;
+    .clearfix;
+}
+
+.thumbnail-list li {
+    float: left;
+}
+
 
 /* ========================================================================
  * pagination styles

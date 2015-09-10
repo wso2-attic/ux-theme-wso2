@@ -504,13 +504,13 @@ $(function(){
         if($(this).attr('data-container-push')) {
             $(container)
                 .toggleAttr('data-container-push', 'true', 'false')
-                .attr('data-side', $(this).attr('data-side'));
+                .attr('data-push-side', $(this).attr('data-push-side'));
         }
 
         else if($(this).attr('data-container-divide')) {
             $(container)
                 .toggleAttr('data-container-divide', 'true', 'false')
-                .attr('data-side', $(this).attr('data-side'));
+                .attr('data-divide-side', $(this).attr('data-divide-side'));
         }
 
         $(target)
