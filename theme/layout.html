@@ -85,26 +85,25 @@
       
 </head>
 <body>
-    
+
     <!-- header -->
     <header class="header header-default">
         <div class="container-fluid">
            <div class="pull-left brand float-remove-xs text-center-xs">
               <a href="#">
                  <img src="libs/theme-wso2_1.0/images/logo-inverse.svg" alt="wso2" title="wso2" class="logo">
-                 <h1><em>UI Component Library</em></h1>
+                 <h1>UI Component Library</h1>
               </a>
            </div>
            <div class="pull-right auth float-remove-xs text-center-xs">
-               
              <a href="#" class="dropdown" data-toggle="dropdown">
-               <span class="hidden-xs">administrator</span>
+               <span class="hidden-xs add-padding-left-3x">administrator <span class="caret"></span></span>
                <span class="icon fw-stack fw-lg">
                    <i class="fw fw-user fw-stack-1x"></i>
                </span>
              </a>
-             <ul class="dropdown-menu arrow arrow-top-right add-margin-1x float-remove-xs position-static-xs text-center-xs remove-margin-xs slideInDown" role="menu">
-               <li class="dropdown-header visible-xs">administrator</li>
+             <ul class="dropdown-menu float-remove-xs position-static-xs text-center-xs remove-margin-xs slideInDown" role="menu">
+               <li class="dropdown-header visible-xs">administrator <span class="caret"></span></li>
                <li class="divider visible-xs"></li>
                <li><a href="#">Sign out</a></li>
              </ul>
@@ -113,11 +112,129 @@
         </div>
     </header>
 
-    <!-- Sidebar -->
-    <div class="sidebar-wrapper">
+    <!-- navbar -->
+    <nav class="navbar navbar-default" data-spy="affix" data-offset-top="50" data-offset-bottom="40">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-menu-toggle" data-toggle="sidebar" data-target="#left-sidebar" data-container=".page-content-wrapper" data-container-push="true"  data-push-side="left" aria-controls="left-sidebar" aria-expanded="false">
+                    <span class="icon fw-stack">
+                        <i class="fw fw-menu fw-stack-1x toggle-icon-left-arrow"></i>
+                    </span>
+                </a>
+                <a class="navbar-menu-toggle" data-toggle="dropdown">
+                    <span class="icon fw-stack">
+                        <i class="fw fw-tiles fw-stack-1x"></i>
+                    </span>
+                </a>
+                <a class="navbar-menu-toggle collapsed" data-toggle="collapse" data-target="#navbar2"  aria-expanded="false" aria-controls="navbar2">
+                    <span class="icon fw-stack">
+                        <i class="fw fw-down fw-stack-1x toggle-icon-up"></i>
+                    </span>
+                </a>
+                <ul class="dropdown-menu tiles arrow dark add-margin-1x" role="menu">
+                    <li>
+                        <a href="#">
+                            <i class="icon fw fw-api"></i>
+                            <span class="name">API</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon fw fw-wsdl"></i>
+                            <span class="name">WSDL</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon fw fw-soap"></i>
+                            <span class="name">SOAP Service</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon fw fw-rest-service"></i>
+                            <span class="name">REST Service</span>
+                        </a>
+                    </li>
+                </ul>
+                <ol class="breadcrumb navbar-brand">
+                    <li><a href="index.html"><i class="icon fw fw-home"></i></a></li>
+                    <li><a href="#">Library</a></li>
+                    <li class="active"><a href="#">Data</a></li>
+                </ol>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="layout.html">
+                            <span class="icon fw-stack">
+                                <i class="fw fw-laptop fw-stack-1x"></i>
+                                <i class="fw fw-ring fw-stack-2x"></i>
+                            </span>
+                            Main Wrapper
+                        </a>
+                    </li>
+                    <li>
+                        <a href="details_layout.html">Details Layout</a>
+                    </li>
+                    <li class="active"><a href="#noiconlink">No Icon Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Quick Jump <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="dropdown-header">UI Components</li>
+                            <li class="divider"></li>
+                            <li><a href="#forms">Forms</a></li>
+                            <li class="dropdown-submenu"><a href="#table">Table</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Data Table</a></li>
+                                    <li><a href="#">Data List Table</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="visible-inline-block">
+                        <a data-toggle="sidebar" data-target="#right-sidebar" aria-controls="right-sidebar" aria-expanded="false">
+                            <span class="icon fw-stack">
+                                <i class="fw fw-notification fw-stack-1x"></i>
+                            </span>
+                            Notifications
+                            <span class="badge">4</span>
+                        </a>
+                    </li>
+                    <li class="visible-inline-block">
+                        <a data-toggle="sidebar" data-target="#right-sidebar2" data-container=".page-content-wrapper" data-container-divide="true" data-divide-side="right" aria-controls="right-sidebar2" aria-expanded="false">
+                            <span class="icon fw-stack">
+                                <i class="fw fw-settings fw-stack-1x"></i>
+                                <i class="fw fw-ring fw-stack-2x"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+        <div id="navbar2" class="collapse navbar-collapse dropdown tiles"><!-- nav-collapse -->
+            <ul class="nav navbar-nav">
+                <li><a href="#"><i class="fw fw-user"></i>User Management</a></li>
+                <li><a href="#"><i class="fw fw-settings"></i>Profile Management</a></li>
+                <li><a href="#"><i class="fw fw-policy"></i>Policy Management</a></li>
+            </ul>
+        </div><!--/ .nav-collapse -->
+    </nav>
+
+    <!-- .left-sidebar -->
+    <div class="sidebar-wrapper" id="left-sidebar" data-side="left">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
                 <a href="#">
+                    <i class="fw fw-dashboard"></i>
                     Dashboard
                 </a>
             </li>
@@ -132,122 +249,39 @@
             </li>
         </ul>
     </div>
-    <!-- /#sidebar-wrapper -->
+    <!-- /.left-sidebar -->
+
+    <!-- .right-sidebar -->
+    <div class="sidebar-wrapper" id="right-sidebar" data-side="right">
+        <ul class="sidebar-messages">
+            <li class="message message-success">
+                <h4><i class="icon fw fw-ok"></i>Minor Information Message</h4>
+                <p>Alerts don't have default classes, only base and modifier classes.</p>
+            </li>
+            <li class="message message-info">
+                <h4><i class="icon fw fw-info"></i>Minor Information Message</h4>
+                <p>Alerts don't have default classes, only base and modifier classes.</p>
+            </li>
+            <li class="message message-warning">
+                <h4><i class="icon fw fw-warning"></i>Major Information Message</h4>
+                <p>Alerts don't have default classes, only base and modifier classes.</p>
+            </li>
+            <li class="message message-danger">
+                <h4><i class="icon fw fw-error"></i>Critical Information Message</h4>
+                <p>Alerts don't have default classes, only base and modifier classes.</p>
+            </li>
+        </ul>
+    </div>
+    <!-- /.right-sidebar -->
+
+    <!-- .right-sidebar2 -->
+    <div class="sidebar-wrapper" id="right-sidebar2" data-side="right">
+        Some Configurations
+    </div>
+    <!-- /.right-sidebar2 -->
 
     <!-- #page-content-wrapper -->
     <div class="page-content-wrapper">
-
-        <!-- navbar -->
-        <nav class="navbar navbar-default" data-spy="affix" data-offset-top="50" data-offset-bottom="40">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-tiles-toggle" data-toggle="dropdown" href="#menu-toggle" id="menu-toggle">
-                        <span class="icon fw-stack">
-                            <i class="fw fw-menu fw-stack-1x"></i>
-                        </span>
-                    </a>
-                    <a class="navbar-tiles-toggle" data-toggle="dropdown">
-                        <span class="icon fw-stack">
-                            <i class="fw fw-tiles fw-stack-1x"></i>
-                        </span>
-                    </a>
-                    <a class="navbar-tiles-toggle collapsed" data-toggle="collapse" data-target="#navbar2"  aria-expanded="false" aria-controls="navbar2">
-                        <span class="icon toggle-icon fw-stack">
-                            <i class="fw fw-down fw-stack-1x"></i>
-                        </span>
-                    </a>
-                    <ul class="dropdown-menu tiles arrow dark add-margin-1x" role="menu">
-                        <li>
-                            <a href="#">
-                                <i class="icon fw fw-api"></i>
-                                <span class="name">API</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon fw fw-wsdl"></i>
-                                <span class="name">WSDL</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon fw fw-soap"></i>
-                                <span class="name">SOAP Service</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon fw fw-rest-service"></i>
-                                <span class="name">REST Service</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <ol class="breadcrumb navbar-brand">
-                        <li class="icons"><a href="index.html"><i class="icon fw fw-home"></i></a></li>
-                        <li><a href="#">Library</a></li>
-                        <li class="active"><a href="#">Data</a></li>
-                    </ol>
-                </div>
-                <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="layout.html">
-                                <span class="icon fw-stack">
-                                    <i class="fw fw-laptop fw-stack-1x"></i>
-                                    <i class="fw fw-ring fw-stack-2x"></i>
-                                </span>
-                                Main Wrapper
-                            </a>
-                        </li>
-                        <li>
-                            <a href="details_layout.html">Details Layout</a>
-                        </li>
-                        <li class="active"><a href="#noiconlink">No Icon Link</a></li>
-                        <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Quick Jump <span class="caret"></span></a>
-                          <ul class="dropdown-menu" role="menu">
-                              <li class="dropdown-header">UI Components</li>
-                              <li class="divider"></li>
-                              <li><a href="#forms">Forms</a></li>
-                              <li><a href="#table">Table</a></li>
-                          </ul>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="visible-inline-block">
-                            <a href="#">
-                                <span class="icon fw-stack">
-                                    <i class="fw fw-notification fw-stack-1x"></i>
-                                </span>
-                                Notifications
-                                <span class="badge">4</span>
-                            </a>
-                        </li>
-                        <li class="visible-inline-block">
-                            <a href="#">
-                                <span class="icon fw-stack">
-                                    <i class="fw fw-settings fw-stack-1x"></i>
-                                    <i class="fw fw-ring fw-stack-2x"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div>
-            <div id="navbar2" class="collapse navbar-collapse dropdown tiles"><!-- nav-collapse -->
-                <ul class="nav navbar-nav">
-                    <li><a href="#"><i class="fw fw-user"></i>User Management</a></li>
-                    <li><a href="#"><i class="fw fw-settings"></i>Profile Management</a></li>
-                    <li><a href="#"><i class="fw fw-policy"></i>Policy Management</a></li>
-                </ul>
-            </div><!--/ .nav-collapse -->
-        </nav>
 
         <!-- page content -->
         <div class="container-fluid body-wrapper">
@@ -273,24 +307,34 @@
             <div class="alert alert-success" role="alert">
                 <i class="icon fw fw-ok"></i><strong>Success!</strong>
                 You successfully read this important alert message.
+                <button type="button" class="close" aria-label="Close"><span aria-hidden="true"><i class="fw fw-cancel"></i></span></button>
             </div>
             <div class="alert alert-info" role="alert">
                 <i class="icon fw fw-warning"></i><strong>Info!</strong>
                 This alert needs your attention, but it's not super important.
+                <button type="button" class="close" aria-label="Close"><span aria-hidden="true"><i class="fw fw-cancel"></i></span></button>
             </div>
             <div class="alert alert-warning" role="alert">
                 <i class="icon fw fw-info"></i><strong>Warning!</strong>
                 Better check yourself, you're not looking too good.
+                <button type="button" class="close" aria-label="Close"><span aria-hidden="true"><i class="fw fw-cancel"></i></span></button>
             </div>
             <div class="alert alert-danger" role="alert">
                 <i class="icon fw fw-error"></i><strong>Error!</strong>
                 Change a few things up and try submitting again.
+                <button type="button" class="close" aria-label="Close"><span aria-hidden="true"><i class="fw fw-cancel"></i></span></button>
             </div>
 
             <br class="spacer">
 
             <div class="page-header">
                 <p class="lead">Message Status Templates</p>
+            </div>
+            <div class="message message-success">
+                <h4><i class="icon fw fw-ok"></i>Message</h4>
+                <p>Alerts don't have default classes, only base and modifier classes. A default gray alert
+                    doesn't make too much sense, so you're required to specify a type via contextual class.
+                    Choose from success, info, warning, or danger.</p>
             </div>
             <div class="message message-info">
                 <h4><i class="icon fw fw-info"></i>Minor Information Message</h4>
@@ -446,7 +490,7 @@
                             </div>
                             <div class="input-group-btn"></div>
                             <div class="input-group-btn">
-                                <button class="btn btn-default btn-primary" type="button" title="Browse File">
+                                <button class="btn btn-default btn-primary" type="button" title="Upload">
                                     <i class="fw fw-upload" aria-hidden="true"></i>
                                     <span class="hidden-xs">Upload</span>
                                 </button>
@@ -463,7 +507,7 @@
                                     <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
                                     <div class="input-group">
                                         <div class="input-group-addon">$</div>
-                                        <input type="number" min="1" max="100000" class="form-control form-control-md" id="exampleInputAmount" placeholder="Amount">
+                                        <input type="number" min="1" max="100000" class="form-control form-control-md" placeholder="Amount">
                                         <div class="input-group-addon">.00</div>
                                     </div>
                                 </div>
@@ -565,6 +609,57 @@
             </form>
 
             <div style="height:200px" data-state="loading" data-loading-text="Processing" data-loading-style="icon-only" data-loading-inverse="true"></div>
+
+            <br class="spacer">
+
+            <!-- ******************************************************************
+            Tree-view Template
+            ******************************************************************* -->
+
+            <div class="page-header" id="tree-view">
+                <h1>Tree View</h1>
+            </div>
+
+            <div class="well">
+                <ul id="tree1" class="tree-view tree-view-lines">
+                    <li aria-expanded="true"><a href="#">TECH</a>
+                        <ul>
+                            <li>Company Maintenance</li>
+                            <li>Employees
+                                <ul>
+                                    <li>Reports
+                                        <ul>
+                                            <li>Report1</li>
+                                            <li>Report2</li>
+                                            <li>Report3</li>
+                                        </ul>
+                                    </li>
+                                    <li>Employee Maint.</li>
+                                </ul>
+                            </li>
+                            <li>Human Resources</li>
+                        </ul>
+                    </li>
+                    <li>XRP
+                        <ul>
+                            <li>Company Maintenance</li>
+                            <li>Employees
+                                <ul>
+                                    <li>Reports
+                                        <ul>
+                                            <li>Report1</li>
+                                            <li>Report2</li>
+                                            <li>Report3</li>
+                                        </ul>
+                                    </li>
+                                    <li>Employee Maint.</li>
+                                </ul>
+                            </li>
+                            <li>Human Resources</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
 
             <br class="spacer">
 
@@ -723,9 +818,20 @@
                     </tr>
                     <tr class="bulk-action-row">
                         <th colspan="8">
+                            <div class="message message-info">
+                                <h4><i class="icon fw fw-info"></i>Minor Information Message</h4>
+                                <p>Alerts don't have default classes, only base and modifier classes. A default gray alert
+                                    doesn't make too much sense, so you're required to specify a type via contextual class.
+                                    Choose from success, info, warning, or danger.</p>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr class="bulk-action-row">
+                        <th colspan="8">
+
                             <ul class="tiles">
                                 <li class="square">
-                                    <a href="#" data-click-event="remove-form" class="btn square-element" data-toggle="modal" data-target="#modalDemo">
+                                    <a class="btn square-element" data-click-event="delete-selected-rows">
                                         <span class="icon fw-stack">
                                             <i class="fw fw-ring fw-stack-2x"></i>
                                             <i class="fw fw-delete fw-stack-1x"></i>
@@ -734,7 +840,7 @@
                                     </a>
                                 </li>
                                 <li class="square">
-                                    <a href="#" data-click-event="remove-form" class="btn square-element" data-toggle="modal" data-target="#modalDemo">
+                                    <a class="btn square-element" data-toggle="modal" data-target="#modalDemo">
                                         <span class="icon fw-stack">
                                             <i class="fw fw-ring fw-stack-2x"></i>
                                             <i class="fw fw-edit fw-stack-1x"></i>
@@ -750,7 +856,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="myModalLabel">Delete Selected</h4>
+                                            <h4 class="modal-title" id="myModalLabel">Edit Selected</h4>
                                         </div>
                                         <div class="modal-body">
                                             You about perform a bulk operation, please confirm to proceed.
@@ -766,33 +872,35 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody><!-- Handlebars Template Appends Here --></tbody>
+                <tbody>
+                    <!-- Handlebars Template Appends Here -->
+                </tbody>
             </table>
 
             <br class="spacer">
 
             <table class="table table-striped list-table display responsive nowrap data-table grid-view" id="device-grid">
                 <thead>
-                <tr class="sort-row">
-                    <th class="no-sort"></th>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
-                    <th class="no-sort"></th>
-                </tr>
-                <tr class="filter-row">
-                    <th data-for="Type"></th>
-                    <th data-for="Name" class="text-filter"></th>
-                    <th data-for="Position" class="select-filter"></th>
-                    <th data-for="Office" class="select-filter"></th>
-                    <th data-for="Age" class="select-filter"></th>
-                    <th data-for="Start Date" class="select-filter"></th>
-                    <th data-for="Salary" class="select-filter"></th>
-                    <th></th>
-                </tr>
+                    <tr class="sort-row">
+                        <th class="content-fill no-sort"></th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                        <th class="no-sort"></th>
+                    </tr>
+                    <tr class="filter-row">
+                        <th data-for="Type"></th>
+                        <th data-for="Name" class="text-filter"></th>
+                        <th data-for="Position" class="select-filter"></th>
+                        <th data-for="Office" class="select-filter"></th>
+                        <th data-for="Age" class="select-filter"></th>
+                        <th data-for="Start Date" class="select-filter"></th>
+                        <th data-for="Salary" class="select-filter"></th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody><!-- Handlebars Template Appends Here --></tbody>
             </table>

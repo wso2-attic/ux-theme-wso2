@@ -222,7 +222,7 @@ var responsiveTextRatio = 0.2,
                 },
                 initComplete: function(){
 
-                    var ROW_SELECTED_CLASS = 'DTTT_selected selected';
+                    var ROW_SELECTED_CLASS = 'DTTT_selected';
 
                     this.api().columns().every(function(){
 
@@ -364,6 +364,14 @@ var responsiveTextRatio = 0.2,
                             //$(this).closest('li').siblings().show();
                         }
                     });
+
+                    /**
+                     *  delete selected rows
+                     */
+                    $('[data-click-event=delete-selected-rows]').click(function(){
+                        var thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
+                        thisTable.api().rows('.'+ROW_SELECTED_CLASS).remove().draw(false);
+                    });
                 }
             },settings)
         );
@@ -461,14 +469,33 @@ $(function(){
     /***********************************************************
      *  sidebar toggle function
      ***********************************************************/
-    $("#menu-toggle").click(function(e) {
+    $('[data-toggle=sidebar]').click(function(e) {
         e.preventDefault();
-        $(".page-content-wrapper").toggleClass("toggled");
-        $(".sidebar-wrapper").toggleClass("toggled");
+
+        var container = $(this).attr('data-container'),
+            target = $(this).attr('data-target');
+
+        $(this).toggleAttr('aria-expanded', 'true', 'false');
+        $(this).closest('li').toggleClass("active");
+
+        if($(this).attr('data-container-push')) {
+            $(container)
+                .toggleAttr('data-container-push', 'true', 'false')
+                .attr('data-push-side', $(this).attr('data-push-side'));
+        }
+
+        else if($(this).attr('data-container-divide')) {
+            $(container)
+                .toggleAttr('data-container-divide', 'true', 'false')
+                .attr('data-divide-side', $(this).attr('data-divide-side'));
+        }
+
+        $(target)
+            .toggleClass("toggled")
+            .attr('data-side', $(this).attr('data-side'));
     });
 
 });
-
 
 
 
