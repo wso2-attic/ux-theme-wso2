@@ -27,9 +27,12 @@ var responsiveTextRatio = 0.2,
 (function($){
 
 
-    /* ========================================================================
-     * import required files function
-     * ======================================================================== */
+    /**
+     * @description Dependancy injection function
+     * @param  {String}     File    Name of the dependancy
+     * @param  {String}     Type    Dependancy type
+     * @return {Null}
+     */
     $.required = function(file, filetype){
         var markup = 'undefined';
 
@@ -72,9 +75,10 @@ var responsiveTextRatio = 0.2,
     };
 
 
-    /* ========================================================================
-     * add browser meta data to html tag
-     * ======================================================================== */
+    /**
+     * A function to add data attributes to HTML about the user agent
+     * @return {Null}
+     */
      $.browser_meta = function(){
          $('html')
              .attr('data-useragent', navigator.userAgent)
@@ -117,17 +121,16 @@ var responsiveTextRatio = 0.2,
     };
 
 
-    /* ========================================================================
-     * input file browse function
-     * ======================================================================== */
+    /**
+     * Cross browser file input controller
+     * @return {Node}
+     */
     $.file_input = function(){
         var elem = '.file-upload-control';
 
         return $(elem).each(function(){
 
-            /**
-             * input value change function
-             */
+            //Input value change function
             $(elem + ' :file').change(function(){
                 var input = $(this),
                     numFiles = input.get(0).files ? input.get(0).files.length : 1,
@@ -135,16 +138,12 @@ var responsiveTextRatio = 0.2,
                 input.trigger('fileselect', [numFiles, label]);
             });
 
-            /**
-             * button click function
-             */
+            //Button click function
             $(elem + ' .browse').click(function(){
                 $(this).parents('.input-group').find(':file').click();
             });
 
-            /**
-             * file select function
-             */
+            //File select function
             $(elem + ' :file').on('fileselect', function(event, numFiles, label) {
                 var input = $(this).parents('.input-group').find(':text'),
                     log = numFiles > 1 ? numFiles + ' files selected' : label;
@@ -163,9 +162,10 @@ var responsiveTextRatio = 0.2,
 
 
     /**
-     * @param  {[type]}
-     * @param  {[type]}
-     * @return {[type]}
+     * @description Auto resize icons and text on browser resize
+     * @param  {Number}     Compression Ratio
+     * @param  {Object}     Object containing the values to override defaults
+     * @return {Node}       DOM Node 
      */
     $.fn.responsive_text = function(compress, options){
 
@@ -178,26 +178,18 @@ var responsiveTextRatio = 0.2,
 
         return this.each(function(){
 
-            /**
-             * store the object
-             */
+            //Cache object for performance
             var $this = $(this);
 
-            /**
-             * resizer() resizes items based on the object width divided by the compressor * 10
-             */
+            //resize items based on the object width devided by the compressor
             var resizer = function() {
                 $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
             };
 
-            /**
-             *  call once to set.
-             */
+            //Init method
             resizer();
 
-            /**
-             *  call on resize. Opera debounces their resize by default.
-             */
+            //event bound to browser window to fire on window resize
             $(window).on('resize.fittext orientationchange.fittext', resizer);
 
         });
@@ -237,9 +229,7 @@ var responsiveTextRatio = 0.2,
                         var column = this;
                         var filterColumn = $('.filter-row th', elem);
 
-                        /**
-                         *  Create & add select/text filters to each column
-                         */
+                        //Create & add select/text filters to each column
                         if (filterColumn.eq(column.index()).hasClass('select-filter')) {
                             var select = $('<select class="form-control"><option value="">All</option></select>')
                                 .appendTo(filterColumn.eq(column.index()).empty())
@@ -286,15 +276,11 @@ var responsiveTextRatio = 0.2,
 
                     });
 
-                    /**
-                     *  search input default styles override
-                     */
+                    //Search input default styles override
                     var search_input = $(this).closest('.dataTables_wrapper').find('div[id$=_filter] input');
                     search_input.before('<i class="fw fw-search search-icon"></i>').removeClass('input-sm');
 
-                    /**
-                     *  create sorting dropdown menu for list table advance operations
-                     */
+                    // Create sorting dropdown menu for list table advance operations 
                     var dropdownmenu = $('<ul class="dropdown-menu arrow arrow-top-right dark sort-list add-margin-top-2x"><li class="dropdown-header">Sort by</li></ul>');
                     $('.sort-row th', elem).each(function(){
                         if(!$(this).hasClass('no-sort')){
@@ -302,9 +288,7 @@ var responsiveTextRatio = 0.2,
                         }
                     });
 
-                    /**
-                     *  append advance operations to list table toolbar
-                     */
+                    //Append advance operations to list table toolbar
                     $('.dataTable.list-table').closest('.dataTables_wrapper').find('.dataTablesTop .dataTables_toolbar').html('' +
                         '<ul class="nav nav-pills navbar-right remove-margin" role="tablist">' +
                             '<li><button data-click-event="toggle-selected" class="btn btn-default btn-primary">Select All</li>' +
@@ -314,9 +298,7 @@ var responsiveTextRatio = 0.2,
                         '</ul>'
                     );
 
-                    /**
-                     *  sorting dropdown menu select function
-                     */
+                    //Sorting dropdown menu select function
                     $('.dataTables_wrapper .sort-list li a').click(function() {
                         $(this).closest('li').siblings('li').find('a').removeClass('sorting_asc').removeClass('sorting_desc');
 
@@ -336,10 +318,7 @@ var responsiveTextRatio = 0.2,
                         }
                     });
 
-
-                    /**
-                     *  select/deselect all rows function
-                     */
+                    //Select/Deselect all rows functions
                     $('.dataTables_wrapper [data-click-event=toggle-selected]').click(function() {
                         var button = this,
                             thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
@@ -358,9 +337,7 @@ var responsiveTextRatio = 0.2,
                         }
                     });
 
-                    /**
-                     *  on row click select/deselect row function
-                     */
+                    //Event for row select/deselect
                     $('body').on('click', '[data-type=selectable]', function(){
                         $(this).toggleClass(ROW_SELECTED_CLASS);
                         var button = this,
@@ -373,9 +350,7 @@ var responsiveTextRatio = 0.2,
                         });
                     });
 
-                    /**
-                     *  list table list/grid view toggle function
-                     */
+                    //list table list/grid view toggle function
                     var toggleButton = $('[data-click-event=toggle-list-view]');
                     toggleButton.click(function(){
                         if($(this).attr('data-view') == 'grid') {
@@ -396,9 +371,11 @@ var responsiveTextRatio = 0.2,
     };
 
 
-    /* ========================================================================
-     * tree-view function
-     * ======================================================================== */
+    /**
+     * Tree view function
+     * 
+     * @return {Null}
+     */
     $.fn.tree_view = function(o){
 
         var tree = $(this);
