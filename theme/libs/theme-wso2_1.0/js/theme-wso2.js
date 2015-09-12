@@ -26,7 +26,6 @@ var responsiveTextRatio = 0.2,
 
 (function($){
 
-
     /**
      * @description Dependancy injection function
      * @param  {String}     File    Name of the dependancy
@@ -196,9 +195,10 @@ var responsiveTextRatio = 0.2,
 
     };
 
-    /* ========================================================================
-     * datatables_extended function
-     * ======================================================================== */
+    /**
+     * DataTable extended function
+     * @return {Null}
+     */
     $.fn.datatables_extended = function(settings){
 
         var elem = $(this);
@@ -365,9 +365,7 @@ var responsiveTextRatio = 0.2,
                         }
                     });
 
-                    /**
-                     *  delete selected rows
-                     */
+                    //delete selected rows
                     $('[data-click-event=delete-selected-rows]').click(function(){
                         var thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
                         thisTable.api().rows('.'+ROW_SELECTED_CLASS).remove().draw(false);
@@ -381,11 +379,9 @@ var responsiveTextRatio = 0.2,
 
     /**
      * Tree view function
-     * 
      * @return {Null}
      */
-    $.fn.tree_view = function(o){
-
+    $.fn.tree_view = function(){
         var tree = $(this);
         tree.find('li').has("ul").each(function () {
             var branch = $(this); //li with children ul
@@ -418,15 +414,56 @@ var responsiveTextRatio = 0.2,
                 e.preventDefault();
             });
         });
+    };
 
+
+    /**
+     * Sidebar function
+     * @return {Null}
+     */
+    $.sidebar_toggle = function() {
+        var elem = '[data-toggle=sidebar]';
+
+        return $(elem).each(function() {
+            $(elem).click(function(e) {
+                e.preventDefault();
+
+                var container = $(this).attr('data-container'),
+                    target = $(this).attr('data-target');
+
+                $(this).toggleAttr('aria-expanded', 'true', 'false');
+                $(this).closest('li').toggleClass("active");
+
+                if($(this).attr('data-container-push')) {
+                    $(container)
+                        .toggleAttr('data-container-push', 'true', 'false')
+                        .attr('data-push-side', $(this).attr('data-push-side'));
+                }
+
+                else if($(this).attr('data-container-divide')) {
+                    $(container)
+                        .toggleAttr('data-container-divide', 'true', 'false')
+                        .attr('data-divide-side', $(this).attr('data-divide-side'));
+                }
+
+                $(target)
+                    .toggleClass("toggled")
+                    .attr('data-side', $(this).attr('data-side'));
+            });
+        });
     };
 
 
 }(jQuery));
 
 $(document).ready(function(){
+
     $('.tree-view').tree_view();
     $.file_input();
+    $.sidebar_toggle();
+    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-state="loading"]').loading('show');
+
     $('.dropdown-menu input').click(function(e){
         e.stopPropagation();
     });
@@ -456,44 +493,8 @@ $(function(){
     var config = { attributes: true, childList: true, characterData: true };
     observer.observe(target, config);
 
-    /***********************************************************
-     *  enabling custom tooltips/titles
-     ***********************************************************/
     $('[data-toggle="tooltip"]').tooltip();
-
-    /***********************************************************
-     *  enabling loading
-     ***********************************************************/
     $('[data-state="loading"]').loading('show');
-
-    /***********************************************************
-     *  sidebar toggle function
-     ***********************************************************/
-    $('[data-toggle=sidebar]').click(function(e) {
-        e.preventDefault();
-
-        var container = $(this).attr('data-container'),
-            target = $(this).attr('data-target');
-
-        $(this).toggleAttr('aria-expanded', 'true', 'false');
-        $(this).closest('li').toggleClass("active");
-
-        if($(this).attr('data-container-push')) {
-            $(container)
-                .toggleAttr('data-container-push', 'true', 'false')
-                .attr('data-push-side', $(this).attr('data-push-side'));
-        }
-
-        else if($(this).attr('data-container-divide')) {
-            $(container)
-                .toggleAttr('data-container-divide', 'true', 'false')
-                .attr('data-divide-side', $(this).attr('data-divide-side'));
-        }
-
-        $(target)
-            .toggleClass("toggled")
-            .attr('data-side', $(this).attr('data-side'));
-    });
 
 });
 

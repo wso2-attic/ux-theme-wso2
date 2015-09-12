@@ -18,9 +18,7 @@
  * default values
  * ======================================================================== */
 
-@font-face {
-    .font( 'Roboto'; 300; 'normal'; 'Roboto Light'; 'Roboto-Light-webfont' )
-}
+@font-face {.font( 'Roboto'; 300; 'normal'; 'Roboto Light'; 'Roboto-Light-webfont' )}
 
 @font-default: 'Roboto Light', Arial, Helvetica, sans-serif;
 @font-icons: 'font-wso2';
@@ -800,6 +798,11 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
     .transition(all 0.5s ease);
 }
 
+.sidebar-wrapper.inverse {
+    background: transparent;
+  color: @base-dark-color;
+}
+
 .sidebar-wrapper[data-side=right] {
     left: auto;
     right: -@default-sidebar-width;
@@ -1000,11 +1003,12 @@ footer a {
         top: 0;
         right: 0;
         height: 50px;
+        width: 50px;
         line-height: 1;
         padding: 0 10px;
-        font-size: 16px;
-        background: #444;
-        color: #fff;
+        font-size: 12px;
+        background: @base-dark-color;
+        color: @base-light-color;
     }
     &.alert-success {
         color: @base-light-color;
@@ -2041,14 +2045,12 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
 
 .panel-default > .panel-heading {
     background: transparent;
-    text-transform: uppercase;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 500;
     border-bottom: 1px solid #e4e4e4;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
-
 
 /* ========================================================================
  * noty styles
@@ -2175,7 +2177,7 @@ ul.tiles .icon {
     .border-radius;
 }
 
-a.list-group-item:hover {
+.list-group-item:hover a {
     text-decoration: none;
 }
 
@@ -2285,7 +2287,7 @@ a.list-group-item:hover {
 }
 
 /* ========================================================================
- * custom styles
+ * asset details styles
  * ======================================================================== */
 
 .asset-image {
@@ -2294,22 +2296,171 @@ a.list-group-item:hover {
     float: none !important;
 }
 
-.asset-desc .short-name {
+.asset-desc .asset-name {
     font-size: 24px;
+    margin-bottom: 0;
 }
 
-.asset-desc .long-name {
-    font-size: 18px;
-}
-
-.asset-desc .long-name .icon {
-    font-size: 10px;
-}
-
-.asset-desc .author {
+.asset-desc .asset-publisher {
     font-size: 14px;
+    margin-bottom: 20px;
 }
 
-.asset-desc .time {
-    font-size: 11px;
+/* ========================================================================
+ * notes styles
+ * ======================================================================== */
+
+
+.wr-panel-notes .wr-btn {
+  margin-right: 5px;
+}
+
+.wr-panel-notes .wr-input-control.checkbox {
+  margin: 0;
+}
+
+.wr-panel-notes .wr-input-control.checkbox .helper:before {
+  border-color: #526A84;
+}
+
+.wr-panel-notes .add-btn {
+  padding-left: 0;
+}
+
+.wr-panel-notes .panel-collapse {
+  padding: 10px 0 10px 35px;
+  position: relative;
+}
+
+.wr-panel-note {
+  margin: 0;
+}
+
+.wr-panel-notes .well {
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.wr-panel-note .wr-panel-msg:hover {
+  cursor: pointer;
+  background: #f5f5f5;
+}
+
+.wr-panel-notes .wr-panel-desc-icon i {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.wr-panel-notes .wr-panel-desc-icon img {
+  width: 30px;
+  height: auto;
+}
+
+.wr-panel-notes .wr-panel-desc-icon {
+  float: left;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  white-space: nowrap;
+  margin-bottom: 5px;
+}
+
+.wr-panel-msg {
+  background: #fff;
+  border-right: 2px solid #333;
+  padding: 8px 35px 8px 10px;
+  margin-left: 35px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  position: relative;
+}
+
+
+.wr-panel-msg .dropdown-menu {
+  background: #333;
+  color: #fff;
+  left: -172px;
+  top: -2px;
+  width: auto;
+}
+
+.wr-panel-msg .dropdown-menu a {
+  color: #fff;
+}
+
+.wr-panel-msg .dropdown-menu a:hover, .wr-panel-msg .dropdown-menu a:focus {
+  background-color: #132D45;
+  color: #fff;
+}
+
+.wr-panel-msg .msg-options {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.wr-panel-msg .msg-options .btn.dropdown-toggle {
+  padding: 6px;
+  border: none;
+  color: #333;
+  background: transparent;
+}
+
+.wr-panel-msg .msg-options .btn.dropdown-toggle:hover, .wr-panel-msg .msg-options .btn.dropdown-toggle[aria-expanded="true"] {
+  color: #fff;
+  background-color: #333;
+}
+
+a.wr-panel-msg-visibility {
+  position: absolute;
+  bottom: 7px;
+  right: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.wr-panel-notes .resolve-icon {
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  font-size: 14px;
+}
+
+.wr-panel-notes .resolved .resolve-icon {
+  display: block;
+}
+
+.wr-panel-notes .resolved .wr-panel-msg {
+  border-right: none;
+  background: #dedede;
+}
+
+.wr-panel-notes .resolved .wr-panel-sub-note .wr-panel-msg .msg-options {
+  display: none;
+}
+
+.wr-panel-sub-note .wr-panel-msg {
+  background: transparent;
+  margin-bottom: 5px;
+  padding-top: 0;
+  border-right: none;
+}
+
+.wr-panel-msg-details {
+  font-size: 10px;
+  color: #919191;
+  margin-top: 10px;
+}
+
+.wr-panel-notes .more-link {
+  display: inline-block;
+  margin-bottom: 8px;
 }
