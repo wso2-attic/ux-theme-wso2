@@ -193,50 +193,72 @@
     <!-- #page-content-wrapper -->
     <div class="page-content-wrapper">
 
-
-
         <!-- page content -->
         <div class="container-fluid body-wrapper">
 
             <div class="row no-gutter">
 
                 <div class="media">
-                    <div class="media-left media-middle asset-image col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <div class="media-left media-middle asset-image col-xs-1 col-sm-2 col-md-2 col-lg-2">
                         <div class="thumbnail icon"><i class="square-element text fw fw-mobile"></i></div>
                     </div>
-                    <div class="media-body asset-desc well add-padding-left-5x add-padding-right-5x">
-                        <h1 class="short-name">John's Phone</h1>
-                        <div><label>Device :</label> Samsung Galaxy S4</div>
-                        <div><label>Model :</label> GT-i9505</div>
-                        <div>
-                            <label>OS :</label>
-                            <i class="fw fw-android"></i> Android
-                        </div>
-                        <div><label>IMEI :</label> 351776060691383</div>
-                        <div>
-                            <label>Status :</label>
-                            <span><i class="fw fw-ok icon-success"></i> Enrolled</span>
-                            <span><i class="fw fw-ok icon-success"></i> Compliant</span>
-                        </div>
+                    <div class="media-body well asset-desc col-xs-1 add-padding-left-5x add-padding-right-5x">
+                        <div class="asset-name">John's Office Phone</div>
+                        <div class="asset-publisher">by John Doe</div>
+                        <fieldset>
+                            <legend>Overview</legend>
+                            <div>Samsung Galaxy S4 - GT-i9505</div>
+                            <div>
+                                <i class="fw fw-android"></i> Android
+                            </div>
+                            <div><label>IMEI :</label> 351776060691383</div>
+                            <div>
+                                <span><i class="fw fw-ok icon-success"></i> Enrolled</span>
+                                <span><i class="fw fw-ok icon-success"></i> Compliant</span>
+                            </div>
+                        </fieldset>
                     </div>
+                </div>
+
+                <div class="add-margin-top-4x">
+                    <ul class="tiles">
+                        <li class="square">
+                            <a class="btn square-element" data-click-event="delete-selected-rows">
+                                <span class="icon fw-stack">
+                                    <i class="fw fw-ring fw-stack-2x"></i>
+                                    <i class="fw fw-delete fw-stack-1x"></i>
+                                </span>
+                                Delete Selected
+                            </a>
+                        </li>
+                        <li class="square">
+                            <a class="btn square-element" data-toggle="modal" data-target="#modalDemo">
+                                <span class="icon fw-stack">
+                                    <i class="fw fw-ring fw-stack-2x"></i>
+                                    <i class="fw fw-edit fw-stack-1x"></i>
+                                </span>
+                                Edit Selected
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="media">
                     <div class="media-left col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                        <div class="list-group">
-                            <a href="#" class="list-group-item active">Device Location</a>
-                            <a href="#" class="list-group-item">Installed Applications</a>
-                        </div>
+                        <ul class="list-group" role="tablist">
+                            <li class="list-group-item active"><a href="#device_location" role="tab" data-toggle="tab" aria-controls="device_location">Device Location</a></li>
+                            <li class="list-group-item"><a href="#installed_applications" role="tab" data-toggle="tab" aria-controls="installed_applications">Installed Applications</a></li>
+                        </ul>
                     </div>
-                    <div class="media-body add-padding-left-3x remove-padding-xs">
-                        <div class="panel-group">
-                            <div class="panel panel-default">
+                    <div class="media-body add-padding-left-5x remove-padding-xs tab-content">
+                        <div class="panel-group tab-content">
+                            <div class="panel panel-default tab-pane active" id="device_location" role="tabpanel" aria-labelledby="device_location">
                                 <div class="panel-heading">Device Location</div>
                                 <div class="panel-body">
                                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31685.790279428384!2d79.85860875927737!3d6.923585351516181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1426479547647" width="100%" height="450" frameborder="0" style="border:0"></iframe>
                                 </div>
                             </div>
-                            <div class="panel panel-default">
+                            <div class="panel panel-default tab-pane" id="installed_applications" role="tabpanel" aria-labelledby="installed_applications">
                                 <div class="panel-heading">Installed Applications</div>
                                 <div class="panel-body">
                                     <div class="wr-app-listing">
@@ -330,8 +352,25 @@
     <script src="libs/jquery_1.11.0/jquery-1.11.3.min.js"></script>
     <script src="libs/jquery-ui_1.11.4/jquery-ui.min.js"></script>
 
+    <!-- Jquery Resize JS -->
+    <script src="libs/jquery-resize_0.5.3/jquery.resize.js"></script>
+
     <!-- Bootstrap JS -->
     <script src="libs/bootstrap_3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- Data Tables JS -->
+    <script src="libs/data-tables_1.10.7/media/js/jquery.dataTables.min.js"></script>
+    <script src="libs/data-tables_1.10.7/extensions/Bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src="libs/data-tables_1.10.7/extensions/Responsive/js/dataTables.responsive.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="libs/select2_4.0.0/js/select2.full.min.js"></script>
+
+    <!-- Jquery Validation JS -->
+    <script src="libs/jquery-validation_1.14.0/jquery.validate.min.js"></script>
+
+    <!-- Noty JS -->
+    <script src="libs/noty_2.3.5/packaged/jquery.noty.packaged.min.js"></script>
 
     <!-- Theme WSO2 JS -->
     <script src="libs/theme-wso2_1.0/js/theme-wso2.js"></script>
