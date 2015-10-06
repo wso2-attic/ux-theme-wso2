@@ -210,7 +210,8 @@ var responsiveTextRatio = 0.2,
     };
 
     /**
-     * DataTable extended function
+     * Data tables extended functionality wrapper
+     * @param  {Object} settings Settings to override the defaults data tables behaviour
      * @return {Null}
      */
     $.fn.datatables_extended = function(settings){
@@ -470,6 +471,65 @@ var responsiveTextRatio = 0.2,
         });
     };
 
+
+}(jQuery));
+
+/**
+ * Mutationobserver wrapper function
+ * @usage  $(el).MutationObserverWrapper({
+ *             config: {
+ *                 childList : true
+ *             },
+ *             callback : function(mutationObj){
+ *                 
+ *             }
+ *         })
+ * @return {Null}
+ */
+(function ($) {
+
+    $.fn.MutationObserverWrapper = function (options) {
+        
+        if(isSupported() === false){
+            throw 'Mutation observer is not supported by your browser.'
+        }
+
+        var defaults = {
+            config: {
+                childList: true,
+                attributes: true,
+                characterData: true,
+                subtree: true,
+                attributeOldValue: true,
+                characterDataOldValue: true,
+                attributeFilter: []
+            },
+            callback: function (mutations) {
+                mutations.forEach(function (mutation) {
+                    console.log(mutation);
+                })
+            }
+        }
+
+        var target = $(this)[0];
+        var plugin = $.fn.MutationObserverWrapper;
+        var options = $.extend({}, defaults, options)
+        
+        var observer = new MutationObserver(options.callback);
+
+        observer.observe(target, options.config);
+        
+    }
+
+    function isSupported() {
+        var prefixes = ['WebKit', 'Moz', 'O', 'Ms', '']
+        for (var i = 0; i < prefixes.length; i++) {
+            if (prefixes[i] + 'MutationObserver' in window) {
+                return window[prefixes[i] + 'MutationObserver'];
+            }
+        }
+        return false;
+    }
 
 }(jQuery));
 
