@@ -122,7 +122,7 @@ var responsiveTextRatio = 0.2,
 
     /**
      * Cross browser file input controller
-     * @return {Node}
+     * @return {Node} DOM Node
      */
     $.file_input = function(){
         var elem = '.file-upload-control';
@@ -191,6 +191,20 @@ var responsiveTextRatio = 0.2,
             //event bound to browser window to fire on window resize
             $(window).on('resize.fittext orientationchange.fittext', resizer);
 
+        });
+
+    };
+    
+    /**
+     * @description Random background color generator for thumbs
+     * @param  {range}      Color Range Value
+     * @return {Node}       DOM Node 
+     */
+    $.fn.random_background_color = function(range){
+
+        return this.each(function(){
+            var color = '#'+Math.random().toString(range).substr(-6);
+            $(this).css('background', color);
         });
 
     };
@@ -370,6 +384,9 @@ var responsiveTextRatio = 0.2,
                         var thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
                         thisTable.api().rows('.'+ROW_SELECTED_CLASS).remove().draw(false);
                     });
+                    
+                    $('.random-thumbs .thumbnail.icon').random_background_color(8);
+                    
                 }
             },settings)
         );
