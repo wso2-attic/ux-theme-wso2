@@ -201,10 +201,16 @@ var responsiveTextRatio = 0.2,
      * @return {Node}       DOM Node 
      */
     $.fn.random_background_color = function(range){
-
+        
+        if(!range){
+            range = 9;
+        }
+        
         return this.each(function(){
+            
             var color = '#'+Math.random().toString(range).substr(-6);
             $(this).css('background', color);
+            
         });
 
     };
@@ -386,7 +392,7 @@ var responsiveTextRatio = 0.2,
                         thisTable.api().rows('.'+ROW_SELECTED_CLASS).remove().draw(false);
                     });
                     
-                    $('.random-thumbs .thumbnail.icon').random_background_color(8);
+                    $('.random-thumbs .thumbnail.icon').random_background_color();
                     
                 }
             },settings)
