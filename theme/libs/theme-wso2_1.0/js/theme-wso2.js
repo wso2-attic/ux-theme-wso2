@@ -448,33 +448,32 @@ var responsiveTextRatio = 0.2,
     $.sidebar_toggle = function() {
         var elem = '[data-toggle=sidebar]';
 
-        return $(elem).each(function() {
-            $(elem).click(function(e) {
-                e.preventDefault();
+        $(elem).click(function(e) {
+            e.preventDefault();
 
-                var container = $(this).attr('data-container'),
-                    target = $(this).attr('data-target');
+            var container = $(this).attr('data-container'),
+                target = $(this).attr('data-target');
 
-                $(this).toggleAttr('aria-expanded', 'true', 'false');
-                $(this).closest('li').toggleClass("active");
+            $(this).toggleAttr('aria-expanded', 'true', 'false');
+            $(this).closest('li').toggleClass("active");
 
-                if($(this).attr('data-container-push')) {
-                    $(container)
-                        .toggleAttr('data-container-push', 'true', 'false')
-                        .attr('data-push-side', $(this).attr('data-push-side'));
-                }
+            if($(this).attr('data-container-push')) {
+                $(container)
+                    .toggleAttr('data-container-push', 'true', 'false')
+                    .attr('data-push-side', $(this).attr('data-push-side'));
+            }
 
-                else if($(this).attr('data-container-divide')) {
-                    $(container)
-                        .toggleAttr('data-container-divide', 'true', 'false')
-                        .attr('data-divide-side', $(this).attr('data-divide-side'));
-                }
+            else if($(this).attr('data-container-divide')) {
+                $(container)
+                    .toggleAttr('data-container-divide', 'true', 'false')
+                    .attr('data-divide-side', $(this).attr('data-divide-side'));
+            }
 
-                $(target)
-                    .toggleClass("toggled")
-                    .attr('data-side', $(this).attr('data-side'));
-            });
+            $(target)
+                .toggleClass("toggled")
+                .attr('data-side', $(this).attr('data-side'));
         });
+     
     };
 
 

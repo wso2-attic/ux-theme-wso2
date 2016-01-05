@@ -49,16 +49,20 @@
     <link href="libs/animate/animate.css" rel="stylesheet" type="text/css" />
 
     <!-- Theme WSO2 LESS -->
-    <link href="libs/theme-wso2_1.0/less/theme-wso2.less" rel="stylesheet/less" type="text/css" />
+    <!--<link href="libs/theme-wso2_1.0/less/theme-wso2.less" rel="stylesheet/less" type="text/css" />-->
+
+    <!-- Theme WSO2 SCSS -->
+    <link href="libs/theme-wso2_1.0/scss/theme-wso2.scss" rel="stylesheet/sass" type="text/css" />
 
     <!-- Custom CSS/LESS -->
-    <link href="less/theme-wso2-config.less" rel="stylesheet/less" type="text/css" />
+    <!--<link href="less/theme-wso2-config.less" rel="stylesheet/less" type="text/css" />-->
+    <!--<link href="scss/theme-wso2-config.scss" rel="stylesheet/sass" type="text/css" />-->
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
 
     <!-- LESS CSS Compiler -->
     <!-- less.js Debug Script -->
     <script>
-        less = {
+        /*less = {
             env: "development",
             logLevel: 2,
             async: false,
@@ -68,13 +72,46 @@
             dumpLineNumbers: "comments",
             relativeUrls: false,
             globalVars: {
-                var1: '"string value"',
-                var2: 'regular value'
+            var1: '"string value"',
+            var2: 'regular value'
             },
             rootpath: ""
-        };
+        };*/
     </script>
-    <script src="libs/less_2.5.1/less.min.js"></script>
+    <!--<script src="libs/less_2.5.1/less.min.js"></script>-->
+
+    <!-- SASS CSS Compiler -->
+    <script src="libs/sass_0.9.4/sass.js"></script>
+    <script>
+        var linkElements = document.querySelectorAll('link[rel$=sass]');
+        Array.prototype.forEach.call(linkElements, function(node) {
+            var filepath = node.href.substring(0, node.href.lastIndexOf("/")+1),
+                filename = node.href.substring(node.href.lastIndexOf("/")+1);
+
+            var sass = new Sass();
+
+            sass.preloadFiles(filepath, '', [filename], function() {
+                sass.readFile(filename);
+                sass.compile('@import "'+filename+'";', function(css) {
+                    if(css.status == 0) {
+                        var sheet = document.createElement('style');
+                        sheet.setAttribute("type", "text/css");
+                        sheet.setAttribute("scss-path", css.files[0]);
+                        sheet.innerHTML = css.text;
+                        node.parentNode.insertBefore(sheet, node.nextSibling);
+                    }
+                    else{
+                        console.log("SASS/SCSS Compiling Error");
+                        console.log("-----------------------------------");
+                        console.log("File: " + css.file);
+                        console.log("Line Number: " + css.line);
+                        console.log("Message: " + css.message);
+                        console.log("-----------------------------------");
+                    }
+                });
+            });
+        });
+    </script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -107,7 +144,6 @@
                <li class="divider visible-xs"></li>
                <li><a href="#">Sign out</a></li>
              </ul>
-
            </div>
         </div>
     </header>
@@ -975,7 +1011,7 @@
                             <li>Company Maintenance</li>
                             <li>Employees
                                 <ul>
-                                    <li>Reports
+                                    <li><input type="checkbox"> Reports
                                         <ul>
                                             <li>
                                                 <div class="checkbox">
@@ -984,11 +1020,23 @@
                                                     </label>
                                                 </div>
                                             </li>
-                                            <li>Report2</li>
+                                            <li>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox"> Report2
+                                                    </label>
+                                                </div>
+                                            </li>
                                             <li>Report3</li>
                                         </ul>
                                     </li>
-                                    <li>Employee Maint.</li>
+                                    <li>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Employee Maint.
+                                            </label>
+                                        </div>
+                                    </li>
                                 </ul>
                             </li>
                             <li>Human Resources</li>

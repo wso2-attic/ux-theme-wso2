@@ -184,7 +184,7 @@
     display: inline-block;
     width: 2em;
     height: 2em;
-    line-height: 2em;
+    line-height: 2.1em;
     vertical-align: middle;
 }
 .fw-stack-1x,
@@ -778,4 +778,3 @@
 .fw-wso2:before {
 	content: "\e6a8";
 }
-

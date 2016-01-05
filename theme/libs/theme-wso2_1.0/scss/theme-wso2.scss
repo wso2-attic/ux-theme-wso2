@@ -15,71 +15,10 @@
 */
 
 /* ========================================================================
- * default values
+ * methods/mixins
  * ======================================================================== */
 
-@font-face {.font( 'Roboto'; 300; 'normal'; 'Roboto Light'; 'Roboto-Light-webfont' )}
-
-@font-default: 'Roboto Light', Arial, Helvetica, sans-serif;
-@font-icons: 'font-wso2';
-@font-default-weight: 300;
-@border-radius-default: 0;
-@box-shadow-default: none;
-
-@sides: top, bottom, left, right;
-@screen-sizes: xs, sm, md, lg;
-@message-status: info, success, warning, danger;
-@sizes-length: 5;
-@default-gap: 5px;
-
-@base-dark-color: #222;
-@base-light-color: #ffffff;
-@base-success-color: #5cb85c;
-@base-info-color: #009DA7;
-@base-warning-color: #f0ad4e;
-@base-danger-color: #d9534f;
-
-@primary-color: #2c313b;
-@secondary-color: #e4e4e4;
-@optional-color: #007D85;
-
-@navbar-height: 50px;
-@navbar-padding: 0 15px;
-@navbar-color1: #4D5461;
-@navbar-background-color: @primary-color;
-@navbrand-background-color: darken(@navbar-background-color, 5%);
-
-@footer-height: 40px;
-@footer-background: @base-dark-color;
-@footer-color: #cbcbcb;
-
-@inverse-layout-background: @primary-color;
-@inverse-layout-color: @base-light-color;
-
-@loading-background-opacity: 0.7;
-@loading-background-color: @base-dark-color;
-@loading-color: @base-light-color;
-@loading-inverse-background-color: @base-light-color;
-@loading-inverse-color: @base-dark-color;
-
-@dropdown-menu-dark-background-color: @base-dark-color;
-@dropdown-menu-dark-color: @base-light-color;
-@dropdown-menu-dark-tiles-background-color: #444;
-@dropdown-menu-dark-tiles-hover-background-color: #555;
-@dropdown-menu-dark-tiles-color: @base-light-color;
-
-@button-primary-background-color: @primary-color;
-@button-primary-color: @base-light-color;
-@button-border: @button-primary-background-color;
-@button-primary-hover-background-color: lighten(@button-primary-background-color, 10%);
-
-@form-control-max-width: 750px;
-
-/* ========================================================================
- * methods
- * ======================================================================== */
-
-.clearfix() {
+@mixin clearfix {
     &:after {
         content: " ";
         display: block;
@@ -90,67 +29,66 @@
     }
 }
 
-.border-radius(@val: @border-radius-default) {
-    -webkit-border-radius: @val;
-    -moz-border-radius: @val;
-    border-radius: @val;
+@mixin border-radius($val: 0) {
+    -webkit-border-radius: $val;
+    -moz-border-radius: $val;
+    border-radius: $val;
 }
 
-.box-shadow(@val: @box-shadow-default) {
-    -webkit-box-shadow: @val;
-	-moz-box-shadow: @val;
-	box-shadow: @val;
+@mixin box-shadow($val: none) {
+    -webkit-box-shadow: $val;
+    -moz-box-shadow: $val;
+    box-shadow: $val;
 }
 
-.transform(@val) {
-    -webkit-transform: @val;
-    -moz-transform: @val;
-    -ms-transform: @val;
-    -o-transform: @val;
-    transform: @val;
+@mixin transform($val) {
+    -webkit-transform: $val;
+    -moz-transform: $val;
+    -ms-transform: $val;
+    -o-transform: $val;
+    transform: $val;
 }
 
-.transition(@val) {
-	-webkit-transition: @val;
-	-moz-transition: @val;
-    -ms-transition: @val;
-	-o-transition: @val;
-	transition: @val;
+@mixin transition($val) {
+    -webkit-transition: $val;
+    -moz-transition: $val;
+    -ms-transition: $val;
+    -o-transition: $val;
+    transition: $val;
 }
 
-.gradient (@origin: top, @start: #ffffff, @stop: #e4e4e4) {
-	background-color: @start;
-	background-image: -webkit-linear-gradient(@origin, @start, @stop);
-	background-image: -moz-linear-gradient(@origin, @start, @stop);
-	background-image: -o-linear-gradient(@origin, @start, @stop);
-	background-image: -ms-linear-gradient(@origin, @start, @stop);
-	background-image: linear-gradient(@origin, @start, @stop);
+@mixin gradient ($origin: top, $start: #ffffff, $stop: #e4e4e4) {
+    background-color: $start;
+    background-image: -webkit-linear-gradient($origin, $start, $stop);
+    background-image: -moz-linear-gradient($origin, $start, $stop);
+    background-image: -o-linear-gradient($origin, $start, $stop);
+    background-image: -ms-linear-gradient($origin, $start, $stop);
+    background-image: linear-gradient($origin, $start, $stop);
 }
 
-.font(@font; @font-weight; @font-style; @font-name; @file-name;){
-        
-    @font-file:'../fonts/@{font}/@{file-name}';
-        
-    font-family: @font-name;
-    font-style: @font-style;
-    font-weight: @font-weight;
-    src: url('@{font-file}.eot');
-    src: local(@font-name),
-         local(@file-name),
-         url('@{font-file}.eot') format('embedded-opentype'),
-         url('@{font-file}.woff') format('woff'),
-         url('@{font-file}.ttf') format('truetype'),
-         url('@{font-file}.svg#@{font-name}') format('svg');
+@mixin font($font, $font-weight, $font-style, $font-name, $file-name){
+    $font-file:'../fonts/${font}/#{$file-name}';
+
+    font-family: $font-name;
+    font-style: $font-style;
+    font-weight: $font-weight;
+    src: url('#{$font-file}.eot');
+    src: local($font-name),
+    local($file-name),
+    url('#{$font-file}.eot') format('embedded-opentype'),
+    url('#{$font-file}.woff') format('woff'),
+    url('#{$font-file}.ttf') format('truetype'),
+    url('#{$font-file}.svg##{$font-name}') format('svg');
 }
 
-.square-ratio(@width, @height) {
+@mixin square-ratio($width, $height) {
     position: relative;
 
     &:before {
         display: block;
         content: "";
         width: 100%;
-        padding-top: (@height / @width) * 100%;
+        padding-top: ($height / $width) * 100%;
     }
     > .square-element {
         position: absolute;
@@ -161,13 +99,13 @@
     }
 }
 
-.fade-color(@color: #ffffff) {
+@mixin fade-color($color: #ffffff) {
     &:after {
         content: "";
-        background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, fade(@color, 0%)), color-stop(100%, fade(@color, 100%)));
-        background-image: -webkit-linear-gradient(left, fade(@color, 0%), fade(@color, 100%));
-        background: linear-gradient(to right, fade(@color, 0%), fade(@color, 100%));
-        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='#00@color', EndColorStr='@color');
+        background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, fade($color, 0%)), color-stop(100%, fade($color, 100%)));
+        background-image: -webkit-linear-gradient(left, fade($color, 0%), fade($color, 100%));
+        background: linear-gradient(to right, fade($color, 0%), fade($color, 100%));
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='#00$color', EndColorStr='$color');
         bottom: 0;
         max-height: 100%;
         position: absolute;
@@ -177,33 +115,94 @@
     }
 }
 
-.opacity(@opacity) {
-    opacity: @opacity;
+@mixin opacity($opacity) {
+    opacity: $opacity;
     // IE8 filter
-    @opacity-ie: (@opacity * 100);
-    filter: "alpha(opacity=@{opacity-ie})";
+    $opacity-ie: ($opacity * 100);
+    filter: "alpha(opacity=#{$opacity-ie})";
 }
 
-.placeholder(@color) {
-    &::-moz-placeholder { color: @color; } // Firefox
-    &:-ms-input-placeholder { color: @color; } // Internet Explorer 10+
-    &::-webkit-input-placeholder { color: @color; } // Safari and Chrome
+@mixin placeholder($color) {
+    &::-moz-placeholder { color: $color; } // Firefox
+    &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+    &::-webkit-input-placeholder { color: $color; } // Safari and Chrome
 }
 
-.reset-default() {
+@mixin reset-default() {
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
 /* ========================================================================
+ * default values
+ * ======================================================================== */
+
+@font-face {
+    @include font('Roboto', 300, 'normal', 'Roboto Light', 'Roboto-Light-webfont')
+}
+
+$font-default: 'Roboto Light', Arial, Helvetica, sans-serif;
+$font-icons: 'font-wso2';
+$font-default-weight: 300;
+
+$sides: top, bottom, left, right;
+$screen-sizes: xs, sm, md, lg;
+$message-status: info, success, warning, danger;
+$sizes-length: 5;
+$default-gap: 5px;
+
+$base-dark-color: #222;
+$base-light-color: #ffffff;
+$base-success-color: #5cb85c;
+$base-info-color: #009DA7;
+$base-warning-color: #f0ad4e;
+$base-danger-color: #d9534f;
+
+$primary-color: #2c313b;
+$secondary-color: #e4e4e4;
+$optional-color: #007D85;
+
+$navbar-height: 50px;
+$navbar-padding: 0 15px;
+$navbar-color1: #4D5461;
+$navbar-background-color: $primary-color;
+$navbrand-background-color: darken($navbar-background-color, 5%);
+
+$footer-height: 40px;
+$footer-background: $base-dark-color;
+$footer-color: #cbcbcb;
+
+$inverse-layout-background: $primary-color;
+$inverse-layout-color: $base-light-color;
+
+$loading-background-opacity: 0.7;
+$loading-background-color: $base-dark-color;
+$loading-color: $base-light-color;
+$loading-inverse-background-color: $base-light-color;
+$loading-inverse-color: $base-dark-color;
+
+$dropdown-menu-dark-background-color: $base-dark-color;
+$dropdown-menu-dark-color: $base-light-color;
+$dropdown-menu-dark-tiles-background-color: #444;
+$dropdown-menu-dark-tiles-hover-background-color: #555;
+$dropdown-menu-dark-tiles-color: $base-light-color;
+
+$button-primary-background-color: $primary-color;
+$button-primary-color: $base-light-color;
+$button-border: $button-primary-background-color;
+$button-primary-hover-background-color: lighten($button-primary-background-color, 10%);
+
+$form-control-max-width: 750px;
+
+/* ========================================================================
  * icon styles
  * ======================================================================== */
 
-.icon-success { color: @base-success-color }
-.icon-info { color: @base-info-color }
-.icon-warning { color: @base-warning-color }
-.icon-danger { color: @base-danger-color }
+.icon-success { color: $base-success-color }
+.icon-info { color: $base-info-color }
+.icon-warning { color: $base-warning-color }
+.icon-danger { color: $base-danger-color }
 
 [aria-expanded='true'] > .icon.fw-stack > .toggle-icon,
 [aria-expanded='true'] > .icon.toggle-icon {
@@ -255,10 +254,10 @@ html {
 }
 
 body {
-    color: @base-dark-color;
-    margin-bottom: @footer-height;
-    font-family: @font-default;
-    font-weight: @font-default-weight;
+    color: $base-dark-color;
+    margin-bottom: $footer-height;
+    font-family: $font-default;
+    font-weight: $font-default-weight;
 }
 
 body > .page-content-wrapper > .container,
@@ -275,8 +274,8 @@ body > .page-content-wrapper > .container-fluid {
 }
 
 body.inverse {
-    background: @inverse-layout-background;
-    color: @inverse-layout-color;
+    background: $inverse-layout-background;
+    color: $inverse-layout-color;
 }
 
 a, a:hover, a:focus, a:active {
@@ -295,8 +294,8 @@ br.spacer {
 }
 
 .well {
-    .border-radius;
-    .box-shadow;
+    @include border-radius;
+    @include box-shadow;
     border: none;
 }
 
@@ -310,11 +309,11 @@ br.spacer {
 }
 
 .fade-edge {
-    .fade-color;
+    @include fade-color;
 }
 
 body.inverse .fade-edge {
-    .fade-color(@inverse-layout-background);
+    @include fade-color($inverse-layout-background);
 }
 
 .visible-block {
@@ -330,38 +329,38 @@ body.inverse .fade-edge {
 }
 
 /* generating padding and margin classes */
-.generate-gaps(@sizes-length);
-.generate-gaps(@n, @i: 1) when (@i =< @n) {
-
-    // padding
-    .add-padding-@{i}x {
-        padding: (@i * @default-gap)!important;
-    }
-    .add-padding-side(@iterator: 1) when(@iterator <= length(@sides)) {
-        @side: extract(extract(@sides, @iterator), 1);
-        .add-padding-@{side}-@{i}x {
-            padding-@{side}: (@i * @default-gap)!important;
-        }
-        .add-padding-side((@iterator + 1));
-    }
-    .add-padding-side();
-
-    // margin
-    .add-margin-@{i}x {
-        margin: (@i * @default-gap)!important;
-    }
-    .add-margin-side(@iterator: 1) when(@iterator <= length(@sides)) {
-        @side: extract(extract(@sides, @iterator), 1);
-        .add-margin-@{side}-@{i}x {
-            margin-@{side}: (@i * @default-gap)!important;
-        }
-        .add-margin-side((@iterator + 1));
-    }
-    .add-margin-side();
-
-    // generate gaps
-    .generate-gaps(@n, (@i + 1));
-}
+//.generate-gaps($sizes-length);
+//.generate-gaps($n, $i: 1) when ($i =< $n) {
+//
+//    // padding
+//    .add-padding-${i}x {
+//        padding: ($i * $default-gap)!important;
+//    }
+//    .add-padding-side($iterator: 1) when($iterator <= length($sides)) {
+//        $side: extract(extract($sides, $iterator), 1);
+//        .add-padding-${side}-${i}x {
+//            padding-${side}: ($i * $default-gap)!important;
+//        }
+//        .add-padding-side(($iterator + 1));
+//    }
+//    .add-padding-side();
+//
+//    // margin
+//    .add-margin-${i}x {
+//        margin: ($i * $default-gap)!important;
+//    }
+//    .add-margin-side($iterator: 1) when($iterator <= length($sides)) {
+//        $side: extract(extract($sides, $iterator), 1);
+//        .add-margin-${side}-${i}x {
+//            margin-${side}: ($i * $default-gap)!important;
+//        }
+//        .add-margin-side(($iterator + 1));
+//    }
+//    .add-margin-side();
+//
+//    // generate gaps
+//    .generate-gaps($n, ($i + 1));
+//}
 
 .remove-padding {
     padding: 0 !important;
@@ -595,7 +594,7 @@ body.inverse .fade-edge {
  * ======================================================================== */
 
 header {
-    background: @base-dark-color;
+    background: $base-dark-color;
     min-height: 50px;
     position: relative;
 }
@@ -615,7 +614,7 @@ header .brand {
         font-weight: 500;
         font-size: 17px;
         margin: 0 0 0 5px;
-        color: @base-light-color;
+        color: $base-light-color;
         padding: 6px 0 0 0;
         font-style: normal;
         text-transform: uppercase;
@@ -628,12 +627,12 @@ header .auth {
 
 header .dropdown {
     display: inline-block;
-    color: @base-light-color;
+    color: $base-light-color;
     padding: 6px 0;
 }
 
 header .dropdown[aria-expanded=true], header .dropdown:hover {
-    background: darken(@base-dark-color, 25%);
+    background: darken($base-dark-color, 25%);
 }
 
 @media only screen and (max-width: 768px) {
@@ -666,10 +665,10 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
 }
 
 .navbar {
-    background: @navbar-background-color;
+    background: $navbar-background-color;
     border: none;
     margin-bottom: 0;
-    .border-radius;
+    @include border-radius;
 }
 
 .navbar .container-fluid {
@@ -700,70 +699,70 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
 
 .navbar-menu-toggle {
     float: left;
-    height: @navbar-height;
+    height: $navbar-height;
     padding: 0 8px;
-    line-height: @navbar-height;
+    line-height: $navbar-height;
     font-size: 18px;
-    background: @optional-color;
-    color: @base-light-color;
+    background: $optional-color;
+    color: $base-light-color;
 
     &:hover, &:focus, &:active {
-        color: @base-light-color;
-        background: darken(@optional-color, 10%);
+        color: $base-light-color;
+        background: darken($optional-color, 10%);
     }
     &[aria-expanded=true] {
-        background: darken(@optional-color, 8%);
+        background: darken($optional-color, 8%);
     }
 }
 
 .navbar-toggle {
     border: none;
-    .border-radius;
+    @include border-radius;
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: @base-light-color;
+    color: $base-light-color;
     text-transform: uppercase;
     padding: 0 15px;
-    line-height: @navbar-height;
+    line-height: $navbar-height;
 }
 
 .navbar > .container .navbar-brand,
 .navbar > .container-fluid .navbar-brand {
-    color: @base-light-color;
+    color: $base-light-color;
     margin-left: 0;
     padding: 0 15px;
-    line-height: @navbar-height;
+    line-height: $navbar-height;
     text-transform: uppercase;
-    background: @navbrand-background-color;
+    background: $navbrand-background-color;
 }
 
 .navbar > .container .navbar-brand a,
 .navbar > .container-fluid .navbar-brand a {
-    color: @base-light-color;
+    color: $base-light-color;
     font-size: 16px;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     border-top: none;
-    .box-shadow;
+    @include box-shadow;
 }
 
 .navbar-default .navbar-nav > li > a {
     &:hover, &:focus, &:active {
-        color: @base-light-color;
+        color: $base-light-color;
     }
 }
 
 .navbar-default .navbar-nav > .active > a {
     &, &:hover, &:focus, &:active {
-        background: @navbar-color1;
-        color: @base-light-color;
+        background: $navbar-color1;
+        color: $base-light-color;
     }
 }
 
 .navbar-collapse.dropdown {
-    background: @dropdown-menu-dark-background-color;
+    background: $dropdown-menu-dark-background-color;
     margin-right: -10px;
     margin-left: -10px;
     padding-bottom: 0;
@@ -791,14 +790,14 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
     width: 120px;
     height: 120px;
     padding: 15px;
-    background: @dropdown-menu-dark-tiles-background-color;
+    background: $dropdown-menu-dark-tiles-background-color;
     display: block;
     overflow: hidden;
     line-height: 1.4em;
 }
 
 .navbar-collapse.tiles ul.nav li a:hover {
-    background: @dropdown-menu-dark-tiles-hover-background-color;
+    background: $dropdown-menu-dark-tiles-hover-background-color;
 }
 
 .navbar-collapse.tiles ul.nav li a i {
@@ -811,53 +810,53 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
  * sidebar styles
  * ======================================================================== */
 
-@default-sidebar-width: 350px;
+$default-sidebar-width: 350px;
 
 .page-content-wrapper, .page-content-wrapper[data-container-behaviour=static] {
-    .transition(all 0.5s ease);
+    @include transition(all 0.5s ease);
     position: relative;
     left: 0;
     margin-left: 0;
 }
 
 .page-content-wrapper[data-container-push=true] {
-    left: @default-sidebar-width;
+    left: $default-sidebar-width;
 }
 
 .page-content-wrapper[data-push-side=right][data-container-push=true] {
     left: auto;
-    right: @default-sidebar-width;
+    right: $default-sidebar-width;
 }
 
 .page-content-wrapper[data-container-divide=true] {
-    margin-left: @default-sidebar-width;
+    margin-left: $default-sidebar-width;
 }
 
 .page-content-wrapper[data-divide-side=right][data-container-divide=true] {
     margin-left: auto;
-    margin-right: @default-sidebar-width;
+    margin-right: $default-sidebar-width;
 }
 
 .sidebar-wrapper {
     z-index: 1000;
     position: fixed;
-    left: -@default-sidebar-width;
-    width: @default-sidebar-width;
+    left: -$default-sidebar-width;
+    width: $default-sidebar-width;
     height: 100%;
     overflow-y: auto;
-    background: @base-dark-color;
-    color: @base-light-color;
-    .transition(all 0.5s ease);
+    background: $base-dark-color;
+    color: $base-light-color;
+    @include transition(all 0.5s ease);
 }
 
 .sidebar-wrapper.inverse {
-    background: @base-light-color;
-    color: @base-dark-color;
+    background: $base-light-color;
+    color: $base-dark-color;
 }
 
 .sidebar-wrapper[data-side=right] {
     left: auto;
-    right: -@default-sidebar-width;
+    right: -$default-sidebar-width;
 }
 
 .sidebar-wrapper.toggled {
@@ -871,7 +870,7 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
 }
 
 ul.sidebar-messages {
-    .reset-default;
+    @include reset-default;
     padding: 10px;
 }
 
@@ -887,7 +886,7 @@ ul.sidebar-messages > li {
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: @default-sidebar-width;
+    width: $default-sidebar-width;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -906,7 +905,7 @@ ul.sidebar-messages > li {
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: @base-light-color;
+    color: $base-light-color;
     background: rgba(255,255,255,0.2);
 }
 
@@ -926,7 +925,7 @@ ul.sidebar-messages > li {
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-    color: @base-light-color;
+    color: $base-light-color;
     background: none;
 }
 
@@ -940,7 +939,7 @@ ul.sidebar-messages > li {
     }
 
     #sidebar-wrapper {
-        width: @default-sidebar-width;
+        width: $default-sidebar-width;
     }
 
     #wrapper.toggled #sidebar-wrapper {
@@ -964,7 +963,7 @@ ul.sidebar-messages > li {
 .breadcrumb {
     margin: 0;
     overflow: hidden;
-    .border-radius;
+    @include border-radius;
 }
 
 .breadcrumb > li + li:before {
@@ -983,10 +982,10 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    min-height: @footer-height;
+    min-height: $footer-height;
     overflow: hidden;
-    color: @footer-color;
-    background: @footer-background;
+    color: $footer-color;
+    background: $footer-background;
     z-index: 1000;
 }
 
@@ -998,19 +997,19 @@ footer > .container-fluid {
 
 footer > .container p,
 footer > .container-fluid p {
-    line-height: @footer-height;
+    line-height: $footer-height;
     margin-bottom: 0;
 }
 
 footer .icon {
     font-size: 21px;
     vertical-align: middle;
-    color: @footer-color;
+    color: $footer-color;
 }
 
 footer a {
     &, &:hover {
-        color: @footer-color;
+        color: $footer-color;
     }
 }
 
@@ -1019,7 +1018,7 @@ footer a {
  * ======================================================================== */
 
 .body-wrapper a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .page-header {
@@ -1039,7 +1038,7 @@ footer a {
  * ======================================================================== */
 
 .alert {
-    .border-radius;
+    @include border-radius;
     border: none;
     position: relative;
     padding: 15px 50px 15px 15px;
@@ -1059,35 +1058,35 @@ footer a {
         line-height: 1;
         padding: 0 10px;
         font-size: 12px;
-        background: @base-dark-color;
-        color: @base-light-color;
+        background: $base-dark-color;
+        color: $base-light-color;
     }
     &.alert-success {
-        color: @base-light-color;
-        background: @base-success-color;
+        color: $base-light-color;
+        background: $base-success-color;
         & .close {
-          background: darken(@base-success-color, 50%);
+            background: darken($base-success-color, 50%);
         }
     }
     &.alert-info {
-        color: @base-light-color;
-        background: @base-info-color;
+        color: $base-light-color;
+        background: $base-info-color;
         & .close {
-            background: darken(@base-info-color, 50%);
+            background: darken($base-info-color, 50%);
         }
     }
     &.alert-warning {
-        color: @base-light-color;
-        background: @base-warning-color;
+        color: $base-light-color;
+        background: $base-warning-color;
         & .close {
-            background: darken(@base-warning-color, 50%);
+            background: darken($base-warning-color, 50%);
         }
     }
     &.alert-danger {
-        color: @base-light-color;
-        background: @base-danger-color;
+        color: $base-light-color;
+        background: $base-danger-color;
         & .close {
-            background: darken(@base-danger-color, 50%);
+            background: darken($base-danger-color, 50%);
         }
     }
 }
@@ -1101,7 +1100,7 @@ footer a {
     margin: 20px 0;
     border-left: 5px solid transparent;
     background: #f9f9f9;
-    .border-radius;
+    @include border-radius;
 }
 .message h4 {
     margin-top: 0;
@@ -1123,27 +1122,27 @@ footer a {
 
 .message {
     &-success {
-        border-left-color: @base-success-color;
+        border-left-color: $base-success-color;
         & h4 {
-            color: @base-success-color;
+            color: $base-success-color;
         }
     }
     &-info {
-        border-left-color: @base-info-color;
+        border-left-color: $base-info-color;
         & h4 {
-            color: @base-info-color;
+            color: $base-info-color;
         }
     }
     &-warning {
-        border-left-color: @base-warning-color;
+        border-left-color: $base-warning-color;
         & h4 {
-            color: @base-warning-color;
+            color: $base-warning-color;
         }
     }
     &-danger {
-        border-left-color: @base-danger-color;
+        border-left-color: $base-danger-color;
         & h4 {
-            color: @base-danger-color;
+            color: $base-danger-color;
         }
     }
 }
@@ -1155,9 +1154,9 @@ footer a {
 .dropdown-menu {
     border: none;
     background: #e4e4e4;
-    .border-radius;
-    .box-shadow;
-    .clearfix;
+    @include border-radius;
+    @include box-shadow;
+    @include clearfix;
 }
 
 .dropdown-menu.arrow:before, .dropdown-menu.arrow.arrow-top-left:before {
@@ -1178,19 +1177,19 @@ footer a {
 }
 
 .dropdown-menu.dark {
-    background: @dropdown-menu-dark-background-color;
-    color: @dropdown-menu-dark-color;
-    .border-radius;
-    .box-shadow;
+    background: $dropdown-menu-dark-background-color;
+    color: $dropdown-menu-dark-color;
+    @include border-radius;
+    @include box-shadow;
 }
 
 .dropdown-menu.dark a {
-    color: @dropdown-menu-dark-color;
+    color: $dropdown-menu-dark-color;
 }
 
 
 .dropdown-menu.dark.arrow:before {
-    border-bottom-color: @dropdown-menu-dark-background-color;
+    border-bottom-color: $dropdown-menu-dark-background-color;
 }
 
 .dropdown-menu.tiles {
@@ -1214,12 +1213,12 @@ footer a {
     height: 85px;
     text-align: center;
     vertical-align: text-bottom;
-    color: @dropdown-menu-dark-tiles-color;
+    color: $dropdown-menu-dark-tiles-color;
     text-decoration: none;
-    background: @dropdown-menu-dark-tiles-background-color;
+    background: $dropdown-menu-dark-tiles-background-color;
 
     &:hover {
-        background: @dropdown-menu-dark-tiles-hover-background-color;
+        background: $dropdown-menu-dark-tiles-hover-background-color;
     }
 }
 
@@ -1289,12 +1288,12 @@ footer a {
 }
 
 .loading[data-loading-style=overlay] .loading-bg {
-    background: @loading-background-color;
+    background: $loading-background-color;
     position: absolute;
     height: 100%;
     width: 100%;
     z-index: 10000000;
-    .opacity(@loading-background-opacity);
+    @include opacity($loading-background-opacity);
 }
 
 .loading[data-loading-style=icon-only] .loading-bg {
@@ -1302,7 +1301,7 @@ footer a {
 }
 
 .loading[data-loading-inverse=true] .loading-bg {
-    background: @loading-inverse-background-color;
+    background: $loading-inverse-background-color;
 }
 
 .loading .loading-animation {
@@ -1313,7 +1312,7 @@ footer a {
     width: 100px;
     height: 75px;
     text-align: center;
-    .transform(translate(-50%, -50%));
+    @include transform(translate(-50%, -50%));
 }
 
 .loading .loading-animation .logo:before {
@@ -1329,75 +1328,75 @@ footer a {
 .loading .loading-animation .logo .pulse-line,
 .loading .loading-animation .logo .circle {
     fill: none;
-    stroke: @loading-color;
+    stroke: $loading-color;
 }
 
 .loading[data-loading-inverse=true] .loading-animation .logo .pulse-line,
 .loading[data-loading-inverse=true] .loading-animation .logo .circle {
-    stroke: @loading-inverse-color;
+    stroke: $loading-inverse-color;
 }
 
 .loading .loading-animation .logo .circle {
     stroke-dasharray: 100;
-    .opacity(0.5);
+    @include opacity(0.5);
 }
 
 .loading .loading-animation .logo .pulse-line {
     stroke-dasharray: 200;
     stroke-dashoffset: 200;
     animation: dash 4s linear  infinite;
-    .opacity(0);
+    @include opacity(0);
 }
 
 @keyframes dash {
     0% {
-        .opacity(0.9);
+        @include opacity(0.9);
     }
     10% {
         stroke-dashoffset: 200;
-        .opacity(0.9);
+        @include opacity(0.9);
     }
     70% {
         stroke-dashoffset: 500;
-        .opacity(0.9);
+        @include opacity(0.9);
     }
     80% {
-        .opacity(0);
+        @include opacity(0);
     }
     100% {
-        .opacity(0);
+        @include opacity(0);
     }
 }
 
 .loading .loading-animation .logo .signal {
-    border: 5px solid @loading-color;
+    border: 5px solid $loading-color;
     border-radius: 50px;
     height: 50px;
     width: 50px;
-    .opacity(0);
+    @include opacity(0);
     position: absolute;
     top: 0;
     animation: pulsate 4s ease-out infinite;
     animation-delay: 1.5s;
-    .transform(translate(-50%, -50%));
+    @include transform(translate(-50%, -50%));
 }
 
 @keyframes pulsate {
     0%, 30%  {
-        .opacity(0);
-        .transform(scale(0.9));
+        @include opacity(0);
+        @include transform(scale(0.9));
     }
     40% {
-        .opacity(1);
+        @include opacity(1);
     }
     60% {
-        .opacity(0);
-        .transform(scale(1.2));
+        @include opacity(0);
+        @include transform(scale(1.2));
     }
 }
 
 .loading .loading-animation p {
-    color: @loading-color;
+    color: $loading-color;
     text-align: center;
     font-size: 11px;
     margin-top: 4px;
@@ -1405,7 +1404,7 @@ footer a {
 }
 
 .loading[data-loading-inverse=true] .loading-animation p {
-    color: @loading-inverse-color;
+    color: $loading-inverse-color;
 }
 
 /* ui fixes */
@@ -1428,8 +1427,8 @@ footer a {
 }
 
 .form-control, .btn {
-    .border-radius;
-    .box-shadow;
+    @include border-radius;
+    @include box-shadow;
 }
 
 a.btn, .btn {
@@ -1441,7 +1440,7 @@ a.btn, .btn {
         border-left: 1px solid #e4e4e4;
     }
     &.active, &:active {
-        .box-shadow;
+        @include box-shadow;
     }
     &:hover, &:focus {
         text-decoration: none;
@@ -1450,12 +1449,12 @@ a.btn, .btn {
 }
 
 .btn-primary {
-    color: @button-primary-color;
-    background-color: @button-primary-background-color;
-    border-color: @button-border;
+    color: $button-primary-color;
+    background-color: $button-primary-background-color;
+    border-color: $button-border;
 
     &:hover {
-        background-color: @button-primary-hover-background-color;
+        background-color: $button-primary-hover-background-color;
     }
 }
 
@@ -1467,16 +1466,16 @@ a.btn, .btn {
     width: 100%;
 
     &-xs {
-        min-width: calc(@form-control-max-width/12);
+        min-width: calc(#{$form-control-max-width}/12);
     }
     &-sm {
-        min-width: calc(@form-control-max-width/9);
+        min-width: calc(#{$form-control-max-width}/9);
     }
     &-md {
-        min-width: calc(@form-control-max-width/6);
+        min-width: calc(#{$form-control-max-width}/6);
     }
     &-lg {
-        min-width: calc(@form-control-max-width/2);
+        min-width: calc(#{$form-control-max-width}/2);
     }
 }
 
@@ -1485,11 +1484,11 @@ input[type=number].form-control {
 }
 
 .form-control, .input-wrap {
-    max-width: @form-control-max-width;
+    max-width: $form-control-max-width;
 }
 
 .form-control:focus {
-    .box-shadow
+    @include box-shadow
 }
 
 .input-wrap .btn.wrap-input-right {
@@ -1497,7 +1496,7 @@ input[type=number].form-control {
 }
 
 .input-group-addon {
-    .border-radius;
+    @include border-radius;
 }
 
 .file-upload-control input[type=file] {
@@ -1525,16 +1524,16 @@ input[type=number].form-control {
 
     .form-control {
         &-xs {
-          min-width: calc(@form-control-max-width/24);
+            min-width: calc(#{$form-control-max-width}/24);
         }
         &-sm {
-          min-width: calc(@form-control-max-width/18);
+            min-width: calc(#{$form-control-max-width}/18);
         }
         &-md {
-          min-width: calc(@form-control-max-width/12);
+            min-width: calc(#{$form-control-max-width}/12);
         }
         &-lg {
-          min-width: calc(@form-control-max-width/4);
+            min-width: calc(#{$form-control-max-width}/4);
         }
     }
 }
@@ -1655,7 +1654,7 @@ input[type=number].form-control {
     background: #e4e4e4 !important;
 
     &.fade-edge {
-        .fade-color(#e4e4e4);
+        @include fade-color(#e4e4e4);
     }
 }
 
@@ -1728,7 +1727,7 @@ input[type=number].form-control {
 
 .table.list-table:not(.grid-view) {
     & > tbody > tr > td,
-    & > tbody > tr > th {
+    & > tbody > tr > th{
         background: #f5f5f5;
 
         &.fade-edge:after {
@@ -1841,7 +1840,7 @@ input[type=number].form-control {
     }
 }
 @media (min-width:320px) and (max-width:479px){
-   .table.list-table.grid-view tr {
+    .table.list-table.grid-view tr {
         width: 100%;
     }
 }
@@ -1876,20 +1875,20 @@ input[type=number].form-control {
 table.dataTable thead .sorting:after,
 table.dataTable thead .sorting_asc:after,
 table.dataTable thead .sorting_desc:after {
-    font-family: @font-icons;
+    font-family: $font-icons;
 }
 
 .dataTables_wrapper ul.sort-list li a:before,
 .dataTables_wrapper ul.sort-list li a.sorting_asc:before,
 .dataTables_wrapper ul.sort-list li a.sorting_desc:before {
-    font-family: @font-icons;
+    font-family: $font-icons;
     margin-right: 10px;
     font-size: 11px;
-    .opacity(1);
+    @include opacity(1);
 }
 
 .dataTables_wrapper ul.sort-list li a:before {
-    .opacity(0.2);
+    @include opacity(0.2);
 }
 
 table.dataTable thead .sorting:after,
@@ -1944,7 +1943,7 @@ table.dataTable tr.filter-row th {
 
 .dataTablesTop,
 .dataTablesBottom {
-    .clearfix;
+    @include clearfix;
     margin: 0;
 }
 
@@ -1973,7 +1972,7 @@ table.dataTable tr.filter-row th {
 .table.dataTable tbody tr.active th,
 .table.dataTable tbody tr.active:hover td,
 .table.dataTable tbody tr.active:hover th {
-    background-color: @primary-color !important;
+    background-color: $primary-color !important;
 }
 
 
@@ -2002,24 +2001,24 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
  * ======================================================================== */
 
 .thumbnail {
-    .border-radius;
+    @include border-radius;
 }
 
 .thumbnail.icon {
     border: none;
     margin: 0;
-    background: @primary-color;
+    background: $primary-color;
     color: #fff;
     text-align: center;
     overflow: hidden;
-    .square-ratio(1,1);
+    @include square-ratio(1,1);
 }
 
 .thumbnail.icon .square-element:before {
     position: absolute;
     top: 50%;
     left: 50%;
-    .transform(translate(-50%, -50%));
+    @include transform(translate(-50%, -50%));
 }
 
 .thumbnail.icon img {
@@ -2031,8 +2030,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
  * ======================================================================== */
 
 .thumbnail-list {
-    .reset-default;
-    .clearfix;
+    @include reset-default;
+    @include clearfix;
 }
 
 .thumbnail-list li {
@@ -2049,7 +2048,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
     &:first-child > span,
     &:last-child > a,
     &:last-child > span {
-        .border-radius;
+        @include border-radius;
     }
 
     & > a,
@@ -2058,7 +2057,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
     & > span,
     & > span:hover{
         text-decoration: none;
-        color: @primary-color;
+        color: $primary-color;
     }
 }
 
@@ -2069,8 +2068,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
     & > span,
     & > span:focus,
     & > span:hover {
-        background: @primary-color;
-        border-color: @primary-color;
+        background: $primary-color;
+        border-color: $primary-color;
     }
 }
 
@@ -2090,12 +2089,12 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
  * ======================================================================== */
 
 .panel-group .panel, .panel-heading, .panel-footer, .panel-body {
-    .border-radius;
+    @include border-radius;
     padding: 0;
 }
 
 .panel {
-    .box-shadow;
+    @include box-shadow;
     border: none;
 }
 
@@ -2128,8 +2127,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
 
 .noty_container_type {
     &_notification {
-        background-color: @base-dark-color;
-        color: @base-light-color;
+        background-color: $base-dark-color;
+        color: $base-light-color;
     }
     &_warning {
         background-color: #ffeaa8;
@@ -2137,15 +2136,15 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
     }
     &_error {
         background-color: #e74c3c;
-        color: @base-light-color;
+        color: $base-light-color;
     }
     &_information {
         background-color: #78c5e7;
-        color: @base-light-color;
+        color: $base-light-color;
     }
     &_success {
         background-color: #40d47e;
-        color: @base-light-color;
+        color: $base-light-color;
     }
 }
 
@@ -2162,7 +2161,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
  * ======================================================================== */
 
 ul.tiles {
-    .reset-default;
+    @include reset-default;
 }
 
 ul.tiles li {
@@ -2171,14 +2170,14 @@ ul.tiles li {
 
 ul.tiles li.square {
     min-width: 80px;
-    .square-ratio(1,1);
+    @include square-ratio(1,1);
 }
 
 ul.tiles li a {
     text-decoration: none;
     padding: 5px;
     background: #f3f3f3;
-    color: @base-dark-color;
+    color: $base-dark-color;
     display: block;
     overflow: hidden;
     line-height: 1.2em;
@@ -2210,8 +2209,8 @@ ul.tiles .icon {
 }
 
 .modal-content {
-    .border-radius;
-    .box-shadow;
+    @include border-radius;
+    @include box-shadow;
 }
 
 .modal-dialog {
@@ -2230,7 +2229,7 @@ ul.tiles .icon {
 
 .list-group-item:first-child,
 .list-group-item:last-child {
-    .border-radius;
+    @include border-radius;
 }
 
 a.list-group-item:hover {
@@ -2241,9 +2240,9 @@ a.list-group-item:hover {
     &,
     &:focus,
     &:hover {
-        color: @base-light-color;
-        background: @primary-color;
-        border-color: @primary-color;
+        color: $base-light-color;
+        background: $primary-color;
+        border-color: $primary-color;
     }
 }
 
@@ -2253,7 +2252,7 @@ a.list-group-item:hover {
 
 .tree-view,
 .tree-view ul {
-    .reset-default;
+    @include reset-default;
 }
 
 .tree-view ul {
@@ -2282,10 +2281,10 @@ a.list-group-item:hover {
 
 .tree-view li {
     & > .icon {
-        font-family: @font-icons;
+        font-family: $font-icons;
         font-style: normal;
-        background: @primary-color;
-        color: @base-light-color;
+        background: $primary-color;
+        color: $base-light-color;
         height: 20px;
         width: 20px;
         text-align: center;
@@ -2315,7 +2314,7 @@ a.list-group-item:hover {
         text-decoration: none;
         border: none;
         background: transparent;
-        .reset-default;
+        @include reset-default;
     }
 }
 
@@ -2362,7 +2361,7 @@ a.list-group-item:hover {
 
 .asset-image {
     max-width: 150px;
-    background: @primary-color;
+    background: $primary-color;
     float: none;
 }
 
@@ -2382,155 +2381,155 @@ a.list-group-item:hover {
 
 
 .wr-panel-notes .wr-btn {
-  margin-right: 5px;
+    margin-right: 5px;
 }
 
 .wr-panel-notes .wr-input-control.checkbox {
-  margin: 0;
+    margin: 0;
 }
 
 .wr-panel-notes .wr-input-control.checkbox .helper:before {
-  border-color: #526A84;
+    border-color: #526A84;
 }
 
 .wr-panel-notes .add-btn {
-  padding-left: 0;
+    padding-left: 0;
 }
 
 .wr-panel-notes .panel-collapse {
-  padding: 10px 0 10px 35px;
-  position: relative;
+    padding: 10px 0 10px 35px;
+    position: relative;
 }
 
 .wr-panel-note {
-  margin: 0;
+    margin: 0;
 }
 
 .wr-panel-notes .well {
-  margin: 5px 0;
-  padding: 10px;
+    margin: 5px 0;
+    padding: 10px;
 }
 
 .wr-panel-note .wr-panel-msg:hover {
-  cursor: pointer;
-  background: #f5f5f5;
+    cursor: pointer;
+    background: #f5f5f5;
 }
 
 .wr-panel-notes .wr-panel-desc-icon i {
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  background: #333;
-  color: #fff;
-  text-align: center;
-  margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    margin-right: 10px;
 }
 
 .wr-panel-notes .wr-panel-desc-icon img {
-  width: 30px;
-  height: auto;
+    width: 30px;
+    height: auto;
 }
 
 .wr-panel-notes .wr-panel-desc-icon {
-  float: left;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  white-space: nowrap;
-  margin-bottom: 5px;
+    float: left;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    white-space: nowrap;
+    margin-bottom: 5px;
 }
 
 .wr-panel-msg {
-  background: #fff;
-  border-right: 2px solid #333;
-  padding: 8px 35px 8px 10px;
-  margin-left: 35px;
-  margin-bottom: 5px;
-  font-size: 14px;
-  position: relative;
+    background: #fff;
+    border-right: 2px solid #333;
+    padding: 8px 35px 8px 10px;
+    margin-left: 35px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    position: relative;
 }
 
 
 .wr-panel-msg .dropdown-menu {
-  background: #333;
-  color: #fff;
-  left: -172px;
-  top: -2px;
-  width: auto;
+    background: #333;
+    color: #fff;
+    left: -172px;
+    top: -2px;
+    width: auto;
 }
 
 .wr-panel-msg .dropdown-menu a {
-  color: #fff;
+    color: #fff;
 }
 
 .wr-panel-msg .dropdown-menu a:hover, .wr-panel-msg .dropdown-menu a:focus {
-  background-color: #132D45;
-  color: #fff;
+    background-color: #132D45;
+    color: #fff;
 }
 
 .wr-panel-msg .msg-options {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0;
-  cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    cursor: pointer;
 }
 
 .wr-panel-msg .msg-options .btn.dropdown-toggle {
-  padding: 6px;
-  border: none;
-  color: #333;
-  background: transparent;
+    padding: 6px;
+    border: none;
+    color: #333;
+    background: transparent;
 }
 
 .wr-panel-msg .msg-options .btn.dropdown-toggle:hover, .wr-panel-msg .msg-options .btn.dropdown-toggle[aria-expanded="true"] {
-  color: #fff;
-  background-color: #333;
+    color: #fff;
+    background-color: #333;
 }
 
 a.wr-panel-msg-visibility {
-  position: absolute;
-  bottom: 7px;
-  right: 10px;
-  font-size: 14px;
-  color: #333;
+    position: absolute;
+    bottom: 7px;
+    right: 10px;
+    font-size: 14px;
+    color: #333;
 }
 
 .wr-panel-notes .resolve-icon {
-  display: none;
-  position: absolute;
-  bottom: 5px;
-  right: 15px;
-  font-size: 14px;
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+    font-size: 14px;
 }
 
 .wr-panel-notes .resolved .resolve-icon {
-  display: block;
+    display: block;
 }
 
 .wr-panel-notes .resolved .wr-panel-msg {
-  border-right: none;
-  background: #dedede;
+    border-right: none;
+    background: #dedede;
 }
 
 .wr-panel-notes .resolved .wr-panel-sub-note .wr-panel-msg .msg-options {
-  display: none;
+    display: none;
 }
 
 .wr-panel-sub-note .wr-panel-msg {
-  background: transparent;
-  margin-bottom: 5px;
-  padding-top: 0;
-  border-right: none;
+    background: transparent;
+    margin-bottom: 5px;
+    padding-top: 0;
+    border-right: none;
 }
 
 .wr-panel-msg-details {
-  font-size: 10px;
-  color: #919191;
-  margin-top: 10px;
+    font-size: 10px;
+    color: #919191;
+    margin-top: 10px;
 }
 
 .wr-panel-notes .more-link {
-  display: inline-block;
-  margin-bottom: 8px;
+    display: inline-block;
+    margin-bottom: 8px;
 }

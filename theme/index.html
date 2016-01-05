@@ -26,64 +26,79 @@
 
     <link rel="shortcut icon" href="libs/theme-wso2_1.0/images/favicon.png" />
 
+    <!-- Jquery CSS -->
+    <link href="libs/jquery-ui_1.11.4/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+
     <!-- Bootstrap CSS -->
     <link href="libs/bootstrap_3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    
+
+    <!-- DataTable CSS -->
+    <link href="libs/data-tables_1.10.7/extensions/Bootstrap/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="libs/data-tables_1.10.7/extensions/Responsive/css/dataTables.responsive.css" rel="stylesheet" type="text/css" />
+
+    <!-- Select2 CSS -->
+    <link href="libs/select2_4.0.0/css/select2.min.css" rel="stylesheet" type="text/css" />
+
     <!-- Font Awesome CSS -->
     <link href="libs/font-awesome_4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    
+
     <!-- Font WSO2 CSS -->
     <link href="libs/font-wso2_1.2/css/font-wso2.css" rel="stylesheet" type="text/css" />
 
-    <!-- Theme WSO2 LESS -->
-    <link href="libs/theme-wso2_1.0/less/theme-wso2.less" rel="stylesheet/less" type="text/css" />
-    
-    <!-- Custom CSS/LESS -->
-    <link href="less/theme-wso2-config.less" rel="stylesheet/less" type="text/css" />
+    <!-- Animate CSS -->
+    <link href="libs/animate/animate.css" rel="stylesheet" type="text/css" />
+
+    <!-- Theme WSO2 SCSS -->
+    <link href="libs/theme-wso2_1.0/scss/theme-wso2.scss" rel="stylesheet/sass" type="text/css" />
+
+    <!-- Custom CSS/LESS/SCSS -->
+    <link href="scss/theme-wso2-config.scss" rel="stylesheet/sass" type="text/css" />
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
 
-    <!-- LESS CSS Compiler -->
-    <!-- less.js Debug Script -->
+    <!-- SASS CSS Compiler -->
+    <script src="libs/sass_0.9.4/sass.js"></script>
     <script>
-        less = {
-            env: "development",
-            logLevel: 2,
-            async: false,
-            fileAsync: false,
-            poll: 1000,
-            functions: {},
-            dumpLineNumbers: "comments",
-            relativeUrls: false,
-            globalVars: {
-              var1: '"string value"',
-              var2: 'regular value'
-            },
-            rootpath: ""
-        };
+        var linkElements = document.querySelectorAll('link[rel$=sass]');
+        Array.prototype.forEach.call(linkElements, function(node) {
+            var filepath = node.href.substring(0, node.href.lastIndexOf("/")+1),
+                    filename = node.href.substring(node.href.lastIndexOf("/")+1);
+
+            var sass = new Sass();
+
+            sass.preloadFiles(filepath, '', [filename], function() {
+                sass.readFile(filename);
+                sass.compile('@import "'+filename+'";', function(css) {
+                    if(css.status == 0) {
+                        var sheet = document.createElement('style');
+                        sheet.setAttribute("type", "text/css");
+                        sheet.setAttribute("scss-path", css.files[0]);
+                        sheet.innerHTML = css.text;
+                        node.parentNode.insertBefore(sheet, node.nextSibling);
+                    }
+                    else{
+                        console.log("SASS/SCSS Compiling Error");
+                        console.log("-----------------------------------");
+                        console.log("File: " + css.file);
+                        console.log("Line Number: " + css.line);
+                        console.log("Message: " + css.message);
+                        console.log("-----------------------------------");
+                    }
+                });
+            });
+        });
     </script>
-    <script src="libs/less_2.5.1/less.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="libs/html5shiv_3.7.2/html5shiv.min.js"></script>
-      <script src="libs/respond_1.4.2/respond.min.js"></script>
+    <script src="libs/html5shiv_3.7.2/html5shiv.min.js"></script>
+    <script src="libs/respond_1.4.2/respond.min.js"></script>
     <![endif]-->
       
 </head>
 <body class="inverse">
 
-    <!-- header -->
-    <header class="header header-default">
-        <div class="container-fluid">
-            <div class="pull-left brand float-remove-xs text-center-xs">
-                <a href="#">
-                    <img src="libs/theme-wso2_1.0/images/logo-inverse.svg" alt="wso2" title="wso2" class="logo">
-                    <h1><em>UI Component Library</em></h1>
-                </a>
-            </div>
-        </div>
-    </header>
+    <link data-include="header">
 
     <!-- #page-content-wrapper -->
     <div class="page-content-wrapper">
@@ -129,13 +144,8 @@
 
     </div><!-- /#page-content-wrapper -->
     
-    <!-- footer -->
-    <footer class="footer">
-      <div class="container-fluid">
-        <p>Theme WSO2 | &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://wso2.com/" target="_blank"><i class="icon fw fw-wso2"></i> Inc</a>. All Rights Reserved. | Powered by Twitter Bootstrap 3.3.5</p>
-      </div>
-    </footer>
-
+    <link data-include="footer">
+    
     <!-- Jquery/Jquery UI JS -->
     <script src="libs/jquery_1.11.0/jquery-1.11.3.min.js"></script>
     <script src="libs/jquery-ui_1.11.4/jquery-ui.min.js"></script>
@@ -143,11 +153,15 @@
     <!-- Bootstrap JS -->
     <script src="libs/bootstrap_3.3.5/js/bootstrap.min.js"></script>
 
-    <!-- Theme WSO2 JS -->
-    <script src="libs/theme-wso2_1.0/js/theme-wso2.js"></script>
-
     <!-- Custom JS -->
-    <script src="js/custom.js"></script>
+    <script>
+        $('link[data-include]').each(function(){
+            var el = $(this), template = 'templates/' + $(this).data('include') + '.html';
+            $.get(template,function(data){
+                $(el).replaceWith(data);
+            });
+        });
+    </script>
 
 </body>
 </html>
