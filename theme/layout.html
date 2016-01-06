@@ -78,15 +78,16 @@
             rootpath: ""
         };*/
     </script>
-    <!--<script src="libs/less_2.5.1/less.min.js"></script>-->
+    <!--<script src="libs/less_2.5.3/less.min.js"></script>-->
 
     <!-- SASS CSS Compiler -->
     <script src="libs/sass_0.9.4/sass.js"></script>
     <script>
+
         var linkElements = document.querySelectorAll('link[rel$=sass]');
         Array.prototype.forEach.call(linkElements, function(node) {
             var filepath = node.href.substring(0, node.href.lastIndexOf("/")+1),
-                filename = node.href.substring(node.href.lastIndexOf("/")+1);
+                    filename = node.href.substring(node.href.lastIndexOf("/")+1);
 
             var sass = new Sass();
 
@@ -111,6 +112,7 @@
                 });
             });
         });
+
     </script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
