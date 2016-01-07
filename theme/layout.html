@@ -95,11 +95,23 @@
                 sass.readFile(filename);
                 sass.compile('@import "'+filename+'";', function(css) {
                     if(css.status == 0) {
+
                         var sheet = document.createElement('style');
                         sheet.setAttribute("type", "text/css");
                         sheet.setAttribute("scss-path", css.files[0]);
                         sheet.innerHTML = css.text;
                         node.parentNode.insertBefore(sheet, node.nextSibling);
+
+                        sass.writeFile('base.css', css.text, function callback(success) {
+                            if(success == true){
+                                var scss = document.createElement('link');
+                                scss.setAttribute("href", "base.css");
+                                scss.setAttribute("rel", "stylesheet");
+                                scss.setAttribute("type", "text/css");
+                                scss.setAttribute("scss-path", css.files[0]);
+                                node.parentNode.insertBefore(scss, node.nextSibling);
+                            }
+                        });
                     }
                     else{
                         console.log("SASS/SCSS Compiling Error");
