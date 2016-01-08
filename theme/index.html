@@ -48,45 +48,41 @@
     <!-- Animate CSS -->
     <link href="libs/animate/animate.css" rel="stylesheet" type="text/css" />
 
-    <!-- Theme WSO2 SCSS -->
-    <link href="libs/theme-wso2_1.0/scss/theme-wso2.scss" rel="stylesheet/sass" type="text/css" />
+    <!-- Theme WSO2 LESS -->
+    <link href="libs/theme-wso2_1.0/less/theme-wso2.less" rel="stylesheet/less" type="text/css" />
 
-    <!-- Custom CSS/LESS/SCSS -->
-    <link href="scss/theme-wso2-config.scss" rel="stylesheet/sass" type="text/css" />
+    <!-- Theme WSO2 SCSS -->
+    <!--<link href="libs/theme-wso2_1.0/scss/theme-wso2.scss" rel="stylesheet/sass" type="text/css" />-->
+
+    <!-- Custom CSS/LESS -->
+    <link href="less/theme-wso2-config.less" rel="stylesheet/less" type="text/css" />
+    <!--<link href="scss/theme-wso2-config.scss" rel="stylesheet/sass" type="text/css" />-->
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
 
-    <!-- SASS CSS Compiler -->
-    <script src="libs/sass_0.9.4/sass.js"></script>
+    <!-- LESS CSS Compiler -->
+    <!-- less.js Debug Script -->
     <script>
-        var linkElements = document.querySelectorAll('link[rel$=sass]');
-        Array.prototype.forEach.call(linkElements, function(node) {
-            var filepath = node.href.substring(0, node.href.lastIndexOf("/")+1),
-                    filename = node.href.substring(node.href.lastIndexOf("/")+1);
-
-            var sass = new Sass();
-
-            sass.preloadFiles(filepath, '', [filename], function() {
-                sass.readFile(filename);
-                sass.compile('@import "'+filename+'";', function(css) {
-                    if(css.status == 0) {
-                        var sheet = document.createElement('style');
-                        sheet.setAttribute("type", "text/css");
-                        sheet.setAttribute("scss-path", css.files[0]);
-                        sheet.innerHTML = css.text;
-                        node.parentNode.insertBefore(sheet, node.nextSibling);
-                    }
-                    else{
-                        console.log("SASS/SCSS Compiling Error");
-                        console.log("-----------------------------------");
-                        console.log("File: " + css.file);
-                        console.log("Line Number: " + css.line);
-                        console.log("Message: " + css.message);
-                        console.log("-----------------------------------");
-                    }
-                });
-            });
-        });
+        less = {
+            env: "development",
+            logLevel: 2,
+            async: false,
+            fileAsync: false,
+            poll: 1000,
+            functions: {},
+            dumpLineNumbers: "comments",
+            relativeUrls: false,
+            globalVars: {
+                var1: '"string value"',
+                var2: 'regular value'
+            },
+            rootpath: ""
+        };
     </script>
+    <script src="libs/less_2.5.3/less.min.js"></script>
+
+    <!-- SASS CSS Compiler -->
+    <!--<script src="libs/sass_0.9.4/sass.js"></script>-->
+    <!--<script src="libs/theme-wso2_1.0/js/scss-compile.js"></script>-->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
