@@ -1,0 +1,126 @@
+<!--
+~   Copyright (c) WSO2 Inc. (http://wso2.com) All Rights Reserved.
+~
+~   Licensed under the Apache License, Version 2.0 (the "License");
+~   you may not use this file except in compliance with the License.
+~   You may obtain a copy of the License at
+~
+~        http://www.apache.org/licenses/LICENSE-2.0
+~
+~   Unless required by applicable law or agreed to in writing, software
+~   distributed under the License is distributed on an "AS IS" BASIS,
+~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~   See the License for the specific language governing permissions and
+~   limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>WSO2 UI Component : Loading</title>
+
+    <!-- Jquery CSS -->
+    <link href="../../../../libs/jquery-ui_1.11.4/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap CSS -->
+    <link href="../../../../libs/bootstrap_3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font WSO2 CSS -->
+    <link href="../../../../libs/font-wso2_1.2/css/font-wso2.css" rel="stylesheet" type="text/css" />
+
+    <!-- Theme WSO2 SCSS -->
+    <link href="../../../../libs/theme-wso2_1.0/scss/theme-wso2.scss" rel="stylesheet/sass" type="text/css" />
+
+    <!-- Loading SCSS -->
+    <!--<link href="scss/loading.scss" rel="stylesheet/sass" type="text/css" />-->
+
+    <!-- SASS CSS Compiler -->
+    <script src="../../../../libs/sass_0.9.4/sass.js"></script>
+    <script src="../../../../libs/theme-wso2_1.0/js/scss-compile.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="../../../../libs/html5shiv_3.7.2/html5shiv.min.js"></script>
+    <script src="../../../../libs/respond_1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+    <!-- #page-content-wrapper -->
+    <div class="page-content-wrapper">
+        <!-- page content -->
+        <div class="container-fluid body-wrapper">
+
+            <!-- ******************************************************************
+            Loading
+            ******************************************************************* -->
+
+            <div class="page-header" id="loading">
+                <h1>Pre-loading Animation</h1>
+            </div>
+
+            <form class="form-horizontal" data-state="loading" data-loading-style="overlay">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label class="control-label">Transfer</label>
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">$</div>
+                                        <input type="number" min="1" max="100000" class="form-control form-control-md" id="exampleInputAmount" placeholder="Amount">
+                                        <div class="input-group-addon">.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn">Transfer cash</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label class="control-label">Message</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label class="control-label">Choose</label>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+
+            <div style="height:200px" data-state="loading" data-loading-text="Processing" data-loading-style="icon-only" data-loading-inverse="true"></div>
+
+        </div>
+    </div><!-- /#page-content-wrapper -->
+
+    <!-- Jquery/Jquery UI JS -->
+    <script src="../../../../libs/jquery_1.11.0/jquery-1.11.3.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="../../../../libs/bootstrap_3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- Theme WSO2 JS -->
+    <!--<script src="../../../../libs/theme-wso2_1.0/js/theme-wso2.js"></script>-->
+
+    <!-- Theme WSO2 Loading JS -->
+    <script src="js/loading.js"></script>
+
+</body>
+</html>
