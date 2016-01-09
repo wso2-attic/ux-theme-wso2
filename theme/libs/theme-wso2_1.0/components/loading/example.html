@@ -58,54 +58,58 @@
         <!-- page content -->
         <div class="container-fluid body-wrapper">
 
-            <!-- ******************************************************************
-            Loading
-            ******************************************************************* -->
+            <div id="demo">
 
-            <div class="page-header" id="loading">
-                <h1>Pre-loading Animation</h1>
-            </div>
+                <!-- ******************************************************************
+                Loading
+                ******************************************************************* -->
 
-            <form class="form-horizontal" data-state="loading" data-loading-style="overlay">
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <label class="control-label">Transfer</label>
-                        <div class="form-inline">
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon">$</div>
-                                        <input type="number" min="1" max="100000" class="form-control form-control-md" id="exampleInputAmount" placeholder="Amount">
-                                        <div class="input-group-addon">.00</div>
+                <div class="page-header" id="loading">
+                    <h1>Pre-loading Animation</h1>
+                </div>
+
+                <form class="form-horizontal" data-state="loading" data-loading-style="overlay">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label class="control-label">Transfer</label>
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">$</div>
+                                            <input type="number" min="1" max="100000" class="form-control form-control-md" id="exampleInputAmount" placeholder="Amount">
+                                            <div class="input-group-addon">.00</div>
+                                        </div>
                                     </div>
                                 </div>
+                                <button type="submit" class="btn">Transfer cash</button>
                             </div>
-                            <button type="submit" class="btn">Transfer cash</button>
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <label class="control-label">Message</label>
-                        <textarea class="form-control" rows="3"></textarea>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label class="control-label">Message</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <label class="control-label">Choose</label>
-                        <select class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label class="control-label">Choose</label>
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
 
-            <div style="height:200px" data-state="loading" data-loading-text="Processing" data-loading-style="icon-only" data-loading-inverse="true"></div>
+                <div style="height:200px" data-state="loading" data-loading-text="Processing" data-loading-style="icon-only" data-loading-inverse="true"></div>
+
+            </div>
 
         </div>
     </div><!-- /#page-content-wrapper -->
@@ -116,11 +120,11 @@
     <!-- Bootstrap JS -->
     <script src="../../../../libs/bootstrap_3.3.5/js/bootstrap.min.js"></script>
 
-    <!-- Theme WSO2 JS -->
-    <!--<script src="../../../../libs/theme-wso2_1.0/js/theme-wso2.js"></script>-->
-
-    <!-- Theme WSO2 Loading JS -->
+    <!-- Loading JS -->
     <script src="js/loading.js"></script>
+    <script>
+        $('[data-state="loading"]').loading('show');
+    </script>
 
 </body>
 </html>
