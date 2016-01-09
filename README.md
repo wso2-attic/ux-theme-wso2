@@ -20,5 +20,6 @@ theme/
 │   └── app.js
 └── libs/
     ├── animate/
-        └── animate.css
+    │   └── animate.css
+    ├── bootstrap_3.3.5/
 ```
