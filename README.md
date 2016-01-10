@@ -12,14 +12,37 @@ Within the download you'll find the following directories and files, logically g
 ```
 theme/
 ├── css/
-│   └── custom.css
-├── json/
-│   └── table.json
+├── data/
+├── images/
+├── include/
 ├── js/
-│   ├── custom.js
-│   └── app.js
-└── libs/
-    ├── animate/
-    │   └── animate.css
-    ├── bootstrap_3.3.5/
+├── less/
+├── libs/
+│   ├── animate/
+│   ├── bootstrap/
+│   ├── bootstrap-daterangepicker/
+│   ├── bootstrap-tour/
+│   ├── codemirror/
+│   ├── cropper/
+│   ├── d3/
+│   ├── data-tables/
+│   ├── font-awesome/
+│   ├── font-wso2/
+│   ├── html5shiv/
+│   ├── jquery/
+│   ├── jquery-resize/
+│   ├── jquery-ui/
+│   ├── jquery-validation/
+│   ├── less/
+│   ├── animate/
+│   ├── nanoscroller/
+│   ├── noty/
+│   ├── respond/
+│   ├── sass/
+│   ├── select2/
+│   ├── split/
+│   ├── theme-wso2/
+│   ├── tinymce/
+│   └── typeahead/
+└── scss/
 ```
