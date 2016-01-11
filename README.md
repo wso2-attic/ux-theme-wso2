@@ -42,6 +42,12 @@ theme/
 │   ├── select2/
 │   ├── split/
 │   ├── theme-wso2/
+│   │   ├── components/
+│   │   ├── fonts/
+│   │   ├── images/
+│   │   ├── js/
+│   │   ├── less
+│   │   └── scss/
 │   ├── tinymce/
 │   └── typeahead/
 └── scss/
