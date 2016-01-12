@@ -169,6 +169,9 @@ $navbar-color1: #4D5461;
 $navbar-background-color: $primary-color;
 $navbrand-background-color: darken($navbar-background-color, 5%);
 
+$breadcrumb-background-color: $navbrand-background-color;
+$breadcrumb-color: $base-light-color;
+
 $footer-height: 40px;
 $footer-background: $base-dark-color;
 $footer-color: #cbcbcb;
@@ -367,6 +370,162 @@ body.inverse .fade-edge {
 //    // generate gaps
 //    .generate-gaps($n, ($i + 1));
 //}
+
+/* ========================================================== TODO: Generate Dynamically */
+
+/* generating padding and margin classes */
+.add-padding-1x {
+    padding: 5px !important;
+}
+.add-padding-top-1x {
+    padding-top: 5px !important;
+}
+.add-padding-bottom-1x {
+    padding-bottom: 5px !important;
+}
+.add-padding-left-1x {
+    padding-left: 5px !important;
+}
+.add-padding-right-1x {
+    padding-right: 5px !important;
+}
+.add-margin-1x {
+    margin: 5px !important;
+}
+.add-margin-top-1x {
+    margin-top: 5px !important;
+}
+.add-margin-bottom-1x {
+    margin-bottom: 5px !important;
+}
+.add-margin-left-1x {
+    margin-left: 5px !important;
+}
+.add-margin-right-1x {
+    margin-right: 5px !important;
+}
+.add-padding-2x {
+    padding: 10px !important;
+}
+.add-padding-top-2x {
+    padding-top: 10px !important;
+}
+.add-padding-bottom-2x {
+    padding-bottom: 10px !important;
+}
+.add-padding-left-2x {
+    padding-left: 10px !important;
+}
+.add-padding-right-2x {
+    padding-right: 10px !important;
+}
+.add-margin-2x {
+    margin: 10px !important;
+}
+.add-margin-top-2x {
+    margin-top: 10px !important;
+}
+.add-margin-bottom-2x {
+    margin-bottom: 10px !important;
+}
+.add-margin-left-2x {
+    margin-left: 10px !important;
+}
+.add-margin-right-2x {
+    margin-right: 10px !important;
+}
+.add-padding-3x {
+    padding: 15px !important;
+}
+.add-padding-top-3x {
+    padding-top: 15px !important;
+}
+.add-padding-bottom-3x {
+    padding-bottom: 15px !important;
+}
+.add-padding-left-3x {
+    padding-left: 15px !important;
+}
+.add-padding-right-3x {
+    padding-right: 15px !important;
+}
+.add-margin-3x {
+    margin: 15px !important;
+}
+.add-margin-top-3x {
+    margin-top: 15px !important;
+}
+.add-margin-bottom-3x {
+    margin-bottom: 15px !important;
+}
+.add-margin-left-3x {
+    margin-left: 15px !important;
+}
+.add-margin-right-3x {
+    margin-right: 15px !important;
+}
+.add-padding-4x {
+    padding: 20px !important;
+}
+.add-padding-top-4x {
+    padding-top: 20px !important;
+}
+.add-padding-bottom-4x {
+    padding-bottom: 20px !important;
+}
+.add-padding-left-4x {
+    padding-left: 20px !important;
+}
+.add-padding-right-4x {
+    padding-right: 20px !important;
+}
+.add-margin-4x {
+    margin: 20px !important;
+}
+.add-margin-top-4x {
+    margin-top: 20px !important;
+}
+.add-margin-bottom-4x {
+    margin-bottom: 20px !important;
+}
+.add-margin-left-4x {
+    margin-left: 20px !important;
+}
+.add-margin-right-4x {
+    margin-right: 20px !important;
+}
+.add-padding-5x {
+    padding: 25px !important;
+}
+.add-padding-top-5x {
+    padding-top: 25px !important;
+}
+.add-padding-bottom-5x {
+    padding-bottom: 25px !important;
+}
+.add-padding-left-5x {
+    padding-left: 25px !important;
+}
+.add-padding-right-5x {
+    padding-right: 25px !important;
+}
+.add-margin-5x {
+    margin: 25px !important;
+}
+.add-margin-top-5x {
+    margin-top: 25px !important;
+}
+.add-margin-bottom-5x {
+    margin-bottom: 25px !important;
+}
+.add-margin-left-5x {
+    margin-left: 25px !important;
+}
+.add-margin-right-5x {
+    margin-right: 25px !important;
+}
+
+/* ========================================================== */
 
 .remove-padding {
     padding: 0 !important;
@@ -969,6 +1128,9 @@ ul.sidebar-messages > li {
 .breadcrumb {
     margin: 0;
     overflow: hidden;
+    background: $breadcrumb-background-color;
+    color: $breadcrumb-color;
+    text-transform: uppercase;
     @include border-radius;
 }
 
