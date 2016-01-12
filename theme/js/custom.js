@@ -71,23 +71,20 @@ $('link[data-include-demo]').each(function(){
         componentURL = 'libs/theme-wso2_1.0/components/' + $(this).data('include-demo') + '/';
 
     $.get(componentURL + 'example.html',function(data){
-        $(el).replaceWith($(data).find('#demo').html());
+        $(el).replaceWith($(data).find('#example').html());
     });
 
-    var fileExt = ['css','js'];
-
-    $.each(fileExt, function(index, value){
-
-
-
-        $.ajax({
-            url: componentURL + value,
-            success: function (data) {
-                $(data).find("a:contains(" + value + ")").each(function() {
-                    console.log(componentURL + value + '/' + $(this).text());
-                });
-            }
-        });
-    });
+    //var fileExt = ['css','js'];
+    //
+    //$.each(fileExt, function(index, value){
+    //    $.ajax({
+    //        url: componentURL + value,
+    //        success: function (data) {
+    //            $(data).find("a:contains(" + value + ")").each(function() {
+    //                console.log(componentURL + value + '/' + $(this).text());
+    //            });
+    //        }
+    //    });
+    //});
 
 });
