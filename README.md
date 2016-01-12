@@ -44,9 +44,10 @@ theme/
 │   ├── theme-wso2/
 │   │   ├── components/
 │   │   ├── fonts/
+│   │   │   └── Roboto/
 │   │   ├── images/
 │   │   ├── js/
-│   │   ├── less
+│   │   ├── less/
 │   │   └── scss/
 │   ├── tinymce/
 │   └── typeahead/
