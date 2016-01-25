@@ -57,7 +57,7 @@
     transition: $val;
 }
 
-@mixin gradient ($origin: top, $start: #ffffff, $stop: #e4e4e4) {
+@mixin gradient($origin: top, $start: #ffffff, $stop: #e4e4e4) {
     background-color: $start;
     background-image: -webkit-linear-gradient($origin, $start, $stop);
     background-image: -moz-linear-gradient($origin, $start, $stop);
@@ -67,7 +67,7 @@
 }
 
 @mixin font($font, $font-weight, $font-style, $font-name, $file-name){
-    $font-file:'../fonts/${font}/#{$file-name}';
+    $font-file:'../fonts/#{$font}/#{$file-name}';
 
     font-family: $font-name;
     font-style: $font-style;
@@ -163,14 +163,29 @@ $primary-color: #2c313b;
 $secondary-color: #e4e4e4;
 $optional-color: #007D85;
 
+$header-background-color: #191919;
+$header-height: 50px;
+$header-link-hover-background-color: darken($header-background-color, 10%);
+
+$breadcrumb-background-color: #282828;
+$breadcrumb-color: $base-light-color;
+$breadcrumb-height: 30px;
+$breadcrumb-padding: 5px 15px;
+
 $navbar-height: 50px;
 $navbar-padding: 0 15px;
 $navbar-color1: #4D5461;
 $navbar-background-color: $primary-color;
+$navbar-link-color: $base-light-color;
+$navbar-hover-link-color: $navbar-link-color;
+$navbar-link-background-color: $navbar-color1;
+$navbar-link-hover-background-color: lighten($navbar-background-color, 10%);
+
 $navbrand-background-color: darken($navbar-background-color, 5%);
 
-$breadcrumb-background-color: $navbrand-background-color;
-$breadcrumb-color: $base-light-color;
+$page-content-wrapper-height: calc(100% - 130px);
+$page-content-wrapper-height-mobile: calc(100% - 205px);
+$page-content-wrapper-sidebar-height-mobile: calc(100% - 245px);
 
 $footer-height: 40px;
 $footer-background: $base-dark-color;
@@ -179,7 +194,7 @@ $footer-color: #cbcbcb;
 $inverse-layout-background: $primary-color;
 $inverse-layout-color: $base-light-color;
 
-$loading-background-opacity: 0.7;
+$loading-background-opacity: 0.6;
 $loading-background-color: $base-dark-color;
 $loading-color: $base-light-color;
 $loading-inverse-background-color: $base-light-color;
@@ -191,12 +206,27 @@ $dropdown-menu-dark-tiles-background-color: #444;
 $dropdown-menu-dark-tiles-hover-background-color: #555;
 $dropdown-menu-dark-tiles-color: $base-light-color;
 
+$button-default-background-color: $base-light-color;
+$button-default-color: $base-dark-color;
+$button-default-hover-background-color: darken($button-default-background-color, 10%);
+$button-default-border-color: $button-default-background-color;
+$button-default-hover-border-color: $button-default-background-color;
+
 $button-primary-background-color: $primary-color;
 $button-primary-color: $base-light-color;
-$button-border: $button-primary-background-color;
 $button-primary-hover-background-color: lighten($button-primary-background-color, 10%);
+$button-primary-border-color: $button-primary-background-color;
+$button-primary-hover-border-color: $button-primary-background-color;
+
+$switch-active-background-color: #25262b;
+$switch-inactive-background-color: #a6a6a6;
+$switch-disabled-background-color: #6f7579;
+$switch-handler-active-color: #237bd5;
+$switch-handler-inactive-color: #eaeaea;
+$switch-handler-disabled-color: #484e52;
 
 $form-control-max-width: 750px;
+$sidebar-width-default: 350px;
 
 /* ========================================================================
  * icon styles
@@ -261,18 +291,21 @@ body {
     margin-bottom: $footer-height;
     font-family: $font-default;
     font-weight: $font-default-weight;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body > .page-content-wrapper > .container,
 body > .page-content-wrapper > .container-fluid {
     padding: 20px 20px 60px;
+    margin: 0;
 }
 
 @media only screen and (min-width: 768px) {
     body > .page-content-wrapper > .container,
     body > .page-content-wrapper > .container-fluid {
-        margin: 3% 4% 4%;
-        padding: 0;
+        padding: 3% 4% 4%;
+        margin: 0;
     }
 }
 
@@ -287,7 +320,7 @@ a, a:hover, a:focus, a:active {
     cursor: pointer;
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, 
+.h1, .h2, .h3, .h4, .h5, .h6,
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
 }
@@ -371,161 +404,27 @@ body.inverse .fade-edge {
 //    .generate-gaps($n, ($i + 1));
 //}
 
-/* ========================================================== TODO: Generate Dynamically */
+@for $i from 1 through $sizes-length {
 
-/* generating padding and margin classes */
-.add-padding-1x {
-    padding: 5px !important;
-}
-.add-padding-top-1x {
-    padding-top: 5px !important;
-}
-.add-padding-bottom-1x {
-    padding-bottom: 5px !important;
-}
-.add-padding-left-1x {
-    padding-left: 5px !important;
-}
-.add-padding-right-1x {
-    padding-right: 5px !important;
-}
-.add-margin-1x {
-    margin: 5px !important;
-}
-.add-margin-top-1x {
-    margin-top: 5px !important;
-}
-.add-margin-bottom-1x {
-    margin-bottom: 5px !important;
-}
-.add-margin-left-1x {
-    margin-left: 5px !important;
-}
-.add-margin-right-1x {
-    margin-right: 5px !important;
-}
-.add-padding-2x {
-    padding: 10px !important;
-}
-.add-padding-top-2x {
-    padding-top: 10px !important;
-}
-.add-padding-bottom-2x {
-    padding-bottom: 10px !important;
-}
-.add-padding-left-2x {
-    padding-left: 10px !important;
-}
-.add-padding-right-2x {
-    padding-right: 10px !important;
-}
-.add-margin-2x {
-    margin: 10px !important;
-}
-.add-margin-top-2x {
-    margin-top: 10px !important;
-}
-.add-margin-bottom-2x {
-    margin-bottom: 10px !important;
-}
-.add-margin-left-2x {
-    margin-left: 10px !important;
-}
-.add-margin-right-2x {
-    margin-right: 10px !important;
-}
-.add-padding-3x {
-    padding: 15px !important;
-}
-.add-padding-top-3x {
-    padding-top: 15px !important;
-}
-.add-padding-bottom-3x {
-    padding-bottom: 15px !important;
-}
-.add-padding-left-3x {
-    padding-left: 15px !important;
-}
-.add-padding-right-3x {
-    padding-right: 15px !important;
-}
-.add-margin-3x {
-    margin: 15px !important;
-}
-.add-margin-top-3x {
-    margin-top: 15px !important;
-}
-.add-margin-bottom-3x {
-    margin-bottom: 15px !important;
-}
-.add-margin-left-3x {
-    margin-left: 15px !important;
-}
-.add-margin-right-3x {
-    margin-right: 15px !important;
-}
-.add-padding-4x {
-    padding: 20px !important;
-}
-.add-padding-top-4x {
-    padding-top: 20px !important;
-}
-.add-padding-bottom-4x {
-    padding-bottom: 20px !important;
-}
-.add-padding-left-4x {
-    padding-left: 20px !important;
-}
-.add-padding-right-4x {
-    padding-right: 20px !important;
-}
-.add-margin-4x {
-    margin: 20px !important;
-}
-.add-margin-top-4x {
-    margin-top: 20px !important;
-}
-.add-margin-bottom-4x {
-    margin-bottom: 20px !important;
-}
-.add-margin-left-4x {
-    margin-left: 20px !important;
-}
-.add-margin-right-4x {
-    margin-right: 20px !important;
-}
-.add-padding-5x {
-    padding: 25px !important;
-}
-.add-padding-top-5x {
-    padding-top: 25px !important;
-}
-.add-padding-bottom-5x {
-    padding-bottom: 25px !important;
-}
-.add-padding-left-5x {
-    padding-left: 25px !important;
-}
-.add-padding-right-5x {
-    padding-right: 25px !important;
-}
-.add-margin-5x {
-    margin: 25px !important;
-}
-.add-margin-top-5x {
-    margin-top: 25px !important;
-}
-.add-margin-bottom-5x {
-    margin-bottom: 25px !important;
-}
-.add-margin-left-5x {
-    margin-left: 25px !important;
-}
-.add-margin-right-5x {
-    margin-right: 25px !important;
-}
+    .add-padding-#{$i}x {
+        padding: ($i * $default-gap) !important;
+    }
+    @each $side in $sides {
+        .add-padding-#{$side}-#{$i}x {
+            padding-#{$side}: ($i * $default-gap) !important;
+        }
+    }
 
-/* ========================================================== */
+    .add-margin-#{$i}x {
+        margin: ($i * $default-gap) !important;
+    }
+    @each $side in $sides {
+        .add-margin-#{$side}-#{$i}x {
+            margin-#{$side}: ($i * $default-gap) !important;
+        }
+    }
+
+}
 
 .remove-padding {
     padding: 0 !important;
@@ -759,8 +658,8 @@ body.inverse .fade-edge {
  * ======================================================================== */
 
 header {
-    background: $base-dark-color;
-    min-height: 50px;
+    background: $header-background-color;
+    min-height: $header-height;
     position: relative;
 }
 
@@ -794,10 +693,11 @@ header .dropdown {
     display: inline-block;
     color: $base-light-color;
     padding: 6px 0;
+    min-height: $header-height;
 }
 
 header .dropdown[aria-expanded=true], header .dropdown:hover {
-    background: darken($base-dark-color, 25%);
+    background: $header-link-hover-background-color;
 }
 
 @media only screen and (max-width: 768px) {
@@ -823,6 +723,12 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
     top: 0 !important;
     width: 100%;
     z-index: 100000000;
+}
+
+@media (max-width:767px){
+    .navbar.affix, .navbar.affix-bottom {
+        position: static;
+    }
 }
 
 .loading .navbar.affix {
@@ -856,10 +762,14 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
     margin: 7.5px 0;
 }
 
-@media only screen and (min-width: 768px) {
+@media (min-width:768px){
     .navbar-nav {
         margin: 0 0;
     }
+}
+
+.navbar-nav.nav-stacked > li {
+    float: none !important;
 }
 
 .navbar-menu-toggle {
@@ -885,13 +795,6 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
     @include border-radius;
 }
 
-.navbar-default .navbar-nav > li > a {
-    color: $base-light-color;
-    text-transform: uppercase;
-    padding: 0 15px;
-    line-height: $navbar-height;
-}
-
 .navbar > .container .navbar-brand,
 .navbar > .container-fluid .navbar-brand {
     color: $base-light-color;
@@ -914,15 +817,29 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
 }
 
 .navbar-default .navbar-nav > li > a {
+    color: $navbar-link-color;
+    text-transform: uppercase;
+    padding: 0 15px;
+    line-height: $navbar-height;
+}
+
+.navbar-default .navbar-nav > li > a {
     &:hover, &:focus, &:active {
-        color: $base-light-color;
+        background: $navbar-link-hover-background-color;
+        color: $navbar-hover-link-color;
+    }
+    &:hover {
+        background: $navbar-link-hover-background-color;
     }
 }
 
 .navbar-default .navbar-nav > .active > a {
     &, &:hover, &:focus, &:active {
-        background: $navbar-color1;
-        color: $base-light-color;
+        background: $navbar-link-hover-background-color;
+        color: $navbar-hover-link-color;
+    }
+    &:hover {
+        background: $navbar-link-hover-background-color;
     }
 }
 
@@ -971,47 +888,87 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
     margin-bottom: 10px;
 }
 
+.nav-pills > li.active > a {
+    &,
+    &:focus,
+    &:hover {
+        color: $base-light-color;
+        background: $primary-color;
+        border-color: $primary-color;
+    }
+}
+
 /* ========================================================================
  * sidebar styles
  * ======================================================================== */
 
-$default-sidebar-width: 350px;
-
 .page-content-wrapper, .page-content-wrapper[data-container-behaviour=static] {
-    @include transition(all 0.5s ease);
     position: relative;
     left: 0;
     margin-left: 0;
+    min-height: $page-content-wrapper-height;
+    @include transition(all 0.5s ease);
+}
+
+.page-content-wrapper.fixed,
+.page-content-wrapper.fixed > div,
+.page-content-wrapper.fixed > .sidebar-wrapper {
+    max-height: $page-content-wrapper-height;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.page-content-wrapper.fixed,
+.page-content-wrapper.fixed > .sidebar-wrapper {
+    max-height: 100%;
+}
+
+@media (max-width:767px){
+    .page-content-wrapper {
+        min-height: $page-content-wrapper-height-mobile;
+    }
+    .page-content-wrapper.fixed,
+    .page-content-wrapper.fixed > div {
+        max-height: $page-content-wrapper-height-mobile;
+    }
+    .page-content-wrapper.fixed > .sidebar-wrapper {
+        max-height: 100%;
+    }
 }
 
 .page-content-wrapper[data-container-push=true] {
-    left: $default-sidebar-width;
+    left: $sidebar-width-default;
 }
 
 .page-content-wrapper[data-push-side=right][data-container-push=true] {
     left: auto;
-    right: $default-sidebar-width;
+    right: $sidebar-width-default;
 }
 
 .page-content-wrapper[data-container-divide=true] {
-    margin-left: $default-sidebar-width;
+    margin-left: $sidebar-width-default;
 }
 
 .page-content-wrapper[data-divide-side=right][data-container-divide=true] {
     margin-left: auto;
-    margin-right: $default-sidebar-width;
+    padding-right: $sidebar-width-default;
 }
 
 .sidebar-wrapper {
     z-index: 1000;
-    position: fixed;
-    left: -$default-sidebar-width;
-    width: $default-sidebar-width;
+    position: absolute;
+    left: -$sidebar-width-default;
+    width: $sidebar-width-default;
     height: 100%;
     overflow-y: auto;
     background: $base-dark-color;
     color: $base-light-color;
     @include transition(all 0.5s ease);
+}
+
+.sidebar-wrapper.affix {
+    position: fixed;
+    top: 50px;
 }
 
 .sidebar-wrapper.inverse {
@@ -1021,7 +978,7 @@ $default-sidebar-width: 350px;
 
 .sidebar-wrapper[data-side=right] {
     left: auto;
-    right: -$default-sidebar-width;
+    right: -$sidebar-width-default;
 }
 
 .sidebar-wrapper.toggled {
@@ -1051,7 +1008,7 @@ ul.sidebar-messages > li {
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: $default-sidebar-width;
+    width: $sidebar-width-default;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -1104,7 +1061,7 @@ ul.sidebar-messages > li {
     }
 
     #sidebar-wrapper {
-        width: $default-sidebar-width;
+        width: $sidebar-width-default;
     }
 
     #wrapper.toggled #sidebar-wrapper {
@@ -1128,9 +1085,11 @@ ul.sidebar-messages > li {
 .breadcrumb {
     margin: 0;
     overflow: hidden;
+    text-transform: uppercase;
     background: $breadcrumb-background-color;
     color: $breadcrumb-color;
-    text-transform: uppercase;
+    min-height: $breadcrumb-height;
+    padding: $breadcrumb-padding;
     @include border-radius;
 }
 
@@ -1610,19 +1569,65 @@ a.btn, .btn {
     &.active, &:active {
         @include box-shadow;
     }
-    &:hover, &:focus {
+    &:hover {
         text-decoration: none;
         background: #eee;
     }
 }
 
+.btn-default {
+    &, &:focus{
+        color: $button-default-color;
+        background-color: $button-default-background-color;
+        border-color: $button-default-border-color;
+    }
+
+    &:hover {
+        background-color: $button-default-hover-background-color;
+        border-color: $button-default-hover-border-color;
+    }
+}
+
 .btn-primary {
-    color: $button-primary-color;
-    background-color: $button-primary-background-color;
-    border-color: $button-border;
+    &, &:focus {
+        color: $button-primary-color;
+        background-color: $button-primary-background-color;
+        border-color: $button-primary-border-color;
+    }
 
     &:hover {
         background-color: $button-primary-hover-background-color;
+        border-color: $button-primary-hover-border-color;
+    }
+}
+
+.btn-bordered {
+    &, &:focus, &:hover {
+        border: 1px solid #e4e4e4;
+    }
+}
+
+.btn-group > .btn-label {
+    position: relative;
+    float: left;
+    color: $base-dark-color;
+    background-color: transparent;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-image: none;
+    border: 1px solid transparent;
+
+    &.btn-bordered {
+        border-color: #e4e4e4;
+        margin-left: -1px;
+        margin-right: -1px;
     }
 }
 
@@ -2413,6 +2418,14 @@ a.list-group-item:hover {
         border-color: $primary-color;
     }
 }
+.list-group-item.active a {
+    color:#fff;
+    text-decoration: none;
+}
+
+.list-group.nav > .list-group-item {
+    padding: 0;
+}
 
 /* ========================================================================
  * tree styles
@@ -2541,4 +2554,224 @@ a.list-group-item:hover {
 .asset-desc .asset-publisher {
     font-size: 14px;
     margin-bottom: 20px;
+}
+
+/* ========================================================================
+ * switch styles
+ * ======================================================================== */
+
+.switch {
+    display: inline-block;
+    width: 40px;
+    cursor: pointer;
+    position: relative;
+    margin-top: -4px;
+}
+.switch  > input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+}
+.switch .helper {
+    padding-left: 52px;
+    position: relative;
+}
+
+.switch .text {
+    display: none;
+    margin-left: 5px;
+    font-weight: 100;
+}
+
+.switch input[type="checkbox"]:checked + .helper + .text {
+    display: inline-block;
+}
+
+.switch .helper:before {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    display: block;
+    content: "";
+    width: 40px;
+    height: 16px;
+    cursor: pointer;
+    background: $switch-active-background-color;
+    margin-left: 2px;
+    z-index: 1;
+    border-radius: 8px;
+}
+
+.switch input[type="checkbox"] + .helper:after {
+    position: absolute;
+    left: 18px;
+    top: -2px;
+    display: block;
+    content: "";
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background: $switch-handler-active-color;
+    z-index: 2;
+    border-radius: 12px;
+
+    -webkit-transition: left 0.2s ease-in-out;
+    -moz-transition: left 0.2s ease-in-out;
+    -o-transition: left 0.2s ease-in-out;
+    transition: left 0.2s ease-in-out;
+}
+
+.switch input[type="checkbox"]:not(:checked) + .helper:after {
+    left: 1px !important;
+    background: $switch-handler-inactive-color;
+}
+
+.switch input[type="checkbox"]:not(:checked) + .helper:before {
+    background: $switch-inactive-background-color !important;
+}
+
+.switch input[type="checkbox"]:disabled + .helper:after {
+    cursor: default !important;
+    background: $switch-handler-disabled-color !important;
+}
+
+.switch input[type="checkbox"]:disabled + .helper:before {
+    cursor: default !important;
+    background: $switch-disabled-background-color !important;
+}
+
+/* ========================================================================
+ * radio button styles
+ * ======================================================================== */
+
+.radio {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 0;
+    margin-top: 0;
+    cursor: pointer;
+    font-weight: 100;
+}
+.radio  > input[type=radio] {
+    position: absolute;
+    opacity: 0;
+}
+.radio .helper {
+    padding-left: 26px;
+    padding-top: 1px;
+    position: relative;
+}
+.radio .helper:before {
+    position: absolute;
+    display: block;
+    height: 20px;
+    width: 20px;
+    content: "";
+    text-indent: -9999px;
+    border: 2px #d9d9d9 solid;
+    z-index: 1;
+    opacity: 1;
+    top: -1px;
+    left: 0;
+    border-radius: 100%;
+}
+.radio input[type="radio"]:checked + .helper:after {
+    position: absolute;
+    display: block;
+    content: "";
+    color: $button-primary-background-color;
+    z-index: 2;
+    font-size: 16px;
+    font-weight: bold;
+    left: 5px;
+    margin-left: 0;
+    top: 50%;
+    margin-top: -5px;
+    background-color: $button-primary-background-color;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+.radio input[type="radio"]:checked + .helper:before {
+    border: 2px $button-primary-background-color solid;
+}
+.radio input[type="radio"]:disabled + .helper:before {
+    cursor: default;
+    background: #e6e6e6;
+}
+.radio input[type="radio"]:disabled + .helper:after {
+    background-color: #8a8a8a;
+}
+.radio:hover input:not(:disabled) + .helper:before {
+    border-color: #919191;
+}
+.radio:active input:not(:disabled) + .helper:before {
+    border-color: #919191;
+}
+
+/* ========================================================================
+ * checkbox styles
+ * ======================================================================== */
+
+.checkbox {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+}
+.checkbox  > input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+}
+.checkbox .helper {
+    padding-left: 23px;
+    position: relative;
+}
+.checkbox .helper:before {
+    position: absolute;
+    display: block;
+    height: 20px;
+    width: 20px;
+    content: "";
+    text-indent: -9999px;
+    border: 2px #eaf0f1 solid;
+    z-index: 1;
+    opacity: 1;
+    top: 0;
+    left: 0;
+}
+.checkbox input[type="checkbox"]:checked + .helper:before {
+    border: 2px $button-primary-background-color solid;
+}
+.checkbox input[type="checkbox"]:checked + .helper:after {
+    position: absolute;
+    display: block;
+    content: "\e631";
+    font-size: 7pt;
+    height: 16px;
+    width: 16px;
+    line-height: 16px;
+    z-index: 2;
+    top: 2px;
+    margin-top: 0;
+    left: 2px;
+    margin-left: 0;
+    text-align: center;
+    background: $button-primary-background-color;
+    color: #fff;
+    font-family: fontwso2;
+}
+.checkbox input[type="checkbox"]:not(:checked) + .helper:after {
+    display: none;
+}
+.checkbox input[type="checkbox"]:disabled + .helper:before {
+    cursor: default;
+    background: #e6e6e6;
+}
+.checkbox input[type=checkbox]:disabled + .helper:after {
+    color: #8a8a8a;
+}
+.checkbox:hover input:not(:disabled) + .helper:before {
+    border-color: #526A84;
+}
+.checkbox:active input:not(:disabled) + .helper:before {
+    border-color: #526A84;
 }

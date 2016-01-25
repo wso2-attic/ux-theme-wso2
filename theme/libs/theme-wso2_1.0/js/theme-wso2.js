@@ -126,6 +126,41 @@ var responsiveTextRatio = 0.2,
 
 
     /**
+     * @description Data Loader function
+     * @param  {String}     Action of the loader
+     */
+    $.fn.loading = function(action) {
+
+        return $(this).each(function() {
+
+            var loadingText = ($(this).attr('data-loading-text') === undefined) ? 'LOADING' : $(this).attr('data-loading-text');
+
+            var html = '<div class="loading-animation">' +
+                '<div class="logo">' +
+                '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"' +
+                'viewBox="0 0 14 14" enable-background="new 0 0 14 14" xml:space="preserve">' +
+                '<path class="circle" stroke-width="1.4" stroke-miterlimit="10" d="M6.534,0.748C7.546,0.683,8.578,0.836,9.508,1.25 c1.903,0.807,3.339,2.615,3.685,4.654c0.244,1.363,0.028,2.807-0.624,4.031c-0.851,1.635-2.458,2.852-4.266,3.222 c-1.189,0.25-2.45,0.152-3.583-0.289c-1.095-0.423-2.066-1.16-2.765-2.101C1.213,9.78,0.774,8.568,0.718,7.335 C0.634,5.866,1.094,4.372,1.993,3.207C3.064,1.788,4.76,0.867,6.534,0.748z"/>' +
+                '<path class="pulse-line" stroke-width="0.55" stroke-miterlimit="10" d="M12.602,7.006c-0.582-0.001-1.368-0.001-1.95,0 c-0.491,0.883-0.782,1.4-1.278,2.28C8.572,7.347,7.755,5.337,6.951,3.399c-0.586,1.29-1.338,3.017-1.923,4.307 c-1.235,0-2.38-0.002-3.615,0"/>' +
+                '</svg>' +
+                '<div class="signal"></div>' +
+                '</div>' +
+                '<p>' + loadingText + '</p>' +
+                '</div>' +
+                '<div class="loading-bg"></div>';
+
+            if (action === 'show') {
+                $(this).prepend(html).addClass('loading');
+            }
+            if (action === 'hide') {
+                $(this).removeClass('loading');
+                $('.loading-animation, .loading-bg', this).remove();
+            }
+        });
+
+    };
+
+
+    /**
      * @description Auto resize icons and text on browser resize
      * @param  {Number}     Compression Ratio
      * @param  {Object}     Object containing the values to override defaults
@@ -414,35 +449,192 @@ var responsiveTextRatio = 0.2,
      * Sidebar function
      * @return {Null}
      */
-    $.sidebar_toggle = function() {
-        var elem = '[data-toggle=sidebar]';
+    $.sidebar_toggle = function(action, target, container) {
+        var elem = '[data-toggle=sidebar]',
+            button,
+            container,
+            conrainerOffsetLeft,
+            conrainerOffsetRight,
+            target,
+            targetOffsetLeft,
+            targetOffsetRight,
+            targetWidth,
+            targetSide,
+            relationship,
+            pushType,
+            buttonParent;
 
-        return $(elem).each(function() {
-            $(elem).click(function(e) {
-                e.preventDefault();
+        var sidebar_window = {
+            update: function(target, container, button){
+                conrainerOffsetLeft = $(container).data('offset-left') ? $(container).data('offset-left') : 0,
+                conrainerOffsetRight = $(container).data('offset-right') ? $(container).data('offset-right') : 0,
+                targetOffsetLeft = $(target).data('offset-left') ? $(target).data('offset-left') : 0,
+                targetOffsetRight = $(target).data('offset-right') ? $(target).data('offset-right') : 0,
+                targetWidth = $(target).data('width'),
+                targetSide = $(target).data("side"),
+                pushType = $(container).parent().is('body') == true ? 'padding' : 'margin';
 
-                var container = $(this).attr('data-container'),
-                    target = $(this).attr('data-target');
+                if(button !== undefined){
+                    relationship = button.attr('rel') ? button.attr('rel') : '';
+                    buttonParent = $(button).parent();
+                }
+            },
+            show: function(){
 
-                $(this).toggleAttr('aria-expanded', 'true', 'false');
-                $(this).closest('li').toggleClass("active");
-
-                if ($(this).attr('data-container-push')) {
-                    $(container)
-                        .toggleAttr('data-container-push', 'true', 'false')
-                        .attr('data-push-side', $(this).attr('data-push-side'));
-                } else if ($(this).attr('data-container-divide')) {
-                    $(container)
-                        .toggleAttr('data-container-divide', 'true', 'false')
-                        .attr('data-divide-side', $(this).attr('data-divide-side'));
+                if($(target).data('sidebar-fixed') == true) {
+                    $(target).height($(window).height() - $(target).data('fixed-offset'));
                 }
 
-                $(target)
-                    .toggleClass("toggled")
-                    .attr('data-side', $(this).attr('data-side'));
-            });
+                $(target).trigger('show.sidebar');
+                if(targetWidth !== undefined) {
+                    $(target).css('width', targetWidth);
+                }
+                $(target).addClass('toggled');
+
+                if(button !== undefined){
+                    if(relationship !== ''){
+                        // Removing active class from all relative buttons
+                        $(elem+'[rel='+relationship+']:not([data-handle=close])').removeClass("active");
+                        $(elem+'[rel='+relationship+']:not([data-handle=close])').attr('aria-expanded', 'false');
+                    }
+
+                    // Adding active class to button
+                    if(button.attr('data-handle') !== 'close'){
+                        button.addClass("active");
+                        button.attr('aria-expanded', 'true');
+                    }
+
+                    if(buttonParent.is('li')) {
+                        if(relationship !== ''){
+                            $(elem+'[rel='+relationship+']:not([data-handle=close])').parent().removeClass("active");
+                            $(elem+'[rel='+relationship+']:not([data-handle=close])').parent().attr('aria-expanded', 'false');
+                        }
+                        buttonParent.addClass("active");
+                        buttonParent.attr('aria-expanded', 'true');
+                    }
+                }
+
+                // Sidebar open function
+                if (targetSide == 'left'){
+                    if((button !== undefined) && (button.attr('data-container-divide'))){
+                        $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetLeft);
+                    }
+                    $(target).css(targetSide, targetOffsetLeft);
+                }
+                else if (targetSide == 'right'){
+                    if((button !== undefined) && (button.attr('data-container-divide'))){
+                        $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetRight);
+                    }
+                    $(target).css(targetSide, targetOffsetRight);
+                }
+
+                $(target).trigger('shown.sidebar');
+            },
+            hide: function(){
+
+                $(target).trigger('hide.sidebar');
+                $(target).removeClass('toggled');
+
+                if(button !== undefined){
+                    if(relationship !== ''){
+                        // Removing active class from all relative buttons
+                        $(elem+'[rel='+relationship+']:not([data-handle=close])').removeClass("active");
+                        $(elem+'[rel='+relationship+']:not([data-handle=close])').attr('aria-expanded', 'false');
+                    }
+                    // Removing active class from button
+                    if(button.attr('data-handle') !== 'close'){
+                        button.removeClass("active");
+                        button.attr('aria-expanded', 'false');
+                    }
+
+                    if($(button).parent().is('li')){
+                        if(relationship !== ''){
+                            $(elem+'[rel='+relationship+']:not([data-handle=close])').parent().removeClass("active");
+                            $(elem+'[rel='+relationship+']:not([data-handle=close])').parent().attr('aria-expanded', 'false');
+                        }
+                    }
+                }
+
+                // Sidebar close function
+                if (targetSide == 'left'){
+                    if((button !== undefined) && (button.attr('data-container-divide'))){
+                        $(container).css(pushType+'-'+targetSide, targetOffsetLeft);
+                    }
+                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
+                }
+                else if (targetSide == 'right'){
+                    if((button !== undefined) && (button.attr('data-container-divide'))){
+                        $(container).css(pushType+'-'+targetSide, targetOffsetRight);
+                    }
+                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+                }
+
+                $(target).trigger('hidden.sidebar');
+            }
+        };
+
+        if (action === 'show') {
+            sidebar_window.update(target, container);
+            sidebar_window.show();
+        }
+        if (action === 'hide') {
+            sidebar_window.update(target, container);
+            sidebar_window.hide();
+        }
+
+        // binding click function
+        $('body').off('click', elem);
+        $('body').on('click', elem, function(e) {
+            e.preventDefault();
+
+            button = $(this);
+            container = button.data('container');
+            target = button.data('target');
+
+            sidebar_window.update(target, container, button);
+
+            /**
+             * Sidebar function on data container divide
+             * @return {Null}
+             */
+            if(button.attr('aria-expanded') == 'false'){
+                sidebar_window.show();
+            }
+            else if (button.attr('aria-expanded') == 'true') {
+                sidebar_window.hide();
+            }
+
         });
     };
+    //$.sidebar_toggle = function() {
+    //    var elem = '[data-toggle=sidebar]';
+    //
+    //    return $(elem).each(function() {
+    //        $(elem).click(function(e) {
+    //            e.preventDefault();
+    //
+    //            var container = $(this).attr('data-container'),
+    //                target = $(this).attr('data-target');
+    //
+    //            $(this).toggleAttr('aria-expanded', 'true', 'false');
+    //            $(this).closest('li').toggleClass("active");
+    //
+    //            if ($(this).attr('data-container-push')) {
+    //                $(container)
+    //                    .toggleAttr('data-container-push', 'true', 'false')
+    //                    .attr('data-push-side', $(this).attr('data-push-side'));
+    //            } else if ($(this).attr('data-container-divide')) {
+    //                $(container)
+    //                    .toggleAttr('data-container-divide', 'true', 'false')
+    //                    .attr('data-divide-side', $(this).attr('data-divide-side'));
+    //            }
+    //
+    //            $(target)
+    //                .toggleClass("toggled")
+    //                .attr('data-side', $(this).attr('data-side'));
+    //        });
+    //    });
+    //};
 
 
 }(jQuery));

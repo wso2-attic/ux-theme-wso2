@@ -49,10 +49,10 @@
     <link href="libs/animate/animate.css" rel="stylesheet" type="text/css" />
 
     <!-- Theme WSO2 LESS -->
-    <link href="libs/theme-wso2_1.0/less/theme-wso2.less" rel="stylesheet/less" type="text/css" />
+    <!--<link href="libs/theme-wso2_1.0/less/theme-wso2.less" rel="stylesheet/less" type="text/css" />-->
 
     <!-- Theme WSO2 SCSS -->
-    <!--<link href="libs/theme-wso2_1.0/scss/theme-wso2.scss" rel="stylesheet/sass" type="text/css" />-->
+    <link href="libs/theme-wso2_1.0/scss/theme-wso2.scss" rel="stylesheet/sass" type="text/css" />
 
     <!-- Custom CSS/LESS -->
     <link href="less/theme-wso2-config.less" rel="stylesheet/less" type="text/css" />
@@ -62,7 +62,7 @@
     <!-- LESS CSS Compiler -->
     <!-- less.js Debug Script -->
     <script>
-        less = {
+        /*less = {
             env: "development",
             logLevel: 2,
             async: false,
@@ -76,13 +76,13 @@
             var2: 'regular value'
             },
             rootpath: ""
-        };
+        };*/
     </script>
-    <script src="libs/less_2.5.3/less.min.js"></script>
+    <!--<script src="libs/less_2.5.3/less.min.js"></script>-->
 
     <!-- SASS CSS Compiler -->
-    <!--<script src="libs/sass_0.9.4/sass.js"></script>-->
-    <!--<script src="libs/theme-wso2_1.0/js/scss-compile.js"></script>-->
+    <script src="libs/sass_0.9.4/sass.js"></script>
+    <script src="libs/theme-wso2_1.0/js/scss-compile.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -119,9 +119,18 @@
         </div>
     </header>
 
+    <!-- breadcrumb -->
+    <div class="breadcrumb-wrapper">
+        <ol class="breadcrumb">
+            <li><a href="index.html"><i class="icon fw fw-home"></i></a></li>
+            <li><a href="#">Samples</a></li>
+            <li class="active"><a href="#">All</a></li>
+        </ol>
+    </div>
+
     <!-- navbar -->
     <div class="navbar-wrapper">
-        <nav class="navbar navbar-default" data-spy="affix" data-offset-top="50" data-offset-bottom="40">
+        <nav class="navbar navbar-default" data-spy="affix" data-offset-top="80" data-offset-bottom="40">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -171,11 +180,9 @@
                             </a>
                         </li>
                     </ul>
-                    <ol class="breadcrumb navbar-brand">
-                        <li><a href="index.html"><i class="icon fw fw-home"></i></a></li>
-                        <li><a href="#">Library</a></li>
-                        <li class="active"><a href="#">Data</a></li>
-                    </ol>
+                    <div class="navbar-brand">
+                        <a href="#">Components</a>
+                    </div>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -209,7 +216,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="visible-inline-block">
-                            <a data-toggle="sidebar" data-target="#right-sidebar" aria-controls="right-sidebar" aria-expanded="false">
+                            <a data-toggle="sidebar" data-target="#right-sidebar" data-container=".page-content" aria-expanded="false" rel="notifications-sidebar">
                                 <span class="icon fw-stack">
                                     <i class="fw fw-notification fw-stack-1x"></i>
                                 </span>
@@ -251,7 +258,7 @@
     </div>
 
     <!-- .left-sidebar -->
-    <div class="sidebar-wrapper" id="left-sidebar" data-side="left">
+    <div class="sidebar-wrapper hidden" id="left-sidebar" data-side="left">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
                 <a href="#">
@@ -272,388 +279,40 @@
     </div>
     <!-- /.left-sidebar -->
 
-    <!-- .right-sidebar -->
-    <div class="sidebar-wrapper" id="right-sidebar" data-side="right">
-        <ul class="sidebar-messages">
-            <li class="message message-success">
-                <h4><i class="icon fw fw-ok"></i>Minor Information Message</h4>
-                <p>Alerts don't have default classes, only base and modifier classes.</p>
-            </li>
-            <li class="message message-info">
-                <h4><i class="icon fw fw-info"></i>Minor Information Message</h4>
-                <p>Alerts don't have default classes, only base and modifier classes.</p>
-            </li>
-            <li class="message message-warning">
-                <h4><i class="icon fw fw-warning"></i>Major Information Message</h4>
-                <p>Alerts don't have default classes, only base and modifier classes.</p>
-            </li>
-            <li class="message message-danger">
-                <h4><i class="icon fw fw-error"></i>Critical Information Message</h4>
-                <p>Alerts don't have default classes, only base and modifier classes.</p>
-            </li>
-        </ul>
-    </div>
-    <!-- /.right-sidebar -->
-
     <!-- .right-sidebar2 -->
-    <div class="sidebar-wrapper inverse" id="right-sidebar2" data-side="right">
+    <div class="sidebar-wrapper inverse hidden" id="right-sidebar2" data-side="right">
 
-        <!-- notes -->
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingNotes">
-                <h2 class="sub-title panel-title">
-                    <a data-toggle="collapse" href="#collapseNotes" aria-expanded="true" aria-controls="collapseNotes" class="collapsed">
-                        <span class="fw-stack">
-                            <i class="fw fw-ring fw-stack-2x"></i>
-                            <i class="fw fw-arrow fw-down fw-stack-1x"></i>
-                        </span>
-                        Notes
-                    </a>
-                </h2>
-            </div>
-            <div id="collapseNotes" class="panel-collapse collapse in" aria-labelledby="headingNotes">
-                <div class="panel-body wr-panel-notes">
-
-                    <!--<a href="#" class="cu-btn-inner add-btn">-->
-                    <!--<span class="fw-stack">-->
-                    <!--<i class="fw fw-ring fw-stack-2x"></i>-->
-                    <!--<i class="fw fw-add fw-stack-1x"></i>-->
-                    <!--</span>-->
-                    <!--Add Note-->
-                    <!--</a>-->
-
-                    <a href="#" class="cu-btn-inner add-btn">
-                        <span class="fw-stack">
-                            <i class="fw fw-ring fw-stack-2x"></i>
-                            <i class="fw fw-add fw-stack-1x"></i>
-                        </span>
-                        New
-                    </a>
-
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-                        <div class="panel">
-
-                            <div class="wr-panel-note collapsed" role="tab" data-toggle="collapse" data-parent="#accordion" href="#note1" aria-expanded="false" aria-controls="note1">
-                                <div class="wr-panel-desc-icon">
-                                    <i class="wr-panel-desc-icon fw fw-user"></i>
-                                </div>
-                                <div class="wr-panel-msg">
-                                    <div class="open msg-options">
-                                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <i class="fw fw-dots fw-rotate-90"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#"><i class="fw fw-edit fa-fw"></i> Edit</a></li>
-                                            <li><a href="#"><i class="fw fw-delete fa-fw"></i> Delete</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#"><i class="i"></i> Resolve Thread</a></li>
-                                        </ul>
-                                    </div>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu dictum lectus, nec lacinia odio. Fusce eget malesuada lorem, vitae blandit justo. Morbi sed sapien vestibulum ipsum bibendum blandit. Integer magna dui, consequat sed velit ac, pulvinar feugiat nisi. Nulla pharetra viverra risus, quis mattis mauris elementum quis.</div>
-                                    <div class="wr-panel-msg-details"><span class="wr-list-username">John Doe</span> <span class="wr-panel-time"><i class="fw fw-clock"></i> 11.25am | 12-April-2015</span></div>
-                                    <!--<button type="button" class="btn btn-default wr-panel-msg-visibility" aria-label="Left Align">-->
-                                    <!--<i class="glyphicon glyphicon glyphicon-lock" aria-hidden="true"></i>-->
-                                    <!--</button>-->
-                                    <a href="#" class="wr-panel-msg-visibility"><i class="glyphicon glyphicon glyphicon-lock"></i></a>
-                                </div>
-                            </div>
-                            <div id="note1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="note1">
-
-                                <a href="#" class="more-link">More ...</a>
-
-                                <div class="wr-panel-sub-note">
-                                    <div class="wr-panel-desc-icon">
-                                        <i class="wr-panel-desc-icon fw fw-user"></i>
-                                    </div>
-                                    <div class="wr-panel-msg">
-                                        <div class="open msg-options">
-                                            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                                                <i class="fw fw-dots fw-rotate-90"></i>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#"><i class="fw fw-edit fa-fw"></i> Edit</a></li>
-                                                <li><a href="#"><i class="fw fw-delete fa-fw"></i> Delete</a></li>
-                                            </ul>
-                                        </div>
-                                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu dictum lectus, nec lacinia odio. Fusce eget malesuada lorem, vitae blandit justo.</div>
-                                        <div class="wr-panel-msg-details"><span class="wr-list-username">John Doe</span> <span class="wr-panel-time"><i class="fw fw-clock"></i> 11.25am | 12-April-2015</span></div>
-                                    </div>
-                                </div>
-                                <div class="wr-panel-sub-note">
-                                    <div class="wr-panel-desc-icon">
-                                        <i class="wr-panel-desc-icon fw fw-user"></i>
-                                    </div>
-                                    <div class="wr-panel-msg">
-                                        <div class="open msg-options">
-                                            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                                                <i class="fw fw-dots fw-rotate-90"></i>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#"><i class="fw fw-edit fa-fw"></i> Edit</a></li>
-                                                <li><a href="#"><i class="fw fw-delete fa-fw"></i> Delete</a></li>
-                                            </ul>
-                                        </div>
-                                        <div>Added asset weather.xml</div>
-                                        <div class="wr-panel-msg-details"><span class="wr-list-username">John Doe</span> <span class="wr-panel-time"> - 11.25am | 12-April-2015</span></div>
-                                    </div>
-                                </div>
-
-                                <div class="well">
-                                    <textarea placeholder="reply..."></textarea>
-                                    <a href="#" class="cu-btn-inner">
-                                        <span class="fw-stack">
-                                            <i class="fw fw-ring fw-stack-2x"></i>
-                                            <i class="fw fw-message fw-stack-1x"></i>
-                                        </span>
-                                        Reply
-                                    </a>
-                                    <!--<a href="#" class="cu-btn-inner">-->
-                                    <!--<span class="fw-stack">-->
-                                    <!--<i class="fw fw-ring fw-stack-2x"></i>-->
-                                    <!--<i class="fw fw-check fw-stack-1x"></i>-->
-                                    <!--</span>-->
-                                    <!--Resolve-->
-                                    <!--</a>-->
-                                </div>
-                            </div>
-
-
-
-
-                            <div class="wr-panel-note collapsed" role="tab" data-toggle="collapse" data-parent="#accordion" href="#note2" aria-expanded="false" aria-controls="note2">
-                                <div class="wr-panel-desc-icon">
-                                    <i class="wr-panel-desc-icon fw fw-user"></i>
-                                </div>
-                                <div class="wr-panel-msg">
-                                    <div class="open msg-options">
-                                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <i class="fw fw-dots fw-rotate-90"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#"><i class="fw fw-edit fa-fw"></i> Edit</a></li>
-                                            <li><a href="#"><i class="fw fw-delete fa-fw"></i> Delete</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#"><i class="i"></i> Resolve Thread</a></li>
-                                        </ul>
-                                    </div>
-                                    <div>Added asset weather.xml</div>
-                                    <div class="wr-panel-msg-details"><span class="wr-list-username">John Doe</span> <span class="wr-panel-time"><i class="fw fw-clock"></i> 11.25am | 12-April-2015</span></div>
-                                    <a href="#" class="wr-panel-msg-visibility"><i class="glyphicon glyphicon glyphicon-lock"></i></a>
-                                </div>
-                            </div>
-                            <div id="note2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="note2">
-
-                                <div class="wr-panel-sub-note">
-                                    <div class="wr-panel-desc-icon">
-                                        <i class="wr-panel-desc-icon fw fw-user"></i>
-                                    </div>
-                                    <div class="wr-panel-msg">
-                                        <div class="open msg-options">
-                                            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                                                <i class="fw fw-dots fw-rotate-90"></i>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#"><i class="fw fw-edit fa-fw"></i> Edit</a></li>
-                                                <li><a href="#"><i class="fw fw-delete fa-fw"></i> Delete</a></li>
-                                            </ul>
-                                        </div>
-                                        <div>Added asset weather.xml</div>
-                                        <div class="wr-panel-msg-details"><span class="wr-list-username">John Doe</span> <span class="wr-panel-time"><i class="fw fw-clock"></i> 11.25am | 12-April-2015</span></div>
-                                    </div>
-                                </div>
-                                <div class="wr-panel-sub-note">
-                                    <div class="wr-panel-desc-icon">
-                                        <i class="wr-panel-desc-icon fw fw-user"></i>
-                                    </div>
-                                    <div class="wr-panel-msg">
-                                        <div class="open msg-options">
-                                            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                                                <i class="fw fw-dots fw-rotate-90"></i>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#"><i class="fw fw-edit fa-fw"></i> Edit</a></li>
-                                                <li><a href="#"><i class="fw fw-delete fa-fw"></i> Delete</a></li>
-                                            </ul>
-                                        </div>
-                                        <div>Added asset weather.xml</div>
-                                        <div class="wr-panel-msg-details"><span class="wr-list-username">John Doe</span> <span class="wr-panel-time"><i class="fw fw-clock"></i> 11.25am | 12-April-2015</span></div>
-                                    </div>
-                                </div>
-
-                                <div class="well">
-                                    <textarea placeholder="reply..."></textarea>
-                                    <a href="#" class="cu-btn-inner">
-                                        <span class="fw-stack">
-                                            <i class="fw fw-ring fw-stack-2x"></i>
-                                            <i class="fw fw-message fw-stack-1x"></i>
-                                        </span>
-                                        Reply
-                                    </a>
-                                    <!--<a href="#" class="cu-btn-inner">-->
-                                    <!--<span class="fw-stack">-->
-                                    <!--<i class="fw fw-ring fw-stack-2x"></i>-->
-                                    <!--<i class="fw fw-check fw-stack-1x"></i>-->
-                                    <!--</span>-->
-                                    <!--Resolve-->
-                                    <!--</a>-->
-                                </div>
-                            </div>
-
-
-
-
-                            <div class="wr-panel-note collapsed row" role="tab" data-toggle="collapse" data-parent="#accordion" href="#note3" aria-expanded="false" aria-controls="note3">
-                                <div class="wr-panel-desc-icon">
-                                    <i class="wr-panel-desc-icon fw fw-user"></i>
-                                </div>
-                                <div class="wr-panel-msg">
-                                    <div class="open msg-options">
-                                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <i class="fw fw-dots fw-rotate-90"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#"><i class="fw fw-edit fa-fw"></i> Edit</a></li>
-                                            <li><a href="#"><i class="fw fw-delete fa-fw"></i> Delete</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#"><i class="i"></i> Resolve Thread</a></li>
-                                        </ul>
-                                    </div>
-                                    <div>Added asset weather.xml</div>
-                                    <div class="wr-panel-msg-details"><span class="wr-list-username">John Doe</span> <span class="wr-panel-time"><i class="fw fw-clock"></i> 11.25am | 12-April-2015</span></div>
-                                    <a href="#" class="wr-panel-msg-visibility"><i class="glyphicon glyphicon glyphicon-globe"></i></a>
-                                </div>
-                            </div>
-                            <div id="note3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="note3">
-
-                                <div class="wr-panel-sub-note">
-                                    <div class="wr-panel-desc-icon">
-                                        <i class="wr-panel-desc-icon fw fw-user"></i>
-                                    </div>
-                                    <div class="wr-panel-msg">
-                                        <div class="open msg-options">
-                                            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                                                <i class="fw fw-dots fw-rotate-90"></i>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#"><i class="fw fw-edit fa-fw"></i> Edit</a></li>
-                                                <li><a href="#"><i class="fw fw-delete fa-fw"></i> Delete</a></li>
-                                            </ul>
-                                        </div>
-                                        <div>Added asset weather.xml</div>
-                                        <div class="wr-panel-msg-details"><span class="wr-list-username">John Doe</span> <span class="wr-panel-time"><i class="fw fw-clock"></i> 11.25am | 12-April-2015</span></div>
-                                    </div>
-                                </div>
-                                <div class="wr-panel-sub-note">
-                                    <div class="wr-panel-desc-icon">
-                                        <i class="wr-panel-desc-icon fw fw-user"></i>
-                                    </div>
-                                    <div class="wr-panel-msg">
-                                        <div class="open msg-options">
-                                            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                                                <i class="fw fw-dots fw-rotate-90"></i>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#"><i class="fw fw-edit fa-fw"></i> Edit</a></li>
-                                                <li><a href="#"><i class="fw fw-delete fa-fw"></i> Delete</a></li>
-                                            </ul>
-                                        </div>
-                                        <div>Added asset weather.xml</div>
-                                        <div class="wr-panel-msg-details"><span class="wr-list-username">John Doe</span> <span class="wr-panel-time"><i class="fw fw-clock"></i> 11.25am | 12-April-2015</span></div>
-                                    </div>
-                                </div>
-
-                                <div class="well">
-                                    <textarea placeholder="reply..."></textarea>
-                                    <a href="#" class="cu-btn-inner">
-                                        <span class="fw-stack">
-                                            <i class="fw fw-ring fw-stack-2x"></i>
-                                            <i class="fw fw-message fw-stack-1x"></i>
-                                        </span>
-                                        Reply
-                                    </a>
-                                    <!--<a href="#" class="cu-btn-inner">-->
-                                    <!--<span class="fw-stack">-->
-                                    <!--<i class="fw fw-ring fw-stack-2x"></i>-->
-                                    <!--<i class="fw fw-check fw-stack-1x"></i>-->
-                                    <!--</span>-->
-                                    <!--Resolve-->
-                                    <!--</a>-->
-                                </div>
-                            </div>
-
-
-
-
-                            <div class="wr-panel-note collapsed resolved" role="tab" data-toggle="collapse" data-parent="#accordion" href="#note4" aria-expanded="false" aria-controls="note4">
-                                <div class="wr-panel-desc-icon">
-                                    <i class="wr-panel-desc-icon fw fw-user"></i>
-                                </div>
-                                <div class="wr-panel-msg">
-                                    <div class="open msg-options">
-                                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <i class="fw fw-dots fw-rotate-90"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#"><i class="i"></i> Re-open</a></li>
-                                        </ul>
-                                    </div>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu dictum lectus, nec lacinia odio.</div>
-                                    <div class="wr-panel-msg-details"><span class="wr-list-username">John Doe</span> <span class="wr-panel-time"><i class="fw fw-clock"></i> 11.25am | 12-April-2015</span></div>
-                                    <span class="resolve-icon">
-                                        <span class="fw-stack-md">
-                                            <i class="fw fw-ok fw-stack-1-5x"></i>
-                                        </span>
-                                        Resolved
-                                    </span>
-                                </div>
-                            </div>
-                            <div id="note4" class="panel-collapse collapse resolved" role="tabpanel" aria-labelledby="note4">
-
-                                <a href="#" class="more-link">More ...</a>
-
-                                <div class="wr-panel-sub-note">
-                                    <div class="wr-panel-desc-icon">
-                                        <i class="wr-panel-desc-icon fw fw-user"></i>
-                                    </div>
-                                    <div class="wr-panel-msg">
-                                        <i class="fw fw-dots fw-rotate-90 msg-options"></i>
-                                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu dictum lectus, nec lacinia odio. Fusce eget malesuada lorem, vitae blandit justo.</div>
-                                        <div class="wr-panel-msg-details"><span class="wr-list-username">John Doe</span> <span class="wr-panel-time"><i class="fw fw-clock"></i> 11.25am | 12-April-2015</span></div>
-                                    </div>
-                                </div>
-                                <div class="wr-panel-sub-note">
-                                    <div class="wr-panel-desc-icon">
-                                        <i class="wr-panel-desc-icon fw fw-user"></i>
-                                    </div>
-                                    <div class="wr-panel-msg">
-                                        <i class="fw fw-dots fw-rotate-90 msg-options"></i>
-                                        <div>Added asset weather.xml</div>
-                                        <div class="wr-panel-msg-details"><span class="wr-list-username">John Doe</span> <span class="wr-panel-time"> - 11.25am | 12-April-2015</span></div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-        <!-- /notes -->
     </div>
     <!-- /.right-sidebar2 -->
 
     <!-- #page-content-wrapper -->
     <div class="page-content-wrapper">
 
+        <!-- .right-sidebar -->
+        <div class="sidebar-wrapper" id="right-sidebar" data-side="right" data-width="320" data-sidebar-fixed="true" data-fixed-offset="50" data-spy="affix" data-offset-top="80">
+            <ul class="sidebar-messages">
+                <li class="message message-success">
+                    <h4><i class="icon fw fw-ok"></i>Minor Information Message</h4>
+                    <p>Alerts don't have default classes, only base and modifier classes.</p>
+                </li>
+                <li class="message message-info">
+                    <h4><i class="icon fw fw-info"></i>Minor Information Message</h4>
+                    <p>Alerts don't have default classes, only base and modifier classes.</p>
+                </li>
+                <li class="message message-warning">
+                    <h4><i class="icon fw fw-warning"></i>Major Information Message</h4>
+                    <p>Alerts don't have default classes, only base and modifier classes.</p>
+                </li>
+                <li class="message message-danger">
+                    <h4><i class="icon fw fw-error"></i>Critical Information Message</h4>
+                    <p>Alerts don't have default classes, only base and modifier classes.</p>
+                </li>
+            </ul>
+        </div>
+        <!-- /.right-sidebar -->
+
         <!-- page content -->
         <div class="container-fluid body-wrapper">
-
-            <div id="demohbs"></div>
 
             <!-- ******************************************************************
             Wrapper
@@ -765,80 +424,79 @@
                         </div>
                     </div>
                 </div>
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <label class="control-label">Filter</label>
-                            <div class="input-group input-wrap">
-                                <div class="input-group-btn" data-toggle="dropdown">
-                                    <button class="btn btn-default btn-primary" type="button" title="Advance Filter">
-                                        <i class="fw fw-filter" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                                <ul class="dropdown-menu tiles arrow dark" role="menu">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label class="control-label">Filter</label>
+                        <div class="input-group input-wrap">
+                            <div class="input-group-btn" data-toggle="dropdown">
+                                <button class="btn btn-default btn-primary" type="button" title="Advance Filter">
+                                    <i class="fw fw-filter" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <ul class="dropdown-menu tiles arrow dark" role="menu">
+                                <li>
+                                    <a href="#">
+                                        <i class="icon fw fw-android"></i>
+                                        <span class="name">Android</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon fw fw-apple"></i>
+                                        <span class="name">iOS</span>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon fw fw-user"></i>
+                                        <span class="name">User</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon fw fw-users"></i>
+                                        <span class="name">User Roles</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="input-group-btn">
+                                <button class="btn" type="button" title="Android">
+                                    <i class="fw fw-android" aria-hidden="true"></i>
+                                    <span class="hidden-xs">Android</span>
+                                </button>
+                            </div>
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    All Users
+                                    <i class="icon-caret fw fw-down icon-caret"></i>
+                                </button>
+                                <ul class="dropdown-menu">
                                     <li>
-                                        <a href="#">
-                                            <i class="icon fw fw-android"></i>
-                                            <span class="name">Android</span>
-                                        </a>
+                                        <input type="text" class="form-control form-control-lg" placeholder="Search by user...">
+                                        <div class="input-group-btn btn-input-right">
+                                            <button class="btn btn-default" type="button" title="Search">
+                                                <i class="fw fw-search" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
                                     </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon fw fw-apple"></i>
-                                            <span class="name">iOS</span>
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon fw fw-user"></i>
-                                            <span class="name">User</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon fw fw-users"></i>
-                                            <span class="name">User Roles</span>
-                                        </a>
-                                    </li>
+                                    <li><a href="#">All Users</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Denver</a></li>
+                                    <li><a href="#">Jack</a></li>
+                                    <li><a href="#">Cooper</a></li>
+                                    <li><a href="#">Nick</a></li>
                                 </ul>
-                                <div class="input-group-btn">
-                                    <button class="btn" type="button" title="Android">
-                                        <i class="fw fw-android" aria-hidden="true"></i>
-                                        <span class="hidden-xs">Android</span>
-                                    </button>
-                                </div>
-                                <div class="input-group-btn">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        All Users
-                                        <i class="icon-caret fw fw-down icon-caret"></i>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <input type="text" class="form-control form-control-lg" placeholder="Search by user...">
-                                            <div class="input-group-btn btn-input-right">
-                                                <button class="btn btn-default" type="button" title="Search">
-                                                    <i class="fw fw-search" aria-hidden="true"></i>
-                                                </button>
-                                            </div>
-                                        </li>
-                                        <li><a href="#">All Users</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#">Denver</a></li>
-                                        <li><a href="#">Jack</a></li>
-                                        <li><a href="#">Cooper</a></li>
-                                        <li><a href="#">Nick</a></li>
-                                    </ul>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Search for...">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-default wrap-input-right" type="button" title="Search">
-                                        <i class="fw fw-search" aria-hidden="true"></i>
-                                    </button>
-                                </div>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default wrap-input-right" type="button" title="Search">
+                                    <i class="fw fw-search" aria-hidden="true"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
+                </div>
                 <div class="form-group">
                     <div class="col-sm-12">
                         <label class="control-label">Name *</label>
@@ -1308,9 +966,57 @@
 
             <br class="spacer">
 
-            </form>
-        </div>
+            <!-- ******************************************************************
+            MediaBox Templates
+            ******************************************************************* -->
+            <div class="page-header" id="Message">
+                <h1>Media Box</h1>
+                <p class="lead">Flex View Template</p>
+            </div>
+            <div class="row">
+                <div class="media">
+                    <div class="media-left col-xs-1 col-sm-1 col-md-2 col-lg-2">
+                        <ul class="list-group nav nav-pills nav-stacked" role="tablist">
+                            <li class="list-group-item active"><a href="#device_location" role="tab" data-toggle="tab" aria-controls="device_location"><i class="fw fw-map-location"></i> <span class="hidden-xs hidden-sm">Device Location</span></a></li>
+                            <li class="list-group-item"><a href="#installed_applications" role="tab" data-toggle="tab" aria-controls="installed_applications"><i class="fw fw-applications"></i> <span class="hidden-xs hidden-sm">Installed Applications</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="media-body add-padding-left-5x remove-padding-xs tab-content">
+                        <div class="panel-group tab-content">
+                            <div class="panel panel-default tab-pane fade in active" id="device_location" role="tabpanel" aria-labelledby="device_location">
+                                <div class="panel-heading">Device Location</div>
+                                <div class="panel-body">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31685.790279428384!2d79.85860875927737!3d6.923585351516181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1426479547647" width="100%" height="450" frameborder="0" style="border:0"></iframe>
+                                </div>
+                            </div>
+                            <div class="panel panel-default fade" id="installed_applications" role="tabpanel" aria-labelledby="installed_applications">
+                                <div class="panel-heading">Installed Applications</div>
+                                <div class="panel-body">
+                                    <div class="wr-app-listing">
+                                        <ul class="thumbnail-list">
+                                            <li><div class="thumbnail"><img src="images/app9.png"></div></li>
+                                            <li><div class="thumbnail"><img src="images/app10.png"></div></li>
+                                            <li><div class="thumbnail"><img src="images/app11.png"></div></li>
+                                            <li><div class="thumbnail"><img src="images/app12.png"></div></li>
+                                            <li><div class="thumbnail"><img src="images/app13.png"></div></li>
+                                            <li><div class="thumbnail"><img src="images/app14.png"></div></li>
+                                            <li><div class="thumbnail"><img src="images/app15.png"></div></li>
+                                            <li><div class="thumbnail"><img src="images/app16.png"></div></li>
+                                            <li><div class="thumbnail"><img src="images/app17.png"></div></li>
+                                            <li><div class="thumbnail"><img src="images/app18.png"></div></li>
+                                            <li><div class="thumbnail"><img src="images/app19.png"></div></li>
+                                            <li><div class="thumbnail"><img src="images/app20.png"></div></li>
+                                            <li><div class="thumbnail"><img src="images/app21.png"></div></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+        </div>
     </div><!-- /#page-content-wrapper -->
 
 
