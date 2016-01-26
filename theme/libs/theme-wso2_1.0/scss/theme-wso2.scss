@@ -66,19 +66,20 @@
     background-image: linear-gradient($origin, $start, $stop);
 }
 
-@mixin font($font, $font-weight, $font-style, $font-name, $file-name){
-    $font-file:'../fonts/#{$font}/#{$file-name}';
-
-    font-family: $font;
-    font-style: $font-style;
-    font-weight: $font-weight;
-    src: url('#{$font-file}.eot');
-    src: local($font-name),
-    local($file-name),
-    url('#{$font-file}.eot') format('embedded-opentype'),
-    url('#{$font-file}.woff') format('woff'),
-    url('#{$font-file}.ttf') format('truetype'),
-    url('#{$font-file}.svg##{$font-name}') format('svg');
+@mixin font($font, $font-weight, $font-style, $font-name, $file-name, $font-folder-path){
+    $font-file: '#{$font-folder-path}/#{$font}/#{$file-name}';
+    @font-face {
+        font-family: $font;
+        font-style: $font-style;
+        font-weight: $font-weight;
+        src: url('#{$font-file}.eot');
+        src: local($font-name),
+        local($file-name),
+        url('#{$font-file}.eot') format('embedded-opentype'),
+        url('#{$font-file}.woff') format('woff'),
+        url('#{$font-file}.ttf') format('truetype'),
+        url('#{$font-file}.svg##{$font-name}') format('svg');
+    }
 }
 
 @mixin square-ratio($width, $height) {
@@ -138,19 +139,7 @@
  * default values
  * ======================================================================== */
 
-@font-face {@include font( 'Roboto', 100, 'normal', 'Roboto Thin', 'Roboto-Thin-webfont' )}
-@font-face {@include font( 'Roboto', 300, 'normal', 'Roboto Light', 'Roboto-Light-webfont' )}
-@font-face {@include font( 'Roboto', 400, 'normal', 'Roboto Regular', 'Roboto-Regular-webfont' )}
-@font-face {@include font( 'Roboto', 500, 'normal', 'Roboto Medium', 'Roboto-Medium-webfont' )}
-@font-face {@include font( 'Roboto', 700, 'normal', 'Roboto Bold', 'Roboto-Bold-webfont' )}
-@font-face {@include font( 'Roboto', 900, 'normal', 'Roboto Black', 'Roboto-Black-webfont' )}
-@font-face {@include font( 'Roboto', 100, 'italic', 'Roboto Thin Italic', 'Roboto-ThinItalic-webfont' )}
-@font-face {@include font( 'Roboto', 300, 'italic', 'Roboto Light Italic', 'Roboto-LightItalic-webfont' )}
-@font-face {@include font( 'Roboto', 400, 'italic', 'Roboto Regular Italic', 'Roboto-RegularItalic-webfont' )}
-@font-face {@include font( 'Roboto', 500, 'italic', 'Roboto Medium Italic', 'Roboto-MediumItalic-webfont' )}
-@font-face {@include font( 'Roboto', 700, 'italic', 'Roboto Bold Italic', 'Roboto-BoldItalic-webfont' )}
-@font-face {@include font( 'Roboto', 900, 'italic', 'Roboto Black Italic', 'Roboto-BlackItalic-webfont' )}
-
+$font-folder-path: 'libs/theme-wso2_1.0/fonts';
 $font-default: 'Roboto', Arial, Helvetica, sans-serif;
 $font-icons: 'font-wso2';
 $font-default-weight: 300;
@@ -236,6 +225,22 @@ $switch-handler-disabled-color: #484e52;
 
 $form-control-max-width: 750px;
 $sidebar-width-default: 350px;
+
+/* ========================================================================
+ * loading fonts
+ * ======================================================================== */
+
+@include font( 'Roboto', 100, 'italic', 'Roboto Thin Italic', 'Roboto-ThinItalic-webfont', $font-folder-path)
+@include font( 'Roboto', 300, 'italic', 'Roboto Light Italic', 'Roboto-LightItalic-webfont', $font-folder-path)
+@include font( 'Roboto', 500, 'italic', 'Roboto Medium Italic', 'Roboto-MediumItalic-webfont', $font-folder-path)
+@include font( 'Roboto', 700, 'italic', 'Roboto Bold Italic', 'Roboto-BoldItalic-webfont', $font-folder-path)
+@include font( 'Roboto', 900, 'italic', 'Roboto Black Italic', 'Roboto-BlackItalic-webfont', $font-folder-path)
+@include font( 'Roboto', 100, 'normal', 'Roboto Thin', 'Roboto-Thin-webfont', $font-folder-path)
+@include font( 'Roboto', 300, 'normal', 'Roboto Light', 'Roboto-Light-webfont', $font-folder-path)
+@include font( 'Roboto', 400, 'normal', 'Roboto Regular', 'Roboto-Regular-webfont', $font-folder-path)
+@include font( 'Roboto', 500, 'normal', 'Roboto Medium', 'Roboto-Medium-webfont', $font-folder-path)
+@include font( 'Roboto', 700, 'normal', 'Roboto Bold', 'Roboto-Bold-webfont', $font-folder-path)
+@include font( 'Roboto', 900, 'normal', 'Roboto Black', 'Roboto-Black-webfont', $font-folder-path)
 
 /* ========================================================================
  * icon styles
@@ -1650,6 +1655,35 @@ a.btn, .btn {
 
 .remove-icon-ring-on-hover:hover .fw-ring {
     display: none;
+}
+
+.has-form-control-btn {
+    position: relative;
+}
+
+.form-control-btn {
+    &,
+    &:focus,
+    &:active,
+    &:hover {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        padding: 6px;
+        background: transparent;
+        border: none;
+        z-index: 5;
+        opacity: 0.7
+    }
+
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .form-control {
