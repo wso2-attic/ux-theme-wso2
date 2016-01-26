@@ -69,7 +69,7 @@
 @mixin font($font, $font-weight, $font-style, $font-name, $file-name){
     $font-file:'../fonts/#{$font}/#{$file-name}';
 
-    font-family: $font-name;
+    font-family: $font;
     font-style: $font-style;
     font-weight: $font-weight;
     src: url('#{$font-file}.eot');
@@ -151,7 +151,7 @@
 @font-face {@include font( 'Roboto', 700, 'italic', 'Roboto Bold Italic', 'Roboto-BoldItalic-webfont' )}
 @font-face {@include font( 'Roboto', 900, 'italic', 'Roboto Black Italic', 'Roboto-BlackItalic-webfont' )}
 
-$font-default: 'Roboto Light', Arial, Helvetica, sans-serif;
+$font-default: 'Roboto', Arial, Helvetica, sans-serif;
 $font-icons: 'font-wso2';
 $font-default-weight: 300;
 
@@ -684,7 +684,7 @@ header .brand {
     & h1 {
         display: inline-block;
         line-height: 1;
-        font-weight: 500;
+        font-weight: 300;
         font-size: 17px;
         margin: 0 0 0 5px;
         color: $base-light-color;
@@ -1733,7 +1733,7 @@ input[type=number].form-control {
  * ======================================================================== */
 
 .table thead th {
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .table .form-control {
@@ -2291,7 +2291,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
 .panel-default > .panel-heading {
     background: transparent;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 300;
     border-bottom: 1px solid #e4e4e4;
     padding-bottom: 10px;
     margin-bottom: 20px;
