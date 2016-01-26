@@ -138,9 +138,18 @@
  * default values
  * ======================================================================== */
 
-@font-face {
-    @include font('Roboto', 300, 'normal', 'Roboto Light', 'Roboto-Light-webfont')
-}
+@font-face {@include font( 'Roboto', 100, 'normal', 'Roboto Thin', 'Roboto-Thin-webfont' )}
+@font-face {@include font( 'Roboto', 300, 'normal', 'Roboto Light', 'Roboto-Light-webfont' )}
+@font-face {@include font( 'Roboto', 400, 'normal', 'Roboto Regular', 'Roboto-Regular-webfont' )}
+@font-face {@include font( 'Roboto', 500, 'normal', 'Roboto Medium', 'Roboto-Medium-webfont' )}
+@font-face {@include font( 'Roboto', 700, 'normal', 'Roboto Bold', 'Roboto-Bold-webfont' )}
+@font-face {@include font( 'Roboto', 900, 'normal', 'Roboto Black', 'Roboto-Black-webfont' )}
+@font-face {@include font( 'Roboto', 100, 'italic', 'Roboto Thin Italic', 'Roboto-ThinItalic-webfont' )}
+@font-face {@include font( 'Roboto', 300, 'italic', 'Roboto Light Italic', 'Roboto-LightItalic-webfont' )}
+@font-face {@include font( 'Roboto', 400, 'italic', 'Roboto Regular Italic', 'Roboto-RegularItalic-webfont' )}
+@font-face {@include font( 'Roboto', 500, 'italic', 'Roboto Medium Italic', 'Roboto-MediumItalic-webfont' )}
+@font-face {@include font( 'Roboto', 700, 'italic', 'Roboto Bold Italic', 'Roboto-BoldItalic-webfont' )}
+@font-face {@include font( 'Roboto', 900, 'italic', 'Roboto Black Italic', 'Roboto-BlackItalic-webfont' )}
 
 $font-default: 'Roboto Light', Arial, Helvetica, sans-serif;
 $font-icons: 'font-wso2';
@@ -1553,6 +1562,14 @@ footer a {
     margin: 0 5px;
 }
 
+.input-group-btn .btn {
+    &,
+    &:hover,
+    &:focus {
+        border-color: #ccc;
+    }
+}
+
 .form-control, .btn {
     @include border-radius;
     @include box-shadow;
@@ -1603,7 +1620,7 @@ a.btn, .btn {
 
 .btn-bordered {
     &, &:focus, &:hover {
-        border: 1px solid #e4e4e4;
+        border: 1px solid #ccc;
     }
 }
 

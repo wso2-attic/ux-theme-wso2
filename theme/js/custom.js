@@ -19,22 +19,22 @@ $(function(){
     /***********************************************************
      *  data-tables config
      ***********************************************************/
-    //$('#ajax-table').datatables_extended({
-    //    ajax: "data/table.json",
-    //    columns: [
-    //        { "data": "ID" },
-    //        { "data": "Device_Type" },
-    //        { "data": "OS" },
-    //        { "data": "Name" },
-    //        { "data": "Email" },
-    //        { "data": "Position" },
-    //        { "data": "Office" },
-    //        { "data": "Age" },
-    //        { "data": "Start_date" },
-    //        { "data": "Salary" }
-    //    ],
-    //    responsive: true
-    //});
+    $('#ajax-table').datatables_extended({
+        ajax: "data/table.json",
+        columns: [
+            { "data": "ID" },
+            { "data": "Device_Type" },
+            { "data": "OS" },
+            { "data": "Name" },
+            { "data": "Email" },
+            { "data": "Position" },
+            { "data": "Office" },
+            { "data": "Age" },
+            { "data": "Start_date" },
+            { "data": "Salary" }
+        ],
+        responsive: true
+    });
 
     /***********************************************************
      *  noty config

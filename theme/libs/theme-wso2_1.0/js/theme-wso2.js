@@ -705,12 +705,6 @@ $(document).ready(function() {
     $.file_input();
     $.sidebar_toggle();
 
-    if(typeof $.fn.tooltip == 'function'){
-        $('[data-toggle="tooltip"]').tooltip();
-    }else{
-        console.warn('Warning : Dependency missing - tooltip Library');
-    }
-
     $('[data-state="loading"]').loading('show');
 
     $('.dropdown-menu input').click(function(e) {
