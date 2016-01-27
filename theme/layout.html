@@ -57,8 +57,8 @@
     <link href="libs/theme-wso2_1.0/scss/theme-wso2.scss" rel="stylesheet/sass" type="text/css" />
 
     <!-- Custom CSS/LESS -->
-    <link href="less/theme-wso2-config.less" rel="stylesheet/less" type="text/css" />
-    <!--<link href="scss/theme-wso2-config.scss" rel="stylesheet/sass" type="text/css" />-->
+    <!--<link href="less/theme-wso2-config.less" rel="stylesheet/less" type="text/css" />-->
+    <link href="scss/theme-wso2-config.scss" rel="stylesheet/sass" type="text/css" />
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
 
     <!-- LESS CSS Compiler -->
@@ -402,6 +402,56 @@
             <br class="spacer">
 
             <!-- ******************************************************************
+            Modal Popup Templates
+            ******************************************************************* -->
+            <div class="page-header" id="forms">
+                <h1>Popup</h1>
+                <p class="lead">Modal Popup Templates</p>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDemo">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content clearfix">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fw fw-cancel"></i></button>
+                            <h3 class="modal-title" id="deleteModalLabel">What do you want to Delete ?</h3>
+                        </div>
+                        <div class="pull-left">
+                            <div class="modal-body add-margin-top-2x add-margin-bottom-2x">
+                                <label class="radio">
+                                    <input type="radio" name="delete-option">
+                                    <span class="helper">Remove Gadget</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="delete-option">
+                                    <span class="helper">Delete Grid Container</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="pull-right">
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Delete</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="input-group input-wrap has-form-control-btn">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDelete"><i class="fw fw-delete"></i> Show Modal Popup</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <br class="spacer">
+
+            <!-- ******************************************************************
             Form Elements Templates
             ******************************************************************* -->
             <div class="page-header" id="forms">
@@ -411,13 +461,28 @@
             <form class="form-horizontal">
                 <div class="form-group">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="input-group input-wrap has-form-control-btn">
+                            <button class="form-control-btn" type="button" title="Search">
+                                <i class="fw fw-search" aria-hidden="true"></i>
+                            </button>
+                            <input type="text" class="form-control" placeholder="Search gadget">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <label class="control-label">Search</label>
-                        <div class="input-group input-wrap">
-                            <input type="text" class="form-control" placeholder="Search for...">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default wrap-input-right" type="button" title="Search">
+                        <div class="input-group">
+                            <div class="input-group-btn input-wrap has-form-control-btn">
+                                <button class="form-control-btn" type="button" title="Search">
                                     <i class="fw fw-search" aria-hidden="true"></i>
                                 </button>
+                                <input type="text" class="form-control" aria-label="...">
+                            </div>
+                            <div class="input-group-btn">
+                                <!--<button class="btn btn-default wrap-input-right" type="button" title="Search">-->
+                                    <!--<i class="fw fw-search" aria-hidden="true"></i>-->
+                                <!--</button>-->
                                 <button class="btn" type="button" title="Advance Search">
                                     <i class="fw fw-settings" aria-hidden="true"></i>
                                     <span class="hidden-xs">Advanced Search</span>
@@ -428,7 +493,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <label class="control-label">Filter</label>
+                        <label class="control-label">Filter <span class="wr-help-tip glyphicon glyphicon-question-sign"></span></label>
                         <div class="input-group input-wrap">
                             <div class="input-group-btn" data-toggle="dropdown">
                                 <button class="btn btn-default btn-primary" type="button" title="Advance Filter">
@@ -492,7 +557,7 @@
                             </div>
                             <input type="text" class="form-control" placeholder="Search for...">
                             <div class="input-group-btn">
-                                <button class="btn btn-default wrap-input-right" type="button" title="Search">
+                                <button class="btn btn-default" type="button" title="Search">
                                     <i class="fw fw-search" aria-hidden="true"></i>
                                 </button>
                             </div>
@@ -517,6 +582,39 @@
                     <div class="col-sm-12">
                         <label for="input-name" class="control-label">Email <span class="">*</span></label>
                         <input type="email" class="form-control" id="input-name" placeholder="email@example.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12 form-inline">
+                        <label class="control-label">Show Grid</label>
+                        <label class="switch">
+                            <input type="checkbox" id="gridGuideToggle">
+                            <span class="helper"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label class="checkbox">
+                            <input type="checkbox" checked="">
+                            <span class="helper" title="Enable if target network is not open or broadcasting"> Hidden Network</span>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" checked="">
+                            <span class="helper" title="Enable if target network is not open or broadcasting"> Hidden Network</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label class="radio">
+                            <input type="radio" name="delete-option">
+                            <span class="helper">Remove Gadget</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="delete-option">
+                            <span class="helper">Delete Grid Container</span>
+                        </label>
                     </div>
                 </div>
                 <div class="form-group">
