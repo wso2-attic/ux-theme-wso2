@@ -45,7 +45,7 @@
     <link href="libs/font-awesome_4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Font WSO2 CSS -->
-    <link href="libs/font-wso2_1.2/css/font-wso2.css" rel="stylesheet" type="text/css" />
+    <link href="libs/font-wso2_1.0.0/css/font-wso2.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Animate CSS -->
     <link href="libs/animate/animate.css" rel="stylesheet" type="text/css" />
@@ -112,7 +112,7 @@
                    <i class="fw fw-user fw-stack-1x"></i>
                </span>
              </a>
-             <ul class="dropdown-menu float-remove-xs position-static-xs text-center-xs remove-margin-xs slideInDown" role="menu">
+             <ul class="dropdown-menu dropdown-menu-right float-remove-xs position-static-xs text-center-xs remove-margin-xs slideInDown" role="menu">
                <li class="dropdown-header visible-xs">administrator <span class="caret"></span></li>
                <li class="divider visible-xs"></li>
                <li><a href="#">Sign out</a></li>
@@ -192,7 +192,7 @@
                             <a href="layout.html">
                                 <span class="icon fw-stack">
                                     <i class="fw fw-laptop fw-stack-1x"></i>
-                                    <i class="fw fw-ring fw-stack-2x"></i>
+                                    <i class="fw fw-circle-outline fw-stack-2x"></i>
                                 </span>
                                 Main Wrapper
                             </a>
@@ -222,7 +222,7 @@
                                 <span class="icon fw-stack">
                                     <i class="fw fw-notification fw-stack-1x"></i>
                                 </span>
-                                Notifications
+                                <span class="hidden-xs">Notifications</span>
                                 <span class="badge">4</span>
                             </a>
                         </li>
@@ -240,9 +240,12 @@
             <div id="navbar2" class="collapse navbar-collapse dropdown tiles"><!-- nav-collapse -->
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">
-                            <i class="fw fw-user"></i>User Management
-                        </a>
+                        <a href="#"><i class="fw fw-user"></i>User Management</a>
+                        <ul>
+                            <li><a href="#"><i class="fw fw-user"></i>Users</a></li>
+                            <li><a href="#"><i class="fw fw-user"></i>User Groups</a></li>
+                            <li><a href="#"><i class="fw fw-user"></i>User Roles</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#">
@@ -250,9 +253,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="fw fw-policy"></i>Policy Management
-                        </a>
+                        <a href="#"><i class="fw fw-policy"></i>Policy Management</a>
+                        <ul>
+                            <li><a href="#"><i class="fw fw-policy"></i>Policies</a></li>
+                            <li><a href="#"><i class="fw fw-policy"></i>Policy Groups</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div><!--/ .nav-collapse -->
@@ -294,7 +299,7 @@
         <div class="sidebar-wrapper" id="right-sidebar" data-side="right" data-width="320" data-sidebar-fixed="true" data-fixed-offset="50" data-spy="affix" data-offset-top="80">
             <ul class="sidebar-messages">
                 <li class="message message-success">
-                    <h4><i class="icon fw fw-ok"></i>Minor Information Message</h4>
+                    <h4><i class="icon fw fw-success"></i>Minor Information Message</h4>
                     <p>Alerts don't have default classes, only base and modifier classes.</p>
                 </li>
                 <li class="message message-info">
@@ -333,7 +338,7 @@
                 <p class="lead">Alert Templates</p>
             </div>
             <div class="alert alert-success" role="alert">
-                <i class="icon fw fw-ok"></i><strong>Success!</strong>
+                <i class="icon fw fw-success"></i><strong>Success!</strong>
                 You successfully read this important alert message.
                 <button type="button" class="close" aria-label="close" data-dismiss="alert">
                     <span aria-hidden="true">
@@ -375,7 +380,7 @@
                 <p class="lead">Message Status Templates</p>
             </div>
             <div class="message message-success">
-                <h4><i class="icon fw fw-ok"></i>Message</h4>
+                <h4><i class="icon fw fw-success"></i>Message</h4>
                 <p>Alerts don't have default classes, only base and modifier classes. A default gray alert
                     doesn't make too much sense, so you're required to specify a type via contextual class.
                     Choose from success, info, warning, or danger.</p>
@@ -710,7 +715,7 @@
                 <h1>Pre-loading Animation</h1>
             </div>
 
-            <form class="form-horizontal" data-state="loading" data-loading-style="overlay">
+            <form class="form-horizontal" data-toggle="loading" data-loading-style="overlay">
                 <div class="form-group">
                     <div class="col-sm-12">
                         <label for="input-name" class="control-label">Transfer</label>
@@ -749,7 +754,7 @@
                 </div>
             </form>
 
-            <div style="height:200px" data-state="loading" data-loading-text="Processing" data-loading-style="icon-only" data-loading-inverse="true"></div>
+            <div style="height:200px" data-toggle="loading" data-loading-text="Processing" data-loading-style="icon-only" data-loading-image="images/oloader.gif" data-loading-inverse="true"></div>
 
             <br class="spacer">
 
@@ -1074,39 +1079,41 @@
                 <p class="lead">Flex View Template</p>
             </div>
             <div class="row">
-                <div class="media">
-                    <div class="media-left col-xs-1 col-sm-1 col-md-2 col-lg-2">
+                <div class="media tab-responsive">
+                    <div class="media-left col-xs-1 col-sm-1 col-md-2 col-lg-2 hidden-xs">
                         <ul class="list-group nav nav-pills nav-stacked" role="tablist">
-                            <li class="list-group-item active"><a href="#device_location" role="tab" data-toggle="tab" aria-controls="device_location"><i class="fw fw-map-location"></i> <span class="hidden-xs hidden-sm">Device Location</span></a></li>
-                            <li class="list-group-item"><a href="#installed_applications" role="tab" data-toggle="tab" aria-controls="installed_applications"><i class="fw fw-applications"></i> <span class="hidden-xs hidden-sm">Installed Applications</span></a></li>
+                            <li class="list-group-item active"><a href="#deviceLocation" role="tab" data-toggle="tab" aria-controls="deviceLocation"><i class="fw fw-map-location"></i> Device Location</a></li>
+                            <li class="list-group-item"><a href="#installedApplications" role="tab" data-toggle="tab" aria-controls="installedApplications"><i class="fw fw-applications"></i> Installed Applications</a></li>
                         </ul>
                     </div>
-                    <div class="media-body add-padding-left-5x remove-padding-xs tab-content">
-                        <div class="panel-group tab-content">
-                            <div class="panel panel-default tab-pane fade in active" id="device_location" role="tabpanel" aria-labelledby="device_location">
-                                <div class="panel-heading">Device Location</div>
-                                <div class="panel-body">
+                    <div class="media-body add-padding-left-5x remove-padding-xs">
+                        <div class="panel-group tab-content" id="tabs">
+                            <div class="panel panel-default tab-pane fade in active fade-in-xs visible-block" id="deviceLocation">
+                                <div class="panel-heading dropup visible-xs" role="tab" id="tab1" data-toggle="collapse" data-target="#tabContent1" aria-expanded="false" data-parent="#tabs">
+                                    <h4 class="panel-title"><i class="fw fw-map-location"></i> Device Location <span class="caret"></span></h4>
+                                </div>
+                                <div class="panel-heading display-none-xs">Device Location</div>
+                                <div class="panel-body collapse display-block-sm display-block-md display-block-lg in" id="tabContent1">
                                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31685.790279428384!2d79.85860875927737!3d6.923585351516181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1426479547647" width="100%" height="450" frameborder="0" style="border:0"></iframe>
                                 </div>
                             </div>
-                            <div class="panel panel-default tab-pane fade" id="installed_applications" role="tabpanel" aria-labelledby="installed_applications">
-                                <div class="panel-heading">Installed Applications</div>
-                                <div class="panel-body">
+                            <div class="panel panel-default tab-pane fade fade-in-xs visible-block" id="installedApplications">
+                                <div class="panel-heading dropdown visible-xs collapsed" role="tab" id="tab2" data-toggle="collapse" data-target="#tabContent2" aria-expanded="false" data-parent="#tabs">
+                                    <h4 class="panel-title"><i class="fw fw-applications"></i> Installed Applications <span class="caret"></span></h4>
+                                </div>
+                                <div class="panel-heading display-none-xs">Installed Applications</div>
+                                <div class="panel-body collapse display-block-sm display-block-md display-block-lg" id="tabContent2">
                                     <div class="wr-app-listing">
-                                        <ul class="thumbnail-list">
-                                            <li><div class="thumbnail"><img src="images/app9.png"></div></li>
-                                            <li><div class="thumbnail"><img src="images/app10.png"></div></li>
-                                            <li><div class="thumbnail"><img src="images/app11.png"></div></li>
-                                            <li><div class="thumbnail"><img src="images/app12.png"></div></li>
-                                            <li><div class="thumbnail"><img src="images/app13.png"></div></li>
-                                            <li><div class="thumbnail"><img src="images/app14.png"></div></li>
-                                            <li><div class="thumbnail"><img src="images/app15.png"></div></li>
-                                            <li><div class="thumbnail"><img src="images/app16.png"></div></li>
-                                            <li><div class="thumbnail"><img src="images/app17.png"></div></li>
-                                            <li><div class="thumbnail"><img src="images/app18.png"></div></li>
-                                            <li><div class="thumbnail"><img src="images/app19.png"></div></li>
-                                            <li><div class="thumbnail"><img src="images/app20.png"></div></li>
-                                            <li><div class="thumbnail"><img src="images/app21.png"></div></li>
+                                        <ul class="thumbnail-list row">
+                                            <li class="col-md-2"><div class="thumbnail icon"><i class="square-element text fw fw-windows"></i></div></li>
+                                            <li class="col-md-2"><div class="thumbnail icon"><i class="square-element text fw fw-html"></i></div></li>
+                                            <li class="col-md-2"><div class="thumbnail icon"><i class="square-element text fw fw-android"></i></div></li>
+                                            <li class="col-md-2"><div class="thumbnail icon"><i class="square-element text fw fw-xml"></i></div></li>
+                                            <li class="col-md-2"><div class="thumbnail icon"><i class="square-element text fw fw-wadl"></i></div></li>
+                                            <li class="col-md-2"><div class="thumbnail icon"><i class="square-element text fw fw-wsdl"></i></div></li>
+                                            <li class="col-md-2"><div class="thumbnail icon"><i class="square-element text fw fw-java"></i></div></li>
+                                            <li class="col-md-2"><div class="thumbnail icon"><i class="square-element text fw fw-xslt"></i></div></li>
+                                            <li class="col-md-2"><div class="thumbnail icon"><i class="square-element text fw fw-swagger"></i></div></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1123,7 +1130,7 @@
     <!-- footer -->
     <footer class="footer">
       <div class="container-fluid">
-        <p>Theme WSO2 | &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://wso2.com/" target="_blank"><i class="icon fw fw-wso2"></i> Inc</a>. All Rights Reserved. | Powered by Twitter Bootstrap 3.3.5</p>
+        <p>Theme WSO2 | &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://wso2.com/" target="_blank"><i class="icon fw fw-wso2"></i> Inc</a>. All Rights Reserved.</p>
       </div>
     </footer>
 
