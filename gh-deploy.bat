@@ -1,11 +1,9 @@
 @echo off
-title Deploy theme files to gh-pages brunch
+title Deploy Docs to gh-pages
 
-echo.
-echo =========================================================
-echo "theme" folder contains will deploy to gh-pages brunch
+echo "docs" folder contains will deploy to gh-pages branch
+echo =======================================================
 echo please commit all the changes before continue
-echo =========================================================
 echo.
 
 SET /P ANSWER=Do you want to continue (Y/N)? 
@@ -18,10 +16,9 @@ goto :no
 echo.
 echo Deploying.....
 echo.
-git pull
-git subtree push --prefix theme origin gh-pages
+git subtree push --prefix docs origin gh-pages
 echo.
-echo Complete Deploying!
+echo Finished!
 pause
 exit /b 0 
 
