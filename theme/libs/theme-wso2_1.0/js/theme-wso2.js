@@ -318,7 +318,8 @@ var responsiveTextRatio = 0.2,
                         //Append advance operations to list table toolbar
                         $('.dataTable.list-table').closest('.dataTables_wrapper').find('.dataTablesTop .dataTables_toolbar').html('' +
                             '<ul class="nav nav-pills navbar-right remove-margin" role="tablist">' +
-                            '<li><button data-click-event="toggle-selected" class="btn btn-default btn-primary">Select All</li>' +
+                            '<li><button data-click-event="toggle-selectable" class="btn btn-default btn-primary">Selectable</li>' +
+                            '<li><button data-click-event="toggle-selected" class="btn btn-default btn-primary disabled">Select All</li>' +
                             '<li><button data-click-event="toggle-list-view" data-view="grid" class="btn btn-default"><i class="fw fw-grid"></i></button></li>' +
                             '<li><button data-click-event="toggle-list-view" data-view="list" class="btn btn-default"><i class="fw fw-list"></i></button></li>' +
                             '<li><button class="btn btn-default" data-toggle="dropdown"><i class="fw fw-sort"></i></button>' + dropdownmenu[0].outerHTML + '</li>' +
@@ -349,23 +350,40 @@ var responsiveTextRatio = 0.2,
                             }
                         });
 
+                        //Enable/Disable selection on rows
+                        $('.dataTables_wrapper [data-click-event=toggle-selectable]').click(function () {
+                            var button = this,
+                                thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
+                            if ($(button).html() == 'Selectable') {
+                                thisTable.addClass("table-selectable");
+                                $(button).addClass("active").html('Un Selectable');
+                                $(button).parent().next().children("button").removeClass("disabled");
+                            } else if ($(button).html() == 'Un Selectable'){
+                                thisTable.removeClass("table-selectable");
+                                $(button).addClass("active").html('Selectable');
+                                $(button).parent().next().children().addClass("disabled");
+                            }
+                        });
+
                         //Select/Deselect all rows functions
                         $('.dataTables_wrapper [data-click-event=toggle-selected]').click(function () {
                             var button = this,
                                 thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
-
-                            if ($(button).html() == 'Select All') {
-                                thisTable.api().rows().every(function () {
-                                    $(this.node()).addClass(ROW_SELECTED_CLASS);
-                                    $(button).html('Deselect All');
-                                });
-                            } else if ($(button).html() == 'Deselect All') {
-                                thisTable.api().rows().every(function () {
-                                    $(this.node()).removeClass(ROW_SELECTED_CLASS);
-                                    $(button).html('Select All');
-                                });
+                            if(!$(button).hasClass('disabled')){
+                                if ($(button).html() == 'Select All') {
+                                    thisTable.api().rows().every(function () {
+                                        $(this.node()).addClass(ROW_SELECTED_CLASS);
+                                        $(button).html('Deselect All');
+                                    });
+                                } else if ($(button).html() == 'Deselect All') {
+                                    thisTable.api().rows().every(function () {
+                                        $(this.node()).removeClass(ROW_SELECTED_CLASS);
+                                        $(button).html('Select All');
+                                    });
+                                }
                             }
                         });
+
 
                         //Event for row select/deselect
                         $('body').on('click', '[data-type=selectable]', function () {
