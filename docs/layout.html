@@ -1083,23 +1083,34 @@
                     <div class="media-left col-xs-1 col-sm-1 col-md-2 col-lg-2 hidden-xs">
                         <ul class="list-group nav nav-pills nav-stacked" role="tablist">
                             <li class="list-group-item active"><a href="#deviceLocation" role="tab" data-toggle="tab" aria-controls="deviceLocation"><i class="fw fw-map-location"></i> Device Location</a></li>
-                            <li class="list-group-item"><a href="#installedApplications" role="tab" data-toggle="tab" aria-controls="installedApplications"><i class="fw fw-applications"></i> Installed Applications</a></li>
+                            <li class="list-group-item"><a href="#installedApplications" role="tab" data-toggle="tab" aria-controls="installedApplications"><i class="fw fw-application"></i> Installed Applications</a></li>
+                            <li class="list-group-item"><a href="#operationLog" role="tab" data-toggle="tab" aria-controls="operationLog"><i class="fw fw-text"></i> Operation Logs</a></li>
                         </ul>
                     </div>
                     <div class="media-body add-padding-left-5x remove-padding-xs">
                         <div class="panel-group tab-content" id="tabs">
+                            <div class="arrow-left hidden-xs"></div>
                             <div class="panel panel-default tab-pane fade in active fade-in-xs visible-block" id="deviceLocation">
                                 <div class="panel-heading dropup visible-xs" role="tab" id="tab1" data-toggle="collapse" data-target="#tabContent1" aria-expanded="false" data-parent="#tabs">
-                                    <h4 class="panel-title"><i class="fw fw-map-location"></i> Device Location <span class="caret"></span></h4>
+                                    <h4 class="panel-title">
+                                        <i class="fw fw-map-location fw-2x"></i>Device Location<i class="caret-updown fw fw-sort-up"></i>
+                                    </h4>
                                 </div>
                                 <div class="panel-heading display-none-xs">Device Location</div>
                                 <div class="panel-body collapse display-block-sm display-block-md display-block-lg in" id="tabContent1">
+                                    <div class="switch-container">
+                                        <label>Enable</label>
+                                        <label class="switch">
+                                            <input type="checkbox" />
+                                            <span class="helper"></span>
+                                        </label>
+                                    </div>
                                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31685.790279428384!2d79.85860875927737!3d6.923585351516181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1426479547647" width="100%" height="450" frameborder="0" style="border:0"></iframe>
                                 </div>
                             </div>
                             <div class="panel panel-default tab-pane fade fade-in-xs visible-block" id="installedApplications">
                                 <div class="panel-heading dropdown visible-xs collapsed" role="tab" id="tab2" data-toggle="collapse" data-target="#tabContent2" aria-expanded="false" data-parent="#tabs">
-                                    <h4 class="panel-title"><i class="fw fw-applications"></i> Installed Applications <span class="caret"></span></h4>
+                                    <h4 class="panel-title"><i class="fw fw-application fw-2x"></i> Installed Applications<i class="caret-updown fw fw-sort-down"></i></h4>
                                 </div>
                                 <div class="panel-heading display-none-xs">Installed Applications</div>
                                 <div class="panel-body collapse display-block-sm display-block-md display-block-lg" id="tabContent2">
@@ -1115,9 +1126,19 @@
                                             <li class="col-md-2"><div class="thumbnail icon"><i class="square-element text fw fw-xslt"></i></div></li>
                                             <li class="col-md-2"><div class="thumbnail icon"><i class="square-element text fw fw-swagger"></i></div></li>
                                         </ul>
-                                    </div>
+                                   </div>
                                 </div>
                             </div>
+                            <div class="panel panel-default tab-pane fade fade-in-xs visible-block" id="operationLog">
+                                <div class="panel-heading dropdown visible-xs collapsed" role="tab" id="tab3" data-toggle="collapse" data-target="#tabContent3" aria-expanded="false" data-parent="#tabs">
+                                    <h4 class="panel-title"><i class="fw fw-text fw-2x"></i> Operation Logs<i class="caret-updown fw fw-sort-down"></i></span></h4>
+                                </div>
+                                <div class="panel-heading display-none-xs">Operation Logs</div>
+                                <div class="panel-body collapse display-block-sm display-block-md display-block-lg" id="tabContent3">
+                                    asdasdasd
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
