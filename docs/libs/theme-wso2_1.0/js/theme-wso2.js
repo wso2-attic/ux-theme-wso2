@@ -318,7 +318,8 @@ var responsiveTextRatio = 0.2,
                         //Append advance operations to list table toolbar
                         $('.dataTable.list-table').closest('.dataTables_wrapper').find('.dataTablesTop .dataTables_toolbar').html('' +
                             '<ul class="nav nav-pills navbar-right remove-margin" role="tablist">' +
-                            '<li><button data-click-event="toggle-selected" class="btn btn-default btn-primary">Select All</li>' +
+                            '<li><button data-click-event="toggle-selectable" class="btn btn-default btn-primary">Selectable</li>' +
+                            '<li><button data-click-event="toggle-selected" class="btn btn-default btn-primary disabled">Select All</li>' +
                             '<li><button data-click-event="toggle-list-view" data-view="grid" class="btn btn-default"><i class="fw fw-grid"></i></button></li>' +
                             '<li><button data-click-event="toggle-list-view" data-view="list" class="btn btn-default"><i class="fw fw-list"></i></button></li>' +
                             '<li><button class="btn btn-default" data-toggle="dropdown"><i class="fw fw-sort"></i></button>' + dropdownmenu[0].outerHTML + '</li>' +
@@ -349,23 +350,40 @@ var responsiveTextRatio = 0.2,
                             }
                         });
 
+                        //Enable/Disable selection on rows
+                        $('.dataTables_wrapper [data-click-event=toggle-selectable]').click(function () {
+                            var button = this,
+                                thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
+                            if ($(button).html() == 'Selectable') {
+                                thisTable.addClass("table-selectable");
+                                $(button).addClass("active").html('Un Selectable');
+                                $(button).parent().next().children("button").removeClass("disabled");
+                            } else if ($(button).html() == 'Un Selectable'){
+                                thisTable.removeClass("table-selectable");
+                                $(button).removeClass("active").html('Selectable');
+                                $(button).parent().next().children().addClass("disabled");
+                            }
+                        });
+
                         //Select/Deselect all rows functions
                         $('.dataTables_wrapper [data-click-event=toggle-selected]').click(function () {
                             var button = this,
                                 thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
-
-                            if ($(button).html() == 'Select All') {
-                                thisTable.api().rows().every(function () {
-                                    $(this.node()).addClass(ROW_SELECTED_CLASS);
-                                    $(button).html('Deselect All');
-                                });
-                            } else if ($(button).html() == 'Deselect All') {
-                                thisTable.api().rows().every(function () {
-                                    $(this.node()).removeClass(ROW_SELECTED_CLASS);
-                                    $(button).html('Select All');
-                                });
+                            if(!$(button).hasClass('disabled')){
+                                if ($(button).html() == 'Select All') {
+                                    thisTable.api().rows().every(function () {
+                                        $(this.node()).addClass(ROW_SELECTED_CLASS);
+                                        $(button).html('Deselect All');
+                                    });
+                                } else if ($(button).html() == 'Deselect All') {
+                                    thisTable.api().rows().every(function () {
+                                        $(this.node()).removeClass(ROW_SELECTED_CLASS);
+                                        $(button).html('Select All');
+                                    });
+                                }
                             }
                         });
+
 
                         //Event for row select/deselect
                         $('body').on('click', '[data-type=selectable]', function () {
@@ -789,19 +807,53 @@ $(document).ready(function() {
         console.warn('Warning : Dependency missing - Bootstrap Collapse Library');
     }
 
+
     $('.media.tab-responsive [data-toggle=tab]').on('shown.bs.tab', function(e){
+        console.log("shown");
         var activeTabPane = $(e.target).attr('href'),
             activeCollpasePane = $(activeTabPane).find('[data-toggle=collapse]').data('target'),
-            activeCollpasePaneSiblings = $(activeTabPane).siblings().find('[data-toggle=collapse]').data('target');
+            activeCollpasePaneSiblings = $(activeTabPane).siblings().find('[data-toggle=collapse]').data('target'),
+            activeListGroupItem = $('.media .list-group-item.active');
 
-        $(activeCollpasePane).collapse('show');
         $(activeCollpasePaneSiblings).collapse('hide');
+        $(activeCollpasePane).collapse('show');
+        positionArrow(activeListGroupItem);
+
+        $(".panel-heading .caret-updown").removeClass("fw-sort-down");
+        $(".panel-heading.collapsed .caret-updown").addClass("fw-sort-up");
     });
 
     $('.media.tab-responsive .tab-content').on('shown.bs.collapse', function(e){
         var activeTabPane = $(e.target).parent().attr('id');
         $('.media.tab-responsive [data-toggle=tab][href=#'+activeTabPane+']').tab('show');
+        $(".panel-heading .caret-updown").removeClass("fw-sort-up");
+        $(".panel-heading.collapsed .caret-updown").addClass("fw-sort-down");
     });
+
+    function positionArrow(selectedTab){
+        var selectedTabHeight = $(selectedTab).outerHeight();
+        var arrowPosition = 0;
+        var totalHeight = 0;
+        var arrow = $(".media .panel-group.tab-content .arrow-left");
+        var parentHeight = $(arrow).parent().outerHeight();
+
+        if($(selectedTab).prev().length){
+            $(selectedTab).prevAll().each(function() {
+                 totalHeight += $(this).outerHeight();
+            });
+            arrowPosition = totalHeight + (selectedTabHeight / 2);
+        }else{
+            arrowPosition = selectedTabHeight / 2;
+        }
+
+        if(arrowPosition >= parentHeight){
+            parentHeight = arrowPosition + 10;
+            $(arrow).parent().height(parentHeight);
+        }else{
+            $(arrow).parent().removeAttr("style");
+        }
+        $(arrow).css("top",arrowPosition - 10);
+    }
 
 });
 
