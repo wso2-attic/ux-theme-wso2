@@ -148,7 +148,7 @@
  * ======================================================================== */
 
 $font-folder-path: 'libs/theme-wso2_1.0/fonts';
-@include font( 'Roboto', 400, 'normal', 'Roboto Regular', 'Roboto-Regular', $font-folder-path)
+@include font( 'Roboto', 400, 'normal', 'Roboto Regular', 'Roboto-Regular', $font-folder-path);
 $font-default: 'Roboto', Arial, Helvetica, sans-serif;
 $font-default-weight: 300;
 $font-icons: 'font-wso2';
