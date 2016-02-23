@@ -809,7 +809,6 @@ $(document).ready(function() {
 
 
     $('.media.tab-responsive [data-toggle=tab]').on('shown.bs.tab', function(e){
-        console.log("shown");
         var activeTabPane = $(e.target).attr('href'),
             activeCollpasePane = $(activeTabPane).find('[data-toggle=collapse]').data('target'),
             activeCollpasePaneSiblings = $(activeTabPane).siblings().find('[data-toggle=collapse]').data('target'),
@@ -819,15 +818,13 @@ $(document).ready(function() {
         $(activeCollpasePane).collapse('show');
         positionArrow(activeListGroupItem);
 
-        $(".panel-heading .caret-updown").removeClass("fw-sort-down");
-        $(".panel-heading.collapsed .caret-updown").addClass("fw-sort-up");
+        $(".media .panel.active .panel-heading .caret-updown").removeClass("fw-sort-down").addClass("fw-sort-up");
     });
 
     $('.media.tab-responsive .tab-content').on('shown.bs.collapse', function(e){
         var activeTabPane = $(e.target).parent().attr('id');
         $('.media.tab-responsive [data-toggle=tab][href=#'+activeTabPane+']').tab('show');
-        $(".panel-heading .caret-updown").removeClass("fw-sort-up");
-        $(".panel-heading.collapsed .caret-updown").addClass("fw-sort-down");
+        $(".media .panel.active .panel-heading .caret-updown").removeClass("fw-sort-up").addClass("fw-sort-down");
     });
 
     function positionArrow(selectedTab){

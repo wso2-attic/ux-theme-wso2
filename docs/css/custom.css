@@ -20,10 +20,23 @@
 
 
  .media .panel-group.tab-content{
-     padding:10px;
      position: relative;
      background: #f4f4f4;
      border: 1px solid #ddd;
+ }
+ .media .panel-group .panel-heading{
+    padding:10px;
+    margin-bottom:0px;
+ }
+ .media .panel.active .panel-heading.visible-xs{
+    background:#2c313b;
+    color:#fff;
+ }
+  .media .panel-heading{
+     font-size:14px;
+  }
+ .media .panel-group .panel-body{
+    padding:10px;
  }
  .arrow-left {
      position: absolute;
@@ -61,8 +74,12 @@
  .media .panel-body .switch-container > label{
      font-weight:normal;
  }
- .media .panel-group .panel-title .caret-updown{
-     color:#999;
+ .media .panel .panel-heading .caret-updown{
+     color:#2c313b;
      margin-top:10px;
      float:right;
  }
+ .media .panel.active .panel-heading .caret-updown{
+    color:#fff;
+ }
+
