@@ -15,6 +15,7 @@ if echo "$answer" | grep -iq "^y" ;then
 	echo Deploying.....
 	echo
 	git pull
+    git push origin :gh-pages
 	git subtree push --prefix docs origin gh-pages
 	echo
 	echo Finished!
