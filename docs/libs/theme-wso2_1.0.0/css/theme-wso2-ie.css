@@ -1,0 +1,7 @@
+.page-content-wrapper.fixed,
+.page-content-wrapper.fixed > div,
+.page-content-wrapper.fixed > .sidebar-wrapper {
+  overflow-y: auto;
+}
+
+/*# sourceMappingURL=theme-wso2-ie.css.map */

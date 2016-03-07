@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Rating Component</title>
+
+    <!-- Bootstrap -->
+    <link href="libs/bootstrap_3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="libs/font-wso2_1.0.0/css/font-wso2.min.css" rel="stylesheet">
+    <link href="css/rating.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+      
+    <style>
+        .rating {
+            margin: 20px auto;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="rating">
+        <i class="icon fw fw-star"></i>
+        <i class="icon fw fw-star"></i>
+        <i class="icon fw fw-star"></i>
+        <i class="icon fw fw-star"></i>
+        <i class="icon fw fw-star"></i>
+    </div>
+      
+    <div class="rating half">
+        <span class="icon">
+            <i class="fw fw-star"></i>
+            <i class="fw fw-star"></i>
+        </span>
+        <span class="icon">
+            <i class="fw fw-star"></i>
+            <i class="fw fw-star"></i>
+        </span>
+        <span class="icon">
+            <i class="fw fw-star"></i>
+            <i class="fw fw-star"></i>
+        </span>
+        <span class="icon">
+            <i class="fw fw-star"></i>
+            <i class="fw fw-star"></i>
+        </span>
+        <span class="icon">
+            <i class="fw fw-star"></i>
+            <i class="fw fw-star"></i>
+        </span>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="libs/jquery_1.11.3/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="libs/bootstrap_3.3.5/js/bootstrap.min.js"></script>
+      
+    <script>
+        $('.rating:not(.half) .icon').click(function(){
+            var elem = $(this);
+            
+            elem.siblings('.icon').removeClass('active');
+            elem.addClass('active');
+            
+            var rating = ($(this).closest('.rating').find('.icon').length - $(this).index());
+            elem.trigger('clicked.rate', [rating]);
+        });
+        
+        $('.rating:not(.half) .icon').on('clicked.rate', function(e, data){
+            console.log(data);
+        });
+        
+        $('.rating.half .icon').children().click(function(){
+            var elem = $(this);
+            
+            elem.closest('.icon').siblings().removeClass('active');
+            elem.siblings().removeClass('active');
+            elem.closest('.icon').addClass('active');
+            elem.addClass('active');
+            
+            var rating = function(){
+                if(elem.index() > 0){
+                    return (elem.closest('.rating').find('.icon').length - elem.closest('.icon').index() - 1) + '.5';
+                }
+                else{
+                    return (elem.closest('.rating').find('.icon').length - elem.closest('.icon').index()) + '.0';
+                }
+            };
+            
+            elem.trigger('clicked.rate.half', [rating()]);
+        });
+        
+        $('.rating.half .icon').children().on('clicked.rate.half', function(e, data){
+            console.log(data);
+        });
+    </script>
+  </body>
+</html>
+

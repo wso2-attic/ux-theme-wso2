@@ -1,0 +1,90 @@
+$font-default: 'Roboto', Arial, Helvetica, sans-serif !default;
+$font-default-weight: 300 !default;
+$font-icons: 'font-wso2' !default;
+$screen-sizes: (
+    xs:'(max-width:767px)',
+    sm:'(min-width:768px) and (max-width:991px)',
+    md:'(min-width:992px) and (max-width:1199px)',
+    lg:'(min-width:1200px)'
+) !default;
+$sides: top, bottom, left, right  !default;
+$message-status: info, success, warning, danger  !default;
+$sizes-length: 5 !default;
+$default-gap: 5px !default;
+
+$base-dark-color: #222 !default;
+$base-light-color: #ffffff !default;
+$base-success-color: #5cb85c !default;
+$base-info-color: #009DA7 !default;
+$base-warning-color: #f0ad4e !default;
+$base-danger-color: #d9534f !default;
+
+$primary-color: #2c313b !default;
+$secondary-color: #e4e4e4 !default;
+$optional-color: #007D85 !default;
+
+$header-background-color: #191919 !default;
+$header-height: 50px !default;
+$header-link-hover-background-color: darken($header-background-color, 10%) !default;
+
+$breadcrumb-background-color: #282828 !default;
+$breadcrumb-color: $base-light-color !default;
+$breadcrumb-height: 30px !default;
+$breadcrumb-padding: 5px 15px !default;
+
+$navbar-height: 50px !default;
+$navbar-padding: 0 15px !default;
+$navbar-color1: #4D5461 !default;
+$navbar-background-color: $primary-color !default;
+$navbar-link-color: $base-light-color !default;
+$navbar-hover-link-color: $navbar-link-color !default;
+$navbar-link-background-color: $navbar-color1 !default;
+$navbar-link-hover-background-color: lighten($navbar-background-color, 10%) !default;
+
+$navbrand-background-color: darken($navbar-background-color, 5%) !default;
+
+$page-content-wrapper-height: calc(100% - 130px) !default;
+$page-content-wrapper-height-mobile: calc(100% - 205px) !default;
+$page-content-wrapper-sidebar-height-mobile: calc(100% - 245px) !default;
+
+$footer-height: 40px !default;
+$footer-background: $base-dark-color !default;
+$footer-color: #cbcbcb !default;
+
+$inverse-layout-background: $primary-color !default;
+$inverse-layout-color: $base-light-color !default;
+
+$loading-background-opacity: 0.6 !default;
+$loading-background-color: $base-dark-color !default;
+$loading-color: $base-light-color !default;
+$loading-inverse-background-color: $base-light-color !default;
+$loading-inverse-color: $base-dark-color !default;
+$loading-image-icon-max-width: 50px !default;
+
+$dropdown-menu-dark-background-color: $base-dark-color !default;
+$dropdown-menu-dark-color: $base-light-color !default;
+$dropdown-menu-dark-tiles-background-color: #444 !default;
+$dropdown-menu-dark-tiles-hover-background-color: #555 !default;
+$dropdown-menu-dark-tiles-color: $base-light-color !default;
+
+$button-default-background-color: $base-light-color !default;
+$button-default-color: $base-dark-color !default;
+$button-default-hover-background-color: darken($button-default-background-color, 10%) !default;
+$button-default-border-color: #ccc !default;
+$button-default-hover-border-color: $button-default-background-color !default;
+
+$button-primary-background-color: $primary-color !default;
+$button-primary-color: $base-light-color !default;
+$button-primary-hover-background-color: lighten($button-primary-background-color, 10%) !default;
+$button-primary-border-color: $button-primary-background-color !default;
+$button-primary-hover-border-color: $button-primary-background-color !default;
+
+$switch-active-background-color: #25262b !default;
+$switch-inactive-background-color: #a6a6a6 !default;
+$switch-disabled-background-color: #6f7579 !default;
+$switch-handler-active-color: #237bd5 !default;
+$switch-handler-inactive-color: #eaeaea !default;
+$switch-handler-disabled-color: #484e52 !default;
+
+$form-control-max-width: 750px !default;
+$sidebar-width-default: 350px !default;
