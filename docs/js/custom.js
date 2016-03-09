@@ -90,7 +90,7 @@ $('link[data-include-demo]').each(function(){
 });
 
 
-$('#accordion').on('shown.bs.collapse', function (e,f) {
+$('#accordion1').on('shown.bs.collapse', function (e,f) {
     var elem = $(this).children().children('.in');
 
     if($(elem).hasClass('in')){
