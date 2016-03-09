@@ -93,6 +93,17 @@ module.exports = function(grunt) {
                     { expand: true, cwd: 'dist/images/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/images/' }
                 ],
             },
+        },
+        jekyll: {
+            options: {
+              src : 'docs'
+            },
+            dist: {
+              options: {
+                dest: 'docs/_site',
+                config: 'docs/_config.yml'
+              }
+            }
         }
     });
     
@@ -103,8 +114,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-json-generator');
+    grunt.loadNpmTasks('grunt-jekyll');
 
     // Default task(s).
-    grunt.registerTask('default', ['sass','cssmin','concat','uglify','json_generator','copy']);
+    grunt.registerTask('default', ['sass','cssmin','concat','uglify','json_generator','copy','jekyll']);
 
 };
