@@ -898,6 +898,11 @@ header {
   position: relative;
 }
 
+header .auth {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
 header .fw-inverse {
   color: #191919;
 }
@@ -926,7 +931,7 @@ header .brand h1 {
 header .dropdown {
   display: inline-block;
   color: #ffffff;
-  padding: 6px 0;
+  padding: 6px 8px;
   min-height: 50px;
 }
 

@@ -88,3 +88,12 @@ $('link[data-include-demo]').each(function(){
     //});
 
 });
+
+
+$('#accordion1').on('shown.bs.collapse', function (e,f) {
+    var elem = $(this).children().children('.in');
+
+    if($(elem).hasClass('in')){
+        $(elem).prev().find('input[type=radio]').prop('checked',true);
+    }
+});
