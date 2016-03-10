@@ -110,7 +110,6 @@
     border:none;
 }
 #accordion1 .panel-collapse,#accordion2 .panel-collapse{
-    padding:10px;
     border:1px solid #e2e2e2;
 }
 #accordion1 h4 input[type=checkbox],#accordion1 h4 input[type=radio],
@@ -120,4 +119,19 @@
 }
 #accordion1 h4 a i,#accordion2 h4 a i{
     margin-top:-4px;
+}
+
+
+/* ========================================================================
+ * Map container
+ * ======================================================================== */
+
+.map-container{
+  height:450px;
+  margin-bottom:0px;
+}
+.map-container .leaflet-popup-content-wrapper{
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
 }
