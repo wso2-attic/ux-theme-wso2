@@ -310,21 +310,30 @@
                 <p class="lead">Collapse / Accordion</p>
             </div>
             <div class="row">
-                <div id="accordion1" role="tablist" aria-multiselectable="true">
+                <div id="accordion1" class="panel-group" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingOne">
+                        <div class="panel-heading" role="tab" id="headingOne1" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse1" aria-expanded="true" aria-controls="accordion1-collapse1">
                             <h4 class="panel-title">
-                                <input class="create-api" type="radio" name="create-api" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse1" aria-expanded="true" aria-controls="accordion1-collapse1"/>
-                                <a data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse1" aria-expanded="false" aria-controls="accordion1-collapse1">
-                                    Collapsible Group Item #1
-                                </a>
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>
+                                <label class="radio">
+                                    <input class="create-api" type="radio" name="create-api" />
+                                    <span class="helper"></span>
+                                </label>
+                                <div>
+                                    <div class="heading">Collapsible Group Item #1</div>
+                                    <div class="description truncate" title="Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</div>
+                                    <div class="status">
+                                        <i class="fw fw-down"></i>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
                             </h4>
                         </div>
-                        <div id="accordion1-collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                            <form class="form-horizontal">
+                        <div id="accordion1-collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne1">
+                            <div class="panel-body">
+                                <form class="form-horizontal">
                                 <div class="form-group">
-                                    <div class="col-sm-12">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                         <label class="radio">
                                             <input type="radio" name="delete-option">
                                             <span class="helper">Remove Gadget</span>
@@ -336,7 +345,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-sm-12">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                         <label class="control-label">File Upload [Supports Multi Select]</label>
                                         <div class="input-group input-wrap file-upload-control">
                                             <input type="text" class="form-control" readonly>
@@ -358,125 +367,58 @@
                                     </div>
                                 </div>
                             </form>
+                            </div>
                         </div>
                     </div>
                     <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingTwo">
+                        <div class="panel-heading" role="tab" id="headingTwo1" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse2" aria-expanded="true" aria-controls="accordion1-collapse2">
                             <h4 class="panel-title">
-                                <input class="create-api" type="radio" name="create-api" data-toggle="collapse" data-parent="#accordion1" href="#accordion2-collapse2" aria-expanded="false" aria-controls="accordion2-collapse2"/>
-                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion1" href="#accordion2-collapse2" aria-expanded="false" aria-controls="accordion2-collapse2">
-                                    Collapsible Group Item #2
-                                </a>
-                                <p>Sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch</p>
+                                <label class="radio">
+                                    <input class="create-api" type="radio" name="create-api" />
+                                    <span class="helper"></span>
+                                </label>
+                                <div>
+                                    <div class="heading">Collapsible Group Item #2</div>
+                                    <div class="description truncate" title="Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</div>
+                                    <div class="status">
+                                        <i class="fw fw-down"></i>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
                             </h4>
                         </div>
-                        <div id="accordion2-collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        <div id="accordion1-collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo1">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
                         </div>
                     </div>
                     <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingThree">
+                        <div class="panel-heading" role="tab" id="headingThree1" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse3" aria-expanded="false" aria-controls="accordion1-collapse3">
                             <h4 class="panel-title">
-                                <input class="create-api" type="radio" name="create-api" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse3" aria-expanded="false" aria-controls="accordion1-collapse3"/>
-                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse3" aria-expanded="false" aria-controls="accordion1-collapse3">
-                                    Collapsible Group Item #3
-                                </a>
-                                <p>Raw denim aesthetic synth nesciunt you probably haven't</p>
-                            </h4>
-                        </div>
-                        <div id="accordion1-collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="page-header" id="collapse2">
-                <br/><br/>
-                <p class="lead">Collapse / Accordion With Icons</p>
-            </div>
-            <div class="row">
-                <div id="accordion2" role="tablist" aria-multiselectable="true">
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingOne">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion2" href="#accordion2-collapse1" aria-expanded="false" aria-controls="accordion2-collapse1">
+                                <label class="radio">
                                     <i class="fw fw-heart"></i>
-                                    Collapsible Group Item #1
-                                </a>
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>
-                            </h4>
-                        </div>
-                        <div id="accordion2-collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <label class="radio">
-                                            <input type="radio" name="delete-option">
-                                            <span class="helper">Remove Gadget</span>
-                                        </label>
-                                        <label class="radio">
-                                            <input type="radio" name="delete-option">
-                                            <span class="helper">Delete Grid Container</span>
-                                        </label>
+                                </label>
+                                <div>
+                                    <div class="heading">Collapsible Group Item #3</div>
+                                    <div class="description truncate" title="Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</div>
+                                    <div class="status">
+                                        <i class="fw fw-down"></i>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <label class="control-label">File Upload [Supports Multi Select]</label>
-                                        <div class="input-group input-wrap file-upload-control">
-                                            <input type="text" class="form-control" readonly>
-                                            <input type="file" class="form-control" multiple>
-                                            <div class="input-group-btn">
-                                                <button class="btn browse" type="button" title="Browse File">
-                                                    <i class="fw fw-file-browse" aria-hidden="true"></i>
-                                                    <span class="hidden-xs">Browse</span>
-                                                </button>
-                                            </div>
-                                            <div class="input-group-btn"></div>
-                                            <div class="input-group-btn">
-                                                <button class="btn btn-default btn-primary" type="button" title="Upload">
-                                                    <i class="fw fw-upload" aria-hidden="true"></i>
-                                                    <span class="hidden-xs">Upload</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingTwo">
-                            <h4 class="panel-title">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion2" href="#accordion1-collapse2" aria-expanded="false" aria-controls="accordion1-collapse2">
-                                    <i class="fw fw-tiles"></i>
-                                    Collapsible Group Item #2
-                                </a>
-                                <p>Sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch</p>
+                                <div class="clearfix"></div>
                             </h4>
                         </div>
-                        <div id="accordion1-collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingThree">
-                            <h4 class="panel-title">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion2" href="#accordion2-collapse3" aria-expanded="false" aria-controls="accordion2-collapse3">
-                                    <i class="fw fw-api"></i>
-                                    Collapsible Group Item #3
-                                </a>
-                                <p>Raw denim aesthetic synth nesciunt you probably haven't</p>
-                            </h4>
-                        </div>
-                        <div id="accordion2-collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        <div id="accordion1-collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree1">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            
 
         </div>
     </div><!-- /#page-content-wrapper -->
