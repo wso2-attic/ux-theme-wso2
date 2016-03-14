@@ -134,10 +134,15 @@
     top:20px;
     left:20px;
 }
-#accordion1 .panel-heading .radio i{
+#accordion1 .panel-heading .radio > i{
     position:relative;
     top:20px;
     left:20px;
+}
+#accordion1 .panel-heading .radio > span{
+    position:relative;
+    top:10px;
+    left:10px;
 }
 #accordion1 .panel-heading div .status{
     margin-top:-42px;
