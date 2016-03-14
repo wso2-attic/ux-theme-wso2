@@ -104,7 +104,6 @@ $('#accordion1').on('shown.bs.collapse', function (e,f) {
     }
     icon.removeClass('fw-down');
     icon.addClass('fw-up');
-    console.log(elem);
 });
 
 $('#accordion1').on('hidden.bs.collapse', function (e,f) {
