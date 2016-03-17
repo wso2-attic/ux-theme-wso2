@@ -17,65 +17,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>WSO2 UI Component Library</title>
+    <title>Theme WSO2</title>
 
-    <link rel="shortcut icon" href="libs/theme-wso2_1.0/images/favicon.png" />
-
-    <!-- Jquery CSS -->
-    <link href="libs/jquery-ui_1.11.4/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <!-- Favion -->
+    <link href="libs/theme-wso2_1.0.0/images/favicon.png" rel="icon" type="image/png" sizes="16x16" />
 
     <!-- Bootstrap CSS -->
-    <link href="libs/bootstrap_3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="libs/bootstrap_3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- Font Awesome CSS -->
-    <link href="libs/font-awesome_4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- ===== Custom Libs ===== -->
 
-    <!-- Font WSO2 CSS -->
-    <link href="libs/font-wso2_1.0.0/css/font-wso2.min.css" rel="stylesheet" type="text/css" />
+    <!-- DataTable CSS -->
+    <link href="libs/data-tables_1.10.7/extensions/Bootstrap/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="libs/data-tables_1.10.7/extensions/Responsive/css/dataTables.responsive.css" rel="stylesheet" type="text/css" />
+
+    <!-- Select2 CSS -->
+    <link href="libs/select2_4.0.0/css/select2.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Animate CSS -->
     <link href="libs/animate/animate.css" rel="stylesheet" type="text/css" />
 
-    <!-- Theme WSO2 LESS -->
-    <!--<link href="libs/theme-wso2_1.0/less/theme-wso2.less" rel="stylesheet/less" type="text/css" />-->
+    <!-- ===== /Custom Libs ===== -->
 
-    <!-- Theme WSO2 SCSS -->
-    <link href="libs/theme-wso2_1.0/scss/theme-wso2.scss" rel="stylesheet/sass" type="text/css" />
+    <!-- Font WSO2 CSS -->
+    <link href="libs/font-wso2_1.0.0/css/font-wso2.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- Custom CSS/LESS -->
-    <!--<link href="less/theme-wso2-config.less" rel="stylesheet/less" type="text/css" />-->
-    <link href="scss/theme-wso2-config.scss" rel="stylesheet/sass" type="text/css" />
+    <!-- Theme WSO2 CSS -->
+    <link href="libs/theme-wso2_1.0.0/css/theme-wso2.min.css" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+    <link href="libs/theme-wso2_1.0.0/css/theme-wso2-ie.min.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- Custom CSS -->
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
-
-    <!-- LESS CSS Compiler -->
-    <!-- less.js Debug Script -->
-    <script>
-        /*less = {
-         env: "development",
-         logLevel: 2,
-         async: false,
-         fileAsync: false,
-         poll: 1000,
-         functions: {},
-         dumpLineNumbers: "comments",
-         relativeUrls: false,
-         globalVars: {
-         var1: '"string value"',
-         var2: 'regular value'
-         },
-         rootpath: ""
-         };*/
-    </script>
-    <!--<script src="libs/less_2.5.3/less.min.js"></script>-->
-
-    <!-- SASS CSS Compiler -->
-    <script src="libs/sass_0.9.4/sass.js"></script>
-    <script src="libs/theme-wso2_1.0/js/scss-compile.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -83,7 +62,7 @@
     <script src="libs/html5shiv_3.7.2/html5shiv.min.js"></script>
     <script src="libs/respond_1.4.2/respond.min.js"></script>
     <![endif]-->
-      
+
 </head>
 <body class="inverse">
 
@@ -108,19 +87,39 @@
     └── font-wso2.eot</code></pre>
                 </div>
             </div>
-
-            <div class="page-header">
-                <p class="lead">Layouts</p>
-            </div>
-            <div>
-                
-            </div>
+            <br/><br/><br/>
 
             <div class="page-header">
                 <p class="lead">Components</p>
             </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+                    <a href="layout.html" class="thumbnail">
+                        <img src="images/screenshots/layout.png">
+                    </a>
+                    Wizard Component
+                </div>
+                <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+                    <a href="layout.html" class="thumbnail">
+                        <img src="images/screenshots/layout.png">
+                    </a>
+                    Wysiwyg Component
+                </div>
+                <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+                    <a href="layout.html" class="thumbnail">
+                        <img src="images/screenshots/layout.png">
+                    </a>
+                    collapse Component
+                </div>
+                <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+                    <a href="layout.html" class="thumbnail">
+                        <img src="images/screenshots/layout.png">
+                    </a>
+                    Map Component
+                </div>
+            </div>
             <div>
-            
+                <br/><br/><br/>
             </div>
 
 
@@ -138,6 +137,12 @@
                         <img src="images/screenshots/layout.png">
                     </a>
                     Inner Page Wrapper
+                </div>
+                <div class="col-xs-6 col-md-2">
+                    <a href="details_layout.html" class="thumbnail">
+                        <img src="images/screenshots/layout.png">
+                    </a>
+                    Details
                 </div>
             </div>
 
@@ -170,12 +175,32 @@
     
     <!-- Jquery/Jquery UI JS -->
     <script src="libs/jquery_1.11.0/jquery-1.11.3.min.js"></script>
-    <script src="libs/jquery-ui_1.11.4/jquery-ui.min.js"></script>
+
+    <!-- Jquery Resize JS -->
+    <script src="libs/jquery-resize_0.5.3/jquery.resize.js"></script>
 
     <!-- Bootstrap JS -->
-    <script src="libs/bootstrap_3.3.5/js/bootstrap.min.js"></script>
+    <script src="libs/bootstrap_3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Data Tables JS -->
+    <script src="libs/data-tables_1.10.7/media/js/jquery.dataTables.min.js"></script>
+    <script src="libs/data-tables_1.10.7/extensions/Bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src="libs/data-tables_1.10.7/extensions/Responsive/js/dataTables.responsive.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="libs/select2_4.0.0/js/select2.full.min.js"></script>
+
+    <!-- Jquery Validation JS -->
+    <script src="libs/jquery-validation_1.14.0/jquery.validate.min.js"></script>
+
+    <!-- Noty JS -->
+    <script src="libs/noty_2.3.5/packaged/jquery.noty.packaged.min.js"></script>
+
+    <!-- Theme WSO2 JS -->
+    <script src="libs/theme-wso2_1.0.0/js/theme-wso2.js"></script>
 
     <!-- Custom JS -->
+    <script src="js/libs/requirejs_2.1.18/require.js" data-main="js/app.js"></script>
     <script src="js/custom.js"></script>
 
 </body>
