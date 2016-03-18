@@ -232,7 +232,7 @@ var responsiveTextRatio = 0.2,
         else {
             var elem = $(this);
 
-            $(elem).DataTable(
+            var dataTable = $(elem).DataTable(
                 $.extend({}, {
                     bSortCellsTop: true,
                     responsive: false,
@@ -430,6 +430,8 @@ var responsiveTextRatio = 0.2,
                     }
                 }, settings)
             );
+
+            return dataTable;
         }
 
     };
