@@ -90,10 +90,55 @@ $('link[data-include-demo]').each(function(){
 });
 
 
-$('#accordion').on('shown.bs.collapse', function (e,f) {
+
+    /***********************************************************
+     *  accordion config
+     ***********************************************************/
+
+$('#accordion1').on('shown.bs.collapse', function (e,f) {
     var elem = $(this).children().children('.in');
+    var icon = $(elem).prev().find('.status').children();
 
     if($(elem).hasClass('in')){
         $(elem).prev().find('input[type=radio]').prop('checked',true);
+    }
+    icon.removeClass('fw-down');
+    icon.addClass('fw-up');
+});
+
+$('#accordion1').on('hidden.bs.collapse', function (e,f) {
+    var elem = $(this).children().children();
+    var icon = $(elem).prev().find('.status').children();
+
+    icon.removeClass('fw-up');
+    icon.addClass('fw-down');
+});
+
+
+    /***********************************************************
+     *  leafletjs map config
+     ***********************************************************/
+
+$(function(){
+    if($('.map-container').length){
+        var lat = $('.map-container').data('lat'),
+                long    = $('.map-container').data('long'),
+                container = 'map1',
+                zoomLevel = 17,
+                tileSet = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                attrib =  '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+
+                if(lat != null && lat != undefined && lat != "" && long != null && long != undefined && long != "") {
+                    $('.map-error').hide();
+                    $('.map-container').show();
+                }else{
+                    $('.map-container').hide();
+                    $('.map-error').show();
+                }
+
+            var map = L.map(container).setView([lat,long], zoomLevel);
+
+        L.tileLayer(tileSet, { attribution: attrib}).addTo(map);
+        L.marker([lat,long]).addTo(map).bindPopup('Your are here..!').openPopup();
     }
 });
