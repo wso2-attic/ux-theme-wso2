@@ -628,8 +628,5 @@ $.fn.collapse_nav_sub = function(){
 
 $('.sidebar-wrapper[data-fixed-offset-top]').on('affix.bs.affix', function() {
     $(this).css('top', $(this).data('fixed-offset-top'));
-});
-
-$('.sidebar-wrapper[data-fixed-offset-top]').on('affix-top.bs.affix', function() {
-    $(this).css('top', '');
+    $(this).css('height', ($(window).height() - $(this).data('fixed-offset-top')));
 });

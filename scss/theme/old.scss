@@ -386,7 +386,7 @@ body.inverse .fade-edge {
     //@include box-shadow;
 }
 
-.navbar-default .navbar-nav > li a {
+.navbar-default .navbar-nav > li > a {
     color: $navbar-link-color;
     text-transform: uppercase;
     padding: 0 15px;
@@ -644,11 +644,11 @@ ul.sidebar-messages > li {
     margin: 0;
     padding: 0;
     list-style: none;
+    text-transform: uppercase;
 }
 
 .sidebar-nav li {
-    text-indent: 20px;
-    line-height: 40px;
+    line-height: 20px;
 }
 
 .sidebar-nav li a {

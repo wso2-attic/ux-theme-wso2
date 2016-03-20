@@ -8459,7 +8459,7 @@ body.inverse .fade-edge:after {
   border-top: none;
 }
 
-.navbar-default .navbar-nav > li a {
+.navbar-default .navbar-nav > li > a {
   color: #ffffff;
   text-transform: uppercase;
   padding: 0 15px;
@@ -8711,11 +8711,11 @@ ul.sidebar-messages > li {
   margin: 0;
   padding: 0;
   list-style: none;
+  text-transform: uppercase;
 }
 
 .sidebar-nav li {
-  text-indent: 20px;
-  line-height: 40px;
+  line-height: 20px;
 }
 
 .sidebar-nav li a {
