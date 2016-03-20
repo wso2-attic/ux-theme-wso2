@@ -27,9 +27,6 @@
     <!-- Favion -->
     <link href="libs/theme-wso2_1.0.0/images/favicon.png" rel="icon" type="image/png" sizes="16x16" />
     
-    <!-- Bootstrap CSS -->
-    <link href="libs/bootstrap_3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    
     <!-- ===== Custom Libs ===== -->
     
     <!-- DataTable CSS -->
@@ -48,7 +45,7 @@
     <link href="libs/font-wso2_1.0.0/css/font-wso2.min.css" rel="stylesheet" type="text/css" />
     
     <!-- Theme WSO2 CSS -->
-    <link href="libs/theme-wso2_1.0.0/css/theme-wso2.min.css" rel="stylesheet" type="text/css" />
+    <link href="libs/theme-wso2_1.0.0/css/theme-wso2.css" rel="stylesheet" type="text/css" />
     <!--[if IE]>
     <link href="libs/theme-wso2_1.0.0/css/theme-wso2-ie.min.css" rel="stylesheet" type="text/css" />
     <![endif]-->
@@ -69,34 +66,36 @@
     <!-- header -->
     <header class="header header-default">
         <div class="container-fluid">
-           <div class="pull-left brand float-remove-xs text-center-xs">
+            <div class="pull-left brand float-remove-xs text-center-xs">
               <a href="#">
                  <img src="libs/theme-wso2_1.0.0/images/logo-inverse.svg" alt="wso2" title="wso2" class="logo">
                  <h1 class="display-block-xs">Theme WSO2</h1>
               </a>
-           </div>
-           <div class="pull-right auth float-remove-xs text-center-xs">
-             <a href="#" class="dropdown" data-toggle="dropdown">
-                <span class="icon fw-stack fw-lg">
-                   <i class="fw fw-circle fw-stack-2x"></i>
-                   <i class="fw fw-user fw-stack-1x fw-inverse"></i>
-                </span>
-                <span class="hidden-xs">administrator <span class="caret"></span></span>
-             </a>
-             <ul class="dropdown-menu dropdown-menu-right float-remove-xs position-static-xs text-center-xs remove-margin-xs slideInDown" role="menu">
-                <li class="dropdown-header visible-xs">administrator <span class="caret"></span></li>
-                <li class="divider visible-xs"></li>
-                <li><a href="#">Profile Settings</a></li>
-                <li><a href="#">Sign out</a></li>
-             </ul>
-           </div>
+            </div>
+            <ul class="nav navbar-right float-remove-xs text-center-xs">
+                <li class="visible-inline-block">
+                    <a class="dropdown" data-toggle="dropdown">
+                        <span class="icon fw-stack fw-lg">
+                           <i class="fw fw-circle fw-stack-2x"></i>
+                           <i class="fw fw-user fw-stack-1x fw-inverse"></i>
+                        </span>
+                        <span class="hidden-xs">administrator <span class="caret"></span></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right float-remove-xs position-static-xs text-center-xs remove-margin-xs slideInDown" role="menu">
+                        <li class="dropdown-header visible-xs">administrator <span class="caret"></span></li>
+                        <li class="divider visible-xs"></li>
+                        <li><a href="#">Profile Settings</a></li>
+                        <li><a href="#">Sign out</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </header>
 
     <!-- breadcrumb -->
     <div class="breadcrumb-wrapper">
         <ol class="breadcrumb">
-            <li><a href="index.html"><i class="icon fw fw-home"></i></a> <span class="hidden-xs">Home</span></li>
+            <li><a href="index.html"><i class="icon fw fw-home"></i> <span class="hidden-xs">Home</span></a></li>
             <li><a href="#">Samples</a></li>
             <li class="active"><a href="#">All</a></li>
         </ol>
@@ -106,7 +105,7 @@
     <div class="page-content-wrapper">
         
         <!-- .left-sidebar -->
-        <div class="sidebar-wrapper sidebar-nav hidden-xs" id="left-sidebar" data-side="left" data-width="260" data-spy="affix" data-offset-top="80" data-offset-bottom="40">
+        <div class="sidebar-wrapper sidebar-nav hidden-xs" id="left-sidebar" data-side="left" data-width="260" data-fixed-offset-top="0" data-spy="affix" data-offset-top="80" data-offset-bottom="40">
             <div class="nano">
                 <div class="nano-content">
                     <div class="user">
@@ -241,7 +240,7 @@
         </div>
 
         <!-- .right-sidebar -->
-        <div class="sidebar-wrapper" id="right-sidebar" data-side="right" data-width="320" data-sidebar-fixed="true" data-fixed-offset="50" data-spy="affix" data-offset-top="80">
+        <div class="sidebar-wrapper" id="right-sidebar" data-side="right" data-width="320" data-sidebar-fixed="true" data-fixed-offset-top="50" data-spy="affix" data-offset-top="80">
             <ul class="sidebar-messages">
                 <li class="message message-success">
                     <h4><i class="icon fw fw-success"></i>Minor Information Message</h4>

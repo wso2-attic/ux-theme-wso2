@@ -2,7 +2,7 @@
  * fonts
  * ======================================================================== */
 
-$font-folder-path: '../fonts';
+$font-folder-path: '../../fonts';
 
 @include font( 'Roboto', 100, 'italic', 'Roboto Thin Italic', 'Roboto-ThinItalic', $font-folder-path+'/Roboto');
 @include font( 'Roboto', 300, 'italic', 'Roboto Light Italic', 'Roboto-LightItalic', $font-folder-path+'/Roboto');

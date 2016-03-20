@@ -11,8 +11,11 @@ module.exports = function(grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    'build/css/<%= pkg.name %>.css': 'scss/base.scss',
-                    'build/css/<%= pkg.name %>-ie.css': 'scss/ie.scss'
+                    'build/css/<%= pkg.name %>.css': 'scss/publisher.scss',
+                    //'build/css/<%= pkg.name %>-store.css': 'scss/store.scss',
+                    //'build/css/<%= pkg.name %>-ie.css': 'scss/ie.scss'
+//                    'build/products/apim/css/<%= pkg.name %>-publisher.css': 'config/apim/publisher.scss',
+//                    'build/products/apim/css/<%= pkg.name %>-store.css': 'config/apim/store.scss'
                 }
             }
         },
@@ -20,7 +23,7 @@ module.exports = function(grunt) {
             css:{ 
                 files: {
                     'build/css/<%= pkg.name %>.min.css': ['build/css/<%= pkg.name %>.css'],
-                    'build/css/<%= pkg.name %>-ie.min.css': ['build/css/<%= pkg.name %>-ie.css']
+                    //'build/css/<%= pkg.name %>-ie.min.css': ['build/css/<%= pkg.name %>-ie.css']
                 }
             }
         },
@@ -84,13 +87,13 @@ module.exports = function(grunt) {
                 files: [
                     { expand: true, cwd: 'build/css/', src: ['**'], dest: 'dist/css/' },
                     { expand: true, cwd: 'build/js/', src: ['<%= pkg.name %>.js','<%= pkg.name %>.min.js'], dest: 'dist/js/' },
-                    { expand: true, cwd: 'fonts/', src: ['**'], dest: 'dist/fonts/' },
-                    { expand: true, cwd: 'images/', src: ['**'], dest: 'dist/images/' },
+//                    { expand: true, cwd: 'fonts/', src: ['**'], dest: 'dist/fonts/' },
+//                    { expand: true, cwd: 'images/', src: ['**'], dest: 'dist/images/' },
                     
                     { expand: true, cwd: 'dist/css/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/css/' },
                     { expand: true, cwd: 'dist/js/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/js/' },
-                    { expand: true, cwd: 'dist/fonts/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/fonts/' },
-                    { expand: true, cwd: 'dist/images/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/images/' }
+//                    { expand: true, cwd: 'dist/fonts/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/fonts/' },
+//                    { expand: true, cwd: 'dist/images/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/images/' }
                 ],
             },
         },
@@ -117,6 +120,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-jekyll');
 
     // Default task(s).
-    grunt.registerTask('default', ['sass','cssmin','concat','uglify','json_generator','copy','jekyll']);
+    //grunt.registerTask('default', ['sass','cssmin','concat','uglify','json_generator','copy','jekyll']);
+    grunt.registerTask('default', ['sass','cssmin','concat','uglify','copy']);
 
 };
