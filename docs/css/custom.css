@@ -300,3 +300,20 @@
     border-left: 5px solid #942F25;
     font-weight: 500;
 }
+
+/* ========================================================================
+ * Sidebar secondary nav
+ * ======================================================================== */
+.nav i{
+    margin: 0px 10px 2px 10px;
+}
+.secondary-nav li {
+    padding-left: 20px;
+    float: none;
+}
+.secondary-nav-toggle{
+    float: right;
+    vertical-align: middle;
+    display: block;
+    margin: 9px 10px 2px 10px !important;
+}

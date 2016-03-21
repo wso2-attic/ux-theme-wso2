@@ -91,9 +91,9 @@ $('link[data-include-demo]').each(function(){
 
 
 
-    /***********************************************************
-     *  accordion config
-     ***********************************************************/
+/***********************************************************
+ *  accordion config
+ ***********************************************************/
 
 $('#accordion1').on('shown.bs.collapse', function (e,f) {
     var elem = $(this).children().children('.in');
@@ -114,10 +114,19 @@ $('#accordion1').on('hidden.bs.collapse', function (e,f) {
     icon.addClass('fw-down');
 });
 
+/***********************************************************
+ *  Secondary toggle navigation
+ ***********************************************************/
 
-    /***********************************************************
-     *  leafletjs map config
-     ***********************************************************/
+$('.secondary-nav').on('shown.bs.collapse', function(e){
+    $('.secondary-nav-toggle').removeClass('fw-down').addClass('fw-up');
+}).on('hidden.bs.collapse',function(e){
+    $('.secondary-nav-toggle').removeClass('fw-up').addClass('fw-down');
+})
+
+/***********************************************************
+ *  leafletjs map config
+ ***********************************************************/
 
 $(function(){
     if($('.map-container').length){
