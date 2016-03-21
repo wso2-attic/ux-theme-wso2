@@ -23,7 +23,7 @@ $navbar-link-hover-background-color: lighten($navbar-background-color, 10%) !def
 
 $navbrand-background-color: darken($navbar-background-color, 5%) !default;
 
-$page-content-wrapper-height: calc(100% - 130px) !default;
+$page-content-wrapper-height: calc(100% - 120px) !default;
 $page-content-wrapper-height-mobile: calc(100% - 205px) !default;
 $page-content-wrapper-sidebar-height-mobile: calc(100% - 245px) !default;
 
@@ -121,31 +121,37 @@ $sidebar-width-default: 350px !default;
 
 html {
     position: relative;
-    min-height: 100%;
+    height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     width: 100%;
 }
 
 body {
+    min-height: 100%;
     color: $base-dark-color;
-    margin-bottom: $footer-height;
-    font-family: $font-family-base;
+    padding-bottom: $footer-height;
     font-weight: $font-default-weight;
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
+    position: relative;
+}
+
+body > .page-content-wrapper {
+    height: 100vh;
+    //height: $page-content-wrapper-height;
 }
 
 body > .page-content-wrapper > .container,
 body > .page-content-wrapper > .container-fluid {
-    padding: 20px 20px 60px;
+    padding: 0;
     margin: 0;
 }
 
 @media only screen and (min-width: 768px) {
     body > .page-content-wrapper > .container,
     body > .page-content-wrapper > .container-fluid {
-        padding: 3% 4% 4%;
+        padding: 0;
         margin: 0;
     }
 }
@@ -752,6 +758,10 @@ footer a {
 /* ========================================================================
  * body styles
  * ======================================================================== */
+
+.body-wrapper {
+    padding: 40px;
+}
 
 .body-wrapper a:hover {
     text-decoration: underline;
