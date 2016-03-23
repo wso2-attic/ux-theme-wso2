@@ -307,12 +307,10 @@
             ******************************************************************* -->
             <div class="page-header" id="collapse1">
                 <h1>Components</h1>
-                <p class="lead">Accordion</p>
+                <p class="lead">Collapse / Accordion</p>
             </div>
 
-            <!-- ******************************************************************
-            Accordion
-            ******************************************************************* -->
+
             <div id="accordion1" class="panel-group" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="headingOne1" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse1" aria-expanded="true" aria-controls="accordion1-collapse1">
@@ -396,19 +394,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-
-            <div class="page-header" id="collapse2">
-                <p class="lead">Collapse</p>
-            </div>
-
-            <!-- ******************************************************************
-            Collapse
-            ******************************************************************* -->
-            <div id="accordion2" class="panel-group" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingThree1" data-toggle="collapse" href="#accordion1-collapse3" aria-expanded="false" aria-controls="accordion1-collapse3">
+                    <div class="panel-heading" role="tab" id="headingThree1" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse3" aria-expanded="false" aria-controls="accordion1-collapse3">
                         <h4 class="panel-title">
                             <label class="radio">
                                 <i class="fw fw-heart"></i>
@@ -430,13 +417,13 @@
                     </div>
                 </div>
                 <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingFour1" data-toggle="collapse" href="#accordion1-collapse4" aria-expanded="false" aria-controls="accordion1-collapse4">
+                    <div class="panel-heading" role="tab" id="headingFour1" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse4" aria-expanded="false" aria-controls="accordion1-collapse4">
                         <h4 class="panel-title">
                             <label class="radio">
-                                    <span class="fw-stack fw-lg">
-                                        <i class="fw fw-circle fw-stack-2x"></i>
-                                        <i class="fw fw-star fw-stack-1x fw-inverse"></i>
-                                    </span>
+                                <span class="fw-stack fw-lg">
+                                    <i class="fw fw-circle fw-stack-2x"></i>
+                                    <i class="fw fw-star fw-stack-1x fw-inverse"></i>
+                                </span>
                             </label>
                             <div>
                                 <div class="heading">Stacked icon #4</div>
@@ -455,8 +442,11 @@
                     </div>
                 </div>
                 <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingFive1" data-toggle="collapse" href="#accordion1-collapse5" aria-expanded="false" aria-controls="accordion1-collapse5">
+                    <div class="panel-heading" role="tab" id="headingFive1" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-collapse5" aria-expanded="false" aria-controls="accordion1-collapse5">
                         <h4 class="panel-title">
+                            <label class="radio">
+
+                            </label>
                             <div>
                                 <div class="heading">Without icon or status indicator #5</div>
                                 <div class="description truncate" title="Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</div>
@@ -471,6 +461,8 @@
                     </div>
                 </div>
             </div>
+
+
 
         </div>
     </div><!-- /#page-content-wrapper -->
