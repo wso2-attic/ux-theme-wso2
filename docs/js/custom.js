@@ -95,23 +95,41 @@ $('link[data-include-demo]').each(function(){
  *  accordion config
  ***********************************************************/
 
-$('#accordion1').on('shown.bs.collapse', function (e,f) {
+$('#accordion1,#accordion2').on('shown.bs.collapse', function () {
     var elem = $(this).children().children('.in');
     var icon = $(elem).prev().find('.status').children();
+    var iconNow = $(this).children().children('.now').prev().find('.status').children();
+    var isIconStateDown = $(iconNow).hasClass('fw-down');
 
     if($(elem).hasClass('in')){
         $(elem).prev().find('input[type=radio]').prop('checked',true);
+        $(elem).addClass('now');
     }
-    icon.removeClass('fw-down');
-    icon.addClass('fw-up');
+
+    console.log(isIconStateDown);
+    if(isIconStateDown){
+        $(iconNow).removeClass('fw-down');
+        $(iconNow).addClass('fw-up');
+        console.log("open: " +iconNow.prop('class'));
+    }
+
 });
 
-$('#accordion1').on('hidden.bs.collapse', function (e,f) {
+
+$('#accordion1,#accordion2').on('hidden.bs.collapse', function () {
     var elem = $(this).children().children();
     var icon = $(elem).prev().find('.status').children();
+    var iconNow = $(this).children().children('.now').prev().find('.status').children();
+    var isIconStateUp = $(iconNow).hasClass('fw-up');
 
-    icon.removeClass('fw-up');
-    icon.addClass('fw-down');
+    console.log(isIconStateUp);
+    if(isIconStateUp){
+        $(iconNow).removeClass('fw-up');
+        $(iconNow).addClass('fw-down');
+        console.log("close: " +iconNow.prop('class'));
+    }
+
+
 });
 
 /***********************************************************
