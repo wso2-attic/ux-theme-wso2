@@ -15,32 +15,167 @@
 ~   limitations under the License.
 */
 /* ========================================================================
- * methods/mixins
- * ======================================================================== */
-/* ========================================================================
- * default values
+ * fonts
  * ======================================================================== */
 @font-face {
   font-family: "Roboto";
-  font-weight: 400;
-  font-style: "normal";
-  src: url("../fonts/Roboto/Roboto-Regular.eot");
-  src: url("../fonts/Roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"), local("Roboto Regular"), local("Roboto-Regular"), url("../fonts/Roboto/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype"), url("../fonts/Roboto/Roboto-Regular.svg#Roboto") format("svg");
+  font-style: "italic";
+  font-weight: 100;
+  src: local("Roboto Thin Italic"), local("Roboto-ThinItalic"), url(../fonts/Roboto/Roboto-ThinItalic.woff2) format("woff2"), url(../fonts/Roboto/Roboto-ThinItalic.woff) format("woff"), url(../fonts/Roboto/Roboto-ThinItalic.ttf) format("truetype"), url(../fonts/Roboto/Roboto-ThinItalic.eot), url(../fonts/Roboto/Roboto-ThinItalic.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto/Roboto-ThinItalic.svg#Roboto) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
-
+@font-face {
+  font-family: "Roboto";
+  font-style: "italic";
+  font-weight: 300;
+  src: local("Roboto Light Italic"), local("Roboto-LightItalic"), url(../fonts/Roboto/Roboto-LightItalic.woff2) format("woff2"), url(../fonts/Roboto/Roboto-LightItalic.woff) format("woff"), url(../fonts/Roboto/Roboto-LightItalic.ttf) format("truetype"), url(../fonts/Roboto/Roboto-LightItalic.eot), url(../fonts/Roboto/Roboto-LightItalic.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto/Roboto-LightItalic.svg#Roboto) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: "italic";
+  font-weight: 400;
+  src: local("Roboto Italic"), local("Roboto-Italic"), url(../fonts/Roboto/Roboto-Italic.woff2) format("woff2"), url(../fonts/Roboto/Roboto-Italic.woff) format("woff"), url(../fonts/Roboto/Roboto-Italic.ttf) format("truetype"), url(../fonts/Roboto/Roboto-Italic.eot), url(../fonts/Roboto/Roboto-Italic.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto/Roboto-Italic.svg#Roboto) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: "italic";
+  font-weight: 500;
+  src: local("Roboto Medium Italic"), local("Roboto-MediumItalic"), url(../fonts/Roboto/Roboto-MediumItalic.woff2) format("woff2"), url(../fonts/Roboto/Roboto-MediumItalic.woff) format("woff"), url(../fonts/Roboto/Roboto-MediumItalic.ttf) format("truetype"), url(../fonts/Roboto/Roboto-MediumItalic.eot), url(../fonts/Roboto/Roboto-MediumItalic.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto/Roboto-MediumItalic.svg#Roboto) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: "italic";
+  font-weight: 700;
+  src: local("Roboto Bold Italic"), local("Roboto-BoldItalic"), url(../fonts/Roboto/Roboto-BoldItalic.woff2) format("woff2"), url(../fonts/Roboto/Roboto-BoldItalic.woff) format("woff"), url(../fonts/Roboto/Roboto-BoldItalic.ttf) format("truetype"), url(../fonts/Roboto/Roboto-BoldItalic.eot), url(../fonts/Roboto/Roboto-BoldItalic.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto/Roboto-BoldItalic.svg#Roboto) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: "italic";
+  font-weight: 900;
+  src: local("Roboto Black Italic"), local("Roboto-BlackItalic"), url(../fonts/Roboto/Roboto-BlackItalic.woff2) format("woff2"), url(../fonts/Roboto/Roboto-BlackItalic.woff) format("woff"), url(../fonts/Roboto/Roboto-BlackItalic.ttf) format("truetype"), url(../fonts/Roboto/Roboto-BlackItalic.eot), url(../fonts/Roboto/Roboto-BlackItalic.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto/Roboto-BlackItalic.svg#Roboto) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: "normal";
+  font-weight: 100;
+  src: local("Roboto Thin"), local("Roboto-Thin"), url(../fonts/Roboto/Roboto-Thin.woff2) format("woff2"), url(../fonts/Roboto/Roboto-Thin.woff) format("woff"), url(../fonts/Roboto/Roboto-Thin.ttf) format("truetype"), url(../fonts/Roboto/Roboto-Thin.eot), url(../fonts/Roboto/Roboto-Thin.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto/Roboto-Thin.svg#Roboto) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: "normal";
+  font-weight: 300;
+  src: local("Roboto Light"), local("Roboto-Light"), url(../fonts/Roboto/Roboto-Light.woff2) format("woff2"), url(../fonts/Roboto/Roboto-Light.woff) format("woff"), url(../fonts/Roboto/Roboto-Light.ttf) format("truetype"), url(../fonts/Roboto/Roboto-Light.eot), url(../fonts/Roboto/Roboto-Light.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto/Roboto-Light.svg#Roboto) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: "normal";
+  font-weight: 400;
+  src: local("Roboto Regular"), local("Roboto-Regular"), url(../fonts/Roboto/Roboto-Regular.woff2) format("woff2"), url(../fonts/Roboto/Roboto-Regular.woff) format("woff"), url(../fonts/Roboto/Roboto-Regular.ttf) format("truetype"), url(../fonts/Roboto/Roboto-Regular.eot), url(../fonts/Roboto/Roboto-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto/Roboto-Regular.svg#Roboto) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: "normal";
+  font-weight: 500;
+  src: local("Roboto Medium"), local("Roboto-Medium"), url(../fonts/Roboto/Roboto-Medium.woff2) format("woff2"), url(../fonts/Roboto/Roboto-Medium.woff) format("woff"), url(../fonts/Roboto/Roboto-Medium.ttf) format("truetype"), url(../fonts/Roboto/Roboto-Medium.eot), url(../fonts/Roboto/Roboto-Medium.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto/Roboto-Medium.svg#Roboto) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: "normal";
+  font-weight: 700;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(../fonts/Roboto/Roboto-Bold.woff2) format("woff2"), url(../fonts/Roboto/Roboto-Bold.woff) format("woff"), url(../fonts/Roboto/Roboto-Bold.ttf) format("truetype"), url(../fonts/Roboto/Roboto-Bold.eot), url(../fonts/Roboto/Roboto-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto/Roboto-Bold.svg#Roboto) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: "normal";
+  font-weight: 900;
+  src: local("Roboto Black"), local("Roboto-Black"), url(../fonts/Roboto/Roboto-Black.woff2) format("woff2"), url(../fonts/Roboto/Roboto-Black.woff) format("woff"), url(../fonts/Roboto/Roboto-Black.ttf) format("truetype"), url(../fonts/Roboto/Roboto-Black.eot), url(../fonts/Roboto/Roboto-Black.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto/Roboto-Black.svg#Roboto) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "OpenSans";
+  font-style: "italic";
+  font-weight: 100;
+  src: local("OpenSans Light"), local("OpenSans-LightItalic-webfont"), url(../fonts/OpenSans/OpenSans-LightItalic-webfont.woff2) format("woff2"), url(../fonts/OpenSans/OpenSans-LightItalic-webfont.woff) format("woff"), url(../fonts/OpenSans/OpenSans-LightItalic-webfont.ttf) format("truetype"), url(../fonts/OpenSans/OpenSans-LightItalic-webfont.eot), url(../fonts/OpenSans/OpenSans-LightItalic-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/OpenSans/OpenSans-LightItalic-webfont.svg#OpenSans) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "OpenSans";
+  font-style: "italic";
+  font-weight: 300;
+  src: local("OpenSans Regular"), local("OpenSans-RegularItalic-webfont"), url(../fonts/OpenSans/OpenSans-RegularItalic-webfont.woff2) format("woff2"), url(../fonts/OpenSans/OpenSans-RegularItalic-webfont.woff) format("woff"), url(../fonts/OpenSans/OpenSans-RegularItalic-webfont.ttf) format("truetype"), url(../fonts/OpenSans/OpenSans-RegularItalic-webfont.eot), url(../fonts/OpenSans/OpenSans-RegularItalic-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/OpenSans/OpenSans-RegularItalic-webfont.svg#OpenSans) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "OpenSans";
+  font-style: "italic";
+  font-weight: 400;
+  src: local("OpenSans Semi Bold"), local("OpenSans-SemiboldItalic-webfont"), url(../fonts/OpenSans/OpenSans-SemiboldItalic-webfont.woff2) format("woff2"), url(../fonts/OpenSans/OpenSans-SemiboldItalic-webfont.woff) format("woff"), url(../fonts/OpenSans/OpenSans-SemiboldItalic-webfont.ttf) format("truetype"), url(../fonts/OpenSans/OpenSans-SemiboldItalic-webfont.eot), url(../fonts/OpenSans/OpenSans-SemiboldItalic-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/OpenSans/OpenSans-SemiboldItalic-webfont.svg#OpenSans) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "OpenSans";
+  font-style: "italic";
+  font-weight: 500;
+  src: local("OpenSans Bold"), local("OpenSans-BoldItalic-webfont"), url(../fonts/OpenSans/OpenSans-BoldItalic-webfont.woff2) format("woff2"), url(../fonts/OpenSans/OpenSans-BoldItalic-webfont.woff) format("woff"), url(../fonts/OpenSans/OpenSans-BoldItalic-webfont.ttf) format("truetype"), url(../fonts/OpenSans/OpenSans-BoldItalic-webfont.eot), url(../fonts/OpenSans/OpenSans-BoldItalic-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/OpenSans/OpenSans-BoldItalic-webfont.svg#OpenSans) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "OpenSans";
+  font-style: "italic";
+  font-weight: 700;
+  src: local("OpenSans Extra Bold"), local("OpenSans-ExtraBoldItalic-webfont"), url(../fonts/OpenSans/OpenSans-ExtraBoldItalic-webfont.woff2) format("woff2"), url(../fonts/OpenSans/OpenSans-ExtraBoldItalic-webfont.woff) format("woff"), url(../fonts/OpenSans/OpenSans-ExtraBoldItalic-webfont.ttf) format("truetype"), url(../fonts/OpenSans/OpenSans-ExtraBoldItalic-webfont.eot), url(../fonts/OpenSans/OpenSans-ExtraBoldItalic-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/OpenSans/OpenSans-ExtraBoldItalic-webfont.svg#OpenSans) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "OpenSans";
+  font-style: "normal";
+  font-weight: 100;
+  src: local("OpenSans Light"), local("OpenSans-Light-webfont"), url(../fonts/OpenSans/OpenSans-Light-webfont.woff2) format("woff2"), url(../fonts/OpenSans/OpenSans-Light-webfont.woff) format("woff"), url(../fonts/OpenSans/OpenSans-Light-webfont.ttf) format("truetype"), url(../fonts/OpenSans/OpenSans-Light-webfont.eot), url(../fonts/OpenSans/OpenSans-Light-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/OpenSans/OpenSans-Light-webfont.svg#OpenSans) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "OpenSans";
+  font-style: "normal";
+  font-weight: 300;
+  src: local("OpenSans Regular"), local("OpenSans-Regular-webfont"), url(../fonts/OpenSans/OpenSans-Regular-webfont.woff2) format("woff2"), url(../fonts/OpenSans/OpenSans-Regular-webfont.woff) format("woff"), url(../fonts/OpenSans/OpenSans-Regular-webfont.ttf) format("truetype"), url(../fonts/OpenSans/OpenSans-Regular-webfont.eot), url(../fonts/OpenSans/OpenSans-Regular-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/OpenSans/OpenSans-Regular-webfont.svg#OpenSans) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "OpenSans";
+  font-style: "normal";
+  font-weight: 400;
+  src: local("OpenSans Semi Bold"), local("OpenSans-Semibold-webfont"), url(../fonts/OpenSans/OpenSans-Semibold-webfont.woff2) format("woff2"), url(../fonts/OpenSans/OpenSans-Semibold-webfont.woff) format("woff"), url(../fonts/OpenSans/OpenSans-Semibold-webfont.ttf) format("truetype"), url(../fonts/OpenSans/OpenSans-Semibold-webfont.eot), url(../fonts/OpenSans/OpenSans-Semibold-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/OpenSans/OpenSans-Semibold-webfont.svg#OpenSans) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "OpenSans";
+  font-style: "normal";
+  font-weight: 500;
+  src: local("OpenSans Bold"), local("OpenSans-Bold-webfont"), url(../fonts/OpenSans/OpenSans-Bold-webfont.woff2) format("woff2"), url(../fonts/OpenSans/OpenSans-Bold-webfont.woff) format("woff"), url(../fonts/OpenSans/OpenSans-Bold-webfont.ttf) format("truetype"), url(../fonts/OpenSans/OpenSans-Bold-webfont.eot), url(../fonts/OpenSans/OpenSans-Bold-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/OpenSans/OpenSans-Bold-webfont.svg#OpenSans) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: "OpenSans";
+  font-style: "normal";
+  font-weight: 700;
+  src: local("OpenSans Extra Bold"), local("OpenSans-ExtraBold-webfont"), url(../fonts/OpenSans/OpenSans-ExtraBold-webfont.woff2) format("woff2"), url(../fonts/OpenSans/OpenSans-ExtraBold-webfont.woff) format("woff"), url(../fonts/OpenSans/OpenSans-ExtraBold-webfont.ttf) format("truetype"), url(../fonts/OpenSans/OpenSans-ExtraBold-webfont.eot), url(../fonts/OpenSans/OpenSans-ExtraBold-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/OpenSans/OpenSans-ExtraBold-webfont.svg#OpenSans) format("svg");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-/* ========================================================================
- * loading fonts
- * ======================================================================== */
-/* ========================================================================
- * icon styles
- * ======================================================================== */
-.icon-success {
-  color: #5cb85c;
 }
 
 body {
@@ -7410,9 +7545,6 @@ button.close {
   .visible-lg-block {
     display: block !important;
   }
-body.inverse {
-  background: #064973;
-  color: #ffffff;
 }
 
 @media (min-width: 1200px) {
@@ -7494,20 +7626,6 @@ body.inverse {
   .visible-print-inline-block {
     display: inline-block !important;
   }
-
-body.inverse .fade-edge:after {
-  content: "";
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, fade(#064973, 0%)), color-stop(100%, fade(#064973, 100%)));
-  background-image: -webkit-linear-gradient(left, fade(#064973, 0%), fade(#064973, 100%));
-  background: linear-gradient(to right, fade(#064973, 0%), fade(#064973, 100%));
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='#00$color', EndColorStr='$color');
-  bottom: 0;
-  max-height: 100%;
-  position: absolute;
-  right: 0;
-  height: 10000px;
-  width: 60px;
-
 }
 
 @media print {
@@ -7527,7 +7645,6 @@ body.inverse .fade-edge:after {
   display: inline-block !important;
 }
 
-/* generating padding and margin classes */
 .add-padding-1x {
   padding: 5px !important;
 }
@@ -8238,52 +8355,6 @@ body.inverse .fade-edge:after {
   }
 }
 /* ========================================================================
- * header styles
- * ======================================================================== */
-header {
-  background: #191919;
-  min-height: 50px;
-  position: relative;
-}
-
-header .brand {
-  padding: 10px 0;
-}
-header .brand img.logo {
-  height: 24px;
-}
-header .brand a {
-  min-height: 24px;
-  white-space: nowrap;
-}
-header .brand h1 {
-  display: inline-block;
-  line-height: 1;
-  font-weight: 300;
-  font-size: 17px;
-  margin: 0 0 0 5px;
-  color: #ffffff;
-  padding: 6px 0 0 0;
-  font-style: normal;
-  text-transform: uppercase;
-}
-
-header .auth {
-  margin: 0 -15px;
-}
-
-header .dropdown {
-  display: inline-block;
-  color: #ffffff;
-  padding: 6px 0;
-  min-height: 50px;
-}
-
-header .dropdown[aria-expanded=true], header .dropdown:hover {
-  background: black;
-}
-
-/* ========================================================================
  * navbar styles
  * ======================================================================== */
 .navbar-wrapper {
@@ -8306,7 +8377,7 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
 }
 
 .navbar {
-  background: #064973;
+  background: #2c313b;
   border: none;
   margin-bottom: 0;
   -webkit-border-radius: 0;
@@ -8351,15 +8422,15 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
   padding: 0 8px;
   line-height: 50px;
   font-size: 18px;
-  background: #085b8f;
+  background: #007D85;
   color: #ffffff;
 }
 .navbar-menu-toggle:hover, .navbar-menu-toggle:focus, .navbar-menu-toggle:active {
   color: #ffffff;
-  background: #053c5f;
+  background: #004d52;
 }
 .navbar-menu-toggle[aria-expanded=true] {
-  background: #064268;
+  background: #00575c;
 }
 .navbar-menu-toggle .icon {
   line-height: 50px;
@@ -8380,7 +8451,7 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
   padding: 0 15px;
   line-height: 50px;
   text-transform: uppercase;
-  background: #053a5b;
+  background: #21252c;
 }
 
 .navbar > .container .navbar-brand a,
@@ -8402,19 +8473,19 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
 }
 
 .navbar-default .navbar-nav > li a:hover, .navbar-default .navbar-nav > li a:focus, .navbar-default .navbar-nav > li a:active {
-  background: #0968a3;
+  background: #424958;
   color: #ffffff;
 }
 .navbar-default .navbar-nav > li a:hover {
-  background: #0968a3;
+  background: #424958;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:active {
-  background: #0968a3;
+  background: #424958;
   color: #ffffff;
 }
 .navbar-default .navbar-nav > .active > a:hover {
-  background: #0968a3;
+  background: #424958;
 }
 
 .navbar-collapse.dropdown {
@@ -8523,8 +8594,8 @@ header .dropdown[aria-expanded=true], header .dropdown:hover {
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
   color: #ffffff;
-  background: #064973;
-  border-color: #064973;
+  background: #2c313b;
+  border-color: #2c313b;
 }
 
 /* ========================================================================
@@ -9166,12 +9237,12 @@ a.btn:hover, .btn:hover {
 
 .btn-primary, .btn-primary:focus {
   color: #ffffff;
-  background-color: #064973;
-  border-color: #064973;
+  background-color: #2c313b;
+  border-color: #2c313b;
 }
 .btn-primary:hover {
-  background-color: #0968a3;
-  border-color: #064973;
+  background-color: #424958;
+  border-color: #2c313b;
 }
 
 .btn-bordered, .btn-bordered:focus, .btn-bordered:hover {
@@ -9720,7 +9791,7 @@ table.dataTable tr.filter-row th {
 .table.dataTable tbody tr.active th,
 .table.dataTable tbody tr.active:hover td,
 .table.dataTable tbody tr.active:hover th {
-  background-color: #064973 !important;
+  background-color: #2c313b !important;
 }
 
 .table.dataTable tbody tr td.dataTables_empty {
@@ -9751,7 +9822,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:first-child, 
 .thumbnail.icon {
   border: none;
   margin: 0;
-  background: #064973;
+  background: #2c313b;
   color: #fff;
   text-align: center;
   overflow: hidden;
@@ -9816,12 +9887,12 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:first-child, 
 }
 .pagination > li > a, .pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span, .pagination > li > span:hover {
   text-decoration: none;
-  color: #064973;
+  color: #2c313b;
 }
 
 .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
-  background: #064973;
-  border-color: #064973;
+  background: #2c313b;
+  border-color: #2c313b;
 }
 
 .pagination > .disabled > a, .pagination > .disabled > a:focus, .pagination > .disabled > a:hover, .pagination > .disabled > span, .pagination > .disabled > span:focus, .pagination > .disabled > span:hover {
@@ -10018,8 +10089,8 @@ a.list-group-item:hover {
 
 .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover, .active > .list-group-item, .active > .list-group-item:focus, .active > .list-group-item:hover {
   color: #ffffff;
-  background: #064973;
-  border-color: #064973;
+  background: #2c313b;
+  border-color: #2c313b;
 }
 
 .list-group-item.active a {
@@ -10068,7 +10139,7 @@ a.list-group-item:hover {
 .tree-view li > .icon {
   font-family: "font-wso2";
   font-style: normal;
-  background: #064973;
+  background: #2c313b;
   color: #ffffff;
   height: 20px;
   width: 20px;
@@ -10139,7 +10210,7 @@ a.list-group-item:hover {
  * ======================================================================== */
 .asset-image {
   max-width: 150px;
-  background: #064973;
+  background: #2c313b;
   float: none;
 }
 
@@ -10245,7 +10316,7 @@ a.list-group-item:hover {
   position: absolute;
   display: block;
   content: "";
-  color: #064973;
+  color: #2c313b;
   z-index: 2;
   font-size: 16px;
   font-weight: bold;
@@ -10253,13 +10324,13 @@ a.list-group-item:hover {
   margin-left: 0;
   top: 50%;
   margin-top: -5px;
-  background-color: #064973;
+  background-color: #2c313b;
   width: 10px;
   height: 10px;
   border-radius: 100%;
 }
 .radio > input[type=radio]:checked + .helper:before {
-  border: 2px #064973 solid;
+  border: 2px #2c313b solid;
 }
 .radio > input[type=radio]:disabled + .helper:before {
   cursor: default;
@@ -10308,7 +10379,7 @@ a.list-group-item:hover {
   opacity: 0;
 }
 .checkbox > input[type=checkbox]:checked + .helper:before {
-  border: 2px #064973 solid;
+  border: 2px #2c313b solid;
 }
 .checkbox > input[type=checkbox]:checked + .helper:after {
   position: absolute;
@@ -10324,7 +10395,7 @@ a.list-group-item:hover {
   left: 2px;
   margin-left: 0;
   text-align: center;
-  background: #064973;
+  background: #2c313b;
   color: #fff;
   font-family: font-wso2;
 }
@@ -10371,3 +10442,5 @@ a.list-group-item:hover {
     display: block !important;
   }
 }
+
+/*# sourceMappingURL=theme-wso2.css.map */
