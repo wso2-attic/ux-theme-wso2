@@ -17,20 +17,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>WSO2 UI Component Library</title>
+    <title>Theme WSO2</title>
 
-    <link rel="shortcut icon" href="libs/theme-wso2_1.0/images/favicon.png" />
-
-    <!-- Jquery CSS -->
-    <link href="libs/jquery-ui_1.11.4/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <!-- Favion -->
+    <link href="libs/theme-wso2_1.0.0/images/favicon.png" rel="icon" type="image/png" sizes="16x16" />
 
     <!-- Bootstrap CSS -->
-    <link href="libs/bootstrap_3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="libs/bootstrap_3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- ===== Custom Libs ===== -->
 
     <!-- DataTable CSS -->
     <link href="libs/data-tables_1.10.7/extensions/Bootstrap/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
@@ -39,42 +39,22 @@
     <!-- Select2 CSS -->
     <link href="libs/select2_4.0.0/css/select2.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- Font Awesome CSS -->
-    <link href="libs/font-awesome_4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
-    <!-- Font WSO2 CSS -->
-    <link href="libs/font-wso2_1.2/css/font-wso2.css" rel="stylesheet" type="text/css" />
-
     <!-- Animate CSS -->
     <link href="libs/animate/animate.css" rel="stylesheet" type="text/css" />
 
-    <!-- Theme WSO2 LESS -->
-    <link href="libs/theme-wso2_1.0/less/theme-wso2.less" rel="stylesheet/less" type="text/css" />
+    <!-- ===== /Custom Libs ===== -->
 
-    <!-- Custom CSS/LESS -->
-    <link href="less/theme-wso2-config.less" rel="stylesheet/less" type="text/css" />
+    <!-- Font WSO2 CSS -->
+    <link href="libs/font-wso2_1.0.0/css/font-wso2.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Theme WSO2 CSS -->
+    <link href="libs/theme-wso2_1.0.0/css/theme-wso2.min.css" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+    <link href="libs/theme-wso2_1.0.0/css/theme-wso2-ie.min.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- Custom CSS -->
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
-
-    <!-- LESS CSS Compiler -->
-    <!-- less.js Debug Script -->
-    <script>
-        less = {
-            env: "development",
-            logLevel: 2,
-            async: false,
-            fileAsync: false,
-            poll: 1000,
-            functions: {},
-            dumpLineNumbers: "comments",
-            relativeUrls: false,
-            globalVars: {
-                var1: '"string value"',
-                var2: 'regular value'
-            },
-            rootpath: ""
-        };
-    </script>
-    <script src="libs/less_2.5.1/less.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -82,33 +62,34 @@
     <script src="libs/html5shiv_3.7.2/html5shiv.min.js"></script>
     <script src="libs/respond_1.4.2/respond.min.js"></script>
     <![endif]-->
-      
+
 </head>
 <body>
 
     <!-- header -->
     <header class="header header-default">
         <div class="container-fluid">
-            <div class="pull-left brand float-remove-xs text-center-xs">
-                <a href="#">
-                    <img src="libs/theme-wso2_1.0/images/logo-inverse.svg" alt="wso2" title="wso2" class="logo">
-                    <h1>UI Component Library</h1>
-                </a>
-            </div>
-            <div class="pull-right auth float-remove-xs text-center-xs">
-                <a href="#" class="dropdown" data-toggle="dropdown">
-                    <span class="hidden-xs add-padding-left-3x">administrator <span class="caret"></span></span>
-                   <span class="icon fw-stack fw-lg">
-                       <i class="fw fw-user fw-stack-1x"></i>
-                   </span>
-                </a>
-                <ul class="dropdown-menu float-remove-xs position-static-xs text-center-xs remove-margin-xs slideInDown" role="menu">
-                    <li class="dropdown-header visible-xs">administrator <span class="caret"></span></li>
-                    <li class="divider visible-xs"></li>
-                    <li><a href="#">Sign out</a></li>
-                </ul>
-
-            </div>
+           <div class="pull-left brand float-remove-xs text-center-xs">
+              <a href="#">
+                 <img src="libs/theme-wso2_1.0.0/images/logo-inverse.svg" alt="wso2" title="wso2" class="logo">
+                 <h1 class="display-block-xs">Theme WSO2</h1>
+              </a>
+           </div>
+           <div class="pull-right auth float-remove-xs text-center-xs">
+             <a href="#" class="dropdown" data-toggle="dropdown">
+                <span class="icon fw-stack fw-lg">
+                   <i class="fw fw-circle fw-stack-2x"></i>
+                   <i class="fw fw-user fw-stack-1x fw-inverse"></i>
+                </span>
+                <span class="hidden-xs">administrator <span class="caret"></span></span>
+             </a>
+             <ul class="dropdown-menu dropdown-menu-right float-remove-xs position-static-xs text-center-xs remove-margin-xs slideInDown" role="menu">
+                <li class="dropdown-header visible-xs">administrator <span class="caret"></span></li>
+                <li class="divider visible-xs"></li>
+                <li><a href="#">Profile Settings</a></li>
+                <li><a href="#">Sign out</a></li>
+             </ul>
+           </div>
         </div>
     </header>
 
@@ -317,23 +298,23 @@
         </div>
 
     </div><!-- /#page-content-wrapper -->
-    
+
+
     <!-- footer -->
     <footer class="footer">
       <div class="container-fluid">
-        <p>Theme WSO2 | &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://wso2.com/" target="_blank"><i class="icon fw fw-wso2"></i> Inc</a>. All Rights Reserved. | Powered by Twitter Bootstrap 3.3.5</p>
+        <p>Theme WSO2 v1.0.0 | &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://wso2.com/" target="_blank"><i class="icon fw fw-wso2"></i> Inc</a>.</p>
       </div>
     </footer>
 
     <!-- Jquery/Jquery UI JS -->
     <script src="libs/jquery_1.11.0/jquery-1.11.3.min.js"></script>
-    <script src="libs/jquery-ui_1.11.4/jquery-ui.min.js"></script>
 
     <!-- Jquery Resize JS -->
     <script src="libs/jquery-resize_0.5.3/jquery.resize.js"></script>
 
     <!-- Bootstrap JS -->
-    <script src="libs/bootstrap_3.3.5/js/bootstrap.min.js"></script>
+    <script src="libs/bootstrap_3.3.6/js/bootstrap.min.js"></script>
 
     <!-- Data Tables JS -->
     <script src="libs/data-tables_1.10.7/media/js/jquery.dataTables.min.js"></script>
@@ -350,10 +331,11 @@
     <script src="libs/noty_2.3.5/packaged/jquery.noty.packaged.min.js"></script>
 
     <!-- Theme WSO2 JS -->
-    <script src="libs/theme-wso2_1.0/js/theme-wso2.js"></script>
+    <script src="libs/theme-wso2_1.0.0/js/theme-wso2.js"></script>
 
     <!-- Custom JS -->
+    <script src="js/libs/requirejs_2.1.18/require.js" data-main="js/app.js"></script>
     <script src="js/custom.js"></script>
-      
+
 </body>
 </html>
