@@ -1,0 +1,24 @@
+/* ========================================================================
+ * breadcrumb styles
+ * ======================================================================== */
+
+.breadcrumb {
+    margin: 0;
+    text-transform: uppercase;
+    min-height: $breadcrumb-height;
+    
+    a {
+        color: $breadcrumb-link-color;
+        text-decoration: none;
+        
+        &:hover {
+            color: $breadcrumb-link-hover-color;
+        }
+        .icon {
+            padding-bottom: 5px;
+        }
+    }
+    .active a {
+        color: $breadcrumb-active-color;
+    }
+}
