@@ -11,18 +11,25 @@ module.exports = function(grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    'build/css/<%= pkg.name %>.css': 'scss/publisher.scss',
+                    //'build/css/<%= pkg.name %>.css': 'scss/publisher.scss',
                     //'build/css/<%= pkg.name %>-store.css': 'scss/store.scss',
                     //'build/css/<%= pkg.name %>-ie.css': 'scss/ie.scss'
-//                    'build/products/apim/css/<%= pkg.name %>-publisher.css': 'config/apim/publisher.scss',
-//                    'build/products/apim/css/<%= pkg.name %>-store.css': 'config/apim/store.scss'
+                    
+                    // API Manager
+                    'build/products/apim/css/apim-publisher.css': 'config/apim/publisher.scss',
+                    'build/products/apim/css/apim-store.css': 'config/apim/store.scss',
                 }
             }
         },
         cssmin: {
             css:{ 
                 files: {
-                    'build/css/<%= pkg.name %>.min.css': ['build/css/<%= pkg.name %>.css'],
+                    
+                    // API Manager
+                    'build/products/apim/css/apim-publisher.min.css': 'build/products/apim/css/apim-publisher.css',
+                    'build/products/apim/css/apim-store.min.css': 'build/products/apim/css/apim-store.css',
+                    
+                    //'build/css/<%= pkg.name %>.min.css': ['build/css/<%= pkg.name %>.css'],
                     //'build/css/<%= pkg.name %>-ie.min.css': ['build/css/<%= pkg.name %>-ie.css']
                 }
             }

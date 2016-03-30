@@ -20,9 +20,7 @@
     "grunt-contrib-nodeunit": "~0.1.2",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-json-generator": "^0.1.0",
-    "grunt-contrib-uglify": "^1.0.1",
     "grunt-jekyll": "^0.4.3",
-    "grunt-zip": "~0.17.1",
-    "ruby": "^0.6.0"
+    "grunt-zip": "~0.17.1"
   }
 }
