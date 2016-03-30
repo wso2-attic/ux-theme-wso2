@@ -8,14 +8,13 @@ $base-info-color: #009DA7 !default;
 $base-warning-color: #f0ad4e !default;
 $base-danger-color: #d9534f !default;
 
-$primary-color: #2c313b !default;
 $secondary-color: #e4e4e4 !default;
 $optional-color: #007D85 !default;
 
 $navbar-height: 50px !default;
 $navbar-padding: 0 15px !default;
 $navbar-color1: #4D5461 !default;
-$navbar-background-color: $primary-color !default;
+$navbar-background-color: $brand-primary !default;
 $navbar-link-color: $base-light-color !default;
 $navbar-hover-link-color: $navbar-link-color !default;
 $navbar-link-background-color: $navbar-color1 !default;
@@ -31,7 +30,7 @@ $footer-height: 40px !default;
 $footer-background: $base-dark-color !default;
 $footer-color: #cbcbcb !default;
 
-$inverse-layout-background: $primary-color !default;
+$inverse-layout-background: $brand-primary !default;
 $inverse-layout-color: $base-light-color !default;
 
 $loading-background-opacity: 0.6 !default;
@@ -53,8 +52,8 @@ $button-default-hover-background-color: darken($button-default-background-color,
 $button-default-border-color: #ccc !default;
 $button-default-hover-border-color: $button-default-background-color !default;
 
-$button-primary-background-color: $primary-color !default;
-$button-primary-color: $base-light-color !default;
+$button-primary-background-color: $brand-primary !default;
+$button-brand-primary: $base-light-color !default;
 $button-primary-hover-background-color: lighten($button-primary-background-color, 10%) !default;
 $button-primary-border-color: $button-primary-background-color !default;
 $button-primary-hover-border-color: $button-primary-background-color !default;
@@ -533,8 +532,8 @@ body.inverse .fade-edge {
     &:focus,
     &:hover {
         color: $base-light-color;
-        background: $primary-color;
-        border-color: $primary-color;
+        background: $brand-primary;
+        border-color: $brand-primary;
     }
 }
 
@@ -1167,7 +1166,7 @@ a.btn, .btn {
 
 .btn-primary {
     &, &:focus {
-        color: $button-primary-color;
+        color: $button-brand-primary;
         background-color: $button-primary-background-color;
         border-color: $button-primary-border-color;
     }
@@ -1760,7 +1759,7 @@ table.dataTable tr.filter-row th {
 .table.dataTable tbody tr.active th,
 .table.dataTable tbody tr.active:hover td,
 .table.dataTable tbody tr.active:hover th {
-    background-color: $primary-color !important;
+    background-color: $brand-primary !important;
 }
 
 
@@ -1795,7 +1794,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
 .thumbnail.icon {
     border: none;
     margin: 0;
-    background: $primary-color;
+    background: $brand-primary;
     color: #fff;
     text-align: center;
     overflow: hidden;
@@ -1845,7 +1844,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
     & > span,
     & > span:hover{
         text-decoration: none;
-        color: $primary-color;
+        color: $brand-primary;
     }
 }
 
@@ -1856,8 +1855,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
     & > span,
     & > span:focus,
     & > span:hover {
-        background: $primary-color;
-        border-color: $primary-color;
+        background: $brand-primary;
+        border-color: $brand-primary;
     }
 }
 
@@ -2056,8 +2055,8 @@ a.list-group-item:hover {
     &:focus,
     &:hover {
         color: $base-light-color;
-        background: $primary-color;
-        border-color: $primary-color;
+        background: $brand-primary;
+        border-color: $brand-primary;
     }
 }
 .list-group-item.active a {
@@ -2106,7 +2105,7 @@ a.list-group-item:hover {
     & > .icon {
         font-family: $icon-font;
         font-style: normal;
-        background: $primary-color;
+        background: $brand-primary;
         color: $base-light-color;
         height: 20px;
         width: 20px;
@@ -2184,7 +2183,7 @@ a.list-group-item:hover {
 
 .asset-image {
     max-width: 150px;
-    background: $primary-color;
+    background: $brand-primary;
     float: none;
 }
 
