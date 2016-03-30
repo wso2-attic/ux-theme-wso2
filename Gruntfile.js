@@ -134,10 +134,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-json-generator');
     grunt.loadNpmTasks('grunt-jekyll');
-
+    
     // Default task(s).
-    //grunt.registerTask('default', ['sass','cssmin','concat','uglify','json_generator','copy','jekyll']);
     grunt.registerTask('default', ['sass:main','cssmin:main','concat','uglify','copy:main']);
+    grunt.registerTask('all', ['sass','cssmin','concat','uglify','json_generator','copy','jekyll']);
+    grunt.registerTask('docs', ['json_generator','jekyll']);
+    
     grunt.registerTask('apim', ['sass:apim','cssmin:apim','concat','uglify','copy:apim']);
 
 };
