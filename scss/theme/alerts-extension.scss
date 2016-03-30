@@ -1,0 +1,40 @@
+/* ========================================================================
+ * alert styles
+ * ======================================================================== */
+
+.alert {
+    position: relative;
+    
+    & > .icon {
+        padding-bottom: 3px;
+        margin-right: 6px;
+    }
+    
+    & > .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: $alert-close-height;
+        width: $alert-close-width;
+        line-height: 1;
+        padding: $alert-close-padding;
+        font-size: $alert-close-font-size;
+    }
+    
+    &.alert-success > .close {
+        color: $alert-success-close-text;
+        background: $alert-success-close-bg;
+    }
+    &.alert-info > .close {
+        color: $alert-info-close-text;
+        background: $alert-info-close-bg;
+    }
+    &.alert-warning > .close {
+        color: $alert-warning-close-text;
+        background: $alert-warning-close-bg;
+    }
+    &.alert-danger > .close {
+        color: $alert-danger-close-text;
+        background: $alert-danger-close-bg;
+    }
+}

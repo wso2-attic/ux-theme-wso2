@@ -11,7 +11,7 @@ module.exports = function(grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    //'build/css/<%= pkg.name %>.css': 'scss/publisher.scss',
+                    'build/css/<%= pkg.name %>.css': 'config/default/theme.scss',
                     //'build/css/<%= pkg.name %>-store.css': 'scss/store.scss',
                     //'build/css/<%= pkg.name %>-ie.css': 'scss/ie.scss'
                     
