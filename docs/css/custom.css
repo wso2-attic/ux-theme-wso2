@@ -158,6 +158,12 @@
 #accordion2 .panel-heading div .status i{
     position:relative;
     top:16px;
+    left:calc(100% - 40px);
+}
+#accordion1 .panel-heading .radio + div .status i,
+#accordion2 .panel-heading .radio + div .status i{
+    position:relative;
+    top:16px;
     left:calc(100% - 100px);
 }
 #accordion1 .panel-heading p,#accordion2 .panel-heading p,
