@@ -6,31 +6,35 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         sass: {
-            dist: {
+            apim: {
                 options: {
                     style: 'expanded'
                 },
                 files: {
-                    //'build/css/<%= pkg.name %>.css': 'scss/publisher.scss',
-                    //'build/css/<%= pkg.name %>-store.css': 'scss/store.scss',
-                    //'build/css/<%= pkg.name %>-ie.css': 'scss/ie.scss'
-                    
-                    // API Manager
                     'build/products/apim/css/apim-publisher.css': 'config/apim/publisher.scss',
                     'build/products/apim/css/apim-store.css': 'config/apim/store.scss',
+                }
+            },
+            main: {
+                options: {
+                    style: 'expanded'
+                },
+                files: {
+                    'build/css/<%= pkg.name %>.css': 'config/default/theme.scss',
                 }
             }
         },
         cssmin: {
-            css:{ 
+            apim:{ 
                 files: {
-                    
-                    // API Manager
                     'build/products/apim/css/apim-publisher.min.css': 'build/products/apim/css/apim-publisher.css',
                     'build/products/apim/css/apim-store.min.css': 'build/products/apim/css/apim-store.css',
-                    
-                    //'build/css/<%= pkg.name %>.min.css': ['build/css/<%= pkg.name %>.css'],
-                    //'build/css/<%= pkg.name %>-ie.min.css': ['build/css/<%= pkg.name %>-ie.css']
+                }
+            },
+            main:{ 
+                files: {
+                    'build/css/<%= pkg.name %>.min.css': ['build/css/<%= pkg.name %>.css'],
+                    'build/css/<%= pkg.name %>-ie.min.css': ['build/css/<%= pkg.name %>-ie.css']
                 }
             }
         },
@@ -90,17 +94,22 @@ module.exports = function(grunt) {
             }
         },
         copy: {
+            apim: {
+                files: [
+                    { expand: true, cwd: 'build/products/apim/css/', src: ['**'], dest: 'dist/products/apim/css/' }
+                ],
+            },
             main: {
                 files: [
                     { expand: true, cwd: 'build/css/', src: ['**'], dest: 'dist/css/' },
                     { expand: true, cwd: 'build/js/', src: ['<%= pkg.name %>.js','<%= pkg.name %>.min.js'], dest: 'dist/js/' },
-//                    { expand: true, cwd: 'fonts/', src: ['**'], dest: 'dist/fonts/' },
-//                    { expand: true, cwd: 'images/', src: ['**'], dest: 'dist/images/' },
+                    { expand: true, cwd: 'fonts/', src: ['**'], dest: 'dist/fonts/' },
+                    { expand: true, cwd: 'images/', src: ['**'], dest: 'dist/images/' },
                     
                     { expand: true, cwd: 'dist/css/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/css/' },
                     { expand: true, cwd: 'dist/js/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/js/' },
-//                    { expand: true, cwd: 'dist/fonts/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/fonts/' },
-//                    { expand: true, cwd: 'dist/images/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/images/' }
+                    { expand: true, cwd: 'dist/fonts/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/fonts/' },
+                    { expand: true, cwd: 'dist/images/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/images/' }
                 ],
             },
         },
@@ -125,9 +134,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-json-generator');
     grunt.loadNpmTasks('grunt-jekyll');
-
+    
     // Default task(s).
-    //grunt.registerTask('default', ['sass','cssmin','concat','uglify','json_generator','copy','jekyll']);
-    grunt.registerTask('default', ['sass','cssmin','concat','uglify','copy']);
+    grunt.registerTask('default', ['sass:main','cssmin:main','concat','uglify','copy:main']);
+    grunt.registerTask('all', ['sass','cssmin','concat','uglify','json_generator','copy','jekyll']);
+    grunt.registerTask('docs', ['json_generator','jekyll']);
+    
+    grunt.registerTask('apim', ['sass:apim','cssmin:apim','concat','uglify','copy:apim']);
 
 };

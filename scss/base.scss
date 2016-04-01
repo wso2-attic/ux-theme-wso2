@@ -30,6 +30,7 @@
 @import "bootstrap/stylesheets/bootstrap/jumbotron";
 @import "bootstrap/stylesheets/bootstrap/thumbnails";
 @import "bootstrap/stylesheets/bootstrap/alerts";
+@import "theme/alerts-extension";
 @import "theme/messages";
 @import "bootstrap/stylesheets/bootstrap/progress-bars";
 @import "bootstrap/stylesheets/bootstrap/media";
@@ -50,4 +51,4 @@
 @import "bootstrap/stylesheets/bootstrap/responsive-utilities";
 @import 'theme/utilities';
 
-@import 'theme/old';
+@import 'theme/old'; //TODO: Remove after merge all

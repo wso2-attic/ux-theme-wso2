@@ -780,64 +780,6 @@ footer a {
 }
 
 /* ========================================================================
- * alert styles
- * ======================================================================== */
-
-.alert {
-    @include border-radius;
-    border: none;
-    position: relative;
-    padding: 15px 50px 15px 15px;
-}
-.alert .icon {
-    padding-bottom: 3px;
-    margin-right: 6px;
-}
-
-.alert {
-    & .close {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 50px;
-        width: 50px;
-        line-height: 1;
-        padding: 0 10px;
-        font-size: 12px;
-        background: $base-dark-color;
-        color: $base-light-color;
-    }
-    &.alert-success {
-        color: $base-light-color;
-        background: $base-success-color;
-        & .close {
-            background: darken($base-success-color, 50%);
-        }
-    }
-    &.alert-info {
-        color: $base-light-color;
-        background: $base-info-color;
-        & .close {
-            background: darken($base-info-color, 50%);
-        }
-    }
-    &.alert-warning {
-        color: $base-light-color;
-        background: $base-warning-color;
-        & .close {
-            background: darken($base-warning-color, 50%);
-        }
-    }
-    &.alert-danger {
-        color: $base-light-color;
-        background: $base-danger-color;
-        & .close {
-            background: darken($base-danger-color, 50%);
-        }
-    }
-}
-
-/* ========================================================================
  * dropdown menu styles
  * ======================================================================== */
 
