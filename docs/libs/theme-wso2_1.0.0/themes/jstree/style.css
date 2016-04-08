@@ -410,18 +410,19 @@ jstree-container-ul.jstree-children {
 .jstree-default .jstree-node {
     position: relative;
 }
-.jstree-default .jstree-node:before {
+.jstree-default .jstree-node:after {
     content: "";
     display: block;
     width: 0;
     position: absolute;
     top: 0;
-    bottom: -13px;
+    bottom: -14px;
     left: 0;
     border-left: 1px solid;
     margin-left: 10px;
+    z-index: 1;
 }
-.jstree-default .jstree-last:before {
+.jstree-default .jstree-last:after {
     display: none;
 }
 .jstree-default .jstree-anchor {

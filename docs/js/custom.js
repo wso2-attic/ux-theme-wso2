@@ -57,7 +57,6 @@ $(function(){
     /***********************************************************
      *  Activating jsTree
      ***********************************************************/
-    // 6 create an instance when the DOM is ready
     $('#jstree').jstree({
         "plugins": ["types", "checkbox"],
         "types": {
