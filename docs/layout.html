@@ -38,7 +38,10 @@
 
     <!-- Animate CSS -->
     <link href="libs/animate/animate.css" rel="stylesheet" type="text/css" />
-      
+    
+    <!-- jsTree CSS -->
+    <link href="libs/theme-wso2_1.0.0/plugins/jstree/style.css" rel="stylesheet" type="text/css" />
+    
     <!-- ===== /Custom Libs ===== -->
     
     <!-- Font WSO2 CSS -->
@@ -716,6 +719,7 @@
 
                 <div class="page-header" id="tree-view">
                     <h1>Tree View</h1>
+                    <p class="lead">Basic</p>
                 </div>
 
                 <div class="well">
@@ -774,6 +778,40 @@
                                 <li>Human Resources</li>
                             </ul>
                         </li>
+                        <li aria-expanded="false"><a href="#">SSE</a></li>
+                    </ul>
+                </div>
+                
+                <div class="page-header" id="tree-view">
+                    <p class="lead">jsTree Demo</p>
+                </div>
+                
+                <div class="well" id="jstree">
+                    <ul>
+                      <li data-jstree='{ "opened" : true }'>Root node 1
+                        <ul>
+                            <li id="child_node_1">Child node 1</li>
+                            <li id="child_node_2">Child node 2
+                                <ul>
+                                    <li id="child_node_3">Sub child node 1</li>
+                                    <li id="child_node_4">Sub child node 2
+                                        <ul>
+                                            <li id="child_node_6">Baby node 1</li>
+                                            <li id="child_node_7">Baby node 2</li>
+                                            <li id="child_node_8">Baby node 3
+                                                <ul>
+                                                    <li>Test Node 1</li>
+                                                    <li>Test Node 2</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li id="child_node_5">Sub child node 3</li>
+                                </ul>
+                            </li>
+                        </ul>
+                      </li>
+                      <li>Root node 2</li>
                     </ul>
                 </div>
 
@@ -1131,6 +1169,9 @@
 
     <!-- Jquery Validation JS -->
     <script src="libs/jquery-validation_1.14.0/jquery.validate.min.js"></script>
+    
+    <!-- jsTree JS -->
+    <script src="libs/jstree_3.3.0/jstree.min.js"></script>
 
     <!-- Noty JS -->
     <script src="libs/noty_2.3.5/packaged/jquery.noty.packaged.min.js"></script>
