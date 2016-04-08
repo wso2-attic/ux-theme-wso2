@@ -58,7 +58,7 @@ $(function(){
      *  Activating jsTree
      ***********************************************************/
     $('#jstree').jstree({
-        "plugins": ["types", "checkbox"],
+        "plugins": ["types"],
         "types": {
           "default" : {
             "icon": false,

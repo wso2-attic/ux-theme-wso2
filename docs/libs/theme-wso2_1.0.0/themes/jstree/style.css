@@ -416,14 +416,18 @@ jstree-container-ul.jstree-children {
     width: 0;
     position: absolute;
     top: 0;
-    bottom: -14px;
+    bottom: -11px;
     left: 0;
     border-left: 1px solid;
     margin-left: 10px;
     z-index: 1;
 }
-.jstree-default .jstree-last:after {
+.jstree-default .jstree-node + .jstree-last:after {
     display: none;
+}
+.jstree-default .jstree-last:after {
+    top: -9px;
+    bottom: 17px;
 }
 .jstree-default .jstree-anchor {
   line-height: 24px;
@@ -472,6 +476,8 @@ jstree-container-ul.jstree-children {
     font-size: 10px;
     display: inline-block;
     margin-right: 10px;
+    position: relative;
+    z-index: 2;
 }
 .jstree-default .jstree-open > .jstree-ocl:before {
     content: "\e685";
@@ -482,12 +488,11 @@ jstree-container-ul.jstree-children {
 .jstree-default .jstree-leaf > .jstree-ocl {
     content: "";
     width: 20px;
-    height: 0;
+    height: 0 !important;
     border-bottom: 1px solid;
-    margin-top: 0px;
+    margin-top: 11px;
     margin-left: 10px;
     height: 14px;
-    margin-right: 8px;
 }
 .jstree-default .jstree-themeicon {
   background-position: -260px -4px;
