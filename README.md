@@ -7,9 +7,23 @@ http://wso2-dev-ux.github.io/theme-wso2/
 
 ## Build
 
-Download and run `grunt` command
+####Download and run `grunt` command
+
+to compile scss and build default
 ```
 grunt
+```
+to compile both source & docs
+```
+grunt all
+```
+to compile only docs
+```
+grunt docs
+```
+to build product specific css: e.g. `grunt apim`
+```
+grunt {product-shortname}
 ```
 
 ## Prerequisite
@@ -27,7 +41,6 @@ docs/
 ├── images/
 ├── include/
 ├── js/
-├── less/
 ├── libs/
 │   ├── animate/
 │   ├── bootstrap/
@@ -44,7 +57,6 @@ docs/
 │   ├── jquery-resize/
 │   ├── jquery-ui/
 │   ├── jquery-validation/
-│   ├── less/
 │   ├── animate/
 │   ├── nanoscroller/
 │   ├── noty/
