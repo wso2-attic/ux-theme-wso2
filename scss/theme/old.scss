@@ -47,17 +47,17 @@ $dropdown-menu-dark-tiles-background-color: #444 !default;
 $dropdown-menu-dark-tiles-hover-background-color: #555 !default;
 $dropdown-menu-dark-tiles-color: $base-light-color !default;
 
-$button-default-background-color: $base-light-color !default;
-$button-default-color: $base-dark-color !default;
-$button-default-hover-background-color: darken($button-default-background-color, 10%) !default;
-$button-default-border-color: #ccc !default;
-$button-default-hover-border-color: $button-default-background-color !default;
-
-$button-primary-background-color: $brand-primary !default;
-$button-brand-primary: $base-light-color !default;
-$button-primary-hover-background-color: lighten($button-primary-background-color, 10%) !default;
-$button-primary-border-color: $button-primary-background-color !default;
-$button-primary-hover-border-color: $button-primary-background-color !default;
+//$button-default-background-color: $base-light-color !default;
+//$button-default-color: $base-dark-color !default;
+//$button-default-hover-background-color: darken($button-default-background-color, 10%) !default;
+//$button-default-border-color: #ccc !default;
+//$button-default-hover-border-color: $button-default-background-color !default;
+//
+//$button-primary-background-color: $brand-primary !default;
+//$button-brand-primary: $base-light-color !default;
+//$button-primary-hover-background-color: lighten($button-primary-background-color, 10%) !default;
+//$button-primary-border-color: $button-primary-background-color !default;
+//$button-primary-hover-border-color: $button-primary-background-color !default;
 
 $switch-active-background-color: #25262b !default;
 $switch-inactive-background-color: #a6a6a6 !default;
@@ -1077,78 +1077,46 @@ footer a {
     //@include box-shadow;
 }
 
-a.btn, .btn {
-    text-decoration: none;
-
-    & .icon-caret {
-        padding: 0 0 0 8px;
-        margin-left: 5px;
-        border-left: 1px solid #e4e4e4;
-    }
-    &.active, &:active {
-        //@include box-shadow;
-    }
-    &:hover {
-        text-decoration: none;
-        background: #eee;
-    }
-}
-
-.btn-default {
-    &, &:focus{
-        color: $button-default-color;
-        background-color: $button-default-background-color;
-        border-color: $button-default-border-color;
-    }
-
-    &:hover {
-        background-color: $button-default-hover-background-color;
-        border-color: $button-default-hover-border-color;
-    }
-}
-
-.btn-primary {
-    &, &:focus {
-        color: $button-brand-primary;
-        background-color: $button-primary-background-color;
-        border-color: $button-primary-border-color;
-    }
-
-    &:hover {
-        background-color: $button-primary-hover-background-color;
-        border-color: $button-primary-hover-border-color;
-    }
-}
-
-.btn-bordered {
-    &, &:focus, &:hover {
-        border: 1px solid #ccc;
-    }
-}
-
-.btn-group > .btn-label {
-    position: relative;
-    float: left;
-    color: $base-dark-color;
-    background-color: transparent;
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    background-image: none;
-    border: 1px solid transparent;
-
-    &.btn-bordered {
-        border-color: #e4e4e4;
-        margin-left: -1px;
-        margin-right: -1px;
-    }
-}
+//a.btn, .btn {
+//    text-decoration: none;
+//
+//    & .icon-caret {
+//        padding: 0 0 0 8px;
+//        margin-left: 5px;
+//        border-left: 1px solid #e4e4e4;
+//    }
+//    &.active, &:active {
+//        //@include box-shadow;
+//    }
+//    &:hover {
+//        text-decoration: none;
+//        background: #eee;
+//    }
+//}
+//
+//.btn-group > .btn-label {
+//    position: relative;
+//    float: left;
+//    color: $base-dark-color;
+//    background-color: transparent;
+//    display: inline-block;
+//    padding: 6px 12px;
+//    margin-bottom: 0;
+//    font-size: 14px;
+//    font-weight: 400;
+//    line-height: 1.42857143;
+//    text-align: center;
+//    white-space: nowrap;
+//    vertical-align: middle;
+//    background-image: none;
+//    border: 1px solid transparent;
+//
+//    &.btn-bordered {
+//        border-color: #e4e4e4;
+//        margin-left: -1px;
+//        margin-right: -1px;
+//    }
+//}
 
 .remove-icon-ring-on-hover:hover .fw-ring {
     display: none;
@@ -2245,7 +2213,7 @@ a.list-group-item:hover {
             position: absolute;
             display: block;
             content: "";
-            color: $button-primary-background-color;
+            color: $brand-primary;
             z-index: 2;
             font-size: 16px;
             font-weight: bold;
@@ -2253,14 +2221,14 @@ a.list-group-item:hover {
             margin-left: 0;
             top: 50%;
             margin-top: -5px;
-            background-color: $button-primary-background-color;
+            background-color: $brand-primary;
             width: 10px;
             height: 10px;
             border-radius: 100%;
         }
 
         &:checked + .helper:before {
-            border: 2px $button-primary-background-color solid;
+            border: 2px $brand-primary solid;
         }
 
         &:disabled + .helper:before {
@@ -2318,7 +2286,7 @@ a.list-group-item:hover {
         opacity: 0;
 
         &:checked + .helper:before {
-            border: 2px $button-primary-background-color solid;
+            border: 2px $brand-primary solid;
         }
 
         &:checked + .helper:after {
@@ -2335,7 +2303,7 @@ a.list-group-item:hover {
             left: 2px;
             margin-left: 0;
             text-align: center;
-            background: $button-primary-background-color;
+            background: $brand-primary;
             color: #fff;
             font-family: font-wso2;
         }
