@@ -27,10 +27,6 @@ $page-content-wrapper-height: calc(100% - 120px) !default;
 $page-content-wrapper-height-mobile: calc(100% - 205px) !default;
 $page-content-wrapper-sidebar-height-mobile: calc(100% - 245px) !default;
 
-$footer-height: 40px !default;
-$footer-background: $base-dark-color !default;
-$footer-color: #cbcbcb !default;
-
 $inverse-layout-background: $brand-primary !default;
 $inverse-layout-color: $base-light-color !default;
 
@@ -46,18 +42,6 @@ $dropdown-menu-dark-color: $base-light-color !default;
 $dropdown-menu-dark-tiles-background-color: #444 !default;
 $dropdown-menu-dark-tiles-hover-background-color: #555 !default;
 $dropdown-menu-dark-tiles-color: $base-light-color !default;
-
-//$button-default-background-color: $base-light-color !default;
-//$button-default-color: $base-dark-color !default;
-//$button-default-hover-background-color: darken($button-default-background-color, 10%) !default;
-//$button-default-border-color: #ccc !default;
-//$button-default-hover-border-color: $button-default-background-color !default;
-//
-//$button-primary-background-color: $brand-primary !default;
-//$button-brand-primary: $base-light-color !default;
-//$button-primary-hover-background-color: lighten($button-primary-background-color, 10%) !default;
-//$button-primary-border-color: $button-primary-background-color !default;
-//$button-primary-hover-border-color: $button-primary-background-color !default;
 
 $switch-active-background-color: #25262b !default;
 $switch-inactive-background-color: #a6a6a6 !default;
@@ -130,11 +114,14 @@ html {
 body {
     min-height: 100%;
     color: $base-dark-color;
-    padding-bottom: $footer-height;
     font-weight: $font-default-weight;
     width: 100%;
     overflow: hidden;
     position: relative;
+}
+
+body.sticky-footer {
+    padding-bottom: $footer-height;
 }
 
 body > .page-content-wrapper {
@@ -713,45 +700,6 @@ ul.sidebar-messages > li {
     #wrapper.toggled #page-content-wrapper {
         position: relative;
         margin-right: 0;
-    }
-}
-
-/* ========================================================================
- * footer styles
- * ======================================================================== */
-
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    min-height: $footer-height;
-    overflow: hidden;
-    color: $footer-color;
-    background: $footer-background;
-    z-index: 1000;
-}
-
-footer > .container,
-footer > .container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-footer > .container p,
-footer > .container-fluid p {
-    line-height: $footer-height;
-    margin-bottom: 0;
-}
-
-footer .icon {
-    font-size: 37px;
-    vertical-align: middle;
-    color: $footer-color;
-}
-
-footer a {
-    &, &:hover {
-        color: $footer-color;
     }
 }
 

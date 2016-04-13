@@ -3172,6 +3172,39 @@ header .fw-inverse, header .fa-inverse {
   color: #191919;
 }
 
+/* ========================================================================
+ * footer styles
+ * ======================================================================== */
+footer {
+  width: 100%;
+  min-height: 40px;
+  overflow: hidden;
+  color: #cbcbcb;
+  background: #222222;
+}
+footer > .container, footer > .container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+footer > .container > p, footer > .container-fluid > p {
+  line-height: 40px;
+  margin-bottom: 0;
+}
+footer .icon {
+  font-size: 37px;
+  vertical-align: middle;
+  color: #cbcbcb;
+}
+footer a, footer a:hover {
+  color: #cbcbcb;
+}
+
+body.sticky-footer footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 1000;
+}
+
 .fade {
   opacity: 0;
   -webkit-transition: opacity 0.15s linear;
@@ -7199,11 +7232,14 @@ html {
 body {
   min-height: 100%;
   color: #222;
-  padding-bottom: 40px;
   font-weight: 300;
   width: 100%;
   overflow: hidden;
   position: relative;
+}
+
+body.sticky-footer {
+  padding-bottom: 40px;
 }
 
 body > .page-content-wrapper {
@@ -7789,42 +7825,6 @@ ul.sidebar-messages > li {
     margin-right: 0;
   }
 }
-/* ========================================================================
- * footer styles
- * ======================================================================== */
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  min-height: 40px;
-  overflow: hidden;
-  color: #cbcbcb;
-  background: #222;
-  z-index: 1000;
-}
-
-footer > .container,
-footer > .container-fluid {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-footer > .container p,
-footer > .container-fluid p {
-  line-height: 40px;
-  margin-bottom: 0;
-}
-
-footer .icon {
-  font-size: 37px;
-  vertical-align: middle;
-  color: #cbcbcb;
-}
-
-footer a, footer a:hover {
-  color: #cbcbcb;
-}
-
 /* ========================================================================
  * body styles
  * ======================================================================== */
