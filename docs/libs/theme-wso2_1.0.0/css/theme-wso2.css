@@ -7241,7 +7241,6 @@ body {
 body.sticky-footer {
   padding-bottom: 40px;
 }
-
 body > .page-content-wrapper {
   height: 100vh;
 }
