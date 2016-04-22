@@ -39,13 +39,16 @@ $(document).ready(function() {
             $('#members tbody').append(members(data));
 
             var users = Handlebars.compile($('#usersTemplate').html());
-            $('#users tbody').append(users(data));
+            //$('#users tbody').append(users(data));
             $('#device-grid tbody').append(users(data));
 
-            $('#users').datatables_extended();
+            //$('#users').datatables_extended();
             $('#device-grid').datatables_extended();
 
         });
+
+
+
 
 //    Handlebars.registerPartial('foo', 'partials/demo_partial.hbs');
 
@@ -54,6 +57,29 @@ $(document).ready(function() {
         //    //$('body').html(template(dataObj));
         //}, 'html');
     });
+
+
+    $('#users').datatables_extended({
+        "bProcessing": true,
+        "bServerSide": true,
+        "bDestroy": true,
+        "bRetrieve": true,
+        "sAjaxSource": "data/table.json",
+        "fnServerData": function(sSource, aoData, fnCallback) {
+            $.ajax({
+                "dataType": 'json',
+                "type": "POST",
+                "url": sSource,
+                "data": aoData,
+                "success": function(data, textStatus, jqXHR) {
+                    var jsonEmpresa = $.parseJSON(data.d);
+                    console.log(jsonEmpresa);
+                    $("#usersTemplate").appendTo("#users tbody");
+                }
+            });
+        }
+    });
+
 
 });
 

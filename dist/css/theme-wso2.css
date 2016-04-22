@@ -7832,6 +7832,11 @@ ul.sidebar-messages > li {
   text-decoration: underline;
 }
 
+@media (max-width: 767px) {
+  .body-wrapper {
+    padding: 40px 0px;
+  }
+}
 .page-header {
   margin: 0 0 20px;
 }
