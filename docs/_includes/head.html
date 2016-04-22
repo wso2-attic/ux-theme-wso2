@@ -1,0 +1,51 @@
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="wso2">
+
+    <title>{% if page.title %}{{ site.title | escape }} | {{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+
+    <!-- Favion -->
+    <link href="{{ "libs/theme-wso2_1.0.0/images/favicon.png" | prepend: site.baseurl }}" rel="icon" type="image/png" sizes="16x16" />
+
+    <!-- Bootstrap CSS -->
+    <link href="{{ "libs/bootstrap_3.3.6/css/bootstrap.min.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" />
+
+    <!-- ===== Custom Libs ===== -->
+    
+    {{ page.css }}
+
+    <!-- DataTable CSS -->
+    <link href="{{ "libs/data-tables_1.10.7/extensions/Bootstrap/css/dataTables.bootstrap.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" />
+    <link href="{{ "libs/data-tables_1.10.7/extensions/Responsive/css/dataTables.responsive.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" />
+
+    <!-- Select2 CSS -->
+    <link href="{{ "libs/select2_4.0.0/css/select2.min.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" />
+
+    <!-- Animate CSS -->
+    <link href="{{ "libs/animate/animate.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" />
+
+    <!-- ===== /Custom Libs ===== -->
+
+    <!-- Font WSO2 CSS -->
+    <link href="{{ "libs/font-wso2_1.0.0/css/font-wso2.min.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" />
+
+    <!-- Theme WSO2 CSS -->
+    <link href="{{ "libs/theme-wso2_1.0.0/css/theme-wso2.min.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+    <link href="libs/theme-wso2_1.0.0/css/theme-wso2-ie.min.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    <link href="{{ "css/custom.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="libs/html5shiv_3.7.2/html5shiv.min.js"></script>
+    <script src="libs/respond_1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>

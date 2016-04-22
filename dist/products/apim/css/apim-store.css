@@ -3080,6 +3080,43 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
+.btn-secondary {
+  color: #fff;
+  background-color: #6babed;
+  border-color: #549eea;
+}
+.btn-secondary:focus, .btn-secondary.focus {
+  color: #fff;
+  background-color: #3d92e8;
+  border-color: #155faa;
+}
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #3d92e8;
+  border-color: #1d80e4;
+}
+.btn-secondary:active, .btn-secondary.active, .open > .btn-secondary.dropdown-toggle {
+  color: #fff;
+  background-color: #3d92e8;
+  border-color: #1d80e4;
+}
+.btn-secondary:active:hover, .btn-secondary:active:focus, .btn-secondary:active.focus, .btn-secondary.active:hover, .btn-secondary.active:focus, .btn-secondary.active.focus, .open > .btn-secondary.dropdown-toggle:hover, .open > .btn-secondary.dropdown-toggle:focus, .open > .btn-secondary.dropdown-toggle.focus {
+  color: #fff;
+  background-color: #1d80e4;
+  border-color: #155faa;
+}
+.btn-secondary:active, .btn-secondary.active, .open > .btn-secondary.dropdown-toggle {
+  background-image: none;
+}
+.btn-secondary.disabled:hover, .btn-secondary.disabled:focus, .btn-secondary.disabled.focus, .btn-secondary[disabled]:hover, .btn-secondary[disabled]:focus, .btn-secondary[disabled].focus, fieldset[disabled] .btn-secondary:hover, fieldset[disabled] .btn-secondary:focus, fieldset[disabled] .btn-secondary.focus {
+  background-color: #6babed;
+  border-color: #549eea;
+}
+.btn-secondary .badge {
+  color: #6babed;
+  background-color: #fff;
+}
+
 /* ========================================================================
  * header styles
  * ======================================================================== */
@@ -3133,6 +3170,39 @@ header .nav .dropdown-menu a {
 }
 header .fw-inverse, header .fa-inverse {
   color: #1f1f1f;
+}
+
+/* ========================================================================
+ * footer styles
+ * ======================================================================== */
+footer {
+  width: 100%;
+  min-height: 40px;
+  overflow: hidden;
+  color: #cbcbcb;
+  background: #222222;
+}
+footer > .container, footer > .container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+footer > .container > p, footer > .container-fluid > p {
+  line-height: 40px;
+  margin-bottom: 0;
+}
+footer .icon {
+  font-size: 37px;
+  vertical-align: middle;
+  color: #cbcbcb;
+}
+footer a, footer a:hover {
+  color: #cbcbcb;
+}
+
+body.sticky-footer footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 1000;
 }
 
 .fade {
@@ -7162,15 +7232,14 @@ html {
 body {
   min-height: 100%;
   color: #222;
-  padding-bottom: 40px;
   font-weight: 300;
   width: 100%;
   overflow: hidden;
   position: relative;
 }
 
-body > .page-content-wrapper {
-  height: 100vh;
+body.sticky-footer {
+  padding-bottom: 40px;
 }
 
 body > .page-content-wrapper > .container,
@@ -7753,42 +7822,6 @@ ul.sidebar-messages > li {
   }
 }
 /* ========================================================================
- * footer styles
- * ======================================================================== */
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  min-height: 40px;
-  overflow: hidden;
-  color: #cbcbcb;
-  background: #222;
-  z-index: 1000;
-}
-
-footer > .container,
-footer > .container-fluid {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-footer > .container p,
-footer > .container-fluid p {
-  line-height: 40px;
-  margin-bottom: 0;
-}
-
-footer .icon {
-  font-size: 37px;
-  vertical-align: middle;
-  color: #cbcbcb;
-}
-
-footer a, footer a:hover {
-  color: #cbcbcb;
-}
-
-/* ========================================================================
  * body styles
  * ======================================================================== */
 .body-wrapper {
@@ -8123,66 +8156,6 @@ footer a, footer a:hover {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-}
-
-a.btn, .btn {
-  text-decoration: none;
-}
-a.btn .icon-caret, .btn .icon-caret {
-  padding: 0 0 0 8px;
-  margin-left: 5px;
-  border-left: 1px solid #e4e4e4;
-}
-a.btn:hover, .btn:hover {
-  text-decoration: none;
-  background: #eee;
-}
-
-.btn-default, .btn-default:focus {
-  color: #222;
-  background-color: #ffffff;
-  border-color: #ccc;
-}
-.btn-default:hover {
-  background-color: #e6e6e6;
-  border-color: #ffffff;
-}
-
-.btn-primary, .btn-primary:focus {
-  color: #ffffff;
-  background-color: #1a78d8;
-  border-color: #1a78d8;
-}
-.btn-primary:hover {
-  background-color: #3d92e8;
-  border-color: #1a78d8;
-}
-
-.btn-bordered, .btn-bordered:focus, .btn-bordered:hover {
-  border: 1px solid #ccc;
-}
-
-.btn-group > .btn-label {
-  position: relative;
-  float: left;
-  color: #222;
-  background-color: transparent;
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  background-image: none;
-  border: 1px solid transparent;
-}
-.btn-group > .btn-label.btn-bordered {
-  border-color: #e4e4e4;
-  margin-left: -1px;
-  margin-right: -1px;
 }
 
 .remove-icon-ring-on-hover:hover .fw-ring {

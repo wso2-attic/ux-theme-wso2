@@ -7242,10 +7242,6 @@ body.sticky-footer {
   padding-bottom: 40px;
 }
 
-body > .page-content-wrapper {
-  height: 100vh;
-}
-
 body > .page-content-wrapper > .container,
 body > .page-content-wrapper > .container-fluid {
   padding: 0;
