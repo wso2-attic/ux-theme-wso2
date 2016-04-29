@@ -11,7 +11,7 @@ header {
         color: $header-color;
     }
     
-    a {
+    a,a:hover {
         color: $header-color;
         text-decoration: none;
     }  
@@ -41,6 +41,11 @@ header {
         height: $header-height;
         
         &:hover {
+            background: lighten($header-background-color, 5%);
+        }
+
+        &:focus{
+            color: $header-color;
             background: lighten($header-background-color, 5%);
         }
     }

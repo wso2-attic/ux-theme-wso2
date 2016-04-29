@@ -82,6 +82,7 @@
 
     // Actual tabs (as links)
     > a {
+      color: $nav-tabs-link-color;
       margin-right: 2px;
       line-height: $line-height-base;
       border: 1px solid transparent;
