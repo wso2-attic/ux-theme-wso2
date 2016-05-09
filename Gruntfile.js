@@ -11,8 +11,8 @@ module.exports = function(grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    'build/products/apim/css/apim-publisher.css': 'config/apim/publisher.scss',
-                    'build/products/apim/css/apim-store.css': 'config/apim/store.scss',
+                    'build/products/apim/css/apim-publisher.css': 'config/product-apim/publisher.scss',
+                    'build/products/apim/css/apim-store.css': 'config/product-apim/store.scss',
                 }
             },
             main: {
@@ -27,8 +27,8 @@ module.exports = function(grunt) {
         cssmin: {
             apim:{ 
                 files: {
-                    'build/products/apim/css/apim-publisher.min.css': 'build/products/apim/css/apim-publisher.css',
-                    'build/products/apim/css/apim-store.min.css': 'build/products/apim/css/apim-store.css',
+                    'build/products/product-apim/css/apim-publisher.min.css': 'build/products/product-apim/css/apim-publisher.css',
+                    'build/products/product-apim/css/apim-store.min.css': 'build/products/product-apim/css/apim-store.css',
                 }
             },
             main:{ 

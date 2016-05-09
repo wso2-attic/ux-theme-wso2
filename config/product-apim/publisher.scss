@@ -14,6 +14,7 @@
 ~   limitations under the License.
 */
 
-@import 'store-variables';
-@import '../../scss/theme/variables';
+$brand-primary: #fdae61 !default;
+
+// importing base sass
 @import '../../scss/base';

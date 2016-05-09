@@ -14,6 +14,10 @@
 ~   limitations under the License.
 */
 
-@import '../config/scss/store-config';
-@import 'theme/store-variables';
-@import 'base';
+$brand-primary: #1a78d8;
+$header-background-color: #1f1f1f;
+$body-bg: #efefef;
+$navbar-height: 40px;
+
+// importing base sass
+@import '../../scss/base';

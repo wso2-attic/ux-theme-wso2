@@ -1,57 +1,58 @@
-@import "bootstrap/stylesheets/bootstrap/mixins";
+@import 'modules/variables';
+@import "vendor/bootstrap/stylesheets/bootstrap/mixins";
 
 // Reset and dependencies
-@import "bootstrap/stylesheets/bootstrap/normalize";
-@import "bootstrap/stylesheets/bootstrap/print";
+@import "vendor/bootstrap/stylesheets/bootstrap/normalize";
+@import "vendor/bootstrap/stylesheets/bootstrap/print";
 
 // Core CSS
-@import "bootstrap/stylesheets/bootstrap/scaffolding";
-@import "bootstrap/stylesheets/bootstrap/type";
-@import "bootstrap/stylesheets/bootstrap/code";
-@import "bootstrap/stylesheets/bootstrap/grid";
-@import "bootstrap/stylesheets/bootstrap/tables";
-@import "bootstrap/stylesheets/bootstrap/forms";
-@import "bootstrap/stylesheets/bootstrap/buttons";
-@import "theme/buttons-extension";
+@import "vendor/bootstrap/stylesheets/bootstrap/scaffolding";
+@import "vendor/bootstrap/stylesheets/bootstrap/type";
+@import "vendor/bootstrap/stylesheets/bootstrap/code";
+@import "vendor/bootstrap/stylesheets/bootstrap/grid";
+@import "vendor/bootstrap/stylesheets/bootstrap/tables";
+@import "vendor/bootstrap/stylesheets/bootstrap/forms";
+@import "vendor/bootstrap/stylesheets/bootstrap/buttons";
+@import "modules/buttons-extension";
 
 
 // Components
-@import 'theme/header';
-@import 'theme/footer';
-@import "bootstrap/stylesheets/bootstrap/component-animations";
-@import "bootstrap/stylesheets/bootstrap/dropdowns";
-@import "bootstrap/stylesheets/bootstrap/button-groups";
-@import "bootstrap/stylesheets/bootstrap/input-groups";
-@import "bootstrap/stylesheets/bootstrap/navs";
-@import "bootstrap/stylesheets/bootstrap/navbar";
-@import "bootstrap/stylesheets/bootstrap/breadcrumbs";
-@import "theme/breadcrumbs-extension";
-@import "bootstrap/stylesheets/bootstrap/pagination";
-@import "bootstrap/stylesheets/bootstrap/pager";
-@import "bootstrap/stylesheets/bootstrap/labels";
-@import "bootstrap/stylesheets/bootstrap/badges";
-@import "bootstrap/stylesheets/bootstrap/jumbotron";
-@import "bootstrap/stylesheets/bootstrap/thumbnails";
-@import "bootstrap/stylesheets/bootstrap/alerts";
-@import "theme/alerts-extension";
-@import "theme/messages";
-@import "bootstrap/stylesheets/bootstrap/progress-bars";
-@import "bootstrap/stylesheets/bootstrap/media";
-@import "bootstrap/stylesheets/bootstrap/list-group";
-@import "bootstrap/stylesheets/bootstrap/panels";
-@import "bootstrap/stylesheets/bootstrap/responsive-embed";
-@import "bootstrap/stylesheets/bootstrap/wells";
-@import "bootstrap/stylesheets/bootstrap/close";
+@import 'modules/header';
+@import 'modules/footer';
+@import "vendor/bootstrap/stylesheets/bootstrap/component-animations";
+@import "vendor/bootstrap/stylesheets/bootstrap/dropdowns";
+@import "vendor/bootstrap/stylesheets/bootstrap/button-groups";
+@import "vendor/bootstrap/stylesheets/bootstrap/input-groups";
+@import "vendor/bootstrap/stylesheets/bootstrap/navs";
+@import "vendor/bootstrap/stylesheets/bootstrap/navbar";
+@import "vendor/bootstrap/stylesheets/bootstrap/breadcrumbs";
+@import "modules/breadcrumbs-extension";
+@import "vendor/bootstrap/stylesheets/bootstrap/pagination";
+@import "vendor/bootstrap/stylesheets/bootstrap/pager";
+@import "vendor/bootstrap/stylesheets/bootstrap/labels";
+@import "vendor/bootstrap/stylesheets/bootstrap/badges";
+@import "vendor/bootstrap/stylesheets/bootstrap/jumbotron";
+@import "vendor/bootstrap/stylesheets/bootstrap/thumbnails";
+@import "vendor/bootstrap/stylesheets/bootstrap/alerts";
+@import "modules/alerts-extension";
+@import "modules/messages";
+@import "vendor/bootstrap/stylesheets/bootstrap/progress-bars";
+@import "vendor/bootstrap/stylesheets/bootstrap/media";
+@import "vendor/bootstrap/stylesheets/bootstrap/list-group";
+@import "vendor/bootstrap/stylesheets/bootstrap/panels";
+@import "vendor/bootstrap/stylesheets/bootstrap/responsive-embed";
+@import "vendor/bootstrap/stylesheets/bootstrap/wells";
+@import "vendor/bootstrap/stylesheets/bootstrap/close";
 
 // Components w/ JavaScript
-@import "bootstrap/stylesheets/bootstrap/modals";
-@import "bootstrap/stylesheets/bootstrap/tooltip";
-@import "bootstrap/stylesheets/bootstrap/popovers";
-@import "bootstrap/stylesheets/bootstrap/carousel";
+@import "vendor/bootstrap/stylesheets/bootstrap/modals";
+@import "vendor/bootstrap/stylesheets/bootstrap/tooltip";
+@import "vendor/bootstrap/stylesheets/bootstrap/popovers";
+@import "vendor/bootstrap/stylesheets/bootstrap/carousel";
 
 // Utility classes
-@import "bootstrap/stylesheets/bootstrap/utilities";
-@import "bootstrap/stylesheets/bootstrap/responsive-utilities";
-@import 'theme/utilities';
+@import "vendor/bootstrap/stylesheets/bootstrap/utilities";
+@import "vendor/bootstrap/stylesheets/bootstrap/responsive-utilities";
+@import 'modules/utilities';
 
-@import 'theme/old'; //TODO: Remove after merge all
+@import 'modules/old'; //TODO: Remove after merge all

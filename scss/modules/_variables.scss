@@ -28,6 +28,7 @@ $brand-success: #5cb85c !default;
 $brand-info: #009DA7 !default;
 $brand-warning: #f0ad4e !default;
 $brand-danger: #d9534f !default;
+$brand-disabled: $gray !default;
 
 $body-bg: #fff !default;
 $text-color: $gray-dark !default;
@@ -112,6 +113,10 @@ $state-warning-border: $brand-warning !default;
 $state-danger-text: $brand-danger !default;
 $state-danger-bg: $brand-danger !default;
 $state-danger-border: $brand-danger !default;
+
+$state-disabled-text: $brand-disabled !default;
+$state-disabled-bg: $brand-disabled !default;
+$state-disabled-border: $brand-disabled !default;
 
 // Header
 //--------------------------------------------------------------------------------------------------
