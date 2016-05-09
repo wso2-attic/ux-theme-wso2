@@ -3128,7 +3128,7 @@ header.header-default {
   background: #1f1f1f;
   color: #fff;
 }
-header a {
+header a, header a:hover {
   color: #fff;
   text-decoration: none;
 }
@@ -3155,6 +3155,10 @@ header .nav > li > a {
   height: 50px;
 }
 header .nav > li > a:hover {
+  background: #2c2c2c;
+}
+header .nav > li > a:focus {
+  color: #fff;
   background: #2c2c2c;
 }
 header .nav .open > a,
@@ -3777,6 +3781,7 @@ tbody.collapse.in {
   margin-bottom: -1px;
 }
 .nav-tabs > li > a {
+  color: #222;
   margin-right: 2px;
   line-height: 1.42857;
   border: 1px solid transparent;
@@ -7262,7 +7267,6 @@ body.inverse {
 
 a, a:hover, a:focus, a:active {
   text-decoration: none;
-  color: inherit;
   cursor: pointer;
 }
 
@@ -7857,6 +7861,8 @@ ul.sidebar-messages > li {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .dropdown-menu.arrow:before, .dropdown-menu.arrow.arrow-top-left:before {

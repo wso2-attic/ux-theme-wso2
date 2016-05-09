@@ -43,6 +43,11 @@ header {
         &:hover {
             background: lighten($header-background-color, 5%);
         }
+
+        &:focus{
+            color: $header-color;
+            background: lighten($header-background-color, 5%);
+        }
     }
     .nav .open > a,
     .nav .open > a:hover,
