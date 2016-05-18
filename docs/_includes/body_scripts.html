@@ -31,7 +31,7 @@
     <!-- ===== /Custom Libs ===== -->
 
     <!-- Theme WSO2 JS -->
-    <script src="{{ "libs/theme-wso2_1.0.0/js/theme-wso2.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "libs/" | prepend: site.baseurl }}{{ site.name }}_{{ site.version }}/js/{{ site.name }}.min.js" | prepend: site.baseurl }}"></script>
 
     <!-- Custom JS -->
     <script src="{{ "js/libs/requirejs_2.1.18/require.js" | prepend: site.baseurl }}" data-main="{{ "js/app.js" | prepend: site.baseurl }}"></script>

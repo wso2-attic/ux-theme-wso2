@@ -13,9 +13,9 @@ to compile scss and build default
 ```
 grunt
 ```
-to compile both source & docs
+to compile all + docs
 ```
-grunt all
+grunt full
 ```
 to compile only docs
 ```

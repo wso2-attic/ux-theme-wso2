@@ -41,7 +41,7 @@ module.exports = function(grunt) {
         concat: {
             dist: {
                 files: {
-                    'build/js/loading.js': ['templates/js-header.js','js/loading.js','templates/js-footer.js'],
+                    //'build/js/loading.js': ['templates/js-header.js','js/loading.js','templates/js-footer.js'],
                     'build/js/<%= pkg.name %>.js': [
                         'templates/js-header.js',
                         'js/loading.js',
@@ -75,21 +75,6 @@ module.exports = function(grunt) {
             my_target: {
                 files: {
                     'build/js/<%= pkg.name %>.min.js': ['build/js/<%= pkg.name %>.js']
-                }
-            }
-        },
-        json_generator: {
-            target: {
-                dest: "build/build.json",
-                options: {
-                    "name": "<%= pkg.name %>",
-                    "version": "<%= pkg.version %>",
-                    "url": "<%= pkg.url %>",
-                    "git": "<%= pkg.git %>",
-                    "designer": "<%= pkg.designer %>",
-                    "designerURL": "<%= pkg.designerURL %>",
-                    "license": "<%= pkg.license %>",
-                    "licenseURL": "<%= pkg.licenseURL %>"
                 }
             }
         },
@@ -132,13 +117,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-json-generator');
     grunt.loadNpmTasks('grunt-jekyll');
     
     // Default task(s).
-    grunt.registerTask('default', ['sass:main','cssmin:main','concat','uglify','copy:main']);
-    grunt.registerTask('all', ['sass','cssmin','concat','uglify','json_generator','copy','jekyll']);
-    grunt.registerTask('docs', ['json_generator','jekyll']);
+    grunt.registerTask('default', ['sass:main','cssmin:main','concat','uglify','copy:main','jekyll']);
+    grunt.registerTask('full', ['sass','cssmin','concat','uglify','copy','jekyll']);
+    grunt.registerTask('docs', ['jekyll']);
     
     grunt.registerTask('apim', ['sass:apim','cssmin:apim','concat','uglify','copy:apim']);
 

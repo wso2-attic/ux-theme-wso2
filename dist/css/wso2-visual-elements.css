@@ -14,9 +14,6 @@
 ~   See the License for the specific language governing permissions and
 ~   limitations under the License.
 */
-/* ========================================================================
- * fonts
- * ======================================================================== */
 @font-face {
   font-family: "Roboto";
   font-style: "italic";
@@ -589,6 +586,31 @@ hr {
 
 [role="button"] {
   cursor: pointer;
+}
+
+* {
+  outline: none !important;
+}
+
+*:before,
+*:after {
+  outline: none !important;
+}
+
+html {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-weight: 300;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -3117,9 +3139,6 @@ input[type="button"].btn-block {
   background-color: #fff;
 }
 
-/* ========================================================================
- * header styles
- * ======================================================================== */
 header {
   min-height: 50px;
   position: relative;
@@ -3157,6 +3176,10 @@ header .nav > li > a {
 header .nav > li > a:hover {
   background: #262626;
 }
+header .nav > li > a:focus {
+  color: #fff;
+  background: #262626;
+}
 header .nav .open > a,
 header .nav .open > a:hover,
 header .nav .open > a:focus {
@@ -3172,9 +3195,6 @@ header .fw-inverse, header .fa-inverse {
   color: #191919;
 }
 
-/* ========================================================================
- * footer styles
- * ======================================================================== */
 footer {
   width: 100%;
   min-height: 40px;
@@ -3199,6 +3219,9 @@ footer a, footer a:hover {
   color: #cbcbcb;
 }
 
+body.sticky-footer {
+  padding-bottom: 40px;
+}
 body.sticky-footer footer {
   position: absolute;
   bottom: 0;
@@ -4423,9 +4446,6 @@ tbody.collapse.in {
   color: #fff;
 }
 
-/* ========================================================================
- * breadcrumb styles
- * ======================================================================== */
 .breadcrumb {
   margin: 0;
   text-transform: uppercase;
@@ -4773,6 +4793,58 @@ a.thumbnail.active {
   border-color: #2c313b;
 }
 
+.thumbnail.icon {
+  border: none;
+  margin: 0;
+  background: #2c313b;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.thumbnail.icon:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 100%;
+}
+.thumbnail.icon > .square-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.thumbnail.icon > .square-element:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.thumbnail.icon > img {
+  width: 100%;
+}
+
+.thumbnail-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.thumbnail-list:before, .thumbnail-list:after {
+  content: " ";
+  display: table;
+}
+.thumbnail-list:after {
+  clear: both;
+}
+.thumbnail-list li {
+  float: left;
+}
+
 .alert {
   padding: 15px 50px 15px 15px;
   margin-bottom: 20px;
@@ -4854,9 +4926,6 @@ a.thumbnail.active {
   color: #e6e6e6;
 }
 
-/* ========================================================================
- * alert styles
- * ======================================================================== */
 .alert {
   position: relative;
 }
@@ -4889,58 +4958,6 @@ a.thumbnail.active {
 .alert.alert-danger > .close {
   color: #fff;
   background: #220807;
-}
-
-/* ========================================================================
- * message styles
- * ======================================================================== */
-.message {
-  padding: 20px;
-  margin: 20px 0;
-  border-left: 5px solid transparent;
-  background: #f9f9f9;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-}
-.message h4 {
-  margin-top: 0;
-  margin-bottom: 5px;
-}
-.message h4 .icon {
-  padding-bottom: 3px;
-  margin-right: 5px;
-}
-.message p:last-child {
-  margin-bottom: 0;
-}
-.message + .message {
-  margin-top: -5px;
-}
-
-.message-success {
-  border-left-color: #5cb85c;
-}
-.message-success h4 {
-  color: #5cb85c;
-}
-.message-info {
-  border-left-color: #009DA7;
-}
-.message-info h4 {
-  color: #009DA7;
-}
-.message-warning {
-  border-left-color: #f0ad4e;
-}
-.message-warning h4 {
-  color: #f0ad4e;
-}
-.message-danger {
-  border-left-color: #d9534f;
-}
-.message-danger h4 {
-  color: #d9534f;
 }
 
 @-webkit-keyframes progress-bar-stripes {
@@ -5735,6 +5752,55 @@ button.close {
   background: transparent;
   border: 0;
   -webkit-appearance: none;
+}
+
+.message {
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 5px solid transparent;
+  background: #f9f9f9;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.message h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.message h4 .icon {
+  padding-bottom: 3px;
+  margin-right: 5px;
+}
+.message p:last-child {
+  margin-bottom: 0;
+}
+.message + .message {
+  margin-top: -5px;
+}
+
+.message-success {
+  border-left-color: #5cb85c;
+}
+.message-success h4 {
+  color: #5cb85c;
+}
+.message-info {
+  border-left-color: #009DA7;
+}
+.message-info h4 {
+  color: #009DA7;
+}
+.message-warning {
+  border-left-color: #f0ad4e;
+}
+.message-warning h4 {
+  color: #f0ad4e;
+}
+.message-danger {
+  border-left-color: #d9534f;
+}
+.message-danger h4 {
+  color: #d9534f;
 }
 
 .modal-open {
@@ -7162,6 +7228,10 @@ button.close {
     display: inline-block !important;
   }
 }
+.no-wrap {
+  white-space: nowrap;
+}
+
 /* ========================================================================
  * icon styles
  * ======================================================================== */
@@ -7217,31 +7287,6 @@ button.close {
 /* ========================================================================
  * document styles
  * ======================================================================== */
-* {
-  outline: none !important;
-}
-
-html {
-  position: relative;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
-body {
-  min-height: 100%;
-  color: #222;
-  font-weight: 300;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-body.sticky-footer {
-  padding-bottom: 40px;
-}
-
 body > .page-content-wrapper > .container,
 body > .page-content-wrapper > .container-fluid {
   padding: 0;
@@ -7262,7 +7307,6 @@ body.inverse {
 
 a, a:hover, a:focus, a:active {
   text-decoration: none;
-  color: inherit;
   cursor: pointer;
 }
 
@@ -7293,10 +7337,6 @@ pre {
 .badge {
   margin-bottom: 5px;
   padding: 4px 7px;
-}
-
-.no-wrap {
-  white-space: nowrap;
 }
 
 .fade-edge:after {
@@ -7330,70 +7370,6 @@ body.inverse .fade-edge:after {
 /* ========================================================================
  * row/col styles
  * ======================================================================== */
-.row.no-gutter {
-  margin-right: 0;
-  margin-left: 0;
-}
-
-.row.no-gutter [class*='col-']:not(:first-child),
-.row.no-gutter [class*='col-']:not(:last-child) {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.col-fixed-fill {
-  overflow: hidden;
-}
-
-.col-fixed-left {
-  float: left;
-}
-
-.col-fixed-right {
-  float: right;
-}
-
-.col-fixed-1x {
-  width: 50px;
-}
-.col-fixed-2x {
-  width: 100px;
-}
-.col-fixed-3x {
-  width: 200px;
-}
-.col-fixed-4x {
-  width: 300px;
-}
-
-@media only screen and (max-width: 768px) {
-  .col-fixed-1x {
-    width: 25px;
-  }
-  .col-fixed-2x {
-    width: 50px;
-  }
-  .col-fixed-3x {
-    width: 100px;
-  }
-  .col-fixed-4x {
-    width: 150px;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .col-fixed-1x {
-    width: 12px;
-  }
-  .col-fixed-2x {
-    width: 25px;
-  }
-  .col-fixed-3x {
-    width: 50px;
-  }
-  .col-fixed-4x {
-    width: 75px;
-  }
-}
 /* ========================================================================
  * navbar styles
  * ======================================================================== */
@@ -7857,6 +7833,8 @@ ul.sidebar-messages > li {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .dropdown-menu.arrow:before, .dropdown-menu.arrow.arrow-top-left:before {
@@ -8702,73 +8680,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:first-child, 
 }
 
 /* ========================================================================
- * thumbnail styles
- * ======================================================================== */
-.thumbnail {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-}
-
-.thumbnail.icon {
-  border: none;
-  margin: 0;
-  background: #2c313b;
-  color: #fff;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-}
-.thumbnail.icon:before {
-  display: block;
-  content: "";
-  width: 100%;
-  padding-top: 100%;
-}
-.thumbnail.icon > .square-element {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.thumbnail.icon .square-element:before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-.thumbnail.icon img {
-  width: 100%;
-}
-
-/* ========================================================================
- * thumbnail list styles
- * ======================================================================== */
-.thumbnail-list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-.thumbnail-list:before, .thumbnail-list:after {
-  content: " ";
-  display: table;
-}
-.thumbnail-list:after {
-  clear: both;
-}
-
-.thumbnail-list li {
-  float: left;
-}
-
-/* ========================================================================
  * pagination styles
  * ======================================================================== */
 .pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span {
@@ -9334,4 +9245,4 @@ a.list-group-item:hover {
   }
 }
 
-/*# sourceMappingURL=theme-wso2.css.map */
+/*# sourceMappingURL=wso2-visual-elements.css.map */
