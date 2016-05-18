@@ -10,11 +10,13 @@ header {
         background: $header-background-color;
         color: $header-color;
     }
-    
-    a {
+    a,
+    a:hover,
+    a:visited,
+    a:focus {
         color: $header-color;
         text-decoration: none;
-    }  
+    }
     .brand {
         padding: 12px 0;
 

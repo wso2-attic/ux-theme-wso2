@@ -3147,7 +3147,10 @@ header.header-default {
   background: #191919;
   color: #fff;
 }
-header a {
+header a,
+header a:hover,
+header a:visited,
+header a:focus {
   color: #fff;
   text-decoration: none;
 }
