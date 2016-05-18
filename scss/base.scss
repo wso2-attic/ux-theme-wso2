@@ -7,6 +7,7 @@
 
 // Core CSS
 @import "vendor/bootstrap/stylesheets/bootstrap/scaffolding";
+@import 'modules/scaffolding-extension';
 @import "vendor/bootstrap/stylesheets/bootstrap/type";
 @import "vendor/bootstrap/stylesheets/bootstrap/code";
 @import "vendor/bootstrap/stylesheets/bootstrap/grid";
@@ -33,9 +34,9 @@
 @import "vendor/bootstrap/stylesheets/bootstrap/badges";
 @import "vendor/bootstrap/stylesheets/bootstrap/jumbotron";
 @import "vendor/bootstrap/stylesheets/bootstrap/thumbnails";
+@import "modules/thumbnails-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/alerts";
 @import "modules/alerts-extension";
-@import "modules/messages";
 @import "vendor/bootstrap/stylesheets/bootstrap/progress-bars";
 @import "vendor/bootstrap/stylesheets/bootstrap/media";
 @import "vendor/bootstrap/stylesheets/bootstrap/list-group";
@@ -43,6 +44,7 @@
 @import "vendor/bootstrap/stylesheets/bootstrap/responsive-embed";
 @import "vendor/bootstrap/stylesheets/bootstrap/wells";
 @import "vendor/bootstrap/stylesheets/bootstrap/close";
+@import "modules/messages";
 
 // Components w/ JavaScript
 @import "vendor/bootstrap/stylesheets/bootstrap/modals";
@@ -55,4 +57,4 @@
 @import "vendor/bootstrap/stylesheets/bootstrap/responsive-utilities";
 @import 'modules/utilities';
 
-@import 'modules/old'; //TODO: Remove after merge all
+@import 'modules/old'; //TODO: Remove after merge

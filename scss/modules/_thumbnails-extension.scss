@@ -1,0 +1,29 @@
+.thumbnail.icon {
+    border: none;
+    margin: 0;
+    background: $brand-primary;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    @include square-ratio(1,1);
+    
+    & > .square-element:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+    }
+    
+    & > img {
+        width: 100%;
+    }
+}
+
+.thumbnail-list {
+    @include reset-default;
+    @include clearfix;
+    
+    li {
+       float: left; 
+    }
+}

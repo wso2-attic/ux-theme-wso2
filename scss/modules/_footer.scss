@@ -1,6 +1,6 @@
-/* ========================================================================
- * footer styles
- * ======================================================================== */
+//
+// Footer
+// --------------------------------------------------
 
 footer {
     width: 100%;
@@ -32,8 +32,12 @@ footer {
     }
 }
 
-body.sticky-footer footer {
-    position: absolute;
-    bottom: 0;
-    z-index: 1000;
+body.sticky-footer {
+    padding-bottom: $footer-height;
+    
+    footer {
+        position: absolute;
+        bottom: 0;
+        z-index: 1000;
+    }
 }

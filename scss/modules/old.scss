@@ -99,31 +99,6 @@ $sidebar-width-default: 350px !default;
  * document styles
  * ======================================================================== */
 
-* {
-    outline: none !important;
-}
-
-html {
-    position: relative;
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    width: 100%;
-}
-
-body {
-    min-height: 100%;
-    color: $base-dark-color;
-    font-weight: $font-default-weight;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-body.sticky-footer {
-    padding-bottom: $footer-height;
-}
-
 body > .page-content-wrapper {
     //height: 100vh;
     //height: $page-content-wrapper-height;
@@ -179,10 +154,6 @@ pre {
     padding: 4px 7px;
 }
 
-.no-wrap {
-    white-space: nowrap;
-}
-
 .fade-edge {
     @include fade-color;
 }
@@ -195,77 +166,77 @@ body.inverse .fade-edge {
  * row/col styles
  * ======================================================================== */
 
-.row.no-gutter {
-    margin-right: 0;
-    margin-left: 0;
-}
-
-.row.no-gutter [class*='col-']:not(:first-child),
-.row.no-gutter [class*='col-']:not(:last-child) {
-    padding-right:0;
-    padding-left:0;
-}
-
-.col-fixed-fill {
-    overflow: hidden;
-}
-
-.col-fixed-left {
-    float: left;
-}
-
-.col-fixed-right {
-    float: right;
-}
-
-.col-fixed {
-    &-1x {
-        width: 50px;
-    }
-    &-2x {
-        width: 100px;
-    }
-    &-3x {
-        width: 200px;
-    }
-    &-4x {
-        width: 300px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .col-fixed {
-        &-1x {
-            width: 25px;
-        }
-        &-2x {
-            width: 50px;
-        }
-        &-3x {
-            width: 100px
-        }
-        &-4x {
-            width: 150px;
-        }
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .col-fixed {
-        &-1x {
-            width: 12px;
-        }
-        &-2x {
-            width: 25px;
-        }
-        &-3x {
-            width: 50px;
-        }
-        &-4x {
-            width: 75px;
-        }
-    }
-}
+//.row.no-gutter {
+//    margin-right: 0;
+//    margin-left: 0;
+//}
+//
+//.row.no-gutter [class*='col-']:not(:first-child),
+//.row.no-gutter [class*='col-']:not(:last-child) {
+//    padding-right:0;
+//    padding-left:0;
+//}
+//
+//.col-fixed-fill {
+//    overflow: hidden;
+//}
+//
+//.col-fixed-left {
+//    float: left;
+//}
+//
+//.col-fixed-right {
+//    float: right;
+//}
+//
+//.col-fixed {
+//    &-1x {
+//        width: 50px;
+//    }
+//    &-2x {
+//        width: 100px;
+//    }
+//    &-3x {
+//        width: 200px;
+//    }
+//    &-4x {
+//        width: 300px;
+//    }
+//}
+//
+//@media only screen and (max-width: 768px) {
+//    .col-fixed {
+//        &-1x {
+//            width: 25px;
+//        }
+//        &-2x {
+//            width: 50px;
+//        }
+//        &-3x {
+//            width: 100px
+//        }
+//        &-4x {
+//            width: 150px;
+//        }
+//    }
+//}
+//
+//@media only screen and (max-width: 480px) {
+//    .col-fixed {
+//        &-1x {
+//            width: 12px;
+//        }
+//        &-2x {
+//            width: 25px;
+//        }
+//        &-3x {
+//            width: 50px;
+//        }
+//        &-4x {
+//            width: 75px;
+//        }
+//    }
+//}
 
 /* ========================================================================
  * navbar styles
@@ -1648,49 +1619,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr {
         padding-left: 40px !important;
     }
 }
-
-/* ========================================================================
- * thumbnail styles
- * ======================================================================== */
-
-.thumbnail {
-    @include border-radius;
-}
-
-.thumbnail.icon {
-    border: none;
-    margin: 0;
-    background: $brand-primary;
-    color: #fff;
-    text-align: center;
-    overflow: hidden;
-    @include square-ratio(1,1);
-}
-
-.thumbnail.icon .square-element:before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    @include transform(translate(-50%, -50%));
-}
-
-.thumbnail.icon img {
-    width: 100%;
-}
-
-/* ========================================================================
- * thumbnail list styles
- * ======================================================================== */
-
-.thumbnail-list {
-    @include reset-default;
-    @include clearfix;
-}
-
-.thumbnail-list li {
-    float: left;
-}
-
 
 /* ========================================================================
  * pagination styles

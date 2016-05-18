@@ -41,7 +41,7 @@ $link-hover-decoration: underline !default;
 $font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
-$font-family-base: 'Roboto', Arial, Helvetica, sans-serif !default;;
+$font-family-base: 'Roboto', Arial, Helvetica, sans-serif !default;
 
 $font-size-base: 14px !default;
 $font-size-large: ceil(($font-size-base * 1.25)) !default; // ~18px
@@ -62,14 +62,16 @@ $headings-font-weight: 300 !default;
 $headings-line-height: 1.1 !default;
 $headings-color: inherit !default;
 
-//* Iconography
+$font-weight-base: 300 !default;
+
+// Iconography
 //--------------------------------------------------------------------------------------------------
 $icon-font-path: "../fonts/Bootstrap/" !default;
 $icon-font-name: "glyphicons-halflings-regular" !default;
 $icon-font-svg-id: "glyphicons_halflingsregular" !default;
 $icon-font: 'font-wso2' !default;
 
-//* Components
+// Components
 //--------------------------------------------------------------------------------------------------
 $padding-base-vertical: 6px !default;
 $padding-base-horizontal: 12px !default;
@@ -90,13 +92,13 @@ $border-radius-base: 0 !default;
 $border-radius-large: 0 !default;
 $border-radius-small: 0 !default;
 
-//** Global color for active items (e.g., navs or dropdowns).
+// Global color for active items (e.g., navs or dropdowns).
 $component-active-color: #fff !default;
 $component-active-bg: $brand-primary !default;
 $caret-width-base: 4px !default;
 $caret-width-large: 5px !default;
 
-//* State colors
+// State colors
 //--------------------------------------------------------------------------------------------------
 $state-success-text: $brand-success !default;
 $state-success-bg: $brand-success !default;
@@ -130,7 +132,7 @@ $footer-height: 40px !default;
 $footer-background: $gray-darker !default;
 $footer-color: #cbcbcb !default;
 
-//* Breadcrumb
+// Breadcrumb
 //--------------------------------------------------------------------------------------------------
 $breadcrumb-height: 30px !default;
 $breadcrumb-padding-vertical: 5px !default;
@@ -142,7 +144,7 @@ $breadcrumb-link-hover-color: #fff !default;
 $breadcrumb-active-color: #fff !default;
 $breadcrumb-separator: "/" !default;
 
-//* Alerts
+// Alerts
 //--------------------------------------------------------------------------------------------------
 $alert-padding: 15px 50px 15px 15px !default;
 $alert-border-radius: $border-radius-base !default;
@@ -176,6 +178,44 @@ $alert-danger-border: $state-danger-border !default;
 $alert-danger-close-bg: darken($alert-danger-bg, 50%) !default;
 $alert-danger-close-text: #fff !default;
 
+// Buttons
+//--------------------------------------------------------------------------------------------------
+$btn-font-weight: normal !default;
+
+$btn-default-color: #333 !default;
+$btn-default-bg: #fff !default;
+$btn-default-border: #ccc !default;
+
+$btn-primary-color: #fff !default;
+$btn-primary-bg: $brand-primary !default;
+$btn-primary-border: darken($btn-primary-bg, 5%) !default;
+
+$btn-secondary-color: #fff !default;
+$btn-secondary-bg: $brand-secondary !default;
+$btn-secondary-border: darken($btn-secondary-bg, 5%) !default;
+
+$btn-success-color: #fff !default;
+$btn-success-bg: $brand-success !default;
+$btn-success-border: darken($btn-success-bg, 5%) !default;
+
+$btn-info-color: #fff !default;
+$btn-info-bg: $brand-info !default;
+$btn-info-border: darken($btn-info-bg, 5%) !default;
+
+$btn-warning-color: #fff !default;
+$btn-warning-bg: $brand-warning !default;
+$btn-warning-border: darken($btn-warning-bg, 5%) !default;
+
+$btn-danger-color: #fff !default;
+$btn-danger-bg: $brand-danger !default;
+$btn-danger-border: darken($btn-danger-bg, 5%) !default;
+
+$btn-link-disabled-color: $gray-light !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius-base: $border-radius-base !default;
+$btn-border-radius-large: $border-radius-large !default;
+$btn-border-radius-small: $border-radius-small !default;
 
 //== Tables
 //
@@ -196,48 +236,6 @@ $table-bg-active:               $table-bg-hover !default;
 
 //** Border color for table and cell borders.
 $table-border-color:            #ddd !default;
-
-
-//== Buttons
-//
-//## For each of Bootstrap's buttons, define text, background and border color.
-
-$btn-font-weight:                normal !default;
-
-$btn-default-color:              #333 !default;
-$btn-default-bg:                 #fff !default;
-$btn-default-border:             #ccc !default;
-
-$btn-primary-color:              #fff !default;
-$btn-primary-bg:                 $brand-primary !default;
-$btn-primary-border:             darken($btn-primary-bg, 5%) !default;
-
-$btn-secondary-color:            #fff !default;
-$btn-secondary-bg:               $brand-secondary !default;
-$btn-secondary-border:           darken($btn-secondary-bg, 5%) !default;
-
-$btn-success-color:              #fff !default;
-$btn-success-bg:                 $brand-success !default;
-$btn-success-border:             darken($btn-success-bg, 5%) !default;
-
-$btn-info-color:                 #fff !default;
-$btn-info-bg:                    $brand-info !default;
-$btn-info-border:                darken($btn-info-bg, 5%) !default;
-
-$btn-warning-color:              #fff !default;
-$btn-warning-bg:                 $brand-warning !default;
-$btn-warning-border:             darken($btn-warning-bg, 5%) !default;
-
-$btn-danger-color:               #fff !default;
-$btn-danger-bg:                  $brand-danger !default;
-$btn-danger-border:              darken($btn-danger-bg, 5%) !default;
-
-$btn-link-disabled-color:        $gray-light !default;
-
-// Allows for customizing button radius independently from global border radius
-$btn-border-radius-base:         $border-radius-base !default;
-$btn-border-radius-large:        $border-radius-large !default;
-$btn-border-radius-small:        $border-radius-small !default;
 
 
 //== Forms
@@ -755,22 +753,13 @@ $panel-danger-border:         $state-danger-border !default;
 $panel-danger-heading-bg:     $state-danger-bg !default;
 
 
-//== Thumbnails
-//
-//##
-
-//** Padding around the thumbnail image
-$thumbnail-padding:           4px !default;
-//** Thumbnail background color
-$thumbnail-bg:                $body-bg !default;
-//** Thumbnail border color
-$thumbnail-border:            #ddd !default;
-//** Thumbnail border radius
-$thumbnail-border-radius:     $border-radius-base !default;
-
-//** Custom text color for thumbnail captions
-$thumbnail-caption-color:     $text-color !default;
-//** Padding around the thumbnail caption
+// Thumbnails
+//--------------------------------------------------------------------------------------------------
+$thumbnail-padding: 4px !default;
+$thumbnail-bg: $body-bg !default;
+$thumbnail-border: #ddd !default;
+$thumbnail-border-radius: $border-radius-base !default;
+$thumbnail-caption-color: $text-color !default;
 $thumbnail-caption-padding:   9px !default;
 
 
