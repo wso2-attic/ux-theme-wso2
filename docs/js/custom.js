@@ -71,38 +71,38 @@ $(function(){
   
 });
 
-$('link[data-include]').each(function(){
-    var el = $(this),
-        template = $(this).data('include');
+//$('link[data-include]').each(function(){
+//    var el = $(this),
+//        template = $(this).data('include');
+//
+//    $.get(template, function(data){
+//        $(el).replaceWith(data);
+//    });
+//});
 
-    $.get(template, function(data){
-        $(el).replaceWith(data);
-    });
-});
-
-$('link[data-include-demo]').each(function(){
-
-    var el = $(this),
-        componentURL = 'libs/theme-wso2_1.0/components/' + $(this).data('include-demo') + '/';
-
-    $.get(componentURL + 'example.html',function(data){
-        $(el).replaceWith($(data).find('#example').html());
-    });
-
-    //var fileExt = ['css','js'];
-    //
-    //$.each(fileExt, function(index, value){
-    //    $.ajax({
-    //        url: componentURL + value,
-    //        success: function (data) {
-    //            $(data).find("a:contains(" + value + ")").each(function() {
-    //                console.log(componentURL + value + '/' + $(this).text());
-    //            });
-    //        }
-    //    });
-    //});
-
-});
+//$('link[data-include-demo]').each(function(){
+//
+//    var el = $(this),
+//        componentURL = 'libs/theme-wso2_1.0/components/' + $(this).data('include-demo') + '/';
+//
+//    $.get(componentURL + 'example.html',function(data){
+//        $(el).replaceWith($(data).find('#example').html());
+//    });
+//
+//    //var fileExt = ['css','js'];
+//    //
+//    //$.each(fileExt, function(index, value){
+//    //    $.ajax({
+//    //        url: componentURL + value,
+//    //        success: function (data) {
+//    //            $(data).find("a:contains(" + value + ")").each(function() {
+//    //                console.log(componentURL + value + '/' + $(this).text());
+//    //            });
+//    //        }
+//    //    });
+//    //});
+//
+//});
 
 
 
@@ -110,73 +110,73 @@ $('link[data-include-demo]').each(function(){
  *  accordion config
  ***********************************************************/
 
-$('#accordion1,#accordion2').on('shown.bs.collapse', function () {
-    var elem = $(this).children().children('.in');
-    var icon = $(elem).prev().find('.status').children();
-    var iconNow = $(this).children().children('.now').prev().find('.status').children();
-    var isIconStateDown = $(iconNow).hasClass('fw-down');
-
-    if($(elem).hasClass('in')){
-        $(elem).prev().find('input[type=radio]').prop('checked',true);
-        $(elem).addClass('now');
-    }
-
-    if(isIconStateDown){
-        $(iconNow).removeClass('fw-down');
-        $(iconNow).addClass('fw-up');
-    }
-
-});
-
-
-$('#accordion1,#accordion2').on('hidden.bs.collapse', function () {
-    var elem = $(this).children().children();
-    var icon = $(elem).prev().find('.status').children();
-    var iconNow = $(this).children().children('.now').prev().find('.status').children();
-    var isIconStateUp = $(iconNow).hasClass('fw-up');
-
-    if(isIconStateUp){
-        $(iconNow).removeClass('fw-up');
-        $(iconNow).addClass('fw-down');
-    }
+//$('#accordion1,#accordion2').on('shown.bs.collapse', function () {
+//    var elem = $(this).children().children('.in');
+//    var icon = $(elem).prev().find('.status').children();
+//    var iconNow = $(this).children().children('.now').prev().find('.status').children();
+//    var isIconStateDown = $(iconNow).hasClass('fw-down');
+//
+//    if($(elem).hasClass('in')){
+//        $(elem).prev().find('input[type=radio]').prop('checked',true);
+//        $(elem).addClass('now');
+//    }
+//
+//    if(isIconStateDown){
+//        $(iconNow).removeClass('fw-down');
+//        $(iconNow).addClass('fw-up');
+//    }
+//
+//});
 
 
-});
+//$('#accordion1,#accordion2').on('hidden.bs.collapse', function () {
+//    var elem = $(this).children().children();
+//    var icon = $(elem).prev().find('.status').children();
+//    var iconNow = $(this).children().children('.now').prev().find('.status').children();
+//    var isIconStateUp = $(iconNow).hasClass('fw-up');
+//
+//    if(isIconStateUp){
+//        $(iconNow).removeClass('fw-up');
+//        $(iconNow).addClass('fw-down');
+//    }
+//
+//
+//});
 
 /***********************************************************
  *  Secondary toggle navigation
  ***********************************************************/
 
-$('.secondary-nav').on('shown.bs.collapse', function(e){
-    $('.secondary-nav-toggle').removeClass('fw-down').addClass('fw-up');
-}).on('hidden.bs.collapse',function(e){
-    $('.secondary-nav-toggle').removeClass('fw-up').addClass('fw-down');
-})
+//$('.secondary-nav').on('shown.bs.collapse', function(e){
+//    $('.secondary-nav-toggle').removeClass('fw-down').addClass('fw-up');
+//}).on('hidden.bs.collapse',function(e){
+//    $('.secondary-nav-toggle').removeClass('fw-up').addClass('fw-down');
+//})
 
     /***********************************************************
      *  leafletjs map config
      ***********************************************************/
 
-$(function(){
-    if($('.map-container').length){
-        var lat = $('.map-container').data('lat'),
-                long    = $('.map-container').data('long'),
-                container = 'map1',
-                zoomLevel = 17,
-                tileSet = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                attrib =  '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-
-                if(lat != null && lat != undefined && lat != "" && long != null && long != undefined && long != "") {
-                    $('.map-error').hide();
-                    $('.map-container').show();
-                }else{
-                    $('.map-container').hide();
-                    $('.map-error').show();
-                }
-
-            var map = L.map(container).setView([lat,long], zoomLevel);
-
-        L.tileLayer(tileSet, { attribution: attrib}).addTo(map);
-        L.marker([lat,long]).addTo(map).bindPopup('Your are here..!').openPopup();
-    }
-});
+//$(function(){
+//    if($('.map-container').length){
+//        var lat = $('.map-container').data('lat'),
+//                long    = $('.map-container').data('long'),
+//                container = 'map1',
+//                zoomLevel = 17,
+//                tileSet = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+//                attrib =  '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+//
+//                if(lat != null && lat != undefined && lat != "" && long != null && long != undefined && long != "") {
+//                    $('.map-error').hide();
+//                    $('.map-container').show();
+//                }else{
+//                    $('.map-container').hide();
+//                    $('.map-error').show();
+//                }
+//
+//            var map = L.map(container).setView([lat,long], zoomLevel);
+//
+//        L.tileLayer(tileSet, { attribution: attrib}).addTo(map);
+//        L.marker([lat,long]).addTo(map).bindPopup('Your are here..!').openPopup();
+//    }
+//});

@@ -90,11 +90,13 @@ module.exports = function(grunt) {
                     { expand: true, cwd: 'build/js/', src: ['<%= pkg.name %>.js','<%= pkg.name %>.min.js'], dest: 'dist/js/' },
                     { expand: true, cwd: 'fonts/', src: ['**'], dest: 'dist/fonts/' },
                     { expand: true, cwd: 'images/', src: ['**'], dest: 'dist/images/' },
+                    { expand: true, cwd: 'themes/', src: ['**'], dest: 'dist/themes/' },
                     
                     { expand: true, cwd: 'dist/css/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/css/' },
                     { expand: true, cwd: 'dist/js/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/js/' },
                     { expand: true, cwd: 'dist/fonts/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/fonts/' },
-                    { expand: true, cwd: 'dist/images/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/images/' }
+                    { expand: true, cwd: 'dist/images/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/images/' },
+                    { expand: true, cwd: 'dist/themes/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/themes/' }
                 ],
             },
         },
