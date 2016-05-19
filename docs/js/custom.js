@@ -35,7 +35,100 @@ $(function(){
         ],
         responsive: true
     });
-
+    
+    var tableMembers = $('#members').datatables_extended({
+        ajax: "data/table.json",
+        columns: [
+            { "data": "ID" },
+            { "data": null },
+            { "data": "Email" }
+        ],
+        "columnDefs": [
+            {
+                "targets": 1,
+                "render": function (data, type, full, meta) {
+                  var html = data.Name + " - " + data.Position;
+                  return type === 'display' && html.length > 40 ?
+                      html.substr(0, 38) + '...' : html;
+                }
+            },
+            {
+                "targets": 2,
+                "data": "Email",
+                "render": function (data, type, full, meta) {
+                  return '<input type="text" class="form-control" value="'+data+'">';
+                }
+            },
+            {
+                "targets": 3,
+                "data": "ID",
+                "render": function (data, type, full, meta) {
+                  return   '<a href="#" class="btn btn-default">'+
+                                '<span class="fw-stack">'+
+                                    '<i class="fw fw-circle-outline fw-stack-2x"></i>'+
+                                    '<i class="fw fw-view fw-stack-1x"></i>'+
+                                '</span>'+
+                                '<span class="hidden-xs">View</span>'+
+                            '</a>'+
+                            '<a href="#" class="btn btn-default">'+
+                                '<span class="fw-stack">'+
+                                    '<i class="fw fw-circle-outline fw-stack-2x"></i>'+
+                                    '<i class="fw fw-edit fw-stack-1x"></i>'+
+                                '</span>'+
+                                '<span class="hidden-xs">Edit</span>'+
+                            '</a>'+
+                            '<a href="#" data-click-event="remove-form" class="btn btn-default">'+
+                                '<span class="fw-stack">'+
+                                    '<i class="fw fw-circle-outline fw-stack-2x"></i>'+
+                                    '<i class="fw fw-delete fw-stack-1x"></i>'+
+                                '</span>'+
+                                '<span class="hidden-xs">Delete</span>'+
+                            '</a>';
+                }
+            }
+        ],
+        "fnCreatedRow": function(nRow, aData, iDataIndex) {
+            $('td:eq(0)', nRow).attr('data-title', aData.ID);
+            $('td:eq(1)', nRow).attr('data-title', aData.Name);
+            $('td:eq(2)', nRow).attr('data-title', aData.Email);
+            $('td:eq(3)', nRow).addClass('text-right');
+        },
+        responsive: true
+    });
+    
+    $('#users').datatables_extended({
+        ajax: "data/table.json",
+        columns: [
+            { "data": "ID" },
+            { "data": "Device_Type" },
+            { "data": "OS" },
+            { "data": "Name" },
+            { "data": "Email" },
+            { "data": "Position" },
+            { "data": "Office" },
+            { "data": "Age" },
+            { "data": "Start_date" },
+            { "data": "Salary" }
+        ],
+        responsive: true
+    });
+    
+    $('#device-grid').datatables_extended({
+        ajax: "data/table.json",
+        columns: [
+            { "data": "ID" },
+            { "data": "Device_Type" },
+            { "data": "OS" },
+            { "data": "Name" },
+            { "data": "Email" },
+            { "data": "Position" },
+            { "data": "Office" },
+            { "data": "Age" },
+            { "data": "Start_date" },
+            { "data": "Salary" }
+        ],
+        responsive: true
+    });
 
     /***********************************************************
      *  noty config

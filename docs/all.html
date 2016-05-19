@@ -727,55 +727,32 @@ title: All
                 Table Template
                 ******************************************************************* -->
                 <div class="page-header" id="table">
-                    <h1>Tables</h1>
-                    <p class="lead">List Table Template</p>
+                    <h1>Data Tables</h1>
+                    <p class="lead">Simple Table Sample</p>
                 </div>
 
-                <script id="membersTemplate" type="application/x-handlebars-template">
-                    {{#each (limit data 5)}}
-                    <tr>
-                        <td data-title="ID">{{ID}}</td>
-                        <td data-title="Name">
-                            {{Name}} -
-
-                            {{#if Position}}
-                            <span>{{Position}}</span>
-                            {{else}}
-                            <span>Position not defined</span>
-                            {{/if}}
-                        </td>
-                        <td data-title="Email"><input type="text" class="form-control" value="{{{Email}}}"></td>
-                        <td class="text-right">
-                            <a href="#" data-click-event="remove-form" class="btn padding-reduce-on-grid-view">
-                                <span class="fw-stack">
-                                    <i class="fw fw-ring fw-stack-2x"></i>
-                                    <i class="fw fw-view fw-stack-1x"></i>
-                                </span>
-                                <span class="hidden-xs">View</span>
-                            </a>
-                            <a href="#" data-click-event="remove-form" class="btn padding-reduce-on-grid-view">
-                                <span class="fw-stack">
-                                    <i class="fw fw-ring fw-stack-2x"></i>
-                                    <i class="fw fw-edit fw-stack-1x"></i>
-                                </span>
-                                <span class="hidden-xs">Edit</span>
-                            </a>
-                            <a href="#" data-click-event="remove-form" class="btn padding-reduce-on-grid-view">
-                                <span class="fw-stack">
-                                    <i class="fw fw-ring fw-stack-2x"></i>
-                                    <i class="fw fw-delete fw-stack-1x"></i>
-                                </span>
-                                <span class="hidden-xs">Delete</span>
-                            </a>
-                        </td>
-                    </tr>
-                    {{/each}}
-                    {{#unless data}}
-                    <tr>
-                        <td colspan="4">No Data</td>
-                    </tr>
-                    {{/unless}}
-                </script>
+                <table id="ajax-table" class="table table-striped table-hover table-bordered display data-table" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Device Type</th>
+                            <th>OS</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody><!-- Dynamic Content Loads Here --></tbody>
+                </table>
+                
+                <div class="page-header" >
+                    <p class="lead">Custom Table</p>
+                </div>
+                
                 <table class="table table-responsive table-striped" id="members">
                     <thead>
                         <tr>
@@ -785,32 +762,12 @@ title: All
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody><!-- Handlebars Template Appends Here --></tbody>
-                </table>
-
-                <div class="page-header">
-                    <p class="lead">Data Table Template</p>
-                </div>
-
-                <table id="ajax-table" class="table table-striped table-hover table-bordered display data-table" cellspacing="0">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Device Type</th>
-                        <th>OS</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
-                    </tr>
-                    </thead>
+                    <tbody><!-- Dynamic Content Loads Here --></tbody>
                 </table>
 
                 <br/>
 
+<!--
                 <script id="usersTemplate" type="application/x-handlebars-template">
                     {{#each data}}
                     <tr>
@@ -854,6 +811,7 @@ title: All
                     </tr>
                     {{/each}}
                 </script>
+-->
                 <table class="table table-striped table-hover table-responsive list-table display responsive nowrap data-table" id="users">
                     <thead class="block">
                         <tr class="sort-row">
@@ -962,7 +920,7 @@ title: All
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody><!-- Handlebars Template Appends Here --></tbody>
+                    <tbody><!-- Dynamic Content Loads Here --></tbody>
                 </table>
 
                 <br/>

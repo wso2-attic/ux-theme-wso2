@@ -1,4 +1,3 @@
-$font-default-weight: 300 !default;
 $message-status: info, success, warning, danger  !default;
 
 $base-dark-color: #222 !default;
@@ -1499,13 +1498,13 @@ input[type=number].form-control {
 table.dataTable thead .sorting:after,
 table.dataTable thead .sorting_asc:after,
 table.dataTable thead .sorting_desc:after {
-    font-family: $icon-font;
+    font-family: $icon-font-name;
 }
 
 .dataTables_wrapper ul.sort-list li a:before,
 .dataTables_wrapper ul.sort-list li a.sorting_asc:before,
 .dataTables_wrapper ul.sort-list li a.sorting_desc:before {
-    font-family: $icon-font;
+    font-family: $icon-font-name;
     margin-right: 10px;
     font-size: 11px;
     @include opacity(1);
@@ -1897,7 +1896,7 @@ a.list-group-item:hover {
 
 .tree-view li {
     & > .icon {
-        font-family: $icon-font;
+        font-family: $icon-font-name;
         font-style: normal;
         background: $brand-primary;
         color: $base-light-color;
