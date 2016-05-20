@@ -96,7 +96,7 @@ module.exports = function(grunt) {
                     { expand: true, cwd: 'dist/js/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/js/' },
                     { expand: true, cwd: 'dist/fonts/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/fonts/' },
                     { expand: true, cwd: 'dist/images/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/images/' },
-                    { expand: true, cwd: 'dist/themes/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/themes/' }
+                    { expand: true, cwd: 'dist/extensions/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/extensions/' }
                 ],
             },
         },
