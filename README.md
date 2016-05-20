@@ -1,4 +1,4 @@
-# Theme WSO2 v1.0.0
+# WSO2 Visual Elements v1.0.0
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
