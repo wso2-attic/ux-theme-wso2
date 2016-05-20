@@ -20,6 +20,7 @@ $(function(){
      *  data-tables config
      ***********************************************************/
     var tableBasic = $('#ajax-table').DataTable({
+        wso2: true,
         responsive: true,
         ajax: "data/table.json",
         columns: [

@@ -27,6 +27,25 @@
     var factory = function($, DataTable) {
         "use strict";
         
+        /* Set the defaults for DataTables initialisation */
+        $.extend(true, DataTable.defaults, {
+            bSortCellsTop: true,
+            responsive: false,
+            autoWidth: false,
+            dom: '<"dataTablesTop"' +
+                'f' +
+                '<"dataTables_toolbar">' +
+                '>' +
+                'rt' +
+                '<"dataTablesBottom"' +
+                'lip' +
+                '>',
+            language: {
+                searchPlaceholder: 'Filter by ...',
+                search: ''
+            }
+        });
+        
         var wso2Extend = function(settings, opts) {
 
             // Sanity check that we are using DataTables 1.10 or newer
@@ -49,7 +68,7 @@
                 opts.details = { type: opts.details };
             }
             
-            this.c = $.extend(true, {}, settings.oInit.wso2, opts);
+            this.c = $.extend( true, {}, wso2Extend.defaults, DataTable.defaults.wso2, opts );
             settings.wos2 = this;
             this._constructor();
 
@@ -239,6 +258,24 @@
             }
         }
         
+        wso2Extend.defaults = {
+            bSortCellsTop: true,
+            responsive: false,
+            autoWidth: false,
+            dom: '<"dataTablesTop"' +
+                'f' +
+                '<"dataTables_toolbar">' +
+                '>' +
+                'rt' +
+                '<"dataTablesBottom"' +
+                'lip' +
+                '>',
+            language: {
+                searchPlaceholder: 'Filter by ...',
+                search: ''
+            }
+        }
+        
         /**
          * Version information
          *
@@ -252,34 +289,6 @@
 
         // Attach a listener to the document which listens for DataTables initialisation
         // events so we can automatically initialise
-        
-        $(document).on('draw.dt', function(e, settings, json){
-            if ( $(settings.nTable).hasClass('dte') ||
-                 $(settings.nTable).hasClass('dt-extended') ||
-                 settings.oInit.wso2 ||
-                 DataTable.defaults.wso2
-            ) {
-                /* Set the defaults for DataTables initialisation */
-                $.extend( true, DataTable.defaults, {
-                    bSortCellsTop: true,
-                    responsive: false,
-                    autoWidth: false,
-                    dom: '<"dataTablesTop"' +
-                        'f' +
-                        '<"dataTables_toolbar">' +
-                        '>' +
-                        'rt' +
-                        '<"dataTablesBottom"' +
-                        'lip' +
-                        '>',
-                    language: {
-                        searchPlaceholder: 'Filter by ...',
-                        search: ''
-                    }
-                });
-            }
-        });
-        
         $(document).on('init.dt.dte', function(e, settings, json) {
             if (e.namespace !== 'dt') {
                 return;
