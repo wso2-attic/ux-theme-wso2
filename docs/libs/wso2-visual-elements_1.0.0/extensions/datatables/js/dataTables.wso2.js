@@ -49,8 +49,8 @@
         var wso2Extend = function(settings, opts) {
 
             // Sanity check that we are using DataTables 1.10 or newer
-            if (!DataTable.versionCheck || !DataTable.versionCheck('1.10.1')) {
-                throw 'DataTables Responsive requires DataTables 1.10.1 or newer';
+            if (!DataTable.versionCheck || !DataTable.versionCheck('1.10.12')) {
+                throw 'DataTables Responsive requires DataTables 1.10.12 or newer';
             }
 
             this.s = {
@@ -289,22 +289,22 @@
 
         // Attach a listener to the document which listens for DataTables initialisation
         // events so we can automatically initialise
-        $(document).on('init.dt.dte', function(e, settings, json) {
+        $(document).on('preInit.dt.dte', function(e, settings, json) {            
             if (e.namespace !== 'dt') {
                 return;
             }
 
-            if ( $(settings.nTable).hasClass('dte') ||
-                 $(settings.nTable).hasClass('dt-extended') ||
-                 settings.oInit.wso2 ||
-                 DataTable.defaults.wso2
-            ) {
+//            if ( $(settings.nTable).hasClass('dte') ||
+//                 $(settings.nTable).hasClass('dt-extended') ||
+//                 settings.oInit.wso2 ||
+//                 DataTable.defaults.wso2 ||
+//            ) {
                 var init = settings.oInit.wso2;
 
                 if (init !== false) {
                     new wso2Extend (settings, $.isPlainObject(init) ? init : {});
                 }
-            }
+            //}
         });
         
         return wso2Extend;
