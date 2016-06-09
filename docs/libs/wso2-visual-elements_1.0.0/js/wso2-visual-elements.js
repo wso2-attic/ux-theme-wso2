@@ -540,15 +540,23 @@ $.sidebar_toggle = function(action, target, container) {
             // Sidebar open function
             if (targetSide == 'left'){
                 if((button !== undefined) && (button.attr('data-container-divide'))){
-                    $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetLeft);
+                   $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetLeft);
+                   $(target).css(targetSide, targetOffsetLeft);
                 }
-                $(target).css(targetSide, targetOffsetLeft);
+                else if((button !== undefined) && (button.attr('data-container-push'))){
+                   $(container).css(targetSide, targetWidth + targetOffsetLeft);
+                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
+                }
             }
             else if (targetSide == 'right'){
                 if((button !== undefined) && (button.attr('data-container-divide'))){
-                    $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetRight);
+                   $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetRight);
+                   $(target).css(targetSide, targetOffsetRight);
                 }
-                $(target).css(targetSide, targetOffsetRight);
+                else if((button !== undefined) && (button.attr('data-container-push'))){
+                   $(container).css(targetSide, targetWidth + targetOffsetRight);
+                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+                }
             }
 
             $(target).trigger('shown.sidebar');
@@ -580,16 +588,24 @@ $.sidebar_toggle = function(action, target, container) {
 
             // Sidebar close function
             if (targetSide == 'left'){
-                if((button !== undefined) && (button.attr('data-container-divide'))){
-                    $(container).css(pushType+'-'+targetSide, targetOffsetLeft);
-                }
-                $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
+               if((button !== undefined) && (button.attr('data-container-divide'))){
+                   $(container).css(pushType+'-'+targetSide, targetOffsetLeft);
+                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+               }
+               else if((button !== undefined) && (button.attr('data-container-push'))){
+                   $(container).css(targetSide, targetOffsetLeft);
+                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
+               }
             }
             else if (targetSide == 'right'){
-                if((button !== undefined) && (button.attr('data-container-divide'))){
-                    $(container).css(pushType+'-'+targetSide, targetOffsetRight);
-                }
-                $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+               if((button !== undefined) && (button.attr('data-container-divide'))){
+                   $(container).css(pushType+'-'+targetSide, targetOffsetRight);
+                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+               }
+               else if((button !== undefined) && (button.attr('data-container-push'))){
+                   $(container).css(targetSide, targetOffsetRight);
+                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+               }
             }
 
             $(target).trigger('hidden.sidebar');

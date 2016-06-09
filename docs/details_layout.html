@@ -294,6 +294,430 @@
                     </div>
                 </div>
 
+                <br/>
+                <hr/>
+
+
+                <div class="wr-advance-operations">
+                    <div class="wr-hidden-operations-nav col-lg-4">
+                        <a href="javascript:void(0)" onclick="showAdvanceOperation('ip-condition-0', this, '0')" class="selected">
+                                <span class="wr-hidden-operations-icon fw-stack">
+                                    <i class="fw fw-key fw-stack-2x"></i>
+                                </span>
+                            IP Condition
+
+
+
+                            <span id="ip-condition-configured-0" class="status-icon has-success"><i id="ip-condition-configured-icon-0" class="fw fw-check"></i></span>
+
+
+
+
+
+
+
+
+
+                        </a>
+                        <a href="javascript:void(0)" onclick="showAdvanceOperation('header-condition-0', this, '0')" class="">
+                                <span class="wr-hidden-operations-icon fw-stack">
+                                    <i class="fw fw-key fw-stack-2x"></i>
+                                </span>
+                            Header Condition
+
+
+
+
+
+                            <span id="header-condition-configured-0" class="has-configured status-icon"><i id="header-condition-configured-icon-0" class="fw fw-circle-outline"></i></span>
+
+
+
+
+
+
+
+                        </a>
+                        <a href="javascript:void(0)" onclick="showAdvanceOperation('query-param-condition-0', this, '0')" class="">
+                                <span class="wr-hidden-operations-icon fw-stack">
+                                    <i class="fw fw-key fw-stack-2x"></i>
+                                </span>
+                            Query Param Condition
+
+
+
+
+
+
+
+                            <span id="queryparam-condition-configured-0" class="has-configured status-icon"><i id="queryparam-condition-configured-icon-0" class="fw fw-circle-outline"></i></span>
+
+
+
+
+
+                        </a>
+                        <a href="javascript:void(0)" onclick="showAdvanceOperation('jwt-claim-condition-0', this, '0')" class="">
+                                <span class="wr-hidden-operations-icon fw-stack">
+                                    <i class="fw fw-key fw-stack-2x"></i>
+                                </span>
+                            JWT Claim Condition
+
+
+
+
+
+
+
+
+
+                            <span id="claim-condition-configured-0" class="has-configured status-icon"><i id="claim-condition-configured-icon-0" class="fw fw-circle-outline"></i></span>
+
+
+
+                        </a>
+                    </div>
+                    <div class="wr-hidden-operations-content col-lg-8">
+                        <!-- IP Condition policy -->
+
+
+                        <div class="wr-hidden-operation" data-operation="ip-condition-0" style="display: block;">
+                            <div class="panel panel-default operation-data" data-operation="ip-condition-policy" data-operation-code="IP_CONDITION_POLICY">
+                                <div id="ip-condition-heading-0" class="panel-heading" role="tab">
+                                    <h2 class="sub-title panel-title">
+                                        IP Condition Policy
+                                        <label id="ip-condition-lbl-0" class="wr-input-control switch" data-toggle="collapse" data-target="#ip-condition-body-0" aria-expanded="true">
+                                            <input id="ip-condition-checkbox-0" onclick="changeStatusIcon(0, 'IP', this)" type="checkbox">
+                                            <span class="helper"></span>
+                                            <span class="text"></span>
+                                        </label>
+                                        <hr>
+                                        <div class="panel-title-description">
+                                            This configuration use to define ip condition
+                                        </div>
+                                    </h2>
+                                </div>
+                                <div id="ip-condition-body-0" class="panel-collapse panel-body collapse in" role="tabpanel" aria-labelledby="ip-condition-body-0" aria-expanded="true">
+                                    <div id="ip-condition-feature-error-msg-0" class="alert alert-danger hidden" role="alert">
+                                        <i class="icon fw fw-error"></i><span></span>
+                                    </div>
+
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="ip-condition-type">IP Condition Type:<span class="requiredAstrix">*</span></label>
+                                            <div class="col-sm-9">
+                                                <select onchange="onIpConditionChange('0', this);" class="form-control select required valid" id="ip-condition-type-0" name="ip-condition-type-0">
+
+                                                    <option value="specificIp" selected="">Specific IP</option>
+                                                    <option value="IPRange">IP Range</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" style="display:block" id="specific-ip-block-0">
+                                            <label class="control-label col-sm-3" for="request-count">IP Address:<span class="requiredAstrix">*</span></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control required validInput" id="specific-ip-address-input-0" name="specific-ip-address-input-0" autofocus="autofocus" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" style="display:none" id="ip-range-block-0">
+                                            <label class="control-label col-sm-3" for="request-count">Start IP Address:<span class="requiredAstrix">*</span></label>
+                                            <div class="col-sm-3">
+                                                <input type="text" class="form-control required validInput" id="ip-range-start-address-input-0" name="ip-range-start-address-input-0" autofocus="autofocus" value="">
+                                            </div>
+
+                                            <label class="control-label col-sm-3" for="request-count">End IP Address:<span class="requiredAstrix">*</span></label>
+                                            <div class="col-sm-3">
+                                                <input type="text" class="form-control required validInput" id="ip-range-end-address-input-0" name="ip-range-end-address-input-0" autofocus="autofocus" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="ip-invert-condition">Invert Condition:</label>
+                                            <div class="col-sm-9">
+                                                <label id="ip-condition-lbl-0" class="wr-input-control switch">
+                                                    <input id="ip-condition-invert-0" type="checkbox">
+                                                    <span class="helper"></span>
+                                                    <span class="text"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+                        <!-- End of IP Condition policy -->
+
+                        <!-- Header Condition policy -->
+
+
+
+
+                        <div class="wr-hidden-operation" data-operation="header-condition-0">
+                            <div class="panel panel-default operation-data" data-operation="header-condition-policy" data-operation-code="HEADER_CONDITION_POLICY">
+                                <div id="header-condition-policy-heading" class="panel-heading" role="tab">
+                                    <h2 class="sub-title panel-title">
+                                        Header Condition Policy
+                                        <label id="header-condition-lbl-0" class="wr-input-control switch" data-toggle="collapse" data-target="#header-condition-body-0">
+                                            <input id="header-condition-checkbox-0" onclick="changeStatusIcon(0, 'Header', this)" type="checkbox">
+                                            <span class="helper"></span>
+                                            <span class="text"></span>
+                                        </label>
+                                        <hr>
+                                        <div class="panel-title-description">
+                                            This configuration use to define header conditions
+                                        </div>
+                                    </h2>
+                                </div>
+                                <div id="header-condition-body-0" class="panel-collapse panel-body collapse " role="tabpanel" aria-labelledby="header-condition-body-0">
+                                    <div id="header-condition-feature-error-msg-0" class="alert alert-danger hidden" role="alert">
+                                        <i class="icon fw fw-error"></i><span></span>
+                                    </div>
+
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="header-name">Header Name:<span class="requiredAstrix">*</span></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control required validInput" id="header-name-0" name="header-name-0" autofocus="autofocus" value="">
+                                                <a class="icon-question-sign help_popup" data-trigger="hover" help_data="name_help" data-original-title="" title=""></a>
+                                                <p id="header-name-help-0" class="hide">Name of the header.</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="header-value">Param Value:<span class="requiredAstrix">*</span></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control required validInput" id="header-value-0" name="header-value-0" autofocus="autofocus" value="">
+                                                <a class="icon-question-sign help_popup" data-trigger="hover" help_data="name_help" data-original-title="" title=""></a>
+                                                <p id="header-value-help-0" class="hide">Value of the header.</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-9">
+                                                <button type="button" onclick="addHeader('0')" id="add-new-header-0" name="add-new-header-0" class="btn btn-primary has-spinner">Add</button>
+                                            </div>
+                                        </div>
+                                        <div style="display:none" id="header-value-table-0">
+                                            <table class="table table-striped table-condensed" id="header-value-table-content-0">
+                                                <thead>
+                                                <tr>
+                                                    <th class="col-md-5">Header</th>
+                                                    <th class="col-md-5">Value</th>
+                                                    <th class="col-md-2">Action</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="header-invert-condition">Invert Condition:</label>
+                                            <div class="col-sm-9">
+                                                <label id="header-condition-lbl-0" class="wr-input-control switch">
+                                                    <input id="header-condition-invert-0" type="checkbox">
+                                                    <span class="helper"></span>
+                                                    <span class="text"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <!-- End of Header Condition policy -->
+
+                        <!-- Query Param policy -->
+
+
+
+
+
+
+                        <div class="wr-hidden-operation" data-operation="query-param-condition-0">
+                            <div class="panel panel-default operation-data" data-operation="date-condition-0" data-operation-code="QUERY_PARAM_CONDITION_POLICY">
+                                <div id="query-param-condition-heading-0" class="panel-heading" role="tab">
+                                    <h2 class="sub-title panel-title">
+                                        Query Param Condition Policy
+                                        <label id="query-param-condition-lbl-0" class="wr-input-control switch" data-toggle="collapse" data-target="#query-param-condition-body-0">
+                                            <input id="query-param-condition-checkbox-0" onclick="changeStatusIcon(0, 'QueryParam', this)" type="checkbox">
+                                            <span class="helper"></span>
+                                            <span class="text"></span>
+                                        </label>
+                                        <hr>
+                                        <div class="panel-title-description">
+                                            This configuration use to define query param conditions
+                                        </div>
+                                    </h2>
+                                </div>
+                                <div id="query-param-condition-body-0" class="panel-collapse panel-body collapse " role="tabpanel" aria-labelledby="query-param-condition-body-0">
+
+                                    <div id="query-param-condition-policy-feature-error-msg" class="alert alert-danger hidden" role="alert">
+                                        <i class="icon fw fw-error"></i><span></span>
+                                    </div>
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="query-param-name">Param Name:<span class="requiredAstrix">*</span></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control required validInput" id="query-param-name-0" name="query-param-name-0" autofocus="autofocus" value="">
+                                                <a class="icon-question-sign help_popup" data-trigger="hover" help_data="name_help" data-original-title="" title=""></a>
+                                                <p id="query-param-name-help-0" class="hide">Name of the query param.</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="query-param-name">Param Value:<span class="requiredAstrix">*</span></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control required validInput" id="query-param-value-0" name="query-param-value--0" autofocus="autofocus" value="">
+                                                <a class="icon-question-sign help_popup" data-trigger="hover" help_data="name_help" data-original-title="" title=""></a>
+                                                <p id="query-param-value-help-0" class="hide">Value of the query param.</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-9">
+                                                <button type="button" onclick="addQueryParam('0')" id="add-new-query-param-0" name="add-new-query-param-0" class="btn btn-primary has-spinner">Add</button>
+                                            </div>
+                                        </div>
+
+                                        <div style="display:none" id="query-param-value-table-0">
+                                            <table class="table table-striped table-condensed" id="query-param-value-table-content-0">
+                                                <thead>
+                                                <tr>
+                                                    <th class="col-md-5">Query Param</th>
+                                                    <th class="col-md-5">Value</th>
+                                                    <th class="col-md-2">Action</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="query-param-invert-condition">Invert Condition:</label>
+                                            <div class="col-sm-9">
+                                                <label id="query-param-condition-lbl-0" class="wr-input-control switch">
+                                                    <input id="query-param-condition-invert-0" type="checkbox">
+                                                    <span class="helper"></span>`
+                                                    <span class="text"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <!-- End of Query Param Condition policy -->
+
+                        <!-- JWT Claims condition policy -->
+
+
+
+
+
+
+
+
+                        <div class="wr-hidden-operation">
+                            <div class="panel panel-default operation-data" data-operation="jwt-claim-condition-" data-operation-code="JWT_CLAIMS_CONDITION_POLICY">
+                                <div id="jwt-claim-condition-heading-0" class="panel-heading" role="tab">
+                                    <h2 class="sub-title panel-title">
+                                        Jwt Condition Policy
+                                        <label id="jwt-claims-condition-policy-lbl-0" class="wr-input-control switch" data-toggle="collapse" data-target="#jwt-claim-condition-body-0">
+                                            <input id="jwt-claim-condition-checkbox-0" onclick="changeStatusIcon(0, 'JWTClaim', this)" type="checkbox">
+                                            <span class="helper"></span>
+                                            <span class="text"></span>`
+                                        </label>
+                                        <hr>
+                                        <div class="panel-title-description">
+                                            This configuration use to define jwt claims conditions
+                                        </div>
+                                    </h2>
+                                </div>
+                                <div id="jwt-claim-condition-body-0" class="panel-collapse panel-body collapse " role="tabpanel" aria-labelledby="jwt-claim-condition-body-0">
+
+                                    <div id="jwt-claims-condition-feature-error-msg-0" class="alert alert-danger hidden" role="alert">
+                                        <i class="icon fw fw-error"></i><span></span>
+                                    </div>
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="jwt-claim-name">Claim Name:<span class="requiredAstrix">*</span></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control required validInput" id="jwt-claim-name-0" name="jwt-claim-name-0" autofocus="autofocus" value="">
+                                                <a class="icon-question-sign help_popup" data-trigger="hover" help_data="name_help" data-original-title="" title=""></a>
+                                                <p id="jwt-claim-name-help-0" class="hide">Name of the query param.</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="jwt-claim-name">Claim Value:<span class="requiredAstrix">*</span></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control required validInput" id="jwt-claim-value-0" name="jwt-claim-value-0" autofocus="autofocus" value="">
+                                                <a class="icon-question-sign help_popup" data-trigger="hover" help_data="name_help" data-original-title="" title=""></a>
+                                                <p id="jwt-claim-value-help-" class="hide">Value of the jwt claim.</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-3 col-sm-9">
+                                                <button type="button" onclick="addJwtClaim('0')" id="add-new-jwt-claim-0" name="add-new-jwt-claim-0" class="btn btn-primary has-spinner">Add</button>
+                                            </div>
+                                        </div>
+                                        <div style="display:none" id="jwt-claim-value-table-0">
+                                            <table class="table table-striped table-condensed" id="jwt-claim-value-table-content-0">
+                                                <thead>
+                                                <tr>
+                                                    <th class="col-md-5">Claim</th>
+                                                    <th class="col-md-5">Value</th>
+                                                    <th class="col-md-2">Action</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="jwt-claim-invert-condition">Invert Condition:</label>
+                                            <div class="col-sm-9">
+                                                <label id="jwt-claim-condition-lbl-0" class="wr-input-control switch">
+                                                    <input id="jwt-claim-condition-invert-0" type="checkbox">
+                                                    <span class="helper"></span>
+                                                    <span class="text"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- End of jwt claim Condition policy -->
+                    </div>
+                    <!-- End of Restrictions -->
+
+                </div>
+
             </div>
         </div>
 

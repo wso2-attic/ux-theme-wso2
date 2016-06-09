@@ -1,0 +1,299 @@
+<!--
+~   Copyright (c) WSO2 Inc. (http://wso2.com) All Rights Reserved.
+~
+~   Licensed under the Apache License, Version 2.0 (the "License");
+~   you may not use this file except in compliance with the License.
+~   You may obtain a copy of the License at
+~
+~        http://www.apache.org/licenses/LICENSE-2.0
+~
+~   Unless required by applicable law or agreed to in writing, software
+~   distributed under the License is distributed on an "AS IS" BASIS,
+~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~   See the License for the specific language governing permissions and
+~   limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Theme WSO2</title>
+
+    <!-- Favion -->
+    <link href="libs/theme-wso2_1.0.0/images/favicon.png" rel="icon" type="image/png" sizes="16x16" />
+
+    <!-- Bootstrap CSS -->
+    <link href="libs/bootstrap_3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- ===== Custom Libs ===== -->
+
+    <!-- DataTable CSS -->
+    <link href="libs/data-tables_1.10.7/extensions/Bootstrap/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="libs/data-tables_1.10.7/extensions/Responsive/css/dataTables.responsive.css" rel="stylesheet" type="text/css" />
+
+    <!-- Select2 CSS -->
+    <link href="libs/select2_4.0.0/css/select2.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Animate CSS -->
+    <link href="libs/animate/animate.css" rel="stylesheet" type="text/css" />
+
+    <!-- ===== /Custom Libs ===== -->
+
+    <!-- Font WSO2 CSS -->
+    <link href="libs/font-wso2_1.0.0/css/font-wso2.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Theme WSO2 CSS -->
+    <link href="libs/theme-wso2_1.0.0/css/theme-wso2.min.css" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+    <link href="libs/theme-wso2_1.0.0/css/theme-wso2-ie.min.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="libs/html5shiv_3.7.2/html5shiv.min.js"></script>
+    <script src="libs/respond_1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+    <!-- header -->
+    <header class="header header-default">
+        <div class="container-fluid">
+           <div class="pull-left brand float-remove-xs text-center-xs">
+              <a href="#">
+                 <img src="libs/theme-wso2_1.0.0/images/logo-inverse.svg" alt="wso2" title="wso2" class="logo">
+                 <h1 class="display-block-xs">Theme WSO2</h1>
+              </a>
+           </div>
+           <div class="pull-right auth float-remove-xs text-center-xs">
+             <a href="#" class="dropdown" data-toggle="dropdown">
+                <span class="icon fw-stack fw-lg">
+                   <i class="fw fw-circle fw-stack-2x"></i>
+                   <i class="fw fw-user fw-stack-1x fw-inverse"></i>
+                </span>
+                <span class="hidden-xs">administrator <span class="caret"></span></span>
+             </a>
+             <ul class="dropdown-menu dropdown-menu-right float-remove-xs position-static-xs text-center-xs remove-margin-xs slideInDown" role="menu">
+                <li class="dropdown-header visible-xs">administrator <span class="caret"></span></li>
+                <li class="divider visible-xs"></li>
+                <li><a href="#">Profile Settings</a></li>
+                <li><a href="#">Sign out</a></li>
+             </ul>
+           </div>
+        </div>
+    </header>
+
+    <!-- navbar -->
+    <div class="navbar-wrapper">
+        <nav class="navbar navbar-default" data-spy="affix" data-offset-top="50" data-offset-bottom="40">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-menu-toggle collapsed" data-toggle="collapse" data-target="#navbar2"  aria-expanded="false" aria-controls="navbar2">
+                        <span class="icon fw-stack">
+                            <i class="fw fw-down fw-stack-1x toggle-icon-up"></i>
+                        </span>
+                    </a>
+                    <ol class="breadcrumb navbar-brand">
+                        <li class="icons"><a href="index.html"><i class="icon fw fw-home"></i></a></li>
+                        <li><a href="#">Library</a></li>
+                        <li class="active"><a href="#">Data</a></li>
+                    </ol>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="layout.html">
+                                <span class="icon fw-stack">
+                                    <i class="fw fw-laptop fw-stack-1x"></i>
+                                    <i class="fw fw-ring fw-stack-2x"></i>
+                                </span>
+                                Main Wrapper
+                            </a>
+                        </li>
+                        <li>
+                            <a href="details_layout.html">Details Layout</a>
+                        </li>
+                        <li class="active"><a href="#noiconlink">No Icon Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Quick Jump <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-header">UI Components</li>
+                                <li class="divider"></li>
+                                <li><a href="#forms">Forms</a></li>
+                                <li><a href="#table">Table</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="visible-inline-block">
+                            <a href="#">
+                                <span class="icon fw-stack">
+                                    <i class="fw fw-notification fw-stack-1x"></i>
+                                </span>
+                                Notifications
+                                <span class="badge">4</span>
+                            </a>
+                        </li>
+                        <li class="visible-inline-block">
+                            <a href="#">
+                                <span class="icon fw-stack">
+                                    <i class="fw fw-settings fw-stack-1x"></i>
+                                    <i class="fw fw-ring fw-stack-2x"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+            <div id="navbar2" class="collapse navbar-collapse dropdown tiles"><!-- nav-collapse -->
+                <ul class="nav navbar-nav">
+                    <li><a href="#"><i class="fw fw-user"></i>User Management</a></li>
+                    <li><a href="#"><i class="fw fw-settings"></i>Profile Management</a></li>
+                    <li><a href="#"><i class="fw fw-policy"></i>Policy Management</a></li>
+                </ul>
+            </div><!--/ .nav-collapse -->
+        </nav>
+    </div>
+
+    <!-- #page-content-wrapper -->
+    <div class="page-content-wrapper">
+
+        <!-- page content -->
+        <div class="container-fluid body-wrapper">
+            <div class="row no-gutter">
+                <div class="wr-advance-operations">
+                    <div class="wr-hidden-operations-nav col-lg-4">
+                        <a href="javascript:void(0)" onclick="showAdvanceOperation('ip-condition-0', this, '0')" class="selected">
+                                <span class="wr-hidden-operations-icon fw-stack">
+                                    <i class="fw fw-key fw-stack-2x"></i>
+                                </span>
+                            IP Condition
+                            <span id="ip-condition-configured-0" class="status-icon has-success"><i id="ip-condition-configured-icon-0" class="fw fw-check"></i></span>
+                        </a>
+                        <a href="javascript:void(0)" onclick="showAdvanceOperation('header-condition-0', this, '0')" >
+                                <span class="wr-hidden-operations-icon fw-stack">
+                                    <i class="fw fw-key fw-stack-2x"></i>
+                                </span>
+                            Header Condition
+                            <span id="" class="has-configured status-icon"><i id="" class="fw fw-circle-outline"></i></span>
+                        </a>
+                        <a href="javascript:void(0)" onclick="showAdvanceOperation('query-param-condition-0', this, '0')" class="">
+                                <span class="wr-hidden-operations-icon fw-stack">
+                                    <i class="fw fw-key fw-stack-2x"></i>
+                                </span>
+                            Query Param Condition
+                            <span id="queryparam-condition-configured-0" class="has-configured status-icon"><i id="queryparam-condition-configured-icon-0" class="fw fw-circle-outline"></i></span>
+                        </a>
+                        <a href="javascript:void(0)" onclick="showAdvanceOperation('jwt-claim-condition-0', this, '0')" class="">
+                                <span class="wr-hidden-operations-icon fw-stack">
+                                    <i class="fw fw-key fw-stack-2x"></i>
+                                </span>
+                            JWT Claim Condition
+                            <span id="claim-condition-configured-0" class="has-configured status-icon"><i id="claim-condition-configured-icon-0" class="fw fw-circle-outline"></i></span>
+                        </a>
+                    </div>
+                    <div class="wr-hidden-operations-content col-lg-8">
+                            <div class="wr-hidden-operation" data-operation="ip-condition-0" style="display: block;">
+                                <div class="panel panel-default operation-data" data-operation="ip-condition-policy" data-operation-code="IP_CONDITION_POLICY">
+                                    <div id="ip-condition-heading-0" class="panel-heading" role="tab">
+                                        <h2 class="sub-title panel-title">
+                                            IP Condition Policy
+                                            <label id="ip-condition-lbl-0" class="wr-input-control switch collapsed" data-toggle="collapse" data-target="#ip-condition-body-0" aria-expanded="false">
+                                                <input id="ip-condition-checkbox-0" onclick="changeStatusIcon(0, 'IP', this)" type="checkbox">
+                                                <span class="helper"></span>
+                                                <span class="text"></span>
+                                            </label>
+                                            <hr>
+                                            <div class="panel-title-description">
+                                                This configuration use to define ip condition
+                                            </div>
+                                        </h2>
+                                    </div>
+                                    <div id="ip-condition-body-0" class="panel-collapse panel-body collapse" role="tabpanel" aria-labelledby="ip-condition-body-0" aria-expanded="false" style="height: 22px;">
+                                        <div>content 1</div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="wr-hidden-operation" data-operation="header-condition-0">
+                            <div>content 2</div>
+                        </div>
+                        <div class="wr-hidden-operation" data-operation="query-param-condition-0">
+                            <div>content 3</div>
+                        </div>
+                        <div class="wr-hidden-operation" data-operation="jwt-claim-condition-0">
+                            <div>content 4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /#page-content-wrapper -->
+
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container-fluid">
+        <p>Theme WSO2 v1.0.0 | &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://wso2.com/" target="_blank"><i class="icon fw fw-wso2"></i> Inc</a>.</p>
+      </div>
+    </footer>
+
+    <!-- Jquery/Jquery UI JS -->
+    <script src="libs/jquery_1.11.0/jquery-1.11.3.min.js"></script>
+
+    <!-- Jquery Resize JS -->
+    <script src="libs/jquery-resize_0.5.3/jquery.resize.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="libs/bootstrap_3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Data Tables JS -->
+    <script src="libs/data-tables_1.10.7/media/js/jquery.dataTables.min.js"></script>
+    <script src="libs/data-tables_1.10.7/extensions/Bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src="libs/data-tables_1.10.7/extensions/Responsive/js/dataTables.responsive.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="libs/select2_4.0.0/js/select2.full.min.js"></script>
+
+    <!-- Jquery Validation JS -->
+    <script src="libs/jquery-validation_1.14.0/jquery.validate.min.js"></script>
+
+    <!-- Noty JS -->
+    <script src="libs/noty_2.3.5/packaged/jquery.noty.packaged.min.js"></script>
+
+    <!-- Theme WSO2 JS -->
+    <script src="libs/theme-wso2_1.0.0/js/theme-wso2.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/libs/requirejs_2.1.18/require.js" data-main="js/app.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+
+        var showAdvanceOperation = function (operation, button, id) {
+            $(button).addClass('selected');
+            $(button).siblings().removeClass('selected');
+            var hiddenOperation = ".wr-hidden-operations-content > div";
+            $(hiddenOperation + '[data-operation="' + operation + '"]').show();
+            $(hiddenOperation + '[data-operation="' + operation + '"]').siblings().hide();
+    };
+
+    </script>
+
+
+</body>
+</html>
