@@ -19,5 +19,13 @@ $header-background-color: #1f1f1f;
 $body-bg: #efefef;
 $navbar-height: 40px;
 
+
+
 // importing base sass
 @import '../../scss/base';
+@import "../../scss/modules/store-navigation";
+@import "../../scss/modules/store-tags";
+
+.media-body{
+    background-color: #efefef;
+}
