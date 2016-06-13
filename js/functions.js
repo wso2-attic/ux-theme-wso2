@@ -646,14 +646,26 @@ $('.sidebar-wrapper[data-fixed-offset-top]').on('affix.bs.affix', function() {
     $(this).css('top', $(this).data('fixed-offset-top'));
 });
 
-$(window).resize(function() {
+function windowEvents(){
     $('.sidebar-wrapper').each(function(){
-        $(this).height($(window).height() - ($(this).offset().top - $(window).scrollTop()));
-    });       
-});
-
-$(window).scroll(function () {
-    $('.sidebar-wrapper').each(function(){
-        $(this).height($(window).height() - ($(this).offset().top - $(window).scrollTop()));
+        var elemOffsetBottom = $(this).data('offset-bottom'),
+            scrollBottom = ($(document).height() - $(window).height()),
+            offesetBottom = 0,
+            getBottomOffset = elemOffsetBottom - (scrollBottom - ($(window).scrollTop()-elemOffsetBottom) - elemOffsetBottom);
+        
+        if(getBottomOffset > 0){
+            offesetBottom = getBottomOffset;
+        }
+        
+        $(this).height(($(window).height() - ($(this).offset().top - $(window).scrollTop())) - offesetBottom);
+        
+        if((typeof $.fn.nanoScroller == 'function') && ($('.nano-content', this).length > 0)){
+            $(".nano-content").parent()[0].nanoscroller.reset();
+        }
     }); 
-});
+};
+    
+$(window)
+    .ready(windowEvents)
+    .resize(windowEvents)
+    .scroll(windowEvents);
