@@ -10034,6 +10034,25 @@ header .nav .dropdown-menu > li:not(.divider) {
 /* =============================================================================
  * Payment plan ribbon styling
  * ============================================================================= */
+.ribbon {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  width: 33px;
+  height: 35px;
+  line-height: 40px;
+  text-align: center;
+  /* opacity: 0.7; */
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #C0392B;
+  border: none;
+  z-index: 500;
+  padding-bottom: 7px;
+}
+
 .ribbon-wrapper {
   width: 85px;
   height: 88px;
