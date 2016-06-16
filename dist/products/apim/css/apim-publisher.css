@@ -3139,6 +3139,15 @@ input[type="button"].btn-block {
   background-color: #fff;
 }
 
+.btn-mobile {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .btn-mobile {
+    width: auto;
+  }
+}
 header {
   min-height: 50px;
   position: relative;
@@ -7377,7 +7386,7 @@ body.inverse .fade-edge:after {
  * navbar styles
  * ======================================================================== */
 .navbar-wrapper {
-  min-height: 50px;
+  min-height: 40px;
 }
 
 .navbar.affix, .navbar.affix-bottom {
