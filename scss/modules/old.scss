@@ -52,7 +52,8 @@ $switch-handler-disabled-color: #484e52 !default;
 $form-control-max-width: 750px !default;
 $sidebar-width-default: 350px !default;
 
-$text-truncate-width: 200px !default;
+$text-truncate-width: none !default;
+$text-truncate-width-tag-content: 160px !default;
 
 /* ========================================================================
  * icon styles
