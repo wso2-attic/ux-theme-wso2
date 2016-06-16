@@ -9599,10 +9599,14 @@ nav.navigation .second_level > .left-menu-item {
  * Misc customizations
  * ======================================================================== */
 .truncate {
-  max-width: 160px;
+  max-width: none;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.tag-content .truncate {
+  max-width: 160px;
 }
 
 .media-body {
@@ -9756,6 +9760,9 @@ header .nav .dropdown-menu > li:not(.divider) {
 
 .accordion .panel, .collapse .panel {
   margin-bottom: 10px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 .accordion .panel-heading, .collapse .panel-heading {
@@ -9789,47 +9796,71 @@ header .nav .dropdown-menu > li:not(.divider) {
   background: #ccc;
 }
 
-.accordion .panel-heading .radio .helper {
+.accordion .panel-heading .panel-title, .collapse .panel-heading .panel-title {
+  height: 60px;
+}
+
+.accordion .panel-heading .radio .helper,
+.collapse .panel-heading .radio .helper {
   padding-top: 0px;
   top: 20px;
   left: 20px;
 }
 
-.accordion .panel-heading .radio > i {
+.accordion .panel-heading .radio > i,
+.collapse .panel-heading .radio > i {
   position: relative;
   top: 20px;
   left: 20px;
 }
 
-.accordion .panel-heading .radio > span {
+.accordion .panel-heading .radio > span,
+.collapse .panel-heading .radio > span {
   position: relative;
   top: 10px;
   left: 10px;
 }
 
-.accordion .panel-heading div .status {
+.accordion .panel-heading div .status,
+.collapse .panel-heading div .status {
   margin-top: -42px;
 }
 
-.accordion .panel-heading div .status i {
+.accordion .panel-heading div .status i,
+.collapse .panel-heading div .status i {
+  position: relative;
+  top: 16px;
+  left: calc(100% - 40px);
+}
+
+.accordion .panel-heading .radio + div .status i,
+.collapse .panel-heading .radio + div .status i {
   position: relative;
   top: 16px;
   left: calc(100% - 100px);
 }
 
-.accordion .panel-heading p, .collapse .panel-heading p {
+.accordion .panel-heading p, .collapse .panel-heading p,
+.collapse .panel-heading p, .collapse .panel-heading p {
   float: none;
   width: auto;
 }
 
-.accordion .panel-heading div .heading {
+.accordion .panel-heading div .heading,
+.collapse .panel-heading div .heading {
   font-weight: bold;
   padding-top: 10px;
   padding-bottom: 4px;
   text-indent: 10px;
 }
 
-.accordion .panel-heading div .description {
+.accordion .panel-heading div .no-description,
+.collapse .panel-heading div .no-description {
+  padding-top: 20px;
+}
+
+.accordion .panel-heading div .description,
+.collapse .panel-heading div .description {
   text-indent: 10px;
   margin-right: 60px;
 }
