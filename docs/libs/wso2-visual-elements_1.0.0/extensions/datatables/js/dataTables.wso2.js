@@ -69,7 +69,7 @@
             }
             
             this.c = $.extend( true, {}, wso2Extend.defaults, DataTable.defaults.wso2, opts );
-            settings.wos2 = this;
+            settings.wso2 = this;
             this._constructor();
 
         };
