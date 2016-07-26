@@ -1,4 +1,4 @@
-# WSO2 Visual Elements v1.0.0
+# WSO2 Theme
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
@@ -42,38 +42,6 @@ docs/
 ├── include/
 ├── js/
 ├── libs/
-│   ├── animate/
-│   ├── bootstrap/
-│   ├── bootstrap-daterangepicker/
-│   ├── bootstrap-tour/
-│   ├── codemirror/
-│   ├── cropper/
-│   ├── d3/
-│   ├── data-tables/
-│   ├── font-awesome/
-│   ├── font-wso2/
-│   ├── html5shiv/
-│   ├── jquery/
-│   ├── jquery-resize/
-│   ├── jquery-ui/
-│   ├── jquery-validation/
-│   ├── animate/
-│   ├── nanoscroller/
-│   ├── noty/
-│   ├── respond/
-│   ├── sass/
-│   ├── select2/
-│   ├── split/
-│   ├── theme-wso2/
-│   │   ├── components/
-│   │   ├── fonts/
-│   │   │   └── Roboto/
-│   │   ├── images/
-│   │   ├── js/
-│   │   ├── less/
-│   │   └── scss/
-│   ├── tinymce/
-│   └── typeahead/
 └── scss/
 ```
 

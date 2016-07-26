@@ -540,15 +540,23 @@ $.sidebar_toggle = function(action, target, container) {
             // Sidebar open function
             if (targetSide == 'left'){
                 if((button !== undefined) && (button.attr('data-container-divide'))){
-                    $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetLeft);
+                   $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetLeft);
+                   $(target).css(targetSide, targetOffsetLeft);
                 }
-                $(target).css(targetSide, targetOffsetLeft);
+                else if((button !== undefined) && (button.attr('data-container-push'))){
+                   $(container).css(targetSide, targetWidth + targetOffsetLeft);
+                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
+                }
             }
             else if (targetSide == 'right'){
                 if((button !== undefined) && (button.attr('data-container-divide'))){
-                    $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetRight);
+                   $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetRight);
+                   $(target).css(targetSide, targetOffsetRight);
                 }
-                $(target).css(targetSide, targetOffsetRight);
+                else if((button !== undefined) && (button.attr('data-container-push'))){
+                   $(container).css(targetSide, targetWidth + targetOffsetRight);
+                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+                }
             }
 
             $(target).trigger('shown.sidebar');
@@ -580,16 +588,24 @@ $.sidebar_toggle = function(action, target, container) {
 
             // Sidebar close function
             if (targetSide == 'left'){
-                if((button !== undefined) && (button.attr('data-container-divide'))){
-                    $(container).css(pushType+'-'+targetSide, targetOffsetLeft);
-                }
-                $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
+               if((button !== undefined) && (button.attr('data-container-divide'))){
+                   $(container).css(pushType+'-'+targetSide, targetOffsetLeft);
+                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+               }
+               else if((button !== undefined) && (button.attr('data-container-push'))){
+                   $(container).css(targetSide, targetOffsetLeft);
+                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
+               }
             }
             else if (targetSide == 'right'){
-                if((button !== undefined) && (button.attr('data-container-divide'))){
-                    $(container).css(pushType+'-'+targetSide, targetOffsetRight);
-                }
-                $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+               if((button !== undefined) && (button.attr('data-container-divide'))){
+                   $(container).css(pushType+'-'+targetSide, targetOffsetRight);
+                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+               }
+               else if((button !== undefined) && (button.attr('data-container-push'))){
+                   $(container).css(targetSide, targetOffsetRight);
+                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+               }
             }
 
             $(target).trigger('hidden.sidebar');
@@ -688,21 +704,58 @@ $.fn.collapse_nav_sub = function(){
     }
 };
 
+
+/**
+ * Copy to clipboard function using ZeroClipboard plugin
+ * @return object
+ */
+$.fn.zclip = function() {
+
+    if(typeof ZeroClipboard == 'function'){
+        var client = new ZeroClipboard( this );
+        client.on( "ready", function( readyEvent ) {
+          client.on( "aftercopy", function( event ) {
+            var target = $(event.target);
+            target.attr("title","Copied!")
+            target.tooltip('enable');
+            target.tooltip("show");
+            target.tooltip('disable');
+          });
+        });
+    }else{
+        console.warn('Warning : Dependency missing - ZeroClipboard Library');
+    }
+    return this;
+};
+
 $('.sidebar-wrapper[data-fixed-offset-top]').on('affix.bs.affix', function() {
     $(this).css('top', $(this).data('fixed-offset-top'));
 });
 
-$(window).resize(function() {
+function windowEvents(){
     $('.sidebar-wrapper').each(function(){
-        $(this).height($(window).height() - ($(this).offset().top - $(window).scrollTop()));
-    });       
-});
-
-$(window).scroll(function () {
-    $('.sidebar-wrapper').each(function(){
-        $(this).height($(window).height() - ($(this).offset().top - $(window).scrollTop()));
+        var elemOffsetBottom = $(this).data('offset-bottom'),
+            scrollBottom = ($(document).height() - $(window).height()),
+            offesetBottom = 0,
+            getBottomOffset = elemOffsetBottom - (scrollBottom - ($(window).scrollTop()-elemOffsetBottom) - elemOffsetBottom);
+        
+        if(getBottomOffset > 0){
+            offesetBottom = getBottomOffset;
+        }
+        
+        $(this).height(($(window).height() - ($(this).offset().top - $(window).scrollTop())) - offesetBottom);
+        
+        if((typeof $.fn.nanoScroller == 'function') && ($('.nano-content', this).length > 0)){
+            $(".nano-content").parent()[0].nanoscroller.reset();
+        }
     }); 
-});
+};
+    
+$(window)
+    .ready(windowEvents)
+    .resize(windowEvents)
+    .scroll(windowEvents);
+
 }(jQuery));
 var responsiveTextRatio = 0.2,
     responsiveTextSleector = ".icon .text";
