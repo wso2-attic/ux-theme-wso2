@@ -21,6 +21,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'build/css/<%= pkg.name %>.css': 'config/default/theme.scss',
+                    'build/css/<%= pkg.name %>-ie.css': 'config/default/theme-ie.scss',
                 }
             }
         },

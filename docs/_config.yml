@@ -1,7 +1,7 @@
 # Site settings
-title: WSO2 Visual Elements
-name: wso2-visual-elements
-version: 1.0.0
+title: Theme WSO2
+name: theme-wso2
+version: 1.0.0-SNAPSHOT
 url: wso2-dev-ux.github.io/theme-wso2/
 license: https://github.com/wso2-dev-ux/theme-wso2/blob/master/LICENSE
 baseurl: ""
