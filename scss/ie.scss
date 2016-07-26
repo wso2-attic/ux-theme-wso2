@@ -3,3 +3,7 @@
 .page-content-wrapper.fixed > .sidebar-wrapper {
     overflow-y: auto;
 }
+
+.loading .loading-animation .logo .pulse-line {
+    stroke-dasharray: 100;
+}
