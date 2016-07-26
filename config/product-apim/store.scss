@@ -19,7 +19,6 @@ $header-background-color: #1f1f1f;
 $body-bg: #efefef;
 $navbar-height: 40px;
 
-
 // importing base sass
 @import '../../scss/base';
 @import "../../scss/modules/store-navigation";
@@ -28,7 +27,6 @@ $navbar-height: 40px;
 /* ========================================================================
  * Misc customizations
  * ======================================================================== */
-
 .truncate {
   max-width: $text-truncate-width;
   white-space: nowrap;
@@ -54,7 +52,7 @@ $navbar-height: 40px;
     margin-top:0px;
 }
 .help_popup{
-    display: block;
+    display: inline-block;
 }
 .thumbnail.icon img {
     width: 101%;
@@ -229,6 +227,10 @@ header .nav .dropdown-menu > li:not(.divider){
 .accordion .panel-heading div .status,
 .collapse .panel-heading div .status{
     margin-top:-42px;
+}
+.accordion .panel-heading div .no-description + .status,
+.collapse .panel-heading div .no-description + .status{
+    margin-top:-36px;
 }
 .accordion .panel-heading div .status i,
 .collapse .panel-heading div .status i{

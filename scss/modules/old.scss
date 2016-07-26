@@ -686,6 +686,9 @@ ul.sidebar-messages > li {
 .body-wrapper a:hover {
     text-decoration: underline;
 }
+.body-wrapper a.btn:hover {
+    text-decoration: none;
+}
 
 @media (max-width:767px){
     .body-wrapper {
