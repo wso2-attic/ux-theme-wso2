@@ -8047,6 +8047,11 @@ ul.sidebar-messages > li {
   filter: alpha(opacity=0);
 }
 
+@supports (-ms-accelerator: true) {
+  .loading .loading-animation .logo .pulse-line {
+    stroke-dasharray: 100;
+  }
+}
 @keyframes dash {
   0% {
     opacity: 0.9;
