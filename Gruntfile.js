@@ -87,17 +87,21 @@ module.exports = function(grunt) {
             },
             main: {
                 files: [
-                    { expand: true, cwd: 'build/css/', src: ['**'], dest: 'dist/css/' },
                     { expand: true, cwd: 'build/js/', src: ['<%= pkg.name %>.js','<%= pkg.name %>.min.js'], dest: 'dist/js/' },
                     { expand: true, cwd: 'fonts/', src: ['**'], dest: 'dist/fonts/' },
                     { expand: true, cwd: 'images/', src: ['**'], dest: 'dist/images/' },
                     { expand: true, cwd: 'extensions/', src: ['**'], dest: 'dist/extensions/' },
-                    
-                    { expand: true, cwd: 'dist/css/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/css/' },
+
                     { expand: true, cwd: 'dist/js/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/js/' },
                     { expand: true, cwd: 'dist/fonts/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/fonts/' },
                     { expand: true, cwd: 'dist/images/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/images/' },
                     { expand: true, cwd: 'dist/extensions/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/extensions/' }
+                ],
+            },
+            css: {
+                files: [
+                    { expand: true, cwd: 'build/css/', src: ['**'], dest: 'dist/css/' },
+                    { expand: true, cwd: 'dist/css/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/css/' }
                 ],
             },
         },
@@ -110,8 +114,30 @@ module.exports = function(grunt) {
                 dest: 'docs/_site',
                 config: 'docs/_config.yml'
               }
+            },
+        },
+        sync: {
+            update_scss_in_docs: {
+              files: [
+                { cwd: 'scss', src: '**/*.scss', dest: 'docs/_scss' },
+              ]
             }
-        }
+        },
+        watch: {
+            options: {
+                dateFormat: function(time) {
+                    grunt.log.writeln('Regenerating: Changed at ' + (new Date()).toString() + ' ...done in ' + time + ' ms.');
+                    grunt.log.writeln('Waiting for more changes...');
+                },
+            },
+            css: {
+                files: 'scss/**/*.scss',
+                tasks: ['sync'],
+                options: {
+                    livereload: true,
+                },
+            },
+        },
     });
     
     // Load the plugin that provides the “uglify” task.
@@ -120,11 +146,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-sync');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-jekyll');
     
     // Default task(s).
-    grunt.registerTask('default', ['sass:main','cssmin:main','concat','uglify','copy:main','jekyll']);
-    grunt.registerTask('full', ['sass','cssmin','concat','uglify','copy','jekyll']);
+    grunt.registerTask('default', ['sass:main','cssmin:main','concat','uglify','copy:main','copy:css','jekyll']);
+    grunt.registerTask('build', ['sass','cssmin','concat','uglify','copy','jekyll']);
     grunt.registerTask('docs', ['jekyll']);
     
     grunt.registerTask('apim', ['sass:apim','cssmin:apim','concat','uglify','copy:apim']);

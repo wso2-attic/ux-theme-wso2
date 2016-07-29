@@ -1,0 +1,29 @@
+//
+// Fonts
+// --------------------------------------------------
+
+$font-folder-path: '../fonts';
+
+@include font( 'Roboto', 100, italic, 'Roboto Thin Italic', 'Roboto-ThinItalic', $font-folder-path+'/Roboto');
+@include font( 'Roboto', 300, italic, 'Roboto Light Italic', 'Roboto-LightItalic', $font-folder-path+'/Roboto');
+@include font( 'Roboto', 400, italic, 'Roboto Italic', 'Roboto-Italic', $font-folder-path+'/Roboto');
+@include font( 'Roboto', 500, italic, 'Roboto Medium Italic', 'Roboto-MediumItalic', $font-folder-path+'/Roboto');
+@include font( 'Roboto', 700, italic, 'Roboto Bold Italic', 'Roboto-BoldItalic', $font-folder-path+'/Roboto');
+@include font( 'Roboto', 900, italic, 'Roboto Black Italic', 'Roboto-BlackItalic', $font-folder-path+'/Roboto');
+@include font( 'Roboto', 100, normal, 'Roboto Thin', 'Roboto-Thin', $font-folder-path+'/Roboto');
+@include font( 'Roboto', 300, normal, 'Roboto Light', 'Roboto-Light', $font-folder-path+'/Roboto');
+@include font( 'Roboto', 400, normal, 'Roboto Regular', 'Roboto-Regular', $font-folder-path+'/Roboto');
+@include font( 'Roboto', 500, normal, 'Roboto Medium', 'Roboto-Medium', $font-folder-path+'/Roboto');
+@include font( 'Roboto', 700, normal, 'Roboto Bold', 'Roboto-Bold', $font-folder-path+'/Roboto');
+@include font( 'Roboto', 900, normal, 'Roboto Black', 'Roboto-Black', $font-folder-path+'/Roboto');
+
+@include font( 'OpenSans', 100, italic, 'OpenSans Light', 'OpenSans-LightItalic-webfont', $font-folder-path+'/OpenSans');
+@include font( 'OpenSans', 300, italic, 'OpenSans Regular', 'OpenSans-RegularItalic-webfont', $font-folder-path+'/OpenSans');
+@include font( 'OpenSans', 400, italic, 'OpenSans Semi Bold', 'OpenSans-SemiboldItalic-webfont', $font-folder-path+'/OpenSans');
+@include font( 'OpenSans', 500, italic, 'OpenSans Bold', 'OpenSans-BoldItalic-webfont', $font-folder-path+'/OpenSans');
+@include font( 'OpenSans', 700, italic, 'OpenSans Extra Bold', 'OpenSans-ExtraBoldItalic-webfont', $font-folder-path+'/OpenSans');
+@include font( 'OpenSans', 100, normal, 'OpenSans Light', 'OpenSans-Light-webfont', $font-folder-path+'/OpenSans');
+@include font( 'OpenSans', 300, normal, 'OpenSans Regular', 'OpenSans-Regular-webfont', $font-folder-path+'/OpenSans');
+@include font( 'OpenSans', 400, normal, 'OpenSans Semi Bold', 'OpenSans-Semibold-webfont', $font-folder-path+'/OpenSans');
+@include font( 'OpenSans', 500, normal, 'OpenSans Bold', 'OpenSans-Bold-webfont', $font-folder-path+'/OpenSans');
+@include font( 'OpenSans', 700, normal, 'OpenSans Extra Bold', 'OpenSans-ExtraBold-webfont', $font-folder-path+'/OpenSans');

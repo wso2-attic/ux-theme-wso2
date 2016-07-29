@@ -1,0 +1,69 @@
+//
+// Header
+// --------------------------------------------------
+
+header {
+    min-height: $header-height;
+    position: relative;
+    
+    &.header-default {
+        background: $header-background-color;
+        color: $header-color;
+    }
+    a,
+    a:hover,
+    a:visited,
+    a:focus {
+        color: $header-color;
+        text-decoration: none;
+    }
+    .brand {
+        padding: 12px 0;
+
+        & img.logo {
+            height: 24px;
+        }
+
+        & a {
+            display: inline-block;
+            min-height: 24px;
+            white-space: nowrap;
+        }
+
+        & h1 {
+            display: inline-block;
+            line-height: 1;
+            font-size: 18px;
+            margin: 0 0 0 5px;
+            font-weight: 300;
+        }
+    }
+    .nav > li > a {
+        padding: 5px 15px;
+        height: $header-height;
+        
+        &:hover {
+            background: lighten($header-background-color, 5%);
+        }
+
+        &:focus{
+            color: $header-color;
+            background: lighten($header-background-color, 5%);
+        }
+    }
+    .nav .open > a,
+    .nav .open > a:hover,
+    .nav .open > a:focus {
+        background: darken($header-background-color, 10%);
+    }
+    .nav .dropdown-menu {
+        background: darken($header-background-color, 10%);
+        
+        a {
+            color: $header-color;
+        }
+    }
+    .fw-inverse, .fa-inverse {
+        color: $header-background-color;
+    }
+}

@@ -1,0 +1,11 @@
+.btn-secondary {
+  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+.btn-mobile {
+    width:100%;
+}
+@media (min-width: 768px) {
+  .btn-mobile {
+    width: auto;
+  }
+}

@@ -1,0 +1,54 @@
+//
+// Messages
+// --------------------------------------------------
+
+.message {
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 5px solid transparent;
+    background: #f9f9f9;
+    @include border-radius;
+    
+    h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+            
+        .icon {
+            padding-bottom: 3px;
+            margin-right: 5px;
+        }
+    }  
+    p:last-child {
+        margin-bottom: 0
+    } 
+    + .message {
+        margin-top: -5px
+    }
+}
+
+.message {
+    &-success {
+        border-left-color: $brand-success;
+        & h4 {
+            color: $brand-success;
+        }
+    }
+    &-info {
+        border-left-color: $brand-info;
+        & h4 {
+            color: $brand-info;
+        }
+    }
+    &-warning {
+        border-left-color: $brand-warning;
+        & h4 {
+            color: $brand-warning;
+        }
+    }
+    &-danger {
+        border-left-color: $brand-danger;
+        & h4 {
+            color: $brand-danger;
+        }
+    }
+}

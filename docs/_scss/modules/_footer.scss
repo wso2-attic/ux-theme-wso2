@@ -1,0 +1,43 @@
+//
+// Footer
+// --------------------------------------------------
+
+footer {
+    width: 100%;
+    min-height: $footer-height;
+    overflow: hidden;
+    color: $footer-color;
+    background: $footer-background;
+    
+    & > .container,
+    & > .container-fluid {
+        padding-right: 15px;
+        padding-left: 15px;
+        
+        & > p {
+            line-height: $footer-height;
+            margin-bottom: 0;
+        }
+    }
+    
+    & .icon {
+        font-size: 37px;
+        vertical-align: middle;
+        color: $footer-color;
+    }
+    
+    & a,
+    & a:hover {
+         color: $footer-color;
+    }
+}
+
+body.sticky-footer {
+    padding-bottom: $footer-height;
+    
+    footer {
+        position: absolute;
+        bottom: 0;
+        z-index: 1000;
+    }
+}
