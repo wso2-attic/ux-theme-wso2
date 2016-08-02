@@ -1,0 +1,258 @@
+  .navbar-wrapper {
+    min-height: $navbar-height;
+  }
+
+  .navbar {
+    background: $navbar-bg;
+    border: none;
+    margin-bottom: 0;
+    @include border-radius;
+
+    &.affix,
+    &.affix-bottom {
+      top: 0 !important;
+      width: 100%;
+      z-index: 100000000;
+    }
+    .container-fluid {
+      padding: 0;
+    }
+    > .container .navbar-brand,
+    > .container-fluid .navbar-brand {
+      color: $brand-light;
+      margin-left: 0;
+      padding: 0 15px;
+      line-height: $navbar-height;
+      text-transform: uppercase;
+      background: $navbrand-background-color;
+    }
+    > .container .navbar-brand a,
+    > .container-fluid .navbar-brand a {
+      color: $brand-light;
+      font-size: 16px;
+    }
+    .container-fluid > .navbar-collapse,
+    .container-fluid > .navbar-header,
+    .container > .navbar-collapse,
+    .container > .navbar-header {
+      padding: 0;
+      margin: 0;
+
+      .icon {
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .navbar {
+      &.affix, &.affix-bottom {
+        position: static;
+      }
+    }
+  }
+
+  .loading {
+    .navbar {
+      &.affix {
+        z-index: 1000000;
+      }
+    }
+  }
+
+  .navbar-nav {
+    margin: 7.5px 0;
+    &.nav-stacked {
+      > li {
+        float: none !important;
+      }
+    }
+  }
+
+  @media (min-width:768px){
+    .navbar-nav {
+      margin: 0 0;
+    }
+  }
+
+  .navbar-menu-toggle {
+    float: left;
+    height: $navbar-height;
+    padding: 0 8px;
+    line-height: $navbar-height;
+    font-size: 18px;
+    background: $brand-optional;
+    color: $brand-light;
+
+    &:hover, &:focus, &:active {
+      color: $brand-light;
+      background: darken($brand-optional, 10%);
+    }
+
+    &[aria-expanded=true] {
+      background: darken($brand-optional, 8%);
+    }
+
+    .icon {
+      line-height: $navbar-height;
+      vertical-align: text-bottom;
+    }
+  }
+
+  .navbar-toggle {
+    border: none;
+    @include border-radius;
+  }
+
+  .navbar-default {
+    .navbar-collapse,
+    .navbar-form {
+      border-top: none;
+      //@include box-shadow;
+    }
+    .navbar-nav {
+      > li {
+        > a {
+          color: $navbar-default-link-color;
+          text-transform: uppercase;
+          padding: 0 15px;
+          line-height: $navbar-height;
+          position: relative;
+        }
+        a {
+          &:hover, &:focus, &:active {
+            background: $navbar-default-link-hover-bg;
+            color: $navbar-default-link-hover-color;
+          }
+          &:hover {
+            background: $navbar-default-link-hover-bg;
+          }
+        }
+      }
+      > .active > a {
+        &, &:hover, &:focus, &:active {
+          background: $navbar-default-link-hover-bg;
+          color: $navbar-default-link-hover-color;
+        }
+        &:hover {
+          background: $navbar-default-link-hover-bg;
+        }
+      }
+    }
+  }
+
+  .navbar-collapse {
+    &.dropdown {
+      background: $dropdown-menu-dark-background-color;
+      margin-right: -10px;
+      margin-left: -10px;
+      padding-bottom: 0;
+      display: none !important;
+      overflow: hidden !important;
+      &.collapsing {
+        display: block !important;
+      }
+      &.in {
+        display: block !important;
+        overflow: visible !important;
+      }
+    }
+    &.tiles {
+      ul {
+        &.nav {
+          height: 140px;
+          li {
+            display: inline-block;
+            text-align: center;
+            margin: 10px 5px;
+            a {
+              text-decoration: none;
+              width: 120px;
+              height: 120px;
+              padding: 15px;
+              background: $dropdown-menu-dark-tiles-background-color;
+              display: block;
+              overflow: hidden;
+              line-height: 1.4em;
+              &:hover {
+                background: $dropdown-menu-dark-tiles-hover-background-color;
+              }
+              i {
+                font-size: 46px;
+                display: block;
+                margin-bottom: 10px;
+              }
+            }
+            ul {
+              padding-left: 140px;
+              margin-top: -130px;
+              display: none;
+            }
+            li {
+              a {
+                background: lighten($dropdown-menu-dark-tiles-background-color, 20%);
+                &:hover {
+                  background: lighten($dropdown-menu-dark-tiles-hover-background-color, 20%);
+                }
+              }
+            }
+            &.has-sub {
+              > a:after {
+                width: 7px;
+                height: 120px;
+                background: #757575;
+                display: inline-block;
+                content: " ";
+                top: 0;
+                right: 0;
+                z-index: 100000;
+                position: absolute;
+              }
+              > a:before {
+                display: inline-block;
+                width: 0;
+                height: 0;
+                top: 45%;
+                right: 1px;
+                position: absolute;
+                z-index: 1000000;
+                content: " ";
+                vertical-align: middle;
+                border-left: 4px dashed;
+                border-top: 4px solid\9;
+                border-top: 4px solid transparent;
+                border-bottom: 4px solid transparent;
+                color: #dadada;
+              }
+              &[aria-expanded=true] {
+                > a:after {
+                  right: auto;
+                  left: 0;
+                }
+                > a:before {
+                  right: auto;
+                  left: -3px;
+                  border-right: 4px dashed;
+                  border-left: 4px dashed transparent;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav-pills {
+    > li.active {
+      > a {
+        &,
+        &:focus,
+        &:hover {
+          color: $brand-light;
+          background: $brand-primary;
+          border-color: $brand-primary;
+        }
+      }
+    }
+  }
