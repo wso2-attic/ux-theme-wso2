@@ -1,0 +1,32 @@
+//
+// Tiles
+// --------------------------------------------------
+
+ul {
+  &.tiles {
+    @include reset-default;
+    li {
+      display: inline-block;
+      &.square {
+        min-width: 80px;
+        @include square-ratio(1,1);
+      }
+      a {
+        text-decoration: none;
+        padding: 5px;
+        background: #f3f3f3;
+        color: $gray-darker;
+        display: block;
+        overflow: hidden;
+        line-height: 1.2em;
+        white-space: normal;
+        text-transform: capitalize;
+      }
+    }
+    .icon {
+      display: block;
+      font-size: 15px;
+      margin: 0 auto 5px;
+    }
+  }
+}
