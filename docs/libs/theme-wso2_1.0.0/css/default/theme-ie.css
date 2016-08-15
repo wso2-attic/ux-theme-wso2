@@ -16,11 +16,9 @@
 .page-content-wrapper.fixed,
 .page-content-wrapper.fixed > div,
 .page-content-wrapper.fixed > .sidebar-wrapper {
-  overflow-y: auto;
-}
+  overflow-y: auto; }
 
 .loading .loading-animation .logo .pulse-line {
-  stroke-dasharray: 100;
-}
+  stroke-dasharray: 100; }
 
-/*# sourceMappingURL=theme-wso2-ie.css.map */
+/*# sourceMappingURL=theme-ie.css.map */
