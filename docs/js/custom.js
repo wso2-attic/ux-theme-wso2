@@ -220,7 +220,71 @@ $(function(){
           }
         }
     });
-  
+
+    /***********************************************************
+     *  Documentation left navbar active
+     ***********************************************************/
+
+    var urlValue = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+    var items = $('a.doc-list');
+    $.each( items, function( key, value ) {
+        var strValue = value.toString();
+        var listItem = strValue.substring(strValue.lastIndexOf("/") + 1);
+        if(listItem == urlValue){
+            var listId = listItem.substr(0, listItem.indexOf('.'));
+            $("#"+listId).parent().addClass('active');
+            $("#"+listId).closest('ul').addClass('in');
+            $("#"+listId).closest('ul').parent().addClass('active');
+        }
+    });
+
+    /***********************************************************
+     *  Documentation code toggle
+     ***********************************************************/
+    
+    var codeDisplayBtn = $('<a class="btn btn-link code-btn">See Code</a>');
+    $(".code").after(codeDisplayBtn);
+    $(".code-btn").click(function () {
+        var codeContent = $(this).next().closest('.code-container').find('.code-content');
+        if($(this).next().hasClass('code-container')){
+            $(this).next().remove();
+            $(this).removeClass('code-btn-active');
+        }else{
+            $(this).after(
+                '<div class="code-container">'+
+                '<div class="zero-clipboard">'+
+                '<button class="btn btn-clipboard" data-clipboard-text="" type="button" title="Copy to clipboad">'+
+                '<span class="hidden-xs">Copy</span>'+
+                '</button>'+
+                '</div>'+
+                '<pre><code class="language-html" data-lang="html"><div class="code-content"></div></code></pre>'+
+                '</div>');
+            $(this).next().closest('.code-container').find('.code-content').text($(this).prev('div').html());
+            $(this).next().closest('.code-container').find('.btn-clipboard').attr("data-clipboard-text",($(this).prev('div').html()));
+
+
+            if($(this).prev('div').children().find('code-sample')){
+                console.log($(this).prev('div').find('.code-sample').hasClass('loading-sample1'));
+                if($(this).prev('div').find('.code-sample').hasClass('loading-sample1')) {
+                    console.log("gii")
+                    var formPrependText = '            <form class="form-horizontal" data-toggle="loading" data-loading-style="overlay">';
+                    var formAppendText = '</form>';
+
+                    $(this).next().closest('.code-container').find('.code-content').text($('.code-sample').html());
+                    $(this).next().closest('.code-container').find('.code-content').prepend(document.createTextNode(formPrependText));
+                    $(this).next().closest('.code-container').find('.code-content').append(document.createTextNode(formAppendText));
+                } else if ($(this).prev('div').find('.code-sample').hasClass('loading-sample2')){
+                    $(this).next().closest('.code-container').find('.code-content').text('<div data-toggle="loading" data-loading-text="Processing" ' +
+                        'data-loading-style="icon-only" data-loading-image="images/oloader.gif" data-loading-inverse="true">');
+                }
+            }
+            $(this).addClass('code-btn-active');
+            $('.btn-clipboard').zclip();
+            $('.code-container pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        }
+    });
 });
 
 //$('link[data-include]').each(function(){

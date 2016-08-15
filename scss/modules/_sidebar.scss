@@ -113,12 +113,12 @@ ul .sidebar-messages {
 
   li {
     line-height: 20px;
+    border-left: 3px solid $gray-darker;
 
     a {
       display: block;
       text-decoration: none;
       color: #999999;
-
       &:hover {
         text-decoration: none;
         color: $brand-light;
@@ -129,6 +129,54 @@ ul .sidebar-messages {
         text-decoration: none;
       }
     }
+    ul.sub-menu {
+      list-style: none;
+      padding: 0px;
+      margin: 0px;
+      cursor: pointer;
+
+      li {
+        background-color: $sidebar-submenu-bg;
+        border-left:0;
+        &.active,
+        &:hover{
+          border-left:0;
+          a {
+            color: $brand-light;
+          }
+        }
+        a {
+          display: block;
+          line-height: 40px;
+          border-bottom :0;
+          padding-left: 40px;
+          margin: 0px;
+          &:hover {
+            background-color: transparent;
+            color: $brand-light;
+          }
+        }
+      }
+    }
+    &.active {
+      border-left: 3px solid $brand-optional;
+    }
+  }
+  ul :not(collapsed) .arrow:before,
+  li :not(collapsed) .arrow:before {
+    font-family: $icon-font-name;
+    content: '\e684';
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+  }
+  ul .collapsed .arrow:before,
+  li .collapsed .arrow:before {
+    font-family: $icon-font-name;
+    content: '\e685';
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
   }
   > .sidebar-brand {
     height: 65px;
