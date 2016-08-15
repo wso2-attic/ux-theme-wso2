@@ -1,0 +1,316 @@
+---
+layout: default
+title: Documentation
+js : <script src="libs/zero-clipboard_2.2.0/ZeroClipboard.min.js"></script><script src="libs/highlight/js/highlight.min.js"></script>
+css :  <link href="libs/highlight/css/highlight.min.css" rel="stylesheet" type="text/css" />
+---
+<!-- left-sidebar -->
+{% include docs-nav.html %}
+
+<!-- ******************************************************************
+Table Template
+******************************************************************* -->
+
+<!-- page content -->
+<div class="container-fluid">
+    <div class="body-wrapper">
+        <div class="page-header" id="table">
+            <h1>Data Tables</h1>
+            <p class="lead">Simple Table Sample</p>
+        </div>
+
+        <table id="ajax-table" class="table table-striped table-hover table-bordered display data-table" cellspacing="0">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Device Type</th>
+                <th>OS</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+            </thead>
+            <tbody><!-- Dynamic Content Loads Here --></tbody>
+        </table>
+
+        <div class="code hide">
+        <table id="ajax-table-sample" class="table table-striped table-hover table-bordered display data-table" cellspacing="0">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Device Type</th>
+                <th>OS</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+            </thead>
+            <tbody><!-- Dynamic Content Loads Here --></tbody>
+        </table>
+        </div>
+
+        <div class="page-header" >
+            <p class="lead">Custom Table</p>
+        </div>
+
+        <table class="table table-responsive table-striped" id="members">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Member</th>
+                <th>Email Address</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody><!-- Dynamic Content Loads Here --></tbody>
+        </table>
+
+        <div class="code hide">
+        <table class="table table-responsive table-striped" id="members-sample">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Member</th>
+                <th>Email Address</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody><!-- Dynamic Content Loads Here --></tbody>
+        </table>
+        </div>
+
+        <br />
+        <hr />
+
+        <table class="table table-striped table-hover table-responsive list-table display responsive nowrap data-table" id="users">
+            <thead class="block">
+            <tr class="sort-row">
+                <th class="content-fill no-sort"></th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+                <th class="no-sort"></th>
+            </tr>
+            <tr class="filter-row">
+                <th data-for="Type"></th>
+                <th data-for="Name" class="text-filter"></th>
+                <th data-for="Position" class="select-filter"></th>
+                <th data-for="Office" class="select-filter"></th>
+                <th data-for="Age" class="select-filter"></th>
+                <th data-for="Start Date" class="select-filter"></th>
+                <th data-for="Salary" class="select-filter"></th>
+                <th></th>
+            </tr>
+            <tr class="bulk-action-row">
+                <th colspan="8">
+                    <div class="message message-info">
+                        <h4><i class="icon fw fw-info"></i>Minor Information Message</h4>
+                        <p>Alerts don't have default classes, only base and modifier classes. A default gray alert
+                            doesn't make too much sense, so you're required to specify a type via contextual class.
+                            Choose from success, info, warning, or danger.</p>
+                    </div>
+                </th>
+            </tr>
+            <tr class="bulk-action-row">
+                <th colspan="8">
+
+                    <ul class="tiles">
+                        <li class="square">
+                            <a class="btn square-element" data-click-event="delete-selected-rows">
+                                                    <span class="icon fw-stack">
+                                                        <i class="fw fw-ring fw-stack-2x"></i>
+                                                        <i class="fw fw-delete fw-stack-1x"></i>
+                                                    </span>
+                                Delete Selected
+                            </a>
+                        </li>
+                        <li class="square">
+                            <a class="btn square-element" data-toggle="modal" data-target="#modalDemo">
+                                                    <span class="icon fw-stack">
+                                                        <i class="fw fw-ring fw-stack-2x"></i>
+                                                        <i class="fw fw-edit fw-stack-1x"></i>
+                                                    </span>
+                                Edit Selected
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalDemo" tabindex="-1" role="dialog" aria-labelledby="modalDemo">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Edit Selected</h4>
+                                </div>
+                                <div class="modal-body">
+                                    You about perform a bulk operation, please confirm to proceed.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Handlebars Template Appends Here -->
+            </tbody>
+        </table>
+
+        <div class="code hide">
+        <table class="table table-striped table-hover table-responsive list-table display responsive nowrap data-table" id="users-sample">
+            <thead class="block">
+            <tr class="sort-row">
+                <th class="content-fill no-sort"></th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+                <th class="no-sort"></th>
+            </tr>
+            <tr class="filter-row">
+                <th data-for="Type"></th>
+                <th data-for="Name" class="text-filter"></th>
+                <th data-for="Position" class="select-filter"></th>
+                <th data-for="Office" class="select-filter"></th>
+                <th data-for="Age" class="select-filter"></th>
+                <th data-for="Start Date" class="select-filter"></th>
+                <th data-for="Salary" class="select-filter"></th>
+                <th></th>
+            </tr>
+            <tr class="bulk-action-row">
+                <th colspan="8">
+                    <div class="message message-info">
+                        <h4><i class="icon fw fw-info"></i>Minor Information Message</h4>
+                        <p>Alerts don't have default classes, only base and modifier classes. A default gray alert
+                            doesn't make too much sense, so you're required to specify a type via contextual class.
+                            Choose from success, info, warning, or danger.</p>
+                    </div>
+                </th>
+            </tr>
+            <tr class="bulk-action-row">
+                <th colspan="8">
+
+                    <ul class="tiles">
+                        <li class="square">
+                            <a class="btn square-element" data-click-event="delete-selected-rows">
+                                                    <span class="icon fw-stack">
+                                                        <i class="fw fw-ring fw-stack-2x"></i>
+                                                        <i class="fw fw-delete fw-stack-1x"></i>
+                                                    </span>
+                                Delete Selected
+                            </a>
+                        </li>
+                        <li class="square">
+                            <a class="btn square-element" data-toggle="modal" data-target="#modalDemo">
+                                                    <span class="icon fw-stack">
+                                                        <i class="fw fw-ring fw-stack-2x"></i>
+                                                        <i class="fw fw-edit fw-stack-1x"></i>
+                                                    </span>
+                                Edit Selected
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalDemo" tabindex="-1" role="dialog" aria-labelledby="modalDemo">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Edit Selected</h4>
+                                </div>
+                                <div class="modal-body">
+                                    You about perform a bulk operation, please confirm to proceed.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Handlebars Template Appends Here -->
+            </tbody>
+        </table>
+        </div>
+        <br/>
+        <hr />
+        <table class="table table-striped list-table display responsive nowrap data-table grid-view random-thumbs" id="device-grid">
+            <thead>
+            <tr class="sort-row">
+                <th class="content-fill no-sort"></th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+                <th class="no-sort"></th>
+            </tr>
+            <tr class="filter-row">
+                <th data-for="Type"></th>
+                <th data-for="Name" class="text-filter"></th>
+                <th data-for="Position" class="select-filter"></th>
+                <th data-for="Office" class="select-filter"></th>
+                <th data-for="Age" class="select-filter"></th>
+                <th data-for="Start Date" class="select-filter"></th>
+                <th data-for="Salary" class="select-filter"></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody><!-- Dynamic Content Loads Here --></tbody>
+        </table>
+
+        <div class="code hide">
+        <table class="table table-striped list-table display responsive nowrap data-table grid-view random-thumbs" id="device-grid-sample">
+            <thead>
+            <tr class="sort-row">
+                <th class="content-fill no-sort"></th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+                <th class="no-sort"></th>
+            </tr>
+            <tr class="filter-row">
+                <th data-for="Type"></th>
+                <th data-for="Name" class="text-filter"></th>
+                <th data-for="Position" class="select-filter"></th>
+                <th data-for="Office" class="select-filter"></th>
+                <th data-for="Age" class="select-filter"></th>
+                <th data-for="Start Date" class="select-filter"></th>
+                <th data-for="Salary" class="select-filter"></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody><!-- Dynamic Content Loads Here --></tbody>
+        </table>
+        </div>
+    </div>
+</div>

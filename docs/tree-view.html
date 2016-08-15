@@ -1,0 +1,158 @@
+---
+layout: default
+title: Documentation
+js : <script src="libs/zero-clipboard_2.2.0/ZeroClipboard.min.js"></script><script src="libs/highlight/js/highlight.min.js"></script>
+css :  <link href="libs/highlight/css/highlight.min.css" rel="stylesheet" type="text/css" />
+---
+<!-- left-sidebar -->
+{% include docs-nav.html %}
+<!-- ******************************************************************
+Tree-view Template
+******************************************************************* -->
+
+<!-- page content -->
+<div class="container-fluid">
+    <div class="body-wrapper">
+
+        <div class="page-header" id="tree-view">
+            <h1>Tree View</h1>
+            <p class="lead">Basic</p>
+        </div>
+
+        <div class="code">
+        <div class="well">
+            <ul id="tree1" class="tree-view tree-view-lines">
+                <li aria-expanded="true"><a href="#">TECH</a>
+                    <ul>
+                        <li>Company Maintenance</li>
+                        <li>Employees
+                            <ul>
+                                <li><input type="checkbox"> Reports
+                                    <ul>
+                                        <li>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> Report1
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> Report2
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>Report3</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Employee Maint.
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Human Resources</li>
+                    </ul>
+                </li>
+                <li>XRP
+                    <ul>
+                        <li>Company Maintenance</li>
+                        <li>Employees
+                            <ul>
+                                <li>Reports
+                                    <ul>
+                                        <li>Report1</li>
+                                        <li>Report2</li>
+                                        <li>Report3</li>
+                                    </ul>
+                                </li>
+                                <li>Employee Maint.</li>
+                            </ul>
+                        </li>
+                        <li>Human Resources</li>
+                    </ul>
+                </li>
+                <li aria-expanded="false"><a href="#">SSE</a></li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="page-header" id="tree-view">
+            <p class="lead">jsTree Demo</p>
+        </div>
+
+        <div class="well" id="jstree">
+            <ul>
+                <li data-jstree='{ "opened" : true }'>Root node 1
+                    <ul>
+                        <li>Child node 1</li>
+                        <li>Child node 2
+                            <ul>
+                                <li>Sub child node 1</li>
+                                <li>Sub child node 2
+                                    <ul>
+                                        <li>Baby node 1</li>
+                                        <li>Baby node 2</li>
+                                        <li>Baby node 3
+                                            <ul>
+                                                <li>Test Node 1</li>
+                                                <li>Test Node 2</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Sub child node 3</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Root node 2
+                    <ul>
+                        <li>Node</li>
+                    </ul>
+                </li>
+                <li>Root node 3</li>
+            </ul>
+        </div>
+
+        <div class="code hide">
+        <div class="well" id="jstree-sample">
+            <ul>
+                <li data-jstree='{ "opened" : true }'>Root node 1
+                    <ul>
+                        <li>Child node 1</li>
+                        <li>Child node 2
+                            <ul>
+                                <li>Sub child node 1</li>
+                                <li>Sub child node 2
+                                    <ul>
+                                        <li>Baby node 1</li>
+                                        <li>Baby node 2</li>
+                                        <li>Baby node 3
+                                            <ul>
+                                                <li>Test Node 1</li>
+                                                <li>Test Node 2</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Sub child node 3</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Root node 2
+                    <ul>
+                        <li>Node</li>
+                    </ul>
+                </li>
+                <li>Root node 3</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</div>
