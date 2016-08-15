@@ -1,0 +1,71 @@
+---
+layout: doc-default
+title: Documentation
+js : <script src="libs/zero-clipboard_2.2.0/ZeroClipboard.min.js"></script><script src="libs/highlight/js/highlight.min.js"></script>
+css :  <link href="libs/highlight/css/highlight.min.css" rel="stylesheet" type="text/css" />
+---
+<!-- left-sidebar -->
+{% include doc-nav.html %}
+
+<!-- ******************************************************************
+Loading Style
+******************************************************************* -->
+
+<!-- page content -->
+<div class="container-fluid">
+    <div class="body-wrapper">
+
+        <div class="page-header" id="loading">
+            <h1>Pre-loading Animation</h1>
+        </div>
+
+        <div class="code">
+            <form class="form-horizontal" data-toggle="loading" data-loading-style="overlay">
+                <div class="code-sample loading-sample1">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label for="input-name" class="control-label">Transfer</label>
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">$</div>
+                                        <input type="number" min="1" max="100000" class="form-control form-control-md" id="exampleInputAmount" placeholder="Amount">
+                                        <div class="input-group-addon">.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn">Transfer cash</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label class="control-label">Message</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label class="control-label">Choose</label>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="code">
+            <div class="code-sample loading-sample2">
+                <div style="height:200px" data-toggle="loading" data-loading-text="Processing" data-loading-style="icon-only" data-loading-image="images/oloader.gif" data-loading-inverse="true"></div>
+            </div>
+        </div>
+    </div>
+</div>

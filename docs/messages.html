@@ -1,0 +1,97 @@
+---
+layout: doc-default
+title: Documentation
+js : <script src="libs/zero-clipboard_2.2.0/ZeroClipboard.min.js"></script><script src="libs/highlight/js/highlight.min.js"></script>
+css :  <link href="libs/highlight/css/highlight.min.css" rel="stylesheet" type="text/css" />
+---
+<!-- left-sidebar -->
+{% include doc-nav.html %}
+
+<!-- ******************************************************************
+Message Templates
+******************************************************************* -->
+
+<!-- page content -->
+<div class="container-fluid">
+    <div class="body-wrapper">
+        <div class="page-header" id="Message">
+            <h1>Custom Messages</h1>
+            <p class="lead">Alert Templates</p>
+        </div>
+
+        <div class="code">
+            <div class="alert alert-success" role="alert">
+                <i class="icon fw fw-success"></i><strong>Success!</strong>
+                You successfully read this important alert message.
+                <button type="button" class="close" aria-label="close" data-dismiss="alert">
+                    <span aria-hidden="true">
+                        <i class="fw fw-cancel"></i>
+                    </span>
+                </button>
+            </div>
+
+            <div class="alert alert-info" role="alert">
+                <i class="icon fw fw-warning"></i><strong>Info!</strong>
+                This alert needs your attention, but it's not super important.
+                <button type="button" class="close" aria-label="close" data-dismiss="alert">
+                    <span aria-hidden="true">
+                        <i class="fw fw-cancel"></i>
+                    </span>
+                </button>
+            </div>
+
+            <div class="alert alert-warning" role="alert">
+                <i class="icon fw fw-info"></i><strong>Warning!</strong>
+                Better check yourself, you're not looking too good.
+                <button type="button" class="close" aria-label="close" data-dismiss="alert">
+                    <span aria-hidden="true">
+                        <i class="fw fw-cancel"></i>
+                    </span>
+                </button>
+            </div>
+
+            <div class="alert alert-danger" role="alert">
+                <i class="icon fw fw-error"></i><strong>Error!</strong>
+                Change a few things up and try submitting again.
+                <button type="button" class="close" aria-label="close" data-dismiss="alert">
+                    <span aria-hidden="true">
+                        <i class="fw fw-cancel"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <br />
+        <div class="page-header">
+            <p class="lead">Message Status Templates</p>
+        </div>
+        <div class="code">
+            <div class="message message-success">
+                <h4><i class="icon fw fw-success"></i>Message</h4>
+                <p>Alerts don't have default classes, only base and modifier classes. A default gray alert
+                    doesn't make too much sense, so you're required to specify a type via contextual class.
+                    Choose from success, info, warning, or danger.</p>
+            </div>
+
+            <div class="message message-info">
+                <h4><i class="icon fw fw-info"></i>Minor Information Message</h4>
+                <p>Alerts don't have default classes, only base and modifier classes. A default gray alert
+                    doesn't make too much sense, so you're required to specify a type via contextual class.
+                    Choose from success, info, warning, or danger.</p>
+            </div>
+
+            <div class="message message-warning">
+                <h4><i class="icon fw fw-warning"></i>Major Information Message</h4>
+                <p>Alerts don't have default classes, only base and modifier classes. A default gray alert
+                    doesn't make too much sense, so you're required to specify a type via contextual class.
+                    Choose from success, info, warning, or danger.</p>
+            </div>
+
+            <div class="message message-danger">
+                <h4><i class="icon fw fw-error"></i>Critical Information Message</h4>
+                <p>Alerts don't have default classes, only base and modifier classes. A default gray alert
+                    doesn't make too much sense, so you're required to specify a type via contextual class.
+                    Choose from success, info, warning, or danger.</p>
+            </div>
+        </div>
+    </div>
+</div>
