@@ -232,17 +232,17 @@ $(function(){
         var listItem = strValue.substring(strValue.lastIndexOf("/") + 1);
         if(listItem == urlValue){
             var listId = listItem.substr(0, listItem.indexOf('.'));
-            $("#"+listId).parent().addClass('active');
+            $("#"+listId).addClass('active');
             $("#"+listId).closest('ul').addClass('in');
-            $("#"+listId).closest('ul').parent().addClass('active');
+            $("#"+listId).closest('ul').prev().addClass('active');
         }
     });
 
     /***********************************************************
      *  Documentation code toggle
      ***********************************************************/
-    
-    var codeDisplayBtn = $('<a class="btn btn-link code-btn">See Code</a>');
+
+    var codeDisplayBtn = $('<a class="btn btn-link code-btn">&lt;/&gt;&nbsp;&nbsp;Show Code </a>');
     $(".code").after(codeDisplayBtn);
     $(".code-btn").click(function () {
         var codeContent = $(this).next().closest('.code-container').find('.code-content');

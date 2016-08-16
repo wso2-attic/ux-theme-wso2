@@ -563,7 +563,7 @@
     text-transform: none;
 }
 
-#sidebar-theme li.active
+#sidebar-theme li a.active
 {
     border-left-color: #F47A1E;
 }
@@ -616,8 +616,7 @@
 
 h1.theme-name{
     display: inline-block;
-    font-size: 57px;
-    /*margin: 0 0 0 5px;*/
+    font-size: 61px;
     font-weight: 300;
     color:#fff;
 }
@@ -633,6 +632,11 @@ h5.version {
 .theme-logo img{
     height:57px;
     margin-bottom:23px;
+}
+@media(max-width:767px) {
+    .theme-logo img{
+        margin-bottom: -20px;
+    }
 }
 
 #overview-page .center-block {
@@ -672,4 +676,8 @@ h5.version {
 
 .zero-clipboard {
     position:relative;
+}
+
+.requiredAstrix {
+    color: red;
 }
