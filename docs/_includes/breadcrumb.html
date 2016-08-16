@@ -1,6 +1,6 @@
     <div class="breadcrumb-wrapper">
         <ol class="breadcrumb">
-            <li><a href="index.html"><i class="icon fw fw-home"></i> <span class="hidden-xs">Overview</span></a></li>
+            <li><a href="/"><i class="icon fw fw-home"></i> <span class="hidden-xs">Overview</span></a></li>
             {% unless page.url == '/index.html' %}
                 {% assign current-page = page.url | split: '/' %}
                 {% assign current-page = current-page[1] | remove: '.html' %}
