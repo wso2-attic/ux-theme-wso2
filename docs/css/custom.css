@@ -621,7 +621,7 @@ h1.theme-name{
     color:#fff;
 }
 
-h4.theme-description {
+h4.theme-description , h5.theme-description{
     color: #fff;
 }
 
@@ -659,6 +659,12 @@ h5.version {
     background-color: #191919
 }
 
+.github-btn {
+    color:#9E9E9E;
+}
+.github-btn:hover{
+    color: #F47A1E;
+}
 .btn-clipboard {
     position: absolute;
     top: 0;
