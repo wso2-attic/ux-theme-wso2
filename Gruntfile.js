@@ -1,63 +1,5 @@
-var path = require('path');
-
-module.exports = function(grunt) {
-
-    // Project configuration.
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        sass: {
-            apim: {
-                options: {
-                    style: 'expanded'
-                },
-                files: {
-                    'build/products/apim/css/apim-publisher.css': 'config/product-apim/publisher.scss',
-                    'build/products/apim/css/apim-store.css': 'config/product-apim/store.scss',
-                }
-            },
-            main: {
-                options: {
-                    style: 'expanded'
-                },
-                files: {
-                    'build/css/<%= pkg.name %>.css': 'config/default/theme.scss',
-                    'build/css/<%= pkg.name %>-ie.css': 'config/default/theme-ie.scss',
-                }
-            }
-        },
-        cssmin: {
-            apim:{ 
-                files: {
-                    'build/products/product-apim/css/apim-publisher.min.css': 'build/products/product-apim/css/apim-publisher.css',
-                    'build/products/product-apim/css/apim-store.min.css': 'build/products/product-apim/css/apim-store.css',
-                }
-            },
-            main:{ 
-                files: {
-                    'build/css/<%= pkg.name %>.min.css': ['build/css/<%= pkg.name %>.css'],
-                    'build/css/<%= pkg.name %>-ie.min.css': ['build/css/<%= pkg.name %>-ie.css']
-                }
-            }
-        },
-        concat: {
-            dist: {
-                files: {
-                    //'build/js/loading.js': ['templates/js-header.js','js/loading.js','templates/js-footer.js'],
-                    'build/js/<%= pkg.name %>.js': [
-                        'templates/js-header.js',
-                        'js/loading.js',
-                        'js/functions.js',
-                        'templates/js-footer.js',
-                        'js/optional.js'
-                    ],
-                },
-            },
-        },
-        uglify: {
-            options: {
-                mangle: false,
-                banner: 
-                 '/*' +
+var path = require('path'),
+    wso2banner = '/*' +
                  '~   Copyright (c) WSO2 Inc. (http://wso2.com) All Rights Reserved.'+
                  '~'+
                  '~   Licensed under the Apache License, Version 2.0 (the "License");'+
@@ -71,38 +13,114 @@ module.exports = function(grunt) {
                  '~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.'+
                  '~   See the License for the specific language governing permissions and'+
                  '~   limitations under the License.'+
-                 '*/'
+                 '*/';
+
+module.exports = function(grunt) {
+
+    // Project configuration.
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        sass: {
+            default: {
+                files: [{
+                    expand: true,
+                    cwd: 'config/default',
+                    src: ['**/*.scss'],
+                    dest: 'dist/css/default',
+                    ext: '.css'
+                }]
             },
-            my_target: {
+            all: {
+                files: [{
+                    expand: true,
+                    cwd: 'config',
+                    src: ['**/*.scss'],
+                    dest: 'dist/css',
+                    ext: '.css'
+                }]
+            },
+            product: {
+                files: [{
+                    expand: true,
+                    cwd: 'config/products/<%= grunt.option("sass.options.product") %>',
+                    src: ['**/*.scss'],
+                    dest: 'dist/css/products/<%= grunt.option("sass.options.product") %>',
+                    ext: '.css'
+                }]
+            }
+        },
+        cssmin: {
+            default: {
+                files: [{
+                    expand: true,
+                    cwd: 'dist/css/default',
+                    src: ['**/*.css', '!**/*.min.css'],
+                    dest: 'dist/css/default',
+                    ext: '.min.css'
+                }]
+            },
+            all: {
+                files: [{
+                    expand: true,
+                    cwd: 'dist/css',
+                    src: ['**/*.css', '!**/*.min.css'],
+                    dest: 'dist/css',
+                    ext: '.min.css'
+                }]
+            },
+            product: {
+                files: [{
+                    expand: true,
+                    cwd: 'dist/css/products/<%= grunt.option("sass.options.product") %>',
+                    src: ['**/*.css', '!**/*.min.css'],
+                    dest: 'dist/css/products/<%= grunt.option("sass.options.product") %>',
+                    ext: '.min.css'
+                }]
+            }
+        },
+        concat: {
+            dist: {
                 files: {
-                    'build/js/<%= pkg.name %>.min.js': ['build/js/<%= pkg.name %>.js']
-                }
+                    'dist/js/<%= pkg.name %>.js': [
+                        'js/header.js',
+                        'js/modules/loading.js',
+                        'js/modules/functions.js',
+                        'js/footer.js',
+                        'js/modules/optional.js'
+                    ],
+                },
+            },
+        },
+        uglify: {
+            options: {
+                mangle: false,
+                banner: wso2banner  
+            },
+            js: {
+                files: [{
+                    expand: true,
+                    cwd: 'dist/js',
+                    src: ['**/*.js', '!**/*.min.js'],
+                    dest: 'dist/js',
+                    ext: '.min.js'
+                }]
             }
         },
         copy: {
-            apim: {
-                files: [
-                    { expand: true, cwd: 'build/products/apim/css/', src: ['**'], dest: 'dist/products/apim/css/' }
-                ],
-            },
             main: {
                 files: [
-                    { expand: true, cwd: 'build/js/', src: ['<%= pkg.name %>.js','<%= pkg.name %>.min.js'], dest: 'dist/js/' },
                     { expand: true, cwd: 'fonts/', src: ['**'], dest: 'dist/fonts/' },
                     { expand: true, cwd: 'images/', src: ['**'], dest: 'dist/images/' },
-                    { expand: true, cwd: 'extensions/', src: ['**'], dest: 'dist/extensions/' },
-
-                    { expand: true, cwd: 'dist/js/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/js/' },
-                    { expand: true, cwd: 'dist/fonts/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/fonts/' },
-                    { expand: true, cwd: 'dist/images/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/images/' },
-                    { expand: true, cwd: 'dist/extensions/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/extensions/' }
+                    { expand: true, cwd: 'extensions/', src: ['**'], dest: 'dist/extensions/' }
                 ],
             },
-            css: {
-                files: [
-                    { expand: true, cwd: 'build/css/', src: ['**'], dest: 'dist/css/' },
-                    { expand: true, cwd: 'dist/css/', src: ['**'], dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/css/' }
-                ],
+            docs: {
+                files: [{
+                    expand: true,
+                    cwd: 'dist',
+                    src: ['**/*', '!css', 'css/default/**'],
+                    dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>'
+                }]
             },
         },
         jekyll: {
@@ -150,11 +168,48 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-jekyll');
     
-    // Default task(s).
-    grunt.registerTask('default', ['sass:main','cssmin:main','concat','uglify','copy:main','copy:css','jekyll']);
-    grunt.registerTask('build', ['sass','cssmin','concat','uglify','copy','jekyll']);
-    grunt.registerTask('docs', ['jekyll']);
-    
-    grunt.registerTask('apim', ['sass:apim','cssmin:apim','concat','uglify','copy:apim']);
+    // Default task(s).   
+    grunt.registerTask('default', ['sass:all','cssmin:all','concat','uglify','copy:main']);
+    grunt.registerTask('docs', ['copy:docs']);
+    grunt.registerTask('css', function(arg) {
+        if(!arg){
+            
+            grunt.log.writeln('');
+            grunt.log.writeln('You have to select a product');
+            grunt.log.writeln('------------------------------------------------------');
+            grunt.log.writeln('To build individual products, run the command again with :<product-short-name>. e.g. "grunt css:apim"');
+            grunt.log.writeln('Or to build all the product css files, run the command "grunt css:all"');
+
+            
+        } else if(arg == 'all'){
+            
+            grunt.log.writeln('');
+            grunt.log.writeln('building css files of all products ...');
+            grunt.task.run(['sass:all','cssmin:all']);
+        
+        } else if(arg == 'default'){
+            
+            grunt.log.writeln('');
+            grunt.log.writeln('building the default theme css files ...');
+            grunt.task.run(['sass:default','cssmin:default']);
+        
+        } else {
+            
+            grunt.log.writeln('');
+            grunt.log.writeln('building css files of product-' + arg + ' ...');
+            
+            var filepath = 'config/products/product-' + arg;
+            
+            if(grunt.file.isDir(filepath)){
+                grunt.option('sass.options.product', 'product-' + arg);
+                grunt.task.run(['sass:product','cssmin:product']);
+            }
+            else {
+                grunt.log.writeln('');
+                grunt.log.error('Couldn\'t find product-' + arg + ' in config folder. Please check the path "config/products/" and run the command');
+            }
+            
+        }
+    }); 
 
 };

@@ -7,23 +7,28 @@ http://wso2-dev-ux.github.io/theme-wso2/
 
 ## Build
 
-####Download and run `grunt` command
+#### Download and run `grunt` command
 
-to compile scss and build default
+to compile scss and build default distrubution run
 ```
 grunt
 ```
-to compile all + docs
+
+to compile product scss files
 ```
-grunt full
+grunt css:<porduct-short-name>
 ```
-to compile only docs
+e.g. grunt css:apim
+
+to compile all product scss files
+```
+grunt css:all
+```
+
+
+to compile docs
 ```
 grunt docs
-```
-to build product specific css: e.g. `grunt apim`
-```
-grunt {product-shortname}
 ```
 
 ## Prerequisite
