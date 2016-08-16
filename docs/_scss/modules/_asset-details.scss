@@ -1,0 +1,23 @@
+//
+// asset details styles
+// --------------------------------------------------
+
+.asset-image {
+  max-width: 150px;
+  background: $brand-primary;
+  float: none;
+}
+
+.asset-desc {
+  .asset-name {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+}
+
+.asset-desc {
+  .asset-publisher {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+}

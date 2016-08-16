@@ -1,0 +1,131 @@
+//
+// Loading styles
+// --------------------------------------------------
+
+.loading {
+  position: relative;
+  &[data-loading-style=overlay] {
+    .loading-bg {
+      background: $loading-background-color;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 10000000;
+      @include opacity($loading-background-opacity);
+    }
+  }
+  &[data-loading-style=icon-only] {
+    .loading-bg {
+      display: none;
+    }
+  }
+  &[data-loading-inverse=true] {
+    .loading-bg {
+      background: $loading-inverse-background-color;
+    }
+    .loading-animation {
+      .logo {
+        .pulse-line,
+        .circle {
+          stroke: $loading-inverse-color;
+        }
+      }
+      p {
+        color: $loading-inverse-color;
+      }
+    }
+  }
+  .loading-animation {
+    position: absolute;
+    z-index: 10000001;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 75px;
+    text-align: center;
+    @include transform(translate(-50%, -50%));
+
+    .logo {
+      position: relative;
+      width: 50px;
+      margin: 0 auto;
+
+      img {
+        max-width: $loading-image-icon-max-width;
+      }
+      .pulse-line,
+      .circle {
+        fill: none;
+        stroke: $loading-color;
+      }
+      .circle {
+        stroke-dasharray: 100;
+        @include opacity(0.5);
+      }
+      .pulse-line {
+        stroke-dasharray: 200;
+        stroke-dashoffset: 200;
+        animation: dash 4s linear  infinite;
+        @include opacity(0);
+      }
+      .signal {
+        border: 5px solid $loading-color;
+        border-radius: 50px;
+        height: 50px;
+        width: 50px;
+        @include opacity(0);
+        position: absolute;
+        top: 0;
+        animation: pulsate 4s ease-out infinite;
+        animation-delay: 1.5s;
+        @include transform(translate(-50%, -50%));
+      }
+    }
+    p {
+      color: $loading-color;
+      text-align: center;
+      font-size: 11px;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@keyframes dash {
+  0% {
+    @include opacity(0.9);
+  }
+  10% {
+    stroke-dashoffset: 200;
+    @include opacity(0.9);
+  }
+  70% {
+    stroke-dashoffset: 500;
+    @include opacity(0.9);
+  }
+  80% {
+    @include opacity(0);
+  }
+  100% {
+    @include opacity(0);
+  }
+}
+
+@keyframes pulsate {
+  0%, 30%  {
+    @include opacity(0);
+    @include transform(scale(0.9));
+  }
+  40% {
+    @include opacity(1);
+  }
+  60% {
+    @include opacity(0);
+    @include transform(scale(1.2));
+  }
+}
+
+/* ui fixes */
+#dp_swf_engine {
+  display: none;
+}

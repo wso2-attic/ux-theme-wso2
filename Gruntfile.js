@@ -120,6 +120,12 @@ module.exports = function(grunt) {
                     cwd: 'dist',
                     src: ['**/*', '!css', 'css/default/**'],
                     dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>'
+                }],
+                files: [{
+                    expand: true,
+                    cwd: 'scss',
+                    src: ['**/*'],
+                    dest: 'docs/_scss'
                 }]
             },
         },

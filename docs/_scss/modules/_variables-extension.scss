@@ -27,6 +27,8 @@ $brand-info: #009DA7 !default;
 $brand-warning: #f0ad4e !default;
 $brand-danger: #d9534f !default;
 $brand-disabled: $gray !default;
+$brand-light: #ffffff !default;
+$brand-optional: #007D85 !default;
 
 // Typography
 //--------------------------------------------------------------------------------------------------
@@ -36,6 +38,11 @@ $font-weight-base: 300 !default;
 // Iconography
 //--------------------------------------------------------------------------------------------------
 $icon-font-name: "font-wso2" !default;
+
+// Text
+//--------------------------------------------------------------------------------------------------
+$text-truncate-width: none !default;
+$text-truncate-width-tag-content: 160px !default;
 
 // Components
 //--------------------------------------------------------------------------------------------------
@@ -128,3 +135,62 @@ $btn-secondary-border: darken($btn-secondary-bg, 5%) !default;
 // Media object
 //--------------------------------------------------------------------------------------------------
 $media-bg: #efefef !default;
+
+// Page Content
+//--------------------------------------------------------------------------------------------------
+$page-content-wrapper-height: calc(100% - 120px) !default;
+$page-content-wrapper-height-mobile: calc(100% - 205px) !default;
+$page-content-wrapper-sidebar-height-mobile: calc(100% - 245px) !default;
+
+// Navbar
+//--------------------------------------------------------------------------------------------------
+$navbar-padding: 0 15px !default;
+$navbar-bg: $brand-primary !default;
+$navbar-default-link-color: $brand-light !default;
+$navbar-default-link-hover-color: $navbar-default-link-color !default;
+$navbar-default-link-hover-bg: lighten($navbar-bg, 10%) !default;
+$navbrand-background-color: darken($navbar-bg, 5%) !default;
+$navbar-height: 40px !default;
+
+
+// Sidebar
+//--------------------------------------------------------------------------------------------------
+$sidebar-width-default: 350px !default;
+$sidebar-submenu-bg: #181c20 !default;
+
+// Dropdowns
+//--------------------------------------------------------------------------------------------------
+$dropdown-menu-dark-background-color: $gray-darker !default;
+$dropdown-menu-dark-color: $brand-light !default;
+$dropdown-menu-dark-tiles-background-color: #444 !default;
+$dropdown-menu-dark-tiles-hover-background-color: #555 !default;
+$dropdown-menu-dark-tiles-color: $brand-light !default;
+
+// Loading styles
+//--------------------------------------------------------------------------------------------------
+$loading-background-opacity: 0.6 !default;
+$loading-background-color: $gray-darker !default;
+$loading-color: $brand-light !default;
+$loading-inverse-background-color: $brand-light !default;
+$loading-inverse-color: $gray-darker !default;
+$loading-image-icon-max-width: 50px !default;
+
+// Forms
+//--------------------------------------------------------------------------------------------------
+$form-control-max-width: 750px !default;
+
+
+// Switch styles
+//--------------------------------------------------------------------------------------------------
+$switch-active-background-color: #25262b !default;
+$switch-inactive-background-color: #a6a6a6 !default;
+$switch-disabled-background-color: #6f7579 !default;
+$switch-handler-active-color: #237bd5 !default;
+$switch-handler-inactive-color: #eaeaea !default;
+$switch-handler-disabled-color: #484e52 !default;
+
+// Datatables
+//--------------------------------------------------------------------------------------------------
+$icon-sort-content: "\e673" !default;
+$icon-sort-up-content: "\e64b" !default;
+$icon-sort-down-content: "\e663" !default;
