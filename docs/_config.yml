@@ -6,5 +6,6 @@ url: wso2-dev-ux.github.io/theme-wso2/
 license: https://github.com/wso2-dev-ux/theme-wso2/blob/master/LICENSE
 baseurl: "/"
 permalink: :title
+include: ["_pages"]
 sass:
   sass_dir: _scss
