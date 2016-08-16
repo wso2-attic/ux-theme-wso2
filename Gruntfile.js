@@ -120,6 +120,12 @@ module.exports = function(grunt) {
                     cwd: 'dist',
                     src: ['**/*', '!css', 'css/default/**'],
                     dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>'
+                }],
+                files: [{
+                    expand: true,
+                    cwd: 'scss',
+                    src: ['**/*'],
+                    dest: 'docs/_scss'
                 }]
             },
         },
@@ -144,6 +150,9 @@ module.exports = function(grunt) {
         watch: {
             options: {
                 dateFormat: function(time) {
+                    grunt.log.writeln('');
+                    grunt.log.writeln('Watching for SCSS changes');
+                    grunt.log.writeln('------------------------------------------------------');
                     grunt.log.writeln('Regenerating: Changed at ' + (new Date()).toString() + ' ...done in ' + time + ' ms.');
                     grunt.log.writeln('Waiting for more changes...');
                 },
@@ -171,6 +180,7 @@ module.exports = function(grunt) {
     // Default task(s).   
     grunt.registerTask('default', ['sass:all','cssmin:all','concat','uglify','copy:main']);
     grunt.registerTask('docs', ['copy:docs']);
+    grunt.registerTask('watch', ['watch']);
     grunt.registerTask('css', function(arg) {
         if(!arg){
             

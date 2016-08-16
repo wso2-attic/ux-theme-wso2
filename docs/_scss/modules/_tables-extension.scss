@@ -1,0 +1,388 @@
+.table {
+  thead {
+    th {
+      font-weight: 300;
+    }
+  }
+  .form-control {
+    min-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .table-responsive {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+    }
+    thead {
+      tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+    }
+    tr {
+      border: 1px solid #ccc;
+      & > td {
+        &:before {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          width: 45%;
+          padding-right: 10px;
+          white-space: nowrap;
+          text-align:left;
+          font-weight: bold;
+        }
+      }
+    }
+    &.table-striped {
+      border: none;
+    }
+    tbody {
+      > tr {
+        > td {
+          border: none;
+          border-bottom: 1px solid #eee;
+          position: relative;
+          padding-left: 50%;
+          white-space: normal;
+          text-align:left;
+
+          &:before {
+            content: attr(data-title);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* ========================================================================
+ * list table styles
+ * ======================================================================== */
+
+.table {
+  &.list-table {
+    min-width: 100%;
+    display: block;
+    width: auto;
+    margin-right: -15px;
+    margin-left: -15px;
+
+    & > thead,
+    & > tbody,
+    & > tfoot {
+      display: block;
+    }
+    thead,
+    tbody {
+      vertical-align: top;
+    }
+    & {
+      > tbody > tr > td,
+      > tbody > tr > th,
+      > tfoot > tr > td,
+      > tfoot > tr > th,
+      > thead > tr > td,
+      > thead > tr > th {
+        border: none;
+        padding: 8px;
+        vertical-align: middle;
+        overflow: hidden;
+        position: relative;
+      }
+    }
+
+    .h1, .h2, .h3, .h4, .h5, .h6,
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+    }
+    tr {
+      border-bottom: 5px solid transparent;
+    }
+    > thead {
+      > tr {
+        &.sort-row {
+          display: none;
+        }
+        &.bulk-action-row {
+          display: block;
+          margin: 0 15px;
+
+          & > th, & > td {
+            display: block !important;
+          }
+
+          & > th > div, & > td > div,
+          & > th > span, & > td > span,
+          & > th > ul, & > td > ul {
+            margin: 0 -10px;
+          }
+        }
+      }
+      &.block > tr > td:not(:empty):before,
+      &.block > tr > th:not(:empty):before {
+        content: attr(data-for);
+      }
+    }
+    > tbody {
+      > tr {
+        &:nth-of-type(odd),
+        &:nth-of-type(even) {
+          background-color: transparent;
+        }
+        &.child {
+          ul {
+            text-align: left;
+            display: block;
+          }
+        }
+      }
+    }
+    &.grid-view {
+      > tbody {
+        > tr {
+          padding: 15px 15px 0;
+
+          & > td[data-grid-label]:before,
+          & > th[data-grid-label]:before {
+            content: attr(data-grid-label)+':';
+            font-weight: 600;
+            margin-right: 8px;
+          }
+          &.header-row {
+            display: none;
+          }
+          td,
+          th {
+            display: block;
+            white-space: nowrap;
+            padding: 10px 0;
+          }
+        }
+      }
+      > thead {
+        > tr {
+          width: auto;
+          & > td,
+          & > th {
+            display: inline-block;
+            &:not(:empty):before {
+              content: attr(data-for);
+            }
+          }
+        }
+      }
+      > tfoot {
+        > tr {
+          > td,
+          th {
+            display: block;
+            white-space: nowrap;
+            padding: 10px 0;
+          }
+        }
+      }
+
+      .hidden-on-grid-view {
+        display: none;
+      }
+      .padding-reduce-on-grid-view {
+        padding: 2px;
+      }
+      .text-left-on-grid-view {
+        text-align: left;
+      }
+      .text-right-on-grid-view {
+        text-align: right;
+      }
+      .text-center-on-grid-view {
+        text-align: center;
+      }
+      tr {
+        display: inline-block;
+        td {
+          padding: 0;
+        }
+      }
+    }
+    &.grid-view .filter-row,
+    thead.block .filter-row {
+      background: #e4e4e4;
+      margin: 0 15px;
+      padding: 15px;
+      display: block;
+    }
+    &.grid-view .filter-row th:empty,
+    thead.block .filter-row th:empty {
+      display: none;
+    }
+    &:not(.grid-view) {
+      .content-fill {
+        width: 1%;
+      }
+      & > tbody > tr > td,
+      & > tbody > tr > th {
+        background: #f5f5f5;
+
+        &.fade-edge:after {
+          display: none;
+        }
+      }
+      tbody {
+        margin: 0 15px;
+      }
+      .thumbnail {
+        max-width: 60px;
+        min-width: 60px;
+      }
+    }
+  }
+  &.table-hover {
+    > tbody {
+      > tr:hover {
+        td:not(.dataTables_empty) {
+          background: #e4e4e4 !important;
+
+          &.fade-edge {
+            @include fade-color(#e4e4e4);
+          }
+        }
+      }
+    }
+  }
+  &.table-selectable {
+    > tbody {
+      > tr {
+        &:hover {
+          cursor: pointer;
+        }
+        &:hover td:not(.dataTables_empty):first-child:before,
+        &.DTTT_selected td:not(.dataTables_empty):first-child:before {
+          position: absolute;
+          display: block;
+          content: "";
+          background-color: transparent;
+          border-left: 2px solid #fff;
+          border-bottom: 2px solid #fff;
+          height: .65rem;
+          width: 1.3rem;
+          z-index: 102;
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          right: 0.3rem;
+          left: auto;
+          top: 0.3rem;
+        }
+        &:hover td:not(.dataTables_empty):first-child:after,
+        &.DTTT_selected td:not(.dataTables_empty):first-child:after,
+        &[data-type=selectable] td:not(.dataTables_empty):first-child:after {
+          position: absolute;
+          display: block;
+          border-top: 32px solid #007d85;
+          border-left: 32px solid transparent;
+          right: 0;
+          content: "";
+          top: 0;
+          z-index: 101;
+        }
+        &[data-type=selectable]:not(:hover):not(.DTTT_selected) td:not(.dataTables_empty):first-child:after {
+          border-top-color: #e4e4e4;
+        }
+
+      }
+    }
+    &.grid-view {
+      > tbody {
+        > tr {
+          &.DTTT_selected td:not(.dataTables_empty):first-child {
+            border: 5px solid #007d85;
+          }
+        }
+      }
+    }
+    &:not(.grid-view) {
+      > tbody {
+        > tr {
+          &.DTTT_selected td:not(.dataTables_empty) {
+            background: #2C313B !important;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:767px){
+  .table {
+    &.list-table {
+      > thead {
+        > tr {
+          &.filter-row {
+            &,
+            td,
+            th {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width:320px) and (max-width:479px){
+  .table {
+    &.list-table {
+      &.grid-view tr {
+          width: 100%;
+      }
+    }
+  }
+}
+@media (min-width:480px) and (max-width:767px){
+  .table {
+    &.list-table {
+      &.grid-view tr {
+        width: 50%;
+      }
+      &:not(.grid-view) .content-fill {
+        width: auto;
+      }
+    }
+  }
+}
+@media (min-width:768px) and (max-width:991px){
+  .table {
+    &.list-table {
+      &.grid-view tr {
+        width: 33.3%;
+      }
+    }
+  }
+}
+@media (min-width:992px) and (max-width:1199px){
+  .table {
+    &.list-table {
+      &.grid-view tr {
+        width: 20%;
+      }
+    }
+  }
+}
+@media (min-width:1200px){
+  .table {
+    &.list-table {
+      &.grid-view tr {
+        width: 10%;
+      }
+    }
+  }
+}

@@ -1,0 +1,219 @@
+//
+// Sidebar
+// --------------------------------------------------
+
+.page-content-wrapper {
+  &,
+  &[data-container-behaviour=static] {
+    position: relative;
+    left: 0;
+    margin-left: 0;
+    min-height: $page-content-wrapper-height;
+    @include transition(all 0.5s ease);
+  }
+  &.fixed {
+    & > div {
+      max-height: $page-content-wrapper-height;
+      overflow-x: hidden;
+    }
+    &,
+    & > .sidebar-wrapper {
+      overflow-x: hidden;
+      max-height: 100%;
+    }
+  }
+  &[data-container-push=true] {
+    left: $sidebar-width-default;
+  }
+  &[data-push-side=right][data-container-push=true] {
+    left: auto;
+    right: $sidebar-width-default;
+  }
+  &[data-container-divide=true] {
+    margin-left: $sidebar-width-default;
+  }
+  &[data-divide-side=right][data-container-divide=true] {
+    margin-left: auto;
+    padding-right: $sidebar-width-default;
+  }
+}
+
+@media (max-width:767px){
+  .page-content-wrapper {
+    min-height: $page-content-wrapper-height-mobile;
+
+    &.fixed,
+    &.fixed > div {
+      max-height: $page-content-wrapper-height-mobile;
+    }
+    &,
+    &.fixed > .sidebar-wrapper {
+      max-height: 100%;
+    }
+  }
+}
+
+.sidebar-wrapper {
+  z-index: 1000;
+  position: absolute;
+  left: -$sidebar-width-default;
+  width: $sidebar-width-default;
+  height: 100%;
+  overflow-y: auto;
+  background: $gray-darker;
+  color: $brand-light;
+  @include transition(all 0.5s ease);
+
+  &.affix {
+    position: fixed;
+  }
+  &.inverse {
+    background: $brand-light;
+    color: $gray-darker;
+  }
+  &[data-side=right] {
+    left: auto;
+    right: -$sidebar-width-default;
+
+    &.toggled {
+      left: auto;
+      right: 0;
+    }
+  }
+  &.toggled {
+    left: 0;
+    right: auto;
+  }
+}
+
+ul .sidebar-messages {
+    @include reset-default;
+    padding: 10px;
+
+    > li {
+      margin: 15px 0;
+    }
+}
+
+.sidebar-messages {
+  .message {
+    background: none;
+    padding: 5px 10px;
+  }
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: $sidebar-width-default;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-transform: uppercase;
+
+  li {
+    line-height: 20px;
+
+    a {
+      border-left: 3px solid $gray-darker;
+      display: block;
+      text-decoration: none;
+      color: #999999;
+      &:hover {
+        text-decoration: none;
+        color: $brand-light;
+        background: rgba(255,255,255,0.2);
+      }
+      &.active {
+        border-left: 3px solid $brand-optional;
+        color: $brand-light;
+      }
+    }
+    ul.sub-menu {
+      list-style: none;
+      padding: 0px;
+      margin: 0px;
+      cursor: pointer;
+
+      li {
+        background-color: $sidebar-submenu-bg;
+        &:hover{
+          a {
+            color: $brand-light;
+          }
+        }
+        a {
+          display: block;
+          line-height: 40px;
+          border-bottom :0;
+          padding-left: 40px;
+          margin: 0px;
+          &:hover {
+            background-color: transparent;
+            color: $brand-light;
+          }
+          &.active {
+            border-left:0;
+          }
+        }
+      }
+    }
+  }
+  ul :not(collapsed) .arrow:before,
+  li :not(collapsed) .arrow:before {
+    font-family: $icon-font-name;
+    content: '\e684';
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+  }
+  ul .collapsed .arrow:before,
+  li .collapsed .arrow:before {
+    font-family: $icon-font-name;
+    content: '\e685';
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+  }
+  > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+
+    a {
+      color: #999999;
+      &:hover {
+        color: $brand-light;
+        background: none;
+      }
+    }
+  }
+}
+
+@media(min-width:768px) {
+  #wrapper {
+    padding-left: 250px;
+
+    &.toggled {
+      #sidebar-wrapper {
+        width: 0;
+      }
+      #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+      }
+    }
+
+    .toggled {
+      padding-left: 0;
+    }
+  }
+
+  #sidebar-wrapper {
+    width: $sidebar-width-default;
+  }
+
+  #page-content-wrapper {
+    position: relative;
+  }
+}

@@ -1,0 +1,52 @@
+//
+// Notifications
+// --------------------------------------------------
+
+#noty_topRight_layout_container {
+  position: absolute !important;
+}
+
+#noty_topRight_layout_container,
+#noty_topLeft_layout_container {
+  margin-top: 100px !important;
+}
+
+.noty_bar {
+  height: auto;
+  border: none;
+  padding: 10px 20px;
+}
+
+.noty_container_type {
+  &_notification {
+    background-color: $gray-darker;
+    color: $brand-light;
+  }
+  &_warning {
+    background-color: #ffeaa8;
+    color: #826200;
+  }
+  &_error {
+    background-color: #e74c3c;
+    color: $brand-light;
+  }
+  &_information {
+    background-color: #78c5e7;
+    color: $brand-light;
+  }
+  &_success {
+    background-color: #40d47e;
+    color: $brand-light;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #noty_topRight_layout_container,
+  .noty_container_type_information,
+  #noty_topLeft_layout_container,
+  .noty_bar {
+    width: 100% !important;
+    left: 0;
+    right: 0;
+  }
+}

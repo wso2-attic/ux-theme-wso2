@@ -1,0 +1,41 @@
+//
+// icons styles
+// --------------------------------------------------
+
+.icon-success { color: $brand-success }
+.icon-info { color: $brand-info }
+.icon-warning { color: $brand-warning }
+.icon-danger { color: $brand-danger }
+
+[aria-expanded='true'] > .icon.fw-stack > .toggle-icon,
+[aria-expanded='true'] > .icon.toggle-icon {
+  &-up:before {
+    content: '\e684';
+  }
+  &-down:before {
+    content: '\e685';
+  }
+  &-left:before {
+    content: '\e686';
+  }
+  &-right:before {
+    content: '\e687';
+  }
+  &-up-arrow:before {
+    content: '\e688';
+  }
+  &-down-arrow:before {
+    content: '\e689';
+  }
+  &-left-arrow:before {
+    content: '\e68a';
+  }
+  &-right-arrow:before {
+    content: '\e68b';
+  }
+}
+
+//.icon-grid {
+//    &:extend(.fw all);
+//    &:extend(.fw-grid all);
+//}
