@@ -52,16 +52,17 @@ $(function(){
      *  Documentation left navbar active
      ***********************************************************/
 
-    var urlValue = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+    var urlValue = window.location.href.toString();
+    var splitUrl = urlValue.split("/");
+    var pageName = splitUrl[splitUrl.length - 2];
     var items = $('a.doc-list');
     $.each( items, function( key, value ) {
         var strValue = value.toString();
         var listItem = strValue.substring(strValue.lastIndexOf("/") + 1);
-        if(listItem == urlValue){
-            var listId = listItem.substr(0, listItem.indexOf('.'));
-            $("#"+listId).addClass('active');
-            $("#"+listId).closest('ul').addClass('in');
-            $("#"+listId).closest('ul').prev().addClass('active');
+        if(listItem == pageName){
+            $("#"+listItem).addClass('active');
+            $("#"+listItem).closest('ul').addClass('in');
+            $("#"+listItem).closest('ul').prev().addClass('active');
         }
     });
 
