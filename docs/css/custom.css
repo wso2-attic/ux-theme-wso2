@@ -580,7 +580,7 @@
     background-color:#F47A1E;
 }
 
-.code-btn {
+.code-btn, .js-btn {
     background-color: #f5f5f5;
     cursor: pointer;
     display: inline-block;
@@ -698,4 +698,7 @@ h5.version {
 
 .doc-link {
     color: #0a6aa1;
+}
+.code-heading {
+    color: #F47A1E;
 }
