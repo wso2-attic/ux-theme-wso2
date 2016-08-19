@@ -49,7 +49,7 @@ $(function(){
     });
 
     /***********************************************************
-     *  Documentation left navbar active
+     *  Documentation sidebar active
      ***********************************************************/
 
     var urlValue = window.location.href.toString();
@@ -92,12 +92,9 @@ $(function(){
 
 
             if($(this).prev('div').children().find('code-sample')){
-                console.log($(this).prev('div').find('.code-sample').hasClass('loading-sample1'));
                 if($(this).prev('div').find('.code-sample').hasClass('loading-sample1')) {
-                    console.log("gii")
                     var formPrependText = '            <form class="form-horizontal" data-toggle="loading" data-loading-style="overlay">';
                     var formAppendText = '</form>';
-
                     $(this).next().closest('.code-container').find('.code-content').text($('.code-sample').html());
                     $(this).next().closest('.code-container').find('.code-content').prepend(document.createTextNode(formPrependText));
                     $(this).next().closest('.code-container').find('.code-content').append(document.createTextNode(formAppendText));
@@ -113,6 +110,13 @@ $(function(){
             });
         }
     });
+
+    /***********************************************************
+     *  Documentation Form Validation
+     ***********************************************************/
+
+    $('#form-validation-example').validate();
+    $('#form-range-example').validate();
 });
 
 //$('link[data-include]').each(function(){

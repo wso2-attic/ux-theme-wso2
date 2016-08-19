@@ -687,3 +687,15 @@ h5.version {
 .requiredAstrix {
     color: red;
 }
+
+.code .form-inline {
+    margin-bottom: 15px;
+}
+
+.example {
+    font-weight: 500;
+}
+
+.doc-link {
+    color: #0a6aa1;
+}
