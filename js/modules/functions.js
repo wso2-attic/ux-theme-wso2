@@ -441,15 +441,16 @@ $.sidebar_toggle = function(action, target, container) {
             }
         },
         show: function(){
-
             if($(target).data('sidebar-fixed') == true) {
                 $(target).height($(window).height() - $(target).data('fixed-offset'));
             }
 
             $(target).trigger('show.sidebar');
+            
             if(targetWidth !== undefined) {
                 $(target).css('width', targetWidth);
             }
+            
             $(target).addClass('toggled');
 
             if(button !== undefined){
@@ -477,21 +478,21 @@ $.sidebar_toggle = function(action, target, container) {
 
             // Sidebar open function
             if (targetSide == 'left'){
-                if((button !== undefined) && (button.attr('data-container-divide'))){
+                if ($(target).attr('data-container-divide')){
                    $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetLeft);
                    $(target).css(targetSide, targetOffsetLeft);
                 }
-                else if((button !== undefined) && (button.attr('data-container-push'))){
+                else if ($(target).attr('data-container-push')){
                    $(container).css(targetSide, targetWidth + targetOffsetLeft);
                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
                 }
             }
             else if (targetSide == 'right'){
-                if((button !== undefined) && (button.attr('data-container-divide'))){
+                if ($(target).attr('data-container-divide')){
                    $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetRight);
                    $(target).css(targetSide, targetOffsetRight);
                 }
-                else if((button !== undefined) && (button.attr('data-container-push'))){
+                else if ($(target).attr('data-container-push')){
                    $(container).css(targetSide, targetWidth + targetOffsetRight);
                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
                 }
@@ -500,7 +501,6 @@ $.sidebar_toggle = function(action, target, container) {
             $(target).trigger('shown.sidebar');
         },
         hide: function(){
-
             $(target).trigger('hide.sidebar');
             $(target).removeClass('toggled');
 
@@ -526,21 +526,21 @@ $.sidebar_toggle = function(action, target, container) {
 
             // Sidebar close function
             if (targetSide == 'left'){
-               if((button !== undefined) && (button.attr('data-container-divide'))){
+               if($(target).attr('data-container-divide')){
                    $(container).css(pushType+'-'+targetSide, targetOffsetLeft);
                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
                }
-               else if((button !== undefined) && (button.attr('data-container-push'))){
+               else if($(target).attr('data-container-push')){
                    $(container).css(targetSide, targetOffsetLeft);
                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
                }
             }
             else if (targetSide == 'right'){
-               if((button !== undefined) && (button.attr('data-container-divide'))){
+               if($(target).attr('data-container-divide')){
                    $(container).css(pushType+'-'+targetSide, targetOffsetRight);
                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
                }
-               else if((button !== undefined) && (button.attr('data-container-push'))){
+               else if($(target).attr('data-container-push')){
                    $(container).css(targetSide, targetOffsetRight);
                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
                }
@@ -565,9 +565,8 @@ $.sidebar_toggle = function(action, target, container) {
         e.preventDefault();
 
         button = $(this);
-        container = button.data('container');
         target = button.data('target');
-
+        container = $(target).data('container');
         sidebar_window.update(target, container, button);
 
         /**
