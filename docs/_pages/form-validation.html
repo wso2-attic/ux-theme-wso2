@@ -1,0 +1,126 @@
+---
+layout: default
+title: Form Validation
+---
+
+<!-- ******************************************************************
+Form Validation Templates
+******************************************************************* -->
+
+<!-- page content -->
+<div class="container-fluid">
+    <div class="body-wrapper">
+
+        <div class="page-header">
+            <h1>Form Validation</h1>
+        </div>
+        <p>To select the form and apply the validation add $('#form-name').validate() on the $( document ).ready() function.
+            Also you can specify options (e.g:- maxlength, minlength, min, max etc) and custom messages inside validate method. For more
+            details please refer <a class="doc-link" href="https://jqueryvalidation.org/validate">jQuery Validation Plugin.</a></p>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h4><b>Validation Types</b></h4>
+
+                <div class="code">
+                <form class="form-horizontal" id="form-validation-example">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Required<span class="requiredAstrix"> *</span></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" required placeholder="Required Field"/>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Password</label>
+                        <div class="col-sm-3">
+                            <input type="password" id="input-password" class="form-control" placeholder="Password"/>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="password" class="form-control" placeholder="Confirm Password" equalTo="#input-password"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-email" class="col-sm-3 control-label">Email</label>
+                        <div class="col-sm-6">
+                            <input type="email" class="form-control" id="input-email" placeholder="email@example.com"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Url</label>
+                        <div class="col-sm-6">
+                            <input type="url" class="form-control" placeholder="Url"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Number</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" placeholder="Enter only numbers"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-default">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h4><b>Range Validation</b></h4>
+                <div class="code">
+                <form class="form-horizontal" id="form-range-example">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Min Length</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" minlength="5" placeholder="Min 5 chars."/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Max Length</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" maxlength="5" placeholder="Max 5 chars."/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Range Length</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control"  minlength="5" maxlength="10"
+                                   placeholder="Input between 5 - 10 chars length"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Min Value</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" min="5" placeholder="Min value is 5"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Max Value</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" max="5" placeholder="Max value is 5"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Range Value</label>
+                        <div class="col-sm-6">
+                            <input class="form-control"  type="number" min="5" max="100" placeholder="Number between 5 - 100"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-default">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

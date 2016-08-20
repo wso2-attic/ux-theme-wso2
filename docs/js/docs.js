@@ -49,19 +49,20 @@ $(function(){
     });
 
     /***********************************************************
-     *  Documentation left navbar active
+     *  Documentation sidebar active
      ***********************************************************/
 
-    var urlValue = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+    var urlValue = window.location.href.toString();
+    var splitUrl = urlValue.split("/");
+    var pageName = splitUrl[splitUrl.length - 2];
     var items = $('a.doc-list');
     $.each( items, function( key, value ) {
         var strValue = value.toString();
         var listItem = strValue.substring(strValue.lastIndexOf("/") + 1);
-        if(listItem == urlValue){
-            var listId = listItem.substr(0, listItem.indexOf('.'));
-            $("#"+listId).addClass('active');
-            $("#"+listId).closest('ul').addClass('in');
-            $("#"+listId).closest('ul').prev().addClass('active');
+        if(listItem == pageName){
+            $("#"+listItem).addClass('active');
+            $("#"+listItem).closest('ul').addClass('in');
+            $("#"+listItem).closest('ul').prev().addClass('active');
         }
     });
 
@@ -74,6 +75,7 @@ $(function(){
     $(".code-btn").click(function () {
         var codeContent = $(this).next().closest('.code-container').find('.code-content');
         if($(this).next().hasClass('code-container')){
+            $(this).nextAll().eq(1).remove();
             $(this).next().remove();
             $(this).removeClass('code-btn-active');
         }else{
@@ -87,16 +89,27 @@ $(function(){
                 '<pre><code class="language-html" data-lang="html"><div class="code-content"></div></code></pre>'+
                 '</div>');
             $(this).next().closest('.code-container').find('.code-content').text($(this).prev('div').html());
+            $(this).next().closest('.code-container').find('.code-content').prepend("<h5 class='code-heading'><b>HTML</b></h5>");
             $(this).next().closest('.code-container').find('.btn-clipboard').attr("data-clipboard-text",($(this).prev('div').html()));
 
+            if($(this).nextAll().eq(1).hasClass('code-js')){
+                $(this).next().after('<div class="code-container">'+
+                    '<div class="zero-clipboard">'+
+                    '<button class="btn btn-clipboard" data-clipboard-text="" type="button" title="Copy to clipboad">'+
+                    '<span class="hidden-xs">Copy</span>'+
+                    '</button>'+
+                    '</div>'+
+                    '<pre><code class="javascript"><div class="js-code-content"></div></code></pre>'+
+                    '</div>');
+                $(this).nextAll().eq(1).closest('.code-container').find('.js-code-content').text($(this).nextAll().eq(2).html());
+                $(this).nextAll().eq(1).closest('.code-container').find('.js-code-content').prepend("<h5 class='code-heading'><b>JS</b></h5>");
+                $(this).nextAll().eq(1).closest('.code-container').find('.btn-clipboard').attr("data-clipboard-text",($(this).nextAll().eq(2).html()));
+            }
 
             if($(this).prev('div').children().find('code-sample')){
-                console.log($(this).prev('div').find('.code-sample').hasClass('loading-sample1'));
                 if($(this).prev('div').find('.code-sample').hasClass('loading-sample1')) {
-                    console.log("gii")
                     var formPrependText = '            <form class="form-horizontal" data-toggle="loading" data-loading-style="overlay">';
                     var formAppendText = '</form>';
-
                     $(this).next().closest('.code-container').find('.code-content').text($('.code-sample').html());
                     $(this).next().closest('.code-container').find('.code-content').prepend(document.createTextNode(formPrependText));
                     $(this).next().closest('.code-container').find('.code-content').append(document.createTextNode(formAppendText));
@@ -112,6 +125,13 @@ $(function(){
             });
         }
     });
+
+    /***********************************************************
+     *  Documentation Form Validation
+     ***********************************************************/
+
+    $('#form-validation-example').validate();
+    $('#form-range-example').validate();
 });
 
 //$('link[data-include]').each(function(){

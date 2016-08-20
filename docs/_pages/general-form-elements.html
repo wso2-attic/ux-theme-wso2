@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Forms
+title: General Forms Elements
 ---
 
 <!-- ******************************************************************
-Form Elements Templates
+General Form Elements Templates
 ******************************************************************* -->
 
 <!-- page content -->
@@ -12,11 +12,10 @@ Form Elements Templates
     <div class="body-wrapper">
 
         <div class="page-header">
-            <h1>Forms</h1>
+            <h1>General Form Elements</h1>
         </div>
-        <h2 class="lead">General Form Elements</h2>
-        <br />
-        <h4>Input Types</h4>
+
+        <h4><b>Input Types</b></h4>
         <hr />
         <div class="row">
             <div class="col-sm-12">
@@ -108,7 +107,7 @@ Form Elements Templates
             </div><!-- end col -->
         </div><!-- end row -->
 
-        <h4>Input Sizes</h4>
+        <h4><b>Input Sizes</b></h4>
         <hr />
         <div class="row">
             <div class="col-sm-12">
@@ -158,53 +157,34 @@ Form Elements Templates
             </div>
         </div>
 
-        <h4>Input groups</h4>
+        <h4><b>Input groups</b></h4>
         <hr />
-        <h5>Static</h5>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="code">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <label for="input-name" class="control-label">Transfer</label>
-                            <div class="form-inline">
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-                                        <div class="input-group">
-                                            <div class="input-group-addon">$</div>
-                                            <input type="number" min="1" max="100000" class="form-control form-control-md" placeholder="Amount">
-                                            <div class="input-group-addon">.00</div>
-                                        </div>
-                                    </div>
+        <h5><b>Static</b></h5>
+
+        <form class="form-horizontal">
+            <div class="code">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label for="input-name" class="control-label">Transfer</label>
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">$</div>
+                                    <input type="number" min="1" max="100000" class="form-control form-control-md" placeholder="Amount">
+                                    <div class="input-group-addon">.00</div>
                                 </div>
-                                <button type="submit" class="btn">Transfer cash</button>
                             </div>
                         </div>
+                        <button type="submit" class="btn">Transfer cash</button>
                     </div>
-                </form>
-                </div>
-                <div class="code">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <div class="input-group input-wrap has-form-control-btn">
-                                <button class="form-control-btn" type="button" title="Search">
-                                    <i class="fw fw-search" aria-hidden="true"></i>
-                                </button>
-                                <input type="text" class="form-control" placeholder="Search gadget">
-                            </div>
-                        </div>
-                    </div>
-                </form>
                 </div>
             </div>
             </div>
 
-
-
-        <div class="code">
+            <h5><b>Buttons</b></h5>
+            <div class="code">
             <div class="form-group">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="input-group input-wrap has-form-control-btn">
@@ -215,73 +195,6 @@ Form Elements Templates
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="code">
-            <div class="form-group">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <label class="control-label">Search</label>
-                    <div class="input-group">
-                        <div class="input-group-btn input-wrap has-form-control-btn">
-                            <button class="form-control-btn" type="button" title="Search">
-                                <i class="fw fw-search" aria-hidden="true"></i>
-                            </button>
-                            <input type="text" class="form-control" aria-label="...">
-                        </div>
-                        <div class="input-group-btn">
-                            <button class="btn" type="button" title="Advance Search">
-                                <i class="fw fw-settings" aria-hidden="true"></i>
-                                <span class="hidden-xs">Advanced Search</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <label for="input-name" class="control-label">Transfer</label>
-                        <div class="form-inline">
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon">$</div>
-                                        <input type="number" min="1" max="100000" class="form-control form-control-md" placeholder="Amount">
-                                        <div class="input-group-addon">.00</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn">Transfer cash</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-
-            <div class="code">
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <label class="control-label">Name <span class="requiredAstrix">*</span></label>
-                        <div class="input-group input-wrap res-wrap">
-                            <input type="text" class="form-control" placeholder="First Name" required>
-                            <div class="input-group-btn">
-                                <label class="control-label">Surname</label>
-                            </div>
-                            <div class="input-group-btn">
-                                <input type="text" class="form-control form-control-lg" placeholder="Last Name">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="code">
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <label for="input-name" class="control-label">Email <span class="requiredAstrix">*</span></label>
-                        <input type="email" class="form-control" id="input-name" placeholder="email@example.com" required>
-                    </div>
-                </div>
             </div>
 
             <div class="code">
@@ -296,6 +209,7 @@ Form Elements Templates
                     </div>
                 </div>
             </div>
+
             <div class="code">
                 <div class="form-group">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -318,10 +232,7 @@ Form Elements Templates
                 </div>
             </div>
 
-            <h2 class="lead">Advanced Form Elements</h2>
-
-            <h4>Filters</h4>
-            <hr />
+            <h5><b>Buttons and Dropdowns</b></h5>
             <div class="code">
                 <div class="form-group">
                     <div class="col-sm-12">
@@ -397,105 +308,111 @@ Form Elements Templates
                     </div>
                 </div>
             </div>
-
-            <h4>Switches</h4>
-            <hr />
-            <div class="code">
-                <div class="form-group">
-                    <div class="col-sm-12 form-inline">
-                        <label class="control-label">Show Grid</label>
-                        <label class="switch">
-                            <input type="checkbox" id="gridGuideToggle">
-                            <span class="helper"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <h4>Checkboxes and radios</h4>
-            <hr />
-            <div class="code">
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <label class="checkbox">
-                            <input type="checkbox" checked="">
-                            <span class="helper" title="Enable if target network is not open or broadcasting"> Hidden Network</span>
-                        </label>
-                        <label class="checkbox">
-                            <input type="checkbox" checked="">
-                            <span class="helper" title="Enable if target network is not open or broadcasting"> Hidden Network</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="code">
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Remember me
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="code">
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <label class="radio">
-                            <input type="radio" name="delete-option">
-                            <span class="helper">Remove Gadget</span>
-                        </label>
-                        <label class="radio">
-                            <input type="radio" name="delete-option">
-                            <span class="helper">Delete Grid Container</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <h4>File Upload</h4>
-            <hr />
-            <div class="code">
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <label class="control-label">File Upload [Supports Multi Select]</label>
-                        <div class="input-group input-wrap file-upload-control">
-                            <input type="text" class="form-control" readonly>
-                            <input type="file" class="form-control" multiple>
-                            <div class="input-group-btn">
-                                <button class="btn browse" type="button" title="Browse File">
-                                    <i class="fw fw-file-browse" aria-hidden="true"></i>
-                                    <span class="hidden-xs">Browse</span>
-                                </button>
-                            </div>
-                            <div class="input-group-btn"></div>
-                            <div class="input-group-btn">
-                                <button class="btn btn-default btn-primary" type="button" title="Upload">
-                                    <i class="fw fw-upload" aria-hidden="true"></i>
-                                    <span class="hidden-xs">Upload</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <h4>Form Submit</h4>
-            <hr />
-            <div class="code">
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <button type="submit" class="btn btn-default btn-primary">Sign in</button>
-                    </div>
-                </div>
-            </div>
         </form>
-        <br/>
+
+        <h4><b>Form Types</b></h4>
+        <hr />
+        <h5><b>Horizontal Form</b></h5>
+        <p>Add Bootstrap's 'form-horizontal' class to &lt;form&gt; tag</p>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="code">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="inputUsername" class="col-sm-3 control-label">Username</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword" class="col-sm-3 control-label">Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputConfirmPassword" class="col-sm-3 control-label">Confirm Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-primary ">Sign up</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <h5><b>Inline Form</b></h5>
+        <p>Add Bootstrap's 'form-inline' class to &lt;form&gt; tag.</p>
+        <br />
+        <h5 class="example">Example 1</h5>
+        <p>Adding class "sr-only" hides the label from the form display but provides information intended for screen readers.</p>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="code">
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputUsername1">Username</label>
+                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Enter Username">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <h5 class="example">Example 2</h5>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="code">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label class="control-label" for="exampleInputUserName">Username</label>
+                            <input type="text" class="form-control" id="exampleInputUserName" >
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="exampleInputPassword">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <h5 class="example">Example 3</h5>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="code">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label class="control-label">Name</label>
+                            <div class="input-group input-wrap res-wrap">
+                                <input type="text" class="form-control" placeholder="First Name" required>
+                                <div class="input-group-btn">
+                                    <label class="control-label">Last Name</label>
+                                </div>
+                                <div class="input-group-btn">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Last Name">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
