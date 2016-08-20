@@ -580,7 +580,7 @@
     background-color:#F47A1E;
 }
 
-.code-btn {
+.code-btn, .js-btn {
     background-color: #f5f5f5;
     cursor: pointer;
     display: inline-block;
@@ -686,4 +686,19 @@ h5.version {
 
 .requiredAstrix {
     color: red;
+}
+
+.code .form-inline {
+    margin-bottom: 15px;
+}
+
+.example {
+    font-weight: 500;
+}
+
+.doc-link {
+    color: #0a6aa1;
+}
+.code-heading {
+    color: #F47A1E;
 }
