@@ -16,10 +16,15 @@
 
 $(function(){
     
+    /***********************************************************
+     *  Persist Sidebar toggle state
+     ***********************************************************/
+    
     $(document).ready(function() {
         
-        // Persist Sidebar toggle state
-        var sidebarNav = '#sidebar-theme';
+        // Persist sidebar nav toggle state
+        var sidebarNav = '#sidebar-theme',
+            uriPath = window.location.pathname;
         
         if($.session.get(sidebarNav) == 'toggled') {
             $.sidebar_toggle('show', sidebarNav, $(sidebarNav).data('container'));
@@ -31,15 +36,39 @@ $(function(){
         }).on('hidden.sidebar', function(e){
             $.session.remove(sidebarNav);
         });
+
+        // Add active state to the current page in sidebar nav
+        var currentPage = $(sidebarNav + ' .pages a[href="' + uriPath + '"]'),
+            currentPageParents = currentPage.closest('li').parents('li');
+        
+        currentPage.parents('li').addClass('active');
+        currentPageParents.attr('aria-expanded', 'true');
+        currentPageParents.find('> ul').addClass('in');
         
     });
     
+    // Show page once fully rendered
     $(window).load(function() {
-        
-        // Show page once fully rendered
         $("body").removeClass("notransition hidden");
-        
     });
+    
+    /***********************************************************
+     *  Documentation sidebar active
+     ***********************************************************/
+
+//    var urlValue = window.location.href.toString();
+//    var splitUrl = urlValue.split("/");
+//    var pageName = splitUrl[splitUrl.length - 2];
+//    var items = $('a.doc-list');
+//    $.each( items, function( key, value ) {
+//        var strValue = value.toString();
+//        var listItem = strValue.substring(strValue.lastIndexOf("/") + 1);
+//        if(listItem == pageName){
+//            $("#"+listItem).addClass('active');
+//            $("#"+listItem).closest('ul').addClass('in');
+//            $("#"+listItem).closest('ul').prev().addClass('active');
+//        }
+//    });
         
     /***********************************************************
      *  noty config
@@ -70,24 +99,6 @@ $(function(){
             "draggable": false, 
             "clickable": false
           }
-        }
-    });
-
-    /***********************************************************
-     *  Documentation sidebar active
-     ***********************************************************/
-
-    var urlValue = window.location.href.toString();
-    var splitUrl = urlValue.split("/");
-    var pageName = splitUrl[splitUrl.length - 2];
-    var items = $('a.doc-list');
-    $.each( items, function( key, value ) {
-        var strValue = value.toString();
-        var listItem = strValue.substring(strValue.lastIndexOf("/") + 1);
-        if(listItem == pageName){
-            $("#"+listItem).addClass('active');
-            $("#"+listItem).closest('ul').addClass('in');
-            $("#"+listItem).closest('ul').prev().addClass('active');
         }
     });
 

@@ -563,9 +563,13 @@
     text-transform: none;
 }
 
-#sidebar-theme li a.active
+#sidebar-theme ul.pages > li.active > a
 {
     border-left-color: #F47A1E;
+}
+
+.sidebar-nav li ul.sub-menu li.active a {
+    color: #fff;
 }
 
 .code-container{
