@@ -36,9 +36,12 @@
     <!-- ===== /Custom Libs ===== -->
 
     <!-- Theme WSO2 JS -->
-    <script src="{{ "libs/" | prepend: site.baseurl }}{{ site.name }}_{{ site.version }}/js/{{ site.name }}.min.js"></script>
+    <script src="{{ "libs/" | prepend: site.baseurl }}{{ site.name }}_{{ site.version }}/js/{{ site.name }}.js"></script>
 
     {{ page.js }}
+
+    <!-- Jquery Session JS -->
+    <script src="{{ "js/jquery.session.js" | prepend: site.baseurl }}"></script>
 
     <!-- Custom JS -->
     <script src="{{ "js/docs.js" | prepend: site.baseurl }}"></script>
