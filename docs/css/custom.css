@@ -702,3 +702,14 @@ h5.version {
 .code-heading {
     color: #F47A1E;
 }
+
+.message-doc {
+    border-left-color:#F47A1E;
+}
+.message-doc h4 {
+    color: #F47A1E;
+}
+.sub-heading {
+    font-weight:400;
+    margin: 20px 0 20px 0;
+}
