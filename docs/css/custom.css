@@ -704,7 +704,7 @@ h5.version {
     color: #F47A1E;
 }
 
-.notransition {
+.notransition * {
     -webkit-transition: none !important;
     -moz-transition: none !important;
     -o-transition: none !important;

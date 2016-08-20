@@ -18,25 +18,26 @@ $(function(){
     
     $(document).ready(function() {
         
-        /* Persist Sidebar toggle state */
+        // Persist Sidebar toggle state
         var sidebarNav = '#sidebar-theme';
         
         if($.session.get(sidebarNav) == 'toggled') {
             $.sidebar_toggle('show', sidebarNav, $(sidebarNav).data('container'));
-            
             $('[data-toggle=sidebar][data-target=' + sidebarNav + ']').attr('aria-expanded', 'true');
-            
-            //$(sidebarNav).removeClass('notransition');
-            //$($(sidebarNav).data('container')).removeClass('notransition');
         }
         
         $(sidebarNav).on('shown.sidebar', function(e){
             $.session.set(sidebarNav, 'toggled');
-        });
-        
-        $(sidebarNav).on('hidden.sidebar', function(e){
+        }).on('hidden.sidebar', function(e){
             $.session.remove(sidebarNav);
         });
+        
+    });
+    
+    $(window).load(function() {
+        
+        // Show page once fully rendered
+        $("body").removeClass("notransition hidden");
         
     });
         
