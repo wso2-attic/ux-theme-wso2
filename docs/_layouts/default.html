@@ -27,7 +27,9 @@
     
     <!-- #page-content-wrapper -->
     <div class="page-content-wrapper">
+        {% if page.url != "/left-sidebar-example" %}
         {% include nav.html %}
+        {% endif %}
         
         {{ content }}
     </div><!-- /#page-content-wrapper -->
