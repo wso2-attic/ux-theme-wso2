@@ -605,7 +605,7 @@
     text-decoration:none;
 }
 
-.doc-buttons, #navbar-sample, #sidebar-sample .navbar-wrapper{
+.doc-buttons, #navbar-sample, #sidebar-sample .navbar-wrapper, .sidebar-toggle-btn, .code .form-inline{
     margin-bottom: 15px;
 }
 
@@ -690,10 +690,6 @@ h5.version {
 
 .requiredAstrix {
     color: red;
-}
-
-.code .form-inline {
-    margin-bottom: 15px;
 }
 
 .example {
