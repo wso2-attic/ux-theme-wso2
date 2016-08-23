@@ -178,8 +178,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-jekyll');
     
     // Default task(s).   
-    grunt.registerTask('default', ['sass:all','cssmin:all','concat','uglify','copy:main']);
-    grunt.registerTask('docs', ['copy:docs']);
+    grunt.registerTask('default', ['sass:all','cssmin:all','concat','uglify','copy']);
     grunt.registerTask('watch', ['watch']);
     grunt.registerTask('css', function(arg) {
         if(!arg){
