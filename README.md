@@ -16,19 +16,24 @@ grunt
 
 to compile product scss files
 ```
-grunt css:<porduct-short-name>
+grunt product:<porduct-short-name>
 ```
-e.g. grunt css:apim
+e.g. grunt product:apim
 
 to compile all product scss files
 ```
-grunt css:all
+grunt product:all
 ```
 
 
 to compile docs
 ```
 grunt docs
+```
+
+to serve docs
+```
+grunt serve
 ```
 
 ## Prerequisite
