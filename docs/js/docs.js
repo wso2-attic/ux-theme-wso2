@@ -44,7 +44,91 @@ $(function(){
         currentPage.parents('li').addClass('active');
         currentPageParents.attr('aria-expanded', 'true');
         currentPageParents.find('> ul').addClass('in');
-        
+
+        /***********************************************************
+         *  Documentation tab code display
+         ***********************************************************/
+        var items = $('.code');
+        $.each( items, function( key, value ) {
+            $(this).after(
+                '<div class="code-container">'+
+                <!-- Nav tabs -->
+                '<ul class="nav nav-tabs code-tabs" role="tablist"></ul>'+
+
+                <!-- Tab panes -->
+                '<div class="tab-content"></div>'+
+                '</div>'
+            );
+
+            var codeContainer  = $(this).next().closest('.code-container');
+            if($(this).children().hasClass('code-html')) {
+                codeContainer.find('ul').append('<li role="presentation" class="active"><a href="#html'+key+'" aria-controls="profile"  role="tab" data-toggle="tab">HTML</a></li>');
+                codeContainer.find('.tab-content').append(
+                    '<div role="tabpanel" class="tab-pane active html" id="html'+key+'">' +
+                    '<div class="zero-clipboard">'+
+                    '<button class="btn btn-clipboard" data-clipboard-text="" type="button" title="Copy to clipboad">'+
+                    '<span class="hidden-xs">Copy</span>'+
+                    '</button>'+
+                    '</div>'+
+                    '<pre><code class="language-html" data-lang="html"><div class="html-code-content"></div></code></pre>'+
+                    '</div>'
+                );
+                $(this).next().closest('.code-container').find('.html-code-content').text($(this).children('.code-html').html());
+            }
+            if ($(this).children().hasClass('code-js')){
+                codeContainer.find('ul').append('<li role="presentation"><a href="#js'+key+'" aria-controls="profile" role="tab" data-toggle="tab">JS</a></li>');
+                codeContainer.find('.tab-content').append(
+                    '<div role="tabpanel" class="tab-pane js" id="js'+key+'">' +
+                    '<div class="zero-clipboard">'+
+                    '<button class="btn btn-clipboard" data-clipboard-text="" type="button" title="Copy to clipboad">'+
+                    '<span class="hidden-xs">Copy</span>'+
+                    '</button>'+
+                    '</div>'+
+                    '<pre><code class="javascript" data-lang="javascript"><div class="js-code-content"></div></code></pre>'+
+                    '</div>'
+                );
+                $(this).next().closest('.code-container').find('.js-code-content').text($(this).children('.code-js').html());
+            }
+
+            if($(this).children().find('code-sample')){
+                if($(this).find('.code-sample').hasClass('loading-sample1')) {
+                    var formPrependText = '            <form class="form-horizontal" data-toggle="loading" data-loading-style="overlay">';
+                    var formAppendText = '</form>';
+                    codeContainer.find('.html-code-content').text($(this).find('.code-sample').html());
+                    codeContainer.find('.html-code-content').prepend(document.createTextNode(formPrependText));
+                    codeContainer.find('.html-code-content').append(document.createTextNode(formAppendText));
+                } else if ($(this).find('.code-sample').hasClass('loading-sample2')){
+                    codeContainer.find('.html-code-content').text('<div data-toggle="loading" data-loading-text="Processing" ' +
+                        'data-loading-style="icon-only" data-loading-image="images/oloader.gif" data-loading-inverse="true">');
+                }
+            }
+        });
+
+        $(".btn-clipboard").zclip();
+        $(".btn-clipboard").click(function() {
+            if($(this).parents().hasClass('html')) {
+                $(this).attr("data-clipboard-text", $(this).parent().next().find('.html-code-content').text());
+            } else if ($(this).parents().hasClass('js')){
+                $(this).attr("data-clipboard-text", $(this).parent().next().find('.js-code-content').text());
+            }
+        });
+
+        /***********************************************************
+         *  Code Highlighting
+         ***********************************************************/
+
+        $('.tab-pane pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+
+
+        /***********************************************************
+         *  Documentation Form Validation
+         ***********************************************************/
+
+        $('#form-validation-example').validate();
+        $('#form-range-example').validate();
+
     });
     
     /***********************************************************
@@ -86,72 +170,6 @@ $(function(){
         }
     });
 
-    /***********************************************************
-     *  Documentation code toggle
-     ***********************************************************/
-
-    var codeDisplayBtn = $('<a class="btn btn-link code-btn">&lt;/&gt;&nbsp;&nbsp;Show Code </a>');
-    $(".code").after(codeDisplayBtn);
-    $(".code-btn").click(function () {
-        var codeContent = $(this).next().closest('.code-container').find('.code-content');
-        if($(this).next().hasClass('code-container')){
-            $(this).nextAll().eq(1).remove();
-            $(this).next().remove();
-            $(this).removeClass('code-btn-active');
-        }else{
-            $(this).after(
-                '<div class="code-container">'+
-                '<div class="zero-clipboard">'+
-                '<button class="btn btn-clipboard" data-clipboard-text="" type="button" title="Copy to clipboad">'+
-                '<span class="hidden-xs">Copy</span>'+
-                '</button>'+
-                '</div>'+
-                '<pre><code class="language-html" data-lang="html"><div class="code-content"></div></code></pre>'+
-                '</div>');
-            $(this).next().closest('.code-container').find('.code-content').text($(this).prev('div').html());
-            $(this).next().closest('.code-container').find('.code-content').prepend("<h5 class='code-heading'><b>HTML</b></h5>");
-            $(this).next().closest('.code-container').find('.btn-clipboard').attr("data-clipboard-text",($(this).prev('div').html()));
-
-            if($(this).nextAll().eq(1).hasClass('code-js')){
-                $(this).next().after('<div class="code-container">'+
-                    '<div class="zero-clipboard">'+
-                    '<button class="btn btn-clipboard" data-clipboard-text="" type="button" title="Copy to clipboad">'+
-                    '<span class="hidden-xs">Copy</span>'+
-                    '</button>'+
-                    '</div>'+
-                    '<pre><code class="javascript"><div class="js-code-content"></div></code></pre>'+
-                    '</div>');
-                $(this).nextAll().eq(1).closest('.code-container').find('.js-code-content').text($(this).nextAll().eq(2).html());
-                $(this).nextAll().eq(1).closest('.code-container').find('.js-code-content').prepend("<h5 class='code-heading'><b>JS</b></h5>");
-                $(this).nextAll().eq(1).closest('.code-container').find('.btn-clipboard').attr("data-clipboard-text",($(this).nextAll().eq(2).html()));
-            }
-
-            if($(this).prev('div').children().find('code-sample')){
-                if($(this).prev('div').find('.code-sample').hasClass('loading-sample1')) {
-                    var formPrependText = '            <form class="form-horizontal" data-toggle="loading" data-loading-style="overlay">';
-                    var formAppendText = '</form>';
-                    $(this).next().closest('.code-container').find('.code-content').text($('.code-sample').html());
-                    $(this).next().closest('.code-container').find('.code-content').prepend(document.createTextNode(formPrependText));
-                    $(this).next().closest('.code-container').find('.code-content').append(document.createTextNode(formAppendText));
-                } else if ($(this).prev('div').find('.code-sample').hasClass('loading-sample2')){
-                    $(this).next().closest('.code-container').find('.code-content').text('<div data-toggle="loading" data-loading-text="Processing" ' +
-                        'data-loading-style="icon-only" data-loading-image="images/oloader.gif" data-loading-inverse="true">');
-                }
-            }
-            $(this).addClass('code-btn-active');
-            $('.btn-clipboard').zclip();
-            $('.code-container pre code').each(function(i, block) {
-                hljs.highlightBlock(block);
-            });
-        }
-    });
-
-    /***********************************************************
-     *  Documentation Form Validation
-     ***********************************************************/
-
-    $('#form-validation-example').validate();
-    $('#form-range-example').validate();
 });
 
 //$('link[data-include]').each(function(){
