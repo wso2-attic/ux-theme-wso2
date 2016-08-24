@@ -89,7 +89,7 @@ module.exports = function(grunt) {
                         'js/modules/optional.js'
                     ],
                 },
-            },
+            }
         },
         uglify: {
             options: {
@@ -127,44 +127,84 @@ module.exports = function(grunt) {
                     src: ['**/*'],
                     dest: 'docs/_scss'
                 }]
-            },
+            }
         },
         jekyll: {
             options: {
-              src : 'docs'
+                src : 'docs',
+                baseurl: '/'
             },
             dist: {
-              options: {
-                dest: 'docs/_site',
-                config: 'docs/_config.yml'
-              }
+                options: {
+                    dest: 'docs/_site',
+                    config: 'docs/_config.yml'
+                }
             },
+            serve: {
+                options: {
+                    serve: true,
+                    dest: 'docs/_site',
+                    config: 'docs/_config.yml',
+                    drafts: true,
+                    future: true
+                }
+            }
         },
         sync: {
             update_scss_in_docs: {
-              files: [
-                { cwd: 'scss', src: '**/*.scss', dest: 'docs/_scss' },
-              ]
+                files: [
+                    { cwd: 'scss', src: '**/*.scss', dest: 'docs/_scss' },
+                ]
             }
         },
         watch: {
             options: {
                 dateFormat: function(time) {
                     grunt.log.writeln('');
-                    grunt.log.writeln('Watching for SCSS changes');
-                    grunt.log.writeln('------------------------------------------------------');
-                    grunt.log.writeln('Regenerating: Changed at ' + (new Date()).toString() + ' ...done in ' + time + ' ms.');
-                    grunt.log.writeln('Waiting for more changes...');
+                    //grunt.log.writeln('Watching for SCSS changes');
+                    //grunt.log.writeln('------------------------------------------------------');
+                    grunt.log.writeln('      Sync: Changed at ' + (new Date()).toString() + ' ...done in ' + time + ' ms.');
+                    //grunt.log.writeln('Waiting for more changes...');
                 },
             },
-            css: {
+            scss: {
                 files: 'scss/**/*.scss',
                 tasks: ['sync'],
                 options: {
                     livereload: true,
                 },
-            },
+            }
         },
+        concurrent: {
+            target: {
+                tasks: ['shell:jekyll_serve', 'watch'],
+                options: {
+                    logConcurrentOutput: true
+                }
+            }
+        },
+        shell: {
+            jekyll_build: {
+                command: 'jekyll build',
+                stdout: true,
+                options: {
+                    stderr: false,
+                    execOptions: {
+                        cwd: 'docs'
+                    }
+                }
+            },
+            jekyll_serve: {
+                command: 'jekyll serve',
+                stdout: true,
+                options: {
+                    stderr: false,
+                    execOptions: {
+                        cwd: 'docs'
+                    }
+                }
+            }
+        }
     });
     
     // Load the plugin that provides the “uglify” task.
@@ -175,19 +215,22 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-sync');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-jekyll');
+    grunt.loadNpmTasks('grunt-concurrent');
+    grunt.loadNpmTasks('grunt-shell');
     
     // Default task(s).   
     grunt.registerTask('default', ['sass:all','cssmin:all','concat','uglify','copy']);
-    grunt.registerTask('watch', ['watch']);
-    grunt.registerTask('css', function(arg) {
+    grunt.registerTask('docs', ['shell:jekyll_build']);
+    grunt.registerTask('serve', ['concurrent:target']);
+    
+    grunt.registerTask('product', function(arg) {
         if(!arg){
             
             grunt.log.writeln('');
             grunt.log.writeln('You have to select a product');
             grunt.log.writeln('------------------------------------------------------');
-            grunt.log.writeln('To build individual products, run the command again with :<product-short-name>. e.g. "grunt css:apim"');
-            grunt.log.writeln('Or to build all the product css files, run the command "grunt css:all"');
+            grunt.log.writeln('To build individual products, run the command again with :<product-short-name>. e.g. "grunt product:apim"');
+            grunt.log.writeln('Or to build all the product css files, run the command "grunt product:all"');
 
             
         } else if(arg == 'all'){

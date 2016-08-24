@@ -20,8 +20,7 @@
     "grunt-contrib-nodeunit": "~0.1.2",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-sync": "~0.5.2",
-    "grunt-json-generator": "^0.1.0",
-    "grunt-jekyll": "^0.4.3",
+    "grunt-concurrent": "^2.3.1",
     "grunt-zip": "~0.17.1"
   }
 }
