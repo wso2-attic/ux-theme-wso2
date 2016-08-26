@@ -25,7 +25,9 @@
 @import "vendor/bootstrap/stylesheets/bootstrap/button-groups";
 @import "vendor/bootstrap/stylesheets/bootstrap/input-groups";
 @import "vendor/bootstrap/stylesheets/bootstrap/navs";
+@import "modules/navs-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/navbar";
+@import "modules/navbar-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/breadcrumbs";
 @import "modules/breadcrumbs-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/pagination";
@@ -58,7 +60,6 @@
 @import 'modules/utilities';
 
 @import 'modules/old'; //TODO: Remove after merge
-@import "modules/navbar-extension";
 @import "modules/sidebar";
 @import "modules/dropdowns-extension";
 @import "modules/loading";

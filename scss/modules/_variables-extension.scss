@@ -19,6 +19,7 @@ $gray-dark: lighten($gray-base, 20%) !default;   // #333
 $gray: lighten($gray-base, 33.5%) !default; // #555
 $gray-light: lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
+$gray-lightest: lighten($gray-base, 99.5%) !default; // #fefefe
 
 $brand-primary: #2c313b !default;
 $brand-secondary: lighten($brand-primary, 20%) !default;
@@ -144,9 +145,8 @@ $page-content-wrapper-sidebar-height-mobile: calc(100% - 245px) !default;
 
 // Navbar
 //--------------------------------------------------------------------------------------------------
-$navbar-padding: 0 15px !default;
 $navbar-bg: $brand-primary !default;
-$navbar-default-link-color: $brand-light !default;
+$navbar-default-link-color: $gray-lightest !default;
 $navbar-default-link-hover-color: $navbar-default-link-color !default;
 $navbar-default-link-hover-bg: lighten($navbar-bg, 10%) !default;
 $navbrand-background-color: darken($navbar-bg, 5%) !default;

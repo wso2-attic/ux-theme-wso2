@@ -1,12 +1,7 @@
-  .navbar-wrapper {
-    min-height: $navbar-height;
-  }
-
   .navbar {
     background: $navbar-bg;
     border: none;
     margin-bottom: 0;
-    @include border-radius;
 
     &.affix,
     &.affix-bottom {
@@ -19,7 +14,6 @@
     }
     > .container .navbar-brand,
     > .container-fluid .navbar-brand {
-      color: $brand-light;
       margin-left: 0;
       padding: 0 15px;
       line-height: $navbar-height;
@@ -28,7 +22,7 @@
     }
     > .container .navbar-brand a,
     > .container-fluid .navbar-brand a {
-      color: $brand-light;
+      color: $gray-lightest;
       font-size: 16px;
     }
     .container-fluid > .navbar-collapse,
@@ -62,11 +56,6 @@
 
   .navbar-nav {
     margin: 7.5px 0;
-    &.nav-stacked {
-      > li {
-        float: none !important;
-      }
-    }
   }
 
   @media (min-width:768px){
@@ -82,10 +71,10 @@
     line-height: $navbar-height;
     font-size: 18px;
     background: $brand-optional;
-    color: $brand-light;
+    color: $gray-lightest;
 
     &:hover, &:focus, &:active {
-      color: $brand-light;
+      color: $gray-lightest;
       background: darken($brand-optional, 10%);
     }
 
@@ -101,7 +90,6 @@
 
   .navbar-toggle {
     border: none;
-    @include border-radius;
   }
 
   .navbar-default {
@@ -138,6 +126,9 @@
           background: $navbar-default-link-hover-bg;
         }
       }
+    }
+    a {
+      text-decoration: none;
     }
   }
 
@@ -238,20 +229,6 @@
               }
             }
           }
-        }
-      }
-    }
-  }
-
-  .nav-pills {
-    > li.active {
-      > a {
-        &,
-        &:focus,
-        &:hover {
-          color: $brand-light;
-          background: $brand-primary;
-          border-color: $brand-primary;
         }
       }
     }
