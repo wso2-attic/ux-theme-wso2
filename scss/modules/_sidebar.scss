@@ -61,14 +61,14 @@
   height: 100%;
   overflow-y: auto;
   background: $gray-darker;
-  color: $brand-light;
+  color: $gray-lightest;
   @include transition(all 0.5s ease);
 
   &.affix {
     position: fixed;
   }
   &.inverse {
-    background: $brand-light;
+    background: $gray-lightest;
     color: $gray-darker;
   }
   &[data-side=right] {
@@ -121,12 +121,12 @@ ul .sidebar-messages {
       color: #999999;
       &:hover {
         text-decoration: none;
-        color: $brand-light;
+        color: $gray-lightest;
         background: rgba(255,255,255,0.2);
       }
       &.active {
         border-left: 3px solid $brand-optional;
-        color: $brand-light;
+        color: $gray-lightest;
       }
     }
     ul.sub-menu {
@@ -139,7 +139,7 @@ ul .sidebar-messages {
         background-color: $sidebar-submenu-bg;
         &:hover{
           a {
-            color: $brand-light;
+            color: $gray-lightest;
           }
         }
         a {
@@ -150,7 +150,7 @@ ul .sidebar-messages {
           margin: 0px;
           &:hover {
             background-color: transparent;
-            color: $brand-light;
+            color: $gray-lightest;
           }
           &.active {
             border-left:0;
@@ -183,7 +183,7 @@ ul .sidebar-messages {
     a {
       color: #999999;
       &:hover {
-        color: $brand-light;
+        color: $gray-lightest;
         background: none;
       }
     }
