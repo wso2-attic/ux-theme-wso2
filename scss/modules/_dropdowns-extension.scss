@@ -1,7 +1,5 @@
 .dropdown-menu {
   background: #e4e4e4;
-  @include border-radius;
-  //@include box-shadow;
   margin:0;
   padding:0;
   &.arrow {
@@ -24,9 +22,6 @@
   &.dark {
     background: $dropdown-menu-dark-background-color;
     color: $dropdown-menu-dark-color;
-    @include border-radius;
-    //@include box-shadow;
-
     a {
       color: $dropdown-menu-dark-color;
     }
@@ -34,7 +29,7 @@
       border-bottom-color: $dropdown-menu-dark-background-color;
     }
   }
-  .tiles {
+  &.tiles {
     padding: 4px;
     max-width: 385px;
     > li {

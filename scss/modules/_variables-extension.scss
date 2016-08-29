@@ -161,10 +161,10 @@ $sidebar-submenu-bg: #181c20 !default;
 // Dropdowns
 //--------------------------------------------------------------------------------------------------
 $dropdown-menu-dark-background-color: $gray-darker !default;
-$dropdown-menu-dark-color: $brand-light !default;
-$dropdown-menu-dark-tiles-background-color: #444 !default;
-$dropdown-menu-dark-tiles-hover-background-color: #555 !default;
-$dropdown-menu-dark-tiles-color: $brand-light !default;
+$dropdown-menu-dark-color: $gray-lightest !default;
+$dropdown-menu-dark-tiles-background-color: lighten($gray-base, 33%) !default;
+$dropdown-menu-dark-tiles-hover-background-color: $gray !default;
+$dropdown-menu-dark-tiles-color: $gray-lightest !default;
 
 // Loading styles
 //--------------------------------------------------------------------------------------------------
