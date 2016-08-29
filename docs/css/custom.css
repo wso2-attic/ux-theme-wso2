@@ -572,25 +572,12 @@
     color: #fff;
 }
 
-.code-container{
-    margin-top:-20px;
-}
-
 .navbar-doc {
     background-color:#333;
 }
 
 .navbar-doc .navbar-menu-toggle {
     background-color:#F47A1E;
-}
-
-#navbar-sample .navbar-collapse.dropdown {
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-#sidebar-sample + .code-btn {
-    margin-left: 16px;
 }
 
 h1.theme-name{
