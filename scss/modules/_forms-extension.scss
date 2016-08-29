@@ -21,12 +21,6 @@
   }
 }
 
-.form-control,
-.btn {
-  @include border-radius;
-  //@include box-shadow;
-}
-
 .remove-icon-ring-on-hover {
   &:hover {
     .fw-ring {
@@ -92,10 +86,6 @@ input[type=number] {
   .btn.wrap-input-right {
     border-left: none;
   }
-}
-
-.input-group-addon {
-  @include border-radius;
 }
 
 .file-upload-control {
@@ -294,20 +284,6 @@ input[type=number] {
       opacity: 1;
       top: 0;
       left: 0;
-    }
-  }
-}
-
-@media (min-width:768px) {
-  .tab-content {
-    > .tab-pane {
-      display: none !important;
-    }
-  }
-
-  .tab-content {
-    > .active {
-      display: block !important;
     }
   }
 }
