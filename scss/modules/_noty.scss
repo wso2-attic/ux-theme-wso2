@@ -20,7 +20,7 @@
 .noty_container_type {
   &_notification {
     background-color: $gray-darker;
-    color: $brand-light;
+    color: $gray-lightest;
   }
   &_warning {
     background-color: #ffeaa8;
@@ -28,15 +28,15 @@
   }
   &_error {
     background-color: #e74c3c;
-    color: $brand-light;
+    color: $gray-lightest;
   }
   &_information {
     background-color: #78c5e7;
-    color: $brand-light;
+    color: $gray-lightest;
   }
   &_success {
     background-color: #40d47e;
-    color: $brand-light;
+    color: $gray-lightest;
   }
 }
 
