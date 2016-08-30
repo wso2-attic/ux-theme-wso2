@@ -2,11 +2,6 @@
 // icons styles
 // --------------------------------------------------
 
-.icon-success { color: $brand-success }
-.icon-info { color: $brand-info }
-.icon-warning { color: $brand-warning }
-.icon-danger { color: $brand-danger }
-
 [aria-expanded='true'] > .icon.fw-stack > .toggle-icon,
 [aria-expanded='true'] > .icon.toggle-icon {
   &-up:before {
@@ -34,8 +29,3 @@
     content: '\e68b';
   }
 }
-
-//.icon-grid {
-//    &:extend(.fw all);
-//    &:extend(.fw-grid all);
-//}

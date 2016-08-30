@@ -1,19 +1,11 @@
-//
-// List-groups
-// --------------------------------------------------
-
 .list-group-item {
-  &:first-child,
-  &:last-child {
-    @include border-radius;
-  }
   &.active,
   .active {
     > & {
       &,
       &:focus,
       &:hover {
-        color: $brand-light;
+        color: $gray-lightest;
         background: $brand-primary;
         border-color: $brand-primary;
       }

@@ -8,12 +8,15 @@
 
 // Core CSS
 @import "vendor/bootstrap/stylesheets/bootstrap/scaffolding";
-@import 'modules/scaffolding-extension';
+
 @import "vendor/bootstrap/stylesheets/bootstrap/type";
+@import 'modules/scaffolding-extension';
 @import "vendor/bootstrap/stylesheets/bootstrap/code";
 @import "vendor/bootstrap/stylesheets/bootstrap/grid";
 @import "vendor/bootstrap/stylesheets/bootstrap/tables";
+@import "modules/tables-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/forms";
+@import "modules/forms-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/buttons";
 @import "modules/buttons-extension";
 
@@ -22,6 +25,7 @@
 @import 'modules/footer';
 @import "vendor/bootstrap/stylesheets/bootstrap/component-animations";
 @import "vendor/bootstrap/stylesheets/bootstrap/dropdowns";
+@import "modules/dropdowns-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/button-groups";
 @import "vendor/bootstrap/stylesheets/bootstrap/input-groups";
 @import "vendor/bootstrap/stylesheets/bootstrap/navs";
@@ -31,6 +35,7 @@
 @import "vendor/bootstrap/stylesheets/bootstrap/breadcrumbs";
 @import "modules/breadcrumbs-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/pagination";
+@import "modules/pagination-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/pager";
 @import "vendor/bootstrap/stylesheets/bootstrap/labels";
 @import "vendor/bootstrap/stylesheets/bootstrap/badges";
@@ -42,14 +47,26 @@
 @import "vendor/bootstrap/stylesheets/bootstrap/progress-bars";
 @import "vendor/bootstrap/stylesheets/bootstrap/media";
 @import "vendor/bootstrap/stylesheets/bootstrap/list-group";
+@import "modules/list-group_extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/panels";
+@import "modules/panels-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/responsive-embed";
 @import "vendor/bootstrap/stylesheets/bootstrap/wells";
 @import "vendor/bootstrap/stylesheets/bootstrap/close";
 @import "modules/messages";
+@import "modules/sidebar";
+@import "modules/loading";
+@import "modules/datatables";
+@import "modules/noty";
+@import "modules/tiles";
+@import "modules/tree-view";
+@import "modules/asset-details";
+@import "modules/switch";
+@import "modules/icons";
 
 // Components w/ JavaScript
 @import "vendor/bootstrap/stylesheets/bootstrap/modals";
+@import "modules/modals-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/tooltip";
 @import "vendor/bootstrap/stylesheets/bootstrap/popovers";
 @import "vendor/bootstrap/stylesheets/bootstrap/carousel";
@@ -60,19 +77,3 @@
 @import 'modules/utilities';
 
 @import 'modules/old'; //TODO: Remove after merge
-@import "modules/sidebar";
-@import "modules/dropdowns-extension";
-@import "modules/loading";
-@import "modules/forms-extension";
-@import "modules/tables-extension";
-@import "modules/datatables";
-@import "modules/pagination-extension";
-@import "modules/panels-extension";
-@import "modules/notifications";
-@import "modules/tiles";
-@import "modules/modals-extension";
-@import "modules/list-groups";
-@import "modules/tree-view";
-@import "modules/asset-details";
-@import "modules/switch";
-@import "modules/icons";
