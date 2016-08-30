@@ -55,8 +55,8 @@ body > .page-content-wrapper > .container-fluid {
 }
 
 body.inverse {
-    background: $brand-primary;
-    color: $gray-lightest;
+    background: $body-inverse-bg;
+    color: $body-inverse-color;
 }
 
 a, a:hover, a:focus, a:active {
@@ -69,5 +69,5 @@ a, a:hover, a:focus, a:active {
 }
 
 body.inverse .fade-edge {
-    @include fade-color($brand-primary);
+    @include fade-color($body-inverse-bg);
 }

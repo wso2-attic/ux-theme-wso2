@@ -22,7 +22,7 @@
     }
     > .container .navbar-brand a,
     > .container-fluid .navbar-brand a {
-      color: $gray-lightest;
+      color: $navbrand-link-color;
       font-size: 16px;
     }
     .container-fluid > .navbar-collapse,
@@ -70,16 +70,16 @@
     padding: 0 3px;
     line-height: $navbar-height;
     font-size: 18px;
-    background: $brand-optional;
-    color: $gray-lightest;
+    background: $navbar-toggle-hover-bg;
+    color: $navbar-toggle-color;
 
     &:hover, &:focus, &:active {
-      color: $gray-lightest;
-      background: darken($brand-optional, 10%);
+      color: $navbar-toggle-hover-color;
+      background: $navbar-toggle-hover-bg;
     }
 
     &[aria-expanded=true] {
-      background: darken($brand-optional, 8%);
+      background: $navbar-toggle-expanded-color;
     }
 
     .icon {

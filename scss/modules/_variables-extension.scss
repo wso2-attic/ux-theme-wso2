@@ -39,6 +39,9 @@ $headings-font-weight: 300 !default;
 // Iconography
 //--------------------------------------------------------------------------------------------------
 $icon-font-name: "font-wso2" !default;
+$icon-sort-content: "\e673" !default;
+$icon-sort-up-content: "\e64b" !default;
+$icon-sort-down-content: "\e663" !default;
 
 // Text
 //--------------------------------------------------------------------------------------------------
@@ -150,13 +153,34 @@ $navbar-default-link-color: $gray-lightest !default;
 $navbar-default-link-hover-color: $navbar-default-link-color !default;
 $navbar-default-link-hover-bg: lighten($navbar-bg, 10%) !default;
 $navbrand-background-color: darken($navbar-bg, 5%) !default;
+$navbrand-link-color:  $gray-lightest !default;
+$navbar-toggle-bg: $brand-optional !default;
+$navbar-toggle-color: $gray-lightest !default;
+$navbar-toggle-hover-bg: darken($brand-optional, 10%) !default;
+$navbar-toggle-hover-color: $gray-lightest !default;
+$navbar-toggle-expanded-color: darken($brand-optional, 8%) !default;
 $navbar-height: 40px !default;
 
+// Navs
+//--------------------------------------------------------------------------------------------------
+$nav-pills-border-color:                    $brand-primary !default;
+$nav-pills-active-link-hover-bg:            $brand-primary !default;
+$nav-pills-active-link-hover-color:         $gray-lightest !default;
 
 // Sidebar
 //--------------------------------------------------------------------------------------------------
 $sidebar-width-default: 350px !default;
 $sidebar-submenu-bg: #181c20 !default;
+$sidebar-wrapper-bg: $gray-darker !default;
+$sidebar-wrapper-color: $gray-lightest !default;
+$sidebar-wrapper-inverse-bg: $gray-darker !default;
+$sidebar-wrapper-inverse-color: $gray-lightest !default;
+$sidebar-nav-link-border-color: $gray-darker !default;
+$sidebar-nav-link-hover-color: $gray-lightest !default;
+$sidebar-nav-link-active-border-color: $brand-optional !default;
+$sidebar-nav-link-active-color: $gray-lightest !default;
+$sidebar-nav-submenu-link-hover-color: $gray-lightest !default;
+$sidebar-brand-link-hover-color: $gray-lightest !default;
 
 // Dropdowns
 //--------------------------------------------------------------------------------------------------
@@ -178,7 +202,10 @@ $loading-image-icon-max-width: 50px !default;
 // Forms
 //--------------------------------------------------------------------------------------------------
 $form-control-max-width: 750px !default;
-
+$form-radio-checked-background-color: $brand-primary !default;
+$form-radio-checked-border-color: $brand-primary !default;
+$form-checkbox-checked-background-color: $brand-primary !default;
+$form-checkbox-checked-border-color: $brand-primary !default;
 
 // Switch styles
 //--------------------------------------------------------------------------------------------------
@@ -191,10 +218,58 @@ $switch-handler-disabled-color: #484e52 !default;
 
 // Datatables
 //--------------------------------------------------------------------------------------------------
-$icon-sort-content: "\e673" !default;
-$icon-sort-up-content: "\e64b" !default;
-$icon-sort-down-content: "\e663" !default;
+$datatable-active-background-color: $brand-primary !default;
 
 // Well
 //--------------------------------------------------------------------------------------------------
-$well-border: none;
+$well-border: none !default;
+
+// Asset details
+//--------------------------------------------------------------------------------------------------
+$asset-img-background-color: $brand-primary !default;
+
+// List Groups
+//--------------------------------------------------------------------------------------------------
+$list-group-item-hover-color: $gray-lightest !default;
+$list-group-item-hover-background-color: $brand-primary !default;
+$list-group-item-hover-border-color: $brand-primary !default;
+
+// Modals
+//--------------------------------------------------------------------------------------------------
+$modal-content-bg: $gray-darker !default;
+$modal-content-color: $gray-lightest !default;
+
+// Noty
+//--------------------------------------------------------------------------------------------------
+$noty-notification-bg: $gray-darker !default;
+$noty-notification-color: $gray-lightest !default;
+$noty-warning-bg: #ffeaa8 !default;
+$noty-warning-color: #826200 !default;
+$noty-error-bg: #e74c3c !default;
+$noty-error-color: $gray-lightest !default;
+$noty-information-bg: #78c5e7 !default;
+$noty-information-color: $gray-lightest !default;
+$noty-success-bg: #40d47e !default;
+$noty-success-color: $gray-lightest !default;
+
+// Pagination
+//--------------------------------------------------------------------------------------------------
+$pagination-color: $brand-primary !default;
+
+// body Inverse
+//--------------------------------------------------------------------------------------------------
+$body-inverse-bg: $brand-primary !default;
+$body-inverse-color: $gray-lightest !default;
+
+// Thumbnail
+//-------------------------------------------------------------------------------------------------
+$thumbnail-icon-bg: $brand-primary !default;
+
+// Tiles
+//-------------------------------------------------------------------------------------------------
+$tiles-link-color: $gray-darker !default;
+
+// Tree View
+//-------------------------------------------------------------------------------------------------
+$tree-view-icon-bg: $brand-primary !default;
+$tree-view-icon-color: $gray-lightest !default;

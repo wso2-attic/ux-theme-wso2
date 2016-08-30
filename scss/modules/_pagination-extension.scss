@@ -1,30 +1,12 @@
 .pagination {
   > li {
-    &:first-child > a,
-    &:first-child > span,
-    &:last-child > a,
-    &:last-child > span {
-      @include border-radius;
-    }
-
     & > a,
     & > a:focus,
     & > a:hover,
     & > span,
     & > span:hover {
       text-decoration: none;
-      color: $brand-primary;
-    }
-  }
-  > .active {
-    & > a,
-    & > a:focus,
-    & > a:hover,
-    & > span,
-    & > span:focus,
-    & > span:hover {
-      background: $brand-primary;
-      border-color: $brand-primary;
+      color: $pagination-color;
     }
   }
   > .disabled {
