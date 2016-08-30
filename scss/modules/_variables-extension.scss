@@ -34,6 +34,7 @@ $brand-optional: #007D85 !default;
 //--------------------------------------------------------------------------------------------------
 $font-family-base: 'Roboto', Arial, Helvetica, sans-serif !default;
 $font-weight-base: 300 !default;
+$headings-font-weight: 300 !default;
 
 // Iconography
 //--------------------------------------------------------------------------------------------------
@@ -193,3 +194,7 @@ $switch-handler-disabled-color: #484e52 !default;
 $icon-sort-content: "\e673" !default;
 $icon-sort-up-content: "\e64b" !default;
 $icon-sort-down-content: "\e663" !default;
+
+// Well
+//--------------------------------------------------------------------------------------------------
+$well-border: none;

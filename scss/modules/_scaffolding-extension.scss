@@ -14,10 +14,68 @@ html {
     width: 100%;
 }
 
+/* ========================================================================
+ * body styles
+ * ======================================================================== */
+
 body {
     min-height: 100%;
     font-weight: $font-weight-base;
     width: 100%;
     overflow: hidden;
     position: relative;
+}
+
+.body-wrapper {
+    padding: 40px;
+}
+
+.body-wrapper a:hover {
+    text-decoration: underline;
+}
+
+.body-wrapper a.btn:hover {
+    text-decoration: none;
+}
+
+@media (max-width:767px){
+    .body-wrapper {
+        padding: 20px;
+    }
+}
+
+/* ========================================================================
+ * document styles
+ * ======================================================================== */
+
+body > .page-content-wrapper > .container,
+body > .page-content-wrapper > .container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    body > .page-content-wrapper > .container,
+    body > .page-content-wrapper > .container-fluid {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+body.inverse {
+    background: $brand-primary;
+    color: $gray-lightest;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.fade-edge {
+    @include fade-color;
+}
+
+body.inverse .fade-edge {
+    @include fade-color($brand-primary);
 }

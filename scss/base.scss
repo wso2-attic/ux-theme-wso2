@@ -12,6 +12,7 @@
 @import "vendor/bootstrap/stylesheets/bootstrap/type";
 @import 'modules/scaffolding-extension';
 @import "vendor/bootstrap/stylesheets/bootstrap/code";
+@import 'modules/code-extension';
 @import "vendor/bootstrap/stylesheets/bootstrap/grid";
 @import "vendor/bootstrap/stylesheets/bootstrap/tables";
 @import "modules/tables-extension";
@@ -39,6 +40,7 @@
 @import "vendor/bootstrap/stylesheets/bootstrap/pager";
 @import "vendor/bootstrap/stylesheets/bootstrap/labels";
 @import "vendor/bootstrap/stylesheets/bootstrap/badges";
+@import "modules/badges-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/jumbotron";
 @import "vendor/bootstrap/stylesheets/bootstrap/thumbnails";
 @import "modules/thumbnails-extension";
@@ -76,4 +78,3 @@
 @import "vendor/bootstrap/stylesheets/bootstrap/responsive-utilities";
 @import 'modules/utilities';
 
-@import 'modules/old'; //TODO: Remove after merge
