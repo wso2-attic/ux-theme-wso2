@@ -18,7 +18,7 @@
       padding: 0 15px;
       line-height: $navbar-height;
       text-transform: uppercase;
-      background: $navbrand-background-color;
+      background: $navbrand-bg;
     }
     > .container .navbar-brand a,
     > .container-fluid .navbar-brand a {
@@ -134,7 +134,7 @@
 
   .navbar-collapse {
     &.dropdown {
-      background: $dropdown-menu-dark-background-color;
+      background: $dropdown-menu-dark-bg;
       margin-right: -10px;
       margin-left: -10px;
       padding-bottom: 0;
@@ -161,12 +161,12 @@
               width: 120px;
               height: 120px;
               padding: 15px;
-              background: $dropdown-menu-dark-tiles-background-color;
+              background: $dropdown-menu-dark-tiles-bg;
               display: block;
               overflow: hidden;
               line-height: 1.4em;
               &:hover {
-                background: $dropdown-menu-dark-tiles-hover-background-color;
+                background: $dropdown-menu-dark-tiles-hover-bg;
               }
               i {
                 font-size: 46px;
@@ -181,9 +181,9 @@
             }
             li {
               a {
-                background: lighten($dropdown-menu-dark-tiles-background-color, 20%);
+                background: lighten($dropdown-menu-dark-tiles-bg, 20%);
                 &:hover {
-                  background: lighten($dropdown-menu-dark-tiles-hover-background-color, 20%);
+                  background: lighten($dropdown-menu-dark-tiles-hover-bg, 20%);
                 }
               }
             }

@@ -6,7 +6,7 @@
   position: relative;
   &[data-loading-style=overlay] {
     .loading-bg {
-      background: $loading-background-color;
+      background: $loading-bg;
       position: absolute;
       height: 100%;
       width: 100%;
@@ -21,7 +21,7 @@
   }
   &[data-loading-inverse=true] {
     .loading-bg {
-      background: $loading-inverse-background-color;
+      background: $loading-inverse-bg;
     }
     .loading-animation {
       .logo {

@@ -79,7 +79,7 @@ $state-disabled-border: $brand-disabled !default;
 // Header
 //--------------------------------------------------------------------------------------------------
 $header-height: 50px !default;
-$header-background-color: #191919 !default;
+$header-bg: #191919 !default;
 $header-color: #fff !default;
 
 // Footer
@@ -152,7 +152,7 @@ $navbar-bg: $brand-primary !default;
 $navbar-default-link-color: $gray-lightest !default;
 $navbar-default-link-hover-color: $navbar-default-link-color !default;
 $navbar-default-link-hover-bg: lighten($navbar-bg, 10%) !default;
-$navbrand-background-color: darken($navbar-bg, 5%) !default;
+$navbrand-bg: darken($navbar-bg, 5%) !default;
 $navbrand-link-color:  $gray-lightest !default;
 $navbar-toggle-bg: $brand-optional !default;
 $navbar-toggle-color: $gray-lightest !default;
@@ -184,41 +184,41 @@ $sidebar-brand-link-hover-color: $gray-lightest !default;
 
 // Dropdowns
 //--------------------------------------------------------------------------------------------------
-$dropdown-menu-dark-background-color: $gray-darker !default;
+$dropdown-menu-dark-bg: $gray-darker !default;
 $dropdown-menu-dark-color: $gray-lightest !default;
-$dropdown-menu-dark-tiles-background-color: lighten($gray-base, 33%) !default;
-$dropdown-menu-dark-tiles-hover-background-color: $gray !default;
+$dropdown-menu-dark-tiles-bg: lighten($gray-base, 33%) !default;
+$dropdown-menu-dark-tiles-hover-bg: $gray !default;
 $dropdown-menu-dark-tiles-color: $gray-lightest !default;
 
 // Loading styles
 //--------------------------------------------------------------------------------------------------
 $loading-background-opacity: 0.6 !default;
-$loading-background-color: $gray-darker !default;
+$loading-bg: $gray-darker !default;
 $loading-color: $gray-lightest !default;
-$loading-inverse-background-color: $gray-lightest !default;
+$loading-inverse-bg: $gray-lightest !default;
 $loading-inverse-color: $gray-darker !default;
 $loading-image-icon-max-width: 50px !default;
 
 // Forms
 //--------------------------------------------------------------------------------------------------
 $form-control-max-width: 750px !default;
-$form-radio-checked-background-color: $brand-primary !default;
+$form-radio-checked-bg: $brand-primary !default;
 $form-radio-checked-border-color: $brand-primary !default;
-$form-checkbox-checked-background-color: $brand-primary !default;
+$form-checkbox-checked-bg: $brand-primary !default;
 $form-checkbox-checked-border-color: $brand-primary !default;
 
 // Switch styles
 //--------------------------------------------------------------------------------------------------
-$switch-active-background-color: #25262b !default;
-$switch-inactive-background-color: #a6a6a6 !default;
-$switch-disabled-background-color: #6f7579 !default;
+$switch-active-bg: #25262b !default;
+$switch-inactive-bg: #a6a6a6 !default;
+$switch-disabled-bg: #6f7579 !default;
 $switch-handler-active-color: #237bd5 !default;
 $switch-handler-inactive-color: #eaeaea !default;
 $switch-handler-disabled-color: #484e52 !default;
 
 // Datatables
 //--------------------------------------------------------------------------------------------------
-$datatable-active-background-color: $brand-primary !default;
+$datatable-active-bg: $brand-primary !default;
 
 // Well
 //--------------------------------------------------------------------------------------------------
@@ -226,12 +226,12 @@ $well-border: none !default;
 
 // Asset details
 //--------------------------------------------------------------------------------------------------
-$asset-img-background-color: $brand-primary !default;
+$asset-img-bg: $brand-primary !default;
 
 // List Groups
 //--------------------------------------------------------------------------------------------------
 $list-group-item-hover-color: $gray-lightest !default;
-$list-group-item-hover-background-color: $brand-primary !default;
+$list-group-item-hover-bg: $brand-primary !default;
 $list-group-item-hover-border-color: $brand-primary !default;
 
 // Modals

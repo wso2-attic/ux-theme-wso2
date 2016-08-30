@@ -158,7 +158,7 @@ input[type=number] {
       margin-left: 0;
       top: 50%;
       margin-top: -5px;
-      background-color: $form-radio-checked-background-color;
+      background-color: $form-radio-checked-bg;
       width: 10px;
       height: 10px;
       border-radius: 100%;
@@ -240,7 +240,7 @@ input[type=number] {
       left: 2px;
       margin-left: 0;
       text-align: center;
-      background: $form-checkbox-checked-background-color;
+      background: $form-checkbox-checked-bg;
       color: #fff;
       font-family: font-wso2;
     }
