@@ -161,10 +161,7 @@ module.exports = function(grunt) {
             options: {
                 dateFormat: function(time) {
                     grunt.log.writeln('');
-                    //grunt.log.writeln('Watching for SCSS changes');
-                    //grunt.log.writeln('------------------------------------------------------');
-                    grunt.log.writeln('      Sync: Changed at ' + (new Date()).toString() + ' ...done in ' + time + ' ms.');
-                    //grunt.log.writeln('Waiting for more changes...');
+                    grunt.log.writeln('      Sync SCSS: changed at ' + (new Date()).toString() + ' ...done in ' + (time / 1000.0) + ' seconds.');
                 },
             },
             scss: {
@@ -213,8 +210,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-sync');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-sync');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-shell');
     
