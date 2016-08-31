@@ -9,7 +9,7 @@
     left: 0;
     margin-left: 0;
     min-height: $page-content-wrapper-height;
-    @include transition(all 0.5s ease);
+    @include transition(left 0.5s ease, right 0.5s ease);
   }
   &.fixed {
     & > div {
@@ -62,7 +62,7 @@
   overflow-y: auto;
   background: $gray-darker;
   color: $gray-lightest;
-  @include transition(all 0.5s ease);
+  @include transition(left 0.5s ease, right 0.5s ease);
 
   &.affix {
     position: fixed;

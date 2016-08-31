@@ -486,6 +486,9 @@ $.sidebar_toggle = function(action, target, container) {
                    $(container).css(targetSide, targetWidth + targetOffsetLeft);
                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
                 }
+                else {
+                   $(target).css(targetSide, Math.abs(targetWidth + targetOffsetLeft)); 
+                }
             }
             else if (targetSide == 'right'){
                 if ($(target).attr('data-container-divide')){
@@ -495,6 +498,9 @@ $.sidebar_toggle = function(action, target, container) {
                 else if ($(target).attr('data-container-push')){
                    $(container).css(targetSide, targetWidth + targetOffsetRight);
                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+                }
+                else {
+                   $(target).css(targetSide, Math.abs(targetWidth + targetOffsetRight)); 
                 }
             }
 
@@ -526,24 +532,30 @@ $.sidebar_toggle = function(action, target, container) {
 
             // Sidebar close function
             if (targetSide == 'left'){
-               if($(target).attr('data-container-divide')){
-                   $(container).css(pushType+'-'+targetSide, targetOffsetLeft);
-                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
-               }
-               else if($(target).attr('data-container-push')){
-                   $(container).css(targetSide, targetOffsetLeft);
-                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
-               }
+                if($(target).attr('data-container-divide')){
+                    $(container).css(pushType+'-'+targetSide, targetOffsetLeft);
+                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+                }
+                else if($(target).attr('data-container-push')){
+                    $(container).css(targetSide, targetOffsetLeft);
+                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
+                }
+                else {
+                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
+                }
             }
             else if (targetSide == 'right'){
-               if($(target).attr('data-container-divide')){
-                   $(container).css(pushType+'-'+targetSide, targetOffsetRight);
-                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
-               }
-               else if($(target).attr('data-container-push')){
-                   $(container).css(targetSide, targetOffsetRight);
-                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
-               }
+                if($(target).attr('data-container-divide')){
+                    $(container).css(pushType+'-'+targetSide, targetOffsetRight);
+                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+                }
+                else if($(target).attr('data-container-push')){
+                    $(container).css(targetSide, targetOffsetRight);
+                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+                }
+                else {
+                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight)); 
+                }
             }
 
             $(target).trigger('hidden.sidebar');
