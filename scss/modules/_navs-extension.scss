@@ -4,9 +4,7 @@
       &,
       &:focus,
       &:hover {
-        color: $gray-lightest;
-        background: $brand-primary;
-        border-color: $brand-primary;
+        border-color: $nav-pills-border-color;
       }
     }
   }

@@ -20,13 +20,13 @@
     }
   }
   &.dark {
-    background: $dropdown-menu-dark-background-color;
+    background: $dropdown-menu-dark-bg;
     color: $dropdown-menu-dark-color;
     a {
       color: $dropdown-menu-dark-color;
     }
     &.arrow:before {
-      border-bottom-color: $dropdown-menu-dark-background-color;
+      border-bottom-color: $dropdown-menu-dark-bg;
     }
   }
   &.tiles {
@@ -49,10 +49,10 @@
         vertical-align: text-bottom;
         color: $dropdown-menu-dark-tiles-color;
         text-decoration: none;
-        background: $dropdown-menu-dark-tiles-background-color;
+        background: $dropdown-menu-dark-tiles-bg;
 
         &:hover {
-          background: $dropdown-menu-dark-tiles-hover-background-color;
+          background: $dropdown-menu-dark-tiles-hover-bg;
         }
         .icon {
           display: block;

@@ -691,3 +691,7 @@ h5.version {
 .code-container .hljs {
     background: none;
 }
+
+.page-header {
+    margin: 0 0 20px;
+}

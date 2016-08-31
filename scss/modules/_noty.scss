@@ -19,24 +19,24 @@
 
 .noty_container_type {
   &_notification {
-    background-color: $gray-darker;
-    color: $gray-lightest;
+    background-color: $noty-notification-bg;
+    color: $noty-notification-color;
   }
   &_warning {
-    background-color: #ffeaa8;
-    color: #826200;
+    background-color: $noty-warning-bg;
+    color: $noty-warning-color;
   }
   &_error {
-    background-color: #e74c3c;
-    color: $gray-lightest;
+    background-color: $noty-error-bg;
+    color: $noty-error-color;
   }
   &_information {
-    background-color: #78c5e7;
-    color: $gray-lightest;
+    background-color: $noty-information-bg;
+    color: $noty-information-color;
   }
   &_success {
-    background-color: #40d47e;
-    color: $gray-lightest;
+    background-color: $noty-success-bg;
+    color: $noty-success-color;
   }
 }
 

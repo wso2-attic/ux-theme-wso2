@@ -5,9 +5,9 @@
       &,
       &:focus,
       &:hover {
-        color: $gray-lightest;
-        background: $brand-primary;
-        border-color: $brand-primary;
+        color: $list-group-item-hover-color;
+        background: $list-group-item-hover-bg;
+        border-color: $list-group-item-hover-border-color;
       }
     }
   }
