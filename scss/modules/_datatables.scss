@@ -146,7 +146,7 @@ table {
           th,
           &:hover td,
           &:hover th {
-            background-color: $brand-primary !important;
+            background-color: $datatable-active-bg !important;
           }
         }
       }

@@ -7,194 +7,269 @@ $screen-sizes: (
     md:'(min-width:992px) and (max-width:1199px)',
     lg:'(min-width:1200px)'
 ) !default;
-$sides: top, bottom, left, right  !default;
-$sizes-length: 5 !default;
-$default-gap: 5px !default;
+$sides:           top, bottom, left, right  !default;
+$sizes-length:    5 !default;
+$default-gap:     5px !default;
 
 // Colors
 //--------------------------------------------------------------------------------------------------
-$gray-base: #000 !default;
-$gray-darker: lighten($gray-base, 13.5%) !default; // #222
-$gray-dark: lighten($gray-base, 20%) !default;   // #333
-$gray: lighten($gray-base, 33.5%) !default; // #555
-$gray-light: lighten($gray-base, 46.7%) !default; // #777
-$gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
-$gray-lightest: lighten($gray-base, 99.5%) !default; // #fefefe
+$gray-base:       #000 !default;
+$gray-darker:     lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:       lighten($gray-base, 20%) !default;   // #333
+$gray:            lighten($gray-base, 33.5%) !default; // #555
+$gray-light:      lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:    lighten($gray-base, 93.5%) !default; // #eee
+$gray-lightest:   lighten($gray-base, 99.5%) !default; // #fefefe
 
-$brand-primary: #2c313b !default;
+$brand-primary:   #2c313b !default;
 $brand-secondary: lighten($brand-primary, 20%) !default;
-$brand-success: #5cb85c !default;
-$brand-info: #009DA7 !default;
-$brand-warning: #f0ad4e !default;
-$brand-danger: #d9534f !default;
-$brand-disabled: $gray !default;
-$brand-optional: #007D85 !default;
+$brand-success:   #5cb85c !default;
+$brand-info:      #009DA7 !default;
+$brand-warning:   #f0ad4e !default;
+$brand-danger:    #d9534f !default;
+$brand-disabled:  $gray !default;
+$brand-optional:  #007D85 !default;
 
 // Typography
 //--------------------------------------------------------------------------------------------------
-$font-family-base: 'Roboto', Arial, Helvetica, sans-serif !default;
-$font-weight-base: 300 !default;
-$headings-font-weight: 300 !default;
+$font-family-base:        'Roboto', Arial, Helvetica, sans-serif !default;
+$font-weight-base:        300 !default;
+$headings-font-weight:    300 !default;
 
 // Iconography
 //--------------------------------------------------------------------------------------------------
-$icon-font-name: "font-wso2" !default;
+$icon-font-name:          "font-wso2" !default;
+$icon-sort-content:       "\e673" !default;
+$icon-sort-up-content:    "\e64b" !default;
+$icon-sort-down-content:  "\e663" !default;
 
 // Text
 //--------------------------------------------------------------------------------------------------
-$text-truncate-width: none !default;
+$text-truncate-width:             none !default;
 $text-truncate-width-tag-content: 160px !default;
 
 // Components
 //--------------------------------------------------------------------------------------------------
-$border-radius-base: 0 !default;
-$border-radius-large: 0 !default;
-$border-radius-small: 0 !default;
+$border-radius-base:    0 !default;
+$border-radius-large:   0 !default;
+$border-radius-small:   0 !default;
 
 // State colors
 //--------------------------------------------------------------------------------------------------
-$state-success-text: $brand-success !default;
-$state-success-bg: $brand-success !default;
-$state-success-border: $brand-success !default;
+$state-success-text:    $brand-success !default;
+$state-success-bg:      $brand-success !default;
+$state-success-border:  $brand-success !default;
 
-$state-info-text: $brand-info !default;
-$state-info-bg: $brand-info !default;
-$state-info-border: $brand-info !default;
+$state-info-text:       $brand-info !default;
+$state-info-bg:         $brand-info !default;
+$state-info-border:     $brand-info !default;
 
-$state-warning-text: $brand-warning !default;
-$state-warning-bg: $brand-warning !default;
-$state-warning-border: $brand-warning !default;
+$state-warning-text:    $brand-warning !default;
+$state-warning-bg:      $brand-warning !default;
+$state-warning-border:  $brand-warning !default;
 
-$state-danger-text: $brand-danger !default;
-$state-danger-bg: $brand-danger !default;
-$state-danger-border: $brand-danger !default;
+$state-danger-text:     $brand-danger !default;
+$state-danger-bg:       $brand-danger !default;
+$state-danger-border:   $brand-danger !default;
 
-$state-disabled-text: $brand-disabled !default;
-$state-disabled-bg: $brand-disabled !default;
+$state-disabled-text:   $brand-disabled !default;
+$state-disabled-bg:     $brand-disabled !default;
 $state-disabled-border: $brand-disabled !default;
 
 // Header
 //--------------------------------------------------------------------------------------------------
-$header-height: 50px !default;
-$header-background-color: #191919 !default;
-$header-color: #fff !default;
+$header-height:         50px !default;
+$header-bg:             #191919 !default;
+$header-color:          #fff !default;
 
 // Footer
 //--------------------------------------------------------------------------------------------------
-$footer-height: 40px !default;
-$footer-background: $gray-darker !default;
-$footer-color: #cbcbcb !default;
+$footer-height:         40px !default;
+$footer-background:     $gray-darker !default;
+$footer-color:          #cbcbcb !default;
 
 // Breadcrumb
 //--------------------------------------------------------------------------------------------------
-$breadcrumb-height: 30px !default;
-$breadcrumb-padding-vertical: 5px !default;
-$breadcrumb-bg: #282828 !default;
-$breadcrumb-color: #ccc !default;
-$breadcrumb-link-color: $breadcrumb-color !default;
-$breadcrumb-link-hover-color: #fff !default;
-$breadcrumb-active-color: #fff !default;
+$breadcrumb-height:             30px !default;
+$breadcrumb-padding-vertical:   5px !default;
+$breadcrumb-bg:                 #282828 !default;
+$breadcrumb-color:              #ccc !default;
+$breadcrumb-link-color:         $breadcrumb-color !default;
+$breadcrumb-link-hover-color:   #fff !default;
+$breadcrumb-active-color:       #fff !default;
 
 // Alerts
 //--------------------------------------------------------------------------------------------------
-$alert-padding: 15px 50px 15px 15px !default;
-$alert-close-height: 50px;
-$alert-close-width: 50px;
-$alert-close-font-size: 12px;
-$alert-close-padding: 0 10px;
+$alert-padding:                 15px 50px 15px 15px !default;
+$alert-close-height:            50px;
+$alert-close-width:             50px;
+$alert-close-font-size:         12px;
+$alert-close-padding:           0 10px;
 
-$alert-success-bg: $state-success-bg !default;
-$alert-success-text: #fff !default;
-$alert-success-border: $state-success-border !default;
-$alert-success-close-bg: darken($alert-success-bg, 50%) !default;
-$alert-success-close-text: #fff !default;
+$alert-success-bg:              $state-success-bg !default;
+$alert-success-text:            #fff !default;
+$alert-success-border:          $state-success-border !default;
+$alert-success-close-bg:        darken($alert-success-bg, 50%) !default;
+$alert-success-close-text:      #fff !default;
 
-$alert-info-bg: $state-info-bg !default;
-$alert-info-text: #fff !default;
-$alert-info-border: $state-info-border !default;
-$alert-info-close-bg: darken($alert-info-bg, 50%) !default;
-$alert-info-close-text: #fff !default;
+$alert-info-bg:                 $state-info-bg !default;
+$alert-info-text:               #fff !default;
+$alert-info-border:             $state-info-border !default;
+$alert-info-close-bg:           darken($alert-info-bg, 50%) !default;
+$alert-info-close-text:         #fff !default;
 
-$alert-warning-bg: $state-warning-bg !default;
-$alert-warning-text: #fff !default;
-$alert-warning-border: $state-warning-border !default;
-$alert-warning-close-bg: darken($alert-warning-bg, 50%) !default;
-$alert-warning-close-text: #fff !default;
+$alert-warning-bg:              $state-warning-bg !default;
+$alert-warning-text:            #fff !default;
+$alert-warning-border:          $state-warning-border !default;
+$alert-warning-close-bg:        darken($alert-warning-bg, 50%) !default;
+$alert-warning-close-text:      #fff !default;
 
-$alert-danger-bg: $state-danger-bg !default;
-$alert-danger-text: #fff !default;
-$alert-danger-border: $state-danger-border !default;
-$alert-danger-close-bg: darken($alert-danger-bg, 50%) !default;
-$alert-danger-close-text: #fff !default;
+$alert-danger-bg:               $state-danger-bg !default;
+$alert-danger-text:             #fff !default;
+$alert-danger-border:           $state-danger-border !default;
+$alert-danger-close-bg:         darken($alert-danger-bg, 50%) !default;
+$alert-danger-close-text:       #fff !default;
 
 // Buttons
 //--------------------------------------------------------------------------------------------------
-$btn-secondary-color: #fff !default;
-$btn-secondary-bg: $brand-secondary !default;
-$btn-secondary-border: darken($btn-secondary-bg, 5%) !default;
+$btn-secondary-color:     #fff !default;
+$btn-secondary-bg:        $brand-secondary !default;
+$btn-secondary-border:    darken($btn-secondary-bg, 5%) !default;
 
 // Media object
 //--------------------------------------------------------------------------------------------------
-$media-bg: #efefef !default;
+$media-bg:                #efefef !default;
 
 // Page Content
 //--------------------------------------------------------------------------------------------------
-$page-content-wrapper-height: calc(100% - 120px) !default;
-$page-content-wrapper-height-mobile: calc(100% - 205px) !default;
-$page-content-wrapper-sidebar-height-mobile: calc(100% - 245px) !default;
+$page-content-wrapper-height:                     calc(100% - 120px) !default;
+$page-content-wrapper-height-mobile:              calc(100% - 205px) !default;
+$page-content-wrapper-sidebar-height-mobile:      calc(100% - 245px) !default;
 
 // Navbar
 //--------------------------------------------------------------------------------------------------
-$navbar-bg: $brand-primary !default;
-$navbar-default-link-color: $gray-lightest !default;
-$navbar-default-link-hover-color: $navbar-default-link-color !default;
-$navbar-default-link-hover-bg: lighten($navbar-bg, 10%) !default;
-$navbrand-background-color: darken($navbar-bg, 5%) !default;
-$navbar-height: 40px !default;
+$navbar-bg:                               $brand-primary !default;
+$navbar-default-link-color:               $gray-lightest !default;
+$navbar-default-link-hover-color:         $navbar-default-link-color !default;
+$navbar-default-link-hover-bg:            lighten($navbar-bg, 10%) !default;
+$navbrand-bg:                             darken($navbar-bg, 5%) !default;
+$navbrand-link-color:                     $gray-lightest !default;
+$navbar-toggle-bg:                        $brand-optional !default;
+$navbar-toggle-color:                     $gray-lightest !default;
+$navbar-toggle-hover-bg:                  darken($brand-optional, 10%) !default;
+$navbar-toggle-hover-color:               $gray-lightest !default;
+$navbar-toggle-expanded-color:            darken($brand-optional, 8%) !default;
+$navbar-height:                           40px !default;
 
+// Navs
+//--------------------------------------------------------------------------------------------------
+$nav-pills-border-color:                  $brand-primary !default;
+$nav-pills-active-link-hover-bg:          $brand-primary !default;
+$nav-pills-active-link-hover-color:       $gray-lightest !default;
 
 // Sidebar
 //--------------------------------------------------------------------------------------------------
-$sidebar-width-default: 350px !default;
-$sidebar-submenu-bg: #181c20 !default;
+$sidebar-width-default:                   350px !default;
+$sidebar-submenu-bg:                      #181c20 !default;
+$sidebar-wrapper-bg:                      $gray-darker !default;
+$sidebar-wrapper-color:                   $gray-lightest !default;
+$sidebar-wrapper-inverse-bg:              $gray-darker !default;
+$sidebar-wrapper-inverse-color:           $gray-lightest !default;
+$sidebar-nav-link-border-color:           $gray-darker !default;
+$sidebar-nav-link-hover-color:            $gray-lightest !default;
+$sidebar-nav-link-active-border-color:    $brand-optional !default;
+$sidebar-nav-link-active-color:           $gray-lightest !default;
+$sidebar-nav-submenu-link-hover-color:    $gray-lightest !default;
+$sidebar-brand-link-hover-color:          $gray-lightest !default;
 
 // Dropdowns
 //--------------------------------------------------------------------------------------------------
-$dropdown-menu-dark-background-color: $gray-darker !default;
-$dropdown-menu-dark-color: $gray-lightest !default;
-$dropdown-menu-dark-tiles-background-color: lighten($gray-base, 33%) !default;
-$dropdown-menu-dark-tiles-hover-background-color: $gray !default;
-$dropdown-menu-dark-tiles-color: $gray-lightest !default;
+$dropdown-menu-dark-bg:                   $gray-darker !default;
+$dropdown-menu-dark-color:                $gray-lightest !default;
+$dropdown-menu-dark-tiles-bg:             lighten($gray-base, 33%) !default;
+$dropdown-menu-dark-tiles-hover-bg:       $gray !default;
+$dropdown-menu-dark-tiles-color:          $gray-lightest !default;
 
 // Loading styles
 //--------------------------------------------------------------------------------------------------
-$loading-background-opacity: 0.6 !default;
-$loading-background-color: $gray-darker !default;
-$loading-color: $gray-lightest !default;
-$loading-inverse-background-color: $gray-lightest !default;
-$loading-inverse-color: $gray-darker !default;
-$loading-image-icon-max-width: 50px !default;
+$loading-background-opacity:              0.6 !default;
+$loading-bg:                              $gray-darker !default;
+$loading-color:                           $gray-lightest !default;
+$loading-inverse-bg:                      $gray-lightest !default;
+$loading-inverse-color:                   $gray-darker !default;
+$loading-image-icon-max-width:            50px !default;
 
 // Forms
 //--------------------------------------------------------------------------------------------------
-$form-control-max-width: 750px !default;
-
+$form-control-max-width:                  750px !default;
+$form-radio-checked-bg:                   $brand-primary !default;
+$form-radio-checked-border-color:         $brand-primary !default;
+$form-checkbox-checked-bg:                $brand-primary !default;
+$form-checkbox-checked-border-color:      $brand-primary !default;
 
 // Switch styles
 //--------------------------------------------------------------------------------------------------
-$switch-active-background-color: #25262b !default;
-$switch-inactive-background-color: #a6a6a6 !default;
-$switch-disabled-background-color: #6f7579 !default;
-$switch-handler-active-color: #237bd5 !default;
-$switch-handler-inactive-color: #eaeaea !default;
-$switch-handler-disabled-color: #484e52 !default;
+$switch-active-bg:                        #25262b !default;
+$switch-inactive-bg:                      #a6a6a6 !default;
+$switch-disabled-bg:                      #6f7579 !default;
+$switch-handler-active-color:             #237bd5 !default;
+$switch-handler-inactive-color:           #eaeaea !default;
+$switch-handler-disabled-color:           #484e52 !default;
 
 // Datatables
 //--------------------------------------------------------------------------------------------------
-$icon-sort-content: "\e673" !default;
-$icon-sort-up-content: "\e64b" !default;
-$icon-sort-down-content: "\e663" !default;
+$datatable-active-bg:     $brand-primary !default;
 
 // Well
 //--------------------------------------------------------------------------------------------------
-$well-border: none;
+$well-border:             none !default;
+
+// Asset details
+//--------------------------------------------------------------------------------------------------
+$asset-img-bg:            $brand-primary !default;
+
+// List Groups
+//--------------------------------------------------------------------------------------------------
+$list-group-item-hover-color:              $gray-lightest !default;
+$list-group-item-hover-bg:                 $brand-primary !default;
+$list-group-item-hover-border-color:       $brand-primary !default;
+
+// Modals
+//--------------------------------------------------------------------------------------------------
+$modal-content-bg:          $gray-darker !default;
+$modal-content-color:       $gray-lightest !default;
+
+// Noty
+//--------------------------------------------------------------------------------------------------
+$noty-notification-bg:      $gray-darker !default;
+$noty-notification-color:   $gray-lightest !default;
+$noty-warning-bg:           #ffeaa8 !default;
+$noty-warning-color:        #826200 !default;
+$noty-error-bg:             #e74c3c !default;
+$noty-error-color:          $gray-lightest !default;
+$noty-information-bg:       #78c5e7 !default;
+$noty-information-color:    $gray-lightest !default;
+$noty-success-bg:           #40d47e !default;
+$noty-success-color:        $gray-lightest !default;
+
+// Pagination
+//--------------------------------------------------------------------------------------------------
+$pagination-color:          $brand-primary !default;
+
+// body Inverse
+//--------------------------------------------------------------------------------------------------
+$body-inverse-bg:           $brand-primary !default;
+$body-inverse-color:        $gray-lightest !default;
+
+// Thumbnail
+//-------------------------------------------------------------------------------------------------
+$thumbnail-icon-bg:         $brand-primary !default;
+
+// Tiles
+//-------------------------------------------------------------------------------------------------
+$tiles-link-color:          $gray-darker !default;
+
+// Tree View
+//-------------------------------------------------------------------------------------------------
+$tree-view-icon-bg:         $brand-primary !default;
+$tree-view-icon-color:      $gray-lightest !default;
