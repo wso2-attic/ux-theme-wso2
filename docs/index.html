@@ -5,45 +5,188 @@ title: Overview
 
 <!-- page content -->
 <div class="container-fluid">
-    <div class="row add-padding-5x" id="overview-page">
-        <div class="col-xs-8 col-sm-6 col-md-4 col-lg-4 center-block">
-            <div class="theme-logo" >
-                <img src="libs/theme-wso2_1.0.0/images/logo-inverse.svg"  alt="wso2-logo">
-                <h1 class="theme-name">Theme</h1>
-            </div>
+    <div id="overview-page">
+        <div class="row add-padding-5x">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <div class="theme-logo">
+                    <img src="libs/theme-wso2_1.0.0/images/logo-inverse.svg"  alt="wso2-logo">
+                    <h1 class="theme-name">Theme</h1>
+                </div>
 
-            <h4 class="theme-description add-margin-bottom-5x">Starter Theme for WSO2 products</h4>
+                <h4 class="theme-description add-margin-bottom-5x">Starter Theme for WSO2 products</h4>
 
-            <a href="" class="btn btn-outline-inverse btn-lg" onclick="">Download WSO2 Theme</a>
+                <a href="" class="btn btn-outline-inverse btn-lg" onclick="">Download WSO2 Theme</a>
 
-            <h5 class="version">v{{ site.version }}</h5>
+                <h5 class="version">v{{ site.version }}</h5>
 
-            <a href="https://github.com/wso2-dev-ux/theme-wso2" class="btn btn-lg github-btn" onclick="">View Github Project</a>
-        </div>
-    </div>
-    <div class="body-wrapper">
-        
-        <div class="row">
-            <div class="col-md-12 center-block text-center">
-                <h4>Theme WSO2 is purely based on Twitter Bootstrap 3.3.7 with some additional stylings & functions.</h4>
+                <a href="https://github.com/wso2-dev-ux/theme-wso2" class="btn btn-lg github-btn" onclick="">View Github Project</a>
             </div>
         </div>
-        
-        <div class="row hidden">
-            <div class="col-md-12">
-                <h3>Download Contains</h3>
-<pre><code class="language-bash" data-lang="bash">root/ [ where your page is ]
-├── css/
-│   ├── font-wso2.css
-│   ├── font-wso2.min.css
-└── fonts/
-    ├── font-wso2.svg
-    ├── font-wso2.ttf
-    ├── font-wso2.woff
-    ├── font-wso2.woff2
-    └── font-wso2.eot</code></pre>
-            </div>
-        </div>
+        <div class="body-wrapper">
 
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="col-md-6 text-center">
+                        <img src="images/sass-logo.png" height="100"/>
+                        <h3 class="text-medium">Preprocessors</h3>
+                        <p>WSO2 Theme is made fully compatible with <a href="http://sass-lang.com/" target="_blank" class="doc-link">Sass</a>, which is a popular CSS Preprocessor.</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img src="images/bootstrap-logo.png" height="100" />
+                        <h3 class="text-medium">Bootstrap Support</h3>
+                        <p>Theme WSO2 is purely based on <a href="http://getbootstrap.com/" target="_blank" class="doc-link">Twitter Bootstrap 3.3.7</a> with some additional stylings & functions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-medium">Precompiled WSO2 Theme</h3>
+                    <p>Once downloaded, unzip the compressed folder to see the structure of the precompiled WSO2 Theme CSS and font assets.</p>
+        <pre><code class="language-bash" data-lang="bash">root/ [ where your page is ]
+        ├── css/
+        │   ├── theme-wso2.css
+        │   ├── theme-wso2.min.css
+        │   ├── theme-wso2.css.map
+        │   ├── theme-wso2-ie.css
+        │   ├── theme-wso2-ie.min.css
+        │   ├── theme-wso2-ie.css.map
+        ├── js/
+        │   ├── theme-wso2.js
+        │   ├── theme-wso2.min.js
+        ├── extensions/
+        │   ├── datatables/
+        │   ├── jstree/
+        │   ├── noty/
+        └── fonts/
+            ├── font-wso2.svg
+            ├── font-wso2.ttf
+            ├── font-wso2.woff
+            ├── font-wso2.woff2
+            └── font-wso2.eot
+        </code></pre>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-medium">WSO2 Theme source code</h3>
+                    <p>The WSO2 Theme source code download includes the precompiled CSS, JavaScript and font assets, along with source Sass, JavaScript and documentation.</p>
+        <pre><code class="language-bash" data-lang="bash">theme-wso2/
+        ├── scss/
+        ├── js/
+        ├── fonts/
+        ├── dist/
+        │   ├── css/
+        │   ├── js/
+        │   ├── fonts/
+        ├── extensions/
+        │   ├── datatables/
+        │   ├── jstree/
+        │   └── noty/
+        └── docs/
+        </code></pre>
+                    <p>The <code>scss/</code>, <code>js/</code>, and <code>fonts/</code> are the source code for our CSS, JS, and icon fonts. The <code>dist/</code> folder includes
+                        everything listed in the precompiled download section. The <code>docs/</code> folder includes the source code for the documentation.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-medium">Compiling CSS</h3>
+                    <p>WSO2 Theme uses <a href="http://gruntjs.com/" target="_blank" class="doc-link">Grunt</a> for its build system.</p>
+                    <br/>
+                    <h4 class="text-medium">Installing Grunt</h4>
+                    <p>To install Grunt, first download and install <a href="https://nodejs.org/en/" target="_blank" class="doc-link">node.js</a> (which includes npm).
+                    Then, from the command line:</p>
+                    <p>1. Install grunt-cli globally</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <pre class="command"><code>npm install -g grunt-cli</code></pre><br/>
+                        </div>
+                    </div>
+                    <p>2. Navigate to the root /theme-wso2/ directory, then run<p/>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <pre class="command"><code>npm install</code></pre><br/>
+                        </div>
+                    </div>
+                    <p>npm will look at the package.json file and automatically install the necessary local dependencies listed there.</p>
+                    <br/>
+                    <h4 class="text-medium">Grunt commands</h4>
+                    <p>To to compile scss and build default distrubution navigate to the root /theme-wso2/ and run </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <pre class="command"><code>grunt</code></pre><br/>
+                        </div>
+                    </div>
+                    <p>To compile product scss files</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <pre class="command"><code>grunt product:&lt;porduct-short-name&gt;</code></pre>
+                        </div>
+                    </div>
+                    <p class="help-block">e.g. grunt product:apim</p><br/>
+                    <p>To compile all product scss files</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <pre class="command"><code>grunt product:all</code></pre><br/>
+                        </div>
+                    </div>
+                    <p>To compile docs</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <pre class="command"><code>grunt docs</code></pre><br/>
+                        </div>
+                    </div>
+                    <p>To serve docs</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <pre class="command"><code>grunt serve</code></pre><br/>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-medium">Basic template</h3>
+                    <p>Start with this basic HTML template and customize adapting it to suit your needs.</p>
+                    <div class="code hide">
+                        <div class="code-html">
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+                <title>WSO2 Theme Template</title>
+
+                <!-- Bootstrap -->
+                <link href="css/bootstrap.min.css" rel="stylesheet">
+                <!-- WSO2 Theme -->
+                <link href="css/theme-wso2.min.css" rel="stylesheet">
+
+                <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+                <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+                <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+                <![endif]-->
+            </head>
+            <body>
+                <h1>Hello, world!</h1>
+
+                <!-- jQuery (necessary for Bootstrap and WSO2 Theme JavaScript plugins) -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                <!-- Include all compiled plugins (below), or include individual files as needed -->
+                <script src="js/bootstrap.min.js"></script>
+                <script src="js/theme-wso2.min.js"></script>
+            </body>
+        </html>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
