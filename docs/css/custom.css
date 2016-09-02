@@ -599,15 +599,10 @@ h5.version {
     height:57px;
     margin-bottom:23px;
 }
-@media(max-width:767px) {
+@media(max-width:360px) {
     .theme-logo img{
         margin-bottom: -20px;
     }
-}
-
-#overview-page .center-block {
-    float:none;
-    text-align:center;
 }
 
 .btn-outline-inverse {
@@ -621,7 +616,7 @@ h5.version {
     border-color: #F47A1E;
 }
 
-#overview-page {
+#overview-page > div:first-child{
     background-color: #191919
 }
 
@@ -694,4 +689,20 @@ h5.version {
 
 .page-header {
     margin: 0 0 20px;
+}
+
+.text-medium {
+    font-weight: 400;
+}
+
+#overview-page .body-wrapper > div:first-child p {
+    font-size: 16px;
+}
+
+p code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #f44214;
+    background-color: #f9f2f4;
+    border-radius: 4px;
 }

@@ -120,15 +120,6 @@ $(function(){
         $('.tab-pane pre code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
-
-
-        /***********************************************************
-         *  Documentation Form Validation
-         ***********************************************************/
-
-        $('#form-validation-example').validate();
-        $('#form-range-example').validate();
-
     });
     
     /***********************************************************
@@ -155,20 +146,6 @@ $(function(){
     //        speed: 500
     //    }
     //});
-    
-    /***********************************************************
-     *  Activating jsTree
-     ***********************************************************/
-    $('#jstree').jstree({
-        "plugins": ["types"],
-        "types": {
-          "default" : {
-            "icon": false,
-            "draggable": false, 
-            "clickable": false
-          }
-        }
-    });
 
 });
 
