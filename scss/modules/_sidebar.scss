@@ -9,7 +9,14 @@
     left: 0;
     margin-left: 0;
     min-height: $page-content-wrapper-height;
-    @include transition(left 0.5s ease, right 0.5s ease);
+    @include transition(
+        left 0.5s ease,
+        right 0.5s ease,
+        padding-left 0.5s ease,
+        padding-right 0.5s ease,
+        margin-left 0.5s ease,
+        margin-right 0.5s ease
+    );
   }
   &.fixed {
     & > div {
