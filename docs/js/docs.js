@@ -120,30 +120,6 @@ $(function(){
         $('.tab-pane pre code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
-
-
-        /***********************************************************
-         *  Documentation Form Validation
-         ***********************************************************/
-
-        $('#form-validation-example').validate();
-        $('#form-range-example').validate();
-
-        /***********************************************************
-         *  Initializing Wysiwig Editor
-         ***********************************************************/
-
-        tinymce.init({
-            selector: "#txt-wysiwyg",
-            plugins: [
-                "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
-                "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-                "save table contextmenu directionality emoticons template paste textcolor"
-            ],
-            content_css: "css/editor.css",
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | print preview fullpage | forecolor backcolor emoticons"
-        });
-
     });
     
     /***********************************************************
@@ -170,20 +146,6 @@ $(function(){
     //        speed: 500
     //    }
     //});
-    
-    /***********************************************************
-     *  Activating jsTree
-     ***********************************************************/
-    $('#jstree').jstree({
-        "plugins": ["types"],
-        "types": {
-          "default" : {
-            "icon": false,
-            "draggable": false, 
-            "clickable": false
-          }
-        }
-    });
 
 });
 
