@@ -1,0 +1,298 @@
+---
+layout: default
+title: Maps
+js: <script src="libs/d3_3.5.6/d3.js"></script><script src="libs/vega_2.6.1/vega.js"></script>
+    <script src="libs/vizGrammar_1.0/vizGrammar.min.js"></script><script src="/js/charts.js"></script>
+---
+
+<!-- ******************************************************************
+VizGrammarjs Charts
+******************************************************************* -->
+
+<!-- page content -->
+<div class="container-fluid">
+    <div class="body-wrapper">
+
+        <div class="page-header">
+            <h1>Charts</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="sub-heading">Bar Chart</h4>
+                <div class="code">
+                    <div class="code-html">
+    <div id="bChart"></div>
+                    </div>
+                    <div class="code-js hide">
+var data = [
+{
+    "metadata": {
+        "names": ["rpm", "torque", "horsepower", "EngineType"],
+        "types": ["ordinal", "linear", "ordinal", "ordinal"]
+    },
+        "data": []
+    }
+];
+
+var config = {
+    type: "bar",
+    x: "rpm",
+    highlight: "multi",
+    selectionColor: "#33ccff",
+    charts: [{type: "bar", y: "torque"}],
+    maxLength: 6,
+    width: 500,
+    height: 250
+}
+
+var barChart = new vizg(data, config);
+barChart.draw("#bChart");
+
+var iterations = 1000;
+(function insertLoop(i) {
+    setTimeout(function () {
+        var xVal = Number((Math.random() * 100).toFixed(0)) % 15;
+        barChart.insert([[xVal, Number((Math.random() * 100).toFixed(0)) % 15, 20, "Piston"]]);
+        if (--i) insertLoop(i);
+    }, 1000)
+})(iterations);
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4 class="sub-heading">Horizontal Bar Chart</h4>
+                <div class="code">
+                    <div class="code-html">
+    <div id="bChartH"></div>
+                    </div>
+                    <div class="code-js hide">
+var data = [
+    {
+        "metadata": {
+        "names": ["rpm", "torque", "horsepower", "EngineType"],
+        "types": ["ordinal", "linear", "ordinal", "ordinal"]
+    },
+        "data": []
+    }
+];
+
+var configH = {
+    type: "bar",
+    x: "rpm",
+    charts: [{type: "bar", y: "torque", orientation: "left"}],
+    maxLength: 6,
+    width: 500,
+    height: 250
+}
+
+var barChartH = new vizg(data, configH);
+barChartH.draw("#bChartH");
+
+var iterations = 1000;
+(function insertLoop(i) {
+    setTimeout(function () {
+        var xVal = Number((Math.random() * 100).toFixed(0)) % 15;
+        barChartH.insert([[xVal, Number((Math.random() * 100).toFixed(0)) % 15, 20, "Piston"]]);
+        if (--i) insertLoop(i);
+    }, 1000)
+})(iterations);
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="sub-heading">Donut Chart</h4>
+                <div class="code">
+                    <div class="code-html">
+     <div id="dChart"></div>
+                    </div>
+                    <div class="code-js hide">
+var data =  [
+    {
+        "metadata" : {
+            "names" : ["rpm","torque","horsepower", "EngineType"],
+            "types" : ["linear","linear", "ordinal","ordinal"]
+        },
+        "data": [
+            [0, 100, 12,"Rotary"]
+        ]
+    }
+];
+
+var configDonut = {
+    charts : [{type: "arc",  x : "torque", color : "EngineType", mode: "donut"}],
+    width: 400;
+    height: 300,
+    percentage:true
+}
+
+var donutChart = new vizg(data, configDonut);
+donutChart.draw("#dChart");
+
+var iterations = 1000;
+(function insertLoop (i) {
+
+    setTimeout(function () {
+        if ( i % 4 == 0) {
+            EngineType = "Rotary";
+        } else if( i % 4 == 1) {
+            EngineType = "Piston V6";
+        }
+        else if( i % 4 == 2) {
+            EngineType = "Piston V8";
+        }  else if( i % 4 == 3) {
+            EngineType = "Piston";
+        }
+
+        donutChart.insert([[iterations-i + 1, Number((Math.random() * 100).toFixed(2)), 13, EngineType]]);
+        if (--i) insertLoop(i);
+    }, 1000)
+})(iterations);
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4 class="sub-heading">Pie Chart</h4>
+                <div class="code">
+                    <div class="code-html">
+     <div id="dChartPie"></div>
+                    </div>
+                    <div class="code-js hide">
+var data =  [
+    {
+        "metadata" : {
+            "names" : ["rpm","torque","horsepower", "EngineType"],
+            "types" : ["linear","linear", "ordinal","ordinal"]
+        },
+        "data": [
+            [0, 100, 12,"Rotary"]
+        ]
+    }
+];
+
+var configPie = {
+    charts : [{type: "arc",  x : "torque", color : "EngineType", mode: "pie"}],
+    width: 400,
+    height: 300
+}
+
+var pieChart = new vizg(data, configPie);
+pieChart.draw("#dChartPie");
+
+var iterations = 1000;
+(function insertLoop (i) {
+
+    setTimeout(function () {
+        if ( i % 4 == 0) {
+            EngineType = "Rotary";
+        } else if( i % 4 == 1) {
+            EngineType = "Piston V6";
+        }
+        else if( i % 4 == 2) {
+            EngineType = "Piston V8";
+        }
+        else if( i % 4 == 3) {
+            EngineType = "Piston";
+        }
+
+        pieChart.insert([[iterations-i + 1, Number((Math.random() * 100).toFixed(2)), 13, EngineType]]);
+        if (--i) insertLoop(i);
+    }, 500)
+})(iterations);
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="sub-heading">Single Line Chart</h4>
+                <div class="code">
+                    <div class="code-html">
+    <div id="lChart"></div>
+                    </div>
+                    <div class="code-js hide">
+var data =  [
+{
+    "metadata" : {
+        "names" : ["rpm","torque","horsepower", "EngineType"],
+        "types" : ["linear","linear", "ordinal","ordinal"]
+    },
+    "data": [
+        [0, 10, 1, "Piston"], [0, 10, 1, "Rotary"]]
+    }
+];
+
+var configSingle = {
+    type: "line",
+    x : "rpm",
+    y : "torque",
+    charts : [{type: "line",  y : "torque"}],
+    maxLength: 6,
+    width: 500,
+    height: 300
+};
+
+var lineChartSingle = new vizg(data, configSingle);
+lineChartSingle.draw("#lChart");
+
+var iterations = 1000;
+(function insertLoop (i) {
+    setTimeout(function () {
+        var x = iterations-i + 1;
+        lineChartSingle.insert([[x, Number((Math.random() * 100).toFixed(2)), 13, "Rotary"]]);
+        if (--i) insertLoop(i);
+    }, 1000)
+})(iterations);
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4 class="sub-heading">Scatter Chart</h4>
+                <div class="code">
+                    <div class="code-html">
+    <div id="sChart"></div>
+                    </div>
+                    <div class="code-js hide">
+var data =  [
+    {
+        "metadata" : {
+            "names" : ["rpm","torque","horsepower", "weight", "EngineType"],
+            "types" : ["linear","linear", "linear","linear", "ordinal"]
+        },
+            "data": [
+        ]
+    }
+];
+
+var config = {
+    type: "scatter",
+    charts : [
+    {type: "scatter",
+    x : "rpm",
+    y : "torque",
+    color: "horsepower",
+    size : "weight",
+    padding: {"top": 50, "left": 60, "bottom": 40, "right": 150},
+    maxLength: 30}],
+    width: 500,
+    height: 300
+}
+
+var scatterChart = new vizg(data, config);
+scatterChart.draw("#dChart");
+
+var iterations = 1000;
+(function insertLoop (i) {
+    setTimeout(function () {
+        scatterChart.insert([[iterations-i + 1,Number((Math.random() * 100).toFixed(2)),Number((Math.random() * 100).toFixed(2)),(Math.random() * 100).toFixed(2),"Piston"]]);
+        if (--i) insertLoop(i);
+    }, 500)
+})(iterations);
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
