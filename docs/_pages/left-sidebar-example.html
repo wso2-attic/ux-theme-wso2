@@ -10,41 +10,34 @@ Left-sidebar Example Template
 <div class="container-fluid">
     <div class="body-wrapper">
 
-        <div class="page-header">
-            <h1>Left Sidebar</h1>
-        </div>
+        <!-- .left-sidebar -->
+        <div class="sidebar-wrapper sidebar-nav hidden-xs" id="left-sidebar" data-container=".page-content-wrapper" data-container-divide="true" data-side="left" data-width="260" data-fixed-offset-top="0" data-spy="affix" data-offset-top="80">
+            <div class="nano">
+                <div class="nano-content">
+                    <ul class="nav nav-pills nav-stacked pages">
+                        <li class="active"><a href="#">Overview</a></li>
+                        <li class=""><a href="#">Proxy</a></li>
+                        <li class=""><a href="#">Proxy</a></li>
+                        <li class=""><a href="#">Proxy</a></li>
+                        <li class=""><a href="#">Proxy</a></li>
+                    </ul>
 
-        <div class="code">
-            <div class="code-html">
-            <!-- .left-sidebar -->
-            <div class="sidebar-wrapper sidebar-nav hidden-xs" id="left-sidebar" data-container=".page-content-wrapper" data-container-divide="true" data-side="left" data-width="260" data-fixed-offset-top="0" data-spy="affix" data-offset-top="80">
-                <div class="nano">
-                    <div class="nano-content">
-                        <ul class="nav nav-pills nav-stacked pages">
-                            <li class="active"><a href="#">Overview</a></li>
-                            <li class=""><a href="#">Proxy</a></li>
-                            <li class=""><a href="#">Proxy</a></li>
-                            <li class=""><a href="#">Proxy</a></li>
-                            <li class=""><a href="#">Proxy</a></li>
-                        </ul>
+                    <hr>
 
-                        <hr>
-
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#"><i class="icon fw fw-settings ues-copy" title="Edit"></i>Dashboard Settings</a></li>
-                            <li><a href="#"><i class="icon fw fw-sign-out"></i>Logout</a></li>
-                        </ul>
-                    </div>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#"><i class="icon fw fw-settings ues-copy" title="Edit"></i>Dashboard Settings</a></li>
+                        <li><a href="#"><i class="icon fw fw-sign-out"></i>Logout</a></li>
+                    </ul>
                 </div>
             </div>
-            <!--/.left-sidebar  -->
-
-            <a class="navbar-menu-toggle" data-toggle="sidebar" data-target="#left-sidebar" data-container=".page-content-wrapper" data-container-divide="true" aria-expanded="false" rel="leftmenu-sidebar">
-                <span class="icon fw-stack">
-                    <i class="fw fw-menu fw-stack-1x toggle-icon-left-arrow"></i>
-                </span>
-            </a>
-            </div>
         </div>
+        <!--/.left-sidebar  -->
+
+        <a class="navbar-menu-toggle" data-toggle="sidebar" data-target="#left-sidebar" data-container=".page-content-wrapper" data-container-divide="true" aria-expanded="false" rel="leftmenu-sidebar">
+            <span class="icon fw-stack">
+                <i class="fw fw-menu fw-stack-1x toggle-icon-left-arrow"></i>
+            </span>
+        </a>
+
     </div>
 </div>
