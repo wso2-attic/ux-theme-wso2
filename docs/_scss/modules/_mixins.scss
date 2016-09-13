@@ -29,7 +29,7 @@
     transform: $val;
 }
 
-@mixin transition($val) {
+@mixin transition($val...) {
     -webkit-transition: $val;
     -moz-transition: $val;
     -ms-transition: $val;

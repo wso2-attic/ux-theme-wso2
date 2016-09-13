@@ -9,7 +9,14 @@
     left: 0;
     margin-left: 0;
     min-height: $page-content-wrapper-height;
-    @include transition(all 0.5s ease);
+    @include transition(
+        left 0.5s ease,
+        right 0.5s ease,
+        padding-left 0.5s ease,
+        padding-right 0.5s ease,
+        margin-left 0.5s ease,
+        margin-right 0.5s ease
+    );
   }
   &.fixed {
     & > div {
@@ -60,16 +67,16 @@
   width: $sidebar-width-default;
   height: 100%;
   overflow-y: auto;
-  background: $gray-darker;
-  color: $brand-light;
-  @include transition(all 0.5s ease);
+  background: $sidebar-wrapper-bg;
+  color: $sidebar-wrapper-color;
+  @include transition(left 0.5s ease, right 0.5s ease);
 
   &.affix {
     position: fixed;
   }
   &.inverse {
-    background: $brand-light;
-    color: $gray-darker;
+    background: $sidebar-wrapper-inverse-bg;
+    color: $sidebar-wrapper-inverse-color;
   }
   &[data-side=right] {
     left: auto;
@@ -115,18 +122,18 @@ ul .sidebar-messages {
     line-height: 20px;
 
     a {
-      border-left: 3px solid $gray-darker;
+      border-left: 3px solid $sidebar-nav-link-border-color;
       display: block;
       text-decoration: none;
       color: #999999;
       &:hover {
         text-decoration: none;
-        color: $brand-light;
+        color: $sidebar-nav-link-hover-color;
         background: rgba(255,255,255,0.2);
       }
       &.active {
-        border-left: 3px solid $brand-optional;
-        color: $brand-light;
+        border-left: 3px solid $sidebar-nav-link-active-border-color;
+        color: $sidebar-nav-link-active-color;
       }
     }
     ul.sub-menu {
@@ -139,7 +146,7 @@ ul .sidebar-messages {
         background-color: $sidebar-submenu-bg;
         &:hover{
           a {
-            color: $brand-light;
+            color: $sidebar-nav-submenu-link-hover-color;
           }
         }
         a {
@@ -150,7 +157,7 @@ ul .sidebar-messages {
           margin: 0px;
           &:hover {
             background-color: transparent;
-            color: $brand-light;
+            color: $sidebar-nav-submenu-link-hover-color;
           }
           &.active {
             border-left:0;
@@ -183,7 +190,7 @@ ul .sidebar-messages {
     a {
       color: #999999;
       &:hover {
-        color: $brand-light;
+        color: $sidebar-brand-link-hover-color;
         background: none;
       }
     }

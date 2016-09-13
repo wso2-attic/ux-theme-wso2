@@ -7,7 +7,7 @@ header {
     position: relative;
     
     &.header-default {
-        background: $header-background-color;
+        background: $header-bg;
         color: $header-color;
     }
     a,
@@ -43,27 +43,27 @@ header {
         height: $header-height;
         
         &:hover {
-            background: lighten($header-background-color, 5%);
+            background: lighten($header-bg, 5%);
         }
 
         &:focus{
             color: $header-color;
-            background: lighten($header-background-color, 5%);
+            background: lighten($header-bg, 5%);
         }
     }
     .nav .open > a,
     .nav .open > a:hover,
     .nav .open > a:focus {
-        background: darken($header-background-color, 10%);
+        background: darken($header-bg, 10%);
     }
     .nav .dropdown-menu {
-        background: darken($header-background-color, 10%);
+        background: darken($header-bg, 10%);
         
         a {
             color: $header-color;
         }
     }
     .fw-inverse, .fa-inverse {
-        color: $header-background-color;
+        color: $header-bg;
     }
 }

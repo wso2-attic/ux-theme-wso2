@@ -21,12 +21,6 @@
   }
 }
 
-.form-control,
-.btn {
-  @include border-radius;
-  //@include box-shadow;
-}
-
 .remove-icon-ring-on-hover {
   &:hover {
     .fw-ring {
@@ -94,10 +88,6 @@ input[type=number] {
   }
 }
 
-.input-group-addon {
-  @include border-radius;
-}
-
 .file-upload-control {
   input[type=file] {
     display: none;
@@ -161,7 +151,6 @@ input[type=number] {
       position: absolute;
       display: block;
       content: "";
-      color: $brand-primary;
       z-index: 2;
       font-size: 16px;
       font-weight: bold;
@@ -169,14 +158,14 @@ input[type=number] {
       margin-left: 0;
       top: 50%;
       margin-top: -5px;
-      background-color: $brand-primary;
+      background-color: $form-radio-checked-bg;
       width: 10px;
       height: 10px;
       border-radius: 100%;
     }
 
     &:checked + .helper:before {
-      border: 2px $brand-primary solid;
+      border: 2px $form-radio-checked-border-color solid;
     }
 
     &:disabled + .helper:before {
@@ -234,7 +223,7 @@ input[type=number] {
     opacity: 0;
 
     &:checked + .helper:before {
-      border: 2px $brand-primary solid;
+      border: 2px $form-checkbox-checked-border-color solid;
     }
 
     &:checked + .helper:after {
@@ -251,7 +240,7 @@ input[type=number] {
       left: 2px;
       margin-left: 0;
       text-align: center;
-      background: $brand-primary;
+      background: $form-checkbox-checked-bg;
       color: #fff;
       font-family: font-wso2;
     }
@@ -294,20 +283,6 @@ input[type=number] {
       opacity: 1;
       top: 0;
       left: 0;
-    }
-  }
-}
-
-@media (min-width:768px) {
-  .tab-content {
-    > .tab-pane {
-      display: none !important;
-    }
-  }
-
-  .tab-content {
-    > .active {
-      display: block !important;
     }
   }
 }

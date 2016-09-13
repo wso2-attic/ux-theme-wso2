@@ -12,10 +12,7 @@
 }
 
 .modal-content {
-  background: $gray-darker;
-  color: $brand-light;
-  @include border-radius;
-  //@include box-shadow;
+  color: $modal-content-color;
 }
 
 .modal-header {
@@ -23,7 +20,7 @@
   padding: 15px 15px 0;
 
   .close {
-    color: $brand-light;
+    color: $gray-lightest;
     text-shadow: none;
     opacity: 0.8;
   }
