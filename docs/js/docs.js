@@ -73,7 +73,7 @@ $(function(){
                     '<pre><code class="language-html" data-lang="html"><div class="html-code-content"></div></code></pre>'+
                     '</div>'
                 );
-                $(this).next().closest('.code-container').find('.html-code-content').text($(this).children('.code-html').html());
+                $(this).next().closest('.code-container').find('.html-code-content').text($(this).children('.code-html').text());
             }
             if ($(this).children().hasClass('code-js')){
                 codeContainer.find('ul').append('<li role="presentation"><a href="#js'+key+'" aria-controls="profile" role="tab" data-toggle="tab">JS</a></li>');
@@ -87,7 +87,7 @@ $(function(){
                     '<pre><code class="javascript" data-lang="javascript"><div class="js-code-content"></div></code></pre>'+
                     '</div>'
                 );
-                $(this).next().closest('.code-container').find('.js-code-content').text($(this).children('.code-js').html());
+                $(this).next().closest('.code-container').find('.js-code-content').text($(this).children('.code-js').text());
             }
 
             if($(this).children().find('code-sample')){
