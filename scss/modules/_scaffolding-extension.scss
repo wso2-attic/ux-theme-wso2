@@ -8,17 +8,15 @@
 
 html {
     position: relative;
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
     width: 100%;
+    height: 100%
 }
 
 body {
     min-height: 100%;
     font-weight: $font-weight-base;
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
 }
 
