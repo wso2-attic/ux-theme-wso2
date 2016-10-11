@@ -1,0 +1,25 @@
+.nav-pills {
+  > li.active {
+    > a {
+      &,
+      &:focus,
+      &:hover {
+        border-color: $nav-pills-border-color;
+      }
+    }
+  }
+}
+
+@media (min-width:768px) {
+  .tab-content {
+    > .tab-pane {
+      display: none !important;
+    }
+  }
+
+  .tab-content {
+    > .active {
+      display: block !important;
+    }
+  }
+}

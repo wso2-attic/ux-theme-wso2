@@ -1,0 +1,34 @@
+.list-group-item {
+  &.active,
+  .active {
+    > & {
+      &,
+      &:focus,
+      &:hover {
+        color: $list-group-item-hover-color;
+        background: $list-group-item-hover-bg;
+        border-color: $list-group-item-hover-border-color;
+      }
+    }
+  }
+  &.active {
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+a {
+  .list-group-item:hover {
+    text-decoration: none;
+  }
+}
+
+.list-group {
+  &.nav {
+    > .list-group-item {
+      padding: 0;
+    }
+  }
+}

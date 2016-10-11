@@ -1,0 +1,52 @@
+//
+// Notifications
+// --------------------------------------------------
+
+#noty_topRight_layout_container {
+  position: absolute !important;
+}
+
+#noty_topRight_layout_container,
+#noty_topLeft_layout_container {
+  margin-top: 100px !important;
+}
+
+.noty_bar {
+  height: auto;
+  border: none;
+  padding: 10px 20px;
+}
+
+.noty_container_type {
+  &_notification {
+    background-color: $noty-notification-bg;
+    color: $noty-notification-color;
+  }
+  &_warning {
+    background-color: $noty-warning-bg;
+    color: $noty-warning-color;
+  }
+  &_error {
+    background-color: $noty-error-bg;
+    color: $noty-error-color;
+  }
+  &_information {
+    background-color: $noty-information-bg;
+    color: $noty-information-color;
+  }
+  &_success {
+    background-color: $noty-success-bg;
+    color: $noty-success-color;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #noty_topRight_layout_container,
+  .noty_container_type_information,
+  #noty_topLeft_layout_container,
+  .noty_bar {
+    width: 100% !important;
+    left: 0;
+    right: 0;
+  }
+}
