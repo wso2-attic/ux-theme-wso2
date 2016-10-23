@@ -40,7 +40,6 @@ header {
         }
     }
     .nav > li > a {
-        padding: 5px 15px;
         height: $header-height;
         
         &:hover {
@@ -64,7 +63,15 @@ header {
             color: $header-color;
         }
     }
-    .fw-inverse, .fa-inverse {
+    .fw-inverse, .fa-inverse, .fw-inverse::before, .fa-inverse::before {
         color: $header-bg;
     }
-}
+} 
+
+@media only screen and (max-width: 767px) {
+    .navbar-right{
+        float:right;
+        margin-right:-15px;
+    }
+  
+  }
