@@ -749,16 +749,14 @@ address {
 
 html {
   position: relative;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%; }
+  width: 100%;
+  height: 100%; }
 
 body {
   min-height: 100%;
   font-weight: 300;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative; }
 
 .body-wrapper {
@@ -2526,17 +2524,17 @@ input[type=number].form-control {
 /* ========================================================================
  * radio button styles
  * ======================================================================== */
-.radio {
+.custom-radio {
   display: inline-block;
   margin-right: 10px;
   margin-bottom: 0;
   margin-top: 0;
   cursor: pointer;
   font-weight: 300; }
-  .radio > input[type=radio] {
+  .custom-radio > input[type=radio] {
     position: absolute;
     opacity: 0; }
-    .radio > input[type=radio]:checked + .helper:after {
+    .custom-radio > input[type=radio]:checked + .helper:after {
       position: absolute;
       display: block;
       content: "";
@@ -2551,22 +2549,22 @@ input[type=number].form-control {
       width: 10px;
       height: 10px;
       border-radius: 100%; }
-    .radio > input[type=radio]:checked + .helper:before {
+    .custom-radio > input[type=radio]:checked + .helper:before {
       border: 2px #004675 solid; }
-    .radio > input[type=radio]:disabled + .helper:before {
+    .custom-radio > input[type=radio]:disabled + .helper:before {
       cursor: default;
       background: #e6e6e6; }
-    .radio > input[type=radio]:disabled + .helper:after {
+    .custom-radio > input[type=radio]:disabled + .helper:after {
       background-color: #8a8a8a; }
-    .radio > input[type=radio]:not(:disabled) + .helper:before {
+    .custom-radio > input[type=radio]:not(:disabled) + .helper:before {
       border-color: #919191; }
-    .radio > input[type=radio]:not(:disabled) + .helper:before {
+    .custom-radio > input[type=radio]:not(:disabled) + .helper:before {
       border-color: #919191; }
-  .radio .helper {
+  .custom-radio .helper {
     padding-left: 26px;
     padding-top: 1px;
     position: relative; }
-    .radio .helper:before {
+    .custom-radio .helper:before {
       position: absolute;
       display: block;
       height: 20px;
@@ -2583,17 +2581,17 @@ input[type=number].form-control {
 /* ========================================================================
  * checkbox styles
  * ======================================================================== */
-.checkbox {
+.custom-checkbox {
   display: inline-block;
   margin: 0 10px 0 0;
   cursor: pointer;
   font-weight: 300; }
-  .checkbox > input[type=checkbox] {
+  .custom-checkbox > input[type=checkbox] {
     position: absolute;
     opacity: 0; }
-    .checkbox > input[type=checkbox]:checked + .helper:before {
+    .custom-checkbox > input[type=checkbox]:checked + .helper:before {
       border: 2px #004675 solid; }
-    .checkbox > input[type=checkbox]:checked + .helper:after {
+    .custom-checkbox > input[type=checkbox]:checked + .helper:after {
       position: absolute;
       display: block;
       content: "\e617";
@@ -2610,21 +2608,21 @@ input[type=number].form-control {
       background: #004675;
       color: #fff;
       font-family: font-wso2; }
-    .checkbox > input[type=checkbox]:not(:checked) + .helper:after {
+    .custom-checkbox > input[type=checkbox]:not(:checked) + .helper:after {
       display: none; }
-    .checkbox > input[type=checkbox]:disabled + .helper:before {
+    .custom-checkbox > input[type=checkbox]:disabled + .helper:before {
       cursor: default;
       background: #e6e6e6; }
-    .checkbox > input[type=checkbox]:disabled + .helper:after {
+    .custom-checkbox > input[type=checkbox]:disabled + .helper:after {
       color: #8a8a8a; }
-    .checkbox > input[type=checkbox]:not(:disabled) + .helper:before {
+    .custom-checkbox > input[type=checkbox]:not(:disabled) + .helper:before {
       border-color: #526A84; }
-    .checkbox > input[type=checkbox] :not(:disabled) + .helper:before {
+    .custom-checkbox > input[type=checkbox] :not(:disabled) + .helper:before {
       border-color: #526A84; }
-  .checkbox .helper {
+  .custom-checkbox .helper {
     padding-left: 23px;
     position: relative; }
-    .checkbox .helper:before {
+    .custom-checkbox .helper:before {
       position: absolute;
       display: block;
       height: 20px;
@@ -2955,14 +2953,14 @@ header {
       display: inline-block;
       min-height: 24px;
       white-space: nowrap; }
-    header .brand h1 {
+    header .brand span {
       display: inline-block;
       line-height: 1;
       font-size: 18px;
       margin: 0 0 0 5px;
-      font-weight: 300; }
+      font-weight: 300;
+      vertical-align: middle; }
   header .nav > li > a {
-    padding: 5px 15px;
     height: 50px; }
     header .nav > li > a:hover {
       background: #262626; }
@@ -2977,9 +2975,13 @@ header {
     background: black; }
     header .nav .dropdown-menu a {
       color: #fff; }
-  header .fw-inverse, header .fa-inverse {
+  header .fw-inverse, header .fa-inverse, header .fw-inverse::before, header .fa-inverse::before {
     color: #191919; }
 
+@media only screen and (max-width: 767px) {
+  .navbar-right {
+    float: right;
+    margin-right: -15px; } }
 footer {
   width: 100%;
   min-height: 40px;
