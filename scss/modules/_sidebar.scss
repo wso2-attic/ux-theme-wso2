@@ -116,25 +116,34 @@ ul .sidebar-messages {
   margin: 0;
   padding: 0;
   list-style: none;
-  text-transform: uppercase;
-
+  text-transform: capitalize;
+  
   li {
     line-height: 20px;
-
+    margin: 0;
+    @include box-shadow (inset 0 1px 0 rgba(153,153,153,0.25));
+   
     a {
-      border-left: 3px solid $sidebar-nav-link-border-color;
+      border-left: 3px solid transparent;
+      background-color: $sidebar-nav-link-background-color;      
       display: block;
       text-decoration: none;
-      color: #999999;
+      color: rgba(255,255,255,0.5);
+      @if ($smooth-hover == true) {
+        @include transition (color 250ms ease);
+      }
       &:hover {
         text-decoration: none;
         color: $sidebar-nav-link-hover-color;
         background: rgba(255,255,255,0.2);
-      }
-      &.active {
-        border-left: 3px solid $sidebar-nav-link-active-border-color;
-        color: $sidebar-nav-link-active-color;
-      }
+      }      
+    }
+    &.active > a {
+      background-color: $sidebar-nav-link-background-color;border-left: 3px solid $sidebar-nav-link-active-border-color;
+       &:hover,
+       &:focus {
+          border-color: $sidebar-nav-link-active-border-color;
+       }
     }
     ul.sub-menu {
       list-style: none;
@@ -143,7 +152,6 @@ ul .sidebar-messages {
       cursor: pointer;
 
       li {
-        background-color: $sidebar-submenu-bg;
         &:hover{
           a {
             color: $sidebar-nav-submenu-link-hover-color;
@@ -155,15 +163,13 @@ ul .sidebar-messages {
           border-bottom :0;
           padding-left: 40px;
           margin: 0px;
-          &:hover {
-            background-color: transparent;
+          background-color: transparent;
+          &:hover {            
             color: $sidebar-nav-submenu-link-hover-color;
-          }
-          &.active {
-            border-left:0;
-          }
+          }          
         }
-      }
+        &.active a {color: $sidebar-nav-submenu-link-hover-color;border-color: transparent;}
+      }      
     }
   }
   ul :not(collapsed) .arrow:before,
@@ -173,6 +179,7 @@ ul .sidebar-messages {
     display: inline-block;
     vertical-align: middle;
     float: right;
+    font-size: 10px;
   }
   ul .collapsed .arrow:before,
   li .collapsed .arrow:before {
@@ -195,7 +202,11 @@ ul .sidebar-messages {
       }
     }
   }
+  & .nav-stacked > li + li {
+    margin: 0;
+  }  
 }
+
 
 @media(min-width:768px) {
   #wrapper {
