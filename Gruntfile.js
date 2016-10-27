@@ -129,6 +129,18 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        zip: {
+            'using-cwd': {
+                cwd: 'dist/',
+                src: [
+                    'dist/css/default/**',
+                    'dist/js/**',
+                    'dist/fonts/**',
+                    'dist/images/**'
+                ],
+                dest: 'docs/downloads/<%= pkg.name %>-<%= pkg.version %>.zip'
+            }
+        },
         jekyll: {
             options: {
                 src : 'docs',
@@ -213,10 +225,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sync');
     grunt.loadNpmTasks('grunt-concurrent');
+    grunt.loadNpmTasks('grunt-zip');
     grunt.loadNpmTasks('grunt-shell');
     
     // Default task(s).   
-    grunt.registerTask('default', ['sass:all','cssmin:all','concat','uglify','copy']);
+    grunt.registerTask('default', ['sass:all','cssmin:all','concat','uglify','copy','zip']);
     grunt.registerTask('docs', ['shell:jekyll_build']);
     grunt.registerTask('serve', ['concurrent:target']);
     
