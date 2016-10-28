@@ -111,22 +111,25 @@ module.exports = function(grunt) {
                 files: [
                     { expand: true, cwd: 'fonts/', src: ['**'], dest: 'dist/fonts/' },
                     { expand: true, cwd: 'images/', src: ['**'], dest: 'dist/images/' },
-                    { expand: true, cwd: 'extensions/', src: ['**'], dest: 'dist/extensions/' }
+                    { expand: true, cwd: 'extensions/', src: ['**'], dest: 'dist/extensions/' },
+                    { expand: true, cwd: 'js/vendor/bootstrap', src: ['bootstrap.js','bootstrap.min.js'], dest: 'dist/js/' }
                 ],
             },
             docs: {
-                files: [{
-                    expand: true,
-                    cwd: 'dist',
-                    src: ['**/*', '!css', 'css/default/**'],
-                    dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>'
-                }],
-                files: [{
-                    expand: true,
-                    cwd: 'scss',
-                    src: ['**/*'],
-                    dest: 'docs/_scss'
-                }]
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'dist',
+                        src: ['**/*', '!css', 'css/default/**'],
+                        dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'scss',
+                        src: ['**/*'],
+                        dest: 'docs/_scss'
+                    }
+                ],
             }
         },
         zip: {
