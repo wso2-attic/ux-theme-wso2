@@ -28,7 +28,7 @@ $brand-info:      #009DA7 !default;
 $brand-warning:   #f0ad4e !default;
 $brand-danger:    #d9534f !default;
 $brand-disabled:  $gray !default;
-$brand-optional:  #007D85 !default;
+$brand-optional:  #F47A1E !default;
 
 // Typography
 //--------------------------------------------------------------------------------------------------
@@ -172,14 +172,15 @@ $nav-pills-active-link-hover-color:       $gray-lightest !default;
 $sidebar-width-default:                   350px !default;
 $sidebar-submenu-bg:                      #181c20 !default;
 $sidebar-wrapper-bg:                      $gray-darker !default;
-$sidebar-wrapper-color:                   $gray-lightest !default;
+$sidebar-wrapper-color:                   #999999;
 $sidebar-wrapper-inverse-bg:              $gray-darker !default;
 $sidebar-wrapper-inverse-color:           $gray-lightest !default;
 $sidebar-nav-link-border-color:           $gray-darker !default;
-$sidebar-nav-link-hover-color:            $gray-lightest !default;
+$sidebar-nav-link-background-color:		  rgba(102,102,102,0.25);
+$sidebar-nav-link-hover-color:            #fff;
 $sidebar-nav-link-active-border-color:    $brand-optional !default;
-$sidebar-nav-link-active-color:           $gray-lightest !default;
-$sidebar-nav-submenu-link-hover-color:    $gray-lightest !default;
+$sidebar-nav-link-active-color:           #fff;
+$sidebar-nav-submenu-link-hover-color:    #fff;
 $sidebar-brand-link-hover-color:          $gray-lightest !default;
 
 // Dropdowns
@@ -273,3 +274,7 @@ $tiles-link-color:          $gray-darker !default;
 //-------------------------------------------------------------------------------------------------
 $tree-view-icon-bg:         $brand-primary !default;
 $tree-view-icon-color:      $gray-lightest !default;
+
+// Smooth transitions on hover activator
+//-------------------------------------------------------------------------------------------------
+$smooth-hover: true;

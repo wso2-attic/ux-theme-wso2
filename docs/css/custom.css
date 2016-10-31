@@ -319,10 +319,10 @@
 }
 
 /* ========================================================================
- * Sidebar secondary nav
+ * Sidebar secondary nav - merging to _sidebar.scss extention
  * ======================================================================== */
 
-.sidebar-wrapper .nav li{
+/*.sidebar-wrapper .nav li{
     border-bottom:1px solid #242932;
     margin:0px;
 }
@@ -335,7 +335,7 @@
 }
 .sidebar-wrapper .nav .secondary-nav .active{
     background-color: #313845;
-}
+}*/
 .secondary-nav li {
     text-indent:10px;
     float: none;
@@ -347,7 +347,6 @@
     display: block;
     margin: 9px 10px 2px 10px !important;
 }
-
 
 /* ========================================================================
  * execution flow panels
@@ -559,7 +558,7 @@
  * documentation page styles
  * ======================================================================== */
 
-#sidebar-theme {
+/*#sidebar-theme {
     text-transform: none;
 }
 
@@ -574,7 +573,7 @@
 
 .navbar-doc {
     background-color:#333;
-}
+}*/
 
 .navbar-doc .navbar-menu-toggle {
     background-color:#F47A1E;
