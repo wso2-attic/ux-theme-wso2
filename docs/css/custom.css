@@ -579,31 +579,6 @@
     background-color:#F47A1E;
 }
 
-h1.theme-name{
-    display: inline-block;
-    font-size: 61px;
-    font-weight: 300;
-    color:#fff;
-}
-
-h4.theme-description , h5.theme-description{
-    color: #fff;
-}
-
-h5.version {
-    color:#6c6c6c;
-}
-
-.theme-logo img{
-    height:57px;
-    margin-bottom:23px;
-}
-@media(max-width:360px) {
-    .theme-logo img{
-        margin-bottom: -20px;
-    }
-}
-
 .btn-outline-inverse {
     color: #fff;
     background-color: transparent;
@@ -620,31 +595,6 @@ h5.version {
     background-color: #191919
 }
 */
-
-.github-btn {
-    color:#9E9E9E;
-}
-.github-btn:hover{
-    color: #F47A1E;
-}
-.btn-clipboard {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 10;
-    display: block;
-    padding: 5px 8px;
-    font-size: 12px;
-    color: #767676;
-    cursor: pointer;
-    background-color: #fff;
-    border: 1px solid #e1e1e8;
-    border-radius: 0 4px 0 4px;
-}
-
-.zero-clipboard {
-    position:relative;
-}
 
 .requiredAstrix {
     color: red;
@@ -676,28 +626,12 @@ h5.version {
     margin: 20px 0 20px 0;
 }
 
-.code-container .nav-tabs li.active a, .code-container .nav-tabs li > a:hover{
-    background-color: #f5f5f5;
-}
-
-.code-container {
-    margin: 20px 0 20px 0;
-}
-
-.code-container .hljs {
-    background: none;
-}
-
 .page-header {
     margin: 0 0 20px;
 }
 
 .text-medium {
     font-weight: 400;
-}
-
-#overview-page .body-wrapper > div:first-child p {
-    font-size: 16px;
 }
 
 p code {

@@ -21,35 +21,7 @@ body {
 }
 
 .body-wrapper {
-    padding: 40px;
-}
-
-.body-wrapper a:hover {
-    text-decoration: underline;
-}
-
-.body-wrapper a.btn:hover {
-    text-decoration: none;
-}
-
-@media (max-width:767px){
-    .body-wrapper {
-        padding: 20px;
-    }
-}
-
-body > .page-content-wrapper > .container,
-body > .page-content-wrapper > .container-fluid {
-    padding: 0;
-    margin: 0;
-}
-
-@media only screen and (min-width: 768px) {
-    body > .page-content-wrapper > .container,
-    body > .page-content-wrapper > .container-fluid {
-        padding: 0;
-        margin: 0;
-    }
+    padding: 15px;
 }
 
 body.inverse {

@@ -8,3 +8,4 @@ baseurl: "/"
 permalink: /:title
 sass:
   sass_dir: _scss
+  

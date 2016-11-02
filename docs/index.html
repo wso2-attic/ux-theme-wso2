@@ -3,153 +3,149 @@ layout: default
 title: Overview
 ---
 
-<!-- page content -->
-<div class="container-fluid">
-    <div id="overview-page">
-        <div class="row add-padding-5x header">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-                <div class="theme-logo">
-                    <img src="libs/theme-wso2_1.0.0/images/logo-inverse.svg"  alt="wso2-logo">
-                    <h1 class="theme-name">Theme</h1>
+<div id="overview-page">
+    <div class="add-padding-5x row header text-center">
+        <div class="doc-logo">
+            <img src="libs/theme-wso2_1.0.0/images/logo-inverse.svg"  alt="wso2-logo">
+            <h1 class="doc-name">Theme</h1>
+        </div>
+
+        <h4 class="doc-description add-margin-bottom-5x">Starter Theme for WSO2 products</h4>
+
+        <a href="/messages" class="btn btn-primary btn-lg">Live Demo</a>
+        <a href="downloads/{{ site.name }}-{{ site.version }}.zip" class="btn btn-outline-inverse btn-lg">Download</a>
+
+        <h5 class="doc-version">v{{ site.version }}</h5>
+
+        <a href="https://github.com/wso2-dev-ux/theme-wso2" class="btn github-btn"><i class="fw fw-github"></i> Github Project</a>
+    </div>
+    
+    <div class="body-wrapper">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-6 text-center">
+                    <img src="images/sass-logo.png" height="100"/>
+                    <h3 class="text-medium">Preprocessors</h3>
+                    <p>Compatible with <a href="http://sass-lang.com/" target="_blank" class="doc-link">Sass</a>, which is a popular CSS Preprocessor.</p>
                 </div>
-
-                <h4 class="theme-description add-margin-bottom-5x">Starter Theme for WSO2 products</h4>
-
-                <a href="/messages" class="btn btn-primary btn-lg">Live Demo</a>
-                <a href="downloads/{{ site.name }}-{{ site.version }}.zip" class="btn btn-outline-inverse btn-lg">Download</a>
-
-                <h5 class="version">v{{ site.version }}</h5>
-
-                <a href="https://github.com/wso2-dev-ux/theme-wso2" class="btn github-btn" onclick=""><i class="fw fw-github"></i> Github Project</a>
+                <div class="col-md-6 text-center">
+                    <img src="images/bootstrap-logo.png" height="100" />
+                    <h3 class="text-medium">Twitter Bootstrap</h3>
+                    <p>Based on <a href="http://getbootstrap.com/" target="_blank" class="doc-link">Twitter Bootstrap 3.3.7</a> with some additional stylings & functions.</p>
+                </div>
             </div>
         </div>
-        <div class="body-wrapper">
-
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="col-md-6 text-center">
-                        <img src="images/sass-logo.png" height="100"/>
-                        <h3 class="text-medium">Preprocessors</h3>
-                        <p>Compatible with <a href="http://sass-lang.com/" target="_blank" class="doc-link">Sass</a>, which is a popular CSS Preprocessor.</p>
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <img src="images/bootstrap-logo.png" height="100" />
-                        <h3 class="text-medium">Twitter Bootstrap</h3>
-                        <p>Based on <a href="http://getbootstrap.com/" target="_blank" class="doc-link">Twitter Bootstrap 3.3.7</a> with some additional stylings & functions.</p>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-medium">Precompiled WSO2 Theme</h3>
+                <p>Once downloaded, unzip the compressed folder to see the structure of the precompiled WSO2 Theme CSS and font assets.</p>
+    <pre><code class="language-bash" data-lang="bash">
+    root/ [ where your page is ]
+    ├── css/
+    │   ├── theme-wso2.css
+    │   ├── theme-wso2.min.css
+    │   ├── theme-wso2.css.map
+    │   ├── theme-wso2-ie.css
+    │   ├── theme-wso2-ie.min.css
+    │   ├── theme-wso2-ie.css.map
+    ├── js/
+    │   ├── theme-wso2.js
+    │   ├── theme-wso2.min.js
+    ├── extensions/
+    │   ├── datatables/
+    │   ├── jstree/
+    │   ├── noty/
+    └── fonts/
+        └── Roboto
+    </code></pre>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-medium">WSO2 Theme source code</h3>
+                <p>The WSO2 Theme source code download includes the precompiled CSS, JavaScript and font assets, along with source Sass, JavaScript and documentation.</p>
+    <pre><code class="language-bash" data-lang="bash">
+    theme-wso2/
+    ├── scss/
+    ├── js/
+    ├── fonts/
+    ├── dist/
+    │   ├── css/
+    │   ├── js/
+    │   ├── fonts/
+    ├── extensions/
+    │   ├── datatables/
+    │   ├── jstree/
+    │   └── noty/
+    └── docs/
+    </code></pre>
+                <p>The <code>scss/</code>, <code>js/</code>, and <code>fonts/</code> are the source code for our CSS, JS, and icon fonts. The <code>dist/</code> folder includes
+                    everything listed in the precompiled download section. The <code>docs/</code> folder includes the source code for the documentation.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-medium">Compiling CSS</h3>
+                <p>WSO2 Theme uses <a href="http://gruntjs.com/" target="_blank" class="doc-link">Grunt</a> for its build system,
+                    this requires <a href="https://nodejs.org/en/" target="_blank" class="doc-link">node.js</a> and <a href="https://www.ruby-lang.org/en/" target="_blank" class="doc-link">ruby</a>.</p>
+                <br/>
+                <h4 class="text-medium">Installing Grunt</h4>
+                <p>To install Grunt, first download and install <a href="https://nodejs.org/en/" target="_blank" class="doc-link">node.js</a> (which includes npm).
+                Then, from the command line:</p>
+                <p>1. Install grunt-cli globally</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <pre class="command"><code>npm install -g grunt-cli</code></pre><br/>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="text-medium">Precompiled WSO2 Theme</h3>
-                    <p>Once downloaded, unzip the compressed folder to see the structure of the precompiled WSO2 Theme CSS and font assets.</p>
-        <pre><code class="language-bash" data-lang="bash">
-        root/ [ where your page is ]
-        ├── css/
-        │   ├── theme-wso2.css
-        │   ├── theme-wso2.min.css
-        │   ├── theme-wso2.css.map
-        │   ├── theme-wso2-ie.css
-        │   ├── theme-wso2-ie.min.css
-        │   ├── theme-wso2-ie.css.map
-        ├── js/
-        │   ├── theme-wso2.js
-        │   ├── theme-wso2.min.js
-        ├── extensions/
-        │   ├── datatables/
-        │   ├── jstree/
-        │   ├── noty/
-        └── fonts/
-            └── Roboto
-        </code></pre>
+                <p>2. Navigate to the root /theme-wso2/ directory, then run<p/>
+                <div class="row">
+                    <div class="col-md-6">
+                        <pre class="command"><code>npm install</code></pre><br/>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="text-medium">WSO2 Theme source code</h3>
-                    <p>The WSO2 Theme source code download includes the precompiled CSS, JavaScript and font assets, along with source Sass, JavaScript and documentation.</p>
-        <pre><code class="language-bash" data-lang="bash">
-        theme-wso2/
-        ├── scss/
-        ├── js/
-        ├── fonts/
-        ├── dist/
-        │   ├── css/
-        │   ├── js/
-        │   ├── fonts/
-        ├── extensions/
-        │   ├── datatables/
-        │   ├── jstree/
-        │   └── noty/
-        └── docs/
-        </code></pre>
-                    <p>The <code>scss/</code>, <code>js/</code>, and <code>fonts/</code> are the source code for our CSS, JS, and icon fonts. The <code>dist/</code> folder includes
-                        everything listed in the precompiled download section. The <code>docs/</code> folder includes the source code for the documentation.
-                    </p>
+                <p>npm will look at the package.json file and automatically install the necessary local dependencies listed there.</p>
+                <br/>
+                <h4 class="text-medium">Grunt commands</h4>
+                <p>To to compile scss and build default distrubution navigate to the root /theme-wso2/ and run </p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <pre class="command"><code>grunt</code></pre><br/>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="text-medium">Compiling CSS</h3>
-                    <p>WSO2 Theme uses <a href="http://gruntjs.com/" target="_blank" class="doc-link">Grunt</a> for its build system,
-                        this requires <a href="https://nodejs.org/en/" target="_blank" class="doc-link">node.js</a> and <a href="https://www.ruby-lang.org/en/" target="_blank" class="doc-link">ruby</a>.</p>
-                    <br/>
-                    <h4 class="text-medium">Installing Grunt</h4>
-                    <p>To install Grunt, first download and install <a href="https://nodejs.org/en/" target="_blank" class="doc-link">node.js</a> (which includes npm).
-                    Then, from the command line:</p>
-                    <p>1. Install grunt-cli globally</p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <pre class="command"><code>npm install -g grunt-cli</code></pre><br/>
-                        </div>
+                <p>To compile product scss files</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <pre class="command"><code>grunt product:&lt;porduct-short-name&gt;</code></pre>
                     </div>
-                    <p>2. Navigate to the root /theme-wso2/ directory, then run<p/>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <pre class="command"><code>npm install</code></pre><br/>
-                        </div>
-                    </div>
-                    <p>npm will look at the package.json file and automatically install the necessary local dependencies listed there.</p>
-                    <br/>
-                    <h4 class="text-medium">Grunt commands</h4>
-                    <p>To to compile scss and build default distrubution navigate to the root /theme-wso2/ and run </p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <pre class="command"><code>grunt</code></pre><br/>
-                        </div>
-                    </div>
-                    <p>To compile product scss files</p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <pre class="command"><code>grunt product:&lt;porduct-short-name&gt;</code></pre>
-                        </div>
-                    </div>
-                    <p class="help-block">e.g. grunt product:apim</p><br/>
-                    <p>To compile all product scss files</p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <pre class="command"><code>grunt product:all</code></pre><br/>
-                        </div>
-                    </div>
-                    <p>To compile docs</p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <pre class="command"><code>grunt docs</code></pre><br/>
-                        </div>
-                    </div>
-                    <p>To serve docs</p>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <pre class="command"><code>grunt serve</code></pre><br/>
-                            </div>
-                        </div>
                 </div>
+                <p class="help-block">e.g. grunt product:apim</p><br/>
+                <p>To compile all product scss files</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <pre class="command"><code>grunt product:all</code></pre><br/>
+                    </div>
+                </div>
+                <p>To compile docs</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <pre class="command"><code>grunt docs</code></pre><br/>
+                    </div>
+                </div>
+                <p>To serve docs</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <pre class="command"><code>grunt serve</code></pre><br/>
+                        </div>
+                    </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="text-medium">Basic template</h3>
-                    <p>Start with this basic HTML template and customize adapting it to suit your needs.</p>
-                    <div class="code hide">
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-medium">Basic template</h3>
+                <p>Start with this basic HTML template and customize adapting it to suit your needs.</p>
+                <div class="code hide">
 <code class="code-html">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
@@ -181,10 +177,8 @@ title: Overview
     &lt;/body&gt;
 &lt;/html&gt;
 </code>                   
-                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
