@@ -130,7 +130,8 @@ module.exports = function(grunt) {
                     'dist/css/**',
                     'dist/js/**',
                     'dist/fonts/**',
-                    'dist/images/**'
+                    'dist/images/**',
+                    'dist/extensions/**'
                 ],
                 dest: 'docs/downloads/<%= pkg.name %>-<%= pkg.version %>.zip'
             }
