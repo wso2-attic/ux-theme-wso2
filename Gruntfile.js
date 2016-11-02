@@ -26,16 +26,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'config/default',
                     src: ['**/*.scss'],
-                    dest: 'dist/css/default',
-                    ext: '.css'
-                }]
-            },
-            all: {
-                files: [{
-                    expand: true,
-                    cwd: 'config',
-                    src: ['**/*.scss'],
-                    dest: 'dist/css',
+                    dest: 'dist/css/',
                     ext: '.css'
                 }]
             },
@@ -44,7 +35,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'config/products/<%= grunt.option("sass.options.product") %>',
                     src: ['**/*.scss'],
-                    dest: 'dist/css/products/<%= grunt.option("sass.options.product") %>',
+                    dest: 'dist/product-css/<%= grunt.option("sass.options.product") %>',
                     ext: '.css'
                 }]
             }
@@ -136,7 +127,7 @@ module.exports = function(grunt) {
             'using-cwd': {
                 cwd: 'dist/',
                 src: [
-                    'dist/css/default/**',
+                    'dist/css/**',
                     'dist/js/**',
                     'dist/fonts/**',
                     'dist/images/**'
@@ -232,7 +223,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-shell');
     
     // Default task(s).   
-    grunt.registerTask('default', ['sass:all','cssmin:all','concat','uglify','copy','zip']);
+    grunt.registerTask('default', ['sass:default','cssmin:all','concat','uglify','copy','zip']);
     grunt.registerTask('docs', ['shell:jekyll_build']);
     grunt.registerTask('serve', ['concurrent:target']);
     
