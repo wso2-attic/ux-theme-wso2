@@ -18,16 +18,22 @@
 <html lang="en">
 {% include head.html %}
 <body class="sticky-footer notransition hidden">
-
-    <!-- header -->
-    {% include header.html %}
     
-    <!-- breadcrumb -->
-    {% include breadcrumb.html %}
+    {% unless page.url == '/' %}
+    
+        <!-- header -->
+        {% include header.html %}
+
+        <!-- breadcrumb -->
+        {% include breadcrumb.html %}
+    
+    {% endunless %}
     
     <!-- #page-content-wrapper -->
     <div class="page-content-wrapper">
-        {% include nav.html %}
+        {% unless page.url == '/' %}
+            {% include nav.html %}
+        {% endunless %}
         
         {{ content }}
     </div><!-- /#page-content-wrapper -->

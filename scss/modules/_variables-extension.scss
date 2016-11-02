@@ -21,7 +21,7 @@ $gray-light:      lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:    lighten($gray-base, 93.5%) !default; // #eee
 $gray-lightest:   lighten($gray-base, 99.5%) !default; // #fefefe
 
-$brand-primary:   #2c313b !default;
+$brand-primary:   #455A64 !default;
 $brand-secondary: lighten($brand-primary, 20%) !default;
 $brand-success:   #5cb85c !default;
 $brand-info:      #009DA7 !default;
@@ -79,20 +79,20 @@ $state-disabled-border: $brand-disabled !default;
 // Header
 //--------------------------------------------------------------------------------------------------
 $header-height:         50px !default;
-$header-bg:             #191919 !default;
+$header-bg:             darken($brand-primary, 15%) !default;
 $header-color:          #fff !default;
 
 // Footer
 //--------------------------------------------------------------------------------------------------
 $footer-height:         40px !default;
-$footer-background:     $gray-darker !default;
+$footer-background:     darken($brand-primary, 20%) !default;
 $footer-color:          #cbcbcb !default;
 
 // Breadcrumb
 //--------------------------------------------------------------------------------------------------
 $breadcrumb-height:             30px !default;
 $breadcrumb-padding-vertical:   5px !default;
-$breadcrumb-bg:                 #282828 !default;
+$breadcrumb-bg:                 darken($brand-primary, 20%) !default;
 $breadcrumb-color:              #ccc !default;
 $breadcrumb-link-color:         $breadcrumb-color !default;
 $breadcrumb-link-hover-color:   #fff !default;
@@ -170,8 +170,8 @@ $nav-pills-active-link-hover-color:       $gray-lightest !default;
 // Sidebar
 //--------------------------------------------------------------------------------------------------
 $sidebar-width-default:                   350px !default;
-$sidebar-submenu-bg:                      #181c20 !default;
-$sidebar-wrapper-bg:                      $gray-darker !default;
+$sidebar-submenu-bg:                      darken($brand-primary, 25%) !default;
+$sidebar-wrapper-bg:                      darken($brand-primary, 20%) !default;
 $sidebar-wrapper-color:                   #999999;
 $sidebar-wrapper-inverse-bg:              $gray-darker !default;
 $sidebar-wrapper-inverse-color:           $gray-lightest !default;
