@@ -9,45 +9,49 @@ js: <script src="libs/leaflet_0.7.7/js/leaflet.js"></script><script src="/js/map
 Leafletjs Maps
 ******************************************************************* -->
 
-<!-- page content -->
-<div class="container-fluid">
-    <div class="body-wrapper">
 
-        <div class="page-header">
-            <h1>Maps</h1>
+<div class="body-wrapper">
+
+    <h1 class="page-header">Map</h1>
+
+    <div class="message message-warning">
+        <h4><i class="icon fw fw-warning"></i>Leaflet.js</h4>
+        <p>This example required <a href="http://leafletjs.com/" target="_blank">Leaflet.js</a>.</p>
+    </div>
+
+    <div id="map-example" class="map-container-example" data-lat="6.909877" data-long="79.852523"></div>
+    <div class="map-error">Device location cannot be retrieved...</div>
+
+    <div class="code">
+        
+        <div class="code-html">
+<div id="map" class="map-container" data-lat="6.909877" data-long="79.852523"></div>
+<div class="map-error">Device location cannot be retrieved...</div>
         </div>
+        
+        <div class="code-js hide">
+if($('.map-container').length){
+    var lat = $('.map-container').data('lat'),
+    long    = $('.map-container').data('long'),
+    container = 'map',
+    zoomLevel = 17,
+    tileSet = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    attrib =  '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
-        <div id="map-example" class="map-container-example" data-lat="6.909877" data-long="79.852523"></div>
-        <div class="map-error">Device location cannot be retrieved...</div>
-
-        <div class="code">
-            <div class="code-html">
-                <div id="map" class="map-container" data-lat="6.909877" data-long="79.852523"></div>
-                <div class="map-error">Device location cannot be retrieved...</div>
-            </div>
-            <div class="code-js hide">
-    if($('.map-container').length){
-        var lat = $('.map-container').data('lat'),
-        long    = $('.map-container').data('long'),
-        container = 'map',
-        zoomLevel = 17,
-        tileSet = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-        attrib =  '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-
-        if(lat != null && lat != undefined && lat != "" && long != null && long != undefined && long != "") {
-            $('.map-error').hide();
-            $('.map-container').show();
-        }else{
-            $('.map-container').hide();
-            $('.map-error').show();
-        }
-
-        var map = L.map(container).setView([lat,long], zoomLevel);
-
-        L.tileLayer(tileSet, { attribution: attrib}).addTo(map);
-        L.marker([lat,long]).addTo(map).bindPopup('Your are here..!').openPopup();
+    if(lat != null && lat != undefined && lat != "" && long != null && long != undefined && long != "") {
+        $('.map-error').hide();
+        $('.map-container').show();
+    }else{
+        $('.map-container').hide();
+        $('.map-error').show();
     }
-            </div>
+
+    var map = L.map(container).setView([lat,long], zoomLevel);
+
+    L.tileLayer(tileSet, { attribution: attrib}).addTo(map);
+    L.marker([lat,long]).addTo(map).bindPopup('Your are here..!').openPopup();
+}
         </div>
+        
     </div>
 </div>

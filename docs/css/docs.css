@@ -58,6 +58,7 @@
 .code-container { margin: 20px 0; }
 
 .code-container .hljs { background: none; }
+.code-container .hljs-string { color: #F2771F; }
 
 .code-container pre {
     border-bottom: 1px solid #ddd;
@@ -86,4 +87,9 @@
 
 .zero-clipboard {
     position:relative;
+}
+
+.map-container-example {
+    height:450px;
+    margin-bottom:0px;
 }

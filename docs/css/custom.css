@@ -289,21 +289,6 @@
     margin-top: -1px;
 }
 
-
-/* ========================================================================
- * Map Component
- * ======================================================================== */
-
-.map-container-example{
-  height:450px;
-  margin-bottom:0px;
-}
-.map-container-example .leaflet-popup-content-wrapper{
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-}
-
 /* ========================================================================
  * Form Validation Component
  * ======================================================================== */
