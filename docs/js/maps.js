@@ -23,9 +23,9 @@ $(function() {
         var lat = $('.map-container-example').data('lat'),
             long    = $('.map-container-example').data('long'),
             container = 'map-example',
-            zoomLevel = 17,
-            tileSet = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-            attrib =  '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+            zoomLevel = 18,
+            tileSet = 'https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',
+            subDomains = ['mt0','mt1','mt2','mt3'];
 
         if(lat != null && lat != undefined && lat != "" && long != null && long != undefined && long != "") {
             $('.map-error').hide();
@@ -35,8 +35,10 @@ $(function() {
             $('.map-error').show();
         }
 
-        var map = L.map(container).setView([lat,long], zoomLevel);
-
+        var map = L.map(container,{
+            zoom: zoomLevel,
+            center: [6.909877,79.852523]
+        });
         L.tileLayer(tileSet, { attribution: attrib}).addTo(map);
         L.marker([lat,long]).addTo(map).bindPopup('Your are here..!').openPopup();
     }

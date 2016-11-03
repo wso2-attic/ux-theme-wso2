@@ -23,35 +23,37 @@ Leafletjs Maps
     <div class="map-error">Device location cannot be retrieved...</div>
 
     <div class="code">
-        
+
         <div class="code-html">
 <div id="map" class="map-container" data-lat="6.909877" data-long="79.852523"></div>
 <div class="map-error">Device location cannot be retrieved...</div>
         </div>
-        
+
         <div class="code-js hide">
-if($('.map-container').length){
-    var lat = $('.map-container').data('lat'),
-    long    = $('.map-container').data('long'),
-    container = 'map',
-    zoomLevel = 17,
-    tileSet = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-    attrib =  '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+            if($('.map-container').length){
+                var lat = $('.map-container').data('lat'),
+                long    = $('.map-container').data('long'),
+                container = 'map',
+                zoomLevel = 18,
+                tileSet = 'https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',
+                subDomains = ['mt0','mt1','mt2','mt3'];
 
-    if(lat != null && lat != undefined && lat != "" && long != null && long != undefined && long != "") {
-        $('.map-error').hide();
-        $('.map-container').show();
-    }else{
-        $('.map-container').hide();
-        $('.map-error').show();
-    }
+                if(lat != null && lat != undefined && lat != "" && long != null && long != undefined && long != "") {
+                    $('.map-error').hide();
+                    $('.map-container').show();
+                }else{
+                    $('.map-container').hide();
+                    $('.map-error').show();
+                }
 
-    var map = L.map(container).setView([lat,long], zoomLevel);
-
-    L.tileLayer(tileSet, { attribution: attrib}).addTo(map);
-    L.marker([lat,long]).addTo(map).bindPopup('Your are here..!').openPopup();
-}
+                var map = L.map(container,{
+                    zoom: zoomLevel,
+                    center: [6.909877,79.852523]
+                });
+                L.tileLayer(tileSet, {subdomains: subDomains}).addTo(map);
+                L.marker([lat,long]).addTo(map).bindPopup('Your are here..!').openPopup();
+            }
         </div>
-        
+
     </div>
 </div>
