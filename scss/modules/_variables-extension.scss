@@ -30,6 +30,12 @@ $brand-danger:    #d9534f !default;
 $brand-disabled:  $gray !default;
 $brand-optional:  #F47A1E !default;
 
+// Scaffolding
+//-------------------------------------------------------------------------------------------------
+$link-color:            $brand-optional !default;
+$link-decoration:       none !default;
+$link-hover-decoration: underline !default;
+
 // Typography
 //--------------------------------------------------------------------------------------------------
 $font-family-base:        'Roboto', Arial, Helvetica, sans-serif !default;

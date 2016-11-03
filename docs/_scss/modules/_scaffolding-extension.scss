@@ -29,9 +29,9 @@ body.inverse {
     color: $body-inverse-color;
 }
 
-a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    cursor: pointer;
+a {
+  text-decoration: $link-decoration;
+  cursor: pointer;
 }
 
 .fade-edge {

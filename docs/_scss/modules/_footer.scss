@@ -29,6 +29,7 @@ footer {
     & a,
     & a:hover {
          color: $footer-color;
+         text-decoration: none;
     }
 }
 

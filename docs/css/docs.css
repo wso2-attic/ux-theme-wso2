@@ -50,6 +50,11 @@
 
 .doc-description { color: #fff; }
 
+.code-container .nav-tabs li a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .code-container .nav-tabs li.active a,
 .code-container .nav-tabs li > a:hover {
     background-color: #f5f5f5;
@@ -58,6 +63,7 @@
 .code-container { margin: 20px 0; }
 
 .code-container .hljs { background: none; }
+
 .code-container .hljs-string { color: #F2771F; }
 
 .code-container pre {
@@ -96,9 +102,7 @@
     border-radius: 0 4px 0 4px;
 }
 
-.zero-clipboard {
-    position:relative;
-}
+.zero-clipboard { position:relative; }
 
 .map-container-example {
     height:450px;
