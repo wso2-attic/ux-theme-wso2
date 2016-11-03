@@ -35,35 +35,107 @@ title: Overview
                 </div>
             </div>
         </div>
-        <div class="row">
+        
+        <div class="row add-margin-bottom-4x">
             <div class="col-md-12">
-                <h3 class="text-medium">Precompiled WSO2 Theme</h3>
-                <p>Once downloaded, unzip the compressed folder to see the structure of the precompiled WSO2 Theme CSS and font assets.</p>
-    <pre><code class="language-bash" data-lang="bash">
+                <h1>Getting Started</h2>
+                <p>
+                    It's easy to get started with {{ site.title }} distribution zip by clicking the above [Download] button.<br>
+                    And see below the file structure of the download and use the start-up template to create a basic "Hello World!" HTML page.
+                </p>
+            </div>            
+        </div>
+        
+        <div class="row add-margin-bottom-4x">
+            <div class="col-md-12">
+                <h4>Precompiled WSO2 Theme</h4>
+                <p>Once you download the distribution zip file, unzip to see the structure of the precompiled {{ site.title }} assets.</p>
+                <p><b>NOTE:-</b> Bootstrap included!</p>
+<pre><code class="language-bash" data-lang="bash">
     root/ [ where your page is ]
     ├── css/
     │   ├── theme-wso2.css
     │   ├── theme-wso2.min.css
     │   ├── theme-wso2.css.map
-    │   ├── theme-wso2-ie.css
-    │   ├── theme-wso2-ie.min.css
-    │   ├── theme-wso2-ie.css.map
     ├── js/
     │   ├── theme-wso2.js
     │   ├── theme-wso2.min.js
+    │   ├── bootstrap.js
+    │   ├── bootstrap.min.js
     ├── extensions/
     │   ├── datatables/
     │   ├── jstree/
     │   ├── noty/
+    ├── images/
     └── fonts/
         └── Roboto
-    </code></pre>
+</code></pre>
             </div>
         </div>
-        <div class="row">
+        
+        <div class="row add-margin-bottom-4x">
             <div class="col-md-12">
-                <h3 class="text-medium">WSO2 Theme source code</h3>
-                <p>The WSO2 Theme source code download includes the precompiled CSS, JavaScript and font assets, along with source Sass, JavaScript and documentation.</p>
+                <h4>Basic template</h4>
+                <p>Start with this basic HTML template and customize adapting it to suit your needs.</p>
+                
+                <div class="message message-warning">
+                    <h4><i class="icon fw fw-warning"></i>jQuery required</h4>
+                    <p>Please note that JavaScript plugin require jQuery to be included, as shown in the below starter template.</p>
+                </div>
+                
+                <div class="code hide">
+<code class="code-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+        &lt;!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags --&gt;
+        &lt;title&gt;WSO2 Theme Template&lt;/title&gt;
+
+        &lt;!-- WSO2 Theme --&gt;
+        &lt;link href="css/theme-wso2.min.css" rel="stylesheet"&gt;
+
+        &lt;!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --&gt;
+        &lt;!-- WARNING: Respond.js doesn't work if you view the page via file:// --&gt;
+        &lt;!--[if lt IE 9]&gt;
+        &lt;script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"&gt;&lt;/script&gt;
+        &lt;script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"&gt;&lt;/script&gt;
+        &lt;![endif]--&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+
+        &lt;!-- jQuery (necessary for Bootstrap and WSO2 Theme JavaScript plugins) --&gt;
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+        &lt;!-- Include all compiled plugins (below), or include individual files as needed --&gt;
+        &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;
+        &lt;script src="js/theme-wso2.min.js"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code>                   
+                </div>
+            </div>
+        </div>
+        
+        <div class="row add-margin-bottom-4x">
+            <div class="col-md-12">
+                <h1>Customize colors & styles</h2>
+                <p>
+                    {{ site.title }} uses <a href="http://gruntjs.com/" target="_blank" class="doc-link">Grunt</a> for its build system,
+                    and requires <a href="https://nodejs.org/en/" target="_blank" class="doc-link">node.js</a> to run Grunt and 
+                    <a href="https://www.ruby-lang.org/en/" target="_blank" class="doc-link">Ruby</a> to compile 
+                    <a href="http://sass-lang.com/" target="_blank" class="doc-link">SCSS</a>.<br>
+                    Please check the documentation on there websites for the installation guide.
+                </p>
+            </div>            
+        </div>
+        
+        <div class="row add-margin-bottom-4x hidden">
+            <div class="col-md-12">
+                <h3 class="text-medium">Source code</h3>
+                <p>Source code includes the precompiled CSS, JavaScript and font assets, along with source Sass, JavaScript and documentation.</p>
     <pre><code class="language-bash" data-lang="bash">
     theme-wso2/
     ├── scss/
@@ -84,13 +156,10 @@ title: Overview
                 </p>
             </div>
         </div>
+        
         <div class="row">
             <div class="col-md-12">
-                <h3 class="text-medium">Compiling CSS</h3>
-                <p>WSO2 Theme uses <a href="http://gruntjs.com/" target="_blank" class="doc-link">Grunt</a> for its build system,
-                    this requires <a href="https://nodejs.org/en/" target="_blank" class="doc-link">node.js</a> and <a href="https://www.ruby-lang.org/en/" target="_blank" class="doc-link">ruby</a>.</p>
-                <br/>
-                <h4 class="text-medium">Installing Grunt</h4>
+                <h4>Installing Grunt</h4>
                 <p>To install Grunt, first download and install <a href="https://nodejs.org/en/" target="_blank" class="doc-link">node.js</a> (which includes npm).
                 Then, from the command line:</p>
                 <p>1. Install grunt-cli globally</p>
@@ -134,51 +203,13 @@ title: Overview
                     </div>
                 </div>
                 <p>To serve docs</p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <pre class="command"><code>grunt serve</code></pre><br/>
-                        </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <pre class="command"><code>grunt serve</code></pre><br/>
                     </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="text-medium">Basic template</h3>
-                <p>Start with this basic HTML template and customize adapting it to suit your needs.</p>
-                <div class="code hide">
-<code class="code-html">
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-    &lt;head&gt;
-        &lt;meta charset="utf-8"&gt;
-        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
-        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-        &lt;!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags --&gt;
-        &lt;title&gt;WSO2 Theme Template&lt;/title&gt;
-
-        &lt;!-- WSO2 Theme --&gt;
-        &lt;link href="css/theme-wso2.min.css" rel="stylesheet"&gt;
-
-        &lt;!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --&gt;
-        &lt;!-- WARNING: Respond.js doesn't work if you view the page via file:// --&gt;
-        &lt;!--[if lt IE 9]&gt;
-        &lt;script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"&gt;&lt;/script&gt;
-        &lt;script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"&gt;&lt;/script&gt;
-        &lt;![endif]--&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;h1&gt;Hello, world!&lt;/h1&gt;
-
-        &lt;!-- jQuery (necessary for Bootstrap and WSO2 Theme JavaScript plugins) --&gt;
-        &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
-        &lt;!-- Include all compiled plugins (below), or include individual files as needed --&gt;
-        &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;
-        &lt;script src="js/theme-wso2.min.js"&gt;&lt;/script&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-</code>                   
                 </div>
             </div>
         </div>
+        
     </div>
 </div>

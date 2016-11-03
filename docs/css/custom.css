@@ -564,17 +564,6 @@
     background-color:#F47A1E;
 }
 
-.btn-outline-inverse {
-    color: #fff;
-    background-color: transparent;
-    border-color: #cdbfe3;
-}
-
-.btn-outline-inverse:hover{
-    color: #F47A1E;
-    border-color: #F47A1E;
-}
-
 /*
 #overview-page > div:first-child{
     background-color: #191919
