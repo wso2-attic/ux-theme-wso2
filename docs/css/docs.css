@@ -89,7 +89,7 @@
 
 .btn-clipboard {
     position: absolute;
-    top: 0;
+    top: -1px;
     right: 0;
     z-index: 10;
     display: block;
@@ -99,7 +99,12 @@
     cursor: pointer;
     background-color: #fff;
     border: 1px solid #e1e1e8;
-    border-radius: 0 4px 0 4px;
+}
+
+.btn-clipboard.zeroclipboard-is-hover {
+    background-color: #F2771F;
+    border-color: #F2771F;
+    color: #fff;
 }
 
 .zero-clipboard { position:relative; }

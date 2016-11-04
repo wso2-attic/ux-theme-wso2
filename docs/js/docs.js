@@ -66,7 +66,7 @@ $(function(){
                 codeContainer.find('.tab-content').append(
                     '<div role="tabpanel" class="tab-pane active html" id="html'+key+'">' +
                     '<div class="zero-clipboard">'+
-                    '<button class="btn btn-clipboard" data-clipboard-text="" type="button" title="Copy to clipboad">'+
+                    '<button class="btn btn-clipboard" data-clipboard-text="" type="button">'+
                     '<span class="hidden-xs">Copy</span>'+
                     '</button>'+
                     '</div>'+
