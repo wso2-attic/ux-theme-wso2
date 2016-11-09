@@ -10,7 +10,7 @@ http://wso2-dev-ux.github.io/theme-wso2/
 WSO2 Theme uses [Grunt](http://gruntjs.com) for its CSS and JavaScript build system and Jekyll for the written documentation. 
 Our Gruntfile includes convenient methods for working with the framework, including compiling code.
 
-** Prerequisite **
+**Prerequisite**
 
 To run the build, this requires [grunt](http://gruntjs.com/getting-started) > 0.4, node, sass, ruby
 
