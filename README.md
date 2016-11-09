@@ -12,7 +12,7 @@ Our Gruntfile includes convenient methods for working with the framework, includ
 
 **Prerequisite**
 
-To run the build, this requires [grunt](http://gruntjs.com/getting-started) > 0.4, node, sass, ruby
+To run the build, this requires [grunt](http://gruntjs.com/getting-started) > 0.4, node, sass, ruby, jekyll
 
 ### Tooling setup
 
