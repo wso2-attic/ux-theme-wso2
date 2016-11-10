@@ -199,7 +199,12 @@ module.exports = function(grunt) {
                 }
             },
             jekyll_serve: {
-                command: 'jekyll serve',
+                command: function(){
+                    var flags = grunt.option.flags();
+                    flags = flags.toString();
+                    flags = flags.replace(/([=,])|(--color)/g, ' ');
+                    return 'jekyll serve ' + flags;
+                },
                 stdout: true,
                 options: {
                     stderr: false,
