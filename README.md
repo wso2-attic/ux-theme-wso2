@@ -1,4 +1,4 @@
-# Theme WSO2
+# [Theme WSO2](http://wso2-dev-ux.github.io/theme-wso2/)
 
 **WSO2 Products UI Template Wrappers And Components**   
 http://wso2-dev-ux.github.io/theme-wso2/
@@ -12,7 +12,7 @@ Our Gruntfile includes convenient methods for working with the framework, includ
 
 **Prerequisite**
 
-To run the build, this requires [grunt](http://gruntjs.com/getting-started) > 0.4, node, sass, ruby, jekyll
+To run the build, this requires [grunt](http://gruntjs.com/), [node](https://nodejs.org/en/), [sass](http://sass-lang.com/), [jekyll](https://jekyllrb.com/), [ruby](https://www.ruby-lang.org/en/)
 
 ### Tooling setup
 
