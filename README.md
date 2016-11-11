@@ -12,18 +12,18 @@ Our Gruntfile includes convenient methods for working with the framework, includ
 
 **Prerequisite**
 
-To run the build, this requires [grunt](grunt-install), [node](node-install), [sass](sass-install), [jekyll](jekyll-install), [ruby](ruby-install)
+To run the build, this requires [grunt][grunt-install], [node][node-install], [sass][sass-install], [jekyll][jekyll-install], [ruby][ruby-install]
 
 ### Tooling setup
 
 To run the documentation locally, you'll need a copy of Theme WSO2's source files, Node, and Grunt. Follow these steps and you should be ready:
 
-1. [Install Node](node-install), which we use to manage our dependencies.
+1. [Install Node][node-install], which we use to manage our dependencies.
 2. Install the Grunt command line tools, `grunt-cli`, with `npm install -g grunt-cli`.
 3. Navigate to the root `/theme-wso2` directory and run `npm install` to install our local dependencies listed in [package.json](https://github.com/wso2-dev-ux/theme-wso2/blob/master/package.json).
-4. [Install Ruby](ruby-install).
-5. Then install [Sass](sass-install) with `gem install sass`. 
-6. And finally install [Jekyll](jekyll-install) with `gem install jekyll`.
+4. [Install Ruby][ruby-install].
+5. Then install [Sass][sass-install] with `gem install sass`. 
+6. And finally install [Jekyll][jekyll-install] with `gem install jekyll`.
 
 [grunt-install]: http://gruntjs.com/getting-started
 [node-install]: https://nodejs.org/download
