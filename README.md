@@ -49,7 +49,7 @@ Our Gruntfile includes the following commands and tasks:
 Running our documentation locally requires the use of Jekyll, a decently flexible static site generator that provides us: 
 basic includes, Markdown-based files, templates, and more. Here's how to get it started:
 
-1. Run through the [tooling setup](#tooling-setup) above to install Jekyll (the site builder) and other Ruby dependencies with `bundle install`.
+1. Run through the [tooling setup](#tooling-setup) above to install Jekyll (the site builder) and other dependencies.
 2. From the root `/theme-wso2` directory, run `grunt serve` in the command line.
 3. Open <http://localhost:4000> in your browser to see the documentation.
 
