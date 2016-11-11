@@ -61,7 +61,9 @@ _xmsgs/
 .DS_Store
 atlassian-ide-plugin.xml
 
-.sass-cache/
-build/
+# project generated folders
+.sass-cache
+.idea
+_site/
 node_modules/
 
