@@ -1,6 +1,6 @@
 # [Theme WSO2](http://wso2-dev-ux.github.io/theme-wso2/)
 
-**WSO2 Products UI Template Wrappers And Components**   
+**WSO2 Products UI Templates And Components**   
 http://wso2-dev-ux.github.io/theme-wso2/
 
 ---
