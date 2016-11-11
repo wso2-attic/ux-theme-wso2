@@ -1,4 +1,4 @@
-# WSO2 Theme
+# Theme WSO2
 
 **WSO2 Products UI Template Wrappers And Components**   
 http://wso2-dev-ux.github.io/theme-wso2/
@@ -7,7 +7,7 @@ http://wso2-dev-ux.github.io/theme-wso2/
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-WSO2 Theme uses [Grunt](http://gruntjs.com) for its CSS and JavaScript build system and Jekyll for the written documentation. 
+Theme WSO2 uses [Grunt](http://gruntjs.com) for its CSS and JavaScript build system and Jekyll for the written documentation. 
 Our Gruntfile includes convenient methods for working with the framework, including compiling code.
 
 **Prerequisite**
@@ -18,15 +18,14 @@ To run the build, this requires [grunt](http://gruntjs.com/getting-started) > 0.
 
 To run the documentation locally, you'll need a copy of Theme WSO2's source files, Node, and Grunt. Follow these steps and you should be ready:
 
-1. [Download and install Node](https://nodejs.org/download/), which we use to manage our dependencies.
+1. [Install Node](https://nodejs.org/download/), which we use to manage our dependencies.
 2. Install the Grunt command line tools, `grunt-cli`, with `npm install -g grunt-cli`.
 3. Navigate to the root `/theme-wso2` directory and run `npm install` to install our local dependencies listed in [package.json](https://github.com/wso2-dev-ux/theme-wso2/blob/master/package.json).
-4. [Install Ruby][install-ruby], install [Bundler][gembundler] with `gem install bundler`, and finally run `bundle install`. This will install all Ruby dependencies, such as Jekyll and plugins.
+4. [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/).
+5. Then install [Sass](http://sass-lang.com/install) with `gem install sass`. 
+6. And finally install [Jekyll](https://jekyllrb.com/docs/installation/) with `gem install jekyll`.
 
-When completed, you'll be able to run the various Grunt commands provided from the command line.
-
-[install-ruby]: https://www.ruby-lang.org/en/documentation/installation/
-[gembundler]: https://bundler.io/
+Once completed, you'll be able to run the various Grunt commands provided from the command line.
 
 ### Using Grunt
 
@@ -34,9 +33,9 @@ Our Gruntfile includes the following commands and tasks:
 
 | Task | Description |
 | --- | --- |
-| `grunt` | Run `grunt` to compile the CSS and JavaScript into `/dist` |
-| `grunt docs` | Build and move other required assets to documentation folder which are used when running the documentation locally via `jekyll serve`. |
-| `grunt serve` | To run jekyll server from root: `/theme-wso2` level |
+| `grunt` | To compile the CSS and JavaScript into `/dist`. |
+| `grunt docs` | Build and move other required assets to documentation folder which are used when running the documentation locally. |
+| `grunt serve` | To run documentation locally. This runs the shell command `jekyll serve` on the subfolder: `/docs`. Since it uses pure jekyll, you can use [jekyll flags](https://jekyllrb.com/docs/configuration/) along with it. e.g. `grunt serve --port 4001` |
 | `grunt product:<porduct-short-name>` | To compile custom CSS for specific products with some additional configurations. e.g. `grunt product:cloud` to compile custom CSS for Product Cloud. |
 
 ### Local documentation
