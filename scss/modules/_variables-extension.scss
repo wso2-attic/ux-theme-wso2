@@ -11,6 +11,10 @@ $sides:           top, bottom, left, right  !default;
 $sizes-length:    5 !default;
 $default-gap:     5px !default;
 
+// Smooth transitions on hover activator
+//-------------------------------------------------------------------------------------------------
+$smooth-hover: true;
+
 // Colors
 //--------------------------------------------------------------------------------------------------
 $gray-base:       #000 !default;
@@ -28,7 +32,7 @@ $brand-info:      #009DA7 !default;
 $brand-warning:   #f0ad4e !default;
 $brand-danger:    #d9534f !default;
 $brand-disabled:  $gray !default;
-$brand-optional:  #F47A1E !default;
+$brand-optional:  #f47a1e !default;
 
 // Scaffolding
 //-------------------------------------------------------------------------------------------------
@@ -281,6 +285,7 @@ $tiles-link-color:          $gray-darker !default;
 $tree-view-icon-bg:         $brand-primary !default;
 $tree-view-icon-color:      $gray-lightest !default;
 
-// Smooth transitions on hover activator
+// Code
 //-------------------------------------------------------------------------------------------------
-$smooth-hover: true;
+$code-color:                $link-color !default;
+$code-bg:                   lighten($code-color, 70%) !default;
