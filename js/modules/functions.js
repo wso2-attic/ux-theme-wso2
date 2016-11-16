@@ -487,7 +487,7 @@ $.sidebar_toggle = function(action, target, container) {
                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
                 }
                 else {
-                   $(target).css(targetSide, Math.abs(targetWidth + targetOffsetLeft)); 
+                   $(target).css(targetSide, targetOffsetLeft);
                 }
             }
             else if (targetSide == 'right'){
@@ -500,7 +500,7 @@ $.sidebar_toggle = function(action, target, container) {
                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
                 }
                 else {
-                   $(target).css(targetSide, Math.abs(targetWidth + targetOffsetRight)); 
+                   $(target).css(targetSide, targetOffsetRight);
                 }
             }
 
