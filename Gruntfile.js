@@ -74,8 +74,15 @@ module.exports = function(grunt) {
                 files: {
                     'dist/js/<%= pkg.name %>.js': [
                         'js/header.js',
+                        'js/modules/util.js',
+                        'js/modules/file-input.js',
                         'js/modules/loading.js',
-                        'js/modules/functions.js',
+                        'js/modules/responsive-text.js',
+                        'js/modules/tree-view.js',
+                        'js/modules/sidebar-toggle.js',
+                        'js/modules/collapse-nav-sub.js',
+                        'js/modules/zclip.js',
+                        'js/modules/random-background-color.js',
                         'js/footer.js',
                         'js/modules/optional.js'
                     ],

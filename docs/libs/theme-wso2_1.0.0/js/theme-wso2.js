@@ -24,43 +24,6 @@ if (typeof(jQuery) === 'undefined') {
 
 (function($) {
 /**
- * @description Data Loader function
- * @param  {String}     action of the loader
- */
-$.fn.loading = function(action) {
-
-    return $(this).each(function() {
-        var loadingText = ($(this).data('loading-text') === undefined) ? 'LOADING' : $(this).data('loading-text');
-
-        var icon = ($(this).data('loading-image') === undefined) ? '' +
-                    '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"' +
-                    'viewBox="0 0 14 14" enable-background="new 0 0 14 14" xml:space="preserve">' +
-                    '<path class="circle" stroke-width="1.4" stroke-miterlimit="10" d="M6.534,0.748C7.546,0.683,8.578,0.836,9.508,1.25 c1.903,0.807,3.339,2.615,3.685,4.654c0.244,1.363,0.028,2.807-0.624,4.031c-0.851,1.635-2.458,2.852-4.266,3.222 c-1.189,0.25-2.45,0.152-3.583-0.289c-1.095-0.423-2.066-1.16-2.765-2.101C1.213,9.78,0.774,8.568,0.718,7.335 C0.634,5.866,1.094,4.372,1.993,3.207C3.064,1.788,4.76,0.867,6.534,0.748z"/>' +
-                    '<path class="pulse-line" stroke-width="0.55" stroke-miterlimit="10" d="M12.602,7.006c-0.582-0.001-1.368-0.001-1.95,0 c-0.491,0.883-0.782,1.4-1.278,2.28C8.572,7.347,7.755,5.337,6.951,3.399c-0.586,1.29-1.338,3.017-1.923,4.307 c-1.235,0-2.38-0.002-3.615,0"/>' +
-                    '</svg>' +
-                    '<div class="signal"></div>'
-                    :
-                    '<img src="'+$(this).data('loading-image')+'" />';
-
-        var html = '<div class="loading-animation">' +
-            '<div class="logo">' +
-            icon +
-            '</div>' +
-            '<p>' + loadingText + '</p>' +
-            '</div>' +
-            '<div class="loading-bg"></div>';
-
-        if (action === 'show') {
-            $(this).prepend(html).addClass('loading');
-        }
-        if (action === 'hide') {
-            $(this).removeClass('loading');
-            $('.loading-animation, .loading-bg', this).remove();
-        }
-    });
-
-};
-/**
  * @description Dependancy injection function
  * @param  {String}     File    Name of the dependancy
  * @param  {String}     Type    Dependancy type
@@ -117,7 +80,6 @@ $.browser_meta = function() {
         .addClass(((!!('ontouchstart' in window) || !!('onmsgesturechange' in window)) ? ' touch' : ''));
 };
 
-
 /**
  * Cross browser file input controller
  * @return {Node} DOM Node
@@ -158,6 +120,44 @@ $.file_input = function() {
 };
 
 /**
+ * @description Data Loader function
+ * @param  {String}     action of the loader
+ */
+$.fn.loading = function(action) {
+
+    return $(this).each(function() {
+        var loadingText = ($(this).data('loading-text') === undefined) ? 'LOADING' : $(this).data('loading-text');
+
+        var icon = ($(this).data('loading-image') === undefined) ? '' +
+                    '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"' +
+                    'viewBox="0 0 14 14" enable-background="new 0 0 14 14" xml:space="preserve">' +
+                    '<path class="circle" stroke-width="1.4" stroke-miterlimit="10" d="M6.534,0.748C7.546,0.683,8.578,0.836,9.508,1.25 c1.903,0.807,3.339,2.615,3.685,4.654c0.244,1.363,0.028,2.807-0.624,4.031c-0.851,1.635-2.458,2.852-4.266,3.222 c-1.189,0.25-2.45,0.152-3.583-0.289c-1.095-0.423-2.066-1.16-2.765-2.101C1.213,9.78,0.774,8.568,0.718,7.335 C0.634,5.866,1.094,4.372,1.993,3.207C3.064,1.788,4.76,0.867,6.534,0.748z"/>' +
+                    '<path class="pulse-line" stroke-width="0.55" stroke-miterlimit="10" d="M12.602,7.006c-0.582-0.001-1.368-0.001-1.95,0 c-0.491,0.883-0.782,1.4-1.278,2.28C8.572,7.347,7.755,5.337,6.951,3.399c-0.586,1.29-1.338,3.017-1.923,4.307 c-1.235,0-2.38-0.002-3.615,0"/>' +
+                    '</svg>' +
+                    '<div class="signal"></div>'
+                    :
+                    '<img src="'+$(this).data('loading-image')+'" />';
+
+        var html = '<div class="loading-animation">' +
+            '<div class="logo">' +
+            icon +
+            '</div>' +
+            '<p>' + loadingText + '</p>' +
+            '</div>' +
+            '<div class="loading-bg"></div>';
+
+        if (action === 'show') {
+            $(this).prepend(html).addClass('loading');
+        }
+        if (action === 'hide') {
+            $(this).removeClass('loading');
+            $('.loading-animation, .loading-bg', this).remove();
+        }
+    });
+
+};
+
+/**
  * @description Auto resize icons and text on browser resize
  * @param  {Number}     Compression Ratio
  * @param  {Object}     Object containing the values to override defaults
@@ -191,242 +191,6 @@ $.fn.responsive_text = function(compress, options) {
     });
 
 };
-
-/**
- * @description Random background color generator for thumbs
- * @param  {range}      Color Range Value
- * @return {Node}       DOM Node
- */
-$.fn.random_background_color = function(range) {
-
-    if (!range) {
-        range = 9;
-    }
-
-    return this.each(function() {
-
-        var color = '#' + Math.random().toString(range).substr(-6);
-        $(this).css('background', color);
-
-    });
-
-};
-
-/**
- * Data tables extended functionality wrapper
- * @param  {Object} settings Settings to override the defaults data tables behaviour
- * @return {Null}
- */
-$.fn.datatables_extended = function(settings) {
-
-    if(typeof $.fn.DataTable != 'function'){
-        console.warn('Warning : Dependency missing - DataTable Library');
-    }
-    else {
-        var elem = $(this);
-
-        $(elem).DataTable(
-            $.extend({}, {
-                bSortCellsTop: true,
-                responsive: false,
-                autoWidth: false,
-                dom: '<"dataTablesTop"' +
-                'f' +
-                '<"dataTables_toolbar">' +
-                '>' +
-                'rt' +
-                '<"dataTablesBottom"' +
-                'lip' +
-                '>',
-                language: {
-                    searchPlaceholder: 'Filter by ...',
-                    search: ''
-                },
-                initComplete: function () {
-
-                    var ROW_SELECTED_CLASS = 'DTTT_selected';
-
-                    this.api().columns().every(function () {
-
-                        var column = this;
-                        var filterColumn = $('.filter-row th', elem);
-
-                        //Create & add select/text filters to each column
-                        if (filterColumn.eq(column.index()).hasClass('select-filter')) {
-                            var select = $('<select class="form-control"><option value="">All</option></select>')
-                                .appendTo(filterColumn.eq(column.index()).empty())
-                                .on('change', function () {
-                                    var val = $.fn.dataTable.util.escapeRegex(
-                                        $(this).val()
-                                    );
-
-                                    column
-                                        .search(val ? '^' + val + '$' : '', true, false)
-                                        .draw();
-                                });
-
-                            $(column).each(function () {
-                                if ($(column.nodes()).attr('data-search')) {
-                                    var titles = [];
-                                    column.nodes().unique().sort().each(function (d, j) {
-                                        var title = $(d).attr('data-display');
-                                        if ($.inArray(title, titles) < 0) {
-                                            titles.push(title);
-                                            if (title !== undefined) {
-                                                select.append('<option value="' + title + '">' + title + '</option>')
-                                            }
-                                        }
-                                    });
-                                } else {
-                                    column.data().unique().sort().each(function (d, j) {
-                                        select.append('<option value="' + d + '">' + d + '</option>')
-                                    });
-                                }
-                            });
-                        } else if (filterColumn.eq(column.index()).hasClass('text-filter')) {
-                            var title = filterColumn.eq(column.index()).attr('data-for');
-                            $(filterColumn.eq(column.index()).empty()).html('<input type="text" class="form-control" placeholder="Search for ' + title + '" />');
-
-                            filterColumn.eq(column.index()).find('input').on('keyup change', function () {
-                                column
-                                    .search($(this).val())
-                                    .draw();
-                            });
-                        }
-
-                    });
-
-                    //Search input default styles override
-                    var search_input = $(this).closest('.dataTables_wrapper').find('div[id$=_filter] input');
-                    search_input.before('<i class="fw fw-search search-icon"></i>').removeClass('input-sm');
-
-                    // Create sorting dropdown menu for list table advance operations
-                    var dropdownmenu = $('<ul class="dropdown-menu arrow arrow-top-right dark sort-list add-margin-top-2x"><li class="dropdown-header">Sort by</li></ul>');
-                    $('.sort-row th', elem).each(function () {
-                        if (!$(this).hasClass('no-sort')) {
-                            dropdownmenu.append('<li><a href="#' + $(this).html() + '" data-column="' + $(this).index() + '">' + $(this).html() + '</a></li>');
-                        }
-                    });
-
-                    //Append advance operations to list table toolbar
-                    $('.dataTable.list-table').closest('.dataTables_wrapper').find('.dataTablesTop .dataTables_toolbar').html('' +
-                        '<ul class="nav nav-pills navbar-right remove-margin" role="tablist">' +
-                        '<li><button data-click-event="toggle-select" class="btn btn-default btn-primary">Select</li>' +
-                        '<li class="select-all-btn" style="display:none;"><button data-click-event="toggle-select-all" class="btn btn-default btn-primary">Select All</li>' +
-                        '<li><button data-click-event="toggle-list-view" data-view="grid" class="btn btn-default"><i class="fw fw-grid"></i></button></li>' +
-                        '<li><button data-click-event="toggle-list-view" data-view="list" class="btn btn-default"><i class="fw fw-list"></i></button></li>' +
-                        '<li><button class="btn btn-default" data-toggle="dropdown"><i class="fw fw-sort"></i></button>' + dropdownmenu[0].outerHTML + '</li>' +
-                        '</ul>'
-                    );
-
-                    //Sorting dropdown menu select function
-                    $('.dataTables_wrapper .sort-list li a').click(function () {
-                        $(this).closest('li').siblings('li').find('a').removeClass('sorting_asc').removeClass('sorting_desc');
-
-                        var thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
-
-                        if (!($(this).hasClass('sorting_asc')) && !($(this).hasClass('sorting_desc'))) {
-                            $(this).addClass('sorting_asc');
-                            thisTable.fnSort([
-                                [$(this).attr('data-column'), 'asc']
-                            ]);
-                        } else if ($(this).hasClass('sorting_asc')) {
-                            $(this).switchClass('sorting_asc', 'sorting_desc');
-                            thisTable.fnSort([
-                                [$(this).attr('data-column'), 'desc']
-                            ]);
-                        } else if ($(this).hasClass('sorting_desc')) {
-                            $(this).switchClass('sorting_desc', 'sorting_asc');
-                            thisTable.fnSort([
-                                [$(this).attr('data-column'), 'asc']
-                            ]);
-                        }
-                    });
-
-                    //Enable/Disable selection on rows
-                    $('.dataTables_wrapper').off('click', '[data-click-event=toggle-select]');
-                    $('.dataTables_wrapper').on('click', '[data-click-event=toggle-select]', function () {
-                        var button = this,
-                            thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
-                        if ($(button).html() == 'Select') {
-                            thisTable.api().rows().every(function () {
-                                $(this.node()).attr('data-type','selectable');
-                            });
-                            thisTable.addClass("table-selectable");
-                            $(button).addClass("active").html('Cancel');
-                            $(button).closest('li').siblings('.select-all-btn').show();
-                        } else if ($(button).html() == 'Cancel'){
-                            thisTable.api().rows().every(function () {
-                                $(this.node()).removeAttr('data-type');
-                                $(this.node()).removeClass(ROW_SELECTED_CLASS);
-                            });
-                            thisTable.removeClass("table-selectable");
-                            $(button).removeClass("active").html('Select');
-                            $(button).closest('li').siblings('.select-all-btn').hide();
-                        }
-                    });
-
-                    //Select/Deselect all rows functions
-                    $('.dataTables_wrapper').off('click', '[data-click-event=toggle-select-all]');
-                    $('.dataTables_wrapper').on('click', '[data-click-event=toggle-select-all]', function () {
-                        var button = this,
-                            thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
-                        if ($(button).html() == 'Select All') {
-                            thisTable.api().rows().every(function () {
-                                $(this.node()).addClass(ROW_SELECTED_CLASS);
-                                $(button).html('Deselect All');
-                            });
-                        } else if ($(button).html() == 'Deselect All') {
-                            thisTable.api().rows().every(function () {
-                                $(this.node()).removeClass(ROW_SELECTED_CLASS);
-                                $(button).html('Select All');
-                            });
-                        }
-                    });
-
-
-                    //Event for row select/deselect
-                    $('body').on('click', '[data-type=selectable]', function() {
-                        $(this).toggleClass(ROW_SELECTED_CLASS);
-                        var button = this,
-                            thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
-
-                        thisTable.api().rows().every(function () {
-                            if (!$(this.node()).hasClass(ROW_SELECTED_CLASS)) {
-                                $(button).closest('.dataTables_wrapper').find('[data-click-event=toggle-selected]').html('Select All');
-                            }
-                        });
-                    });
-
-                    //list table list/grid view toggle function
-                    var toggleButton = $('[data-click-event=toggle-list-view]');
-                    toggleButton.click(function () {
-                        if ($(this).attr('data-view') == 'grid') {
-                            $(this).closest('.dataTables_wrapper').find('.dataTable').addClass('grid-view');
-                            //$(this).closest('li').hide();
-                            //$(this).closest('li').siblings().show();
-                        } else {
-                            $(this).closest('.dataTables_wrapper').find('.dataTable').removeClass('grid-view');
-                            //$(this).closest('li').hide();
-                            //$(this).closest('li').siblings().show();
-                        }
-                    });
-
-                    //delete selected rows
-                    $('[data-click-event=delete-selected-rows]').click(function () {
-                        var thisTable = $(this).closest('.dataTables_wrapper').find('.dataTable').dataTable();
-                        thisTable.api().rows('.' + ROW_SELECTED_CLASS).remove().draw(false);
-                    });
-
-                    $('.random-thumbs .thumbnail.icon').random_background_color();
-
-                }
-            }, settings)
-        );
-    }
-
-};
-
 
 /**
  * Tree view function
@@ -466,7 +230,6 @@ $.fn.tree_view = function() {
         });
     });
 };
-
 
 /**
  * Sidebar function
@@ -663,6 +426,10 @@ $.sidebar_toggle = function(action, target, container) {
 
 };
 
+$('.sidebar-wrapper[data-fixed-offset-top]').on('affix.bs.affix', function() {
+    $(this).css('top', $(this).data('fixed-offset-top'));
+});
+
 /**
  * collapse nav sub-level function
  * @return {Null}
@@ -720,7 +487,6 @@ $.fn.collapse_nav_sub = function(){
     }
 };
 
-
 /**
  * Copy to clipboard function using ZeroClipboard plugin
  * @return object
@@ -742,13 +508,29 @@ $.fn.zclip = function() {
         console.warn('Warning : Dependency missing - ZeroClipboard Library');
     }
     return this;
-    
 };
 
-$('.sidebar-wrapper[data-fixed-offset-top]').on('affix.bs.affix', function() {
-    $(this).css('top', $(this).data('fixed-offset-top'));
-});
+/**
+ * @description Random background color generator for thumbs
+ * @param  {range}      Color Range Value
+ * @return {Node}       DOM Node
+ */
+$.fn.random_background_color = function(range) {
 
+    if (!range) {
+        range = 9;
+    }
+
+    return this.each(function() {
+
+        var color = '#' + Math.random().toString(range).substr(-6);
+        $(this).css('background', color);
+
+    });
+
+};
+
+}(jQuery));
 function windowEvents(){
     $('.sidebar-wrapper').each(function(){
         var elemOffsetBottom = $(this).data('offset-bottom'),
@@ -773,7 +555,6 @@ $(window)
     .resize(windowEvents)
     .scroll(windowEvents);
 
-}(jQuery));
 var responsiveTextRatio = 0.2,
     responsiveTextSleector = ".icon .text";
 
