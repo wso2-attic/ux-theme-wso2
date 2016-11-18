@@ -2,13 +2,8 @@
 // Sidebar
 // --------------------------------------------------
 
-.page-content-wrapper {
-  &,
-  &[data-container-behaviour=static] {
+.sidebar-target {
     position: relative;
-    left: 0;
-    margin-left: 0;
-    min-height: $page-content-wrapper-height;
     @include transition(
         left 0.5s ease,
         right 0.5s ease,
@@ -17,6 +12,14 @@
         margin-left 0.5s ease,
         margin-right 0.5s ease
     );
+}
+
+.page-content-wrapper {
+  &,
+  &[data-container-behaviour=static] {
+    left: 0;
+    margin-left: 0;
+    min-height: $page-content-wrapper-height;
   }
   &.fixed {
     & > div {

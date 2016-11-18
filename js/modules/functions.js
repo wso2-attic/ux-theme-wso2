@@ -429,22 +429,27 @@ $.sidebar_toggle = function(action, target, container) {
         update: function(target, container, button){
             conrainerOffsetLeft = $(container).data('offset-left') ? $(container).data('offset-left') : 0,
             conrainerOffsetRight = $(container).data('offset-right') ? $(container).data('offset-right') : 0,
+            targetTop = $(target).data('top') ? $(target).data('top') : 0,
             targetOffsetLeft = $(target).data('offset-left') ? $(target).data('offset-left') : 0,
             targetOffsetRight = $(target).data('offset-right') ? $(target).data('offset-right') : 0,
             targetWidth = $(target).data('width'),
             targetSide = $(target).data("side"),
-            pushType = $(container).parent().is('body') == true ? 'padding' : 'margin';
+            pushType = $(container).parent().is('body') == true ? 'margin' : 'margin';
 
             if(button !== undefined){
                 relationship = button.attr('rel') ? button.attr('rel') : '';
                 buttonParent = $(button).parent();
             }
+            
+            $(target).css('top', targetTop);
         },
         show: function(){
+            $(container).addClass('sidebar-target');
+            
             if($(target).data('sidebar-fixed') == true) {
                 $(target).height($(window).height() - $(target).data('fixed-offset'));
-            }
-
+            } 
+            
             $(target).trigger('show.sidebar');
             
             if(targetWidth !== undefined) {
@@ -480,27 +485,27 @@ $.sidebar_toggle = function(action, target, container) {
             if (targetSide == 'left'){
                 if ($(target).attr('data-container-divide')){
                    $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetLeft);
-                   $(target).css(targetSide, targetOffsetLeft);
+                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
                 }
                 else if ($(target).attr('data-container-push')){
-                   $(container).css(targetSide, targetWidth + targetOffsetLeft);
+                   $(container).css(targetSide,  Math.abs(targetWidth + targetOffsetLeft));
                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
                 }
                 else {
-                   $(target).css(targetSide, targetOffsetLeft);
+                   $(target).css(targetSide, Math.abs(targetOffsetLeft)); 
                 }
             }
             else if (targetSide == 'right'){
                 if ($(target).attr('data-container-divide')){
                    $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetRight);
-                   $(target).css(targetSide, targetOffsetRight);
-                }
-                else if ($(target).attr('data-container-push')){
-                   $(container).css(targetSide, targetWidth + targetOffsetRight);
                    $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
                 }
+                else if ($(target).attr('data-container-push')){
+                   $(container).css(targetSide, Math.abs(targetWidth + targetOffsetRight));
+                   $(target).css(targetSide,  -Math.abs(targetWidth + targetOffsetRight));
+                }
                 else {
-                   $(target).css(targetSide, targetOffsetRight);
+                   $(target).css(targetSide, Math.abs(targetOffsetRight));
                 }
             }
 
