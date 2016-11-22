@@ -195,38 +195,24 @@ $(function(){
  *  accordion config
  ***********************************************************/
 
-//$('#accordion1,#accordion2').on('shown.bs.collapse', function () {
-//    var elem = $(this).children().children('.in');
-//    var icon = $(elem).prev().find('.status').children();
-//    var iconNow = $(this).children().children('.now').prev().find('.status').children();
-//    var isIconStateDown = $(iconNow).hasClass('fw-down');
-//
-//    if($(elem).hasClass('in')){
-//        $(elem).prev().find('input[type=radio]').prop('checked',true);
-//        $(elem).addClass('now');
-//    }
-//
-//    if(isIconStateDown){
-//        $(iconNow).removeClass('fw-down');
-//        $(iconNow).addClass('fw-up');
-//    }
-//
-//});
+$('.accordion').on('shown.bs.collapse', function (e,f) {
+    var elem = $(this).children().children('.in');
+    var icon = $(elem).prev().find('.status').children();
 
+    if($(elem).hasClass('in')){
+        $(elem).prev().find('input[type=radio]').prop('checked',true);
+    }
+    icon.removeClass('fw-right');
+    icon.addClass('fw-down');
+});
 
-//$('#accordion1,#accordion2').on('hidden.bs.collapse', function () {
-//    var elem = $(this).children().children();
-//    var icon = $(elem).prev().find('.status').children();
-//    var iconNow = $(this).children().children('.now').prev().find('.status').children();
-//    var isIconStateUp = $(iconNow).hasClass('fw-up');
-//
-//    if(isIconStateUp){
-//        $(iconNow).removeClass('fw-up');
-//        $(iconNow).addClass('fw-down');
-//    }
-//
-//
-//});
+$('.accordion').on('hidden.bs.collapse', function (e,f) {
+    var elem = $(this).children().children();
+    var icon = $(elem).prev().find('.status').children();
+
+    icon.removeClass('fw-down');
+    icon.addClass('fw-right');
+});
 
 /***********************************************************
  *  Secondary toggle navigation
