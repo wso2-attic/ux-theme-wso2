@@ -36,7 +36,8 @@ $nav-wizard-tab-active-step-number-background-color: darken($nav-wizard-tab-acti
   border-bottom: 1px solid #626262;
     
   li {
-    & > a {
+    & > a,
+    & > a:focus {
       background-color: $nav-wizard-tab-background-color;
       color: #fff;
       text-align: left;
@@ -65,7 +66,8 @@ $nav-wizard-tab-active-step-number-background-color: darken($nav-wizard-tab-acti
         font-size: 20px;      
       }
     }
-    &.active > a {
+    &.active > a,
+    &.active > a:focus {
       background-color: $nav-wizard-tab-active-background-color;
       & > .step-number {
         background-color: $nav-wizard-tab-active-step-number-background-color;
