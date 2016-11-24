@@ -124,3 +124,7 @@ ul.sidebar-messages > li {
     list-style: none;
     margin: 10px !important;
 }
+/*buttons*/
+.sidebar-toggle-btn {
+  margin: 5px 0;
+}

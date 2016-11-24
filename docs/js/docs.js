@@ -65,9 +65,9 @@ $(function(){
                 codeContainer.find('ul').append('<li role="presentation" class="active"><a href="#html'+key+'" aria-controls="profile"  role="tab" data-toggle="tab">HTML</a></li>');
                 codeContainer.find('.tab-content').append(
                     '<div role="tabpanel" class="tab-pane active html" id="html'+key+'">' +
-                    '<div class="zero-clipboard">'+
+                    '<div class="zero-clipboard hidden-xs">'+
                     '<button class="btn btn-clipboard" data-clipboard-text="" type="button">'+
-                    '<span class="hidden-xs">Copy</span>'+
+                    '<span>Copy</span>'+
                     '</button>'+
                     '</div>'+
                     '<pre><code class="language-html" data-lang="html"><div class="html-code-content"></div></code></pre>'+
