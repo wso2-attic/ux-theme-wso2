@@ -41,3 +41,8 @@ a {
 body.inverse .fade-edge {
     @include fade-color($body-inverse-bg);
 }
+@media (max-width: 767px){
+    .body-wrapper {
+        padding: 30px 0;
+    }
+}
