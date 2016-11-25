@@ -15,7 +15,7 @@
 */
 
 #overview-page .header {
-    background: #263137;
+    background: #37474F;
     /*background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
                 linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
                 linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
@@ -27,6 +27,8 @@
 }
 
 #overview-page .header p { font-size: 16px; }
+
+#overview-page .header .btn-primary { border-color: #fff; }
 
 .doc-iframe { width: 100%; }
 
