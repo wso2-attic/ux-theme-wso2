@@ -259,7 +259,9 @@ $.sidebar_toggle = function(action, target, container) {
             targetOffsetRight = $(target).data('offset-right') ? $(target).data('offset-right') : 0,
             targetWidth = $(target).data('width'),
             targetSide = $(target).data("side"),
-            pushType = $(container).parent().is('body') == true ? 'margin' : 'margin';
+            pushType = $(container).parent().is('body') == true ? 'padding' : 'padding'; //TODO: Remove if works everywhere
+            
+            $(container).addClass('sidebar-target');
 
             if(button !== undefined){
                 relationship = button.attr('rel') ? button.attr('rel') : '';
@@ -268,13 +270,12 @@ $.sidebar_toggle = function(action, target, container) {
             
             $(target).css('top', targetTop);
         },
-        show: function(){
-            $(container).addClass('sidebar-target');
-            
+        show: function(){  
             if($(target).data('sidebar-fixed') == true) {
                 $(target).height($(window).height() - $(target).data('fixed-offset'));
             } 
             
+            $(target).off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
             $(target).trigger('show.sidebar');
             
             if(targetWidth !== undefined) {
@@ -310,7 +311,7 @@ $.sidebar_toggle = function(action, target, container) {
             if (targetSide == 'left'){
                 if ($(target).attr('data-container-divide')){
                    $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetLeft);
-                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetLeft));
+                   $(target).css(targetSide, targetOffsetLeft);
                 }
                 else if ($(target).attr('data-container-push')){
                    $(container).css(targetSide,  Math.abs(targetWidth + targetOffsetLeft));
@@ -323,7 +324,7 @@ $.sidebar_toggle = function(action, target, container) {
             else if (targetSide == 'right'){
                 if ($(target).attr('data-container-divide')){
                    $(container).css(pushType+'-'+targetSide, targetWidth + targetOffsetRight);
-                   $(target).css(targetSide, -Math.abs(targetWidth + targetOffsetRight));
+                   $(target).css(targetSide, targetOffsetRight);
                 }
                 else if ($(target).attr('data-container-push')){
                    $(container).css(targetSide, Math.abs(targetWidth + targetOffsetRight));
@@ -389,6 +390,9 @@ $.sidebar_toggle = function(action, target, container) {
             }
 
             $(target).trigger('hidden.sidebar');
+            $(target).on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
+                $(container).removeClass('sidebar-target');
+            });
         }
     };
 
