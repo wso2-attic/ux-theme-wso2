@@ -213,10 +213,11 @@ $loading-image-icon-max-width:            50px !default;
 // Forms
 //--------------------------------------------------------------------------------------------------
 $form-control-max-width:                  750px !default;
-$form-radio-checked-bg:                   $brand-primary !default;
-$form-radio-checked-border-color:         $brand-primary !default;
-$form-checkbox-checked-bg:                $brand-primary !default;
-$form-checkbox-checked-border-color:      $brand-primary !default;
+$form-radio-checked-bg:                   #f27d1d !default;
+$form-radio-checked-border-color:         #f27d1d !default;
+$form-checkbox-checked-bg:                transparent;
+$form-checkbox-checked-border-color:      #ccc;
+$form-checkbox-checked-font-color:        #f57b20;
 
 // Switch styles
 //--------------------------------------------------------------------------------------------------
