@@ -4,17 +4,25 @@ title: Accordion/Collapse
 ---
 <div class="body-wrapper">
     <h1 class="page-header">Collapse</h1>
-    <h4 class="sub-heading">Panel grouped accordion</h4>
-    <hr/>
+
+    <h4 class="sub-heading">Panels - Collapsable</h4>
+    <div class="message message-info">
+        <h4><i class="icon fw fw-info"></i>Collapse and Accordion Behaviour</h4>
+        <p>
+            if you need to extend collapsible panel behaviour to an accordion,
+            you need to add an <code>id="group-name"</code> to panel-group element and <code>data-parent="#group-name"</code>
+            to every "panel-heading" child element.
+        </p>
+    </div>
     <div class="row">
         <div class="col-sm-12">
             <div class="code">
                 <div class="code-html">
 <!-- collapse -->
-<div id="group-0" class="panel-group add-margin-bottom-2x" role="tablist" aria-multiselectable="false">
+<div class="panel-group add-margin-bottom-2x" role="tablist" aria-multiselectable="false">
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="heading0" data-toggle="collapse"
-             data-parent="#group-0" href="#accordion0" aria-controls="accordion0">
+             href="#accordion0" aria-controls="accordion0">
             <h4 class="panel-title">Panel heading without title</h4>
         </div>
         <div id="accordion0" class="panel-collapse collapse" role="tabpanel"
@@ -26,7 +34,7 @@ title: Accordion/Collapse
     </div>
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="heading00" data-toggle="collapse"
-             data-parent="#group-0" href="#accordion00" aria-controls="accordion00">
+             href="#accordion00" aria-controls="accordion00">
             <h4 class="panel-title">Panel heading without title</h4>
         </div>
         <div id="accordion00" class="panel-collapse collapse" role="tabpanel"
@@ -42,8 +50,19 @@ title: Accordion/Collapse
             </div>
         </div>
     </div>
-    <h4 class="sub-heading">Panel grouped accordion</h4>
-    <hr/>
+    <h4 class="sub-heading">Panels - Accordion with radio buttons</h4>
+    <div class="message message-info">
+        <h4><i class="icon fw fw-info"></i>Extended panels</h4>
+        <p>
+            Add <code>panel-extended</code> class to the <code>panel-group</code> to have extended panel behaviours.
+            This will enable you to have one or more of these extras
+            <ul>
+                <li>Radio buttons with checked behaviour when panel is open</li>
+                <li>Title and description</li>
+                <li>Collapsed/Expanded content status icon</li>
+            </ul>
+        </p>
+    </div>
     <div class="row">
         <div class="col-sm-12">
             <div class="code">
@@ -108,8 +127,7 @@ title: Accordion/Collapse
             </div>
         </div>
     </div>
-    <h4 class="sub-heading">Panel grouped accordion</h4>
-    <hr/>
+    <h4 class="sub-heading">Panels - Accordion with icons</h4>
     <div class="row">
         <div class="col-sm-12">
             <div class="code">
