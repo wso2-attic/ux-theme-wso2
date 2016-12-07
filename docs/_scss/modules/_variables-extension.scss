@@ -290,3 +290,7 @@ $tree-view-icon-color:      $gray-lightest !default;
 //-------------------------------------------------------------------------------------------------
 $code-color:                $link-color !default;
 $code-bg:                   lighten($code-color, 70%) !default;
+
+// Badges
+//-------------------------------------------------------------------------------------------------
+$badge--bubble-bg:          $brand-danger !default;
