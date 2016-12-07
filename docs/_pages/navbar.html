@@ -86,17 +86,28 @@ title: Navbar
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="visible-inline-block">
-                            <a data-toggle="sidebar" data-target="#right-sidebar" data-container=".page-content" aria-expanded="false" rel="notifications-sidebar">
+                        <li class="dropdown">
+                            <a data-toggle="dropdown">
                                 <i class="fw fw-notification"></i>
                                 <span class="badge badge-bubble">4</span>
                             </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-header">UI Components</li>
+                                <li class="divider"></li>
+                                <li><a href="#forms">Forms</a></li>
+                                <li class="dropdown-submenu"><a href="#table">Table</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Data Table</a></li>
+                                        <li><a href="#">Data List Table</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="hidden">
-                            <a data-toggle="sidebar" data-target="#right-sidebar2" data-container=".page-content-wrapper" data-container-divide="true" data-divide-side="right" aria-controls="right-sidebar2" aria-expanded="false">
+                        <li>
+                            <a href="#">
                                 <span class="icon fw-stack">
                                     <i class="fw fw-settings fw-stack-1x"></i>
-                                    <i class="fw fw-ring fw-stack-2x"></i>
+                                    <i class="fw fw-circle-outline fw-stack-2x"></i>
                                 </span>
                             </a>
                         </li>
