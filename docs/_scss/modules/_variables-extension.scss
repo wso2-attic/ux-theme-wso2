@@ -195,6 +195,7 @@ $sidebar-brand-link-hover-color:          $gray-lightest !default;
 
 // Dropdowns
 //--------------------------------------------------------------------------------------------------
+$dropdown-divider-bg:                     #cecece !default;
 $dropdown-menu-dark-bg:                   $gray-darker !default;
 $dropdown-menu-dark-color:                $gray-lightest !default;
 $dropdown-menu-dark-tiles-bg:             lighten($gray-base, 33%) !default;
@@ -290,3 +291,7 @@ $tree-view-icon-color:      $gray-lightest !default;
 //-------------------------------------------------------------------------------------------------
 $code-color:                $link-color !default;
 $code-bg:                   lighten($code-color, 70%) !default;
+
+// Badges
+//-------------------------------------------------------------------------------------------------
+$badge--bubble-bg:          $brand-danger !default;

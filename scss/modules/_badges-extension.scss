@@ -1,4 +1,14 @@
 .badge {
   margin-bottom: 5px;
   padding: 4px 7px;
+    
+  &.badge-bubble {
+    position: absolute;
+    font-size: 11px;
+    z-index: 1;
+    top: 5px;
+    right: 5px;
+    padding: 2px 5px;
+    background: $badge--bubble-bg;
+  }
 }

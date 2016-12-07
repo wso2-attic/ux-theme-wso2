@@ -3063,7 +3063,7 @@ tbody.collapse.in {
     height: 1px;
     margin: 9px 0;
     overflow: hidden;
-    background-color: #e5e5e5; }
+    background-color: #cecece; }
   .dropdown-menu > li > a {
     display: block;
     padding: 3px 20px;
@@ -3148,7 +3148,7 @@ tbody.collapse.in {
 .dropdown-menu {
   background: #e4e4e4;
   margin: 0;
-  padding: 0; }
+  padding: 9px 0; }
   .dropdown-menu.arrow:before, .dropdown-menu.arrow.arrow-top-left:before {
     position: absolute;
     top: -5px;
@@ -4475,6 +4475,14 @@ a.badge:hover, a.badge:focus {
 .badge {
   margin-bottom: 5px;
   padding: 4px 7px; }
+  .badge.badge-bubble {
+    position: absolute;
+    font-size: 11px;
+    z-index: 1;
+    top: 5px;
+    right: 5px;
+    padding: 2px 5px;
+    background: #d9534f; }
 
 .jumbotron {
   padding-top: 30px;
