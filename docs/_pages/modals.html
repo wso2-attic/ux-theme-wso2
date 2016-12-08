@@ -3,55 +3,54 @@ layout: default
 title: Modals
 ---
 
-<!-- ******************************************************************
-Modal Popup Templates
-******************************************************************* -->
+<div class="body-wrapper">
+    
+    <h1 class="page-header">Modals</h1>
+    
+    <div class="message message-info">
+        <h4><i class="icon fw fw-info"></i>Bootstrap</h4>
+        <p>
+            For additional details please check bootstrap documentation: 
+            <a href="http://getbootstrap.com/javascript/#modals" target="_blank">http://getbootstrap.com/javascript/#modals</a>
+        </p>
+    </div>
 
-<!-- page content -->
-    <div class="body-wrapper">
-        <div class="page-header" id="forms">
-            <h1>Modals</h1>
-        </div>
-
-        <h4 class="sub-heading">Modal Templates</h4>
-        <div class="code">
-            <div class="code-html">
-            <!-- Modal -->
-            <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDemo">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content clearfix">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fw fw-cancel"></i></button>
-                            <h3 class="modal-title" id="deleteModalLabel">What do you want to Delete ?</h3>
-                        </div>
-                        <div class="modal-body add-margin-top-2x add-margin-bottom-2x">
-                            <label class="custom-radio">
-                                <input type="radio" name="delete-option">
-                                <span class="helper">Remove Gadget</span>
-                            </label>
-                            <label class="custom-radio">
-                                <input type="radio" name="delete-option">
-                                <span class="helper">Delete Grid Container</span>
-                            </label>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Delete</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        </div>
-                    </div>
+    <div class="code">
+        <div class="code-html">
+        
+    <!-- modal -->
+    <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDemo">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content clearfix">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fw fw-cancel"></i></button>
+                    <h3 class="modal-title" id="deleteModalLabel">Modal title</h3>
                 </div>
-            </div>
-
-
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="input-group input-wrap has-form-control-btn">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDelete"><i class="fw fw-delete"></i> Show Modal</button>
-                        </div>
-                    </div>
+                <div class="modal-body add-margin-top-2x add-margin-bottom-2x">
+                    <p>One fine body…</p>
                 </div>
-            </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
             </div>
         </div>
     </div>
+    <!-- /modal -->
+
+    <!-- button -->
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="input-group input-wrap has-form-control-btn">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDelete">Show Modal</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- /button -->
+            
+        </div>
+    </div>
+    
+</div>
