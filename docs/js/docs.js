@@ -52,10 +52,7 @@ $(function(){
         $.each( items, function( key, value ) {
             $(this).after(
                 '<div class="code-container">'+
-                <!-- Nav tabs -->
                 '<ul class="nav nav-tabs code-tabs" role="tablist"></ul>'+
-
-                <!-- Tab panes -->
                 '<div class="tab-content"></div>'+
                 '</div>'
             );
@@ -164,32 +161,6 @@ $(function(){
 //        $(el).replaceWith(data);
 //    });
 //});
-
-//$('link[data-include-demo]').each(function(){
-//
-//    var el = $(this),
-//        componentURL = 'libs/theme-wso2_1.0/components/' + $(this).data('include-demo') + '/';
-//
-//    $.get(componentURL + 'example.html',function(data){
-//        $(el).replaceWith($(data).find('#example').html());
-//    });
-//
-//    //var fileExt = ['css','js'];
-//    //
-//    //$.each(fileExt, function(index, value){
-//    //    $.ajax({
-//    //        url: componentURL + value,
-//    //        success: function (data) {
-//    //            $(data).find("a:contains(" + value + ")").each(function() {
-//    //                console.log(componentURL + value + '/' + $(this).text());
-//    //            });
-//    //        }
-//    //    });
-//    //});
-//
-//});
-
-
 
 /***********************************************************
  *  accordion config
