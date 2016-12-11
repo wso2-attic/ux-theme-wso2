@@ -9,102 +9,76 @@ js: <script src="/js/jstree.js"></script>
     <h1 class="page-header">jsTree View</h1>
 
     <div class="code">
-        <div data-lang="html">
     
-    <!-- tree -->
+        <!-- example -->
+        <div class="well" id="jstree">
+            <ul>
+                <li data-jstree='{ "opened" : true }'>Root node 1
+                    <ul>
+                        <li>Child node 1</li>
+                        <li>Child node 2
+                            <ul>
+                                <li>Sub child node 1</li>
+                                <li>Sub child node 2
+                                    <ul>
+                                        <li>Baby node 1</li>
+                                        <li>Baby node 2</li>
+                                        <li>Baby node 3
+                                            <ul>
+                                                <li>Test Node 1</li>
+                                                <li>Test Node 2</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Sub child node 3</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Root node 2
+                    <ul>
+                        <li>Node</li>
+                    </ul>
+                </li>
+                <li>Root node 3</li>
+            </ul>
+        </div>
+        <!-- /example -->
+        
+        <div class="code-sample">
+<code data-lang="html">
+    <!-- example -->
     <div class="well" id="jstree">
         <ul>
-            <li data-jstree='{ "opened" : true }'>Root node 1
+            <li data-jstree="{ 'opened':true }">Root node 1
                 <ul>
                     <li>Child node 1</li>
-                    <li>Child node 2
-                        <ul>
-                            <li>Sub child node 1</li>
-                            <li>Sub child node 2
-                                <ul>
-                                    <li>Baby node 1</li>
-                                    <li>Baby node 2</li>
-                                    <li>Baby node 3
-                                        <ul>
-                                            <li>Test Node 1</li>
-                                            <li>Test Node 2</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>Sub child node 3</li>
-                        </ul>
-                    </li>
+                    ...
                 </ul>
             </li>
-            <li>Root node 2
-                <ul>
-                    <li>Node</li>
-                </ul>
-            </li>
-            <li>Root node 3</li>
+            ...
         </ul>
     </div>
-    <!-- /tree -->
-                        
-        </div>
-    </div>
+    <!-- /example -->
     
-    <div class="code hide">
-        <div data-lang="html">
-            
-    <!-- tree -->       
-    <div class="well" id="jstree-sample">
-        <ul>
-            <li data-jstree="{ 'opened' : true }">Root node 1
-                <ul>
-                    <li>Child node 1</li>
-                    <li>Child node 2
-                        <ul>
-                            <li>Sub child node 1</li>
-                            <li>Sub child node 2
-                                <ul>
-                                    <li>Baby node 1</li>
-                                    <li>Baby node 2</li>
-                                    <li>Baby node 3
-                                        <ul>
-                                            <li>Test Node 1</li>
-                                            <li>Test Node 2</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>Sub child node 3</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>Root node 2
-                <ul>
-                    <li>Node</li>
-                </ul>
-            </li>
-            <li>Root node 3</li>
-        </ul>
-    </div>
-    <!-- /tree -->        
-            
-        </div>
+</code>
 
-        <div data-lang="js">
-            
-            $('#jstree-sample').jstree({
-                "plugins": ["types"],
-                "types": {
-                    "default" : {
-                        "icon": false,
-                        "draggable": false,
-                        "clickable": false
-                    }
-                }
-            });
-            
+<code data-lang="js">
+    $('#jstree-sample').jstree({
+        "plugins": ["types"],
+        "types": {
+            "default" : {
+                "icon": false,
+                "draggable": false,
+                "clickable": false
+            }
+        }
+    });
+    
+</code>
         </div>
+             
     </div>
       
 </div>
