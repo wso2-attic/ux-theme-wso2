@@ -51,7 +51,7 @@ title: Overview
                 <h4>Precompiled WSO2 Theme</h4>
                 <p>Once you download the distribution zip file, unzip to see the structure of the precompiled {{ site.title }} assets.</p>
                 <p><b>NOTE:-</b> Bootstrap included!</p>
-    <pre><code class="language-bash" data-lang="bash">
+    <pre><code data-lang="bash">
     root/ [ where your page is ]
     ├── css/
     │   ├── theme-wso2.css
@@ -83,8 +83,12 @@ title: Overview
                     <p>Please note that JavaScript plugin require jQuery to be included, as shown in the below starter template.</p>
                 </div>
                 
-                <div class="code hide">
-    <code class="code-html">
+                <div class="code-container">
+                    <button class="btn btn-clipboard" data-clipboard-text="" type="button">
+                        <span>Copy</span>
+                    </button>
+                    
+    <pre><code data-lang="html">
     &lt;!DOCTYPE html&gt;
     &lt;html lang="en"&gt;
         &lt;head&gt;
@@ -114,8 +118,10 @@ title: Overview
             &lt;script src="js/theme-wso2.min.js"&gt;&lt;/script&gt;
         &lt;/body&gt;
     &lt;/html&gt;
-    </code>                   
+    </code></pre>
+                    
                 </div>
+                    
             </div>
         </div>
         
@@ -132,31 +138,6 @@ title: Overview
             </div>            
         </div>
         
-        <div class="row add-margin-bottom-4x hidden">
-            <div class="col-md-12">
-                <h3 class="text-medium">Source code</h3>
-                <p>Source code includes the precompiled CSS, JavaScript and font assets, along with source Sass, JavaScript and documentation.</p>
-    <pre><code class="language-bash" data-lang="bash">
-    theme-wso2/
-    ├── scss/
-    ├── js/
-    ├── fonts/
-    ├── dist/
-    │   ├── css/
-    │   ├── js/
-    │   ├── fonts/
-    ├── extensions/
-    │   ├── datatables/
-    │   ├── jstree/
-    │   └── noty/
-    └── docs/
-    </code></pre>
-                <p>The <code>scss/</code>, <code>js/</code>, and <code>fonts/</code> are the source code for our CSS, JS, and icon fonts. The <code>dist/</code> folder includes
-                    everything listed in the precompiled download section. The <code>docs/</code> folder includes the source code for the documentation.
-                </p>
-            </div>
-        </div>
-        
         <div class="row">
             <div class="col-md-12">
                 <h4>Installing Grunt</h4>
@@ -165,13 +146,13 @@ title: Overview
                 <p>1. Install grunt-cli globally</p>
                 <div class="row">
                     <div class="col-md-6">
-                        <pre class="command"><code>npm install -g grunt-cli</code></pre><br/>
+                        <pre><code data-lang="bash">npm install -g grunt-cli</code></pre><br/>
                     </div>
                 </div>
                 <p>2. Navigate to the root /theme-wso2/ directory, then run<p/>
                 <div class="row">
                     <div class="col-md-6">
-                        <pre class="command"><code>npm install</code></pre><br/>
+                        <pre><code data-lang="bash">npm install</code></pre><br/>
                     </div>
                 </div>
                 <p>npm will look at the package.json file and automatically install the necessary local dependencies listed there.</p>
@@ -180,13 +161,13 @@ title: Overview
                 <p>To to compile scss and build default distrubution navigate to the root /theme-wso2/ and run </p>
                 <div class="row">
                     <div class="col-md-6">
-                        <pre class="command"><code>grunt</code></pre><br/>
+                        <pre><code data-lang="bash">grunt</code></pre><br/>
                     </div>
                 </div>
                 <p>To compile product scss files</p>
                 <div class="row">
                     <div class="col-md-6">
-                        <pre class="command"><code>grunt product:&lt;porduct-short-name&gt;</code></pre>
+                        <pre><code data-lang="bash">grunt product:&lt;porduct-short-name&gt;</code></pre>
                     </div>
                 </div>
                 <p class="help-block">e.g. grunt product:apim</p><br/>
@@ -201,13 +182,13 @@ title: Overview
                 <p>To compile docs</p>
                 <div class="row">
                     <div class="col-md-6">
-                        <pre class="command"><code>grunt docs</code></pre><br/>
+                        <pre><code data-lang="bash">grunt docs</code></pre><br/>
                     </div>
                 </div>
                 <p>To serve docs</p>
                 <div class="row">
                     <div class="col-md-6">
-                        <pre class="command"><code>grunt serve</code></pre><br/>
+                        <pre><code data-lang="bash">grunt serve</code></pre><br/>
                     </div>
                 </div>
             </div>

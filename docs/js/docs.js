@@ -44,84 +44,149 @@ $(function(){
         currentPage.parents('li').addClass('active');
         currentPageParents.attr('aria-expanded', 'true');
         currentPageParents.find('> ul').addClass('in');
-
+        
+        $('[data-toggle="loading"]').not('.code-sample [data-toggle="loading"]').loading('show');
+        
         /***********************************************************
-         *  Documentation tab code display
+         *  Documentation code display
          ***********************************************************/
-        var items = $('.code');
-        $.each( items, function( key, value ) {
-            $(this).after(
-                '<div class="code-container">'+
-                '<ul class="nav nav-tabs code-tabs" role="tablist"></ul>'+
-                '<div class="tab-content"></div>'+
-                '</div>'
-            );
-
-            var codeContainer  = $(this).next().closest('.code-container');
-            if($(this).children().hasClass('code-html')) {
-                codeContainer.find('ul').append('<li role="presentation" class="active"><a href="#html'+key+'" aria-controls="profile"  role="tab" data-toggle="tab">HTML</a></li>');
-                codeContainer.find('.tab-content').append(
-                    '<div role="tabpanel" class="tab-pane active html" id="html'+key+'">' +
-                    '<div class="zero-clipboard hidden-xs">'+
-                    '<button class="btn btn-clipboard" data-clipboard-text="" type="button">'+
-                    '<span>Copy</span>'+
-                    '</button>'+
-                    '</div>'+
-                    '<pre><code class="language-html" data-lang="html"><div class="html-code-content"></div></code></pre>'+
-                    '</div>'
-                );
-                var html;
-                if($(this).children('.code-html').is("code")){
-                    html = $(this).children('.code-html').text();
-                }
-                else {
-                    html = $(this).children('.code-html').html();
-                }
-                $(this).next().closest('.code-container').find('.html-code-content').text(html);
+        function htmlEscape(str) {
+            return String(str)
+                    .replace(/&/g, '&amp;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;');
+        }
+        
+        function sampleCode(request, uuid, selector, activeClass){
+            var text = (!selector.hasClass('no-encode')) ? htmlEscape(selector.html()) : selector.html(),
+                lang = selector.data('lang');
+            
+            if(request == 'tab'){
+                return  '<li role="tab" class="' + activeClass + '">'+
+                            '<a href="#' + uuid + '-' + lang + '" aria-controls="code" role="tab" data-toggle="tab">' + lang.toUpperCase() + '</a>'+
+                        '</li>';
             }
-            if ($(this).children().hasClass('code-js')){
-                codeContainer.find('ul').append('<li role="presentation"><a href="#js'+key+'" aria-controls="profile" role="tab" data-toggle="tab">JS</a></li>');
-                codeContainer.find('.tab-content').append(
-                    '<div role="tabpanel" class="tab-pane js" id="js'+key+'">' +
-                    '<div class="zero-clipboard">'+
-                    '<button class="btn btn-clipboard" data-clipboard-text="" type="button" title="Copy to clipboad">'+
-                    '<span class="hidden-xs">Copy</span>'+
-                    '</button>'+
-                    '</div>'+
-                    '<pre><code class="javascript" data-lang="javascript"><div class="js-code-content"></div></code></pre>'+
-                    '</div>'
-                );
-                $(this).next().closest('.code-container').find('.js-code-content').text($(this).children('.code-js').html());
+            else if(request == 'content'){
+                return  '<div role="tabpanel" class="tab-pane ' + activeClass + ' ' + lang + '" id="' + uuid + '-' + lang + '">' +
+                            '<button class="btn btn-clipboard" data-clipboard-text="" type="button">'+
+                                '<span>Copy</span>'+
+                            '</button>'+
+                            '<pre><code class="language-' + lang + '" data-lang="' + lang + '">' + text + '</code></pre>'+
+                        '</div>';
             }
+            else{
+                return;
+            }
+        }
 
-            if($(this).children().find('code-sample')){
-                if($(this).find('.code-sample').hasClass('loading-sample1')) {
-                    var formPrependText = '            <form class="form-horizontal" data-toggle="loading" data-loading-style="overlay">';
-                    var formAppendText = '</form>';
-                    codeContainer.find('.html-code-content').text($(this).find('.code-sample').html());
-                    codeContainer.find('.html-code-content').prepend(document.createTextNode(formPrependText));
-                    codeContainer.find('.html-code-content').append(document.createTextNode(formAppendText));
-                } else if ($(this).find('.code-sample').hasClass('loading-sample2')){
-                    codeContainer.find('.html-code-content').text('<div data-toggle="loading" data-loading-text="Processing" ' +
-                        'data-loading-style="icon-only" data-loading-image="images/oloader.gif" data-loading-inverse="true">');
-                }
+        $(".code").each(function(key, val){
+            var tabs = [],
+                tabContent = [],
+                uuid = ('code-example-'+key);
+            
+            if($('> .code-sample', this).length > 0){
+                $.each($('> .code-sample > code', this), function(key, val) {
+                    var activeClass = (key == 0) ? 'active' : '';
+                    
+                    tabs.push(sampleCode('tab', uuid, $(val), activeClass));
+                    tabContent.push(sampleCode('content', uuid, $(val), activeClass));
+                });
+            }
+            else {
+                tabs.push(sampleCode('tab', uuid, $('> [data-lang]', this), 'active'));
+                tabContent.push(sampleCode('content', uuid, $('> [data-lang]', this), 'active'));
+            }
+            
+            if(tabs.length > 0){
+                $( "<div/>", {
+                    "class": "code-container",
+                }).appendTo(this);
+
+                $( "<ul/>", {
+                    "class": "nav nav-tabs code-tabs",
+                    "role": "tablist",
+                    html: tabs.join("")
+                }).appendTo($('> .code-container', this));
+
+                $( "<div/>", {
+                    "class": "tab-content",
+                    html: tabContent.join("")
+                }).appendTo($('> .code-container', this));
             }
         });
-
+        
+//        var items = $('.code');
+//        $.each( items, function( key, value ) {
+//            $(this).after(
+//                '<div class="code-container">'+
+//                '<ul class="nav nav-tabs code-tabs" role="tablist"></ul>'+
+//                '<div class="tab-content"></div>'+
+//                '</div>'
+//            );
+//
+//            var codeContainer  = $(this).next().closest('.code-container');
+//            if($(this).children().hasClass('code-html')) {
+//                codeContainer.find('ul').append('<li role="presentation" class="active"><a href="#html'+key+'" aria-controls="profile"  role="tab" data-toggle="tab">HTML</a></li>');
+//                codeContainer.find('.tab-content').append(
+//                    '<div role="tabpanel" class="tab-pane active html" id="html'+key+'">' +
+//                    '<div class="zero-clipboard hidden-xs">'+
+//                    '<button class="btn btn-clipboard" data-clipboard-text="" type="button">'+
+//                    '<span>Copy</span>'+
+//                    '</button>'+
+//                    '</div>'+
+//                    '<pre><code class="language-html" data-lang="html"><div class="html-code-content"></div></code></pre>'+
+//                    '</div>'
+//                );
+//                var html;
+//                if($(this).children('.code-html').is("code")){
+//                    html = $(this).children('.code-html').text();
+//                }
+//                else {
+//                    html = $(this).children('.code-html').html();
+//                }
+//                $(this).next().closest('.code-container').find('.html-code-content').text(html);
+//            }
+//            if ($(this).children().hasClass('code-js')){
+//                codeContainer.find('ul').append('<li role="presentation"><a href="#js'+key+'" aria-controls="profile" role="tab" data-toggle="tab">JS</a></li>');
+//                codeContainer.find('.tab-content').append(
+//                    '<div role="tabpanel" class="tab-pane js" id="js'+key+'">' +
+//                    '<div class="zero-clipboard">'+
+//                    '<button class="btn btn-clipboard" data-clipboard-text="" type="button" title="Copy to clipboad">'+
+//                    '<span class="hidden-xs">Copy</span>'+
+//                    '</button>'+
+//                    '</div>'+
+//                    '<pre><code class="javascript" data-lang="javascript"><div class="js-code-content"></div></code></pre>'+
+//                    '</div>'
+//                );
+//                $(this).next().closest('.code-container').find('.js-code-content').text($(this).children('.code-js').html());
+//            }
+//
+//            if($(this).children().find('code-sample')){
+//                if($(this).find('.code-sample').hasClass('loading-sample1')) {
+//                    var formPrependText = '            <form class="form-horizontal" data-toggle="loading" data-loading-style="overlay">';
+//                    var formAppendText = '</form>';
+//                    codeContainer.find('.html-code-content').text($(this).find('.code-sample').html());
+//                    codeContainer.find('.html-code-content').prepend(document.createTextNode(formPrependText));
+//                    codeContainer.find('.html-code-content').append(document.createTextNode(formAppendText));
+//                } else if ($(this).find('.code-sample').hasClass('loading-sample2')){
+//                    codeContainer.find('.html-code-content').text('<div data-toggle="loading" data-loading-text="Processing" ' +
+//                        'data-loading-style="icon-only" data-loading-image="images/oloader.gif" data-loading-inverse="true">');
+//                }
+//            }
+//        });
+        
+        $(".btn-clipboard").each(function() {
+            $(this).attr("data-clipboard-text", $(this).siblings('pre').find('code').text());
+        });
         $(".btn-clipboard").zclip();
-        $(".btn-clipboard").click(function() {
-            if($(this).parents().hasClass('html')) {
-                $(this).attr("data-clipboard-text", $(this).parent().next().find('.html-code-content').text());
-            } else if ($(this).parents().hasClass('js')){
-                $(this).attr("data-clipboard-text", $(this).parent().next().find('.js-code-content').text());
-            }
-        });
 
         /***********************************************************
          *  Code Highlighting
          ***********************************************************/
 
-        $('.tab-pane pre code').each(function(i, block) {
+        $('pre code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
     });

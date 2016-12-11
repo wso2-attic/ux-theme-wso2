@@ -90,8 +90,6 @@ $(document).ready(function() {
     $.file_input();
     $.sidebar_toggle();
 
-    $('[data-toggle="loading"]').loading('show');
-
     $('.dropdown-menu input').click(function(e) {
         e.stopPropagation();
     });

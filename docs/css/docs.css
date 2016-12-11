@@ -27,9 +27,7 @@
 }
 
 #overview-page .header p { font-size: 16px; }
-
 #overview-page .header .btn-primary { border-color: #fff; }
-
 .doc-iframe { width: 100%; }
 
 .doc-logo img {
@@ -51,7 +49,7 @@
 }
 
 .doc-description { color: #fff; }
-
+.code-container { position: relative; }
 .code-container .nav-tabs li a {
     text-decoration: none;
     cursor: pointer;
@@ -63,16 +61,12 @@
 }
 
 .code-container { margin: 20px 0; }
-
-.code-container .hljs { background: none; }
-
-.code-container .hljs-string { color: #F2771F; }
-
-.code-container pre {
-    border-bottom: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-}
+.code-container .tab-content { position:relative; }
+.code-sample { display: none; }
+code.hljs { background: none; }
+code .hljs-string { color: #F2771F; }
+pre { border: 1px solid #ddd; }
+.code-container .tab-content pre { border-top: none; }
 
 .btn-outline-inverse {
     color: #91b7c9;
@@ -86,12 +80,10 @@
 }
 
 .github-btn { color:#9E9E9E; }
-
 .github-btn:hover{ color: #F47A1E; }
 
 .btn-clipboard {
     position: absolute;
-    top: -1px;
     right: 0;
     z-index: 10;
     display: block;
@@ -102,14 +94,13 @@
     background-color: #fff;
     border: 1px solid #e1e1e8;
 }
+.code-container .tab-content .btn-clipboard { top: -1px; }
 
 .btn-clipboard.zeroclipboard-is-hover {
     background-color: #F2771F;
     border-color: #F2771F;
     color: #fff;
 }
-
-.zero-clipboard { position:relative; }
 
 ul.sidebar-messages {
     list-style: none;
@@ -121,7 +112,7 @@ ul.sidebar-messages > li {
     list-style: none;
     margin: 10px !important;
 }
-/*buttons*/
+
 .sidebar-toggle-btn {
-  margin: 5px 0;
+    margin: 5px 0;
 }
