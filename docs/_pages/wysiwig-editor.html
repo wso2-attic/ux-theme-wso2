@@ -19,21 +19,19 @@ Wysiwig Editor Template
             <div class="col-md-12">
                 <div class="code">
                     <div class="code-html">
-        <form class="form-horizontal">
-            <textarea id="txt-wysiwyg"></textarea>
-        </form>
+    <textarea id="txt-wysiwyg"></textarea>
                     </div>
                     <div class="code-js hide">
-        tinymce.init({
-            selector: "#txt-wysiwyg",
-            plugins: [
-                "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
-                "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-                "save table contextmenu directionality emoticons template paste textcolor"
-            ],
-            content_css: "css/editor.css",
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | print preview fullpage | forecolor backcolor emoticons"
-        });
+    tinymce.init({
+        selector: "#txt-wysiwyg",
+        plugins: [
+            "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+            "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+            "save table contextmenu directionality emoticons template paste textcolor"
+        ],
+        content_css: "css/editor.css",
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | print preview fullpage | forecolor backcolor emoticons"
+    });
                     </div>
                 </div>
             </div>

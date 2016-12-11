@@ -114,5 +114,14 @@ ul.sidebar-messages > li {
 }
 
 .sidebar-toggle-btn {
-    margin: 5px 0;
+  margin: 5px 0;
+}
+
+form label.error, label.error {
+    color: red;
+    font-style: italic;
+}
+form input.error, input.error,
+form input.error:focus, input.error:focus{
+    border:1px solid red;
 }
