@@ -62,7 +62,12 @@
 
 .code-container { margin: 20px 0; }
 .code-container .tab-content { position:relative; }
-.code-sample { display: none; }
+
+.code-sample,
+div[data-lang=js] { 
+    display: none;
+}
+
 code.hljs { background: none; }
 code .hljs-string { color: #F2771F; }
 pre { border: 1px solid #ddd; }
