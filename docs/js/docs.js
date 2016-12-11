@@ -76,28 +76,19 @@ $(function(){
                             '<pre><code class="language-' + lang + '" data-lang="' + lang + '">' + text + '</code></pre>'+
                         '</div>';
             }
-            else{
-                return;
-            }
         }
 
         $(".code").each(function(key, val){
             var tabs = [],
                 tabContent = [],
-                uuid = ('code-example-'+key);
+                uuid = ('code-example-'+key),
+                codes = ($('> .code-sample', this).length > 0) ? $('> .code-sample > code', this) : $('> [data-lang]', this);
             
-            if($('> .code-sample', this).length > 0){
-                $.each($('> .code-sample > code', this), function(key, val) {
-                    var activeClass = (key == 0) ? 'active' : '';
-                    
-                    tabs.push(sampleCode('tab', uuid, $(val), activeClass));
-                    tabContent.push(sampleCode('content', uuid, $(val), activeClass));
-                });
-            }
-            else {
-                tabs.push(sampleCode('tab', uuid, $('> [data-lang]', this), 'active'));
-                tabContent.push(sampleCode('content', uuid, $('> [data-lang]', this), 'active'));
-            }
+            $.each(codes, function(key, val) {
+                var activeClass = (key == 0) ? 'active' : '';
+                tabs.push(sampleCode('tab', uuid, $(val), activeClass));
+                tabContent.push(sampleCode('content', uuid, $(val), activeClass));
+            });
             
             if(tabs.length > 0){
                 $( "<div/>", {
