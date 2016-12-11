@@ -4,24 +4,23 @@ title: Wysiwig Editor
 js: <script src="/libs/tinymce_4.2.3/tinymce.min.js"></script><script src="/js/wysiwyg-editor.js"></script>
 ---
 
-<!-- ******************************************************************
-Wysiwig Editor Template
-******************************************************************* -->
+<div class="body-wrapper">
 
-<!-- page content -->
-    <div class="body-wrapper">
+    <h1 class="page-header">Wysiwig Editor</h1>
 
-        <div class="page-header">
-            <h1>Wysiwig Editor</h1>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="code">
-                    <div data-lang="html">
+    <div class="code">
+        
+        <!-- example -->
+        <textarea id="txt-wysiwyg"></textarea>
+        <!-- /example -->
+        
+        <div class="code-sample">
+<code data-lang="html">
     <textarea id="txt-wysiwyg"></textarea>
-                    </div>
-                    <div data-lang="js">
+    
+</code>
+
+<code data-lang="js">
     tinymce.init({
         selector: "#txt-wysiwyg",
         plugins: [
@@ -32,8 +31,9 @@ Wysiwig Editor Template
         content_css: "css/editor.css",
         toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | print preview fullpage | forecolor backcolor emoticons"
     });
-                    </div>
-                </div>
-            </div>
+    
+</code>         
         </div>
     </div>
+        
+</div>
