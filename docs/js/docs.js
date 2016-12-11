@@ -117,66 +117,6 @@ $(function(){
             }
         });
         
-//        var items = $('.code');
-//        $.each( items, function( key, value ) {
-//            $(this).after(
-//                '<div class="code-container">'+
-//                '<ul class="nav nav-tabs code-tabs" role="tablist"></ul>'+
-//                '<div class="tab-content"></div>'+
-//                '</div>'
-//            );
-//
-//            var codeContainer  = $(this).next().closest('.code-container');
-//            if($(this).children().hasClass('code-html')) {
-//                codeContainer.find('ul').append('<li role="presentation" class="active"><a href="#html'+key+'" aria-controls="profile"  role="tab" data-toggle="tab">HTML</a></li>');
-//                codeContainer.find('.tab-content').append(
-//                    '<div role="tabpanel" class="tab-pane active html" id="html'+key+'">' +
-//                    '<div class="zero-clipboard hidden-xs">'+
-//                    '<button class="btn btn-clipboard" data-clipboard-text="" type="button">'+
-//                    '<span>Copy</span>'+
-//                    '</button>'+
-//                    '</div>'+
-//                    '<pre><code class="language-html" data-lang="html"><div class="html-code-content"></div></code></pre>'+
-//                    '</div>'
-//                );
-//                var html;
-//                if($(this).children('.code-html').is("code")){
-//                    html = $(this).children('.code-html').text();
-//                }
-//                else {
-//                    html = $(this).children('.code-html').html();
-//                }
-//                $(this).next().closest('.code-container').find('.html-code-content').text(html);
-//            }
-//            if ($(this).children().hasClass('code-js')){
-//                codeContainer.find('ul').append('<li role="presentation"><a href="#js'+key+'" aria-controls="profile" role="tab" data-toggle="tab">JS</a></li>');
-//                codeContainer.find('.tab-content').append(
-//                    '<div role="tabpanel" class="tab-pane js" id="js'+key+'">' +
-//                    '<div class="zero-clipboard">'+
-//                    '<button class="btn btn-clipboard" data-clipboard-text="" type="button" title="Copy to clipboad">'+
-//                    '<span class="hidden-xs">Copy</span>'+
-//                    '</button>'+
-//                    '</div>'+
-//                    '<pre><code class="javascript" data-lang="javascript"><div class="js-code-content"></div></code></pre>'+
-//                    '</div>'
-//                );
-//                $(this).next().closest('.code-container').find('.js-code-content').text($(this).children('.code-js').html());
-//            }
-//
-//            if($(this).children().find('code-sample')){
-//                if($(this).find('.code-sample').hasClass('loading-sample1')) {
-//                    var formPrependText = '            <form class="form-horizontal" data-toggle="loading" data-loading-style="overlay">';
-//                    var formAppendText = '</form>';
-//                    codeContainer.find('.html-code-content').text($(this).find('.code-sample').html());
-//                    codeContainer.find('.html-code-content').prepend(document.createTextNode(formPrependText));
-//                    codeContainer.find('.html-code-content').append(document.createTextNode(formAppendText));
-//                } else if ($(this).find('.code-sample').hasClass('loading-sample2')){
-//                    codeContainer.find('.html-code-content').text('<div data-toggle="loading" data-loading-text="Processing" ' +
-//                        'data-loading-style="icon-only" data-loading-image="images/oloader.gif" data-loading-inverse="true">');
-//                }
-//            }
-//        });
-        
         $(".btn-clipboard").each(function() {
             $(this).attr("data-clipboard-text", $(this).siblings('pre').find('code').text());
         });
@@ -185,7 +125,6 @@ $(function(){
         /***********************************************************
          *  Code Highlighting
          ***********************************************************/
-
         $('pre code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
