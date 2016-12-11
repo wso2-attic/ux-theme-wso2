@@ -49,7 +49,7 @@ $(function() {
       'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
     ];
 
-    $('.typeahead').typeahead({
+    $('.typeahead').not('.code-sample .typeahead').typeahead({
       hint: true,
       highlight: true,
       minLength: 1
