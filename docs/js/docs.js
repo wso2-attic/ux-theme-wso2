@@ -82,7 +82,7 @@ $(function(){
             var tabs = [],
                 tabContent = [],
                 uuid = ('code-example-'+key),
-                codes = ($('> .code-sample', this).length > 0) ? $('> .code-sample > code', this) : $('> [data-lang]', this);
+                codes = ($('> .code-sample', this).length > 0) ? $('> .code-sample > [data-lang]', this) : $('> [data-lang]', this);
             
             $.each(codes, function(key, val) {
                 var activeClass = (key == 0) ? 'active' : '';
