@@ -19,65 +19,89 @@ Sidebar Template
     </div>
 
     <div class="code">
-        <div data-lang="html">
     
-    <!-- right-sidebar-toggle-button -->
-    <a class="btn btn-primary sidebar-toggle-btn" data-toggle="sidebar" data-target="#right-sidebar-overlay" aria-expanded="false" rel="notifications-sidebar">
-        Right sidebar overlay
-    </a>
-    <a class="btn btn-primary sidebar-toggle-btn" data-toggle="sidebar" data-target="#right-sidebar-divide" aria-expanded="false" rel="notifications-sidebar">
-        Right sidebar divide
-    </a>
-    <!-- /right-sidebar-toggle-button -->
+        <!-- right-sidebar-toggle-button -->
+        <button class="btn btn-primary sidebar-toggle-btn" data-toggle="sidebar" data-target="#right-sidebar-overlay" aria-expanded="false" rel="notifications-sidebar" disabled="disabled">
+            Right sidebar overlay
+        </button>
+        <button class="btn btn-primary sidebar-toggle-btn" data-toggle="sidebar" data-target="#right-sidebar-divide" aria-expanded="false" rel="notifications-sidebar">
+            Right sidebar divide
+        </button>
+        <!-- /right-sidebar-toggle-button -->
 
-    <!-- right-sidebar -->
-    <div class="sidebar-wrapper example-sidebar" id="right-sidebar-overlay" data-side="right" data-width="260">
-        <ul class="sidebar-messages">
-            <li class="message message-success">
-                <h4><i class="icon fw fw-success"></i>Minor Information Message</h4>
-                <p>Alerts don't have default classes, only base and modifier classes.</p>
-            </li>
-            <li class="message message-info">
-                <h4><i class="icon fw fw-info"></i>Minor Information Message</h4>
-                <p>Alerts don't have default classes, only base and modifier classes.</p>
-            </li>
-            <li class="message message-warning">
-                <h4><i class="icon fw fw-warning"></i>Major Information Message</h4>
-                <p>Alerts don't have default classes, only base and modifier classes.</p>
-            </li>
-            <li class="message message-danger">
-                <h4><i class="icon fw fw-error"></i>Critical Information Message</h4>
-                <p>Alerts don't have default classes, only base and modifier classes.</p>
-            </li>
-        </ul>
-    </div>
+        <!-- right-sidebar -->
+        <div class="sidebar-wrapper example-sidebar" id="right-sidebar-overlay" data-side="right" data-width="260">
+            <ul class="sidebar-messages">
+                <li class="message message-success">
+                    <h4><i class="icon fw fw-success"></i>Minor Information Message</h4>
+                    <p>Alerts don't have default classes, only base and modifier classes.</p>
+                </li>
+                <li class="message message-info">
+                    <h4><i class="icon fw fw-info"></i>Minor Information Message</h4>
+                    <p>Alerts don't have default classes, only base and modifier classes.</p>
+                </li>
+                <li class="message message-warning">
+                    <h4><i class="icon fw fw-warning"></i>Major Information Message</h4>
+                    <p>Alerts don't have default classes, only base and modifier classes.</p>
+                </li>
+                <li class="message message-danger">
+                    <h4><i class="icon fw fw-error"></i>Critical Information Message</h4>
+                    <p>Alerts don't have default classes, only base and modifier classes.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sidebar-wrapper example-sidebar" id="right-sidebar-divide" data-side="right" data-width="260" data-container=".page-content-wrapper > .container-fluid" data-container-divide="true">
+            <ul class="sidebar-messages">
+                <li class="message message-success">
+                    <h4><i class="icon fw fw-success"></i>Minor Information Message</h4>
+                    <p>Alerts don't have default classes, only base and modifier classes.</p>
+                </li>
+                <li class="message message-info">
+                    <h4><i class="icon fw fw-info"></i>Minor Information Message</h4>
+                    <p>Alerts don't have default classes, only base and modifier classes.</p>
+                </li>
+                <li class="message message-warning">
+                    <h4><i class="icon fw fw-warning"></i>Major Information Message</h4>
+                    <p>Alerts don't have default classes, only base and modifier classes.</p>
+                </li>
+                <li class="message message-danger">
+                    <h4><i class="icon fw fw-error"></i>Critical Information Message</h4>
+                    <p>Alerts don't have default classes, only base and modifier classes.</p>
+                </li>
+            </ul>
+        </div>
+        <!-- /right-sidebar -->
+        
+        <div class="code-sample">
             
-    <div class="sidebar-wrapper example-sidebar" id="right-sidebar-divide" data-side="right" data-width="260" data-container=".page-content-wrapper > .container-fluid" data-container-divide="true">
-        <ul class="sidebar-messages">
-            <li class="message message-success">
-                <h4><i class="icon fw fw-success"></i>Minor Information Message</h4>
-                <p>Alerts don't have default classes, only base and modifier classes.</p>
-            </li>
-            <li class="message message-info">
-                <h4><i class="icon fw fw-info"></i>Minor Information Message</h4>
-                <p>Alerts don't have default classes, only base and modifier classes.</p>
-            </li>
-            <li class="message message-warning">
-                <h4><i class="icon fw fw-warning"></i>Major Information Message</h4>
-                <p>Alerts don't have default classes, only base and modifier classes.</p>
-            </li>
-            <li class="message message-danger">
-                <h4><i class="icon fw fw-error"></i>Critical Information Message</h4>
-                <p>Alerts don't have default classes, only base and modifier classes.</p>
-            </li>
-        </ul>
-    </div>
-    <!-- /right-sidebar -->
+<div data-lang="html">
+        <!-- right-sidebar-toggle-buttons -->
+        <button class="btn btn-primary sidebar-toggle-btn" data-toggle="sidebar" data-target="#right-sidebar-overlay" aria-expanded="false" rel="notifications-sidebar">
+            Right sidebar overlay
+        </button>
+        <button class="btn btn-primary sidebar-toggle-btn" data-toggle="sidebar" data-target="#right-sidebar-divide" aria-expanded="false" rel="notifications-sidebar">
+            Right sidebar divide
+        </button>
+        <!-- /right-sidebar-toggle-buttons -->
+
+        <!-- right-sidebars -->
+        <div class="sidebar-wrapper example-sidebar" id="right-sidebar-overlay" data-side="right" data-width="260">
+            ...
+        </div>
+
+        <div class="sidebar-wrapper example-sidebar" id="right-sidebar-divide" data-side="right" data-width="260" data-container=".page-content-wrapper > .container-fluid" data-container-divide="true">
+            ...
+        </div>
+        <!-- /right-sidebars -->
+    
+</div>
             
         </div>
+            
     </div>
     
-    <div class="code">
+    <div class="code hidden">
         <div data-lang="html">
     
     <!-- left-sidebar-toggle-button -->

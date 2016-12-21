@@ -25,9 +25,26 @@
     background-color: #131313;
     background-size: 20px 20px;*/
 }
-
 #overview-page .header p { font-size: 16px; }
-#overview-page .header .btn-primary { border-color: #fff; }
+#overview-page .header .btn-primary {
+    color: #ffffff;
+    background-color: #4b6471;
+    border-color: #4b6471 !important;
+}
+#overview-page .header .btn-primary:hover {
+    background-color: #647883;
+}
+.btn-outline-inverse {
+    color: #91b7c9;
+    background-color: transparent;
+    border-color: #455a64;
+}
+
+.btn-outline-inverse:hover{
+    color: #c7d7df;
+    border-color: #c7d7df;
+}
+
 .doc-iframe { width: 100%; }
 
 .doc-logo img {
@@ -72,17 +89,6 @@ code.hljs { background: none; }
 code .hljs-string { color: #F2771F; }
 pre { border: 1px solid #ddd; }
 .code-container .tab-content pre { border-top: none; }
-
-.btn-outline-inverse {
-    color: #91b7c9;
-    background-color: transparent;
-    border-color: #455a64;
-}
-
-.btn-outline-inverse:hover{
-    color: #fff;
-    border-color: #fff;
-}
 
 .github-btn { color:#9E9E9E; }
 .github-btn:hover{ color: #F47A1E; }
