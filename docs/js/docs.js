@@ -50,6 +50,12 @@ $(function(){
         /***********************************************************
          *  Documentation code display
          ***********************************************************/
+        
+        /**
+         * Escape unexpected charaters in strings
+         * @param   {string} str Text Value
+         * @returns {string}     Character escaped text value
+         */
         function htmlEscape(str) {
             return String(str)
                     .replace(/&/g, '&amp;')
@@ -59,6 +65,14 @@ $(function(){
                     .replace(/>/g, '&gt;');
         }
         
+        /**
+         * Generate sample code for each markup examples and append it to the content as tabs
+         * @param   {string} request     Generate type: tab or tab-content
+         * @param   {string} uuid        Universally unique identifier for dynamically generated tab contents
+         * @param   {object} selector    HTML Element with code block
+         * @param   {string} activeClass Getting the class "active" if the tab/content is index 0
+         * @returns {string}             HTML block (tab/tab-content)
+         */
         function sampleCode(request, uuid, selector, activeClass){
             var text = (!selector.hasClass('no-encode')) ? htmlEscape(selector.html()) : selector.html(),
                 lang = selector.data('lang');
@@ -108,6 +122,9 @@ $(function(){
             }
         });
         
+        /***********************************************************
+         *  Binding code copy function
+         ***********************************************************/
         $(".btn-clipboard").each(function() {
             $(this).attr("data-clipboard-text", $(this).siblings('pre').find('code').text());
         });
@@ -118,6 +135,14 @@ $(function(){
          ***********************************************************/
         $('pre code').each(function(i, block) {
             hljs.highlightBlock(block);
+        });
+        
+        
+        $('.sidebar-wrapper').on('shown.sidebar', function(e){
+            $('[data-toggle=sidebar][data-target=#' + $(e.target).prop('id') + '].active').siblings().prop('disabled', true);
+        }).on('hidden.sidebar', function(e){
+            $('[data-toggle=sidebar][data-target=#' + $(e.target).prop('id') + ']').siblings().prop('disabled', false);
+            
         });
     });
     
