@@ -249,6 +249,28 @@ $.sidebar_toggle = function(action, target, container) {
         relationship,
         pushType,
         buttonParent;
+    
+    /**
+     * Dynamically adjust the height of sidebar to fill parent
+     */
+    function sidebarHeightAdjust(){
+        $('.sidebar-wrapper').each(function(){
+            var elemOffsetBottom = $(this).data('offset-bottom'),
+                scrollBottom = ($(document).height() - $(window).height()),
+                offesetBottom = 0,
+                getBottomOffset = elemOffsetBottom - (scrollBottom - ($(window).scrollTop()-elemOffsetBottom) - elemOffsetBottom);
+
+            if(getBottomOffset > 0){
+                offesetBottom = getBottomOffset;
+            }
+
+            $(this).height(($(window).height() - ($(this).offset().top - $(window).scrollTop())) - offesetBottom);
+
+            if((typeof $.fn.nanoScroller == 'function') && ($('.nano-content', this).length > 0)){
+                $(".nano-content").parent()[0].nanoscroller.reset();
+            }
+        }); 
+    };
 
     var sidebar_window = {
         update: function(target, container, button){
@@ -269,6 +291,8 @@ $.sidebar_toggle = function(action, target, container) {
             }
             
             $(target).css('top', targetTop);
+
+            sidebarHeightAdjust();
         },
         show: function(){  
             if($(target).data('sidebar-fixed') == true) {
@@ -427,6 +451,11 @@ $.sidebar_toggle = function(action, target, container) {
         }
 
     });
+    
+    $(window)
+        .load(sidebarHeightAdjust)
+        .resize(sidebarHeightAdjust)
+        .scroll(sidebarHeightAdjust);
 
 };
 
@@ -535,30 +564,6 @@ $.fn.random_background_color = function(range) {
 };
 
 }(jQuery));
-function windowEvents(){
-    $('.sidebar-wrapper').each(function(){
-        var elemOffsetBottom = $(this).data('offset-bottom'),
-            scrollBottom = ($(document).height() - $(window).height()),
-            offesetBottom = 0,
-            getBottomOffset = elemOffsetBottom - (scrollBottom - ($(window).scrollTop()-elemOffsetBottom) - elemOffsetBottom);
-        
-        if(getBottomOffset > 0){
-            offesetBottom = getBottomOffset;
-        }
-        
-        $(this).height(($(window).height() - ($(this).offset().top - $(window).scrollTop())) - offesetBottom);
-        
-        if((typeof $.fn.nanoScroller == 'function') && ($('.nano-content', this).length > 0)){
-            $(".nano-content").parent()[0].nanoscroller.reset();
-        }
-    }); 
-};
-    
-$(window)
-    .ready(windowEvents)
-    .resize(windowEvents)
-    .scroll(windowEvents);
-
 var responsiveTextRatio = 0.2,
     responsiveTextSleector = ".icon .text";
 
