@@ -2,12 +2,23 @@
 title: Theme WSO2
 name: theme-wso2
 version: 2.0.0
-url: wso2-dev-ux.github.io/theme-wso2/
+url: https://wso2-dev-ux.github.io
 license: https://github.com/wso2-dev-ux/theme-wso2/blob/master/LICENSE
+
+# Permalinks
+permalink: pretty
+
+# Server
 baseurl: "/theme-wso2"
 permalink: /:title
 sass:
   sass_dir: _scss
+  
+gems:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  
+exclude: ["README.md", "LICENSE"]
 
 # Custom vars
 documentation: "/demo"
