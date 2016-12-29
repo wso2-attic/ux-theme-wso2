@@ -10,7 +10,6 @@ permalink: pretty
 
 # Server
 baseurl: "/theme-wso2"
-permalink: /:title
 sass:
   sass_dir: _scss
   
