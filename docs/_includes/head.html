@@ -8,45 +8,45 @@
     <title>{% if page.title %}{{ site.title | escape }} | {{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
     
     <!-- Favion -->
-    <link href="{{ "libs/" | prepend: site.baseurl }}{{ site.name }}_{{ site.version }}/images/favicon.png" rel="icon" type="image/png" sizes="16x16" />
+    <link href="{{ site.baseurl }}/libs/{{ site.name }}_{{ site.version }}/images/favicon.png" rel="icon" type="image/png" sizes="16x16" />
 
     <!-- ===== Custom Libs ===== -->
     
     {{ page.css }}
 
     <!-- DataTable CSS -->
-    <link href="{{ "libs/data-tables_1.10.12/media/css/dataTables.bootstrap.min.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" />
-    <link href="{{ "libs/data-tables_1.10.12/extensions/Responsive/css/responsive.bootstrap.min.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" />
+    <link href="{{ site.baseurl }}/libs/data-tables_1.10.12/media/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ site.baseurl }}/libs/data-tables_1.10.12/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Select2 CSS -->
-    <link href="{{ "libs/select2_4.0.0/css/select2.min.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" />
+    <link href="{{ site.baseurl }}/libs/select2_4.0.0/css/select2.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Animate CSS -->
-    <link href="{{ "libs/animate/animate.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" />
+    <link href="{{ site.baseurl }}/libs/animate/animate.css" rel="stylesheet" type="text/css" />
     
     <!-- Highlight CSS -->
-    <link href="{{ "libs/highlight_9.6.0/css/highlight.min.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" />
+    <link href="{{ site.baseurl }}/libs/highlight_9.6.0/css/highlight.min.css" rel="stylesheet" type="text/css" />
 
     <!-- ===== /Custom Libs ===== -->
     
     <!-- jsTree Theme CSS -->
-    <link href="{{ "libs/" | prepend: site.baseurl }}{{ site.name }}_{{ site.version }}/extensions/jstree/style.css" rel="stylesheet" type="text/css" />
+    <link href="{{ site.baseurl }}/libs/{{ site.name }}_{{ site.version }}/extensions/jstree/style.css" rel="stylesheet" type="text/css" />
 
     <!-- Font WSO2 CSS -->
-    <link href="{{ "libs/font-wso2_1.2.0/css/font-wso2.min.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" />
+    <link href="{{ site.baseurl }}/libs/font-wso2_1.2.0/css/font-wso2.min.css" rel="stylesheet" type="text/css" />
     
     <!-- Theme WSO2 CSS -->
-    <link href="{{ "css/" | prepend: site.baseurl }}{{ site.name }}.css" rel="stylesheet" type="text/css" />
+    <link href="{{ site.baseurl }}/css/{{ site.name }}.css" rel="stylesheet" type="text/css" />
 
     <!-- Custom CSS -->
-    <!-- <link href="{{ "css/custom.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" /> -->
-    <link href="{{ "css/docs.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css" />
+    <!-- <link href="{{ site.baseurl }}/css/custom.css" rel="stylesheet" type="text/css" /> -->
+    <link href="{{ site.baseurl }}/css/docs.css" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="libs/html5shiv_3.7.2/html5shiv.min.js"></script>
-    <script src="libs/respond_1.4.2/respond.min.js"></script>
+    <script src="{{ site.baseurl }}/libs/html5shiv_3.7.2/html5shiv.min.js"></script>
+    <script src="{{ site.baseurl }}/libs/respond_1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>

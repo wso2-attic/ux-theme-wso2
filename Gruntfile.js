@@ -210,7 +210,7 @@ module.exports = function(grunt) {
                     var flags = grunt.option.flags();
                     flags = flags.toString();
                     flags = flags.replace(/([=,])|(--color)/g, ' ');
-                    return 'jekyll serve ' + flags;
+                    return 'jekyll serve --baseurl "" ' + flags;
                 },
                 stdout: true,
                 options: {

@@ -3,8 +3,9 @@
         <li><a href="/"><i class="icon fw fw-home"></i> <span class="hidden-xs">Home</span></a></li>
         {% unless page.url == '/' %}
             {% assign current-page = page.url | split: '/' %}
-            {% assign current-page = current-page[1] | remove: '.html' %}
-            <li class="active"><a href="{{ page.url | split: '/' }}">{{ current-page | replace: '-', ' ' | capitalize }}</a></li>
+            {% assign current-page-url = current-page[2] %}
+            {% assign current-page-name = current-page[2] | remove: '.html' %}
+            <li class="active"><a href="{{ site.baseurl }}{{ site.documentation }}/{{ current-page-url }}/">{{ current-page-name | replace: '-', ' ' | capitalize }}</a></li>
         {% endunless %}
     </ol>
 </div>

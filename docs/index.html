@@ -6,14 +6,14 @@ title: Overview
 <div id="overview-page">
     <div class="add-padding-5x row header text-center">
         <div class="doc-logo">
-            <img src="{{ "libs/" | prepend: site.baseurl }}{{ site.name }}_{{ site.version }}/images/logo-inverse.svg"  alt="wso2-logo">
+            <img src="{{ site.baseurl }}/libs/{{ site.name }}_{{ site.version }}/images/logo-inverse.svg"  alt="wso2-logo">
             <h1 class="doc-name">Theme</h1>
         </div>
 
         <h4 class="doc-description add-margin-bottom-5x">Starter Theme for WSO2 products</h4>
 
-        <a href="/header" class="btn btn-primary btn-lg">Live Demo</a>
-        <a href="downloads/{{ site.name }}-{{ site.version }}.zip" class="btn btn-outline-inverse btn-lg">Download</a>
+        <a href="{{ site.baseurl }}{{ site.documentation }}/header/" class="btn btn-primary btn-lg">Live Demo</a>
+        <a href="{{ site.baseurl }}/downloads/{{ site.name }}-{{ site.version }}.zip" class="btn btn-outline-inverse btn-lg">Download</a>
 
         <h5 class="doc-version">v{{ site.version }}</h5>
         
@@ -24,12 +24,12 @@ title: Overview
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="col-md-6 text-center">
-                    <img src="images/sass-logo.png" height="100"/>
+                    <img src="{{ site.baseurl }}/images/sass-logo.png" height="100"/>
                     <h3 class="text-medium">Preprocessors</h3>
-                    <p>Compatible with <a href="http://sass-lang.com/" target="_blank" class="doc-link">Sass</a>, which is a popular CSS Preprocessor.</p>
+                    <p>Powered by <a href="http://sass-lang.com/" target="_blank" class="doc-link">Sass</a>, which is a popular CSS Preprocessor.</p>
                 </div>
                 <div class="col-md-6 text-center">
-                    <img src="images/bootstrap-logo.png" height="100" />
+                    <img src="{{ site.baseurl }}/images/bootstrap-logo.png" height="100" />
                     <h3 class="text-medium">Twitter Bootstrap</h3>
                     <p>Based on <a href="http://getbootstrap.com/" target="_blank" class="doc-link">Twitter Bootstrap 3.3.7</a> with some additional stylings & functions.</p>
                 </div>
