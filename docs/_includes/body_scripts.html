@@ -9,20 +9,11 @@
     
     <!-- ===== Custom Libs ===== -->
 
-    <!-- Data Tables JS -->
-    <script src="{{ site.baseurl }}/libs/data-tables_1.10.12/media/js/jquery.dataTables.min.js"></script>
-    <script src="{{ site.baseurl }}/libs/data-tables_1.10.12/media/js/dataTables.bootstrap.min.js"></script>
-    <script src="{{ site.baseurl }}/libs/data-tables_1.10.12/extensions/Responsive/js/dataTables.responsive.js"></script>
-    <script src="{{ site.baseurl }}/libs/{{ site.name }}_{{ site.version }}/extensions/datatables/js/dataTables.wso2.js"></script>
-
     <!-- Select2 JS -->
     <script src="{{ site.baseurl }}/libs/select2_4.0.0/js/select2.full.min.js"></script>
 
     <!-- Jquery Validation JS -->
     <script src="{{ site.baseurl }}/libs/jquery-validation_1.14.0/jquery.validate.min.js"></script>
-    
-    <!-- jsTree JS -->
-    <script src="{{ site.baseurl }}/libs/jstree_3.3.0/jstree.min.js"></script>
 
     <!-- Noty JS -->
     <script src="{{ site.baseurl }}/libs/noty_2.3.5/packaged/jquery.noty.packaged.min.js"></script>
@@ -37,8 +28,15 @@
 
     <!-- Theme WSO2 JS -->
     <script src="{{ site.baseurl }}/libs/{{ site.name }}_{{ site.version }}/js/{{ site.name }}.js"></script>
-
-    {{ page.js }}
+    
+    {% if page.js %}
+        {% for url in page.js %}
+            {% assign new-url = url | replace: ' ' , '' %}
+            {% assign new-url = new-url | replace: '{{site.name}}' , site.name %}
+            {% assign new-url = new-url | replace: '{{site.version}}' , site.version %}
+            <script src="{{ site.baseurl }}/{{ new-url }}"></script>
+        {% endfor %}
+    {% endif %}
 
     <!-- Jquery Session JS -->
     <script src="{{ site.baseurl }}/js/jquery.session.js"></script>

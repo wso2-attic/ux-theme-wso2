@@ -1,3 +1,6 @@
+---
+# Jekyll Front Matter
+---
 /*
  ~   Copyright (c) WSO2 Inc. (http://wso2.com) All Rights Reserved.
  ~
@@ -21,7 +24,7 @@ $(function(){
      ***********************************************************/
     var tableBasic = $('#ajax-table').DataTable({
         responsive: true,
-        ajax: "../data/table.json",
+        ajax: "{{ site.baseurl }}/data/table.json",
         columns: [
             { "data": "ID" },
             { "data": "Device_Type" },
@@ -38,7 +41,7 @@ $(function(){
     
     var tableMembers = $('#members').DataTable({
         wso2: true,
-        ajax: "../data/table.json",
+        ajax: "{{ site.baseurl }}/data/table.json",
         columns: [
             { "data": "ID" },
             { "data": null },
@@ -97,7 +100,7 @@ $(function(){
     
     var tableUsers = $('#device-grid,#users').DataTable({
         wso2: true,
-        ajax: "../data/table.json",
+        ajax: "{{ site.baseurl }}/data/table.json",
         columns: [
             { "data": "Device_Type" },
             { "data": null },

@@ -12,11 +12,14 @@
 
     <!-- ===== Custom Libs ===== -->
     
-    {{ page.css }}
-
-    <!-- DataTable CSS -->
-    <link href="{{ site.baseurl }}/libs/data-tables_1.10.12/media/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="{{ site.baseurl }}/libs/data-tables_1.10.12/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    {% if page.css %}
+        {% for url in page.css %}
+            {% assign new-url = url | replace: ' ' , '' %}
+            {% assign new-url = new-url | replace: '{{site.name}}' , site.name %}
+            {% assign new-url = new-url | replace: '{{site.version}}' , site.version %}
+            <link href="{{ site.baseurl }}/{{ new-url }}" rel="stylesheet" type="text/css">
+        {% endfor %}
+    {% endif %}
 
     <!-- Select2 CSS -->
     <link href="{{ site.baseurl }}/libs/select2_4.0.0/css/select2.min.css" rel="stylesheet" type="text/css" />

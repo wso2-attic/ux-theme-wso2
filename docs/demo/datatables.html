@@ -1,8 +1,15 @@
 ---
 layout: default
 title: DataTables
-css:
-js: <script src="/js/datatables.js"></script>
+css: 
+- libs/data-tables_1.10.12/media/css/dataTables.bootstrap.min.css
+- libs/data-tables_1.10.12/extensions/Responsive/css/responsive.bootstrap.min.css
+js:
+- libs/data-tables_1.10.12/media/js/jquery.dataTables.min.js
+- libs/data-tables_1.10.12/media/js/dataTables.bootstrap.min.js
+- libs/data-tables_1.10.12/extensions/Responsive/js/dataTables.responsive.js
+- libs/{{ site.name }}_{{ site.version }}/extensions/datatables/js/dataTables.wso2.js
+- js/datatables.js
 ---
 
 <!-- ******************************************************************

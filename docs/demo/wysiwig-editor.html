@@ -1,7 +1,9 @@
 ---
 layout: default
 title: Wysiwig Editor
-js: <script src="/libs/tinymce_4.2.3/tinymce.min.js"></script><script src="/js/wysiwyg-editor.js"></script>
+js:
+- libs/tinymce_4.2.3/tinymce.min.js
+- js/wysiwyg-editor.js
 ---
 
 <div class="body-wrapper">
@@ -28,7 +30,6 @@ js: <script src="/libs/tinymce_4.2.3/tinymce.min.js"></script><script src="/js/w
             "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
             "save table contextmenu directionality emoticons template paste textcolor"
         ],
-        content_css: "css/editor.css",
         toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | print preview fullpage | forecolor backcolor emoticons"
     });
     
