@@ -128,16 +128,9 @@ ul.sidebar-messages > li {
   margin: 5px 0;
 }
 
-/*
-form label.error, label.error {
-    color: red;
-    font-style: italic;
+.breadcrumb {
+    text-transform: capitalize;
 }
-form input.error, input.error,
-form input.error:focus, input.error:focus{
-    border:1px solid red;
-}
-*/
 
 .twitter-typeahead, .twitter-typeahead:focus {
     width: 100%;
