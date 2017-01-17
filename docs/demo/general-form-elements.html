@@ -3,384 +3,313 @@ layout: default
 title: General Forms Elements
 ---
 
-<!-- ******************************************************************
-General Form Elements Templates
-******************************************************************* -->
+<div class="body-wrapper">
 
-<!-- page content -->
-    <div class="body-wrapper">
+    <h1 class="page-header">General Form Elements</h1>
 
-        <div class="page-header">
-            <h1>General Form Elements</h1>
-        </div>
-
-        <h4 class="sub-heading">Input Types</h4>
-        <hr />
+    <h4 class="sub-heading">Input Types</h4>
+    
+    <div class="code">
+        <div data-lang="html">
+    <form>
         <div class="row">
-            <div class="col-sm-12">
-                <div class = "code">
-                    <div data-lang="html">
-    <form class="form-horizontal" role="form">
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Text</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" value="Some text">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="example-email">Email</label>
-            <div class="col-sm-10">
-                <input type="email" id="example-email" name="example-email" class="form-control" placeholder="Email">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Password</label>
-            <div class="col-sm-10">
-                <input type="password" class="form-control" value="password">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Placeholder</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="placeholder">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Text area</label>
-            <div class="col-sm-10">
-                <textarea class="form-control" rows="3"></textarea>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Readonly</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" readonly="" value="Readonly value">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Disabled</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" disabled="" value="Disabled value">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Static control</label>
-            <div class="col-sm-10">
-                <p class="form-control-static">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Help text</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Help text">
-                <span class="help-block"><small>A block of help text.</small></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Input Select</label>
-            <div class="col-sm-10">
-                <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Multiple Select</label>
-            <div class="col-sm-10">
-                <select multiple="" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-        </div>
-    </form>
-                    </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Text</label>
+                    <input type="text" class="form-control" value="Some text">
                 </div>
-            </div><!-- end col -->
-        </div><!-- end row -->
+                <div class="form-group">
+                    <label class="control-label" for="example-email">Email</label>
+                    <input type="email" id="example-email" name="example-email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Password</label>
+                    <input type="password" class="form-control" value="password">
+                </div>
 
-        <h4 class="sub-heading">Input Sizes</h4>
-        <hr />
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="code">
-                    <div data-lang="html">
-    <form role="form" class="form-horizontal">
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="example-input-small">Small</label>
-            <div class="col-sm-6">
-                <input type="text" id="example-input-small" name="example-input-small" class="form-control input-sm" placeholder=".input-sm">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="example-input-normal">Medium</label>
-            <div class="col-sm-6">
-                <input type="text" id="example-input-normal" name="example-input-normal" class="form-control" placeholder="Normal">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="example-input-large">Large</label>
-            <div class="col-sm-6">
-                <input type="text" id="example-input-large" name="example-input-large" class="form-control input-lg" placeholder=".input-lg">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Grid Sizes</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder=".col-sm-4">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-5 col-sm-offset-2">
-                <input type="text" class="form-control" placeholder=".col-sm-5">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-6 col-sm-offset-2">
-                <input type="text" class="form-control" placeholder=".col-sm-6">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-10 col-sm-offset-2">
-                <input type="text" class="form-control" placeholder=".col-sm-10">
-            </div>
-        </div>
-    </form>
-                    </div>
+                <div class="form-group">
+                    <label class="control-label">Placeholder</label>
+                    <input type="text" class="form-control" placeholder="placeholder">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Text area</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Readonly</label>
+                    <input type="text" class="form-control" readonly="" value="Readonly value">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Disabled</label>
+                    <input type="text" class="form-control" disabled="" value="Disabled value">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Static control</label>
+                    <p class="form-control-static">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Help text</label>
+                    <input type="text" class="form-control" placeholder="Help text">
+                    <span class="help-block"><small>A block of help text.</small></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Input Select</label>
+                    <select class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Multiple Select</label>
+                    <select multiple="" class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
                 </div>
             </div>
         </div>
+    </form>  
+        </div>
+    </div>
 
-        <h4 class="sub-heading">Input groups</h4>
-        <hr />
-        <h5><b>Static</b></h5>
+    <h4 class="sub-heading">Input Sizes</h4>
 
-
-            <div class="code">
-                <div data-lang="html">
-    <form class="form-horizontal">
-        <div class="form-group">
-            <div class="col-sm-12">
-                <label for="input-name" class="control-label">Transfer</label>
-                <div class="form-inline">
+    <div class="code">
+        <div data-lang="html">
+    <form>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label" for="example-input-small">Small</label>
+                    <input type="text" id="example-input-small" name="example-input-small" class="form-control input-sm" placeholder=".input-sm">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="example-input-normal">Medium</label>
+                    <input type="text" id="example-input-normal" name="example-input-normal" class="form-control" placeholder="Normal">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="example-input-large">Large</label>
+                    <input type="text" id="example-input-large" name="example-input-large" class="form-control input-lg" placeholder=".input-lg">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Grid Sizes</label>
+                </div>
+                <div class="form-horizontal">
                     <div class="form-group">
-                        <div class="col-sm-12">
-                            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-                            <div class="input-group">
-                                <div class="input-group-addon">$</div>
-                                <input type="number" min="1" max="100000" class="form-control form-control-md" placeholder="Amount">
-                                <div class="input-group-addon">.00</div>
-                            </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" placeholder=".col-sm-4">
                         </div>
                     </div>
-                    <button type="submit" class="btn">Transfer cash</button>
+                    <div class="form-group">
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" placeholder=".col-sm-5">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" placeholder=".col-sm-6">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder=".col-sm-10">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </form>
-                </div>
-            </div>
+        </div>
+    </div>
 
-            <h5>Buttons</h5>
-            <div class="code">
-                <div data-lang="html">
-    <form class="form-horizontal">
+    <h4 class="sub-heading">Input groups</h4>
+
+    <div class="code">
+        <div data-lang="html">
+    <form>
         <div class="form-group">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="input-group input-wrap has-form-control-btn">
-                    <button class="form-control-btn" type="button" title="Search">
-                        <i class="fw fw-search" aria-hidden="true"></i>
-                    </button>
-                    <input type="text" class="form-control" placeholder="Search gadget">
+            <label for="input-name" class="control-label">Transfer</label>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        <input type="number" min="1" max="100000" class="form-control form-control-md" placeholder="Amount">
+                        <div class="input-group-addon">.00</div>
+                    </div>
                 </div>
+                <button type="submit" class="btn">Transfer cash</button>
             </div>
         </div>
     </form>
-                </div>
-            </div>
-
-            <div class="code">
-                <div data-lang="html">
-    <form class="form-horizontal">
-        <div class="form-group">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="input-group input-wrap has-form-control-btn">
-                    <button class="form-control-btn" type="button" title="Search">
-                        <i class="fw fw-search" aria-hidden="true"></i>
-                    </button>
-                    <input type="text" class="form-control" placeholder="Search gadget">
-                </div>
-            </div>
         </div>
-    </form>
-                </div>
-            </div>
+    </div>
 
-            <div class="code">
-                <div data-lang="html">
-    <form class="form-horizontal">
-        <div class="form-group">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <label class="control-label">Search</label>
-                <div class="input-group">
-                    <div class="input-group-btn input-wrap has-form-control-btn">
+    <div class="code">
+        <div data-lang="html">
+    <form>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group input-wrap has-form-control-btn">
                         <button class="form-control-btn" type="button" title="Search">
                             <i class="fw fw-search" aria-hidden="true"></i>
                         </button>
-                        <input type="text" class="form-control" aria-label="...">
-                    </div>
-                    <div class="input-group-btn">
-                        <button class="btn" type="button" title="Advance Search">
-                            <i class="fw fw-settings" aria-hidden="true"></i>
-                            <span class="hidden-xs">Advanced Search</span>
-                        </button>
+                        <input type="text" class="form-control" placeholder="Search gadget">
                     </div>
                 </div>
             </div>
         </div>
     </form>
+        </div>
+    </div>
+
+    <div class="code">
+        <div data-lang="html">
+    <form>
+        <div class="form-group">
+            <label class="control-label">Search</label>
+            <div class="input-group">
+                <div class="input-group-btn input-wrap has-form-control-btn">
+                    <button class="form-control-btn" type="button" title="Search">
+                        <i class="fw fw-search" aria-hidden="true"></i>
+                    </button>
+                    <input type="text" class="form-control" aria-label="...">
+                </div>
+                <div class="input-group-btn">
+                    <button class="btn" type="button" title="Advance Search">
+                        <i class="fw fw-settings" aria-hidden="true"></i>
+                        <span class="hidden-xs">Advanced Search</span>
+                    </button>
                 </div>
             </div>
+        </div>
+    </form>
+        </div>
+    </div>
 
-            <h5><b>Buttons and Dropdowns</b></h5>
-            <div class="code">
-                <div data-lang="html">
-    <form class="form-horizontal">
-        <div class="form-group">
-            <div class="col-sm-12">
-                <label class="control-label">Filter <span class="wr-help-tip glyphicon glyphicon-question-sign"></span></label>
-                <div class="input-group input-wrap">
-                    <div class="input-group-btn" data-toggle="dropdown">
-                        <button class="btn btn-default btn-primary" type="button" title="Advance Filter">
-                            <i class="fw fw-filter" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                    <ul class="dropdown-menu tiles arrow dark" role="menu">
-                        <li>
-                            <a href="#">
-                                <i class="icon fw fw-android"></i>
-                                <span class="name">Android</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon fw fw-apple"></i>
-                                <span class="name">iOS</span>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <i class="icon fw fw-user"></i>
-                                <span class="name">User</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon fw fw-users"></i>
-                                <span class="name">User Roles</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="input-group-btn">
-                        <button class="btn" type="button" title="Android">
-                            <i class="fw fw-android" aria-hidden="true"></i>
-                            <span class="hidden-xs">Android</span>
-                        </button>
-                    </div>
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            All Users
-                            <i class="icon-caret fw fw-down icon-caret"></i>
-                        </button>
-                        <ul class="dropdown-menu">
+    <div class="code">
+        <div data-lang="html">
+    <form>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Filter <i class="fw fw-help"></i></label>
+                    <div class="input-group input-wrap">
+                        <div class="input-group-btn" data-toggle="dropdown">
+                            <button class="btn btn-default btn-primary" type="button" title="Advance Filter">
+                                <i class="fw fw-filter" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <ul class="dropdown-menu tiles arrow dark" role="menu">
                             <li>
-                                <input type="text" class="form-control form-control-lg" placeholder="Search by user...">
-                                <div class="input-group-btn btn-input-right">
-                                    <button class="btn btn-default" type="button" title="Search">
-                                        <i class="fw fw-search" aria-hidden="true"></i>
-                                    </button>
-                                </div>
+                                <a href="#">
+                                    <i class="icon fw fw-android"></i>
+                                    <span class="name">Android</span>
+                                </a>
                             </li>
-                            <li><a href="#">All Users</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Denver</a></li>
-                            <li><a href="#">Jack</a></li>
-                            <li><a href="#">Cooper</a></li>
-                            <li><a href="#">Nick</a></li>
+                            <li>
+                                <a href="#">
+                                    <i class="icon fw fw-apple"></i>
+                                    <span class="name">iOS</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <i class="icon fw fw-user"></i>
+                                    <span class="name">User</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="icon fw fw-users"></i>
+                                    <span class="name">User Roles</span>
+                                </a>
+                            </li>
                         </ul>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="button" title="Search">
-                            <i class="fw fw-search" aria-hidden="true"></i>
-                        </button>
+                        <div class="input-group-btn">
+                            <button class="btn" type="button" title="Android">
+                                <i class="fw fw-android" aria-hidden="true"></i>
+                                <span class="hidden-xs">Android</span>
+                            </button>
+                        </div>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                All Users
+                                <i class="icon-caret fw fw-down icon-caret"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <input type="text" class="form-control form-control-lg" placeholder="Search by user...">
+                                    <div class="input-group-btn btn-input-right">
+                                        <button class="btn btn-default" type="button" title="Search">
+                                            <i class="fw fw-search" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li><a href="#">All Users</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Denver</a></li>
+                                <li><a href="#">Jack</a></li>
+                                <li><a href="#">Cooper</a></li>
+                                <li><a href="#">Nick</a></li>
+                            </ul>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="button" title="Search">
+                                <i class="fw fw-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </form>
-                </div>
-            </div>
+        </div>
+    </div>
 
-        <h4 class="sub-heading">Form Types</h4>
-        <hr />
-        <h5><b>Horizontal Form</b></h5>
-        <p>Add Bootstrap's 'form-horizontal' class to &lt;form&gt; tag</p>
+    <h4 class="sub-heading">Form Types</h4>
+    
+    <h5><b>Horizontal Form</b></h5>
+    <p>Add Bootstrap's <code>.form-horizontal</code> class to <code>&lt;form&gt;</code> tag</p>
 
+    <div class="code">
+        <div data-lang="html">
+    <form>
         <div class="row">
-            <div class="col-sm-12">
-                <div class="code">
-                    <div data-lang="html">
-    <form class="form-horizontal" role="form">
-        <div class="form-group">
-            <label for="inputUsername" class="col-sm-3 control-label">Username</label>
-            <div class="col-sm-9">
-                <input type="text" class="form-control" id="inputUsername" placeholder="Username">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputPassword" class="col-sm-3 control-label">Password</label>
-            <div class="col-sm-9">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputConfirmPassword" class="col-sm-3 control-label">Confirm Password</label>
-            <div class="col-sm-9">
-                <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-3 col-sm-9">
-                <button type="submit" class="btn btn-primary ">Sign up</button>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="inputUsername" class="control-label">Username</label>
+                    <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="control-label">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary ">Sign in</button>
+                </div>
             </div>
         </div>
     </form>
-                    </div>
-                </div>
-            </div>
         </div>
+    </div>
 
-        <h5><b>Inline Form</b></h5>
-        <p>Add Bootstrap's 'form-inline' class to &lt;form&gt; tag.</p>
-        <br />
-        <h5 class="example">Example 1</h5>
-        <p>Adding class "sr-only" hides the label from the form display but provides information intended for screen readers.</p>
+    <h5><b>Inline Form</b></h5>
+    <p>Add Bootstrap's <code>.form-inline</code> class to <code>&lt;form&gt;</code> tag.</p>
+    <p>Adding class <code>.sr-only</code> hides the label from the form display but provides information intended for screen readers.</p>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="code">
-                    <div data-lang="html">
+    <div class="code">
+        <div data-lang="html">
     <form class="form-inline" role="form">
         <div class="form-group">
             <label class="sr-only" for="exampleInputUsername1">Username</label>
@@ -393,17 +322,11 @@ General Form Elements Templates
         </div>
         <button type="submit" class="btn btn-primary">Sign in</button>
     </form>
-                    </div>
-                </div>
-            </div>
         </div>
+    </div>
 
-        <h5 class="example">Example 2</h5>
-
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="code">
-                    <div data-lang="html">
+    <div class="code">
+        <div data-lang="html">
     <form class="form-inline">
         <div class="form-group">
             <label class="control-label" for="exampleInputUserName">Username</label>
@@ -415,17 +338,11 @@ General Form Elements Templates
         </div>
         <button type="submit" class="btn btn-primary">Sign in</button>
     </form>
-                    </div>
-                </div>
-            </div>
         </div>
+    </div>
 
-        <h5 class="example">Example 3</h5>
-
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="code">
-                    <div data-lang="html">
+    <div class="code">
+        <div data-lang="html">
     <form class="form-inline">
         <div class="form-group">
             <label class="control-label">Name</label>
@@ -440,8 +357,7 @@ General Form Elements Templates
             </div>
         </div>
     </form>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
+
+</div>
