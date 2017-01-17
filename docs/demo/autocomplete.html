@@ -18,26 +18,32 @@ js:
     <div class="code">
         
         <!-- example -->
-        <div class="container-fluid">
-            <form class="form-horizontal">
+        <form>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-form-control-btn">
+                        <button class="form-control-btn" type="button" title="Search">
+                            <i class="fw fw-search" aria-hidden="true"></i>
+                        </button>
+                        <input type="text" class="form-control typeahead" placeholder="Search...">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- /example -->
+        
+        <div class="code-sample">
+<div data-lang="html">
+    <form>
+        <div class="row">
+            <div class="col-sm-6">
                 <div class="form-group has-form-control-btn">
                     <button class="form-control-btn" type="button" title="Search">
                         <i class="fw fw-search" aria-hidden="true"></i>
                     </button>
                     <input type="text" class="form-control typeahead" placeholder="Search...">
                 </div>
-            </form>
-        </div>
-        <!-- /example -->
-        
-        <div class="code-sample">
-<div data-lang="html">
-    <form class="form-horizontal">
-        <div class="form-group has-form-control-btn">
-            <button class="form-control-btn" type="button" title="Search">
-                <i class="fw fw-search" aria-hidden="true"></i>
-            </button>
-            <input type="text" class="form-control typeahead" placeholder="Search...">
+            </div>
         </div>
     </form>
     
