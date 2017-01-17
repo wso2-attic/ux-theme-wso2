@@ -19,7 +19,6 @@ $(function() {
     /***********************************************************
      *  Documentation Form Validation
      ***********************************************************/
-
     $('#form-validation-example').validate();
     $('#form-range-example').validate();
 });
