@@ -1,5 +1,5 @@
 ---
-# Jekyll Front Matter
+# Front matter comment to ensure Jekyll properly reads file.
 ---
 /*
  ~   Copyright (c) WSO2 Inc. (http://wso2.com) All Rights Reserved.

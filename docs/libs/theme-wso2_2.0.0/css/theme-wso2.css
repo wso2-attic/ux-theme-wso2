@@ -2424,9 +2424,6 @@ select[multiple].input-lg,
     padding-top: 6px;
     font-size: 12px; } }
 
-.form-horizontal {
-  max-width: 750px; }
-
 .control-label {
   font-weight: 400; }
 
