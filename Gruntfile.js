@@ -35,7 +35,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'config/products/<%= grunt.option("sass.options.product") %>',
                     src: ['**/*.scss'],
-                    dest: 'dist/product-css/<%= grunt.option("sass.options.product") %>',
+                    dest: 'dist/products-css/<%= grunt.option("sass.options.product") %>',
                     ext: '.css'
                 }]
             }
@@ -62,9 +62,9 @@ module.exports = function(grunt) {
             product: {
                 files: [{
                     expand: true,
-                    cwd: 'dist/css/products/<%= grunt.option("sass.options.product") %>',
+                    cwd: 'dist/products-css/<%= grunt.option("sass.options.product") %>',
                     src: ['**/*.css', '!**/*.min.css'],
-                    dest: 'dist/css/products/<%= grunt.option("sass.options.product") %>',
+                    dest: 'dist/products-css/<%= grunt.option("sass.options.product") %>',
                     ext: '.min.css'
                 }]
             }
@@ -128,6 +128,14 @@ module.exports = function(grunt) {
                         dest: 'docs/_scss'
                     }
                 ],
+            },
+            product: {
+                files: [{
+                    expand: true,
+                    cwd: 'dist/products-css/<%= grunt.option("sass.options.product") %>',
+                    src: ['**/*.css', '!**/*.min.css'],
+                    dest: 'docs/libs/<%= pkg.name %>_<%= pkg.version %>/products-css/<%= grunt.option("sass.options.product") %>'
+                }]
             }
         },
         zip: {
@@ -254,13 +262,13 @@ module.exports = function(grunt) {
             
             grunt.log.writeln('');
             grunt.log.writeln('building css files of all products ...');
-            grunt.task.run(['sass:all','cssmin:all']);
+            grunt.task.run(['sass:all','cssmin:all','copy:all']);
         
         } else if(arg == 'default'){
             
             grunt.log.writeln('');
             grunt.log.writeln('building the default theme css files ...');
-            grunt.task.run(['sass:default','cssmin:default']);
+            grunt.task.run(['sass:default','cssmin:default', 'copy:default']);
         
         } else {
             
@@ -271,7 +279,7 @@ module.exports = function(grunt) {
             
             if(grunt.file.isDir(filepath)){
                 grunt.option('sass.options.product', 'product-' + arg);
-                grunt.task.run(['sass:product','cssmin:product']);
+                grunt.task.run(['sass:product','cssmin:product', 'copy:product']);
             }
             else {
                 grunt.log.writeln('');
