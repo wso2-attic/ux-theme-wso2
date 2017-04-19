@@ -124,6 +124,15 @@ title: Accordion/Collapse
     </div>
     <!-- /collapse -->
                 </div>
+                <div data-lang="js">
+    $('.panel-extended').on('shown.bs.collapse', function (e,f) {
+        var elem = $(this).children().children('.in');
+
+        if($(elem).hasClass('in')){
+            $(elem).prev().find('input[type=radio]').prop('checked',true);
+        }
+    });
+                </div>
             </div>
         </div>
     </div>
