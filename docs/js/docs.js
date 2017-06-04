@@ -35,6 +35,8 @@ $(function(){
             $.session.remove(sidebarNav);
         });
         
+        $.material.init();
+        
         /***********************************************************
         *  Add active state to the current page in sidebar nav
         ***********************************************************/

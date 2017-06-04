@@ -2,6 +2,43 @@
 //  max-width: $form-control-max-width;
 //}
 
+.form-group {
+  position: relative;
+  margin: 40px 0 0 0;
+    
+  & .form-control {
+      &::-webkit-input-placeholder {
+        color: transparent;
+      }
+      &:-moz-placeholder {
+        color: transparent;
+      }
+      &::-moz-placeholder {
+        color: transparent;
+      }
+      &:-ms-input-placeholder {
+        color: transparent;
+      }      
+  }
+    
+  &.is-focused {
+    & .form-control {
+      &::-webkit-input-placeholder {
+        color: #cdcdcd;
+      }
+      &:-moz-placeholder {
+        color: #cdcdcd;
+      }
+      &::-moz-placeholder {
+        color: #cdcdcd;
+      }
+      &:-ms-input-placeholder {
+        color: #cdcdcd;
+      } 
+    }    
+  }
+}
+
 .control-label {
   font-weight: 400;
 }
@@ -60,7 +97,39 @@
 
 .form-control {
   width: 100%;
-
+  border: 0;
+  padding: 6px 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#009688), to(#009688)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
+  background-image: -webkit-linear-gradient(#009688, #009688), -webkit-linear-gradient(#D2D2D2, #D2D2D2);
+  background-image: -o-linear-gradient(#009688, #009688), -o-linear-gradient(#D2D2D2, #D2D2D2);
+  background-image: linear-gradient(#009688, #009688), linear-gradient(#D2D2D2, #D2D2D2);
+  -webkit-background-size: 0 2px, 100% 1px;
+  background-size: 0 2px, 100% 1px;
+  background-repeat: no-repeat;
+  background-position: center bottom, center -webkit-calc(100% - 1px);
+  background-position: center bottom, center calc(100% - 1px);
+  background-color: rgba(0, 0, 0, 0);
+  @include transition(background 0s ease-out);
+  float: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+    
+  &:focus {
+    outline: none;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($brand-primary), to($brand-primary)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
+    background-image: -webkit-linear-gradient($brand-primary, $brand-primary), -webkit-linear-gradient(#D2D2D2, #D2D2D2);
+    background-image: -o-linear-gradient($brand-primary, $brand-primary), -o-linear-gradient(#D2D2D2, #D2D2D2);
+    background-image: linear-gradient($brand-primary, $brand-primary), linear-gradient(#D2D2D2, #D2D2D2);
+    -webkit-background-size: 100% 2px, 100% 1px;
+    background-size: 100% 2px, 100% 1px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+    
   &-xs {
     min-width: calc(#{$form-control-max-width}/12);
   }
@@ -73,6 +142,36 @@
   &-lg {
     min-width: calc(#{$form-control-max-width}/2);
   }
+}
+
+.form-group.label-static label.control-label,
+.form-group.is-focused label.control-label,
+.form-group:not(.is-empty) label.control-label {
+    top: -20px;
+    left: 0;
+    font-size: 12px;
+    line-height: 1.07142857;
+}
+
+.form-group label.control-label,
+.form-group.label-placeholder label.control-label {
+    top: 7px;
+    font-size: 16px;
+    line-height: 1.42857143;
+}
+
+.form-group.label-floating label.control-label {
+    will-change: left, top, contents;
+}
+
+.form-group.label-static label.control-label,
+.form-group.label-placeholder label.control-label,
+.form-group label.control-label {
+    position: absolute;
+    pointer-events: none;
+    -webkit-transition: 0.3s ease all;
+    -o-transition: 0.3s ease all;
+    transition: 0.3s ease all;
 }
 
 input[type=number] {

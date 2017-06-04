@@ -29,6 +29,14 @@
     transform: $val;
 }
 
+@mixin transform-origin($val) {
+    -webkit-transform-origin: $val;
+    -moz-transform-origin: $val;
+    -ms-transform-origin: $val;
+    -o-transform-origin: $val;
+    transform-origin: $val;
+}
+
 @mixin transition($val...) {
     -webkit-transition: $val;
     -moz-transition: $val;
