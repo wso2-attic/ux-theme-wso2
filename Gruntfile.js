@@ -16,7 +16,7 @@ var path = require('path'),
                  '*/';
 
 module.exports = function(grunt) {
-
+    
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
             default: {
                 files: [{
                     expand: true,
-                    cwd: 'config/default',
+                    cwd: 'scss/config/default',
                     src: ['**/*.scss'],
                     dest: 'dist/css/',
                     ext: '.css'
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
             product: {
                 files: [{
                     expand: true,
-                    cwd: 'config/products/<%= grunt.option("sass.options.product") %>',
+                    cwd: 'scss/config/products/<%= grunt.option("sass.options.product") %>',
                     src: ['**/*.scss'],
                     dest: 'dist/products-css/<%= grunt.option("sass.options.product") %>',
                     ext: '.css'
@@ -71,21 +71,12 @@ module.exports = function(grunt) {
         },
         concat: {
             dist: {
+                options: {
+                    banner: grunt.file.read('js/header.js'),
+                    footer: grunt.file.read('js/footer.js'),
+                },
                 files: {
-                    'dist/js/<%= pkg.name %>.js': [
-                        'js/header.js',
-                        'js/modules/util.js',
-                        'js/modules/file-input.js',
-                        'js/modules/loading.js',
-                        'js/modules/responsive-text.js',
-                        'js/modules/tree-view.js',
-                        'js/modules/sidebar-toggle.js',
-                        'js/modules/collapse-nav-sub.js',
-                        'js/modules/zclip.js',
-                        'js/modules/random-background-color.js',
-                        'js/footer.js',
-                        'js/modules/optional.js'
-                    ],
+                    'dist/js/<%= pkg.name %>.js': JSON.parse(grunt.file.read('js/base.js')),
                 },
             }
         },
@@ -218,7 +209,7 @@ module.exports = function(grunt) {
                     var flags = grunt.option.flags();
                     flags = flags.toString();
                     flags = flags.replace(/([=,])|(--color)/g, ' ');
-                    return 'jekyll serve --baseurl "" ' + flags;
+                    return 'jekyll serve --baseurl "" <%= grunt.option("jekyll.options.product") %> ' + flags;
                 },
                 stdout: true,
                 options: {
@@ -247,6 +238,27 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['sass:default','cssmin:all','concat','uglify','copy','zip']);
     grunt.registerTask('docs', ['shell:jekyll_build']);
     grunt.registerTask('serve', ['concurrent:target']);
+    
+//    grunt.registerTask('serve', function(arg) {
+//        if(!arg){
+//            grunt.task.run(['concurrent:target']);
+//        }
+//        else{
+//            grunt.log.writeln('');
+//            grunt.log.writeln('Jekyll server is running with custom configuration of product-' + arg + ' ...');
+//            
+//            var filepath = 'scss/config/products/product-' + arg;
+//            
+//            if(grunt.file.isDir(filepath)){
+//                grunt.option('jekyll.options.product', '--css "product-' + arg + '"');
+//                grunt.task.run(['concurrent:target']);
+//            }
+//            else {
+//                grunt.log.writeln('');
+//                grunt.log.error('Couldn\'t find product-' + arg + ' in scss config folder. Please check the path "scss/config/products/" and run the command');
+//            }
+//        }
+//    }); 
     
     grunt.registerTask('product', function(arg) {
         if(!arg){
@@ -283,7 +295,7 @@ module.exports = function(grunt) {
             }
             else {
                 grunt.log.writeln('');
-                grunt.log.error('Couldn\'t find product-' + arg + ' in config folder. Please check the path "config/products/" and run the command');
+                grunt.log.error('Couldn\'t find product-' + arg + ' in scss config folder. Please check the path "scss/config/products/" and run the command');
             }
             
         }
