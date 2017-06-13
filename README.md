@@ -47,6 +47,7 @@ Our Gruntfile includes the following commands and tasks:
 | `grunt docs` | Build and move other required assets to documentation folder which are used when running the documentation locally. |
 | `grunt serve` | To run documentation locally. This runs the shell command `jekyll serve` on the subfolder: `/docs`. Since it uses pure jekyll, you can use [jekyll flags](https://jekyllrb.com/docs/configuration/) along with it. e.g. `grunt serve --port 4001` |
 | `grunt product:<porduct-short-name>` | To compile custom CSS for specific products with some additional configurations. e.g. `grunt product:cloud` to compile custom CSS for Product Cloud. |
+| `grunt test-scss` | To test scss modules `/scss/modules/`. Output `report.json` file will be generated in the root folder |
 
 ### Local documentation
 

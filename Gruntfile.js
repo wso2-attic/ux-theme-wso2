@@ -219,6 +219,33 @@ module.exports = function(grunt) {
                     }
                 }
             }
+        },
+        sasslint: {
+            options: {
+                configFile: '.sass-lint.yml',
+                formatter: 'json',
+                outputFile: 'report.json'
+            },
+            target: [
+                'scss/\modules/\**.scss',
+                'scss/\config/\**.scss',
+                'scss/\base.scss'
+            ]
+        },
+        "json-format": {
+            test: {
+                options: {
+                    indent: 4,
+                    remove: ['_comment']
+                },
+                files: [
+                    {
+                        expand: true,
+                        src:  ['report.json'],
+                        dest: './'
+                    },
+                ]
+            }
         }
     });
     
@@ -233,11 +260,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-zip');
     grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-sass-lint');
+    grunt.loadNpmTasks('grunt-json-format');
     
     // Default task(s).   
     grunt.registerTask('default', ['sass:default','cssmin:all','concat','uglify','copy','zip']);
     grunt.registerTask('docs', ['shell:jekyll_build']);
     grunt.registerTask('serve', ['concurrent:target']);
+    grunt.registerTask('test-scss', ['sasslint','json-format']);
     
 //    grunt.registerTask('serve', function(arg) {
 //        if(!arg){
