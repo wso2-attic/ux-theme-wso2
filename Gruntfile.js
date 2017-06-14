@@ -139,7 +139,7 @@ module.exports = function(grunt) {
                     'dist/images/**',
                     'dist/extensions/**'
                 ],
-                dest: 'docs/downloads/<%= pkg.name %>-<%= pkg.version %>.zip'
+                dest: 'docs/downloads/<%= pkg.name %>_<%= pkg.version %>.zip'
             }
         },
         jekyll: {
