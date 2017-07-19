@@ -16,7 +16,7 @@ title: General Forms Elements
             <div class="col-md-6">
                 <div class="form-group">
                     <label class="control-label">Text</label>
-                    <input type="text" class="form-control" value="Some text">
+                    <input id="sample-text" type="text" class="form-control" value="Some text">
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="example-email">Email</label>
@@ -24,25 +24,25 @@ title: General Forms Elements
                 </div>
                 <div class="form-group">
                     <label class="control-label">Password</label>
-                    <input type="password" class="form-control" value="password">
+                    <input id="form-password" type="password" class="form-control" value="password">
                 </div>
 
                 <div class="form-group">
                     <label class="control-label">Placeholder</label>
-                    <input type="text" class="form-control" placeholder="placeholder">
+                    <input id="placeholder-example" type="text" class="form-control" placeholder="placeholder">
                 </div>
                 <div class="form-group">
                     <label class="control-label">Text area</label>
-                    <textarea class="form-control" rows="3"></textarea>
+                    <textarea id="textarea-sample" class="form-control" rows="3"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label">Readonly</label>
-                    <input type="text" class="form-control" readonly="" value="Readonly value">
+                    <input id="readonly-text" type="text" class="form-control" readonly="" value="Readonly value">
                 </div>
                 <div class="form-group">
                     <label class="control-label">Disabled</label>
-                    <input type="text" class="form-control" disabled="" value="Disabled value">
+                    <input id="dissabled-field" type="text" class="form-control" disabled="" value="Disabled value">
                 </div>
                 <div class="form-group">
                     <label class="control-label">Static control</label>
@@ -50,12 +50,12 @@ title: General Forms Elements
                 </div>
                 <div class="form-group">
                     <label class="control-label">Help text</label>
-                    <input type="text" class="form-control" placeholder="Help text">
+                    <input id="help-text" type="text" class="form-control" placeholder="Help text">
                     <span class="help-block"><small>A block of help text.</small></span>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Input Select</label>
-                    <select class="form-control">
+                    <select id="input-select" class="form-control">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -65,7 +65,7 @@ title: General Forms Elements
                 </div>
                 <div class="form-group">
                     <label class="control-label">Multiple Select</label>
-                    <select multiple="" class="form-control">
+                    <select id="multiple-select" multiple="" class="form-control">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -104,22 +104,22 @@ title: General Forms Elements
                 <div class="form-horizontal">
                     <div class="form-group">
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" placeholder=".col-sm-4">
+                            <input id="grid-sizes-sm-4" type="text" class="form-control" placeholder=".col-sm-4">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-5">
-                            <input type="text" class="form-control" placeholder=".col-sm-5">
+                            <input id="grid-sizes-sm-5" type="text" class="form-control" placeholder=".col-sm-5">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" placeholder=".col-sm-6">
+                            <input id="grid-sizes-sm-6" type="text" class="form-control" placeholder=".col-sm-6">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder=".col-sm-10">
+                            <input id="grid-sizes-sm-10" type="text" class="form-control" placeholder=".col-sm-10">
                         </div>
                     </div>
                 </div>
@@ -138,14 +138,14 @@ title: General Forms Elements
             <label for="input-name" class="control-label">Transfer</label>
             <div class="form-inline">
                 <div class="form-group">
-                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                    <label class="sr-only" for="input-amount">Amount (in dollars)</label>
                     <div class="input-group">
                         <div class="input-group-addon">$</div>
-                        <input type="number" min="1" max="100000" class="form-control form-control-md" placeholder="Amount">
+                        <input id="input-amount" type="number" min="1" max="100000" class="form-control form-control-md" placeholder="Amount">
                         <div class="input-group-addon">.00</div>
                     </div>
                 </div>
-                <button type="submit" class="btn">Transfer cash</button>
+                <button id="btnTransfer" type="submit" class="btn">Transfer cash</button>
             </div>
         </div>
     </form>
@@ -159,10 +159,10 @@ title: General Forms Elements
             <div class="col-md-6">
                 <div class="form-group">
                     <div class="input-group input-wrap has-form-control-btn">
-                        <button class="form-control-btn" type="button" title="Search">
+                        <button id="btn-search" class="form-control-btn" type="button" title="Search">
                             <i class="fw fw-search" aria-hidden="true"></i>
                         </button>
-                        <input type="text" class="form-control" placeholder="Search gadget">
+                        <input id="search-box" type="text" class="form-control" placeholder="Search gadget">
                     </div>
                 </div>
             </div>
@@ -178,13 +178,13 @@ title: General Forms Elements
             <label class="control-label">Search</label>
             <div class="input-group">
                 <div class="input-group-btn input-wrap has-form-control-btn">
-                    <button class="form-control-btn" type="button" title="Search">
+                    <button id="btn-input-search" class="form-control-btn" type="button" title="Search">
                         <i class="fw fw-search" aria-hidden="true"></i>
                     </button>
                     <input type="text" class="form-control" aria-label="...">
                 </div>
                 <div class="input-group-btn">
-                    <button class="btn" type="button" title="Advance Search">
+                    <button id="btn-advanced-search" class="btn" type="button" title="Advance Search">
                         <i class="fw fw-settings" aria-hidden="true"></i>
                         <span class="hidden-xs">Advanced Search</span>
                     </button>
@@ -204,7 +204,7 @@ title: General Forms Elements
                     <label class="control-label">Filter <i class="fw fw-help"></i></label>
                     <div class="input-group input-wrap">
                         <div class="input-group-btn" data-toggle="dropdown">
-                            <button class="btn btn-default btn-primary" type="button" title="Advance Filter">
+                            <button id="btn-advanced-filter" class="btn btn-default btn-primary" type="button" title="Advance Filter">
                                 <i class="fw fw-filter" aria-hidden="true"></i>
                             </button>
                         </div>
@@ -236,19 +236,19 @@ title: General Forms Elements
                             </li>
                         </ul>
                         <div class="input-group-btn">
-                            <button class="btn" type="button" title="Android">
+                            <button id="btn-android" class="btn" type="button" title="Android">
                                 <i class="fw fw-android" aria-hidden="true"></i>
                                 <span class="hidden-xs">Android</span>
                             </button>
                         </div>
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button id="btn-toggle" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 All Users
                                 <i class="icon-caret fw fw-down icon-caret"></i>
                             </button>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <input type="text" class="form-control form-control-lg" placeholder="Search by user...">
+                                    <input id="user-search" type="text" class="form-control form-control-lg" placeholder="Search by user...">
                                     <div class="input-group-btn btn-input-right">
                                         <button class="btn btn-default" type="button" title="Search">
                                             <i class="fw fw-search" aria-hidden="true"></i>
@@ -288,15 +288,15 @@ title: General Forms Elements
         <div class="row">
             <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="inputUsername" class="control-label">Username</label>
-                    <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+                    <label for="input-username" class="control-label">Username</label>
+                    <input type="text" class="form-control" id="input-username" placeholder="Username">
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword" class="control-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    <label for="input-password" class="control-label">Password</label>
+                    <input type="password" class="form-control" id="input-password" placeholder="Password">
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary ">Sign in</button>
+                    <button id="btn-sign-in" type="submit" class="btn btn-primary ">Sign in</button>
                 </div>
             </div>
         </div>
@@ -312,15 +312,15 @@ title: General Forms Elements
         <div data-lang="html">
     <form class="form-inline" role="form">
         <div class="form-group">
-            <label class="sr-only" for="exampleInputUsername1">Username</label>
-            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Enter Username">
+            <label class="sr-only" for="example-input-username-1">Username</label>
+            <input type="text" class="form-control" id="example-input-username-1" placeholder="Enter Username">
         </div>
 
         <div class="form-group">
-            <label class="sr-only" for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label class="sr-only" for="example-input-password-1">Password</label>
+            <input type="password" class="form-control" id="example-input-password-1" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button id="btn-eg-sign-in" type="submit" class="btn btn-primary">Sign in</button>
     </form>
         </div>
     </div>
@@ -329,14 +329,14 @@ title: General Forms Elements
         <div data-lang="html">
     <form class="form-inline">
         <div class="form-group">
-            <label class="control-label" for="exampleInputUserName">Username</label>
-            <input type="text" class="form-control" id="exampleInputUserName" >
+            <label class="control-label" for="example-input-user-name">Username</label>
+            <input type="text" class="form-control" id="example-input-user-name" >
         </div>
         <div class="form-group">
-            <label class="control-label" for="exampleInputPassword">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword">
+            <label class="control-label" for="example-input-password">Password</label>
+            <input type="password" class="form-control" id="example-input-password">
         </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button id="btn-signin-eg-2" type="submit" class="btn btn-primary">Sign in</button>
     </form>
         </div>
     </div>
@@ -347,12 +347,12 @@ title: General Forms Elements
         <div class="form-group">
             <label class="control-label">Name</label>
             <div class="input-group input-wrap res-wrap">
-                <input type="text" class="form-control" placeholder="First Name" required>
+                <input id="first-name" type="text" class="form-control" placeholder="First Name" required>
                 <div class="input-group-btn">
                     <label class="control-label">Last Name</label>
                 </div>
                 <div class="input-group-btn">
-                    <input type="text" class="form-control form-control-lg" placeholder="Last Name">
+                    <input id="last-name" type="text" class="form-control form-control-lg" placeholder="Last Name">
                 </div>
             </div>
         </div>
