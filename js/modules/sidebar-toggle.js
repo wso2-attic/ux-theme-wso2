@@ -34,7 +34,7 @@ $.sidebar_toggle = function(action, target, container) {
             $(this).height(($(window).height() - ($(this).offset().top - $(window).scrollTop())) - offesetBottom);
 
             if((typeof $.fn.nanoScroller == 'function') && ($('.nano-content', this).length > 0)){
-                $(".nano-content", this).parent()[0].nanoscroller.reset();
+                $(".nano-content").parent()[0].nanoscroller.reset();
             }
         }); 
     };

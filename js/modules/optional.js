@@ -33,7 +33,7 @@ var responsiveTextRatio = 0.2,
             },
             callback: function(mutations) {
                 mutations.forEach(function(mutation) {
-
+                    console.log(mutation);
                 })
             }
         };

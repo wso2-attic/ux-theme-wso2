@@ -1,125 +1,121 @@
 .visible-block {
-  display: block !important;
+    display: block !important;
 }
 
 .visible-inline {
-  display: inline !important;
+    display: inline !important;
 }
 
 .visible-inline-block {
-  display: inline-block !important;
+    display: inline-block !important;
 }
 
 @for $i from 1 through $sizes-length {
 
-  .add-padding-#{$i}x {
-    padding: ($i * $default-gap) !important;
-  }
-  @each $side in $sides {
-    .add-padding-#{$side}-#{$i}x {
-      padding-#{$side}: ($i * $default-gap) !important;
+    .add-padding-#{$i}x {
+        padding: ($i * $default-gap) !important;
     }
-  }
+    @each $side in $sides {
+        .add-padding-#{$side}-#{$i}x {
+            padding-#{$side}: ($i * $default-gap) !important;
+        }
+    }
 
-  .add-margin-#{$i}x {
-    margin: ($i * $default-gap) !important;
-  }
-  @each $side in $sides {
-    .add-margin-#{$side}-#{$i}x {
-      margin-#{$side}: ($i * $default-gap) !important;
+    .add-margin-#{$i}x {
+        margin: ($i * $default-gap) !important;
     }
-  }
+    @each $side in $sides {
+        .add-margin-#{$side}-#{$i}x {
+            margin-#{$side}: ($i * $default-gap) !important;
+        }
+    }
 
 }
 
 .remove-padding {
-  padding: 0 !important;
+    padding: 0 !important;
 
-  &-top {
-    padding-top: 0 !important;
-  }
-  &-bottom {
-    padding-bottom: 0 !important;
-  }
-  &-left {
-    padding-left: 0 !important;
-  }
-  &-right {
-    padding-right: 0 !important;
-  }
+    &-top {
+        padding-top: 0 !important;
+    }
+    &-bottom {
+        padding-bottom: 0 !important;
+    }
+    &-left {
+        padding-left: 0 !important;
+    }
+    &-right {
+        padding-right: 0 !important;
+    }
 }
 
 .remove-margin {
-  margin: 0 !important;
+    margin: 0 !important;
 
-  &-top {
-    margin-top: 0 !important;
-  }
-  &-bottom {
-    margin-bottom: 0 !important;
-  }
-  &-left {
-    margin-left: 0 !important;
-  }
-  &-right {
-    margin-right: 0 !important;
-  }
+    &-top {
+        margin-top: 0 !important;
+    }
+    &-bottom {
+        margin-bottom: 0 !important;
+    }
+    &-left {
+        margin-left: 0 !important;
+    }
+    &-right {
+        margin-right: 0 !important;
+    }
 }
 
 @each $screen, $size in $screen-sizes {
-  @media #{$size} {
-    .remove-max-width-#{$screen} {
-      max-width: none !important;
+    @media #{$size} {
+        .remove-max-width-#{$screen} {
+            max-width: none !important;
+        }
+        .remove-max-height-#{$screen} {
+            max-width: none !important;
+        }
+        .pull-left-#{$screen} {
+            float: left !important;
+        }
+        .pull-right-#{$screen} {
+            float: right !important;
+        }
+        .float-remove-#{$screen} {
+            float: none !important;
+        }
+        .text-center-#{$screen} {
+            text-align: center !important;
+        }
+        .position-static-#{$screen} {
+            position: static !important;
+        }
+        .remove-padding-#{$screen} {
+            padding: 0 !important;
+        }
+        .remove-margin-#{$screen} {
+            margin: 0 !important;
+        }
+        .fade-in-#{$screen} {
+            opacity: 1 !important;
+        }
+        .fade-out-#{$screen} {
+            opacity: 0 !important;
+        }
+        .display-none-#{$screen} {
+            display: none !important;
+        }
+        .display-block-#{$screen} {
+            display: block !important;
+        }
+        .display-inline-#{$screen} {
+            display: inline !important;
+        }
+        .display-inline-block-#{$screen} {
+            display: inline-block !important;
+        }
     }
-    .remove-max-height-#{$screen} {
-      max-width: none !important;
-    }
-    .pull-left-#{$screen} {
-      float: left !important;
-    }
-    .pull-right-#{$screen} {
-      float: right !important;
-    }
-    .float-remove-#{$screen} {
-      float: none !important;
-    }
-    .text-center-#{$screen} {
-      text-align: center !important;
-    }
-    .position-static-#{$screen} {
-      position: static !important;
-    }
-    .remove-padding-#{$screen} {
-      padding: 0 !important;
-    }
-    .remove-margin-#{$screen} {
-      margin: 0 !important;
-    }
-    .fade-in-#{$screen} {
-      opacity: 1 !important;
-    }
-    .fade-out-#{$screen} {
-      opacity: 0 !important;
-    }
-    .display-none-#{$screen} {
-      display: none !important;
-    }
-    .display-block-#{$screen} {
-      display: block !important;
-    }
-    .display-inline-#{$screen} {
-      display: inline !important;
-    }
-    .display-inline-block-#{$screen} {
-      display: inline-block !important;
-    }
-  }
 }
 
 .no-wrap {
-  white-space: nowrap;
-}
-
-body.layout-fixed {
-  height: 100%;
+    white-space: nowrap;
 }

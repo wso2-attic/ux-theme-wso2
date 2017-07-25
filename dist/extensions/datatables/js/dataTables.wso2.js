@@ -240,8 +240,12 @@
                 toggleButton.click(function () {
                     if ($(this).attr('data-view') == 'grid') {
                         $(this).closest('.dataTables_wrapper').find('.dataTable').addClass('grid-view');
+                        //$(this).closest('li').hide();
+                        //$(this).closest('li').siblings().show();
                     } else {
                         $(this).closest('.dataTables_wrapper').find('.dataTable').removeClass('grid-view');
+                        //$(this).closest('li').hide();
+                        //$(this).closest('li').siblings().show();
                     }
                 });
 
@@ -290,11 +294,17 @@
                 return;
             }
 
+//            if ( $(settings.nTable).hasClass('dte') ||
+//                 $(settings.nTable).hasClass('dt-extended') ||
+//                 settings.oInit.wso2 ||
+//                 DataTable.defaults.wso2 ||
+//            ) {
                 var init = settings.oInit.wso2;
 
                 if (init !== false) {
                     new wso2Extend (settings, $.isPlainObject(init) ? init : {});
                 }
+            //}
         });
         
         return wso2Extend;
