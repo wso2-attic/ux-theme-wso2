@@ -1,16 +1,16 @@
 {
-  "name": "reference-react-app",
-  "version": "0.1.0",
-  "description": "WSO2 Reference App for React Applications",
+  "name": "Theme WSO2",
+  "version": "3.0.0",
+  "description": "UI templates and components for WSO2 products",
   "private": false,
   "author": "WSO2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wso2-incubator/reference-react-app.git"
+    "url": "https://github.com/wso2-dev-ux/theme-wso2.git"
   },
   "license": "Apache License 2.0",
   "bugs": {
-    "url": "https://github.com/wso2-incubator/reference-react-app/issues"
+    "url": "https://github.com/wso2-dev-ux/theme-wso2/issues"
   },
   "dependencies": {
     "react": "^15.5.4",
