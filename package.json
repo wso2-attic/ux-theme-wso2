@@ -25,7 +25,7 @@
     "sass-loader": "^6.0.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "bootstrap": "^4.0.0-beta",
-    "reactstrap": "^4.8.0",
+    "reactstrap": "^5.0.0-alpha.0",
     "react-addons-transition-group": "^15.6.0",
     "react-addons-css-transition-group": "^15.6.0"
   },
