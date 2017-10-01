@@ -4,14 +4,18 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var extractThemes = new ExtractTextPlugin('./[name].css');
 
-var ROOT_DIR = path.resolve(__dirname, 'src');
-var BUILD_DIR = path.resolve(__dirname, 'docs');
-var MAIN_SCSS = ROOT_DIR + "/stylesheets/main.scss";
+var MODULE_ROOT_DIR = path.resolve(__dirname, 'module/src');
+var MODULE_BUILD_DIR = path.resolve(__dirname, 'module/public');
+var MODULE_MAIN_SCSS = MODULE_ROOT_DIR + "/stylesheets/main.scss";
 
-var config = [{
-    entry: ROOT_DIR + '/index.jsx',
+var DOC_ROOT_DIR = path.resolve(__dirname, 'src');
+var DOC_BUILD_DIR = path.resolve(__dirname, 'docs');
+var DOC_MAIN_SCSS = DOC_ROOT_DIR + "/stylesheets/main.scss";
+
+var moduleConfig = [{
+    entry: MODULE_ROOT_DIR + '/index.js',
     output: {
-        path: BUILD_DIR,
+        path: MODULE_BUILD_DIR,
         filename: 'bundle.js'
     },
     resolve: {
@@ -34,7 +38,7 @@ var config = [{
             {
                 test : /\.jsx?/,
                 exclude: /node_modules/,
-                include : ROOT_DIR,
+                include : MODULE_ROOT_DIR,
                 loader : 'babel-loader'
             }
         ]
@@ -42,10 +46,75 @@ var config = [{
     devtool: 'source-map',
 }, {
     entry: {
-        bundle: MAIN_SCSS,
+        bundle: MODULE_MAIN_SCSS,
     },
     output: {
-        path: BUILD_DIR,
+        path: MODULE_BUILD_DIR,
+        filename: '[name].css',
+    },
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                use: extractThemes.extract({
+                    fallback: "style-loader",
+                    use: [{
+                        loader: "css-loader",
+                        options: {
+                            sourceMap: true
+                        }
+                    }, {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true
+                        }
+                    }]
+                })
+            }
+        ]
+    },
+    plugins: [
+        extractThemes
+    ],
+    devtool: 'source-map'
+}, {
+    entry: DOC_ROOT_DIR + '/index.jsx',
+    output: {
+        path: DOC_BUILD_DIR,
+        filename: 'bundle.js'
+    },
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
+    module : {
+        loaders : [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        query: {
+                            presets: ['es2015', 'react']
+                        }
+                    }
+                ]
+            },
+            {
+                test : /\.jsx?/,
+                exclude: /node_modules/,
+                include : DOC_ROOT_DIR,
+                loader : 'babel-loader'
+            }
+        ]
+    },
+    devtool: 'source-map',
+}, {
+    entry: {
+        bundle: DOC_MAIN_SCSS,
+    },
+    output: {
+        path: DOC_BUILD_DIR,
         filename: '[name].css',
     },
     module: {
@@ -75,4 +144,4 @@ var config = [{
     devtool: 'source-map'
 }];
 
-module.exports = config;
+module.exports = moduleConfig;
