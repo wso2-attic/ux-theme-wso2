@@ -1,7 +1,7 @@
 {
-  "name": "theme-wso2",
-  "version": "3.0.0",
-  "description": "UI templates and components for WSO2 products",
+  "name": "theme-wso2-docs",
+  "version": "1.0.0",
+  "description": "Documentation for Theme WSO2",
   "private": false,
   "author": "WSO2",
   "repository": {
@@ -13,10 +13,7 @@
     "url": "https://github.com/wso2-dev-ux/theme-wso2/issues"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-beta",
-    "reactstrap": "^5.0.0-alpha.2",
-    "react-addons-transition-group": "^15.6.0",
-    "react-addons-css-transition-group": "^15.6.0"
+    "theme-wso2": "file:../theme-wso2"
   },
   "devDependencies": {
     "react": "^15.5.4",
@@ -32,7 +29,6 @@
     "sass-loader": "^6.0.3",
     "extract-text-webpack-plugin": "^2.1.0"
   },
-  "main": "src/",
   "scripts": {
     "dev": "webpack -d --watch",
     "buid" : "webpack -p"

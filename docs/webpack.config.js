@@ -6,9 +6,10 @@ var extractThemes = new ExtractTextPlugin('./[name].css');
 
 var ROOT_DIR = path.resolve(__dirname, 'src');
 var BUILD_DIR = path.resolve(__dirname, 'public');
+var MAIN_SCSS = ROOT_DIR + "/stylesheets/main.scss";
 
 var config = [{
-    entry: ROOT_DIR + '/index.js',
+    entry: ROOT_DIR + '/index.jsx',
     output: {
         path: BUILD_DIR,
         filename: 'bundle.js'
@@ -41,7 +42,7 @@ var config = [{
     devtool: 'source-map',
 }, {
     entry: {
-        bundle: ROOT_DIR + "/stylesheets/main.scss",
+        bundle: MAIN_SCSS,
     },
     output: {
         path: BUILD_DIR,
