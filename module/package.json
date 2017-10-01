@@ -1,7 +1,7 @@
 {
-  "name": "theme-wso2",
+  "name": "react-theme-wso2",
   "version": "3.0.0",
-  "description": "UI templates and components for WSO2 products",
+  "description": "React Base Components for WSO2 products",
   "private": false,
   "author": "WSO2",
   "repository": {
@@ -18,23 +18,5 @@
     "react-addons-transition-group": "^15.6.0",
     "react-addons-css-transition-group": "^15.6.0"
   },
-  "devDependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-scripts": "1.0.7",
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "webpack": "^3.6.0",
-    "node-sass": "^4.5.2",
-    "css-loader": "^0.26.2",
-    "sass-loader": "^6.0.3",
-    "extract-text-webpack-plugin": "^2.1.0"
-  },
   "main": "src/",
-  "scripts": {
-    "dev": "webpack -d --watch",
-    "buid" : "webpack -p"
-  }
 }

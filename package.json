@@ -1,7 +1,7 @@
 {
-  "name": "theme-wso2-docs",
-  "version": "1.0.0",
-  "description": "Documentation for Theme WSO2",
+  "name": "theme-wso2",
+  "version": "3.0.0",
+  "description": "Theme WSO2 React Node Module + Domumentation",
   "private": false,
   "author": "WSO2",
   "repository": {
@@ -13,7 +13,7 @@
     "url": "https://github.com/wso2-dev-ux/theme-wso2/issues"
   },
   "dependencies": {
-    "theme-wso2": "file:../theme-wso2"
+    "theme-wso2": "file:module"
   },
   "devDependencies": {
     "react": "^15.5.4",

@@ -1,1 +1,1 @@
-# Theme WSO2
+# Theme WSO2 Node Module
