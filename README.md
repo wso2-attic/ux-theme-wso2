@@ -27,9 +27,6 @@ theme-wso2/
 ├── .babelrc
 ├── package.json
 └── webpack.config.js
-    ├── datatables/
-    ├── jstree/
-    └── noty/
 ```
 
 ### License
