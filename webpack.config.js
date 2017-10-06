@@ -12,7 +12,7 @@ var DOC_ROOT_DIR = path.resolve(__dirname, 'src');
 var DOC_BUILD_DIR = path.resolve(__dirname, 'docs');
 var DOC_MAIN_SCSS = DOC_ROOT_DIR + "/stylesheets/main.scss";
 
-var moduleConfig = [{
+var config = [{
     entry: MODULE_ROOT_DIR + '/index.js',
     output: {
         path: MODULE_BUILD_DIR,
@@ -144,4 +144,4 @@ var moduleConfig = [{
     devtool: 'source-map'
 }];
 
-module.exports = moduleConfig;
+module.exports = config;
