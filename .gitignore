@@ -57,3 +57,9 @@ typings/
 # dotenv environment variables file
 .env
 
+.DS_Store
+.idea/
+.sass-cache/
+build/
+docs/
+package-lock.json
