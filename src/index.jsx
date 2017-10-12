@@ -23,7 +23,7 @@ class App extends React.Component {
         return (
             <div>
                 <Navbar color="primary" dark expand>
-                    <NavbarToggler onClick={this.toggle} />
+                    <NavbarToggler right onClick={this.toggle} />
                     <NavbarBrand href="/">Theme WSO2</NavbarBrand>
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>

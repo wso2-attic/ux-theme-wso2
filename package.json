@@ -1,5 +1,5 @@
 {
-  "name": "theme_wso2",
+  "name": "theme-wso2",
   "version": "3.0.0",
   "description": "Theme WSO2 React Node Module + Domumentation",
   "private": false,
@@ -16,21 +16,21 @@
     "theme-wso2": "file:module"
   },
   "devDependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-scripts": "1.0.7",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.26.2",
-    "extract-text-webpack-plugin": "^2.1.0",
+    "webpack": "^3.6.0",
     "node-sass": "^4.5.2",
-    "react": "^15.6.2",
-    "react-dom": "^15.6.2",
-    "react-scripts": "1.0.7",
+    "css-loader": "^0.26.2",
     "sass-loader": "^6.0.3",
-    "webpack": "^3.6.0"
+    "extract-text-webpack-plugin": "^2.1.0"
   },
   "scripts": {
     "dev": "webpack -d --watch",
-    "buid": "webpack -p"
+    "buid" : "webpack -p"
   }
 }
