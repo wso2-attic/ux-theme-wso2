@@ -22,7 +22,7 @@ theme-wso2/
 │   ├── ...
 │   ├── stylesheets/
 │   ├── pages/
-│   └── index.jsx
+│   └── App.jsx
 ├── ...
 ├── .babelrc
 ├── package.json
@@ -31,4 +31,4 @@ theme-wso2/
 
 ### License
 
-WSO2 Inc. licenses this source under the Apache License, Version 2.0 ([LICENSE](LICENSE)), You may not use this file except in compliance with the License.
+WSO2 Inc. licenses this source under the Apache License, Version 2.0 ([LICENSE](LICENSE)), You may not use this project except in compliance with the License.
