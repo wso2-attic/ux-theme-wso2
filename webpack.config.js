@@ -9,7 +9,7 @@ var MODULE_BUILD_DIR = path.resolve(__dirname, 'module/public');
 var MODULE_MAIN_SCSS = MODULE_ROOT_DIR + "/stylesheets/main.scss";
 
 var DOC_ROOT_DIR = path.resolve(__dirname, 'src');
-var DOC_BUILD_DIR = path.resolve(__dirname, 'docs');
+var DOC_BUILD_DIR = path.resolve(__dirname, 'public');
 var DOC_MAIN_SCSS = DOC_ROOT_DIR + "/stylesheets/main.scss";
 
 var config = [{
@@ -80,7 +80,7 @@ var config = [{
 }, {
     entry: DOC_ROOT_DIR + '/App.jsx',
     output: {
-        path: DOC_BUILD_DIR,
+        path: DOC_BUILD_DIR + '/js',
         filename: 'bundle.js'
     },
     resolve: {
@@ -114,7 +114,7 @@ var config = [{
         bundle: DOC_MAIN_SCSS,
     },
     output: {
-        path: DOC_BUILD_DIR,
+        path: DOC_BUILD_DIR + '/css',
         filename: '[name].css',
     },
     module: {
