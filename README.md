@@ -9,8 +9,8 @@ logically grouping common assets and providing both compiled and minified variat
 theme-wso2/
 ├── public/
 │   ├── ...
-│   ├── bundle.css
-│   ├── bundle.js
+│   ├── css/bundle.css
+│   ├── js/bundle.js
 │   └── index.html
 ├── module/
 │   ├── ...
@@ -18,7 +18,7 @@ theme-wso2/
 │   ├── stylesheets/
 │   ├── package.json
 │   └── index.js
-├── docs/
+├── src/
 │   ├── ...
 │   ├── stylesheets/
 │   ├── pages/
