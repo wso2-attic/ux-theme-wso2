@@ -78,7 +78,7 @@ var config = [{
     ],
     devtool: 'source-map'
 }, {
-    entry: DOC_ROOT_DIR + '/index.jsx',
+    entry: DOC_ROOT_DIR + '/App.jsx',
     output: {
         path: DOC_BUILD_DIR,
         filename: 'bundle.js'
