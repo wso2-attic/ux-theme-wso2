@@ -4,7 +4,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var extractThemes = new ExtractTextPlugin('./[name].css');
 
-var MODULE_ROOT_DIR = path.resolve(__dirname, 'module/src');
+var MODULE_ROOT_DIR = path.resolve(__dirname, 'module');
 var MODULE_BUILD_DIR = path.resolve(__dirname, 'module/public');
 var MODULE_MAIN_SCSS = MODULE_ROOT_DIR + "/stylesheets/main.scss";
 
