@@ -5,6 +5,7 @@ files:
      - 'public/**/*.*'
      - 'node_modules/**/*.*'
      - 'module/public/**/*.*'
+     - 'module/node_modules/**/*.*'
 
 # Default severity of all linters.
 severity: warning

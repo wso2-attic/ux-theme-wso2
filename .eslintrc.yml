@@ -10,7 +10,7 @@ env:
 extends: airbnb
 rules:
   max-len:
-  - warn
+  - off
   - 120
   require-jsdoc:
   - warn
