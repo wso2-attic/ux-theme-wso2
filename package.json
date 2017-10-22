@@ -35,10 +35,14 @@
     "sass-loader": "^6.0.3",
     "webpack": "^3.6.0"
   },
+	"eslintConfig": ".eslintrc.yml",
+	"sasslintConfig": ".sasslintrc.yml",
   "scripts": {
     "dev": "cd module && npm link && cd .. && npm link theme-wso2 && webpack -d --watch",
     "buid": "webpack -p",
-    "lint": "eslint . --ext .jsx --ext .js",
-		"watch:lint": "node node_modules/eslint-watch/bin/esw -w --fix --ext .jsx --ext .js --quiet"
+    "eslint": "eslint . --ext .jsx --ext .js",
+		"sasslint": "sass-lint **/*.scss -v -q",
+		"lint": "eslint . --ext .jsx --ext .js && sass-lint **/*.scss -v -q",
+		"watch:eslint": "node node_modules/eslint-watch/bin/esw -w --fix --ext .jsx --ext .js --quiet"
   }
 }
