@@ -55,7 +55,7 @@
         "src",
         "module"
       ],
-      "extensions": "jsx",
+      "extensions": "js,jsx",
       "ignore": "node_modules/**/*.jsx,node_modules/**/*.js",
       "quiet": true,
       "legacyWatch": true,
