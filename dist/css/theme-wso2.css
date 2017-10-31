@@ -4677,7 +4677,7 @@ a.thumbnail.active {
     float: left; }
 
 .alert {
-  padding: 15px 50px 15px 15px;
+  padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 0; }
@@ -4694,7 +4694,7 @@ a.thumbnail.active {
 
 .alert-dismissable,
 .alert-dismissible {
-  padding-right: 15px 50px 15px 15px20; }
+  padding-right: 35px; }
   .alert-dismissable .close,
   .alert-dismissible .close {
     position: relative;
