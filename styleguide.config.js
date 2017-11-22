@@ -1,4 +1,5 @@
 const path = require('path');
+const pkg = 'package.json';
 
 module.exports = {
   webpackConfig: {
@@ -15,12 +16,15 @@ module.exports = {
           test: /\.css$/,
           loader: 'style-loader!css-loader?modules'
         }
-      ]
+      ],
+      loaders: [
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
+      }],
     }
   },
   components: './module/components/**/*.{js,jsx}',
-  resolver: require('react-docgen').resolver.findAllComponentDefinitions,
-  require: [
-    path.join(__dirname, 'public/css/bundle.css'),
-  ]
+  template: 'public/index.html',
+  title: pkg['display-name']
 };

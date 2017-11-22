@@ -20,7 +20,9 @@ export class Button extends React.Component {
                fab,
                href,
                raised,
-               color
+               color,
+               outline,
+               size
              } = this.props;
        
         const Component = component || 'button';
@@ -28,7 +30,7 @@ export class Button extends React.Component {
         let defaultClasses = '';
        
         return (
-            <ReactstrapButton className={ classNames(classes, defaultClasses) } color={ color }>{ this.props.children }</ReactstrapButton>
+            <ReactstrapButton className={ classNames(classes, defaultClasses) } color={ color } outline={ outline } size={ size }>{ this.props.children }</ReactstrapButton>
         );
    }
 }
