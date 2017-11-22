@@ -1,3 +1,4 @@
+import pkg from '../package.json';
 import React from 'react';
 import { render } from 'react-dom';
 import { Collapse,
@@ -25,14 +26,14 @@ class App extends React.Component {
             <div>
                 <Navbar color="primary" dark expand>
                     <NavbarToggler onClick={this.toggle} />
-                    <NavbarBrand href="/">Theme WSO2</NavbarBrand>
+                    <NavbarBrand href="/">{ pkg["display-name"] } <span className="text-muted">v{ pkg.version }</span></NavbarBrand>
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
                                 <NavLink href="/components/">Components</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="https://github.com/wso2-dev-ux/theme-wso2" target="_blank">Github</NavLink>
+                                <NavLink href="{ pkg.repository.url }" target="_blank">Github</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
@@ -45,12 +46,12 @@ class App extends React.Component {
                 </Breadcrumb>
                 <Jumbotron>
                     <h1 className="display-3">Hello, world!</h1>
-                    <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <p className="lead">{ pkg["display-name"] } is a framework which has collection of reusable React components that use to to develope WSO2 products stack.</p>
                     <hr className="my-2" />
-                    <p>It uses utility classes for typgraphy and spacing to space contentout within the larger container.
+                    <p>This is not limited to WSO2, but we welcome anyone to use it on their projects.
                     </p>
                     <p className="lead">
-                        <Button color="primary">Learn More</Button>
+                        <Button>Learn More</Button>
                     </p>
                 </Jumbotron>
             </div>
