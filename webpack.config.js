@@ -24,7 +24,7 @@ var config = [{
     module : {
         loaders : [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: [
                     {
@@ -34,12 +34,6 @@ var config = [{
                         }
                     }
                 ]
-            },
-            {
-                test : /\.jsx?/,
-                exclude: /node_modules/,
-                include : MODULE_ROOT_DIR,
-                loader : 'babel-loader'
             }
         ]
     },
@@ -89,7 +83,7 @@ var config = [{
     module : {
         loaders : [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: [
                     {
@@ -99,12 +93,6 @@ var config = [{
                         }
                     }
                 ]
-            },
-            {
-                test : /\.jsx?/,
-                exclude: /node_modules/,
-                include : DOC_ROOT_DIR,
-                loader : 'babel-loader'
             }
         ]
     },

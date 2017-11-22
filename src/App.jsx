@@ -51,7 +51,7 @@ class App extends React.Component {
                     <p>This is not limited to WSO2, but we welcome anyone to use it on their projects.
                     </p>
                     <p className="lead">
-                        <Button>Learn More</Button>
+                        <Button classes="fab">Learn More</Button>
                     </p>
                 </Jumbotron>
             </div>
