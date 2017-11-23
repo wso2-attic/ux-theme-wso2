@@ -61,6 +61,7 @@ const propTypes = {
 const defaultProps = {
     size: 'sm',
     outline: false,
+    disabled: false,
 };
 
 /**
@@ -91,7 +92,8 @@ export class Button extends React.Component {
         let defaultClasses = '';
        
         return (
-            <ReactstrapButton className={ classNames(classes, defaultClasses) } color={ color } outline={ outline } size={ size }>{ this.props.children }</ReactstrapButton>
+            <ReactstrapButton className={ classNames(classes, defaultClasses) } color={ color } outline={ outline }
+                              disabled={ disabled } size={ size }>{ this.props.children }</ReactstrapButton>
         );
    }
 }
