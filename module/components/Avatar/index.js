@@ -31,10 +31,6 @@ const propTypes = {
      * The src of the component. It's using the theme palette when that makes sense.
      */
     src: PropTypes.string,
-    /**
-     * The styles of the component. It's using the theme palette when that makes sense.
-     */
-    style: PropTypes.object,
 };
 
 /**
@@ -52,7 +48,6 @@ class Avatar extends React.Component {
             color,
             icon,
             src,
-            style,
             size
         } = this.props;
 
