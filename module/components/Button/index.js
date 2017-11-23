@@ -58,6 +58,11 @@ const propTypes = {
     size: PropTypes.oneOf(['sm', 'lg']),
 };
 
+const defaultProps = {
+    size: 'sm',
+    outline: false,
+};
+
 /**
  * Default button
  */
@@ -92,5 +97,6 @@ export class Button extends React.Component {
 }
 
 Button.propTypes = propTypes;
+Button.defaultProps = defaultProps;
 
 export default Button;
