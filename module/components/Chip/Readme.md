@@ -1,5 +1,5 @@
 Chip example:
 
 ```js
-<Chip text="ttt" />
+<Chip text="This is a sample chip" />
 ```
