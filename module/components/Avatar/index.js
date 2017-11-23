@@ -37,10 +37,6 @@ const propTypes = {
     style: PropTypes.object,
 };
 
-const defaultProps = {
-    backgroundColor : '#333'
-};
-
 /**
  * Default Avatar
  */
@@ -69,6 +65,5 @@ class Avatar extends React.Component {
 }
 
 Avatar.propTypes = propTypes;
-Avatar.defaultProps = defaultProps;
 
 export default Avatar;
