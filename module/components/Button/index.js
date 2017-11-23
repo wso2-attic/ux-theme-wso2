@@ -62,6 +62,8 @@ const defaultProps = {
     size: 'sm',
     outline: false,
     disabled: false,
+    raised: false,
+    dense: false
 };
 
 /**
@@ -87,12 +89,13 @@ export class Button extends React.Component {
                size
              } = this.props;
        
-        const Component = component || 'button';
-       
-        let defaultClasses = '';
-       
+        let materialClasses = [
+                                raised ? `raised` : false ,
+                                dense ? `dense` : false,
+                                ];
+
         return (
-            <ReactstrapButton className={ classNames(classes, defaultClasses) } color={ color } outline={ outline }
+            <ReactstrapButton className={ classNames(classes, materialClasses) } color={ color } outline={ outline }
                               disabled={ disabled } size={ size }>{ this.props.children }</ReactstrapButton>
         );
    }

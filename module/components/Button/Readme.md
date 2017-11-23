@@ -25,6 +25,22 @@ Outline Buttons:
   </div>
 ```
 
+Raised Buttons:
+
+Raised buttons are rectangular-shaped buttons. They may be used inline. They lift and display ink reactions on press.
+
+
+```js
+  <div>
+    <Button raised color="primary">primary</Button>{' '}
+    <Button raised color="secondary">secondary</Button>{' '}
+    <Button raised color="success">success</Button>{' '}
+    <Button raised color="info" disabled>info</Button>{' '}
+    <Button raised color="warning">warning</Button>{' '}
+    <Button raised color="danger">danger</Button>
+  </div>
+```
+
 Sizes:
 
 ```js
