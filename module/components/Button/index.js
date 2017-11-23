@@ -7,7 +7,7 @@ const propTypes = {
     /**
      * Useful to extend the style applied to components.
      */
-    classes: PropTypes.object,
+    classes: PropTypes.string,
     /**
      * The component used for the root node.
      * Either a string to use a DOM element or a component.
@@ -61,7 +61,7 @@ const propTypes = {
 /**
  * Default button
  */
-export default class Button extends React.Component {
+export class Button extends React.Component {
    constructor(props) {
         super(props);
    }
@@ -92,3 +92,5 @@ export default class Button extends React.Component {
 }
 
 Button.propTypes = propTypes;
+
+export default Button;
