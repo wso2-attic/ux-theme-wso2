@@ -1,3 +1,31 @@
+.doc-navbar {
+    background-color: #2196F3;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.doc-logo {
+    margin-right: 0.4em;
+    width: 1.5em;
+    margin-top: -0.2em;
+}
+
+.navbar-nav-svg {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-right: 0.3em;
+    vertical-align: text-top;
+}
+
+.sidebar {
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+
+.content {
+    -ms-flex-order: 1;
+    order: 1;
+}
+
 .rsg--content-3 {
     margin: 0 !important;
 }

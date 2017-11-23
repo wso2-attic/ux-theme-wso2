@@ -5,7 +5,7 @@ import { Button as ReactstrapButton } from 'reactstrap';
 /**
  * Default button
  */
-export class Button extends React.Component {
+export default class Button extends React.Component {
    constructor(props) {
         super(props);
    }
@@ -34,5 +34,3 @@ export class Button extends React.Component {
         );
    }
 }
-
-export default Button;

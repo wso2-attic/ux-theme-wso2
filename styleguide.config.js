@@ -1,5 +1,5 @@
 const path = require('path');
-const pkg = 'package.json';
+const pkg = require('./package.json');
 
 module.exports = {
   webpackConfig: {
@@ -15,16 +15,23 @@ module.exports = {
         {
           test: /\.css$/,
           loader: 'style-loader!css-loader?modules'
+        },
+        {
+					test: /\.svg$/,
+					loader: 'url-loader',
+				},
+        {
+          test: /\.html$/,
+          loader: 'html-loader'
         }
-      ],
-      loaders: [
-      {
-        test: /\.html$/,
-        loader: 'html-loader'
-      }],
+      ]
     }
   },
   components: './module/components/**/*.{js,jsx}',
-  template: 'public/index.html',
-  title: pkg['display-name']
+  title: pkg['display-name'],
+  template: 'styleguide/index.html',
+  styleguideComponents: {
+		Logo: path.join(__dirname, 'styleguide/components/Logo'),
+		StyleGuideRenderer: path.join(__dirname, 'styleguide/components/StyleGuide'),
+	}
 };
