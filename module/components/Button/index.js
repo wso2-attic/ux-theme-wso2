@@ -1,6 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Button as ReactstrapButton } from 'reactstrap';
+
+const propTypes = {
+    /**
+     * Useful to extend the style applied to components.
+     */
+    classes: PropTypes.Object,
+    /**
+     * The color of the component. It's using the theme palette when that makes sense.
+     */
+    color: PropTypes.string,
+};
 
 /**
  * Default button
@@ -34,3 +46,5 @@ export default class Button extends React.Component {
         );
    }
 }
+
+Button.propTypes = propTypes;
