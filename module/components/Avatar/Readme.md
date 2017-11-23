@@ -1,7 +1,7 @@
 Avatar:
 
 ```js
-<Avatar backgroundColor="#333" size="100" round={true}> </Avatar>
+<Avatar backgroundColor="#333" size="100"> </Avatar>
 
 ```
 
