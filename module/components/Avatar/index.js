@@ -36,6 +36,7 @@ const propTypes = {
 /**
  * Default Avatar
  */
+
 class Avatar extends React.Component {
     constructor(props) {
         super(props);
@@ -48,13 +49,17 @@ class Avatar extends React.Component {
             color,
             icon,
             src,
-            size
+            size,
+            labelText,
+            svg
         } = this.props;
 
         let defaultClasses = 'avatar avatar-rounded';
 
         return (
-            <div className={ classNames(classes, defaultClasses) } >{ icon }</div>
+            <div className={classNames(classes, defaultClasses)}>
+                {src ? (<img src={src} />) : (<span>{labelText}</span>) }
+            </div>
         );
     }
 }
