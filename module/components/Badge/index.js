@@ -15,11 +15,15 @@ const propTypes ={
     /**
      * Adding the href prop will default the badge to a link
      */
-    href: PropTypes.string
+    href: PropTypes.string,
+    /**
+     * If `true`, pill style will be added.
+     */
+    pill: PropTypes.bool
 };
 
 const defaultProps = {
-    href: '#',
+    pill: false,
 };
 
 export class Badge extends React.Component{
@@ -29,13 +33,16 @@ export class Badge extends React.Component{
 
         const { classes,
                 color,
+                pill,
                 href
         } = this.props;
 
-        let materialClasses = '';
+        let materialClasses = [
+                                pill ? `badge-pill` : false
+                                ];
 
         return(
-            <ReactstrapBadge className={ classNames(classes, materialClasses) } color={ color } href={ href } >
+            <ReactstrapBadge className={ classNames(classes, materialClasses) } color={ color }  href={href}>
                 { this.props.children }
             </ReactstrapBadge>
         );
