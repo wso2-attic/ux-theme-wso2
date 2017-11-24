@@ -1,36 +1,11 @@
 Avatar:
 
 ```js
-<Avatar backgroundColor="#333" size="100"> </Avatar>
-
-```
-
-Image Avatar:
-```js
-
-```
-
-Image Avatar with custom size:
- ```js
- 
- ```
-
-FontIcon Avatar:
-```js
-
-```
-
-FontIcon Avatar with custom colors and size:
-```js
-
-```
-
-SvgIcon Avatar:
-```js
+<Avatar src='https://www.shareicon.net/data/128x128/2016/07/10/119669_people_512x512.png' ></Avatar>
 
 ```
 
 Letter Avatar:
 ```js
-
+<Avatar labelText="A"></Avatar>
 ```
