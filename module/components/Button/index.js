@@ -55,11 +55,11 @@ const propTypes = {
     /**
      * Supports for large or small button
      */
-    size: PropTypes.oneOf(['sm', 'lg']),
+    size: PropTypes.oneOf(['sm', 'lg', '']),
 };
 
 const defaultProps = {
-    size: 'sm',
+    size: '',
     outline: false,
     disabled: false,
     raised: false,
