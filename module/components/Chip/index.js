@@ -65,6 +65,10 @@ class Chip extends React.Component{
 
 		let children = childrenProp;
 		const childrenCount = React.Children.count(children);
+		
+		if(onClick){
+			defaultClasses += ' chip-clickable'; 
+		}
 
 		if (childrenCount >= 1) {
 	      children = React.Children.toArray(children);
