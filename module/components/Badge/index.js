@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Badge as ReactstrapBadge } from 'reactstrap';
 
-const propTypes ={
+const propTypes = {
     /**
      * Useful to extend the style applied to components.
      */
@@ -19,35 +19,41 @@ const propTypes ={
     /**
      * If `true`, pill style will be added.
      */
-    pill: PropTypes.bool
+    pill: PropTypes.bool,
+    /**
+     * @ignore
+     */
+    children: PropTypes.node,
 };
 
 const defaultProps = {
     pill: false,
+    color: 'primary',
 };
 
-export class Badge extends React.Component{
-
-
-    render(){
-
-        const { classes,
-                color,
-                pill,
-                href
+export class Badge extends React.Component {
+    render() {
+        const {
+            classes,
+            color,
+            pill,
+            href,
         } = this.props;
 
-        let materialClasses = [
-                                pill ? `badge-pill` : false
-                                ];
+        const materialClasses = [
+            pill ? 'badge-pill' : false,
+        ];
 
-        return(
-            <ReactstrapBadge className={ classNames(classes, materialClasses) } color={ color }  href={href}>
-                { this.props.children }
+        return (
+            <ReactstrapBadge
+                className={classNames(classes, materialClasses)}
+                color={color}
+                href={href}
+            >
+                {this.props.children}
             </ReactstrapBadge>
         );
     }
-
 }
 
 Badge.propTypes = propTypes;
