@@ -23,7 +23,7 @@ const propTypes = {
     /**
      * The color of the component. It's using the theme palette when that makes sense.
      */
-    color: PropTypes.string,
+    color: PropTypes.oneOf(['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'link']),
     /**
      * If `true`, the button will use outline styling.
      */
@@ -31,7 +31,7 @@ const propTypes = {
     /**
      * Supports for large or small button
      */
-    size: PropTypes.oneOf(['sm', 'lg', '']),
+    size: PropTypes.oneOf(['sm', 'lg', 'default']),
     /**
      * @ignore
      */
@@ -43,8 +43,8 @@ const propTypes = {
 };
 
 const defaultProps = {
-    size: '',
-    color: 'default',
+    size: 'default',
+    color: 'primary',
     outline: false,
     disabled: false,
     raised: false,
