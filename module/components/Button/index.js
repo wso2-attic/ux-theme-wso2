@@ -36,6 +36,10 @@ const propTypes = {
      * @ignore
      */
     children: PropTypes.node,
+    /**
+     * Click event handler
+     */
+    onClick: PropTypes.func,
 };
 
 const defaultProps = {
@@ -57,6 +61,12 @@ export class Button extends React.Component {
         this.onClick = this.onClick.bind(this);
     }
 
+    onClick(e) {
+        if (this.props.onClick) {
+            this.props.onClick(e);
+        }
+    }
+
     render() {
         const {
             classes,
@@ -66,6 +76,7 @@ export class Button extends React.Component {
             color,
             outline,
             size,
+            onClick,
         } = this.props;
 
         const materialClasses = [
@@ -80,6 +91,7 @@ export class Button extends React.Component {
                 outline={outline}
                 disabled={disabled}
                 size={size}
+                onClick={onClick}
             >
                 { this.props.children }
             </ReactstrapButton>
