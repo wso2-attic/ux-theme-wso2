@@ -77,6 +77,7 @@ export class Button extends React.Component {
             outline,
             size,
             onClick,
+            ...attributes
         } = this.props;
 
         const materialClasses = [
@@ -92,6 +93,7 @@ export class Button extends React.Component {
                 disabled={disabled}
                 size={size}
                 onClick={onClick}
+                {...attributes}
             >
                 { this.props.children }
             </ReactstrapButton>

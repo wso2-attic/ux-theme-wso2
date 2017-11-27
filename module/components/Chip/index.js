@@ -89,6 +89,7 @@ class Chip extends React.Component {
             labelStyle,
             onKeyDown,
             onKeyDownDelete,
+            ...attributes
         } = this.props;
 
         let children = childrenProp;
@@ -114,7 +115,8 @@ class Chip extends React.Component {
         }
 
         return (
-            <div className={classNames(className, defaultClasses)} onKeyDown={this.handleKeyDownForChip} onClick={this.onClick} >
+            <div className={classNames(className, defaultClasses)} onKeyDown={this.handleKeyDownForChip}
+                 onClick={this.onClick} {...attributes}>
                 {avatar}
                 <span className={classNames(labelStyle, defaultLabelClasses)}>{label}</span>
                 {deleteIcon}
