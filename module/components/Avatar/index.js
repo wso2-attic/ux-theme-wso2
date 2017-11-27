@@ -31,7 +31,11 @@ const propTypes = {
     /**
      * Supports for large or small button
      */
+<<<<<<< HEAD
     size: PropTypes.string,
+=======
+    size: PropTypes.oneOf(['sm', 'lg', '']),
+>>>>>>> aa82322bb20bc8f22898ad08abf38349d09d410b
     /**
      * If `true`, the button will use outline styling.
      */
