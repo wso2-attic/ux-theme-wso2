@@ -27,4 +27,19 @@
 	    user-select: none;
 	    white-space: nowrap;
     }
+
+    .deleteIcon{
+        background-color: #a6a6a6;
+	    height: 24px;
+	    width: 24px;
+	    user-select: none;
+	    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+	    cursor: pointer;
+	    margin: 4px 4px 0px -8px;
+	    border-radius: 50px;
+    }
+}
+
+.chip-clickable{
+	cursor:pointer;
 }
