@@ -11,7 +11,7 @@ const propTypes ={
     /**
      * The color of the component. It's using the theme palette when that makes sense.
      */
-    color: PropTypes.string,
+    color: PropTypes.oneOf(['primary', 'secondary', 'success', 'info', 'warning', 'danger']),
     /**
      * Adding the href prop will default the badge to a link
      */
