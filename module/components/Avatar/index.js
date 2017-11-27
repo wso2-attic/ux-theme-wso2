@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+
 
 const propTypes = {
     /**
@@ -23,10 +24,6 @@ const propTypes = {
      * The icon of the component. It's using the theme palette when that makes sense.
      */
     icon: PropTypes.element,
-    // /**
-    //  * The size of the component. It's using the theme palette when that makes sense.
-    //  */
-    // size: PropTypes.number,
     /**
      * The src of the component. It's using the theme palette when that makes sense.
      */
@@ -34,19 +31,25 @@ const propTypes = {
     /**
      * Supports for large or small button
      */
-    size: PropTypes.oneOf(['sm','md', 'lg']),
+    size: PropTypes.oneOf(['sm', 'lg', '']),
+    /**
+     * If `true`, the button will use outline styling.
+     */
+    outline: PropTypes.bool,
 };
 
 const defaultProps = {
-    size: 'sm',
-    backgroundColor: '#95a5a6',
+    size: '',
+    color: 'default',
+    outline: false
 };
+
 
 /**
  * Default Avatar
  */
 
-class Avatar extends React.Component {
+class Avatar extends Component {
     constructor(props) {
         super(props);
     }
@@ -63,11 +66,10 @@ class Avatar extends React.Component {
             svg
         } = this.props;
 
-
-        let defaultClasses = 'avatar avatar-rounded';
+        let materialClasses = 'avatar avatar-rounded' + ((color) ? ' bg-' + color : '') ;
 
         return (
-            <div className={classNames(classes, defaultClasses)} color={ color } icon={icon} size={size}>
+            <div className={classNames(classes, materialClasses)} >
                 { this.props.children }
                 {src ? (<img src={src} />) : (<span>{labelText}</span>) }
             </div>
