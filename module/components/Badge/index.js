@@ -38,6 +38,7 @@ export class Badge extends React.Component {
             color,
             pill,
             href,
+            ...attributes
         } = this.props;
 
         const materialClasses = [
@@ -49,6 +50,7 @@ export class Badge extends React.Component {
                 className={classNames(className, materialClasses)}
                 color={color}
                 href={href}
+                {...attributes}
             >
                 {this.props.children}
             </ReactstrapBadge>
