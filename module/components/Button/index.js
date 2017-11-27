@@ -7,7 +7,7 @@ const propTypes = {
     /**
      * Useful to extend the style applied to components.
      */
-    classes: PropTypes.string,
+    className: PropTypes.string,
     /**
      * Uses a smaller minWidth, ideal for things like card actions.
      */
@@ -69,7 +69,7 @@ export class Button extends React.Component {
 
     render() {
         const {
-            classes,
+            className,
             dense,
             disabled,
             raised,
@@ -86,7 +86,7 @@ export class Button extends React.Component {
 
         return (
             <ReactstrapButton
-                className={classNames(classes, materialClasses)}
+                className={classNames(className, materialClasses)}
                 color={color}
                 outline={outline}
                 disabled={disabled}
