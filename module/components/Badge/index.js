@@ -7,7 +7,7 @@ const propTypes = {
     /**
      * Useful to extend the style applied to components.
      */
-    classes: PropTypes.string,
+    className: PropTypes.string,
     /**
      * The color of the component. It's using the theme palette when that makes sense.
      */
@@ -34,7 +34,7 @@ const defaultProps = {
 export class Badge extends React.Component {
     render() {
         const {
-            classes,
+            className,
             color,
             pill,
             href,
@@ -46,7 +46,7 @@ export class Badge extends React.Component {
 
         return (
             <ReactstrapBadge
-                className={classNames(classes, materialClasses)}
+                className={classNames(className, materialClasses)}
                 color={color}
                 href={href}
             >

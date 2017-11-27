@@ -6,7 +6,7 @@ const propTypes = {
     /**
      * Used to extend default object classes
      */
-    classes: PropTypes.object,
+    className: PropTypes.object,
     /**
      * Click event handler
      */
@@ -81,7 +81,7 @@ class Chip extends React.Component {
         let deleteIcon = '';
 
         const {
-            classes,
+            className,
             children: childrenProp,
             onClick,
             label,
@@ -114,7 +114,7 @@ class Chip extends React.Component {
         }
 
         return (
-            <div className={classNames(classes, defaultClasses)} onKeyDown={this.handleKeyDownForChip} onClick={this.onClick} >
+            <div className={classNames(className, defaultClasses)} onKeyDown={this.handleKeyDownForChip} onClick={this.onClick} >
                 {avatar}
                 <span className={classNames(labelStyle, defaultLabelClasses)}>{label}</span>
                 {deleteIcon}
