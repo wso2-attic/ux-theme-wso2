@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-
 const propTypes = {
     /**
      * Useful to extend the style applied to components.
@@ -31,7 +30,7 @@ const propTypes = {
     /**
      * The Size of the component. It's using the theme palette when that makes sense.
      */
-    size: PropTypes.oneOf(['sm', 'lg', 'default']),
+    size: PropTypes.string,
     /**
      * If `true`, the button will use outline styling.
      */
@@ -39,8 +38,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-    size: 'default',
-    color: 'primary',
+    color: 'default',
     outline: false
 };
 
@@ -53,26 +51,25 @@ class Avatar extends Component {
         super(props);
     }
 
-    render () {
-        let { backgroundColor,
+    render() {
+        let {
+            backgroundColor,
             children,
             classes,
             color,
             icon,
             src,
             size,
-            labelText,
-            svg
+            labelText
         } = this.props;
 
-        let materialClasses = 'avatar avatar-rounded' + ((color) ? ' bg-' + color : '') ;
+        let materialClasses = 'avatar avatar-rounded' + ((color) ? ' bg-' + color : '');
 
         return (
-            <div className={classNames(classes, materialClasses)} >
-            { this.props.children }
-        {src ? (<img src={src} />) : (<span>{labelText}</span>) }
-    </div>
-    );
+            <div className={classNames(classes, materialClasses)}>
+                {src ? (<img src={src}/>) : (<span>{labelText}</span>) }
+            </div>
+        );
     }
 }
 

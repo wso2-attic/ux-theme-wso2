@@ -1,11 +1,14 @@
 Avatar:
 
 ```js
-<Avatar size="sm" color="info" src=''></Avatar>
-  
+<Avatar color="info" src='styleguide/avatar_girl.jpg' />
+  ```
+```js
+<Avatar color="info" src='styleguide/avatar_boy.jpg' />
   ```
   
-  Letter Avatar:
-  ```js
-  <Avatar color="primary"  size="sm" labelText="A"></Avatar>
+Two Letter Avatar:
+
+```js
+<Avatar color="primary" labelText="Ad" />
 ```
