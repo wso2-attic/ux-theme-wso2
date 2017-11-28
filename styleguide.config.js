@@ -30,6 +30,7 @@ module.exports = {
   components: './module/components/**/*.{js,jsx}',
   title: pkg['display-name'],
   showUsage: true,
+  showCode: true,
   showSidebar: true,
   template: 'styleguide/index.html',
   styleguideComponents: {
