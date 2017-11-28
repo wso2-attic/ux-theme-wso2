@@ -115,8 +115,7 @@ class Chip extends React.Component {
         }
 
         return (
-            <div className={classNames(className, defaultClasses)} onKeyDown={this.handleKeyDownForChip}
-                 onClick={this.onClick} {...attributes}>
+            <div className={classNames(className, defaultClasses)} onKeyDown={this.handleKeyDownForChip} onClick={this.onClick} {...attributes}>
                 {avatar}
                 <span className={classNames(labelStyle, defaultLabelClasses)}>{label}</span>
                 {deleteIcon}
@@ -124,6 +123,6 @@ class Chip extends React.Component {
         );
     }
 }
-Chip.PropTypes = propTypes;
 
+Chip.PropTypes = propTypes;
 export default Chip;
