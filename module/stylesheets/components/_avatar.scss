@@ -1,0 +1,25 @@
+.avatar {
+  display: inline-flex;
+  height: 50px;
+  width: 50px;
+  img {
+    height: auto;
+    width: 100%;
+  }
+  span {
+    color: #fff;
+    position: relative;
+    left: 14px;
+    width: 40px;
+    overflow: hidden;
+    text-align: center;
+    margin-left: -10px;
+    height: 40px;
+    font-size: 1.5em;
+    line-height: 46px;
+  }
+  &.avatar-rounded {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}

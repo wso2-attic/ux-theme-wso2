@@ -6,55 +6,50 @@ const propTypes = {
     /**
      * Useful to extend the style applied to components.
      */
-    classes: PropTypes.string,
-    /**
-     * The backgroundColor of the component. It's using the theme palette when that makes sense.
-     */
-    backgroundColor: PropTypes.string,
-    /**
-     * The children of the component. It's using the theme palette when that makes sense.
-     */
-    children: PropTypes.node,
+    className: PropTypes.string,
     /**
      * The color of the component. It's using the theme palette when that makes sense.
      */
-    color: PropTypes.string,
+    color: PropTypes.oneOf(['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'link']),
     /**
      * The icon of the component. It's using the theme palette when that makes sense.
      */
-    icon: PropTypes.element,
-    /**
-     * The size of the component. It's using the theme palette when that makes sense.
-     */
-    size: PropTypes.number,
-    /**
-     * The src of the component. It's using the theme palette when that makes sense.
-     */
     src: PropTypes.string,
+    /**
+     * If `true`, the button will use outline styling.
+     */
+    outline: PropTypes.bool,
+};
+
+const defaultProps = {
+    color: 'primary',
+    outline: false
 };
 
 /**
  * Default Avatar
  */
+
 class Avatar extends React.Component {
     constructor(props) {
         super(props);
     }
 
-    render () {
-        let { backgroundColor,
-            children,
-            classes,
+    render() {
+        let {
+            className,
             color,
-            icon,
             src,
-            size
+            labelText,
+            ...attributes
         } = this.props;
 
-        let defaultClasses = 'avatar avatar-rounded';
+        let materialClasses = 'avatar avatar-rounded' + ((color) ? ' bg-' + color : '');
 
         return (
-            <div className={ classNames(classes, defaultClasses) } >{ icon }</div>
+            <div className={classNames(className, materialClasses)} {...attributes}>
+                {src ? (<img src={src}/>) : (<span>{labelText}</span>) }
+            </div>
         );
     }
 }

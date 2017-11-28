@@ -1,36 +1,30 @@
 Avatar:
 
 ```js
-<Avatar backgroundColor="#333" size="100"> </Avatar>
-
+<div>
+    <Avatar color="info" src='styleguide/avatar_01.jpg' /> {' '}
+    <Avatar color="info" src='styleguide/avatar_02.jpg' />
+</div>
 ```
 
-Image Avatar:
+Avatar Background Colors:
+
 ```js
-
-```
-
-Image Avatar with custom size:
- ```js
- 
- ```
-
-FontIcon Avatar:
-```js
-
-```
-
-FontIcon Avatar with custom colors and size:
-```js
-
-```
-
-SvgIcon Avatar:
-```js
-
+<div>
+    <Avatar color="primary" labelText="A" />{' '}
+    <Avatar color="secondary" labelText="V" />{' '}
+    <Avatar color="success" labelText="A" />{' '}
+    <Avatar color="info" labelText="T" />{' '}
+    <Avatar color="warning" labelText="A" />{' '}
+    <Avatar color="danger" labelText="R" />
+</div>
 ```
 
 Letter Avatar:
-```js
 
+```js
+<div>
+    <Avatar color="primary" labelText="A" />
+    <Avatar color="primary" labelText="AM" />
+</div>
 ```
