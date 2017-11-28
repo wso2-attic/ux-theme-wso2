@@ -1,13 +1,10 @@
 .avatar {
-  font-size: 32px;
-  display: flex;
+  display: inline-flex;
   height: 50px;
   width: 50px;
-
   img {
-    height: 50px;
-    width: 50px;
-    border-radius:50px;
+    height: auto;
+    width: 100%;
   }
   span {
     color: #fff;
@@ -16,8 +13,13 @@
     width: 40px;
     overflow: hidden;
     text-align: center;
-    margin-left: -8px;
+    margin-left: -10px;
+    height: 40px;
+    font-size: 1.5em;
+    line-height: 46px;
   }
-  .avatar-rounded {
-    border-radius:50px;}
+  &.avatar-rounded {
+    border-radius: 50%;
+    overflow: hidden;
+  }
 }

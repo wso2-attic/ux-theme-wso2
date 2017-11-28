@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -6,15 +6,7 @@ const propTypes = {
     /**
      * Useful to extend the style applied to components.
      */
-    classes: PropTypes.string,
-    /**
-     * The backgroundColor of the component. It's using the theme palette when that makes sense.
-     */
-    backgroundColor: PropTypes.string,
-    /**
-     * The children of the component. It's using the theme palette when that makes sense.
-     */
-    children: PropTypes.node,
+    className: PropTypes.string,
     /**
      * The color of the component. It's using the theme palette when that makes sense.
      */
@@ -22,15 +14,7 @@ const propTypes = {
     /**
      * The icon of the component. It's using the theme palette when that makes sense.
      */
-    icon: PropTypes.element,
-    /**
-     * The src of the component. It's using the theme palette when that makes sense.
-     */
     src: PropTypes.string,
-    /**
-     * The Size of the component. It's using the theme palette when that makes sense.
-     */
-    size: PropTypes.string,
     /**
      * If `true`, the button will use outline styling.
      */
@@ -38,7 +22,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-    color: 'default',
+    color: 'primary',
     outline: false
 };
 
@@ -46,27 +30,24 @@ const defaultProps = {
  * Default Avatar
  */
 
-class Avatar extends Component {
+class Avatar extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         let {
-            backgroundColor,
-            children,
-            classes,
+            className,
             color,
-            icon,
             src,
-            size,
-            labelText
+            labelText,
+            ...attributes
         } = this.props;
 
         let materialClasses = 'avatar avatar-rounded' + ((color) ? ' bg-' + color : '');
 
         return (
-            <div className={classNames(classes, materialClasses)}>
+            <div className={classNames(className, materialClasses)} {...attributes}>
                 {src ? (<img src={src}/>) : (<span>{labelText}</span>) }
             </div>
         );
