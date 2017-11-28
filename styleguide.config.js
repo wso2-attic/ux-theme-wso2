@@ -29,9 +29,22 @@ module.exports = {
   },
   components: './module/components/**/*.{js,jsx}',
   title: pkg['display-name'],
+  showUsage: true,
+  showSidebar: true,
   template: 'styleguide/index.html',
   styleguideComponents: {
 		Logo: path.join(__dirname, 'styleguide/components/Logo'),
-		StyleGuideRenderer: path.join(__dirname, 'styleguide/components/StyleGuide'),
-	}
+		StyleGuideRenderer: path.join(__dirname, 'styleguide/components/StyleGuideRenderer')
+	},
+    
+  sections: [
+    {
+      name: 'Components',
+      components: () => ([
+        path.resolve(__dirname, 'module/components/Button', 'index.js'),
+        path.resolve(__dirname, 'module/components/Chip', 'index.js'),
+        path.resolve(__dirname, 'module/components/Avatar', 'index.js')
+      ])
+    },
+  ]
 };
