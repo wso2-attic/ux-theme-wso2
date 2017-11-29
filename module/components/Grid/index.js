@@ -23,23 +23,23 @@ const propTypes = {
     /**
      * Defines the number of grids the component is going to use. It's applied for the lg breakpoint and wider screens if not overridden.
      */
-    lg: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
+    lg: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'col-lg-auto']),
     /**
      * Defines the number of grids the component is going to use. It's applied for the md breakpoint and wider screens if not overridden.
      */
-    md: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
+    md: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'col-md-auto']),
     /**
      * Defines the number of grids the component is going to use. It's applied for the sm breakpoint and wider screens if not overridden.
      */
-    sm: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
+    sm: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'col-sm-auto']),
     /**
      * Defines the number of grids the component is going to use. It's applied for the xl breakpoint and wider screens.
      */
-    xl: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
+    xl: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'col-xl-auto']),
     /**
      * Defines the number of grids the component is going to use. It's applied for all the screen sizes with the lowest priority.
      */
-    xs: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
+    xs: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'col-xs-auto']),
 };
 
 const defaultProps = {
