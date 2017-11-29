@@ -56,14 +56,14 @@ class Avatar extends React.Component {
             outline,
             ...attributes
         } = this.props;
-        const materialClasses = 'avatar avatar-rounded' + ((color) ? ' bg-' + color : '') + ((outline) ? ' avatar-outline-' + color : '');
+        const materialClasses = 'avatar avatar-rounded' + ((color && !outline) ? ' bg-' + color : '') + ((outline) ? ' avatar-outline-' + color : '');
 
         return (
             <div
                 className={classNames(className, materialClasses)}
                 {...attributes}
             >
-                {src ? (<img src={src} alt={alt}/>) : (<span>{labelText}</span>) }
+                {src ? (<img src={src} alt={alt} />) : (<span>{labelText}</span>) }
             </div>
         );
     }

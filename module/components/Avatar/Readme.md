@@ -2,8 +2,8 @@ Avatar:
 
 ```js
 <div>
-    <Avatar color="info" src='styleguide/avatar_01.jpg' alt="Avatar" /> {' '}
-    <Avatar color="info" src='styleguide/avatar_02.jpg' alt="Avatar" />
+    <Avatar color="info" src='styleguide/avatar_01.jpg' alt="Jane Doe" /> {' '}
+    <Avatar color="info" src='styleguide/avatar_02.jpg' alt="John Doe" />
 </div>
 ```
 

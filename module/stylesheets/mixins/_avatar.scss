@@ -1,0 +1,7 @@
+// Avatar
+
+@mixin avatar-variant($background, $border-color, $text-color) {
+  background-color: $background;
+  border: 2px solid $border-color;
+  color: $text-color;
+}
