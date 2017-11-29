@@ -12,48 +12,64 @@ const propTypes = {
      */
     color: PropTypes.oneOf(['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'link']),
     /**
-     * The icon of the component. It's using the theme palette when that makes sense.
+     * The labelText of the component. It's using the theme palette when that makes sense.
+     */
+    labelText: PropTypes.string,
+    /**
+     * The src of the component. It's using the theme palette when that makes sense.
      */
     src: PropTypes.string,
     /**
-     * If `true`, the button will use outline styling.
+     * If `true`, the Avatar will use outline styling.
      */
     outline: PropTypes.bool,
+    /**
+     * If `true`, the Avatar will use outline styling.
+     */
+    alt: PropTypes.string,
 };
 
 const defaultProps = {
     color: 'primary',
-    outline: false
+    outline: false,
+    className: 'avatar',
+    labelText: '',
+    src: '',
+    alt: '',
 };
 
 /**
- * Default Avatar
+ * Default Avatar component.
+ * @returns {Avatar} component.
  */
-
 class Avatar extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
+    /**
+     * render method for Avatar
+     */
     render() {
-        let {
+        const {
             className,
             color,
             src,
             labelText,
+            alt,
+            outline,
             ...attributes
         } = this.props;
-
-        let materialClasses = 'avatar avatar-rounded' + ((color) ? ' bg-' + color : '');
+        const materialClasses = 'avatar avatar-rounded' + ((color) ? ' bg-' + color : '') + ((outline) ? ' avatar-outline-' + color : '');
 
         return (
-            <div className={classNames(className, materialClasses)} {...attributes}>
-                {src ? (<img src={src}/>) : (<span>{labelText}</span>) }
+            <div
+                className={classNames(className, materialClasses)}
+                {...attributes}
+            >
+                {src ? (<img src={src} alt={alt}/>) : (<span>{labelText}</span>) }
             </div>
         );
     }
 }
 
 Avatar.propTypes = propTypes;
+Avatar.defaultProps = defaultProps;
 
 export default Avatar;

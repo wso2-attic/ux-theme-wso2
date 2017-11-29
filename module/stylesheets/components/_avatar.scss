@@ -1,13 +1,21 @@
+$primary-color:#007bff !important;
+$secondary-color:#868e96 !important;
+$success-color:#28a745 !important;
+$info-color:#17a2b8 !important;
+$warning-color:#ffc107 !important;
+$danger-color:#dc3545 !important;
+$default-color:#fff !important;
+
 .avatar {
   display: inline-flex;
   height: 50px;
   width: 50px;
+  color: #fff;
   img {
     height: auto;
     width: 100%;
   }
   span {
-    color: #fff;
     position: relative;
     left: 14px;
     width: 40px;
@@ -21,5 +29,35 @@
   &.avatar-rounded {
     border-radius: 50%;
     overflow: hidden;
+  }
+  &.avatar-outline-primary{
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    background-color: $default-color;
+  }
+  &.avatar-outline-secondary{
+    border: 2px solid $secondary-color;
+    color: $secondary-color;
+    background-color: $default-color;
+  }
+  &.avatar-outline-success{
+    border: 2px solid $success-color;
+    color: $success-color;
+    background-color: $default-color;
+  }
+  &.avatar-outline-info{
+    border: 2px solid $info-color;
+    color: $info-color;
+    background-color: $default-color;
+  }
+  &.avatar-outline-warning{
+    border: 2px solid $warning-color;
+    color: $warning-color;
+    background-color: $default-color;
+  }
+  &.avatar-outline-danger{
+    border: 2px solid $danger-color;
+    color: $danger-color;
+    background-color: $default-color;
   }
 }
