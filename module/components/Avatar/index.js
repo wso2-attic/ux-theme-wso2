@@ -24,7 +24,7 @@ const propTypes = {
      */
     outline: PropTypes.bool,
     /**
-     * If `true`, the Avatar will use outline styling.
+     * The Alt text will be apart of Images component.
      */
     alt: PropTypes.string,
 };
@@ -32,7 +32,7 @@ const propTypes = {
 const defaultProps = {
     color: 'primary',
     outline: false,
-    className: 'avatar',
+    className: '',
     labelText: '',
     src: '',
     alt: '',
@@ -63,7 +63,7 @@ class Avatar extends React.Component {
                 className={classNames(className, materialClasses)}
                 {...attributes}
             >
-                {src ? (<img src={src} alt={alt} />) : (<span>{labelText}</span>) }
+                {src ? (<img src={src} alt={alt}/>) : (<span>{labelText}</span>) }
             </div>
         );
     }
