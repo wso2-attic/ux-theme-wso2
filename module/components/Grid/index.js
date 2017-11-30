@@ -93,14 +93,13 @@ export class Grid extends React.Component {
         if (item) {
             grid = (
                 <ReactstrapCol
-                    item={item}
                     xs={xs}
                     sm={sm}
                     md={md}
                     lg={lg}
                     xl={xl}
-                    justify={this.renderJustifyContent(justify)}
                     className={classNames(className, this.renderJustifyContent(justify))}
+                    {...attributes}
                 >
                     { this.props.children }
                 </ReactstrapCol>);
