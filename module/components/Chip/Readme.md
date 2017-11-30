@@ -2,7 +2,7 @@ Chip example:
 
 ```js
   <Chip label="This is a sample chip with avatar">
-    <Avatar backgroundColor="#333" size="100" />
+    <Avatar size="100" />
   </Chip>
 ```
 
