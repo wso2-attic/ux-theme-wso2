@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Container as ReactstrapContainer, Row as ReactstrapRow, Col as ReactstrapCol } from 'reactstrap';
 
 const propTypes = {
+    /**
+     * Defines the align-items style property. It's applied for all screen sizes.
+     */
+    alignItems: PropTypes.oneOf(['flex-start', 'center', 'flex-end', 'stretch', 'baseline']),
+    /**
+     * The content of the component.
+     */
+    children: PropTypes.node,
     /**
      * Useful to extend the style applied to components.
      */
@@ -13,9 +21,9 @@ const propTypes = {
      */
     container: PropTypes.bool,
     /**
-     * @ignore
+     * Defines the flex-direction style property. It is applied for all screen sizes.
      */
-    children: PropTypes.node,
+    direction: PropTypes.oneOf(['row', 'row-reverse', 'column', 'column-reverse']),
     /**
      * If true, the component will have the flex item behavior. You should be wrapping items with a container.
      */
@@ -37,6 +45,10 @@ const propTypes = {
      */
     sm: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'col-sm-auto']),
     /**
+     * Defines the flex-wrap style property. It's applied for all screen sizes.
+     */
+    wrap: PropTypes.oneOf(['nowrap', 'wrap', 'wrap-reverse']),
+    /**
      * Defines the number of grids the component is going to use. It's applied for the xl breakpoint and wider screens.
      */
     xl: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'col-xl-auto']),
@@ -47,6 +59,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+    alignItems: 'stretch',
     item: false,
     justify: 'flex-start',
 };
@@ -54,9 +67,14 @@ const defaultProps = {
 
 /**
  * Grid for base layouting
- * @extends React.Component
+ * @extends Component
  */
-export class Grid extends React.Component {
+export class Grid extends Component {
+    /**
+     * JustifyContent
+     * @param {string} param attribute
+     * @returns {string} bootstrap flex justify class
+     */
     renderJustifyContent(param) {
         switch (param) {
             case 'flex-start':
@@ -74,10 +92,73 @@ export class Grid extends React.Component {
         }
     }
 
+    /**
+     * AlignItems
+     * @param {string} param attribute
+     * @returns {string} bootstrap flex align class
+     */
+    renderAlignItems(param) {
+        switch (param) {
+            case 'flex-start':
+                return 'align-items-start';
+            case 'center':
+                return 'align-items-center';
+            case 'flex-end':
+                return 'align-items-end';
+            case 'stretch':
+                return 'align-items-stretch';
+            case 'baseline':
+                return 'align-items-baseline';
+            default:
+                return '';
+        }
+    }
+
+    /**
+     * Direction
+     * @param {string} param attribute
+     * @returns {string} bootstrap flex direction class
+     */
+    renderDirection(param) {
+        switch (param) {
+            case 'row':
+                return 'flex-row';
+            case 'row-reverse':
+                return 'flex-row-reverse';
+            case 'column':
+                return 'flex-column';
+            case 'column-reverse':
+                return 'flex-column-reverse';
+            default:
+                return '';
+        }
+    }
+
+    /**
+     * Wrap
+     * @param {string} param attribute
+     * @returns {string} bootstrap flex wrap class
+     */
+    renderWrap(param) {
+        switch (param) {
+            case 'wrap':
+                return 'flex-wrap';
+            case 'nowrap':
+                return 'flex-nowrap';
+            case 'wrap-reverse':
+                return 'flex-wrap-reverse';
+            default:
+                return '';
+        }
+    }
+
     render() {
         const {
+            alignItems,
+            children,
             className,
             container,
+            direction,
             item,
             xs,
             sm,
@@ -85,6 +166,7 @@ export class Grid extends React.Component {
             lg,
             xl,
             justify,
+            wrap,
             ...attributes
         } = this.props;
 
@@ -98,20 +180,29 @@ export class Grid extends React.Component {
                     md={md}
                     lg={lg}
                     xl={xl}
-                    className={classNames(className, this.renderJustifyContent(justify))}
+                    className={classNames(className)}
                     {...attributes}
                 >
-                    { this.props.children }
+                    { children }
                 </ReactstrapCol>);
         } else {
             grid = (
                 <ReactstrapContainer
-                    className={classNames(className)}
                     fluid={container}
                     {...attributes}
                 >
-                    <ReactstrapRow>
-                        { this.props.children }
+                    <ReactstrapRow
+                        className={
+                            classNames(
+                                className,
+                                this.renderJustifyContent(justify),
+                                this.renderAlignItems(alignItems),
+                                this.renderDirection(direction),
+                                this.renderWrap(wrap)
+                            )
+                        }
+                    >
+                        { children }
                     </ReactstrapRow>
                 </ReactstrapContainer>);
         }
