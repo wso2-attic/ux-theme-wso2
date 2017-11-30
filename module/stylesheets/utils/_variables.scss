@@ -327,6 +327,33 @@ $table-inverse-hover-bg:        rgba($white, .075) !default;
 $table-inverse-border-color:    lighten($gray-900, 7.5%) !default;
 $table-inverse-color:           $body-bg !default;
 
+// Avatar
+//
+// For each of Avatar, define text, background and border color.
+
+$avatar-primary-bg:             $table-bg !default;
+$avatar-primary-border-color :  $blue !default;
+$avatar-primary-text:           $blue !default;
+
+$avatar-secondary-bg:           $table-bg !default;
+$avatar-secondary-border-color: $gray-600 !default;
+$avatar-secondary-text:         $gray-600 !default;
+
+$avatar-success-bg:             $table-bg !default;
+$avatar-success-border-color:   $green !default;
+$avatar-success-text:           $green !default;
+
+$avatar-info-bg:                $table-bg !default;
+$avatar-info-border-color:      $cyan !default;
+$avatar-info-text:              $cyan !default;
+
+$avatar-warning-bg:             $table-bg !default;
+$avatar-warning-border-color:   $yellow !default;
+$avatar-warning-text:           $yellow !default;
+
+$avatar-danger-bg:              $table-bg !default;
+$avatar-danger-border-color:    $red !default;
+$avatar-danger-text:            $red !default;
 
 // Buttons
 //
