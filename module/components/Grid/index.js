@@ -155,6 +155,7 @@ export class Grid extends Component {
     render() {
         const {
             alignItems,
+            children,
             className,
             container,
             direction,
@@ -182,7 +183,7 @@ export class Grid extends Component {
                     className={classNames(className)}
                     {...attributes}
                 >
-                    { this.props.children }
+                    { children }
                 </ReactstrapCol>);
         } else {
             grid = (
@@ -201,7 +202,7 @@ export class Grid extends Component {
                             )
                         }
                     >
-                        { this.props.children }
+                        { children }
                     </ReactstrapRow>
                 </ReactstrapContainer>);
         }
