@@ -24,7 +24,7 @@ const propTypes = {
      */
     outline: PropTypes.bool,
     /**
-     * The Alt text will be apart of Images component.
+     * The alt will be apart of images.
      */
     alt: PropTypes.string,
 };
