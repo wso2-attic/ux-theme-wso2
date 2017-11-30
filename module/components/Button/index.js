@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Button as ReactstrapButton } from 'reactstrap';
@@ -54,19 +55,49 @@ const defaultProps = {
 /**
  * Default button
  */
-export class Button extends React.Component {
+export class Button extends Component {
+
+    /**
+     * Constructor
+     * @param {object} props - Element properties
+     */
     constructor(props) {
         super(props);
 
-        this.onClick = this.onClick.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    onClick(e) {
+    /**
+     * Handle button click event
+     * @param {SytheticEvent} e - Click event
+     */
+    handleClick(e) {
+        e.preventDefault();
+
+        const parent = ReactDOM.findDOMNode(this);
+        const ripple = ReactDOM.findDOMNode(this.refs.ripple);
+
+        parent.classList.remove('btn-animate');
+
+        const d = Math.max(parent.offsetWidth, parent.offsetHeight);
+
+        ripple.style.height = d + 'px';
+        ripple.style.width = d + 'px';
+
+        ripple.style.left = 0;
+        ripple.style.top = 0;
+
+        parent.classList.add('btn-animate');
+
         if (this.props.onClick) {
             this.props.onClick(e);
         }
     }
 
+    /**
+     * Render
+     * @return {ReactElement} Component Markup
+     */
     render() {
         const {
             className,
@@ -77,6 +108,7 @@ export class Button extends React.Component {
             outline,
             size,
             onClick,
+            children,
             ...attributes
         } = this.props;
 
@@ -92,10 +124,11 @@ export class Button extends React.Component {
                 outline={outline}
                 disabled={disabled}
                 size={size}
-                onClick={onClick}
+                onClick={(e) => this.handleClick(e)}
                 {...attributes}
             >
-                { this.props.children }
+                { children }
+                <div ref="ripple" className="ripple" />
             </ReactstrapButton>
         );
     }

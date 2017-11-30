@@ -4,14 +4,41 @@
   font-size: 0.8125rem;
   min-height: 32px;
 }
+.btn {
+    position: relative;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  .ripple {
+    display: block; 
+    position: absolute;
+    background: lighten(#fff, 18%);
+    border-radius: 100%;
+    transform: scale(0);
+  }
+  &:focus {
+    outline:0;
+  }
+  &.btn-animate .ripple {
+    animation: rippleAnimation 0.65s linear;
+  } 
+}
 .btn:not(.disabled).raised{
   color: rgba(0, 0, 0, 0.87);
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
-
-  &active{
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  &.active{
     box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
   }
-  &hover{
+  &.hover{
     background-color: #d5d5d5;
   }
+}
+
+@keyframes rippleAnimation {
+	100% {opacity: 0; transform: scale(2.5);}
 }
