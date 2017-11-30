@@ -39,13 +39,20 @@ module.exports = {
 	},
     
   sections: [
-    {
-      name: 'Components',
-      components: () => ([
-        path.resolve(__dirname, 'module/components/Button', 'index.js'),
-        path.resolve(__dirname, 'module/components/Chip', 'index.js'),
-        path.resolve(__dirname, 'module/components/Avatar', 'index.js')
-      ])
-    },
+      {
+          name: 'Layout',
+          components: () => ([
+              path.resolve(__dirname, 'module/components/Grid', 'index.js')
+              ])
+      },
+      {
+        name: 'Components',
+        components: () => ([
+            path.resolve(__dirname, 'module/components/Button', 'index.js'),
+            path.resolve(__dirname, 'module/components/Chip', 'index.js'),
+            path.resolve(__dirname, 'module/components/Avatar', 'index.js'),
+            path.resolve(__dirname, 'module/components/Badge', 'index.js')
+        ])
+      },
   ]
 };
