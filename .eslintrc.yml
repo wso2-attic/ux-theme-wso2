@@ -69,5 +69,8 @@ rules:
   jsx-quotes:
   - 'off'
   no-else-return: 'off'
+  linebreak-style: 0
+  react/require-default-props:
+  - 0
 plugins:
 - react
