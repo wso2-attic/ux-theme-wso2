@@ -2,12 +2,12 @@
   display: inline-flex;
   height: 50px;
   width: 50px;
+  color: $white;
   img {
     height: auto;
     width: 100%;
   }
   span {
-    color: #fff;
     position: relative;
     left: 14px;
     width: 40px;
@@ -21,5 +21,29 @@
   &.avatar-rounded {
     border-radius: 50%;
     overflow: hidden;
+  }
+
+  &.avatar-outline-primary {
+    @include avatar-variant($avatar-primary-bg, $avatar-primary-border-color, $avatar-primary-text);
+  }
+
+  &.avatar-outline-secondary {
+    @include avatar-variant($avatar-secondary-bg, $avatar-secondary-border-color, $avatar-secondary-text);
+  }
+
+  &.avatar-outline-success {
+    @include avatar-variant($avatar-success-bg, $avatar-success-border-color, $avatar-success-text);
+  }
+
+  &.avatar-outline-info {
+    @include avatar-variant($avatar-info-bg, $avatar-info-border-color, $avatar-info-text);
+  }
+
+  &.avatar-outline-warning {
+    @include avatar-variant($avatar-warning-bg, $avatar-warning-border-color, $avatar-warning-text);
+  }
+
+  &.avatar-outline-danger {
+    @include avatar-variant($avatar-danger-bg, $avatar-danger-border-color, $avatar-danger-text);
   }
 }
