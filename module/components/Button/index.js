@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Button as ReactstrapButton } from 'reactstrap';
@@ -53,10 +52,10 @@ const defaultProps = {
 };
 
 /**
- * Default button
+ * Extended button class
+ * @extend {ReactComponent} ReactstrapButton
  */
 export class Button extends Component {
-
     /**
      * Constructor
      * @param {object} props - Element properties
@@ -74,20 +73,43 @@ export class Button extends Component {
     handleClick(e) {
         e.preventDefault();
 
-        const parent = ReactDOM.findDOMNode(this);
-        const ripple = ReactDOM.findDOMNode(this.refs.ripple);
+        /**
+        * Get element position
+        * @param {object} elem button DOM element
+        * @return {object} top,left
+        */
+        function getCoords(elem) { // crossbrowser version
+            const box = elem.getBoundingClientRect();
 
-        parent.classList.remove('btn-animate');
+            const { body, documentElement } = document;
 
-        const d = Math.max(parent.offsetWidth, parent.offsetHeight);
+            const scrollTop = window.pageYOffset || documentElement.scrollTop || body.scrollTop;
+            const scrollLeft = window.pageXOffset || documentElement.scrollLeft || body.scrollLeft;
 
-        ripple.style.height = d + 'px';
-        ripple.style.width = d + 'px';
+            const clientTop = documentElement.clientTop || body.clientTop || 0;
+            const clientLeft = documentElement.clientLeft || body.clientLeft || 0;
 
-        ripple.style.left = 0;
-        ripple.style.top = 0;
+            const top = box.top + scrollTop - clientTop;
+            const left = box.left + scrollLeft - clientLeft;
 
-        parent.classList.add('btn-animate');
+            return { top: Math.round(top), left: Math.round(left) };
+        }
+
+        const { ripple } = this;
+        const button = ripple.parentElement;
+
+        button.classList.remove('btn-animate');
+
+        const rippleSize = Math.max(button.offsetHeight, button.offsetWidth);
+        const rippleCenter = rippleSize / 2;
+
+        ripple.style.height = rippleSize + 'px';
+        ripple.style.width = rippleSize + 'px';
+
+        ripple.style.left = e.nativeEvent.pageX - getCoords(button).left - rippleCenter + 'px';
+        ripple.style.top = e.nativeEvent.pageY - getCoords(button).top - rippleCenter + 'px';
+
+        button.classList.add('btn-animate');
 
         if (this.props.onClick) {
             this.props.onClick(e);
@@ -113,9 +135,11 @@ export class Button extends Component {
         } = this.props;
 
         const materialClasses = [
-            raised ? 'raised' : false,
-            dense ? 'dense' : false,
+            raised ? 'btn-raised' : false,
+            dense ? 'btn-dense' : false,
         ];
+
+        const rippleCssClasses = 'btn-ripple btn-ripple-' + color;
 
         return (
             <ReactstrapButton
@@ -124,11 +148,11 @@ export class Button extends Component {
                 outline={outline}
                 disabled={disabled}
                 size={size}
-                onClick={(e) => this.handleClick(e)}
+                onClick={(e) => { this.handleClick(e); }}
                 {...attributes}
             >
-                { children }
-                <div ref="ripple" className="ripple" />
+                {children}
+                <div ref={(ref) => { this.ripple = ref; }} className={rippleCssClasses} />
             </ReactstrapButton>
         );
     }
