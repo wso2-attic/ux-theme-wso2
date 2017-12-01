@@ -2,5 +2,5 @@
 
 @mixin btn-ripple-variant($background) {
   background-color: lighten($background, 50%);
-  opacity: 0.6;
+  opacity: .6;
 }
