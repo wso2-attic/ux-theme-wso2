@@ -42,7 +42,7 @@ const defaultProps = {
  * Default Avatar component.
  * @returns {Avatar} component.
  */
-class Avatar extends React.Component {
+export class Avatar extends React.Component {
     /**
      * render method for Avatar
      */
@@ -63,7 +63,7 @@ class Avatar extends React.Component {
                 className={classNames(className, materialClasses)}
                 {...attributes}
             >
-                {src ? (<img src={src} alt={alt}/>) : (<span>{labelText}</span>) }
+                {src ? ( <img src={src} alt={alt}/> ) : ( <span>{labelText}</span> ) }
             </div>
         );
     }

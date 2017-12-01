@@ -42,16 +42,16 @@ module.exports = {
       {
           name: 'Layout',
           components: () => ([
-              path.resolve(__dirname, 'module/components/Grid', 'index.js')
+              path.resolve(__dirname, 'module/components/Grid', 'index.jsx')
               ])
       },
       {
         name: 'Components',
         components: () => ([
-            path.resolve(__dirname, 'module/components/Button', 'index.js'),
-            path.resolve(__dirname, 'module/components/Chip', 'index.js'),
-            path.resolve(__dirname, 'module/components/Avatar', 'index.js'),
-            path.resolve(__dirname, 'module/components/Badge', 'index.js')
+            path.resolve(__dirname, 'module/components/Button', 'index.jsx'),
+            path.resolve(__dirname, 'module/components/Chip', 'index.jsx'),
+            path.resolve(__dirname, 'module/components/Avatar', 'index.jsx'),
+            path.resolve(__dirname, 'module/components/Badge', 'index.jsx')
         ])
       },
   ]

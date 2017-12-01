@@ -33,7 +33,7 @@ const propTypes = {
     onKeyDownDelete: PropTypes.func,
 };
 
-class Chip extends React.Component {
+export class Chip extends React.Component {
     constructor(props) {
         super(props);
         this.onClick = this.onClick.bind(this);
