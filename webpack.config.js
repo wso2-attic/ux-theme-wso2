@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const extractThemes = new ExtractTextPlugin('./[name].css');
 
@@ -71,7 +72,10 @@ var config = [{
         ]
     },
     plugins: [
-        extractThemes
+        extractThemes,
+        new StyleLintPlugin({
+            configFile: '.sasslintrc'
+        }),
     ],
     devtool: 'source-map'
 }, {
