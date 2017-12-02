@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -47,9 +47,10 @@ const defaultProps = {
  * Default Avatar component.
  * @returns {Avatar} component.
  */
-export class Avatar extends React.Component {
+export class Avatar extends Component {
     /**
-     * render method for Avatar
+     * Render
+     * @return {ReactElement} Component Markup
      */
     render() {
         const {
@@ -62,12 +63,13 @@ export class Avatar extends React.Component {
             size,
             ...attributes
         } = this.props;
-        
-        const materialClasses = 'avatar avatar-rounded' + ((color && !outline) ? ' bg-' + color : '') + ((outline) ? ' avatar-outline-' + color : '');
-        
-        var style = {
+
+        const materialClasses = 'avatar avatar-rounded' + ((color && !outline) ? ' bg-' + color : '')
+            + ((outline) ? ' avatar-outline-' + color : '');
+
+        const style = {
             height: size,
-            width: size
+            width: size,
         };
 
         return (
@@ -76,7 +78,7 @@ export class Avatar extends React.Component {
                 {...attributes}
                 style={style}
             >
-                {src ? ( <img src={src} alt={alt}/> ) : ( <span>{labelText}</span> ) }
+                {src ? (<img src={src} alt={alt} />) : (<span>{labelText}</span>) }
             </div>
         );
     }
