@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Badge as ReactstrapBadge } from 'reactstrap';
@@ -31,7 +31,15 @@ const defaultProps = {
     color: 'primary',
 };
 
-export class Badge extends React.Component {
+/**
+ * Extended badge component
+ * @extend {ReactComponent} ReactstrapBadge
+ */
+export class Badge extends Component {
+    /**
+     * Render
+     * @return {ReactElement} Component Markup
+     */
     render() {
         const {
             className,
