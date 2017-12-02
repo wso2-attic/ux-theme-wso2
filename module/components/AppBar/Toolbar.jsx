@@ -1,20 +1,38 @@
-import React from 'react';
-import classNames from 'classnames';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class Toolbar extends React.Component {
+const propTypes = {
+    /**
+     * Useful to extend the style applied to components.
+     */
+    className: PropTypes.string,
+    /**
+     * The content of the component.
+     */
+    children: PropTypes.node,
+};
 
-    constructor(props) {
-        super(props);
-    }
-
+/**
+ * Extended toolbar class
+ * @extend {ReactComponent} ReactstrapButton
+ */
+class Toolbar extends Component {
+    /**
+     * Render
+     * @return {ReactElement} Component Markup
+     */
     render() {
-        const { className, text, link, children } = this.props;
-        
+        const {
+            className,
+            children,
+        } = this.props;
+
         return (
-            <div>{children}</div>
+            <div className={className}>{children}</div>
         );
     }
-    
 }
+
+Toolbar.propTypes = propTypes;
 
 export default Toolbar;

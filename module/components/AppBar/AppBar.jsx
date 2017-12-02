@@ -7,7 +7,7 @@ const propTypes = {
     /**
      * Useful to extend the style applied to components.
      */
-    classes: PropTypes.object,
+    classes: PropTypes.string,
     /**
      * The content of the component.
      */
@@ -28,18 +28,10 @@ const defaultProps = {
 };
 
 /**
- * Extended button class
+ * Extended appbar class
  * @extend {ReactComponent} ReactstrapButton
  */
 export class AppBar extends Component {
-    /**
-     * Constructor
-     * @param {object} props - Element properties
-     */
-    constructor(props) {
-        super(props);
-    }
-
     /**
      * Render
      * @return {ReactElement} Component Markup
@@ -52,17 +44,12 @@ export class AppBar extends Component {
             children,
             ...attributes
         } = this.props;
-        
+
         const materialClasses = 'appbar navbar navbar-expand navbar-dark bg-primary';
 
         return (
             <ReactstrapNavbar
-                className={
-                    classNames(
-                        classes,
-                        materialClasses
-                    )
-                }
+                className={classNames(classes, materialClasses)}
                 color={color}
                 fixed={position}
                 {...attributes}
