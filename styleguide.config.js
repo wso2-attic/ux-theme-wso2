@@ -27,6 +27,9 @@ module.exports = {
       ]
     }
   },
+  require: [
+    path.resolve(__dirname, 'styleguide/setup.js')
+  ],
   components: './module/components/**/*.{js,jsx}',
   title: pkg['display-name'],
   showUsage: true,
@@ -36,23 +39,23 @@ module.exports = {
   styleguideComponents: {
 		Logo: path.join(__dirname, 'styleguide/components/Logo'),
 		StyleGuideRenderer: path.join(__dirname, 'styleguide/components/StyleGuideRenderer')
-	},
-    
+	}, 
   sections: [
       {
           name: 'Layout',
           components: () => ([
               path.resolve(__dirname, 'module/components/Grid', 'index.jsx')
-              ])
+          ])
       },
       {
         name: 'Components',
         components: () => ([
-            path.resolve(__dirname, 'module/components/Button', 'index.jsx'),
-            path.resolve(__dirname, 'module/components/Chip', 'index.jsx'),
+            path.resolve(__dirname, 'module/components/AppBar', 'AppBar.jsx'),
             path.resolve(__dirname, 'module/components/Avatar', 'index.jsx'),
-            path.resolve(__dirname, 'module/components/Badge', 'index.jsx')
+            path.resolve(__dirname, 'module/components/Button', 'index.jsx'),
+            path.resolve(__dirname, 'module/components/Badge', 'index.jsx'),
+            path.resolve(__dirname, 'module/components/Chip', 'index.jsx'),
         ])
-      },
+      }
   ]
 };

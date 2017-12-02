@@ -8,3 +8,4 @@ export { Badge } from './components/Badge';
 export { Button } from './components/Button';
 export { Chip } from './components/Chip';
 export { Grid } from './components/Grid';
+export * from './components/AppBar';
