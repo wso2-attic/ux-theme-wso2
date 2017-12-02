@@ -1,18 +1,8 @@
-// Paper
+//
+// Appbar styles
+//
 
-$paper-spacer-y:            .75rem !default;
-$paper-spacer-x:            1.25rem !default;
-$paper-border-width:        1px !default;
-$paper-border-radius:       $border-radius !default;
-$paper-border-color:        rgba($black, .125) !default;
-$paper-inner-border-radius: calc(#{$paper-border-radius} - #{$paper-border-width}) !default;
-$paper-cap-bg:              rgba($black, .03) !default;
-$paper-bg:                  $white !default;
-
-$paper-img-overlay-padding: 1.25rem !default;
-
-$paper-deck-margin:         ($grid-gutter-width / 2) !default;
-
-$paper-columns-count:       3 !default;
-$paper-columns-gap:         1.25rem !default;
-$paper-columns-margin:      $paper-spacer-y !default;
+.appbar {
+  background-color: #2196f3;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+}
