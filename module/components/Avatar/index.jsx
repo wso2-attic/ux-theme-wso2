@@ -24,9 +24,13 @@ const propTypes = {
      */
     outline: PropTypes.bool,
     /**
-     * The alt will be apart of images.
+     * The alt will add alternate text for images.
      */
     alt: PropTypes.string,
+    /**
+     * Size will adjust the size of avatar
+     */
+    size: PropTypes.string,
 };
 
 const defaultProps = {
@@ -36,13 +40,14 @@ const defaultProps = {
     labelText: '',
     src: '',
     alt: '',
+    size: '50px',
 };
 
 /**
  * Default Avatar component.
  * @returns {Avatar} component.
  */
-class Avatar extends React.Component {
+export class Avatar extends React.Component {
     /**
      * render method for Avatar
      */
@@ -54,16 +59,24 @@ class Avatar extends React.Component {
             labelText,
             alt,
             outline,
+            size,
             ...attributes
         } = this.props;
+        
         const materialClasses = 'avatar avatar-rounded' + ((color && !outline) ? ' bg-' + color : '') + ((outline) ? ' avatar-outline-' + color : '');
+        
+        var style = {
+            height: size,
+            width: size
+        };
 
         return (
             <div
                 className={classNames(className, materialClasses)}
                 {...attributes}
+                style={style}
             >
-                {src ? (<img src={src} alt={alt}/>) : (<span>{labelText}</span>) }
+                {src ? ( <img src={src} alt={alt}/> ) : ( <span>{labelText}</span> ) }
             </div>
         );
     }

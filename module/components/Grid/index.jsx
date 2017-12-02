@@ -152,6 +152,10 @@ export class Grid extends Component {
         }
     }
 
+    /**
+     * Render
+     * @return {ReactElement} Component Markup
+     */
     render() {
         const {
             alignItems,

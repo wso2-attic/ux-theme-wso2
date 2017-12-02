@@ -1,44 +1,59 @@
-.dense{
-  padding: 7px 8px;
-  min-width: 64px;
-  font-size: 0.8125rem;
-  min-height: 32px;
-}
+//
+// Button styles
+//
+
 .btn {
-    position: relative;
-    overflow: hidden;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  .ripple {
-    display: block; 
-    position: absolute;
-    background: lighten(#fff, 18%);
-    border-radius: 100%;
-    transform: scale(0);
-  }
-  &:focus {
-    outline:0;
-  }
-  &.btn-animate .ripple {
-    animation: rippleAnimation 0.65s linear;
-  } 
-}
-.btn:not(.disabled).raised{
-  color: rgba(0, 0, 0, 0.87);
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
   position: relative;
   overflow: hidden;
   user-select: none;
-  &.active{
-    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+
+  .btn-ripple {
+    position: absolute;
+    display: block;
+    border-radius: 100%;
+    transform: scale(0);
+
+    @each $color, $value in $theme-colors {
+      &.btn-ripple-#{$color} {
+        @include btn-ripple-variant($value);
+      }
+    }
   }
-  &.hover{
-    background-color: #d5d5d5;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.btn-animate .btn-ripple {
+    animation: rippleAnimation .65s linear;
+  }
+
+  &.btn-dense{
+    min-width: 64px;
+    min-height: 32px;
+    padding: 7px 8px;
+    font-size: .8125rem;
+  }
+
+  &:not(.disabled).btn-raised{
+    position: relative;
+    overflow: hidden;
+    color: rgba(0, 0, 0, .87);
+    user-select: none;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12);
+
+    &.active{
+      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+    }
+    &.hover{
+      background-color: #d5d5d5;
+    }
   }
 }
 
 @keyframes rippleAnimation {
-	100% {opacity: 0; transform: scale(2.5);}
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
 }
