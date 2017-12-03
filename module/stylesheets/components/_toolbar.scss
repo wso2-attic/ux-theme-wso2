@@ -1,0 +1,9 @@
+.toolbar {
+  padding-right: 24px;
+  padding-left: 24px;
+
+  &.no-gutters {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
