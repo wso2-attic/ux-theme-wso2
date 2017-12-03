@@ -7,7 +7,7 @@
   "author": "WSO2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wso2-dev-ux/theme-wso2.git"
+    "url": "https://github.com/wso2/ux-theme-wso2/tree/v3.0.0"
   },
   "license": "Apache-2.0",
   "bugs": {

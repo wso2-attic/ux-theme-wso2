@@ -1,7 +1,7 @@
 Chip example:
 ```js
   <Chip label="This is a sample chip with avatar">
-    <Avatar size="30px" src='styleguide/avatar_02.jpg' alt="John Doe" />
+    <Avatar size="30px" src='styleguide/images/avatar_02.jpg' alt="John Doe" />
   </Chip>
 ```
 
