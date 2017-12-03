@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 const propTypes = {
     /**
@@ -10,6 +11,14 @@ const propTypes = {
      * The content of the component.
      */
     children: PropTypes.node,
+    /**
+     * If true, disables gutter padding.
+     */
+    disableGutters: PropTypes.bool,
+};
+
+const defaultProps = {
+    disableGutters: false,
 };
 
 /**
@@ -25,14 +34,18 @@ class Toolbar extends Component {
         const {
             className,
             children,
+            disableGutters,
         } = this.props;
 
+        const materialClasses = 'toolbar' + (disableGutters ? ' no-gutters' : '');
+
         return (
-            <div className={className}>{children}</div>
+            <div className={classNames(className, materialClasses)}>{children}</div>
         );
     }
 }
 
 Toolbar.propTypes = propTypes;
+Toolbar.defaultProps = defaultProps;
 
 export default Toolbar;

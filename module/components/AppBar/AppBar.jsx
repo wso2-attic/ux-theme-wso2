@@ -7,7 +7,7 @@ const propTypes = {
     /**
      * Useful to extend the style applied to components.
      */
-    classes: PropTypes.string,
+    className: PropTypes.string,
     /**
      * The content of the component.
      */
@@ -38,7 +38,7 @@ export class AppBar extends Component {
      */
     render() {
         const {
-            classes,
+            className,
             color,
             position,
             children,
@@ -49,7 +49,7 @@ export class AppBar extends Component {
 
         return (
             <ReactstrapNavbar
-                className={classNames(classes, materialClasses)}
+                className={classNames(className, materialClasses)}
                 color={color}
                 fixed={position}
                 {...attributes}
