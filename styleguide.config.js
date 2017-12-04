@@ -55,6 +55,7 @@ module.exports = {
             path.resolve(__dirname, 'module/components/Button', 'index.jsx'),
             path.resolve(__dirname, 'module/components/Badge', 'index.jsx'),
             path.resolve(__dirname, 'module/components/Chip', 'index.jsx'),
+            path.resolve(__dirname, 'module/components/Paper', 'index.jsx'),
         ])
       }
   ]
