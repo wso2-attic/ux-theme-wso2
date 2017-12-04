@@ -50,7 +50,7 @@ export class Paper extends Component {
             ...attributes
         } = this.props;
 
-        const defaultClasses = circle? 'paper paper-circle' : 'paper';
+        const defaultClasses = circle ? 'paper paper-circle' : 'paper';
 
         const style = {
             width: width,
