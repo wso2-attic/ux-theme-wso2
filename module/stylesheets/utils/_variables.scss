@@ -875,3 +875,10 @@ $kbd-bg:                      $gray-900 !default;
 
 $pre-color:                   $gray-900 !default;
 $pre-scrollable-max-height:   340px !default;
+
+// Paper
+
+$paper-bg:                    $white !default;
+$paper-border-radius:         $border-radius !default;
+$paper-box-shadow:            0 1px 6px rgba($black, .12), 0 1px 4px rgba($black, .12);
+$paper-margin:                20px;
