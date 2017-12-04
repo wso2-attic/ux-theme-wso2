@@ -53,8 +53,8 @@ export class Paper extends Component {
         const defaultClasses = circle ? 'paper paper-circle' : 'paper';
 
         const style = {
-            width: width,
-            height: height,
+            width,
+            height,
         };
 
         return (
