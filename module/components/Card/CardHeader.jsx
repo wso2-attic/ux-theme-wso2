@@ -30,9 +30,6 @@ const propTypes = {
     children: PropTypes.node,
 };
 
-const defaultProps = {
-    className: 'card-header',
-};
 /**
  * Extended CardHeader class
  * @extend {ReactComponent} ReactstrapCardHeader
@@ -67,6 +64,5 @@ export class CardHeader extends Component {
 }
 
 CardHeader.propTypes = propTypes;
-CardHeader.defaultProps = defaultProps;
 
 export default CardHeader;

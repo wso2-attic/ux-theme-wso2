@@ -21,6 +21,7 @@ const propTypes = {
 const defaultProps = {
     raised: false,
 };
+
 /**
  * Extended Card class
  * @extend {ReactComponent} ReactstrapCard
