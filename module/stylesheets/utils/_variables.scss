@@ -663,7 +663,7 @@ $card-columns-count:        3 !default;
 $card-columns-gap:          1.25rem !default;
 $card-columns-margin:       $card-spacer-y !default;
 $card-min-height:           10rem;
-$card-box-shadow:           0 3px 6px rgba($black,0.16), 0 3px 6px rgba($black,0.23) !default;
+$card-box-shadow:           0 2px 4px -1px rgba($black, .2), 0 4px 5px 0 rgba($black, .14), 0 1px 10px 0 rgba($black, .12) !default;
 
 
 // Tooltips
