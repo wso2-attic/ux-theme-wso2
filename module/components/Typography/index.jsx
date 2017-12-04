@@ -32,7 +32,12 @@ const defaultProps = {
  * @extend {Component}
  */
 export class Typography extends Component {
-    typeMapping(param){
+    /**
+     * Type Mapper
+     * @param {string} param attribute
+     * @returns {string} bootstrap wrap class
+     */
+    typeMapping(param) {
         switch (param) {
             case 'display1':
                 return 'display-1';
@@ -67,7 +72,7 @@ export class Typography extends Component {
                 {...other}
             />
         );
-    };
+    }
 }
 
 Typography.propTypes = propTypes;
