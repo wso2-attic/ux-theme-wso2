@@ -22,10 +22,14 @@ const defaultProps = {
     raised: false,
 };
 /**
- * Card component class
- * @returns Card
+ * Extended Card class
+ * @extend {ReactComponent} ReactstrapCard
  */
 export class Card extends Component {
+    /**
+     * Render
+     * @return {ReactElement} Component Markup
+     */
     render() {
         const {
             className,

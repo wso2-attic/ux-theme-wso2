@@ -38,6 +38,10 @@ const defaultProps = {
  * @extend {ReactComponent} ReactstrapCardHeader
  */
 export class CardHeader extends Component {
+    /**
+     * Render
+     * @return {ReactElement} Component Markup
+     */
     render() {
         const {
             className,
