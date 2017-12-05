@@ -1,4 +1,16 @@
 
-hr {
-  border-bottom: 1px solid $gray-600;
+.divider {
+    border-top: 1px solid;
+  border-color: #333;
+
+  &.divider-absolute {
+    position: absolute;
+    width: 100%;
+  }
+  &.divider-inset{
+    margin-left: 72px;
+  }
+  &.divider-light{
+    border-color: #ccc;
+  }
 }

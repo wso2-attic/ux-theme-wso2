@@ -6,6 +6,10 @@ const propTypes = {
      * Useful to extend the style applied to components.
      */
     className: PropTypes.string,
+    /**
+     * If true, the divider will have a lighter color.
+     */
+    light: PropTypes.bool,
 };
 
 /**
@@ -18,12 +22,17 @@ export class Divider extends Component {
      * @return {ReactElement} Component Markup
      */
     render() {
-        const defaultClasses = 'hr';
         const {
             className,
+            light,
         } = this.props;
+
+        const materialClasses = 'divider' + ((light) ? ' divider-' + light : '');
+
         return (
-            <hr className={defaultClasses} />
+            <hr
+                className={materialClasses}
+            />
         );
     }
 }
@@ -31,4 +40,3 @@ export class Divider extends Component {
 Divider.propTypes = propTypes;
 
 export default Divider;
-
