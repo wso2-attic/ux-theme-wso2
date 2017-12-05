@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 const propTypes = {
     /**
      * Useful to extend the style applied to components.
      */
     className: PropTypes.string,
-}
+};
 
 /**
- * Default Avatar component.
- * @returns {Avatar} component.
+ * Default Divider component.
+ * @returns {Divider} component.
  */
 export class Divider extends Component {
     /**
-     * render method for Avatar
+     * Render
+     * @return {ReactElement} Component Markup
      */
     render() {
-        let defaultClasses = 'hr';
+        const defaultClasses = 'hr';
         const {
-            className
+            className,
         } = this.props;
         return (
-                <hr className={defaultClasses} />
+            <hr className={defaultClasses} />
         );
     }
 }
