@@ -9,7 +9,7 @@ const propTypes = {
     /**
      * If true, the divider will have a lighter color.
      */
-    shade: PropTypes.bool,
+    light: PropTypes.bool,
 };
 
 /**
