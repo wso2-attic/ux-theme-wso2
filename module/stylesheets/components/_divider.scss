@@ -1,7 +1,7 @@
 
 .divider {
     border-top: 1px solid;
-  border-color: #333;
+    border-color: $gray-800;
 
   &.divider-absolute {
     position: absolute;
@@ -11,6 +11,6 @@
     margin-left: 72px;
   }
   &.divider-light{
-    border-color: #ccc;
+    border-color: $gray-300;
   }
 }
