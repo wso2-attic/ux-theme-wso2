@@ -14,11 +14,11 @@ Circular Paper:
 
 ```js
 <div>
-    <Paper circle={true} height="100px" width="100px" />
-    <Paper circle={true} height="100px" width="100px" />
-    <Paper circle={true} height="100px" width="100px" />
-    <Paper circle={true} height="100px" width="100px" />
-    <Paper circle={true} height="100px" width="100px" />
+    <Paper circle height="100px" width="100px" />
+    <Paper circle height="100px" width="100px" />
+    <Paper circle height="100px" width="100px" />
+    <Paper circle height="100px" width="100px" />
+    <Paper circle height="100px" width="100px" />
 </div>
 ```
 

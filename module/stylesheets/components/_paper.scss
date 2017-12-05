@@ -1,14 +1,11 @@
 // Paper
 
 .paper {
-  display: inline-block;
-  margin: 20px;
-  font-family: Roboto, sans-serif;
-  color: rgba(0, 0, 0, 0.87);
-  text-align: center;
-  background-color: #fff;
-  border-radius: 0;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.12);
+  display: inline-flex;
+  margin: $paper-margin;
+  background-color: $paper-bg;
+  border-radius: $paper-border-radius;
+  box-shadow: $paper-box-shadow;
 
   &.paper-circle {
     border-radius: 50%;
