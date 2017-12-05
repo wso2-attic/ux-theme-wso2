@@ -13,7 +13,7 @@ const propTypes = {
 };
 
 /**
- * Default Divider component.
+ * Extended divider component.
  * @returns {Divider} component.
  */
 export class Divider extends Component {
