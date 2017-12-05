@@ -8,6 +8,7 @@ export { Avatar } from './components/Avatar';
 export { Badge } from './components/Badge';
 export { Button } from './components/Button';
 export { Chip } from './components/Chip';
+export { Divider } from './components/Divider';
 export { Grid } from './components/Grid';
 export { Paper } from './components/Paper';
 export { Typography } from './components/Typography';
