@@ -1,15 +1,8 @@
 
 .divider {
-    border-top: 1px solid;
+    border-top: 1px $border-width;
     border-color: $gray-800;
 
-  &.divider-absolute {
-    position: absolute;
-    width: 100%;
-  }
-  &.divider-inset{
-    margin-left: 72px;
-  }
   &.divider-light{
     border-color: $gray-300;
   }

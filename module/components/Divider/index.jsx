@@ -9,7 +9,7 @@ const propTypes = {
     /**
      * If true, the divider will have a lighter color.
      */
-    light: PropTypes.bool,
+    shade: PropTypes.bool,
 };
 
 /**
@@ -27,7 +27,7 @@ export class Divider extends Component {
             light,
         } = this.props;
 
-        const materialClasses = 'divider' + ((light) ? ' divider-' + light : '');
+        const materialClasses = 'divider' + ( light ? ' divider-light' : '');
 
         return (
             <hr

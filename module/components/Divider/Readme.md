@@ -1,4 +1,4 @@
-Divider example:
+Default Divider example:
 
 ```js
 <Divider/>
@@ -6,5 +6,5 @@ Divider example:
 
 Light Divider example:
 ```js
-<Divider light="light" />
+<Divider light />
 ```
