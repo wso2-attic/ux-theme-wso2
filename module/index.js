@@ -11,4 +11,5 @@ export { Chip } from './components/Chip';
 export { Grid } from './components/Grid';
 export { Paper } from './components/Paper';
 export { Typography } from './components/Typography';
+export { Divider } from './components/Divider';
 export * from './components/Card';
