@@ -1,11 +1,11 @@
-# [Theme WSO2](http://wso2-dev-ux.github.io/theme-wso2/)
+# [Theme WSO2](http://wso2.github.io/ux-theme-wso2/)
 
 [![GitHub release](https://img.shields.io/badge/release-v2.0.0-orange.svg?style=flat-square)](https://github.com/wso2-dev-ux/theme-wso2/releases/tag/v2.0.0)
 ![devDependency Status](https://david-dm.org/wso2-dev-ux/theme-wso2/dev-status.svg?style=flat-square)
 [![License](https://img.shields.io/badge/license-MIT/Apache--2.0-blue.svg?style=flat-square)](LICENSE)
 
 **WSO2 Products UI Templates And Components**   
-http://wso2-dev-ux.github.io/theme-wso2/
+http://wso2.github.io/ux-theme-wso2/
 
 ---
 
@@ -24,7 +24,7 @@ To run the documentation locally, you'll need a copy of Theme WSO2's source file
 
 1. [Install Node][node-install], which we use to manage our dependencies.
 2. Install the Grunt command line tools, `grunt-cli`, with `npm install -g grunt-cli`.
-3. Navigate to the root `/theme-wso2` directory and run `npm install` to install our local dependencies listed in [package.json](https://github.com/wso2-dev-ux/theme-wso2/blob/master/package.json).
+3. Navigate to the root `/ux-theme-wso2` directory and run `npm install` to install our local dependencies listed in [package.json](https://github.com/wso2-dev-ux/theme-wso2/blob/master/package.json).
 4. [Install Ruby][ruby-install].
 5. Then install [Sass][sass-install] with `gem install sass`. 
 6. And finally install [Jekyll][jekyll-install] with `gem install jekyll`.
@@ -66,7 +66,7 @@ Within the distribution download you'll find the following directories and files
 logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
 
 ```
-theme-wso2/
+ux-theme-wso2/
 ├── css/
 │   ├── theme-wso2.css
 │   ├── theme-wso2.min.css
