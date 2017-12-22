@@ -2,14 +2,14 @@
 title: Theme WSO2
 name: theme-wso2
 version: 2.0.0
-url: https://wso2-dev-ux.github.io
-license: https://github.com/wso2-dev-ux/theme-wso2/blob/master/LICENSE
+url: https://wso2.github.io/ux-theme-wso2/
+license: https://github.com/wso2/ux-theme-wso2/blob/master/LICENSE
 
 # Permalinks
 permalink: pretty
 
 # Server
-baseurl: "/theme-wso2"
+baseurl: "/ux-theme-wso2"
 sass:
   sass_dir: _scss
   

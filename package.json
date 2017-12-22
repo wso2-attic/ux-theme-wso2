@@ -1,8 +1,8 @@
 {
   "name": "theme-wso2",
   "version": "2.1.0",
-  "url": "http://wso2-dev-ux.github.io/theme-wso2/",
-  "git": "http://github.com/wso2-dev-ux/theme-wso2.git",
+  "url": "http://wso2.github.io/ux-theme-wso2/",
+  "git": "http://github.com/wso2/ux-theme-wso2.git",
   "private": true,
   "designer": "WSO2",
   "designerURL": "http://wso2.com",
