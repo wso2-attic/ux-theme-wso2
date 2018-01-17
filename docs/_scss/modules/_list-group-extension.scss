@@ -1,17 +1,12 @@
 .list-group-item {
-  &.active,
-  .active {
-    > & {
-      &,
-      &:focus,
-      &:hover {
-        color: $list-group-item-hover-color;
-        background: $list-group-item-hover-bg;
-        border-color: $list-group-item-hover-border-color;
-      }
-    }
-  }
   &.active {
+    &:focus,
+    &:hover {
+      color: $list-group-item-hover-color;
+      background: $list-group-item-hover-bg;
+      border-color: $list-group-item-hover-border-color;
+    }
+    
     a {
       color: #fff;
       text-decoration: none;

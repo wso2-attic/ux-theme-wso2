@@ -1,7 +1,7 @@
 # Site settings
 title: Theme WSO2
 name: theme-wso2
-version: 2.0.0
+version: 2.1.0
 url: https://wso2.github.io/ux-theme-wso2/
 license: https://github.com/wso2/ux-theme-wso2/blob/master/LICENSE
 
@@ -13,7 +13,7 @@ baseurl: "/ux-theme-wso2"
 sass:
   sass_dir: _scss
   
-gems:
+plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
   
