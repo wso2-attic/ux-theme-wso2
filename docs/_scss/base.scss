@@ -1,5 +1,5 @@
-@import 'modules/variables-extension';
-@import 'vendor/bootstrap/stylesheets/bootstrap/variables';
+@import "modules/variables-extension";
+@import "vendor/bootstrap/stylesheets/bootstrap/variables";
 @import "vendor/bootstrap/stylesheets/bootstrap/mixins";
 
 // Reset and dependencies
@@ -10,9 +10,9 @@
 @import "vendor/bootstrap/stylesheets/bootstrap/scaffolding";
 
 @import "vendor/bootstrap/stylesheets/bootstrap/type";
-@import 'modules/scaffolding-extension';
+@import "modules/scaffolding-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/code";
-@import 'modules/code-extension';
+@import "modules/code-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/grid";
 @import "modules/grid-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/tables";
@@ -23,8 +23,8 @@
 @import "modules/buttons-extension";
 
 // Components
-@import 'modules/header';
-@import 'modules/footer';
+@import "modules/header";
+@import "modules/footer";
 @import "vendor/bootstrap/stylesheets/bootstrap/component-animations";
 @import "vendor/bootstrap/stylesheets/bootstrap/dropdowns";
 @import "modules/dropdowns-extension";
@@ -50,7 +50,7 @@
 @import "vendor/bootstrap/stylesheets/bootstrap/progress-bars";
 @import "vendor/bootstrap/stylesheets/bootstrap/media";
 @import "vendor/bootstrap/stylesheets/bootstrap/list-group";
-@import "modules/list-group_extension";
+@import "modules/list-group-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/panels";
 @import "modules/panels-extension";
 @import "vendor/bootstrap/stylesheets/bootstrap/responsive-embed";
@@ -66,7 +66,7 @@
 @import "modules/asset-details";
 @import "modules/switch";
 @import "modules/icons";
-@import 'modules/ripple';
+@import "modules/ripple";
 
 // Components w/ JavaScript
 @import "vendor/bootstrap/stylesheets/bootstrap/modals";
@@ -78,4 +78,4 @@
 // Utility classes
 @import "vendor/bootstrap/stylesheets/bootstrap/utilities";
 @import "vendor/bootstrap/stylesheets/bootstrap/responsive-utilities";
-@import 'modules/utilities';
+@import "modules/utilities";
