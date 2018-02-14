@@ -1,6 +1,6 @@
 # [Theme WSO2](http://wso2.github.io/ux-theme-wso2/)
 
-[![GitHub release](https://img.shields.io/badge/release-v2.0.0-orange.svg?style=flat-square)](https://github.com/wso2-dev-ux/theme-wso2/releases/tag/v2.0.0)
+[![GitHub release](https://img.shields.io/badge/current-v2.1.0-orange.svg?style=flat-square)](https://github.com/wso2-dev-ux/theme-wso2/releases/tag/v2.0.0)
 ![devDependency Status](https://david-dm.org/wso2/ux-theme-wso2/dev-status.svg?style=flat-square)
 [![License](https://img.shields.io/badge/license-MIT/Apache--2.0-blue.svg?style=flat-square)](LICENSE)
 
@@ -26,14 +26,16 @@ To run the documentation locally, you'll need a copy of Theme WSO2's source file
 2. Install the Grunt command line tools, `grunt-cli`, with `npm install -g grunt-cli`.
 3. Navigate to the root `/ux-theme-wso2` directory and run `npm install` to install our local dependencies listed in [package.json](https://github.com/wso2-dev-ux/theme-wso2/blob/master/package.json).
 4. [Install Ruby][ruby-install].
-5. Then install [Sass][sass-install] with `gem install sass`. 
-6. And finally install [Jekyll][jekyll-install] with `gem install jekyll`.
+5. Then install [Sass][sass-install] with `gem install sass`.
+6. Then install [Bundler][bundle-install] with `gem install bundler`. 
+7. And finally install [Jekyll][jekyll-install] with `gem install jekyll`.
 
 [grunt-install]: http://gruntjs.com/getting-started
 [node-install]: https://nodejs.org/download
 [jekyll-install]: https://jekyllrb.com/docs/installation
 [sass-install]: http://sass-lang.com/install
 [ruby-install]: https://www.ruby-lang.org/en/documentation/installation
+[bundle-install]: http://bundler.io/man/bundle-install.1.html
 
 Once completed, you'll be able to run the various Grunt commands provided from the command line.
 

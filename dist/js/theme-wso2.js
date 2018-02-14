@@ -1131,10 +1131,7 @@ $.sidebar_toggle = function(action, target, container) {
 
     });
     
-    $(window)
-        .load(sidebarHeightAdjust)
-        .resize(sidebarHeightAdjust)
-        .scroll(sidebarHeightAdjust);
+    $(window).on('load resize scroll', sidebarHeightAdjust);
 
 };
 
@@ -1315,12 +1312,6 @@ $(document).ready(function() {
     });
 
     $(responsiveTextSleector).responsive_text(responsiveTextRatio);
-
-    if(typeof $.fn.select2 == 'function'){
-        $('.select2').select2();
-    }else{
-        console.warn('Warning : Dependency missing - Select2 Library');
-    }
 
     if(typeof $.fn.collapse == 'function') {
         $('.navbar-collapse.tiles').on('shown.bs.collapse', function () {

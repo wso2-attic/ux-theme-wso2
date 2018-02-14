@@ -219,10 +219,7 @@ $.sidebar_toggle = function(action, target, container) {
 
     });
     
-    $(window)
-        .load(sidebarHeightAdjust)
-        .resize(sidebarHeightAdjust)
-        .scroll(sidebarHeightAdjust);
+    $(window).on('load resize scroll', sidebarHeightAdjust);
 
 };
 

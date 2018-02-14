@@ -26,7 +26,7 @@ $(function(){
         
         if($.session.get(sidebarNav) == 'toggled') {
             $.sidebar_toggle('show', sidebarNav, $(sidebarNav).data('container'));
-            $('[data-toggle=sidebar][data-target=' + sidebarNav + ']').attr('aria-expanded', 'true');
+            $('[data-toggle="sidebar"][data-target="' + sidebarNav + '"]').attr('aria-expanded', 'true');
         }
         
         $(sidebarNav).on('shown.sidebar', function(e){
@@ -141,9 +141,9 @@ $(function(){
         
         
         $('.sidebar-wrapper').on('shown.sidebar', function(e){
-            $('[data-toggle=sidebar][data-target=#' + $(e.target).prop('id') + '].active').siblings().prop('disabled', true);
+            $('[data-toggle="sidebar"][data-target="#' + $(e.target).prop('id') + '"].active').siblings().prop('disabled', true);
         }).on('hidden.sidebar', function(e){
-            $('[data-toggle=sidebar][data-target=#' + $(e.target).prop('id') + ']').siblings().prop('disabled', false);
+            $('[data-toggle="sidebar"][data-target="#' + $(e.target).prop('id') + '"]').siblings().prop('disabled', false);
             
         });
     });
@@ -151,7 +151,7 @@ $(function(){
     /***********************************************************
     *  Show page once fully rendered
     ***********************************************************/
-    $(window).load(function() {
+    $(window).on('load', function() {
         $("body").removeClass("notransition hidden");
     });
         
