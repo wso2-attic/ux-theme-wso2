@@ -166,7 +166,7 @@ module.exports = function(grunt) {
         sync: {
             update_scss_in_docs: {
                 files: [
-                    { cwd: 'scss', src: '**/*.scss', dest: 'docs/_scss' },
+                    { cwd: 'scss', src: '**/*.scss', dest: 'docs/_scss' }
                 ]
             }
         },
@@ -195,7 +195,7 @@ module.exports = function(grunt) {
         },
         shell: {
             jekyll_build: {
-                command: 'jekyll build',
+                command: 'bundle exec jekyll build',
                 stdout: true,
                 options: {
                     stderr: false,
@@ -209,7 +209,7 @@ module.exports = function(grunt) {
                     var flags = grunt.option.flags();
                     flags = flags.toString();
                     flags = flags.replace(/([=,])|(--color)/g, ' ');
-                    return 'jekyll serve --baseurl "" <%= grunt.option("jekyll.options.product") %> ' + flags;
+                    return 'bundle exec jekyll serve --baseurl "" <%= grunt.option("jekyll.options.product") %> ' + flags;
                 },
                 stdout: true,
                 options: {
