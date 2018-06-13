@@ -34,7 +34,7 @@ nav.navigation ul li a i {
     vertical-align: middle;
     width: 40px;
     height: 40px;
-    float: left;
+    display: inline-block;
     text-align: center;
     padding: 9px;
 }
@@ -46,15 +46,17 @@ nav.navigation .left-menu-item {
     width: 160px;
     height: 40px;
     font-size: 14px;
-    display: table;
-    margin-left: 40px;
-}
-nav.navigation .left-menu-item i{
-    float: none;
     position: relative;
-    left: 0px;
+    display: inline-block;
+}
+nav.navigation .left-menu-item i {
+    float: none;
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    left: auto;
     font-size: 10px;
-    display: table-cell;
+    display: block;
 }
 ul.sublevel-menu {
     padding: 0px;

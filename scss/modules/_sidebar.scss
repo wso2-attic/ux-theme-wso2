@@ -134,6 +134,8 @@ ul .sidebar-messages {
       display: block;
       text-decoration: none !important;
       color: $sidebar-wrapper-color;
+	  white-space: nowrap;
+	  
       @if ($smooth-hover == true) {
         @include transition (color 250ms ease);
       }
